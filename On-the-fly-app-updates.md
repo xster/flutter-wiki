@@ -1,5 +1,7 @@
 TODO: Write proper docs.
 
+NOTE: Update checks are actually disabled at the moment, so I'd have to switch them on in code if people want to use the feature.
+
 - Add an 'update-url' and a 'version' field to the package's flutter.yaml file. E.g. https://github.com/flutter/flutter/blob/master/examples/fitness/flutter.yaml
 - In the directory pointed to by update-url, place 2 files: your app's 'flutter.yaml' and 'app.flx'.
 - Periodically (once a day), flutter will check for updates by downloading a new flutter.yaml from the update-url. If the version number has changed, we'll download app.flx.
