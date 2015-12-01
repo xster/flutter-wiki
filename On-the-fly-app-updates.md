@@ -1,12 +1,33 @@
-TODO: Write proper docs.
+# Packaging your app
 
-NOTE: Update checks are actually disabled at the moment, so I'd have to switch them on in code if people want to use the feature.
+(NOTE: Update checks are actually disabled at the moment, so I'd have to switch them on in code if people want to use the feature.)
 
-- Add an 'update-url' and a 'version' field to the package's flutter.yaml file. E.g. https://github.com/flutter/flutter/blob/master/examples/fitness/flutter.yaml
-- In the directory pointed to by update-url, place 2 files: your app's 'flutter.yaml' and 'app.flx'.
-- Periodically (once a day), flutter will check for updates by downloading a new flutter.yaml from the update-url. If the version number has changed, we'll download app.flx.
-- We check the app.flx signature to ensure it's the right package.
-- Signing works like so:
--- Generate an EC-DSA signature using openssl:
-    openssl ecparam -genkey -name prime256v1 -out privatekey.der -outform DER
--- When you package your flutter app with the flutter tool, make sure to pass the flag --private-key=privatekey.der (actually this may have changed with some recent changes to the flutter tool. I'll have to check.)
+1. Generate a public/private key pair using the ECDSA algorithm. You can do this using the openssl commandline tool:
+
+        openssl ecparam -genkey -name prime256v1 -out privatekey.der -outform DER
+
+Keep privatekey.der in a secret, safe place. This is your app's private key file, and you need it to release updates to your app.
+
+2. In your app's top-level directory, create a file called flutter.yaml with at least the following fields:
+
+        name: Your App's Name
+        version: <semantic version number, like 1.0.1>
+        update-url: <URL where you will host updates to your app>
+
+3. Package your app with the flutter tool, being sure to pass it the path to your private key file. For example:
+
+        flutter build --private-key=/path/to/privatekey.der --manifest=approot/flutter.yaml ...
+
+This creates an app bundle file named `app.flx`, signed by your private key. Any updates must be signed by the same private key, or flutter will reject them. This means that anyone in possession of your private key can create a new version of your app, installable by users. So keep your key in a safe place!
+
+# Releasing updates
+
+When you want to release a new version of your app, you'll need to put a new `flutter.yaml` and `app.flx` in the directory pointed to by the `update-url` field in `flutter.yaml`. For example, if you have the following in your `flutter.yaml` file:
+
+       update-url: https://example.com/myapp/
+
+then both `https://example.com/myapp/flutter.yaml` and `https://example.com/myapp/app.flx` should be available.
+
+`flutter.yaml` should be your app's `flutter.yaml` file, with a new version field. Make sure the version is semantically greater than the previous version, or Flutter won't know an update is ready.
+
+`app.flx` should be the new version of your app bundle, as created by the `flutter build` tool.
