@@ -1,7 +1,5 @@
 # Packaging your app
 
-(NOTE: Update checks are actually disabled at the moment, so I'd have to switch them on in code if people want to use the feature. Email flutter-dev@googlegroups.com if you want to use this feature.)
-
 1. Generate a public/private key pair using the ECDSA algorithm. You can do this using the openssl commandline tool:
 
         openssl ecparam -genkey -name prime256v1 -out privatekey.der -outform DER
