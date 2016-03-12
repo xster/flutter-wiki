@@ -1,4 +1,4 @@
-# `flutter daemon` mode
+# Flutter Daemon
 
 ## Overview
 
