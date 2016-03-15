@@ -28,7 +28,7 @@ All requests and responses should be wrapped in square brackets. This ensures th
 
 `id` is an opaque type to the server, but ids should be unique for the life of the server. A response to a particular command will contain the id that was passed in for that command.
 
-Each command should have a `method` field. This is in the form `domain`.`command`.
+Each command should have a `method` field. This is in the form '`domain.command`'.
 
 Any params for that command should be passed in through a `params` field. Here's a example request/response for the `device.getDevices` method:
 
@@ -79,12 +79,27 @@ The `stop()` command takes two parameters, a `deviceId` and a `projectDirectory`
 
 ### device domain
 
-TODO: getDevices
-TODO: enable
-TODO: disable
+#### getDevices
 
-TODO: device.added
-TODO: device.removed
+Return a list of all connected devices. The `params` field will be a List; each item is a map with the fields `id`, `name`, and `platform`.
+
+#### enable
+
+Turn on device polling. This will poll for newly connected devices, and fire `device.added` and `device.removed` events.
+
+#### disable
+
+Turn off device polling.
+
+#### Events
+
+#### device.added
+
+This is sent when a device is connected (and polling has been enabled via `enable()`). The `params` field will be a map with the fields `id`, `name`, and `platform`.
+
+#### device.removed
+
+This is sent when a device is disconnected (and polling has been enabled via `enable()`). The `params` field will be a map with the fields `id`, `name`, and `platform`.
 
 ## Source
 
