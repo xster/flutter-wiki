@@ -12,13 +12,33 @@ It runs a persistent, JSON-RPC based server to communicate with devices. IDEs an
 
 ## Protocol
 
-The daemon speaks [JSON-RPC](http://json-rpc.org/) to clients. It uses stdin and stdout as the protocol transport. To send a command to the server, create your command as a JSON-RPC message, encode it to json, surround the encoded text with square brackets, and write it as one line of text to stdout:
+The daemon speaks [JSON-RPC](http://json-rpc.org/) to clients. It uses stdin and stdout as the protocol transport. To send a command to the server, create your command as a JSON-RPC message, encode it to json, surround the encoded text with square brackets, and write it as one line of text to the stdin of the process:
 
 ```
-TODO:
+[{"method":"daemon.version","id":0}]
 ```
 
-TODO:
+The response will come back as a single line from stdout:
+
+```
+[{"id":0,"result":"0.1.0"}]
+```
+
+All requests and responses should be wrapped in square brackets. This ensures that the communications are resilient to stray output in the stdout/stdin stream.
+
+`id` is an opaque type to the server, but ids should be unique for the life of the server. A response to a particular command will contain the id that was passed in for that command.
+
+Each command should have a `method` field. This is in the form `domain`.`command`.
+
+Any params for that command should be passed in through a `params` field. Here's a request response for the `device.getDevices` method:
+
+```
+[{"method":"device.getDevices","id":2}]
+```
+
+```
+[{"id":2,"result":[{"id":"702ABC1F-5EA5-4F83-84AB-6380CA91D39A","name":"iPhone 6","platform":"ios_x64","available":true}]}]
+```
 
 ## Domains and Commands
 
@@ -43,6 +63,9 @@ TODO: start
 #### stop
 
 The `stop()` command takes two parameters, a `deviceId` and a `projectDirectory`. It returns a `bool` to indicate success or failure in stopping an app.
+
+- `deviceId`: The device to stop; this is required.
+- `projectDirectory`: The project directory; this is required. It is used to determine the application to stop.
 
 ### device domain
 
