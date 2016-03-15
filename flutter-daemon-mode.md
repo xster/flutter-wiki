@@ -30,7 +30,7 @@ All requests and responses should be wrapped in square brackets. This ensures th
 
 Each command should have a `method` field. This is in the form `domain`.`command`.
 
-Any params for that command should be passed in through a `params` field. Here's a request response for the `device.getDevices` method:
+Any params for that command should be passed in through a `params` field. Here's a example request/response for the `device.getDevices` method:
 
 ```
 [{"method":"device.getDevices","id":2}]
@@ -52,13 +52,23 @@ The `version()` command responds with a String with the protocol version.
 
 The `shutdown()` command will terminate the flutter daemon. It is not necessary to call this before shutting down the daemon; it is perfectly acceptable to just kill the daemon process.
 
-TODO: daemon.logMessage
+#### Events
+
+#### logMessage
+
+The `daemon.logMessage` event is sent whenever a log message is created - either a status level message or an error. The JSON message will contains an `event` field with the value `daemon.logMessage`, and an `params` field containing a map with `level`, `message`, and (optionally) `stackTrace` fields.
 
 ### app domain
 
 #### start
 
-TODO: start
+The `start()` is used to start applications.
+
+- `deviceId`: The device to launch the app on; this is required.
+- `projectDirectory`: The project directory; this is required. It is used to determine the application to start.
+- `target`: Optional; the target file to start.
+- `route`: A string; the route to use when restoring the application.
+- `checked`: A boolean to indicate whether to run in checked or production mode.
 
 #### stop
 
