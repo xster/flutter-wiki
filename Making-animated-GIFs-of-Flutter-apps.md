@@ -31,3 +31,7 @@ Animated GIFs are useful for documentating animations. Here’s how to make them
  * Select an appropriately small size for the GIF (recommended: 320xAUTO).
  * Select a high framerate for the GIF (the max is 20) for smoothest animation
  * Convert to GIF and download the GIF file
+
+## Example
+
+![Example Animated GIF](http://i.imgur.com/tSqVQkx.gifv)
