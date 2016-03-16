@@ -18,6 +18,7 @@ Animated GIFs are useful for documentating animations. Here’s how to make them
  * Move the iOS simulator above your other applications
  * Launch the "QuickTime Player" app
  * Select “New Screen Recording” from the File menu
+ * Draw a box around the Simulator and click "Start Recording"
  * When you're finished, click on Stop Recording on the Menu Bar.
  * If needed, trim your recording using "Trim" from the "Edit" menu.
  * Save the recording
