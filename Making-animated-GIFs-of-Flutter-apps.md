@@ -34,4 +34,4 @@ Animated GIFs are useful for documentating animations. Here’s how to make them
 
 ## Example
 
-![Example Animated GIF](http://i.imgur.com/tSqVQkx.gifv)
+![Example Animated GIF](http://i.imgur.com/tSqVQkx.gif)
