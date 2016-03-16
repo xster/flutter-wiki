@@ -25,7 +25,7 @@ Animated GIFs are useful for documentating animations. Here’s how to make them
 ## Converting the recording to GIF
 
  * Go to http://ezgif.com/video-to-gif and upload the video.
- * Select the start and end times for your GIF.
+ * If further trimming is needed, select the start and end times for your GIF.
  * Select an appropriately small size for the GIF (recommended: 320xAUTO).
  * Select a high framerate for the GIF (the max is 20) for smoothest animation
  * Convert to GIF and download the GIF file
