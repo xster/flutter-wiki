@@ -62,7 +62,7 @@ The `daemon.logMessage` event is sent whenever a log message is created - either
 
 #### start
 
-The `start()` is used to start applications.
+The `start()` command is used to start applications.
 
 - `deviceId`: The device to launch the app on; this is required.
 - `projectDirectory`: The project directory; this is required. It is used to determine the application to start.
