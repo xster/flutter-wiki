@@ -1,9 +1,19 @@
 This page describes the process for updating the material design icons:
 
- 1. Use git to clone https://github.com/google/material-design-icons
+ 1. Use git to clone https://github.com/google/material-design-icons and https://github.com/google/fonts
  2. Create a fonts.zip file to upload to Google Storage:
-  1. `cd iconfont` (i.e., your cloned copy of https://github.com/google/material-design-icons/tree/master/iconfont)
-  2. `zip fonts.zip MaterialIcons-Regular.ttf codepoints ../LICENSE`
+```
+    STAGING=/tmp/fonts_staging
+    mkdir $STAGING
+    cp material-design-icons/iconfont/{MaterialIcons-Regular.ttf,codepoints} $STAGING
+    cp material-design-icons/LICENSE $STAGING/MaterialIcons_LICENSE
+    cp fonts/apache/roboto/*.ttf $STAGING
+    cp fonts/apache/roboto/LICENSE.txt $STAGING/Roboto_LICENSE.txt
+    cp fonts/apache/robotocondensed/*.ttf $STAGING
+    cp fonts/apache/robotocondensed/LICENSE.txt $STAGING/RobotoCondensed_LICENSE.txt
+    zip -j fonts.zip $STAGING/*
+```
+
  3. Upload fonts.zip to Google Storage:
   1. Determine the sha1sum of `fonts.zip`.  By convention, we store the fonts at a location based on the sha1sum of the fonts.zip file, which you can determine as follows: `sha1sum fonts.zip`
   2. `gsutil cp fonts.zip gs://flutter_infra/flutter/fonts/<sha1>/fonts.zip`
