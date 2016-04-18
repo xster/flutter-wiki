@@ -1,3 +1,7 @@
+# DEPRECATED
+
+We no longer support app updates. We intend to add support in the future, but it is not a priority for now.
+
 # Packaging your app
 
 1. Generate a public/private key pair using the ECDSA algorithm. You can do this using the openssl commandline tool:
