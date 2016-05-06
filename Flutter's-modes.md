@@ -6,4 +6,4 @@ We aspire to reach a state where developers are able to use the following modes 
 
 3. Profile mode: Same as release mode except that profile-mode service extensions (like the one that turns on the performance overlay) is enabled, and tracing is enabled, as well as the minimum required to support using the tracing information (e.g. observatory can probably connect to the process).
 
-All the above use a separate Flutter engine build (which are each further available for each supported device platform). For our purposes during development, we would also have headless desktop host debug builds (for tests), and debug engine builds for each of the three modes.
+All the above use a separate Flutter engine build (which are each further available for each supported device platform). For our purposes during development, we would also have headless desktop host debug builds (for tests), and debug engine builds for each of the three modes for each supported device platform.
