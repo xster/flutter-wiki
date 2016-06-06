@@ -66,20 +66,46 @@ The `start()` command is used to start applications.
 
 - `deviceId`: The device to launch the app on; this is required.
 - `projectDirectory`: The project directory; this is required. It is used to determine the application to start.
-- `target`: Optional; the target file to start.
+- `startPaused`: Start the VM in a paused mode.
 - `route`: A string; the route to use when restoring the application.
-- `checked`: A boolean to indicate whether to run in checked or production mode.
+- `mode`: One of either `debug`, `profile`, or `release`.
+- `target`: Optional; the target file to start.
+
+Returns a `appId` on success. This is is used when sending app events, and can be used by clients to stop the app (`app.stop`).
+
+#### restart
+
+The `restart()` command takes one parameter, `appId`. It returns a `bool` to indicate success or failure in restarting the app.
+
+- `appId`: the id of a previously started app; this is required.
 
 #### stop
 
-The `stop()` command takes two parameters, a `deviceId` and a `projectDirectory`. It returns a `bool` to indicate success or failure in stopping an app.
+The `stop()` command takes one parameter, `appId`. It returns a `bool` to indicate success or failure in stopping an app.
 
-- `deviceId`: The device to stop; this is required.
-- `projectDirectory`: The project directory; this is required. It is used to determine the application to stop.
+- `appId`: the id of a previously started app; this is required.
 
 #### discover
 
 The `discover()` command takes one parameter, a `deviceId`. It returns a list of applications discovered on the device. Each application is represented by a map with two fields, an `id` - an Android or iOS application id - and an `observatoryDevicePort`. The `observatoryDevicePort` is the device port to connect to to debug the application. The port may first have to be made accessable via `device.forward`.
+
+#### Events
+
+#### app.start
+
+This is sent when an app is started. The `params` field will be a map with the fields `appId`, `directory`, and `deviceId`.
+
+#### app.debugPort
+
+This is sent when an observatory port is available for a started app. The `params` field will be a map with the fields `appId` and `port`.
+
+#### app.log
+
+This is sent when output is logged for a running application. The `params` field will be a map with the fields `appId` and `log`. The `log` field is a string with the output text. If the output indicates an error, an `error` boolean field will be present, and set to `true`.
+
+#### app.stop
+
+This is sent when an app is stopped. The `params` field will be a map with the field `appId`.
 
 ### device domain
 
@@ -94,7 +120,6 @@ Turn on device polling. This will poll for newly connected devices, and fire `de
 #### disable
 
 Turn off device polling.
-
 
 #### forward
 
