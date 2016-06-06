@@ -77,6 +77,10 @@ The `stop()` command takes two parameters, a `deviceId` and a `projectDirectory`
 - `deviceId`: The device to stop; this is required.
 - `projectDirectory`: The project directory; this is required. It is used to determine the application to stop.
 
+#### discover
+
+The `discover()` command takes one parameter, a `deviceId`. It returns a list of applications discovered on the device. Each application is represented by a map with two fields, an `id` - an Android or iOS application id - and an `observatoryDevicePort`. The `observatoryDevicePort` is the device port to connect to to debug the application. The port may first have to be made accessable via `device.forward`.
+
 ### device domain
 
 #### getDevices
@@ -90,6 +94,17 @@ Turn on device polling. This will poll for newly connected devices, and fire `de
 #### disable
 
 Turn off device polling.
+
+
+#### forward
+
+Forward a host port to a device port. This call takes two required arguments, `deviceId` and `devicePort`, and one optional argument, `hostPort`. If `hostPort` is not specified, the host port will be any available port.
+
+This method returns a map with a `hostPort` field set.
+
+#### unforward
+
+Removed a forwarded port. It takes `deviceId`, `devicePort`, and `hostPort` as required arguments.
 
 #### Events
 
