@@ -71,7 +71,11 @@ The `start()` command is used to start applications.
 - `mode`: One of either `debug`, `profile`, or `release`.
 - `target`: Optional; the target file to start.
 
-Returns a `appId` on success. This is is used when sending app events, and can be used by clients to stop the app (`app.stop`).
+On success, returns a map with the fields:
+- `appId`: this is is used when sending app events, and can be used by clients to stop the app (`app.stop`).
+- `deviceId`
+- `directory`
+- `supportsRestart`
 
 #### restart
 
@@ -102,6 +106,8 @@ This is sent when an observatory port is available for a started app. The `param
 #### app.log
 
 This is sent when output is logged for a running application. The `params` field will be a map with the fields `appId` and `log`. The `log` field is a string with the output text. If the output indicates an error, an `error` boolean field will be present, and set to `true`.
+
+If this is a progress event, it will contain the fields `progress` (a bool with the value true) and `id`, an opaque identifier. The ending progress event for a progress pair will have a `finished` bool field with the value true and will not contain a `log` (message) field.
 
 #### app.stop
 
