@@ -30,9 +30,26 @@ You can reach us at `flutter-dev@googlegroups.com` and our [Gitter chat](https:/
 
 Hot reload is a work in progress. The following kinds of code changes are hot reloadable:
 
-* Changes to code inside functions or methods.
-* Creation of new classes.
-* Additions of functions or methods.
+* Classes
+** Adding a method/function
+** Removing a method/function
+** Class hierarchy edits
+** Adding a static field
+** Removing a static field
+* Libraries
+** Adding a library import
+** Removing a library import
+** Adding a part
+** Removing a part
+** Adding a global variable
+** Removing a global variable
+* Functions
+** Change the signature (number of arguments, etc) of function
+** Change the implementation of a function
+* Enums
+** Adding a new enum value
+** Removing an enum value
+
 
 The following kinds of code and changes are not (currently) reloadable:
 
