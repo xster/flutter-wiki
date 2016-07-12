@@ -10,17 +10,13 @@ We'd love [feedback](https://github.com/flutter/flutter/issues/new) on this new 
 
 ## Using Atom
 
-You need to enable hot reload support by setting a flag. In Atom's config.cson file, under the 'flutter' section, add `reloadSources: true`. Then, restart Atom.
-
-TODO
+You need to enable hot reload support by setting a flag. In Atom's config.cson file, under the 'flutter' section, add `reloadSources: true`. The next time you run your app, you will see a reload button in the debugger UI, next to the stepping and terminate buttons.
 
 ## Using the CLI
 
 You need to use a hidden command-line option. Run your app with `flutter run --reload-sources`.
 
-Then, make a change to the source of your Flutter app. (Not every change can be hot reloaded. See Caveats below.) Go to the console that is running the `flutter run --reload-sources` command. Type `r` to reload your app.
-
-TODO
+Then, make a change to the source of your Flutter app. (Not every change can be hot reloaded. See Caveats below.) Go to the console that is running the `flutter run --reload-sources` command. Type `r` or `F5` to reload your app.
 
 ## Caveats
 
