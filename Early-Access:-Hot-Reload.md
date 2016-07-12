@@ -55,7 +55,7 @@ The following kinds of code and changes are not (currently) reloadable:
 
 * Changing a const list or map.
 * Changing a top-level `final` field (after it has been initialized).
-* Added a field to a class.
+* Adding a field to a class.
 * Removing a field from a class.
 
 If you make a change from the list above, you need to restart your app to see that change.
