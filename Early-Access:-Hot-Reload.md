@@ -4,8 +4,8 @@ Flutter is committed to delivering a fast developer workflow. The Flutter tools 
 
 We'd love [feedback](https://github.com/flutter/flutter/issues/new) on this new feature and UX. You can try hot reload now, if:
 
-* You are running Linux or MacOS and have an Android device.
-* You are running MacOS and have the iOS simulator installed.
+* You are running Linux or MacOS and are using an Android device for development.
+* You are running MacOS and are using the iOS simulator for development.
 * You are using the latest master branch of flutter.
 
 ## Using Atom
