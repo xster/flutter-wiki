@@ -10,7 +10,9 @@ We'd love [feedback](https://github.com/flutter/flutter/issues/new) on this new 
 
 ## Using Atom
 
-**COMING SOON**
+You need to enable hot reload support by setting a flag. In Atom's settings for the Flutter plugin, toggle the `Enable hot reload` option.
+
+The next time you run your app, you will see a reload button in the debugger UI (next to the stepping and terminate buttons). In addition, re-running your app (cmd-R) will issue a hot-reload.
 
 ## Using the CLI
 
