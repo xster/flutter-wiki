@@ -1,3 +1,5 @@
+[[[https://github.com/flutter/identity-assets/blob/master/assets/logo_square/Flutter-Mark-square-220.png|alt="Flutter Logo"|height=150px|width=150px]]](https://flutter.io)
+
 Flutter Wiki
 ===
 
