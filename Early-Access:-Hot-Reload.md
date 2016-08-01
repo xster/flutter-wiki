@@ -8,6 +8,8 @@ We'd love [feedback](https://github.com/flutter/flutter/issues/new) on this new 
 * You are running MacOS and are using the iOS simulator for development.
 * You are using the latest master branch of flutter.
 
+Hot reload currently supports the iOS simulator and Android hardware.
+
 ## Using Atom
 
 You need to enable hot reload support by setting a flag. In Atom's settings for the Flutter plugin, toggle the `Enable hot reload` option.
