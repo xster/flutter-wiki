@@ -70,6 +70,7 @@ The `start()` command is used to start applications.
 - `route`: A string; the route to use when restoring the application.
 - `mode`: One of either `debug`, `profile`, or `release`.
 - `target`: Optional; the target file to start.
+- `hot`: Optional; whether to start the application using `--hot` mode
 
 On success, returns a map with the fields:
 - `appId`: this is is used when sending app events, and can be used by clients to stop the app (`app.stop`).
@@ -79,9 +80,10 @@ On success, returns a map with the fields:
 
 #### restart
 
-The `restart()` command takes one parameter, `appId`. It returns a `bool` to indicate success or failure in restarting the app.
+The `restart()` restarts the given application. It returns a `bool` to indicate success or failure in restarting the app.
 
 - `appId`: the id of a previously started app; this is required.
+- `fullRestart`: optional; whether to do a full (rather than an incremental) restart of the application
 
 #### stop
 
@@ -101,7 +103,7 @@ This is sent when an app is started. The `params` field will be a map with the f
 
 #### app.debugPort
 
-This is sent when an observatory port is available for a started app. The `params` field will be a map with the fields `appId` and `port`.
+This is sent when an observatory port is available for a started app. The `params` field will be a map with the fields `appId` and `port`. An optional field, `baseUri`, is populated if a path prefix is required for setting breakpoints on the target device.
 
 #### app.log
 
