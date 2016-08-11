@@ -21,3 +21,4 @@ Flutter Wiki
 
 ##Early Access
 - [[Early-Access:-Hot-Reload]]
+- [[Early-Access:-Auto-Formatting]]
