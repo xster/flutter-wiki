@@ -9,9 +9,9 @@ Make sure you are using a version of Flutter that is newer than August 11th, 201
 Also, make sure you are using `dartfmt` from `$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt`. It should be version `0.2.8` or newer, which you can check with `dartfmt --version`.
 
 If you are using Atom, please ensure your Flutter plugin for Atom has the correct `flutter_root` setting.
-Also, you may want to enable "format on save":
+Also, you may want to enable "format on save" option in the Dart plugin settings.
 
+## Using trailing commas
 
-
-## Using the formatter
+To get a good formatting experience, you must first adopt _trailing commas_. (The reasons are out of the scope of this article.)
 
