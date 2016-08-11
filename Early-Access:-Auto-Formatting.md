@@ -26,3 +26,14 @@ Here is a formatted example _with_ trailing commas:
 Here is a formatted example _without_ trailing commas:
 
 [[images/without_trailing_commas.png]]
+
+## Learning about dartfmt
+
+To learn more about the `dartfmt` command, please check out the [dart_style pub package](https://pub.dartlang.org/packages/dart_style).
+
+## Sending feedback
+
+The Flutter team would like to know how auto-formatting works for you.
+
+Please [file issues](https://github.com/flutter/flutter/issues/new)
+or chat with us in our [Gitter](https://gitter.im/flutter/flutter).
