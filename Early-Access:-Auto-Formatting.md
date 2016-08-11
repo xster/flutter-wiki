@@ -17,3 +17,4 @@ Also, you may want to enable "format on save" option in the Dart plugin settings
 
 To get a good formatting experience, you must first adopt _trailing commas_. (The reasons are out of the scope of this article.)
 
+[[images/trailing_commas.png]]
