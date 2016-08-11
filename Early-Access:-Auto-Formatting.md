@@ -4,17 +4,21 @@ With Flutter's master branch as of August 11th, 2016, we now have an _early acce
 
 ## Prereqs
 
-Make sure you are using a version of Flutter that is newer than August 11th, 2016. You can check this by going to your local copy of the flutter repo, and looking at the top result from `git log`.
+Make sure you are using a version of Flutter that is newer than August 11th, 2016. To check the last-commit-date, `cd` to your local copy of the flutter repo, run `git log`, and look at the top result.
 
-Also, make sure you are using `dartfmt` from `$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt`. It should be version `0.2.8` or newer, which you can check with `dartfmt --version`.
+Also, make sure you are using the `dartfmt` that is bundled with Flutter, and found in  `$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt`. Run `$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt --version` to ensure you have version `0.2.8` or newer.
 
-If you are using Atom, please ensure your Flutter plugin for Atom has the correct `flutter_root` setting.
+If you use Atom, please ensure your Flutter plugin for Atom has the correct `flutter_root` setting.
 Also, you may want to enable "format on save" option in the Dart plugin settings.
 
 [[images/formatting_settings.png]]
 
 ## Using trailing commas
 
-To get a good formatting experience, you must first adopt _trailing commas_. (The reasons are out of the scope of this article.)
+To get a good formatting experience with Flutter, you must first adopt _trailing commas_. (The reasons are out of the scope of this article.) If you do not add trailing commas, the formatter will potentially significantly rearrange your code.
+
+The rule for adding a trailing comma is simple. Always add a trailing comma at the end of an argument list in constructors.
+
+Here is an example:
 
 [[images/trailing_commas.png]]
