@@ -17,8 +17,11 @@ Also, you may want to enable "format on save" option in the Dart plugin settings
 
 To get a good formatting experience with Flutter, you must first adopt _trailing commas_. (The reasons are out of the scope of this article.) If you do not add trailing commas, the formatter will potentially significantly rearrange your code.
 
-The rule for adding a trailing comma is simple. Always add a trailing comma at the end of an argument list in constructors.
+The rule for adding a trailing comma is simple. Always add a trailing comma at the end of a parameter list in functions, methods, and constructors where you care about keeping the formatting you crafted.
 
-Here is an example:
+Here is a formatted example _with_ trailing commas:
 
 [[images/trailing_commas.png]]
+
+Here is a formatted example _without_ trailing commas:
+
