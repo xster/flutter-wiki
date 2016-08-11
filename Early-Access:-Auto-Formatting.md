@@ -25,3 +25,4 @@ Here is a formatted example _with_ trailing commas:
 
 Here is a formatted example _without_ trailing commas:
 
+[[images/without_trailing_commas.png]]
