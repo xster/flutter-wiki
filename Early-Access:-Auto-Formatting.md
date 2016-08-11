@@ -11,6 +11,8 @@ Also, make sure you are using `dartfmt` from `$FLUTTER_ROOT/bin/cache/dart-sdk/b
 If you are using Atom, please ensure your Flutter plugin for Atom has the correct `flutter_root` setting.
 Also, you may want to enable "format on save" option in the Dart plugin settings.
 
+[[images/formatting_settings.png]]
+
 ## Using trailing commas
 
 To get a good formatting experience, you must first adopt _trailing commas_. (The reasons are out of the scope of this article.)
