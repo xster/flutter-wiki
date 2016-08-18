@@ -14,6 +14,7 @@ Flutter Wiki
 ##Tips
 - [[Developer-best-practices]]
 - [[Making-animated-GIFs-of-Flutter-apps]]
+- [[Saving-files]]
 - [[Updating-Material-Design-Fonts]]
 
 ##Commands
