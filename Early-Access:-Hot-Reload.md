@@ -36,8 +36,8 @@ Hot reload is a work in progress. The following kinds of code changes are hot re
   * Adding a method/function
   * Removing a method/function
   * Class hierarchy edits
-  * Adding a static field
-  * Removing a static field
+  * Adding a static or instance field
+  * Removing a static or instance field
 * Libraries
   * Adding a library import
   * Removing a library import
