@@ -7,19 +7,19 @@ Flutter Wiki
 - [Developer Site](https://flutter.io/)
 - [API Reference](https://docs.flutter.io/index.html)
 
-##Guides
-- [[Release-process]]
-- [[Flutter's-modes]]
+## Guides
+- [[Release process]]
+- [[Flutter's modes]]
 
-##Tips
-- [[Developer-best-practices]]
-- [[Making-animated-GIFs-of-Flutter-apps]]
+## Tips
+- [[Developer best practices]]
+- [[Making animated GIFs of Flutter apps]]
 - [Reading and Writing Files](https://flutter.io/reading-writing-files/)
-- [[Updating-Material-Design-Fonts]]
+- [[Updating Material Design Fonts]]
 
-##Commands
-- [[The-flutter-daemon-mode]]
+## Commands
+- [[The flutter daemon mode]]
 
-##Early Access
-- [[Early-Access:-Hot-Reload]]
-- [[Early-Access:-Auto-Formatting]]
+## Early Access
+- [[Early Access: Hot Reload]]
+- [[Early Access: Auto Formatting]]
