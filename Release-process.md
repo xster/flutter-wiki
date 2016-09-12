@@ -1,4 +1,5 @@
 This is the process for updating the "alpha" branch.
+
 0. Remove the code in the flutter tool that upgrades you from alpha to master.
 1. Ensure everything is green [on Travis](https://travis-ci.org/flutter/flutter/builds) and [on the infra bots](https://build.chromium.org/p/client.flutter/waterfall) and on the cocoon dashboard (if you are not a Googler, please ask one to check the dashboard for you).
 2. Ensure there are no outstanding [bugs in the "Today" milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+milestone%3AToday).
