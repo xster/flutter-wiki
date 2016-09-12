@@ -1,5 +1,5 @@
 This is the process for updating the "alpha" branch.
-
+0. Remove the code in the flutter tool that upgrades you from alpha to master.
 1. Ensure everything is green [on Travis](https://travis-ci.org/flutter/flutter/builds) and [on the infra bots](https://build.chromium.org/p/client.flutter/waterfall) and on the cocoon dashboard (if you are not a Googler, please ask one to check the dashboard for you).
 2. Ensure there are no outstanding [bugs in the "Today" milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+milestone%3AToday).
 3. Notify the Flutter Hackers internal Hangout, and the [Gitter](https://gitter.im/flutter/flutter), that you updating the alpha branch. Wait for a few minutes to make sure people have a chance to let you know of any reason to not release the alpha branch.
