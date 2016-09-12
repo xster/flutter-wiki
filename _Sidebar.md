@@ -7,18 +7,18 @@ Flutter Wiki
 - [Developer Site](https://flutter.io/)
 - [API Reference](https://docs.flutter.io/index.html)
 
-## Guides
+## Process
 - [[Release process]]
-- [[Flutter's modes]]
+- [[Issue triage process]]
 
 ## Tips
 - [[Developer best practices]]
 - [[Making animated GIFs of Flutter apps]]
-- [Reading and Writing Files](https://flutter.io/reading-writing-files/)
 - [[Updating Material Design Fonts]]
 
 ## Commands
 - [[The flutter daemon mode]]
+- [[Flutter's modes]]
 
 ## Early Access
 - [[Early Access: Hot Reload]]
