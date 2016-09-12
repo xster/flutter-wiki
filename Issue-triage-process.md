@@ -1,10 +1,10 @@
 (Meta: not trying to make a laborious, or super-detailed, triage process. Use your best judgement.)
 
-*Status:* draft
+**Status:** draft
 
-*Objective:* Developers contributing to Flutter can easily and quickly choose impactful issues.
+**Objective:** Developers contributing to Flutter can easily and quickly choose impactful issues.
 
-*Strategy:*
+**Strategy:**
 
 * Ensure each issue is actionable.
 * Ensure each issue is prioritized. 
