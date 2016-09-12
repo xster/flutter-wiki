@@ -28,3 +28,8 @@ Then, make the following changes to the issue:
 * If we need more info, add "waiting for customer response" label.
   * If we haven't heard back in two weeks, close the issue.
 * Put the issue into the correct milestone, indicating its priority.
+
+**End result:**
+
+* Our engineers have a short list of impactful, actionable issues to choose from.
+* Customers feel heard.
