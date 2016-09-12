@@ -1,3 +1,5 @@
+(Meta: not trying to make a laborious, or super-detailed, triage process. Use your best judgement.)
+
 *Status:* draft
 
 *Objective:* Developers contributing to Flutter can easily and quickly choose impactful issues.
