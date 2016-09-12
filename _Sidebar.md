@@ -20,6 +20,10 @@ Flutter Wiki
 - [[The flutter daemon mode]]
 - [[Flutter's modes]]
 
+## Contributing
+- [[Style guide for Flutter repo]]
+- [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
+
 ## Early Access
 - [[Early Access: Hot Reload]]
 - [[Early Access: Auto Formatting]]
