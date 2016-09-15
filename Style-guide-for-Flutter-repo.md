@@ -147,6 +147,14 @@ abstract class Picture ...
 If writing the documentation proves to be difficult because the API is
 convoluted, then rewrite the API rather than trying to document it.
 
+
+### If you have a question, put the answer in the documentation.
+
+Put the answer to your question where you went to look for the answer. That way, the
+documentation will consist of answers to real questions, where people would look to
+find them.
+
+
 ### Canonical terminology
 
 The documentation should use consistent terminology:
