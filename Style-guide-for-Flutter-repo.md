@@ -311,6 +311,15 @@ callbacks unless you are ignoring them (and have named them with
 underscores).
 
 
+### Capitalize only when words would be spelled separately
+
+If a type or variable name is referenced in the
+[Material Design Spec](https://material.google.com/) or in the
+dictionary as one unitary word, do not capitalize it even if it
+is a compound noun. Some examples would be `toolbar`, `scrollbar`,
+etc.
+
+
 ### Qualify variables used only for debugging
 
 If you have variables or methods that are only used in checked mode,
