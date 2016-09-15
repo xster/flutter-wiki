@@ -311,13 +311,29 @@ callbacks unless you are ignoring them (and have named them with
 underscores).
 
 
-### Capitalize only when words would be spelled separately
+### Spell words in identifiers and comments correctly
 
-If a type or variable name is referenced in the
-[Material Design Spec](https://material.google.com/) or in the
-dictionary as one unitary word, do not capitalize it even if it
-is a compound noun. Some examples would be `toolbar`, `scrollbar`,
-etc.
+Our primary source of truth for spelling is the
+[Material Design Specification](https://material.google.com/).
+Our secondary source of truth is dictionaries.
+
+Avoid "cute" spellings. For example, 'colors', not 'colorz'.
+
+Prefer US English spellings. For example, 'colorize', not 'colourise'.
+
+
+### Capitalize identifiers consistent with their spelling
+
+If a word is correctly spelt (according to our sources of truth as described in the previous section) as a single word, then it should not have any inner capitalization or spaces.
+
+For examples, prefer `toolbar`, `scrollbar`, but `appBar` ('app bar' in documentation), `tabBar` ('tab bar' in documentation).
+
+Similarly, prefer `offstage` rather than 'offStage`.
+
+
+### Prefer naming the argument to a setter `value`
+
+Unless this would cause other problems, use `value` for the name of a setter's argument. This makes it easier to copy/paste the setter later.
 
 
 ### Qualify variables used only for debugging
@@ -423,6 +439,34 @@ Foo f = new Foo(
 When breaking a parameter list into multiple lines, do the same.
 
 
+### If you have a newline after some opening punctuation, match it on the closing punctuation.
+
+And vice versa.
+
+Example:
+
+<!-- skip -->
+```dart
+// BAD:
+  foo(
+    bar, baz);
+  foo(
+    bar,
+    baz);
+  foo(bar,
+    baz
+  );
+
+// GOOD:
+  foo(bar, baz);
+  foo(
+    bar,
+    baz,
+  );
+  foo(bar,
+    baz);
+```
+
 ### Prefer single quotes for strings
 
 But use double quotes for nested strings.
@@ -523,9 +567,9 @@ of the line that has the opening punctuation, so that you can easily determine
 what's going on by just scanning the indentation on the left edge.
 
 
-### Separate the "if" expression from its statement
+### Separate the 'if' expression from its statement
 
-Don't put the statement part of an "if" statement on the same line as
+Don't put the statement part of an 'if' statement on the same line as
 the expression, even if it is short. (Doing so makes it unobvious that
 there is relevant code there. This is especially important for early
 returns.)
