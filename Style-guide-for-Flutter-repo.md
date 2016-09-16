@@ -142,6 +142,17 @@ Example:
 abstract class Picture ...
 ```
 
+You can also use "See also" links, is in:
+
+```
+/// See also:
+///
+/// * [FooBar].
+/// * [Baz], which quuxes the wibble.
+```
+
+Note the final period on each line. Prefer "which..." rather than parentheticals on such lines.
+
 ### Refactor the code when the documentation would be incomprehensible
 
 If writing the documentation proves to be difficult because the API is
