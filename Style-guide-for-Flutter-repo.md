@@ -494,7 +494,7 @@ List<int> myList = [
   1,
   2,
 ]
-myList = [3, 4];
+myList = <int>[3, 4];
 
 foo1(
   bar,
