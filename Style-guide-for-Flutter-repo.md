@@ -451,7 +451,7 @@ Example:
 ```dart
 Foo f = new Foo(
   bar: 1.0,
-  quux: 2.0
+  quux: 2.0,
 );
 ```
 
@@ -484,6 +484,23 @@ Example:
   );
   foo(bar,
     baz);
+```
+
+### Use a trailing comma for arguments, parameters, and list items, but only if they each have their own line.
+
+Example:
+```dart
+List<int> myList = [
+  1,
+  2,
+]
+myList = [3, 4];
+
+foo1(
+  bar,
+  baz,
+);
+foo2(bar, baz);
 ```
 
 ### Prefer single quotes for strings
