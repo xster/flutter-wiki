@@ -143,11 +143,11 @@ Removed a forwarded port. It takes `deviceId`, `devicePort`, and `hostPort` as r
 
 #### device.added
 
-This is sent when a device is connected (and polling has been enabled via `enable()`). The `params` field will be a map with the fields `id`, `name`, and `platform`.
+This is sent when a device is connected (and polling has been enabled via `enable()`). The `params` field will be a map with the fields `id`, `name`, `platform`, and `emulator`.
 
 #### device.removed
 
-This is sent when a device is disconnected (and polling has been enabled via `enable()`). The `params` field will be a map with the fields `id`, `name`, and `platform`.
+This is sent when a device is disconnected (and polling has been enabled via `enable()`). The `params` field will be a map with the fields `id`, `name`, `platform`, and `emulator`.
 
 ## Source
 
