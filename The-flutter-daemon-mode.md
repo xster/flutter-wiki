@@ -119,7 +119,7 @@ This is sent when an app is stopped. The `params` field will be a map with the f
 
 #### getDevices
 
-Return a list of all connected devices. The `params` field will be a List; each item is a map with the fields `id`, `name`, and `platform`.
+Return a list of all connected devices. The `params` field will be a List; each item is a map with the fields `id`, `name`, `platform`, and `emulator` (a boolean).
 
 #### enable
 
