@@ -8,7 +8,7 @@ The `flutter` command-line tool supports a daemon server mode for use by IDEs an
 flutter daemon
 ```
 
-It runs a persistent, JSON-RPC based server to communicate with devices. IDEs and and other tools can start the flutter tool in this mode and get device addition and removal notifications, as well as being able to programmatically start and stop apps on those devices.
+It runs a persistent, JSON-RPC based server to communicate with devices. IDEs and other tools can start the flutter tool in this mode and get device addition and removal notifications, as well as being able to programmatically start and stop apps on those devices.
 
 ## Protocol
 
