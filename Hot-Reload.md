@@ -1,8 +1,6 @@
-*Warning: This is early access stuff. Expect bumps along the way.*
+Flutter is committed to delivering a fast developer workflow. The Flutter tools support near-instant reload of changes powered by the Dart VM's new _hot reload_ feature, both from the Flutter CLI tools and Atom.
 
-Flutter is committed to delivering a fast developer workflow. The Flutter tools are currently being updated to bring the Dart VM's new _hot reload_ feature to the Flutter developer (both from the Flutter CLI tools and Atom).
-
-We'd love [feedback](https://github.com/flutter/flutter/issues/new) on this new feature and UX. You can try hot reload now, if:
+We'd love [feedback](https://github.com/flutter/flutter/issues/new) on this new feature and it's user experience. You can try hot reload now, if:
 
 * You are running Linux or MacOS and are using an Android device or emulator for development.
 * You are running MacOS and are using the iOS simulator for development.
@@ -18,9 +16,9 @@ The next time you run your app, you will see a reload button in the debugger UI 
 
 ## Using the CLI
 
-You need to use the command-line option `--hot`. Run your app with `flutter run --hot`.
+Hot Reload is enabled by default when you run your app with `flutter run`. After making a change to the source of your Flutter app, return to the console that is running the `flutter run` command. Type `r` or `F5` to reload your app.
 
-Then, make a change to the source of your Flutter app. (Not every change can be hot reloaded. See Caveats below.) Go to the console that is running the `flutter run --hot` command. Type `r` or `F5` to reload your app.
+*Note*: Not every change can be hot reloaded; see Caveats below.
 
 ## Feedback
 
@@ -30,7 +28,7 @@ You can reach us at `flutter-dev@googlegroups.com` and our [Gitter chat](https:/
 
 ## Caveats
 
-Hot reload is a work in progress. The following kinds of code changes are hot reloadable:
+Currently the following kinds of code changes are hot reloadable:
 
 * Classes
   * Adding a method/function
@@ -60,7 +58,7 @@ The following kinds of code and changes are not (currently) reloadable:
 * Adding a field to a class.
 * Removing a field from a class.
 
-If you make a change from the list above, you need to restart your app to see that change.
+If you make a change from the list above, you need to restart your app using the `R` command to see that change.
 
 ## Roadmap
 
