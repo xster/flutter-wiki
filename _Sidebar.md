@@ -15,6 +15,7 @@ Flutter Wiki
 - [[Developer best practices]]
 - [[Making animated GIFs of Flutter apps]]
 - [[Updating Material Design Fonts]]
+- [[Hot Reload]]
 
 ## Commands
 - [[The flutter daemon mode]]
@@ -25,5 +26,4 @@ Flutter Wiki
 - [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
 
 ## Early Access
-- [[Early Access: Hot Reload]]
 - [[Early Access: Auto Formatting]]
