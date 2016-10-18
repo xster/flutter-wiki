@@ -49,19 +49,3 @@ Currently the following kinds of code changes are hot reloadable:
 * Enums
   * Adding a new enum value
   * Removing an enum value
-
-
-The following kinds of code and changes are not (currently) reloadable:
-
-* Changing a const list or map.
-* Changing a top-level field (after it has been initialized).
-* Adding a field to a class.
-* Removing a field from a class.
-
-If you make a change from the list above, you need to restart your app using the `R` command to see that change.
-
-## Roadmap
-
-* Support for iOS hardware.
-* Support for Android emulators.
-* More kinds of code and changes.
