@@ -16,6 +16,7 @@ Flutter Wiki
 - [[Making animated GIFs of Flutter apps]]
 - [[Updating Material Design Fonts]]
 - [[Hot Reload]]
+- [[Creating Responsive Apps]]
 
 ## Commands
 - [[The flutter daemon mode]]
