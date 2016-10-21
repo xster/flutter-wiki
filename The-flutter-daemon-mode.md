@@ -80,10 +80,11 @@ On success, returns a map with the fields:
 
 #### restart
 
-The `restart()` restarts the given application. It returns a `bool` to indicate success or failure in restarting the app.
+The `restart()` restarts the given application. It returns a Map of `{ int code, String message }` to indicate success or failure in restarting the app. A `code` of `0` indicates success, and non-zero indicates a failure.
 
 - `appId`: the id of a previously started app; this is required.
 - `fullRestart`: optional; whether to do a full (rather than an incremental) restart of the application
+- `pause`: optional; when doing a hot restart the isolate should enter a paused mode
 
 #### stop
 
