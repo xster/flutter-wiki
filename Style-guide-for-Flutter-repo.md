@@ -16,7 +16,7 @@ Secondary goals are to increase the likelihood of catching bugs quickly, and
 avoiding arguments when there are disagreements.
 
 In general, when writing code for the Flutter repository, follow our
-[Design Principles](/design-principles/) for all code and
+[Design Principles](https://flutter.io/design-principles/) for all code and
 the [Dart style guide](https://www.dartlang.org/articles/style-guide/)
 for Dart code, except where that would contradict this page.
 
