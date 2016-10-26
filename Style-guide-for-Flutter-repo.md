@@ -178,8 +178,9 @@ Coding patterns and catching bugs early
 
 ### Run the Dart Analyzer before submitting code
 
-While editing code Atom's `dartlang` plugin runs the analyzer automatically,
-preventing surprises later when you need to submit the code.
+While editing code using IntelliJ with [our plugins](https://flutter.io/intellij-ide/), the 
+Analyzer runs automatically in the background, preventing surprises later when you need 
+to submit the code.
 
 Run `flutter analyzer --flutter-repo` prior to submitting your code for review.
 
