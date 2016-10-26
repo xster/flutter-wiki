@@ -1,4 +1,4 @@
-Flutter is committed to delivering a fast developer workflow. The Flutter tools support near-instant reload of changes powered by the Dart VM's new _hot reload_ feature, both from the Flutter CLI tools and Atom.
+Flutter is committed to delivering a fast developer workflow. The Flutter tools support near-instant reload of changes powered by the Dart VM's new _hot reload_ feature, both from the Flutter CLI tools and IntelliJ.
 
 We'd love [feedback](https://github.com/flutter/flutter/issues/new) on this new feature and it's user experience. You can try hot reload now, if:
 
@@ -6,19 +6,15 @@ We'd love [feedback](https://github.com/flutter/flutter/issues/new) on this new 
 * You are running MacOS and are using the iOS simulator for development.
 * You are using the latest master branch of flutter.
 
-Hot reload currently supports the iOS simulator, iOS hardware, and Android hardware, and Android emulator.
+## Using IntelliJ
 
-## Using Atom
+You need the 'flutter' plugin, see [setup](https://flutter.io/setup/#flutter-intellij-ide-plugins).
 
-You need to enable hot reload support by setting a flag. In Atom's settings for the Flutter plugin, toggle the `Enable hot reload` option.
-
-The next time you run your app, you will see a reload button in the debugger UI (next to the stepping and terminate buttons). In addition, re-running your app (cmd-R) will issue a hot-reload.
+The next time you debug your app, you will see a reload button in the debugger UI (in the bottom debug pane; the icon shows a lightning bolt and a play button).
 
 ## Using the CLI
 
 Hot Reload is enabled by default when you run your app with `flutter run`. After making a change to the source of your Flutter app, return to the console that is running the `flutter run` command. Type `r` or `F5` to reload your app.
-
-*Note*: Not every change can be hot reloaded; see Caveats below.
 
 ## Feedback
 
@@ -26,7 +22,7 @@ This feature is a work in progress, and we look forward to your feedback. Please
 
 You can reach us at `flutter-dev@googlegroups.com` and our [Gitter chat](https://gitter.im/flutter/flutter).
 
-## Caveats
+## Supported changes
 
 Currently the following kinds of code changes are hot reloadable:
 
