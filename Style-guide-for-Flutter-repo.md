@@ -518,7 +518,7 @@ print('Hello ${name.split(" ")[0]}');
 
 ### Consider using "=>" for short functions and methods
 
-But only use `=>` when the everything, including the function declaration, fits
+But only use `=>` when everything, including the function declaration, fits
 on a single line.
 
 Example:
