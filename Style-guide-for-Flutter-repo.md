@@ -122,6 +122,8 @@ If a method is the main mechanism used to obtain a particular object,
 or is the main way to consume a particular object, then mention that
 in the method's description.
 
+Typedefs should mention at least one place where the signature is used.
+
 These rules result in a chain of breadcrumbs that a reader can follow
 to get from any class or method that they might think is relevant to
 their task all the way up to the class or method they actually need.
@@ -150,8 +152,7 @@ You can also use "See also" links, is in:
 /// * [FooBar].
 /// * [Baz], which quuxes the wibble.
 ```
-
-Note the final period on each line. Prefer "which..." rather than parentheticals on such lines.
+Each line should end with a period. Prefer "which..." rather than parentheticals on such lines.
 
 ### Refactor the code when the documentation would be incomprehensible
 
@@ -172,6 +173,8 @@ The documentation should use consistent terminology:
 
  * _method_ - a member of a class that is a non-anonymous closure
  * _function_ - a callable non-anonymous closure that isn't a member of a class
+
+Typedef dartdocs should usually start with the phrase "Signature for...".
 
 Coding patterns and catching bugs early
 ---------------------------------------
