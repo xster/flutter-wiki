@@ -9,7 +9,7 @@ We aspire to reach a state where `flutter run` has the following modes:
 - `flutter run --profile --no-resident`: builds a profile version of the app and starts it directly, then quits.
 - `flutter run --release --no-resident`: builds a release version of the app and starts it directly, then quits.
 
-- `flutter run`: builds a debug version of the app and starts it in "hot reload" mode via the loader; outputs only machine-readable messages on stdout and accepts machine commands on stdin.
-- `flutter run --no-hot`: builds a debug version of the app and starts it directly; outputs only machine-readable messages on stdout and accepts machine commands on stdin.
-- `flutter run --profile`: builds a profile version of the app and starts it directly; outputs only machine-readable messages on stdout and accepts machine commands on stdin.
-- `flutter run --release`: builds a release version of the app and starts it directly; outputs only machine-readable messages on stdout and accepts machine commands on stdin.
+- `flutter run --machine`: builds a debug version of the app and starts it in "hot reload" mode via the loader; outputs only machine-readable messages on stdout and accepts machine commands on stdin.
+- `flutter run --no-hot --machine`: builds a debug version of the app and starts it directly; outputs only machine-readable messages on stdout and accepts machine commands on stdin.
+- `flutter run --profile --machine`: builds a profile version of the app and starts it directly; outputs only machine-readable messages on stdout and accepts machine commands on stdin.
+- `flutter run --release --machine`: builds a release version of the app and starts it directly; outputs only machine-readable messages on stdout and accepts machine commands on stdin.
