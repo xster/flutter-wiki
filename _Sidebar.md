@@ -21,6 +21,7 @@ Flutter Wiki
 ## Commands
 - [[The flutter daemon mode]]
 - [[Flutter's modes]]
+- [[The flutter run variants]]
 
 ## Contributing
 - [[Style guide for Flutter repo]]
