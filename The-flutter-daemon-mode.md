@@ -100,7 +100,11 @@ The `discover()` command takes one parameter, a `deviceId`. It returns a list of
 
 #### app.start
 
-This is sent when an app is started. The `params` field will be a map with the fields `appId`, `directory`, and `deviceId`.
+This is sent when an app is starting. The `params` field will be a map with the fields `appId`, `directory`, and `deviceId`.
+
+#### app.started
+
+This is sent once the application launch process is complete and the app is either paused before `main()` if `startPaused` is true or `main()` has begun running. The `params` field will be a map containing the field `appId`.
 
 #### app.debugPort
 
