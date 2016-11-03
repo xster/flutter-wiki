@@ -106,6 +106,10 @@ This is sent when an app is started. The `params` field will be a map with the f
 
 This is sent when an observatory port is available for a started app. The `params` field will be a map with the fields `appId` and `port`. An optional field, `baseUri`, is populated if a path prefix is required for setting breakpoints on the target device.
 
+#### app.started
+
+This is sent once the application launch process is complete and the app is either paused before main() (if `startPaused` is true) or main() has begun running.
+
 #### app.log
 
 This is sent when output is logged for a running application. The `params` field will be a map with the fields `appId` and `log`. The `log` field is a string with the output text. If the output indicates an error, an `error` boolean field will be present, and set to `true`.
