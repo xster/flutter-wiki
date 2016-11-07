@@ -114,7 +114,9 @@ This is sent once the application launch process is complete and the app is eith
 
 This is sent when output is logged for a running application. The `params` field will be a map with the fields `appId` and `log`. The `log` field is a string with the output text. If the output indicates an error, an `error` boolean field will be present, and set to `true`.
 
-If this is a progress event, it will contain the fields `progress` (a bool with the value true) and `id`, an opaque identifier. The ending progress event for a progress pair will have a `finished` bool field with the value true and will not contain a `log` (message) field.
+#### app.progress
+
+This is sent when an operation starts and again when it stops. When an operation starts, the event contains the fields `id`, an opaque identifier, and `message` containing text describing the operation. When that same operation ends, the event contains the same `id` field value as when the operation started, along with a `finished` bool field with the value true, but no `message` field.
 
 #### app.stop
 
