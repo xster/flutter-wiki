@@ -26,6 +26,3 @@ Flutter Wiki
 ## Contributing
 - [[Style guide for Flutter repo]]
 - [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
-
-## Early Access
-- [[Early Access: Auto Formatting]]
