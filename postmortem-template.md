@@ -18,7 +18,7 @@ User impact: {who was affected by the incident}
 14:44 - something happened<br>
 14:45 - next thing happened **&lt;START OF OUTAGE&gt;**
 
-#### 1900-01-02
+### 1900-01-02
 
 09:12 - another thing happened **&lt;END OF OUTAGE&gt;**
 
