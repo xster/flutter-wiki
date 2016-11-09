@@ -66,7 +66,6 @@ None.
 
 | Action Item | Owner | Tracking bug | Notes |
 |-------------|-------|--------------|-------|
-| Notify flutter-users of the breakage | tvolkert | | [Done](https://groups.google.com/a/google.com/forum/#!topic/flutter-users/WThobH6tK9A) |
 | Update our package:args dependency to a known good version | danrubel | [PR #6575](https://github.com/flutter/flutter/pull/6765) | Done |
 | Deploy a forward-rolling bot that goes red if our dependencies release a breaking change, and otherwise updates us to the latest versions of everything. | ianh | [#4696](https://github.com/flutter/flutter/issues/4696) | |
 
