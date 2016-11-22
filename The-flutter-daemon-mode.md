@@ -104,7 +104,7 @@ This is sent when an app is starting. The `params` field will be a map with the 
 
 #### app.debugPort
 
-This is sent when an observatory port is available for a started app. The `params` field will be a map with the fields `appId` and `port`. An optional field, `baseUri`, is populated if a path prefix is required for setting breakpoints on the target device.
+This is sent when an observatory port is available for a started app. The `params` field will be a map with the fields `appId`, `port`, and `wsUri`. If the `wsUri` field is present, clients should prefer using that to the `port` field. An optional field, `baseUri`, is populated if a path prefix is required for setting breakpoints on the target device.
 
 #### app.started
 
