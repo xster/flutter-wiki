@@ -398,7 +398,7 @@ to the superclass.
 ```dart
 // one-line constructor example
 abstract class Foo extends StatelessWidget {
-  Foo({Key key, this.child}) : super(key: key);
+  Foo({ Key key, this.child }) : super(key: key);
   final Widget child;
   // ...
 }
