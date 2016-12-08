@@ -18,5 +18,5 @@ This page describes the process for updating the material design icons:
   1. Determine the sha1sum of `fonts.zip`.  By convention, we store the fonts at a location based on the sha1sum of the fonts.zip file, which you can determine as follows: `sha1sum fonts.zip`
   2. `gsutil cp fonts.zip gs://flutter_infra/flutter/fonts/<sha1>/fonts.zip`
  4. Update flutter.git to refer to the new fonts:
-  1. Update [`bin/cache/material_fonts.version`](https://github.com/flutter/flutter/blob/master/bin/cache/material_fonts.version) to reference the location of the new fonts.zip.
+  1. Update [`bin/internal/material_fonts.version`](https://github.com/flutter/flutter/blob/master/bin/internal/material_fonts.version) to reference the location of the new fonts.zip.
   2. Run [`dev/tools/update_icons.dart`](https://github.com/flutter/flutter/blob/master/dev/tools/update_icons.dart) to update [`packages/flutter/lib/src/material/icons.dart`](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/material/icons.dart) to reference the code point for any new icons.  The `codepoints` file that you included in `fonts.zip` describes the code points that exist in that version of the font.
