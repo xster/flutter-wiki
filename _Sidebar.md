@@ -24,6 +24,7 @@ Flutter Wiki
 - [[The flutter run variants]]
 
 ## Contributing
-- [[Style guide for Flutter repo]]
 - [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
+- [[Style guide for Flutter repo]]
+- [Design philosophy](https://flutter.io/design-principles/)
 - [[Postmortems]]
