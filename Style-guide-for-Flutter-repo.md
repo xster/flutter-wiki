@@ -107,6 +107,24 @@ final Color backgroundColor;
 final double radius;
 ```
 
+### Avoid empty prose
+
+It's easy to use more words than necessary. Avoid doing so
+where possible, even if the result is somewhat terse.
+
+```
+// BAD:
+
+/// Note: It is important to be aware of the fact that in the
+/// absence of an explicit value, this property defaults to 2.
+
+// GOOD:
+
+/// Defaults to 2.
+```
+
+In particular, avoid saying "Note:". It adds nothing.
+
 ### Leave breadcrumbs in the comments
 
 This is especially important for documentation at the level of classes.
