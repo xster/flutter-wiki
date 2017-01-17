@@ -27,4 +27,5 @@ Flutter Wiki
 - [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
 - [[Style guide for Flutter repo]]
 - [Design philosophy](https://flutter.io/design-principles/)
+- [[HOWTO: Test coverage for package:flutter]]
 - [[Postmortems]]
