@@ -372,6 +372,13 @@ For examples, prefer `toolbar`, `scrollbar`, but `appBar` ('app bar' in document
 Similarly, prefer `offstage` rather than 'offStage`.
 
 
+### Avoid double negatives in APIs.
+
+Name your boolean variables in positive ways, such as "enabled" or "visible", even if the default value is true.
+
+This is because, when you have a property or argument named "disabled" or "hidden", it leads to code such as `input.disabled = false` or `widget.hidden = false` when you're trying to enable or show the widget, which is very confusing.
+
+
 ### Prefer naming the argument to a setter `value`
 
 Unless this would cause other problems, use `value` for the name of a setter's argument. This makes it easier to copy/paste the setter later.
