@@ -372,7 +372,7 @@ For examples, prefer `toolbar`, `scrollbar`, but `appBar` ('app bar' in document
 Similarly, prefer `offstage` rather than 'offStage`.
 
 
-### Avoid double negatives in APIs.
+### Avoid double negatives in APIs
 
 Name your boolean variables in positive ways, such as "enabled" or "visible", even if the default value is true.
 
