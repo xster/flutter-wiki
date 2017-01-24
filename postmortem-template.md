@@ -22,9 +22,27 @@ User impact: {who was affected by the incident}
 
 09:12 - another thing happened **&lt;END OF OUTAGE&gt;**
 
+## Impact
+
+{summarize the problems that the outage caused}
+
 ## Root causes
 
 {without blame, describe the root cause of the outage}
+
+## Lessons learned
+
+### What worked
+
+{list things where things worked as expected in a positive manner}
+
+### Where we got lucky
+
+{list things that mitigated this incident but not because of our foresight}
+
+### What didn't work
+
+{list things that failed, with github issues from the action items section}
 
 ## Action items
 
@@ -49,20 +67,6 @@ User impact: {who was affected by the incident}
 ### Fixes
 
 {link to github issues or PRs/commits for the actual fixes that were necessary to resolve this incident}
-
-## Lessons learned
-
-### What worked
-
-{list things where things worked as expected in a positive manner}
-
-### Where we got lucky
-
-{list things that mitigated this incident but not because of our foresight}
-
-### What didn't work
-
-{list things that failed, with github issues from the action items section}
 
 ## Appendix
 
