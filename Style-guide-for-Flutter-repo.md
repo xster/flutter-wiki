@@ -203,7 +203,7 @@ While editing code using IntelliJ with [our plugins](https://flutter.io/intellij
 Analyzer runs automatically in the background, preventing surprises later when you need 
 to submit the code.
 
-Run `flutter analyzer --flutter-repo` prior to submitting your code for review.
+Run `flutter analyze --flutter-repo` prior to submitting your code for review.
 
 Avoid checking in code that increases the output of the analyzer. If a warning
 must be allowed due to a bug in the analyzer file a bug with the Dart team at
