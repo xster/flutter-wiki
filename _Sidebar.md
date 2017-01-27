@@ -17,6 +17,7 @@ Flutter Wiki
 - [[Updating Material Design Fonts]]
 - [[Hot Reload]]
 - [[Creating Responsive Apps]]
+- [[IntelliJ + Flutter Setup Tips and Tricks]]
 
 ## Commands
 - [[The flutter daemon mode]]
