@@ -1,0 +1,83 @@
+IntelliJ is a full-featured IDE; it supports refactorings, code navigation, debugging, searching, and source control integration.
+
+The following is a subjective take on getting IntelliJ to be a bit more lightweight (and slightly speedier) editor. Your mileage may vary.
+
+## Less Chrome
+
+Less is more! You can hide the IntelliJ toolbar and status line. You're still left with IntelliJ's tool buttons - buttons around the exterior allowing you to toggle visibility of different views - and the navigation bar, for common run actions.
+
+From the View menu, toggle off the Toolbar and Status Bar:
+
+Toggle IntelliJ toolbars
+
+## Breadcrumbs
+
+The breadcrumbs view shows at the top of each editor. This view adds visual noise to the UI. To disable it, open the Settings view (ctrl-alt-s) and search for 'breadcrumbs'.
+
+Toggle IntelliJ breadcrumbs
+
+## Line numbers
+
+Perhaps more controversially, you can disable line numbers in the UI as well. Similarly to disabling breadcrumbs, open the Settings dialog and search for 'line numbers'.
+
+Toggle IntelliJ line numbers
+
+## Code folding
+
+Some people disable it. Whether it adds value is highly subjective; your mileage may vary. In Settings, search for 'code folding'. Uncheck all the checkboxes under 'collapse by default'.
+
+## The structure view
+
+Also called the outline view in other tools. If you have a Dart file open this view will show the class and method structure for the file. This can be invaluable for quickly getting a sense of the structure of a file and for knowing where you are in one.
+
+By default this is inline with the Project view on the left side of the IDE window. This can make it difficult to see your project structure and the structure of your current library at the same time. You can drag the various views around to dock in exterior of your window. To experiment, drag the 'Structure' tab from the left side of the window and dock it on the right-hand side:
+
+IntelliJ structure view
+
+## Synchronize views
+
+When some people navigate around files in a project, and within the current file, they like the project view and the structure view to stay synchronized with the selection.
+
+From the Project view, click on the gear icon, and ensure that 'Autoscroll to Source' and 'Autoscroll from Source' are checked:
+
+IntelliJ synchronize project view
+
+And from the Structure view, in the toolbar, ensure that the two icons for 'Autoscroll to Source' and 'Autoscroll from Source' are selected:
+
+IntelliJ synchronize structure view
+
+## Darcula
+
+Obviously a critical choice when developing - after coming down on one side or the other of the tabs-vs-spaces debate - is to choose a light or dark color theme. 😛  If you prefer a dark theme, you're in good company, with 52.5% of other developers.
+
+To set your UI theme to Darcula open the Settings and, under Appearance & Behavior > Appearance, adjust the value of the 'Theme' chooser.
+
+IntelliJ darcula theme
+
+## IDE layout
+
+Some people prefer to have their IDE views positioned so that they are able to see the Project view, the Structure view, and the Dart Analysis view (errors and warnings) at once. Some people think of this as their work triangle, similar to how you optimize for frequent tasks when designing a kitchen. After some fussing, here's a typical IDE layout:
+
+IntelliJ layout
+
+## Remove unused plugins
+
+IntelliJ (especially IntelliJ Ultimate) ships with a lot of plugins installed by default. Many of these plugins are harmless; a few may consume memory and CPU at various times. To disable plugins, open the Settings view and select the 'Plugins' category. Some people err on the side of only disabling plugins they clearly won't use.
+
+## Community Edition vs Ultimate?
+
+The two versions of IntelliJ are very similar. Ultimate includes plugins for web development; if web development is not an important use case for you, you can prefer to use the community edition. It has significantly fewer plugins installed than the Ultimate edition.
+
+## Adjust the default heap
+
+The recommended way of changing the JVM options in IntelliJ is from the Help | Edit Custom VM Options menu. This action will create a copy of the .vmoptions file in the IDE config directory and open an editor where you can change them (see also: configuring VM options).
+
+Current default values for the external version of IntelliJ:
+
+-Xms128m -Xmx750m
+
+And, default values for the internal version of IntelliJ:
+
+-Xms1g -Xmx5g
+
+Increase these for fun and profit.
