@@ -76,8 +76,4 @@ Current default values for the external version of IntelliJ:
 
 -Xms128m -Xmx750m
 
-And, default values for the internal version of IntelliJ:
-
--Xms1g -Xmx5g
-
 Increase these for fun and profit.
