@@ -48,7 +48,7 @@ And from the Structure view, in the toolbar, ensure that the two icons for 'Auto
 
 ## Darcula
 
-Obviously a critical choice when developing - after coming down on one side or the other of the tabs-vs-spaces debate - is to choose a light or dark color theme. 😛  If you prefer a dark theme, you're in good company, with 52.5% of other developers.
+Obviously a critical choice when developing - after coming down on one side or the other of the tabs-vs-spaces debate - is to choose a light or dark color theme. 😛  If you prefer a dark theme, you're in good company, with [52.5%](http://stackoverflow.com/research/developer-survey-2015#tech-ide) of other developers.
 
 To set your UI theme to Darcula open the Settings and, under Appearance & Behavior > Appearance, adjust the value of the 'Theme' chooser.
 
@@ -56,7 +56,9 @@ To set your UI theme to Darcula open the Settings and, under Appearance & Behavi
 
 ## IDE layout
 
-Some people prefer to have their IDE views positioned so that they are able to see the Project view, the Structure view, and the Dart Analysis view (errors and warnings) at once. Some people think of this as their work triangle, similar to how you optimize for frequent tasks when designing a kitchen. After some fussing, here's a typical IDE layout:
+Some people prefer to have their IDE views positioned so that they are able to see the Project view, the Structure view, and the Dart Analysis view (errors and warnings) at once. Some people think of this as their 
+[work triangle](https://en.wikipedia.org/wiki/Kitchen_work_triangle),
+similar to how you optimize for frequent tasks when designing a kitchen. After some fussing, here's a typical IDE layout:
 
 ![](http://i.imgur.com/b3CFeh0.png)
 
@@ -70,7 +72,8 @@ The two versions of IntelliJ are very similar. Ultimate includes plugins for web
 
 ## Adjust the default heap
 
-The recommended way of changing the JVM options in IntelliJ is from the Help | Edit Custom VM Options menu. This action will create a copy of the .vmoptions file in the IDE config directory and open an editor where you can change them (see also: configuring VM options).
+The recommended way of changing the JVM options in IntelliJ is from the Help | Edit Custom VM Options menu. This action will create a copy of the .vmoptions file in the IDE config directory and open an editor where you can change them (see also: 
+[configuring VM options](https://intellij-support.jetbrains.com/hc/en-us/articles/206544869-Configuring-JVM-options-and-platform-properties)).
 
 Current default values for the external version of IntelliJ:
 
