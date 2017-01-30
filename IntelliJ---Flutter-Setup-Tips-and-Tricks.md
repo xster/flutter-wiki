@@ -74,6 +74,6 @@ The recommended way of changing the JVM options in IntelliJ is from the Help | E
 
 Current default values for the external version of IntelliJ:
 
--Xms128m -Xmx750m
+`-Xms128m -Xmx750m`
 
 Increase these for fun and profit.
