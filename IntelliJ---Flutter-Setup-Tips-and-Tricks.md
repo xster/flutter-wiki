@@ -8,19 +8,19 @@ Less is more! You can hide the IntelliJ toolbar and status line. You're still le
 
 From the View menu, toggle off the Toolbar and Status Bar:
 
-Toggle IntelliJ toolbars
+![](http://i.imgur.com/54choqz.png)
 
 ## Breadcrumbs
 
 The breadcrumbs view shows at the top of each editor. This view adds visual noise to the UI. To disable it, open the Settings view (ctrl-alt-s) and search for 'breadcrumbs'.
 
-Toggle IntelliJ breadcrumbs
+![](http://i.imgur.com/Wkdskls.png)
 
 ## Line numbers
 
 Perhaps more controversially, you can disable line numbers in the UI as well. Similarly to disabling breadcrumbs, open the Settings dialog and search for 'line numbers'.
 
-Toggle IntelliJ line numbers
+![](http://i.imgur.com/PDa6qtZ.png)
 
 ## Code folding
 
@@ -32,7 +32,7 @@ Also called the outline view in other tools. If you have a Dart file open this v
 
 By default this is inline with the Project view on the left side of the IDE window. This can make it difficult to see your project structure and the structure of your current library at the same time. You can drag the various views around to dock in exterior of your window. To experiment, drag the 'Structure' tab from the left side of the window and dock it on the right-hand side:
 
-IntelliJ structure view
+![](blob:http://imgur.com/2b8659c2-a529-400c-ba56-4008e2e84cf9)
 
 ## Synchronize views
 
@@ -40,11 +40,11 @@ When some people navigate around files in a project, and within the current file
 
 From the Project view, click on the gear icon, and ensure that 'Autoscroll to Source' and 'Autoscroll from Source' are checked:
 
-IntelliJ synchronize project view
+![](http://i.imgur.com/LuHDNxY.png)
 
 And from the Structure view, in the toolbar, ensure that the two icons for 'Autoscroll to Source' and 'Autoscroll from Source' are selected:
 
-IntelliJ synchronize structure view
+![](http://i.imgur.com/SFj4Q2l.png)
 
 ## Darcula
 
