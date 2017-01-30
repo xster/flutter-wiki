@@ -52,13 +52,13 @@ Obviously a critical choice when developing - after coming down on one side or t
 
 To set your UI theme to Darcula open the Settings and, under Appearance & Behavior > Appearance, adjust the value of the 'Theme' chooser.
 
-IntelliJ darcula theme
+![](http://i.imgur.com/3t0PgJ2.png)
 
 ## IDE layout
 
 Some people prefer to have their IDE views positioned so that they are able to see the Project view, the Structure view, and the Dart Analysis view (errors and warnings) at once. Some people think of this as their work triangle, similar to how you optimize for frequent tasks when designing a kitchen. After some fussing, here's a typical IDE layout:
 
-IntelliJ layout
+![](http://i.imgur.com/b3CFeh0.png)
 
 ## Remove unused plugins
 
