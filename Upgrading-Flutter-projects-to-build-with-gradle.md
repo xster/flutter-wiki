@@ -10,6 +10,12 @@ If you have a project that was created prior to this date, please follow these s
 
 The steps below use `<existing-app-dir>` as a placeholder for the directory containing your existing app, e.g. `~/dev/flutter/awesomeapp`.
 
+### Step 0: Ensure flutter is up to date
+
+Make sure you flutter SDK is up to date. You need a recent (March 1st, 2017 later) SDK from the master branch of https://github.com/flutter/flutter.
+
+You can upgrade by running `flutter upgrade` in a terminal.
+
 ### Step 1: Create a new project with the new template
 
 ```
@@ -51,8 +57,8 @@ Repeat this for any other resources you may have.
 **Note:** This step is only required if your app has any custom iOS code.
 
 ```
-mv <appname>/iOS <appname>/iOS.old
-cp -r <existing-app-dir>/iOS/ <appname>
+mv <appname>/ios <appname>/ios.old
+cp -r <existing-app-dir>/ios/ <appname>
 ```
 
 ### Step 7: Validate you can build, and clean-up
@@ -77,6 +83,6 @@ In addition, you can edit and build from Android Studio:
 
 1. Start Android Studio
 1. Invoke File > Open...
-1. Select the `android` folder inside your main app folder, and press OK
+1. Select the `android` folder inside your <newapp> folder, and press OK
 1. Press the Run button, or use the Run > Run menu item to build and run the app
 1. Edit java code by locating the .java file in the file tree on the right hand side.
