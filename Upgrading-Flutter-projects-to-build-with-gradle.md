@@ -13,7 +13,7 @@ cd <root dir of your project>
 mkdir android/app
 mkdir android/app/src
 mkdir android/app/src/main
-mv android/AndroidManifest android/app/src/main/
+mv android/AndroidManifest.xml android/app/src/main/
 ```
 
 ### Step 3: Add `gradle.properties`
