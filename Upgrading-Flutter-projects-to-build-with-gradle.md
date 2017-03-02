@@ -17,10 +17,11 @@ flutter create <appname>
 mv <appname>/lib <appname>/lib.old
 ```
 
-### Step 2: Merge over your Dart code
+### Step 2: Merge over your Flutter UI code
 
 ```
 cp -r <existing-app-dir>/lib <appname>/
+cp -r <existing-app-dir>/assets <appname>/ (if it exists)
 ```
 
 ### Step 3: Synchronize AndroidManifest.xml
