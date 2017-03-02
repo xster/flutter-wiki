@@ -20,7 +20,7 @@ mv <appname>/lib <appname>/lib.old
 ### Step 2: Merge over your Dart code
 
 ```
-cp <existing-app-dir>/lib <appname>/
+cp -r <existing-app-dir>/lib <appname>/
 ```
 
 ### Step 3: Synchronize AndroidManifest.xml
@@ -40,7 +40,7 @@ If that is the case, apply those changes to the new manifest,<br>`<appname>/pubs
 **Note:** This step is only required if your app has custom launcher icons.
 
 ```
-cp <existing-app-dir>/android/res <appname>android/app/src/main/
+cp -r <existing-app-dir>/android/res <appname>android/app/src/main/
 ```
 
 Repeat this for any other resources you may have.
@@ -51,7 +51,7 @@ Repeat this for any other resources you may have.
 
 ```
 mv <appname>/iOS <appname>/iOS.old
-cp <existing-app-dir>/iOS/ <appname>
+cp -r <existing-app-dir>/iOS/ <appname>
 ```
 
 ## Working with the project after upgrading
