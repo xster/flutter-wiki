@@ -25,7 +25,7 @@ cp <existing-app-dir>/lib <appname>/
 
 ### Step 3: Synchronize AndroidManifest.xml
 
-This step is only required if you made any changes to<br>`<existing-app-dir>android/AndroidManifest.xml`
+**Note:** This step is only required if you made any changes to<br>`<existing-app-dir>android/AndroidManifest.xml`
 
 If that is the case, apply those changes to the new manifest,<br> `<appname>/android/app/src/main/AndroidManifest.xml` 
 
