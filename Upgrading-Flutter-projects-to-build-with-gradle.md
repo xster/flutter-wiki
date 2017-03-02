@@ -55,11 +55,23 @@ mv <appname>/iOS <appname>/iOS.old
 cp -r <existing-app-dir>/iOS/ <appname>
 ```
 
+### Step 7: Validate you can build, and clean-up
+
+When you are done, the structure of your `android` folder should match that of a new flutter project created with `flutter create` using a recent framework.
+
+Validate that you can build for both Android and iOS. *Note*: The first build will take a little longer (as it will download and then cache a few gradle files).
+
+```
+cd <appname>
+flutter build apk
+flutter build ios
+```
+
+Finally, once you are sure everything is working as intended, consider removing the `.old` folders.
+
 ## Working with the project after upgrading
 
-When you are done, the structure of your `android` folder should match that of a new flutter projects created with `flutter create` using a recent framework.
-
-You can now build with `flutter build apk` and run with `flutter run`. The first build will take a little longer (as it will download and then cache a few gradle files).
+You can still build with `flutter build apk` and run with `flutter run`.
 
 In addition, you can edit and build from Android Studio:
 
@@ -67,3 +79,4 @@ In addition, you can edit and build from Android Studio:
 1. Invoke File > Open...
 1. Select the `android` folder inside your main app folder, and press OK
 1. Press the Run button, or use the Run > Run menu item to build and run the app
+1. Edit java code by locating the .java file in the file tree on the right hand side.
