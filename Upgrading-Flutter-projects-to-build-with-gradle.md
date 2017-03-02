@@ -20,7 +20,7 @@ You can upgrade by running `flutter upgrade` in a terminal.
 
 ```
 flutter create <appname>
-mv <appname>/lib <appname>/lib.old
+mv <appname>/lib <appname>/lib.template
 ```
 
 ### Step 2: Merge over your Flutter UI code
@@ -64,7 +64,7 @@ Repeat this for any other resources you may have.
 **Note:** This step is only required if your app has any custom iOS code.
 
 ```
-mv <appname>/ios <appname>/ios.old
+mv <appname>/ios <appname>/ios.template
 cp -r <existing-app-dir>/ios/ <appname>
 ```
 
@@ -80,7 +80,7 @@ flutter build apk
 flutter build ios
 ```
 
-Finally, once you are sure everything is working as intended, consider removing the `.old` folders.
+Finally, once you are sure everything is working as intended, consider removing the `.template` folders.
 
 ## Working with the project after upgrading
 
