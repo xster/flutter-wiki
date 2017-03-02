@@ -4,128 +4,63 @@ Prior to [Pull Request 7902](https://github.com/flutter/flutter/pull/7902) -- wh
 
 If you have a project that was created prior to this date, please follow these steps to switch to building with gradle. This is required as we will be removing the custom build support shortly.
 
-## Upgrading an existing project
-
 *Note*: These steps apply to projects created with `flutter create` prior to February 6th 2017. If your project was based on a copy of `/examples/hello_services/`, then you just need to synchronize the contents of your `build.gradle` files from steps 4. and 5.
 
-### Step 1: Move `AndroidManifest.xml`
+## Upgrading an existing project
+
+The steps below use `<existing-app-dir>` as a placeholder for the directory containing your existing app, e.g. `~/dev/flutter/awesomeapp`.
+
+### Step 1: Create a new project with the new template
 
 ```
-cd <root dir of your project>
-mkdir -p android/app/src/main
-mv android/AndroidManifest.xml android/app/src/main/
+flutter create <appname>
+mv <appname>/lib <appname>/lib.old
 ```
 
-### Step 3: Add `gradle.properties`
-
-Create a new file `gradle.properties` in `<app root dir>/android/` with the following contents:
+### Step 2: Merge over your Dart code
 
 ```
-org.gradle.jvmargs=-Xmx1536M
+cp <existing-app-dir>/lib <appname>/
 ```
 
-### Step 4: Add `build.gradle` for the project
+### Step 3: Synchronize AndroidManifest.xml
 
-Create a new file `build.gradle` in `<app root dir>/android/` with the following contents:
+This step is only required if you made any changes to `<existing-app-dir>android/AndroidManifest.xml`.
 
-```
-buildscript {
-    repositories {
-        jcenter()
-    }
+If that is the case, apply those changes to the new manifest, `<appname>/android/app/src/main/AndroidManifest.xml` 
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
-    }
-}
+### Step 4: Synchronize pubspec.yaml
 
-allprojects {
-    repositories {
-        jcenter()
-    }
-}
+**Note:** This step is only required if you made any changes to `<existing-app-dir>/pubspec.yaml`.
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+If that is the case, apply those changes to the new manifest, `<appname>/pubspec.yaml` 
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.14.1'
-}
-```
+### Step 5: Move icon resources, and other resources as applicable
 
-
-### Step 5: Add `build.gradle` for the main module
-
-Create a new file `build.gradle` in `<app root dir>/android/app/` with the following contents:
+**Note:** This step is only required if your app has custom launcher icons.
 
 ```
-def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
-if (localPropertiesFile.exists()) {
-    localPropertiesFile.withInputStream { stream ->
-        localProperties.load(stream)
-    }
-}
-
-def flutterRoot = localProperties.getProperty('flutter.sdk')
-if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
-}
-
-apply plugin: 'com.android.application'
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-
-android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
-
-    lintOptions {
-        disable 'InvalidPackage'
-    }
-
-    defaultConfig {
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
-        }
-    }
-}
-
-flutter {
-    source '../..'
-}
-
-dependencies {
-    androidTestCompile 'com.android.support:support-annotations:25.0.0'
-    androidTestCompile 'com.android.support.test:runner:0.5'
-    androidTestCompile 'com.android.support.test:rules:0.5'
-}
+cp <existing-app-dir>/android/res <appname>android/app/src/main/
 ```
 
-### Step 6: Move icon resources
+Repeat this for any other resources you may have.
 
-This step is only required if your app has custom launcher icons.
+### Step 6: Move over iOS code if applicable
+
+**Note:** This step is only required if your app has any custom iOS code.
 
 ```
-cd <root dir of your project>
-mv android/res android/app/src/main/
+mv <appname>/iOS <appname>/iOS.old
+cp <existing-app-dir>/iOS/ <appname>
 ```
-
-### Notes
-
-For a concrete example of this, see [this commit](https://github.com/flutter/flutter/pull/8173/commits/3a7507f80bfec22e36664b766a8730dcff2f80ec) that performed this upgrade on the `/examples/flutter_gallery/` project.
 
 ## Working with the project after upgrading
 
-After upgrading you can build with `flutter build apk` and run with `flutter run`. The first build will take a little longer (as it will download and then cache a few gradle files).
+When you are done, the structure of your `android` folder should match that of a new flutter projects created with `flutter create` using a recent framework.
 
-In addition, you should now be able to edit and build from Android Studio:
+You can now build with `flutter build apk` and run with `flutter run`. The first build will take a little longer (as it will download and then cache a few gradle files).
+
+In addition, you can edit and build from Android Studio:
 
 1. Start Android Studio
 1. Invoke File > Open...
