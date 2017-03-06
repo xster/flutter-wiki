@@ -75,7 +75,7 @@ The two versions of IntelliJ are very similar. Ultimate includes plugins for web
 The recommended way of changing the JVM options in IntelliJ is from the Help | Edit Custom VM Options menu. This action will create a copy of the .vmoptions file in the IDE config directory and open an editor where you can change them (see also: 
 [configuring VM options](https://intellij-support.jetbrains.com/hc/en-us/articles/206544869-Configuring-JVM-options-and-platform-properties)).
 
-Current default values for the external version of IntelliJ:
+Current default values for IntelliJ:
 
 `-Xms128m -Xmx750m`
 
