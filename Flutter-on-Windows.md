@@ -3,7 +3,6 @@ Flutter on Windows is brand-new. **Expect some sharp edges when you try it out.*
 ## Known Issues On Windows:
 * Hot Reload is slower than it is on other platforms ([#8513](https://github.com/flutter/flutter/issues/8513))
 * The flutter test command is not supported ([#8516](https://github.com/flutter/flutter/issues/8516))
-* Spaces in paths are not supported for Hot Reload ([#8514](https://github.com/flutter/flutter/issues/8514))
 
 For other smaller issues, see our [bug tracker on GitHub](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9D%96+platform-windows%22).
 
