@@ -1,4 +1,4 @@
-Flutter on Windows is brand-new. **Expect some sharp edges when you try it out.** If you experience any issues, please file a [bug on GitHub](Flutter on Windows is brand-new. Expect some sharp edges when you try it out. If you experience any issues, please file a bug on GitHub. For Windows-related issues, feel free to mention "@goderbauer" in your bug report.). For Windows-related issues, feel free to mention "@goderbauer" in your bug report.
+Flutter on Windows is brand-new. **Expect some sharp edges when you try it out.** If you experience any issues, please file a [bug on GitHub](https://github.com/flutter/flutter/issues/new). For Windows-related issues, feel free to mention "@goderbauer" in your bug report.
 
 ## Known Issues On Windows
 * The `flutter test` command is not supported ([#8516](https://github.com/flutter/flutter/issues/8516))
