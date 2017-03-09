@@ -17,7 +17,7 @@ avoiding arguments when there are disagreements.
 
 In general, when writing code for the Flutter repository, follow our
 [Design Principles](https://flutter.io/design-principles/) for all code and
-the [Dart style guide](https://www.dartlang.org/articles/style-guide/)
+the [Dart style guide](https://www.dartlang.org/guides/language/effective-dart/style)
 for Dart code, except where that would contradict this page.
 
 We do not yet use `dartfmt`. Flutter code tends to use patterns that
