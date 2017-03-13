@@ -11,7 +11,7 @@ For other smaller issues, see our [bug tracker on GitHub](https://github.com/flu
    * If Git is already installed on your system, make sure you can run `git` from PowerShell and/or the regular Cmd command prompt.
 1. [Download](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and install the Java Platform JDK 8.
 1. Download and install Android Studio as explained in the [Android setup instructions](https://flutter.io/setup/#android-setup).
-1. Open a fresh (!) PowerShell (recommend) or Cmd command prompt window and clone the Flutter repository with the following command ( **WARNING:**Do not clone in **C** Drive, Otherwise will get "Oops; flutter has exited unexpectedly." error when run "flutter doctor" command ) :
+1. Open a fresh (!) PowerShell (recommend) or Cmd command prompt window and clone the Flutter repository with the following command:
    * `git clone https://github.com/flutter/flutter.git`
    * This creates a `flutter` sub-directory in the current directory.
 1. Add the full path to the `flutter/bin` directory created by the previous step to your `PATH` environment variable as follows:
