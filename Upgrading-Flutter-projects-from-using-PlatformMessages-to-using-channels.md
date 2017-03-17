@@ -115,8 +115,12 @@ with code like this
 
 ## Android side
 
-TBD
+Similar to Flutter side, using `io.flutter.plugin.common.FlutterMessageChannel` and `io.flutter.plugin.common.FlutterMethodChannel`.
+
+To be completed.
 
 ## iOS side
 
-TBD
+Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel` from `FlutterChannels.h`
+
+To be completed.
