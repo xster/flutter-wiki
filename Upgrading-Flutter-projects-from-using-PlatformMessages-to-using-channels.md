@@ -22,10 +22,8 @@ The following sections detail how to port code written against the old API.
 
 With the new API you define in one place the name and type of the channel you need:
 
-    var fooChannel
-      = new PlatformMessageChannel<String>('foo', const StringCodec());
-    var barChannel
-      = new PlatformMethodChannel('bar', const JSONMethodCodec());
+    var fooChannel = new PlatformMessageChannel<String>('foo', const StringCodec());
+    var barChannel = new PlatformMethodChannel('bar', const JSONMethodCodec());
 
 There are four codecs to choose from: binary, string, JSON, and standard. The standard codec employs efficient binary serialization of JSON-like values, supporting also buffers as leaf values (e.g. Dart `TypedData`, Java primitive arrays, Cocoa `NSData`).
 
@@ -86,6 +84,7 @@ with code like this
         'someMethod',
         { 'argA': 'hello', 'argB': 42 },
       );
+      // use result
     } on PlatformException catch(e) {
       // handle error
     }
