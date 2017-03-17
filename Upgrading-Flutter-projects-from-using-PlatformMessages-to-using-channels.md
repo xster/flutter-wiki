@@ -27,7 +27,7 @@ With the new API you define in one place the name and type of the channel you ne
     PlatformMethodChannel barChannel
       = new PlatformMethodChannel('bar', const JSONMethodCodec());
 
-There are four codecs to choose from; binary, string, JSON, and standard. The standard codec employs efficient binary serialization of JSON-like values, including buffers (Dart TypedData, Java primitive arrays, and similar).
+There are four codecs to choose from: binary, string, JSON, and standard. The standard codec employs efficient binary serialization of JSON-like values, supporting also buffers as leaf values (e.g. Dart `TypedData` and Java primitive arrays, Cocoa `NSData`).
 
 Once you have a channel, you can use it in multiple places without repeating the information needed for its creation.
 
