@@ -27,7 +27,9 @@ With the new API you define in one place the name and type of the channel you ne
     PlatformMethodChannel barChannel
       = new PlatformMethodChannel('bar', const JSONMethodCodec());
 
-Then you can use the channel in multiple places without repeating that information.
+There are four codecs to choose from; binary, string, JSON, and standard. The standard codec employs efficient binary serialization of JSON-like values, including buffers (Dart TypedData, Java primitive arrays, and similar).
+
+Once you have a channel, you can use it in multiple places without repeating the information needed for its creation.
 
 ## Sending messages to platform
 
@@ -116,3 +118,11 @@ with code like this
       // or
       throw new PlatformException(errorCode, anErrorMessage, someDetails);
     });
+
+## Android side
+
+TBD
+
+## iOS side
+
+TBD
