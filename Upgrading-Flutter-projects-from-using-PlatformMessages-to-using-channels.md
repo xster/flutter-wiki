@@ -115,7 +115,7 @@ with code like this
 
 ## Android side
 
-Similar to Flutter side, using `io.flutter.plugin.common.FlutterMessageChannel` and `io.flutter.plugin.common.FlutterMethodChannel`.
+Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel` from `io.flutter.plugin.common`.
 
 To be completed.
 
