@@ -22,8 +22,10 @@ The following sections detail how to port code written against the old API.
 
 With the new API you define in one place the name and type of the channel you need:
 
-    PlatformMessageChannel<String> fooChannel = new PlatformMessageChannel<String>('foo', const StringCodec());
-    PlatformMethodChannel barChannel = new PlatformMethodChannel('bar', const JSONMethodCodec());
+    PlatformMessageChannel<String> fooChannel
+      = new PlatformMessageChannel<String>('foo', const StringCodec());
+    PlatformMethodChannel barChannel
+      = new PlatformMethodChannel('bar', const JSONMethodCodec());
 
 Then you can use the channel in multiple places without repeating that information.
 
@@ -74,7 +76,11 @@ or this
       'argA': 'hello',
       'argB': 42,
     };
-    dynamic reply = await PlatformMessages.invokeMethod('bar', 'someMethod', <Map<String, dynamic>>[arguments]);
+    dynamic reply = await PlatformMessages.invokeMethod(
+     'bar',
+     'someMethod',
+     <Map<String, dynamic>>[arguments],
+    );
     // what about errors?
 
 with code like this
