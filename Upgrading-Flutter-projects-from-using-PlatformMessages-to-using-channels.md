@@ -113,16 +113,16 @@ with code like this
       throw new PlatformException(errorCode, anErrorMessage, someDetails);
     });
 
-See [flutter/examples/platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/lib/main.dart) for an example.
+See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/lib/main.dart) for an example.
 
 ## Android side
 
 Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel` from `io.flutter.plugin.common`.
 
-See [flutter/examples/platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/android/app/src/main/java/com/example/flutter/ExampleActivity.java) for an example.
+See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/android/app/src/main/java/com/example/flutter/ExampleActivity.java) for an example.
 
 ## iOS side
 
 Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel` from `FlutterChannels.h`.
 
-See [flutter/examples/platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/ios/Runner/AppDelegate.m) for an example.
+See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/ios/Runner/AppDelegate.m) for an example.
