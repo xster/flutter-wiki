@@ -60,7 +60,7 @@ with code like this
 Replace code like this
 
     Map<String, dynamic> arguments = {
-      'argA': 'baz',
+      'argA': 'hello',
       'argB': 42,
     };
     Map<String, dynamic> message = {
@@ -73,7 +73,7 @@ Replace code like this
 or this
 
     Map<String, dynamic> arguments = {
-      'argA': 'baz',
+      'argA': 'hello',
       'argB': 42,
     };
     dynamic reply = await PlatformMessages.invokeMethod(
@@ -86,7 +86,10 @@ or this
 with code like this
 
     try {
-      dynamic result = await barChannel.invokeMethod('someMethod', { 'argA': 'baz', 'argB': 42});
+      dynamic result = await barChannel.invokeMethod('someMethod', {
+        'argA': 'hello',
+        'argB': 42,
+      });
     } on PlatformException catch(e) {
       // handle error
     }
