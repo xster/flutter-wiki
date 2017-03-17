@@ -7,7 +7,7 @@ Prior to pull requests [flutter/flutter#8837](https://github.com/flutter/flutter
 
 These methods have been removed, leaving only methods for sending unencoded binary messages. A new channel concept has been introduced in their place:
 
-* `PlatformMessageChannel`, `PlatformMethodChannel` (Dart)
+* [`PlatformMessageChannel`](https://docs.flutter.io/flutter/services/PlatformMessageChannel-class.html), [`PlatformMethodChannel`](https://docs.flutter.io/flutter/services/PlatformMethodChannel-class.html) (Dart)
 * `FlutterMessageChannel`, `FlutterMethodChannel` (Android, iOS)
 
 The main goals of the new API are to achieve
