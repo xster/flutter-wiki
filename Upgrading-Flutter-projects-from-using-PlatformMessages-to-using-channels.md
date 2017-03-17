@@ -22,9 +22,9 @@ The following sections detail how to port code written against the old API.
 
 With the new API you define in one place the name and type of the channel you need:
 
-    PlatformMessageChannel<String> fooChannel
+    var fooChannel
       = new PlatformMessageChannel<String>('foo', const StringCodec());
-    PlatformMethodChannel barChannel
+    var barChannel
       = new PlatformMethodChannel('bar', const JSONMethodCodec());
 
 There are four codecs to choose from: binary, string, JSON, and standard. The standard codec employs efficient binary serialization of JSON-like values, supporting also buffers as leaf values (e.g. Dart `TypedData`, Java primitive arrays, Cocoa `NSData`).
@@ -61,8 +61,8 @@ with code like this
 
 Replace code like this
 
-    Map<String, dynamic> arguments = { 'argA': 'hello', 'argB': 42 };
-    Map<String, dynamic> message = {
+    var arguments = { 'argA': 'hello', 'argB': 42 };
+    var message = {
       'method': 'someMethod',
       'args': <Map<String, dynamic>>[arguments],
     };
@@ -71,7 +71,7 @@ Replace code like this
 
 or this
 
-    Map<String, dynamic> arguments = { 'argA': 'hello', 'argB': 42 };
+    var arguments = { 'argA': 'hello', 'argB': 42 };
     dynamic reply = await PlatformMessages.invokeMethod(
       'bar',
       'someMethod',
@@ -96,7 +96,7 @@ Replace code like this
 
     PlatformMessages.setJSONMessageHandler('bar', (dynamic methodCall) async {
       String method = methodCall['method'];
-      List<dynamic> arguments = methodCall['args'];
+      List arguments = methodCall['args'];
       // handle call then
       return result;
       // but what about errors?
