@@ -73,9 +73,9 @@ or this
 
     Map<String, dynamic> arguments = { 'argA': 'hello', 'argB': 42 };
     dynamic reply = await PlatformMessages.invokeMethod(
-     'bar',
-     'someMethod',
-     <Map<String, dynamic>>[arguments],
+      'bar',
+      'someMethod',
+      <Map<String, dynamic>>[arguments],
     );
     // what about errors?
 
