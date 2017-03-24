@@ -118,10 +118,34 @@ See [platform_services](https://github.com/flutter/flutter/blob/master/examples/
 
 Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel` from `io.flutter.plugin.common`.
 
-See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/android/app/src/main/java/com/example/flutter/ExampleActivity.java) for an example.
+    FlutterView view = ...
+    FlutterMessageChannel<String> fooChannel = new FlutterMessageChannel<>(view, "foo", StringCodec.INSTANCE);
+    
+    fooChannel.send(myString);
+    // or if you need to handle a reply:
+    fooChannel.send(myString, new ReplyHandler<String>() {
+      public void onReply(String reply) {
+        // do something with reply
+      }
+    });
+
+See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/android/app/src/main/java/com/example/flutter/ExampleActivity.java) for another example.
 
 ## iOS side
 
 Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel` from `FlutterChannels.h`.
 
-See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/ios/Runner/AppDelegate.m) for an example.
+    FlutterViewController controller = ...
+    FlutterMessageChannel* fooChannel =
+      [FlutterMessageChannel messageChannelNamed:@"foo"
+                                 binaryMessenger:controller
+                                           codec:[FlutterStringCodec sharedInstance]];
+    
+    [fooChannel sendMessage:myString];
+    // or if you need to handle a reply:
+    [fooChannel sendMessage:myString replyHandler:^(id reply) {
+        // do something with (NSString*)reply
+    }];
+    
+
+See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/ios/Runner/AppDelegate.m) for another example.
