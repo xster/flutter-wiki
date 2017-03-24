@@ -119,7 +119,8 @@ See [platform_services](https://github.com/flutter/flutter/blob/master/examples/
 Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel` from `io.flutter.plugin.common`.
 
     FlutterView view = ...
-    FlutterMessageChannel<String> fooChannel = new FlutterMessageChannel<>(view, "foo", StringCodec.INSTANCE);
+    FlutterMessageChannel<String> fooChannel = 
+      new FlutterMessageChannel<>(view, "foo", StringCodec.INSTANCE);
     
     fooChannel.send(myString);
     // or if you need to handle a reply:
