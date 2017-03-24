@@ -123,7 +123,9 @@ Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel
       new FlutterMessageChannel<>(view, "foo", StringCodec.INSTANCE);
     
     fooChannel.send(myString);
+    
     // or if you need to handle a reply:
+    
     fooChannel.send(myString, new ReplyHandler<String>() {
       public void onReply(String reply) {
         // do something with reply
@@ -143,9 +145,11 @@ Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel
                                            codec:[FlutterStringCodec sharedInstance]];
     
     [fooChannel sendMessage:myString];
+    
     // or if you need to handle a reply:
+    
     [fooChannel sendMessage:myString replyHandler:^(id reply) {
-        // do something with (NSString*)reply
+      // do something with (NSString*)reply
     }];
     
 
