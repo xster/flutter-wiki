@@ -132,7 +132,7 @@ Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel
       }
     });
 
-See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/android/app/src/main/java/com/example/flutter/ExampleActivity.java) for another example.
+[API documentation](https://docs.flutter.io/javadoc/). See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/android/app/src/main/java/com/example/flutter/ExampleActivity.java) for another example.
 
 ## iOS side
 
@@ -153,4 +153,4 @@ Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel
     }];
     
 
-See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/ios/Runner/AppDelegate.m) for another example.
+[API](https://github.com/flutter/engine/tree/master/shell/platform/darwin/ios/framework/Headers) (documentation pending). See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/ios/Runner/AppDelegate.m) for another example.
