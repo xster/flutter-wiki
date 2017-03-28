@@ -12,7 +12,6 @@ Flutter Wiki
 - [[Issue triage process]]
 
 ## Tips
-- [[Developer best practices]]
 - [[Making animated GIFs of Flutter apps]]
 - [[Updating Material Design Fonts]]
 - [[Hot Reload]]
