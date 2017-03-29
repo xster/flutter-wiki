@@ -112,7 +112,7 @@ with code like this
       throw new PlatformException(errorCode, anErrorMessage, someDetails);
     });
 
-See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/lib/main.dart) for an example.
+See [platform_channel](https://github.com/flutter/flutter/blob/master/examples/platform_channel/lib/main.dart) for an example.
 
 ## Android side
 
@@ -132,7 +132,7 @@ Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel
       }
     });
 
-[API documentation](https://docs.flutter.io/javadoc/). See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/android/app/src/main/java/com/example/flutter/ExampleActivity.java) for another example.
+[API documentation](https://docs.flutter.io/javadoc/). See [platform_channel](https://github.com/flutter/flutter/blob/master/examples/platform_channel/android/app/src/main/java/com/example/platformchannel/MainActivity.java) for another example.
 
 ## iOS side
 
@@ -153,4 +153,4 @@ Similar to Flutter side, using `FlutterMessageChannel` and `FlutterMethodChannel
     }];
     
 
-[API](https://github.com/flutter/engine/tree/master/shell/platform/darwin/ios/framework/Headers) (documentation pending). See [platform_services](https://github.com/flutter/flutter/blob/master/examples/platform_services/ios/Runner/AppDelegate.m) for another example.
+[API](https://github.com/flutter/engine/tree/master/shell/platform/darwin/ios/framework/Headers) (documentation pending). See [platform_channel](https://github.com/flutter/flutter/blob/master/examples/platform_channel/ios/Runner/AppDelegate.m) for another example.
