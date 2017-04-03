@@ -6,7 +6,11 @@ This document describes the style guide for Flutter code (Dart code that runs in
 
 ## Rationale
 
-Code that is displayed inside of flutter.io documentation is intended to serve as examples of how _application developers_ would write their own Flutter code, while balancing terseness for the purposes of documentation flow and illustrative purposes, as well as helping to make Flutter appear modern for mobile developers. Because the [Flutter repo's style guide][repo-style] has different goals and a different audience (developers writing code for the Flutter repo), we created this style guide as an "amendment" to the Flutter Repo style guide.
+Code that is displayed inside of flutter.io documentation is intended to serve as examples of how _application developers_ would write their own Flutter code, while balancing terseness for the purposes of documentation flow and illustrative purposes, as well as helping to make Flutter appear modern for mobile developers.
+
+Flutter uses [strong mode][strongmode] to deliver a sound type system, which can provide some type inferencing. Application developers can rely on type inference to provide types for variables, without having to explicitly write the types in their code. Code for flutter.io's documentation can take advantage of this feature for decreased verbosity and increased appeal by modern mobile developers.
+
+Because the [Flutter repo's style guide][repo-style] has different goals and a different audience (developers writing code for the Flutter repo), we created this style guide as an "amendment" to the Flutter Repo style guide.
 
 ## Style guide
 
@@ -60,3 +64,4 @@ var fruits = ['apples', 'bananas', 'strawberries'];
 
 
 [repo-style]: https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo
+[strongmode]: https://www.dartlang.org/guides/language/sound-dart
