@@ -14,13 +14,13 @@ Because the [Flutter repo's style guide][repo-style] has different goals and a d
 
 ## Style guide
 
-Code that is displayed on [flutter.io][] should follow the [Flutter repo style guide][repo-style], unless contradicted by this document.
+Code that is displayed on https://flutter.io should follow the [Flutter repo style guide][repo-style], unless contradicted by this document.
 
 ### MUST: Formatting
 
 Use `dartfmt` to format the code. Application developers have the `dartfmt` tool, and thus the code they see on the website should look like the code they will write when building their own applications.
 
-Use _trailing commas_ to generate easier-to-read `build()` methods. To learn more about trailing commas and formatting Flutter code, see [https://flutter.io/formatting/][].
+Use _trailing commas_ to generate easier-to-read `build()` methods. To learn more about trailing commas and formatting Flutter code, see https://flutter.io/formatting/.
 
 The website's Travis CI jobs can enforce styles by using the `dartfmt` tool during a website build.
 
