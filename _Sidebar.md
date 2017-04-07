@@ -17,6 +17,7 @@ Flutter Wiki
 - [[Hot Reload]]
 - [[Creating Responsive Apps]]
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
+- [[Catching Crashes]]
 
 ## Commands
 - [[The flutter daemon mode]]
