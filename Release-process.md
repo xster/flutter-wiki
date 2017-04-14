@@ -1,6 +1,5 @@
 This is the process for updating the "alpha" branch.
 
-0. Remove [the code in the flutter tool](https://github.com/flutter/flutter/issues/9258) that upgrades you from alpha to master.
 1. Ensure everything is green [on Travis](https://travis-ci.org/flutter/flutter/builds) and [on the infra bots](https://build.chromium.org/p/client.flutter/waterfall) and on the cocoon dashboard.  The quick way to check is to load https://flutter-dashboard.appspot.com/api/public/build-status and ensure is says "{"AnticipatedBuildStatus":"Succeeded"}".
 2. Ensure there are no issues labeled [TODAY](https://github.com/flutter/flutter/labels/%E2%9A%A0%20TODAY).
 3. Notify [Gitter](https://gitter.im/flutter/flutter), that you updating the alpha branch. Wait for a few minutes to make sure people have a chance to let you know of any reason to not release the alpha branch.
