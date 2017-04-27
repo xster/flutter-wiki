@@ -86,6 +86,14 @@ The `restart()` restarts the given application. It returns a Map of `{ int code,
 - `fullRestart`: optional; whether to do a full (rather than an incremental) restart of the application
 - `pause`: optional; when doing a hot restart the isolate should enter a paused mode
 
+#### callServiceExtension
+
+The `callServiceExtension()` allows clients to make arbitrary calls to service protocol extensions. It returns a `Map` - the result returned by the service protocol method.
+
+- `appId`: the id of a previously started app; this is required.
+- `methodName`: the name of the service protocol extension to invoke; this is required.
+- `params`: an optional Map of parameters to pass to the service protocol extension.
+
 #### stop
 
 The `stop()` command takes one parameter, `appId`. It returns a `bool` to indicate success or failure in stopping an app.
