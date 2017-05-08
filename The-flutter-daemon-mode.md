@@ -61,7 +61,7 @@ The `daemon.logMessage` event is sent whenever a log message is created - either
 
 #### showMessage
 
-The `daemon.showMessage` event is sent by the daemon when some if would be useful to show a message to the user. This could be an error notification or a notification that some development tools are not configured or not installed. The JSON message will contains an `event` field with the value `daemon.showMessage`, and an `params` field containing a map with `title` and `message` fields.
+The `daemon.showMessage` event is sent by the daemon when some if would be useful to show a message to the user. This could be an error notification or a notification that some development tools are not configured or not installed. The JSON message will contains an `event` field with the value `daemon.showMessage`, and an `params` field containing a map with `level`, `title`, and `message` fields. The valid options for `level` are `info`, `warning`, and `error`.
 
 It is up to the client to decide how best to display the message; for some clients, it may map well to a toast style notification. There is an implicit contract that the daemon will not send too many messages over some reasonable period of time.
 
