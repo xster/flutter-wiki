@@ -2,7 +2,7 @@ Introduction
 ------------
 
 _Please also read our [Design Principles](https://flutter.io/design-principles/) which
-includes our code review philosophy, and our code of conduct._
+includes our code review philosophy and our code of conduct._
 
 This style guide describes the preferred style for code written as part of the Flutter
 project (the framework itself and all our sample code). Flutter application developers
