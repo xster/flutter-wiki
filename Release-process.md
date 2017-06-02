@@ -20,6 +20,7 @@ This is the process for updating the "alpha" branch.
    ```shell
    git tag $VERSION
    git push upstream $VERSION
+   git push upstream --tags
    ```
 1. Roll alpha:
    ```
