@@ -9,6 +9,7 @@ Flutter Wiki
 
 ## Process
 - [[Release process]]
+- [[Bug prioritization]]
 
 ## Tips
 - [[Making animated GIFs of Flutter apps]]
