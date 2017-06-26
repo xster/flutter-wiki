@@ -9,7 +9,6 @@ Flutter Wiki
 
 ## Process
 - [[Release process]]
-- [[Issue triage process]]
 
 ## Tips
 - [[Making animated GIFs of Flutter apps]]
