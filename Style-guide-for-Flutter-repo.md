@@ -197,6 +197,38 @@ The documentation should use consistent terminology:
 
 Typedef dartdocs should usually start with the phrase "Signature for...".
 
+### Provide sample code
+Sample code helps developers learn your API quickly. Writing sample code also helps you think through how your API is going to be used by app developers. 
+
+For example, below is the sample code for building an infinite list of children with the ListView widget:
+
+```dart
+new ListView.builder(
+  padding: new EdgeInsets.all(8.0),
+  itemExtent: 20.0,
+  itemBuilder: (BuildContext context, int index) {
+    return new Text('entry $index');
+  },
+) 
+```
+
+### Provide illustrations, diagrams or screenshots
+
+For any widget that draws pixels on the screen, showing how it looks like in its API doc helps developers decide if the widget is useful and learn how to customize it. All illustrations should be easily reproducible, e.g. by running a Flutter app or a script.
+
+Examples:
+
+* A diagram for the AppBar widget
+
+![image](https://flutter.github.io/assets-for-api-docs/material/app_bar.png)
+
+
+* A screenshot for the Card widget
+
+![image](https://user-images.githubusercontent.com/348942/28338544-2c3681b8-6bbe-11e7-967d-fcd7c830bf53.png)
+
+
+
 Coding patterns and catching bugs early
 ---------------------------------------
 
