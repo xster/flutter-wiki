@@ -10,6 +10,7 @@ Flutter Wiki
 ## Process
 - [[Release process]]
 - [[Bug prioritization]]
+- [[Upgrading dependencies]]
 
 ## Tips
 - [[Making animated GIFs of Flutter apps]]
