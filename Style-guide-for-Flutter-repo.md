@@ -185,7 +185,8 @@ convoluted, then rewrite the API rather than trying to document it.
 
 Put the answer to your question where you went to look for the answer. That way, the
 documentation will consist of answers to real questions, where people would look to
-find them.
+find them. Do this right away; it's fine if your otherwise-unrelated PR has a bunch of
+documentation fixes in it to answer questions you had while you were working on your PR.
 
 
 ### Canonical terminology
@@ -194,11 +195,16 @@ The documentation should use consistent terminology:
 
  * _method_ - a member of a class that is a non-anonymous closure
  * _function_ - a callable non-anonymous closure that isn't a member of a class
+ * _parameter_ - the variable used in a method body.
+ * _argument_ - the value passed to a method call.
 
 Typedef dartdocs should usually start with the phrase "Signature for...".
 
 ### Provide sample code
-Sample code helps developers learn your API quickly. Writing sample code also helps you think through how your API is going to be used by app developers. 
+
+Sample code helps developers learn your API quickly. Writing sample code also helps you think through how your API is going to be used by app developers.
+
+Sample code should go in a section of the documentation that has a `## Sample code` header. This will then be checked by automated tools.
 
 For example, below is the sample code for building an infinite list of children with the ListView widget:
 
@@ -292,6 +298,8 @@ Use `switch` if you are examining an enum (and avoid using `if` chains
 with enums), since the analyzer will warn you if you missed any of the
 values when you use `switch`.
 
+Similarly, avoid using `? ... : ...` with expressions involving enums.
+
 
 ### Prefer specialized functions, methods and constructors
 
@@ -341,7 +349,6 @@ Start the method with any asserts you need to validate the value.
 Prefer using a local const or a static const in a relevant class than using a
 global constant.
 
-
 ### Avoid using "var"
 
 All variables and arguments are typed; avoid "dynamic" or "Object" in
@@ -363,7 +370,7 @@ the exception that "as" raises).
 Naming
 ------
 
-### Begin constant names with prefix "k"
+### Begin global constant names with prefix "k"
 
 Examples:
 
@@ -372,6 +379,8 @@ const double kParagraphSpacing = 1.5;
 const String kSaveButtonTitle = 'Save';
 const Color _kBarrierColor = Colors.black54;
 ```
+
+However, where possible avoid global constants. Rather than `kDefaultButtonColor`, consider `Button.defaultColor`. If necessary, consider creating a class with a private constructor to hold relevant constants.
 
 
 ### Naming rules for typedefs and function variables
@@ -436,18 +445,51 @@ documented top-level library intended to be imported by users.
 Formatting
 ----------
 
-These guidelines have not technical effect, but they are still important purely
+These guidelines have no technical effect, but they are still important purely
 for consistency and readability reasons.
 
-### Order class members by typical lifecycle
-
-Class constructors and methods should be ordered in the order that
-their members will be used in an instance's typical lifecycle. In
-particular, this means constructors all come first in class
-declarations.
+### Constructors come first in a class
 
 The default (unnamed) constructor should come first, then the named
-constructors.
+constructors. They should come before anything else (including, e.g., constants or static methods).
+
+This helps readers determine whether the class has a default implied constructor or not at a glance. If it was possible for a constructor to be anywhere in the class, then the reader would have to examine every line of the class to determine whether or not there was an implicit constructor or not.
+
+
+### Order other class members in a way that makes sense
+
+The methods, properties, and other members of a class should be in an order that
+will help readers understand how the class works.
+
+If there's a clear lifecycle, then the order in which methods get invoked would be useful, for example an  `initState` method coming before `dispose`. This helps readers because the code is in chronological order, so
+they can see variables get initialized before they are used, for instance. Fields should come before the methods that manipulate them, if they are specific to a particular group of methods.
+
+> For example, RenderObject groups all the layout fields and layout
+> methods together, then all the paint fields and paint methods, because layout
+> happens before paint.
+
+If no particular order is obvious, then the following order is suggested, with blank lines between each one:
+
+1. Constructors, with the default constructor first.
+2. Constants of the same type as the class.
+3. Static methods that return the same type as the class.
+4. Final fields that are set from the constructor.
+5. Other static methods.
+6. Static properties and constants.
+7. Mutable properties, each in the order getter, private field, setter, without newlines separating them.
+8. Read-only properties (other than `hashCode`).
+9. Operators (other than `==`).
+10. Methods (other than `toString` and `build`).
+11. The `build` method, for `Widget` and `State` classes.
+12. `operator ==`, `hashCode`, `toString`, and diagnostics-related methods, in that order.
+
+Be consistent in the order of members. If a constructor lists multiple
+fields, then those fields should be declared in the same order, and
+any code that operates on all of them should operate on them in the
+same order (unless the order matters).
+
+
+### Constructor syntax
 
 If you call `super()` in your initializer list, put a space between the
 constructor arguments' closing parenthesis and the colon. If there's
@@ -458,42 +500,27 @@ to the superclass.
 ```dart
 // one-line constructor example
 abstract class Foo extends StatelessWidget {
-  Foo({ Key key, this.child }) : super(key: key);
+  Foo(this.bar, { Key key, this.child }) : super(key: key);
+  final int bar;
   final Widget child;
   // ...
 }
 
 // fully expanded constructor example
-abstract class Bar extends StatelessWidget {
-  Bar({
+abstract class Foo extends StatelessWidget {
+  Foo(
+    this.bar, {
     Key key,
     Widget childWidget,
-  })
-      : child = childWidget,
-        super(
-          key: key,
-        );
+  }) : child = childWidget,
+       super(
+         key: key,
+       );
+  final int bar;
   final Widget child;
   // ...
 }
 ```
-
-
-### Prefer grouping methods and fields by function, not by type
-
-Fields should come before the methods that manipulate them, if they
-are specific to a particular group of methods.
-
-> For example, RenderObject groups all the layout fields and layout
-> methods together, then all the paint fields and paint methods.
-
-Fields that aren't specific to a particular group of methods should
-come immediately after the constructors.
-
-Be consistent in the order of members. If a constructor lists multiple
-fields, then those fields should be declared in the same order, and
-any code that operates on all of them should operate on them in the
-same order (unless the order matters).
 
 
 ### Prefer line length of 80 characters
@@ -569,7 +596,7 @@ foo2(bar, baz);
 
 ### Prefer single quotes for strings
 
-But use double quotes for nested strings.
+Use double quotes for nested strings.
 
 Example:
 
@@ -599,16 +626,6 @@ String capitalize(String s) {
   return '${s[0].toUpperCase()}${s.substring(1)}';
 }
 ```
-
-### Use braces for long functions and methods
-
-When using `{ }` braces, put a space or a newline after the open
-brace and before the closing brace. (If the block is empty, the same
-space will suffice for both.) Use spaces if the whole block fits on
-one line, and newlines if you need to break it over multiple lines.
-
-Note, we do not put space in the empty map literal `{}`, but we do type it, so
-it looks like `<Foo, Bar>{}`).
 
 ### Use `=>` for inline callbacks that just return list or map literals
 
@@ -667,6 +684,11 @@ of the line that has the opening punctuation, so that you can easily determine
 what's going on by just scanning the indentation on the left edge.
 
 
+### Use braces for long functions and methods
+
+Use a block (with braces) when a body would wrap onto more than one line (as opposed to using `=>`; the cases where you can use `=>` are discussed in the previous two guidelines).
+
+
 ### Separate the 'if' expression from its statement
 
 Don't put the statement part of an 'if' statement on the same line as
@@ -684,51 +706,10 @@ if (notReady) return;
 // GOOD:
 if (notReady)
   return;
-```
 
-
-### Avoid using braces for one-line long control structure statements
-
-If a flow control structure's statement is one line long, then don't
-use braces around it, unless it's part of an "if" chain and any of the
-other blocks have more than one line. (Keeping the code free of
-boilerplate or redundant punctuation keeps it concise and readable.
-The analyzer will catch "goto fail"-style errors with its dead-code
-detection.)
-
-Example:
-
-<!-- skip -->
-```dart
-// BAD:
-if (children != null) {
-  for (RenderBox child in children) {
-    add(child);
-  }
-}
-
-// GOOD:
-if (children != null) {
-  for (RenderBox child in children)
-    add(child);
-}
-
-// Don't use braces if nothing in the chain needs them
-if (a != null)
-  a();
-else if (b != null)
-  b();
-else
-  c();
-
-// Use braces everywhere if at least one block in the chain needs them
-if (a != null) {
-  a();
-} else if (b != null) {
-  b();
-} else {
-  c();
-  d();
+// ALSO GOOD:
+if (notReady) {
+  return;
 }
 ```
 
