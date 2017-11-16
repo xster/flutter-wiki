@@ -5,7 +5,8 @@ Flutter Wiki
 
 - [[Home]]
 - [Developer Site](https://flutter.io/)
-- [API Reference](https://docs.flutter.io/index.html)
+- [API Reference (release)](https://docs.flutter.io/index.html)
+- [API Reference (master)](https://master-docs-flutter-io.firebaseapp.com/)
 
 ## Process
 - [[Release process]]
