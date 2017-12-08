@@ -233,7 +233,25 @@ Examples:
 
 ![image](https://user-images.githubusercontent.com/348942/28338544-2c3681b8-6bbe-11e7-967d-fcd7c830bf53.png)
 
+### Clearly mark deprecated APIs
 
+According to Flutter's [Design Principles](https://flutter.io/design-principles/#handling-breaking-changes),
+use `@deprecated` with a clear
+recommendation of what to use instead.
+
+In some cases, using `@deprecated` will turn the tree red for longer than the Flutter team
+can accommodate. In those cases, and when we want to give developers enough time to
+move to the new API, you should use this format:
+
+```dart
+// GOOD
+
+/// (Deprecated, use [lib.class] instead) Original one-line statement.
+///
+/// A longer, one-liner that explains the context for the deprecation.
+///
+/// The rest of the comments
+```
 
 Coding patterns and catching bugs early
 ---------------------------------------
