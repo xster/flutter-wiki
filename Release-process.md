@@ -44,7 +44,7 @@ If a bug is found on an alpha branch, please mark that branch as bad on the [Bad
 
 ## Rolling Beta
 
-This is the processing for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the alpha branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
+This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the alpha branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
 
 1. If today is a Friday, Saturday, or Sunday, go have fun until Monday. We don't roll over the weekend.
 1. Pick [an alpha branch roll commit](https://github.com/flutter/flutter/commits/alpha/VERSION) (that's one of the commits to the `/VERSION` file that removes the "-dev" suffix) that is at least seven days old, and that is not listed on the [[Bad Alphas]] page, and that is newer than the current latest commit on the `beta` branch.
