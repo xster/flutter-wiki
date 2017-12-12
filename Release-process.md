@@ -47,9 +47,9 @@ If a bug is found on an alpha branch, please mark that branch as bad on the [Bad
 This is the processing for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the alpha branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
 
 1. If today is a Friday, Saturday, or Sunday, go have fun until Monday. We don't roll over the weekend.
-1. Pick [an alpha branch roll commit](https://github.com/flutter/flutter/commits/alpha/VERSION) (that's one of the commits to the `/VERSION` file that removes the "-dev" suffix) that is at least seven days old, and that is not listed on the [Bad Alphas](https://github.com/flutter/flutter/wiki/Bad-Alphas) page, and that is newer than the current latest commit on the `beta` branch.
+1. Pick [an alpha branch roll commit](https://github.com/flutter/flutter/commits/alpha/VERSION) (that's one of the commits to the `/VERSION` file that removes the "-dev" suffix) that is at least seven days old, and that is not listed on the [[Bad Alphas]] page, and that is newer than the current latest commit on the `beta` branch.
 1. Push that commit to the `beta` branch.
-1. Send an e-mail that includes the latest section of [the Changelog page](https://github.com/flutter/flutter/wiki/Changelog).
-1. Update [the Changelog page](https://github.com/flutter/flutter/wiki/Changelog) so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
+1. Send an e-mail that includes the latest section of the [[Changelog]] page.
+1. Update the [[Changelog]] page so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
 1. Write a script to automate this process.
 1. Done!
