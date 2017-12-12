@@ -33,6 +33,6 @@ This is the process for updating the "alpha" branch.
    ```
    bin/cache/dart-sdk/bin/dart dev/tools/update_versions.dart --increment
    ```
-1. Submit a PR for the resulting diff. Await an LGTM and green tests and a green build, as for a normal patch.
+1. Commit locally, push to your fork, and submit a PR for the resulting diff. Await an LGTM and green tests and a green build, as for a normal patch.
 1. Write a script to automate this process.
 1. Done!
