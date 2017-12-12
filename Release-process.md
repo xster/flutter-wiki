@@ -9,7 +9,7 @@ This is the process for updating the "alpha" branch.
    bin/cache/dart-sdk/bin/dart dev/tools/update_versions.dart --release
    ```
    The script will output commands to tag the repo at a later step. Do not run these yet.
-1. Submit a PR for the resulting diff. Await an LGTM and green tests and a green build, as for a normal patch.
+1. Commit locally, push to your fork, and submit a PR for the resulting diff. Await an LGTM, green tests and a green build, as for a normal patch, and then merge it.
 1. Fetch the change locally:
    ```
    git fetch upstream
