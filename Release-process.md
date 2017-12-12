@@ -49,10 +49,10 @@ This is the processing for rolling the "beta" branch. The beta branch holds a ve
 1. If today is a Friday, Saturday, or Sunday, go have fun until Monday. We don't roll over the weekend.
 1. Pick [an alpha branch roll commit](https://github.com/flutter/flutter/commits/alpha/VERSION) (that's one of the commits to the `/VERSION` file that removes the "-dev" suffix) that is at least seven days old, and that is not listed on the [[Bad Alphas]] page, and that is newer than the current latest commit on the `beta` branch.
 1. Push that commit to the `beta` branch (VERSION is the git hash of the selected version):
-```
-git checkout VERSION
-git push upstream HEAD:beta
-```
+   ```
+   git checkout VERSION
+   git push upstream HEAD:beta
+   ```
 1. Send an e-mail to flutter-dev that includes the latest section of the [[Changelog]] page.
 1. Update the [[Changelog]] page so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
 1. Write a script to automate this process.
