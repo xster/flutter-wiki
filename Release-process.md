@@ -1,7 +1,9 @@
-This is the process for updating the "alpha" branch.
+## Rolling Alpha
 
-1. Ensure there are no issues labeled [TODAY](https://github.com/flutter/flutter/labels/%E2%9A%A0%20TODAY). These are issues people have found that are critical regressions.
+This is the process for updating the "alpha" branch. This should happen _at least_ once a week, ideally more often.
+
 1. If today is a Friday, Saturday, or Sunday, go have fun until Monday. We don't roll over the weekend.
+1. Ensure there are no issues labeled [TODAY](https://github.com/flutter/flutter/labels/%E2%9A%A0%20TODAY). These are issues people have found that are critical regressions. If there are any such bugs, please work with the relevant engineers to have them fixed.
 1. Notify everyone on [our Gitter channel](https://gitter.im/flutter/flutter) that you're starting to update the alpha branch.
 1. On a clean branch of the Flutter repository, run:
    ```
@@ -34,5 +36,18 @@ This is the process for updating the "alpha" branch.
    bin/cache/dart-sdk/bin/dart dev/tools/update_versions.dart --increment
    ```
 1. Commit locally, push to your fork, and submit a PR for the resulting diff. Await an LGTM and green tests and a green build, as for a normal patch.
+1. Write a script to automate this process.
+1. Done!
+
+If a bug is found on an alpha branch, please mark that branch as bad on the [Bad Alphas](https://github.com/flutter/flutter/wiki/Bad-Alphas) page.
+
+
+## Rolling Beta
+
+1. If today is a Friday, Saturday, or Sunday, go have fun until Monday. We don't roll over the weekend.
+1. Pick [an alpha branch roll commit](https://github.com/flutter/flutter/commits/alpha/VERSION) (that's one of the commits to the `/VERSION` file that removes the "-dev" suffix) that is at least seven days old, and that is not listed on the [Bad Alphas](https://github.com/flutter/flutter/wiki/Bad-Alphas) page, and that is newer than the current latest commit on the `beta` branch.
+1. Push that commit to the `beta` branch.
+1. Send an e-mail that includes the latest section of [the Changelog page](https://github.com/flutter/flutter/wiki/Changelog).
+1. Update [the Changelog page](https://github.com/flutter/flutter/wiki/Changelog) so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
 1. Write a script to automate this process.
 1. Done!
