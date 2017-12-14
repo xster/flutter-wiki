@@ -760,7 +760,8 @@ if (foo.foo.foo +     bar.bar.bar *     baz -
     foo.foo.foo * 2 + bar.bar.bar * 2 * baz   > foo.foo.foo) {
   // ...
 }
-if (bar.bar.bar * 3 * baz > 2 * foo.foo.foo) { // after simplification, it fits on one line anyway
+// After simplification, it fits on one line anyway:
+if (bar.bar.bar * 3 * baz > 2 * foo.foo.foo) {
   // ...
 }
 ```
