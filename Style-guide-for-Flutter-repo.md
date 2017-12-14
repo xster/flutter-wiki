@@ -756,7 +756,7 @@ if (foo.foo.foo + bar.bar.bar * baz - foo.foo.foo * 2 +
 }
 
 // GOOD (notice how it makes it obvious that this code can be simplified):
-if (foo.foo.foo +     bar.bar.bar *     baz -
+if (foo.foo.foo     + bar.bar.bar     * baz -
     foo.foo.foo * 2 + bar.bar.bar * 2 * baz   > foo.foo.foo) {
   // ...
 }
