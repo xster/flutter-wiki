@@ -28,6 +28,18 @@ the standard Dart formatter does not handle well. We are
 [working with the Dart team](https://github.com/dart-lang/dart_style/issues/442)
 to make `dartfmt` aware of these patterns.
 
+
+In defense of the extra work that hand formatting entails
+---------------------------------------------------------
+
+Flutter code might eventually be read by hundreds of thousands of people each day.
+Code that is easier to read and understand saves these people time. Saving each
+person even a second each day translates into hours or even _days_ of saved time
+each day. The extra time spent by people contributing to Flutter directly translates
+into real savings for our developers, which translates to real benefits to our end
+users as our developers learn the framework faster.
+
+
 Comments
 --------
 
@@ -729,6 +741,45 @@ if (notReady)
 if (notReady) {
   return;
 }
+```
+
+
+### Align expressions
+
+Where possible, subexpressions on different lines should be aligned, to make the structure of the expression easier. When doing this with a `return` statement chaining `||` or `&&` operators, consider putting the operators on the left hand side instead of the right hand side.
+
+```dart
+// BAD:
+if (foo.foo.foo + bar.bar.bar * baz - foo.foo.foo * 2 +
+    bar.bar.bar * 2 * baz > foo.foo.foo) {
+  // ...
+}
+
+// GOOD (notice how it makes it obvious that this code can be simplified):
+if (foo.foo.foo +     bar.bar.bar *     baz -
+    foo.foo.foo * 2 + bar.bar.bar * 2 * baz   > foo.foo.foo) {
+  // ...
+}
+if (bar.bar.bar * 3 * baz > 2 * foo.foo.foo) { // after simplification, it fits on one line anyway
+  // ...
+}
+```
+
+```dart
+// BAD:
+return foo.x == x &&
+    foo.y == y &&
+    foo.z == z;
+
+// GOOD:
+return foo.x == x &&
+       foo.y == y &&
+       foo.z == z;
+
+// ALSO GOOD:
+return foo.x == x
+    && foo.y == y
+    && foo.z == z;
 ```
 
 
