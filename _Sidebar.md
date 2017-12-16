@@ -19,6 +19,7 @@ Flutter Wiki
 - [[Hot Reload]]
 - [[Creating Responsive Apps]]
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
+- [[Using Flutter in China]]
 
 ## Commands
 - [[The flutter daemon mode]]
