@@ -58,6 +58,8 @@ Where in doubt, please consult https://developer.android.com/studio/build/gradle
        project.evaluationDependsOn(':app')
    }
    ```
+   This change prevents a "Gradle build failed to produce an Android package" error message when your app
+   depends on plugins whose name comes before "app" in lexicographic order.
 1. In `android/app/build.gradle`, replace version `25` by `26` and `25.0.3` by `26.0.3` (three places total).
 
    Replace configurations named `compile` by `api` (or `implementation`) and `provided` by
