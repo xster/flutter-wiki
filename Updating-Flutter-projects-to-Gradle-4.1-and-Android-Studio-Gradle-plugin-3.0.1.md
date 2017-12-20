@@ -83,7 +83,9 @@ Where in doubt, please consult https://developer.android.com/studio/build/gradle
 ## Upgrading a Flutter plugin project
 
 1. Upgrade the `example/` Flutter app project as indicated above.
-1. In `android/gradle/wrapper/gradle-wrapper.properties`, replace `3.3` with `4.1` in the last line.
+1. Remove the Gradle wrapper files and folder (`gradlew`, `gradlew.bat`, `gradle/`) from the top-level
+   `android` folder, if present. The Gradle wrapper is used by the `example` app only, and it should
+   already contain these files.
 1. In `android/build.gradle`, replace
    ```gradle
    repositories {
