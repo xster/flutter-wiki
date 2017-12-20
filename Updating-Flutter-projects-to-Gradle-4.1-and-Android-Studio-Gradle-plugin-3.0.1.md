@@ -41,6 +41,23 @@ Where in doubt, please consult https://developer.android.com/studio/build/gradle
        classpath 'com.android.tools.build:gradle:3.0.1'
    }
    ```
+   
+   Finally, replace
+   ```gradle
+   subprojects {
+       project.buildDir = "${rootProject.buildDir}/${project.name}"
+       project.evaluationDependsOn(':app')
+   }
+   ```
+   by
+   ```gradle
+   subprojects {
+       project.buildDir = "${rootProject.buildDir}/${project.name}"
+   }
+   subprojects {
+       project.evaluationDependsOn(':app')
+   }
+   ```
 1. In `android/app/build.gradle`, replace version `25` by `26` and `25.0.3` by `26.0.3` (three places total).
 
    Replace configurations named `compile` by `api` (or `implementation`) and `provided` by
