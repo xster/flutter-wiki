@@ -122,6 +122,27 @@ final Color backgroundColor;
 final double radius;
 ```
 
+If you are having trouble coming up with useful documentation, here are some prompts that might help you write more detailed prose:
+
+ * If someone is looking at this documentation, it means that they have a question which they couldn't answer by guesswork or by looking at the code. What could that question be? Try to answer all questions you can come up with.
+
+ * If you were telling someone about this property, what might they want to know that they couldn't guess? For example, are there edge cases that aren't intuitive?
+
+ * Consider the type of the property or arguments. Are there cases that are outside the normal range that should be discussed? e.g. negative numbers, non-integer values, transparent colors, empty arrays, infinities, NaN, null? Discuss any that are non-trivial.
+
+ * Does this member interact with any others? For example, can it only be non-null if another is null? Will this member only have any effect if another has a particular range of values? Will this member affect whether another member has any effect, or what effect another member has?
+
+ * Does this member have a similar name or purpose to another, such that we should point to that one, and from that one to this one? Use the `See also:` pattern.
+
+ * Are there timing considerations? Any potential race conditions?
+
+ * Are there lifecycle considerations? For example, who owns the object that this property is set to? Who should `dispose()` it, if that's relevant?
+
+ * What is the contract for this property/method? Can it be called at any time? Are there limits on what values are valid? If it's a `final` property set from a constructor, does the constructor have any limits on what the property can be set to? If this is a constructor, are any of the arguments not nullable?
+
+ * If there are `Future`s involved, what are the guarantees around those? Consider whether they can complete with an error, whether they can never complete at all, what happens if the underlying operation is canceled, and so forth.
+
+
 ### Avoid empty prose
 
 It's easy to use more words than necessary. Avoid doing so
