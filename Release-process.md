@@ -1,4 +1,4 @@
-## Rolling Dev
+## Rolling the dev channel
 
 This is the process for updating the "alpha" branch. This should happen _at least_ once a week, ideally more often.
 
