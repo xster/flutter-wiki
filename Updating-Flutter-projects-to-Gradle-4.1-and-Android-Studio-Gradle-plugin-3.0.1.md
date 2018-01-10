@@ -60,7 +60,7 @@ Where in doubt, please consult https://developer.android.com/studio/build/gradle
    ```
    This change prevents a "Gradle build failed to produce an Android package" error message when your app
    depends on plugins whose name comes before "app" in lexicographic order.
-1. In `android/app/build.gradle`, replace version `25` by `26` and `25.0.3` by `26.0.3` (three places total).
+1. In `android/app/build.gradle`, replace version `25` by `27` and `25.0.3` by `27.0.3` (three places total).
 
    If you are using a version of Flutter from before [#13558](https://github.com/flutter/flutter/pull/13558),
    add the following to the `android`,`buildTypes` section:
@@ -128,7 +128,7 @@ Where in doubt, please consult https://developer.android.com/studio/build/gradle
    }
    ```
    
-   Replace version `25` by `26` and `25.0.3` by `26.0.3`.
+   Replace version `25` by `27` and `25.0.3` by `27.0.3`.
 
    Lastly, replace configurations named `compile` by `api` (or `implementation`) and `provided` by `compileOnly`
    in any custom `dependencies` section.
