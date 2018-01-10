@@ -39,7 +39,7 @@ This is the process for updating the "alpha" branch. This should happen _at leas
 1. Write a script to automate this process.
 1. Done!
 
-If a bug is found on an alpha branch, please mark that branch as bad on the [Bad Alphas](https://github.com/flutter/flutter/wiki/Bad-Alphas) page.
+If a bug is found on an alpha branch, please mark that branch as bad on the [Bad Builds](https://github.com/flutter/flutter/wiki/Bad-Alphas) page.
 
 
 ## Rolling the beta channel
