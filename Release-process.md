@@ -42,7 +42,7 @@ This is the process for updating the "alpha" branch. This should happen _at leas
 If a bug is found on an alpha branch, please mark that branch as bad on the [Bad Alphas](https://github.com/flutter/flutter/wiki/Bad-Alphas) page.
 
 
-## Rolling Beta
+## Rolling the beta channel
 
 This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the alpha branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
 
