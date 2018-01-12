@@ -11,7 +11,7 @@ We aspire to reach a state where developers are able to use the following modes 
 In addition, for our purposes during development, each of the above should be able to be built in two modes: optimized, which is what end-developers use, and unoptimized, which is what we would use when debugging the engine. Optimized is the default, unoptimized engines are built by adding `--unoptimized` to the arguments.
 
 
-Artifact differences
+### Artifact differences
 
 Debug mode produces a script snapshot, which is basically tokenized sources. Comments and whitespace are missing, literals are canonicalized. There is no machine code, tree-shaking or obfuscation.
 
