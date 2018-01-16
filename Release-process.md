@@ -13,7 +13,7 @@ This is the process for updating the "alpha" branch. This should happen _at leas
 1. On a clean branch of the Flutter repository, run:
    ```
    pushd dev/tools; pub get; popd
-   bin/cache/dart-sdk/bin/dart dev/tools/roll_dev.dart --increment=z
+   bin/cache/dart-sdk/bin/dart dev/tools/lib/roll_dev.dart --increment=z
    ```
    ...and follow the prompts.
 1. Done!
