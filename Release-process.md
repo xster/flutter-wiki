@@ -1,8 +1,6 @@
 ## Rolling the dev channel
 
-# PLEASE DON'T DO THIS RIGHT NOW, WAIT UNTIL https://github.com/flutter/flutter/pull/14061 HAS LANDED
-
-This is the process for updating the "alpha" branch. This should happen _at least_ once a week, ideally more often.
+This is the process for updating the "dev" branch. This should happen _at least_ once a week, ideally more often.
 
 1. If today is a Friday, Saturday, or Sunday, go have fun until Monday. We don't roll over the weekend.
 1. Check that the tree is green [on the cocoon dashboard](https://flutter-dashboard.appspot.com/build.html) (which includes the status of our builds [on Travis](https://travis-ci.org/flutter/flutter/builds) and [on the infra bots](https://build.chromium.org/p/client.flutter/waterfall)). If the tree isn't green, please work with the relevant engineers to fix the build, reverting bad patches if necessary.
@@ -23,7 +21,7 @@ If a bug is subsequently found on this release, please mark that commit as bad o
 
 ## Rolling the beta channel
 
-This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the alpha branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
+This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the dev branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
 
 1. If today is a Friday, Saturday, or Sunday, go have fun until Monday. We don't roll over the weekend.
 1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that is at least seven days old, that is not listed on the [[Bad Builds]] page, and that is newer than the current latest commit on the `beta` branch.
