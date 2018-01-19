@@ -23,8 +23,15 @@ If a bug is subsequently found on this release, please mark that commit as bad o
 
 This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the dev branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
 
-1. If today is a Friday, Saturday, or Sunday, go have fun until Monday. We don't roll over the weekend.
-1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that is at least seven days old, that is not listed on the [[Bad Builds]] page, and that is newer than the current latest commit on the `beta` branch.
+A few days before the scheduled beta release date, start these steps:
+
+1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that:
+    * is at least seven days old,
+    * that is not listed on the [[Bad Builds]] page,
+    * that is newer than the current latest commit on the `beta` branch,
+    * that can be used to run the [Building Beautiful UIs with Flutter](https://codelabs.developers.google.com/codelabs/flutter/#0) and the [Firebase for Flutter](https://codelabs.developers.google.com/codelabs/flutter-firebase/index.html#0) codelabs.
+   You will have to manually run the build through both code labs to verify that the build is good.
+1. Once you have found a good build, wait until the scheduled release date.
 1. Push that commit to the `beta` branch (vX.Y.Z is the tag of the selected version):
    ```
    git checkout vX.Y.Z
