@@ -11,3 +11,4 @@ Eventually we will also have a `release` build, which will be the best `beta` bu
 See also:
 
 * [[Release process]], which describes the details for how we push builds from channel to channel.
+* [[Changelog]], where we describe changes since the last beta release.
