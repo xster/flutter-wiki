@@ -7,3 +7,7 @@ Flutter has the following channels (as selected by `flutter channel`):
 * `beta`: Every few weeks, we pick the "best" `dev` build of the previous month or so, and promote it to `beta`. These builds have been tested with our [[codelabs]].
 
 Eventually we will also have a `release` build, which will be the best `beta` build of the previous year or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
+
+See also:
+
+* [[Release process]], which describes the details for how we push builds from channel to channel.
