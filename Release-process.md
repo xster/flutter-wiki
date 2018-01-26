@@ -1,3 +1,5 @@
+For an overview of the various Flutter release channels, see [[Flutter's build release channels]].
+
 ## Rolling the dev channel
 
 This is the process for updating the "dev" branch. This should happen _at least_ once a week, ideally more often.
