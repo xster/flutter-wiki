@@ -1,4 +1,4 @@
-For an overview of the various Flutter release channels, see [[Flutter's build release channels]].
+For an overview of the various Flutter release channels, see [[Flutter build release channels]].
 
 ## Rolling the dev channel
 
