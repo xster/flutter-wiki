@@ -39,3 +39,15 @@ A few days before the scheduled beta release date, start these steps:
 1. Send an e-mail to flutter-dev that includes the latest section of the [[Changelog]] page.
 1. Update the [[Changelog]] page so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
 1. Done!
+
+## Where to find released downloadable archives
+
+As part of rolling a release, an "all in one" archive of the release is created ([by this script](https://github.com/flutter/flutter/blob/master/dev/bots/prepare_package.dart)) that has:
+
+1. A clone of the git repo with the HEAD set to the hash of the release
+1. A populated pub cache
+1. A populated bin/cache with flutter tool snapshot
+1. Pre-build IntelliJ configuration
+1. A copy of MinGit on Windows
+
+A particular archive can be found by consulting [this JSON file](https://storage.googleapis.com/flutter_infra/releases/releases.json).  Once the desired release has been located, the download link for it is the combination of the `base_url` with the `mac_archive`, `linux_archive`, or `win_archive` tags on the release entry, depending upon which platform you are interested in. The hash for the currently released archive for the dev and beta channels are listed under the `current_dev` and `current_beta` tags, respectively.
