@@ -12,6 +12,7 @@ Flutter Wiki
 - [[Release process]]
 - [[Bug prioritization]]
 - [[Upgrading dependencies]]
+- [Breaking Changes](https://flutter.io/design-principles/#handling-breaking-changes)
 
 ## Tips
 - [[Making animated GIFs of Flutter apps]]
