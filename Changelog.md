@@ -1,6 +1,12 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes since 0.0.22
+## Changes in 0.0.24
+
+### API changes to ButtonTheme
+[#14410](https://github.com/flutter/flutter/pull/14410) contained a breaking API change to `ButtonTheme`.  The constructors `ButtonTheme()` and `ButtonTheme.bar()` are no longer `const` constructible, and `ButtonTheme.textTheme` is now `ButtonTheme.data.textTheme`.
+
+
+## Changes in 0.0.23
 
 ### Copy, Cut, and Paste
 [#14343](https://github.com/flutter/flutter/pull/14343) revised how copy, cut, and paste works for EditableText: The abstract class TextSelectionControls has new methods canCopy, canCut, etc. to determine if those actions are available. The TextSelectionDelegate interface now requires an additional method bringIntoView(TextPosition position) to scroll a TextPosition into the visible part of a TextField. Furthermore, that interface is no longer implemented by TextSelectionOverlay. In its place EditableTextState should be used, which implements that interface. See also: [flutter-dev/IHPndyUDy0M](https://groups.google.com/forum/#!topic/flutter-dev/IHPndyUDy0M)
@@ -12,7 +18,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 For similar reasons, the `RenderSliverBoxChildManager` interface has a new getter, `childCount`, which must return a non-null value if `createChild` can return null. In practice, it is unusual to implement this interface, so this should have no effect. It is more common to implement the widgets-layer equivalent, `SliverChildDelegate`. This interface already had an `estimatedChildCount` getter. The getter continues to exist, though its semantics have been adjusted a little to require that the returned value be accurate if the `build` method on the delegate ever returns null.
 
 
-## Changes since 0.0.20
+## Changes in 0.0.21
 
 ### InputDecorator layout has changed
 [#13734](https://github.com/flutter/flutter/pull/13734), [#14055](https://github.com/flutter/flutter/pull/14055), [#14177](https://github.com/flutter/flutter/pull/14177) substantially revised the InputDecorator et al. widgets. The layout of the input decorator's parts has changed a little, which means that the internal layout of text fields has changed as well. Tests that depend on the internal geometry of text fields will need to be updated.
