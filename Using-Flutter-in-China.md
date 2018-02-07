@@ -5,7 +5,7 @@ Taking MacOS or Linux as an example, here are the first few steps in the setup p
 ```bash
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-git clone -b alpha https://github.com/flutter/flutter.git
+git clone -b dev https://github.com/flutter/flutter.git
 export PATH="$PWD/flutter/bin:$PATH"
 cd ./flutter
 flutter doctor
