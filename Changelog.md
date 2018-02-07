@@ -3,7 +3,12 @@ This page documents interesting or noteworthy changes, including all notable bre
 ## Changes in 0.0.24
 
 ### API changes to ButtonTheme
-[#14410](https://github.com/flutter/flutter/pull/14410) contained a breaking API change to `ButtonTheme`.  The constructors `ButtonTheme()` and `ButtonTheme.bar()` are no longer `const` constructible, and `ButtonTheme.textTheme` is now `ButtonTheme.data.textTheme`.
+[#14410](https://github.com/flutter/flutter/pull/14410) contained a breaking API change to `ButtonTheme`:
+* The constructors `ButtonTheme()` and `ButtonTheme.bar()` are no longer `const` constructible
+* `ButtonTheme.textTheme` is now `ButtonTheme.data.textTheme`
+* `ButtonTheme.minWidth` is now `ButtonTheme.data.minWidth`
+* `ButtonTheme.height` is now `ButtonTheme.data.height`
+* `ButtonTheme.padding` is now `ButtonTheme.data.padding`
 
 
 ## Changes in 0.0.23
