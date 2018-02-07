@@ -2,7 +2,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in 0.0.24
 
-### API changes to ButtonTheme
+### API changes to material buttons
 [#14410](https://github.com/flutter/flutter/pull/14410) contained a breaking API change to `ButtonTheme`:
 * The constructors `ButtonTheme()` and `ButtonTheme.bar()` are no longer `const` constructible
 * `ButtonTheme.textTheme` is now `ButtonTheme.data.textTheme`
@@ -10,6 +10,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 * `ButtonTheme.height` is now `ButtonTheme.data.height`
 * `ButtonTheme.padding` is now `ButtonTheme.data.padding`
 
+[#14410](https://github.com/flutter/flutter/pull/14410) changed the hierarchy of `FlatButton` and `RaisedButton` - they both inherit from `RawMaterialButton` now rather than from `MaterialButton`.
 
 ## Changes in 0.0.23
 
