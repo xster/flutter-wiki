@@ -12,6 +12,8 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 [#14410](https://github.com/flutter/flutter/pull/14410) changed the hierarchy of `FlatButton` and `RaisedButton` - they both inherit from `RawMaterialButton` now rather than from `MaterialButton`.
 
+[#14410](https://github.com/flutter/flutter/pull/14410) changed `RaisedButton` to no longer cast a shadow when disabled.
+
 ## Changes in 0.0.23
 
 ### Copy, Cut, and Paste
