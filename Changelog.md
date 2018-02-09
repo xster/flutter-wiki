@@ -1,5 +1,21 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
+## Changes in 0.0.25
+
+### Removing default constructors from dart:ui classes
+[#4607](https://github.com/flutter/engine/pull/4607), [#14601](https://github.com/flutter/flutter/pull/14601) removed default constructors from classes
+* `Scene`
+* `Image`
+* `FrameInfo`
+* `Codec`
+* `Shader`
+* `Gradient`
+* `Picture`
+* `SemanticsUpdate`
+* `Paragraph`
+
+This is done to ensure that instances of these classes are properly initialized.
+
 ## Changes in 0.0.24
 
 ### API changes to material buttons
