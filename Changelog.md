@@ -1,8 +1,14 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
+## Changes in 0.1.3
+
+### flutter tool API changes
+[#14702](https://github.com/flutter/flutter/pull/14702) removed the `engineDartVersion` getter from the flutter tool's `Version` class.
+
 ## Changes in 0.1.1
 
-[flutter/engine#4607](https://github.com/flutter/engine/pull/4607) removed default constructors from the following `dart:ui` classes:
+### Removing default constructors from dart:ui classes
+[flutter/engine#4607](https://github.com/flutter/engine/pull/4607) and [#14601](https://github.com/flutter/flutter/pull/14601) removed default constructors from the following `dart:ui` classes:
 
 * `Codec`
 * `FrameInfo`
@@ -15,22 +21,6 @@ This page documents interesting or noteworthy changes, including all notable bre
 * `Shader`
 
 The default constructors were removed to prevent the creation of uninitialized instances of these classes (and in certain cases to prevent extending these classes). These classes should be instantiated only by the Flutter engine or through named constructors (if provided).
-
-## Changes in 0.1.0
-
-### Removing default constructors from dart:ui classes
-[#4607](https://github.com/flutter/engine/pull/4607), [#14601](https://github.com/flutter/flutter/pull/14601) removed default constructors from classes
-* `Scene`
-* `Image`
-* `FrameInfo`
-* `Codec`
-* `Shader`
-* `Gradient`
-* `Picture`
-* `SemanticsUpdate`
-* `Paragraph`
-
-This is done to ensure that instances of these classes are properly initialized.
 
 ## Changes in 0.0.24
 
