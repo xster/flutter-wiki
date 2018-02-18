@@ -1,6 +1,6 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.1.next (since v0.0.20)
+## Changes in v0.1.3 (since v0.0.20)
 
 ### v0.1.3
 
