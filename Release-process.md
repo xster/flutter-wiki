@@ -28,7 +28,7 @@ A few days before the scheduled beta release date, start these steps:
 1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that:
     * is at least seven days old.
     * is not listed on the [[Bad Builds]] page.
-    * is newer than the current latest commit on the `beta` branch.
+    * is newer than the current [latest commit on the `beta` branch](https://github.com/flutter/flutter/commits/beta).
     * can be successfully upgraded to from an earlier dev build (via 'flutter upgrade')
     * can be successfully upgraded _from_ to a later dev builds (via 'flutter upgrade')
     * can switch channels successfully (via 'flutter channel')
