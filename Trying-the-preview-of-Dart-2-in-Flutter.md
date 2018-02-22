@@ -43,4 +43,8 @@ A version of the Flutter plugin with Dart 2 preview support will be launched soo
 
 ### Visual Studio Code
 
-A release version of the Dart Code plugin with Dart 2 preview support will be launched soon. In the meantime, you can download the [latest beta version](https://github.com/Dart-Code/Dart-Code/releases/download/v2.9.0-beta.4/dart-code-2.9.0-beta.4.vsix) and install it from Visual Studio by pressing Ctrl-Shift-P or Command-Shift-P to launch the Command Bar and then running the **Extensions: Install from VSIX...** command. When the release version of the plug-in is available in the marketplace, you will automatically be upgraded.
+A release version of the Dart Code plugin with Dart 2 preview support will be launched soon. In the meantime, you can download the [latest beta version](https://github.com/Dart-Code/Dart-Code/releases/download/v2.9.0-beta.4/dart-code-2.9.0-beta.4.vsix) and install it from Visual Studio by pressing Ctrl-Shift-P or Command-Shift-P to launch the Command Bar and then running the **Extensions: Install from VSIX...** command. 
+
+![Screenshot of the user interface to install extensions](https://i.imgur.com/SxqiFBQ.png)
+
+When the release version of the plug-in is available in the marketplace, you will automatically be upgraded.
