@@ -2,7 +2,7 @@
 
 Dart 2 is an update to the Dart programming language that introduces:
   * [Strong compile-time type checks](https://www.dartlang.org/dart-2#strong-mode-and-static-typing)
-  * Optional new/const keyword when calling a constructor (e.g., change `child: new Text('Hi')` to `child: Text('Hi')`
+  * Optional new/const keyword when calling a constructor (e.g., change `child: new Text('Hi')` to `child: Text('Hi')`)
   * Various smaller language changes
 
 Changes that may break Flutter apps and packages have, and will continue to, be communicated to the
@@ -11,33 +11,36 @@ Changes that may break Flutter apps and packages have, and will continue to, be 
 
 ## Previewing Dart 2 with Flutter
 
-To preview Dart 2 you need a recent build of the Flutter SDK
-(to view your current version, run `flutter --version`):
+Dart 2 is large change, and not only because we significantly reworked Dart’s type system and extended core libraries. We have also introduced a common front-end infrastructure which enables us to evolve the language faster and build tools that were previously very difficult to build. 
 
-  * Master channel: build from 2018-02-20 or later
-  * Alpha channel: not compatible
+While the latest development builds of Flutter include Dart 2, most features are kept behind an opt-in flag while we perform final testing. However, we'd encourage you to turn the flag on during development and file issues if you see unexpected behavioral changes with the flag enabled.
+
+To preview Dart 2 you need a recent build of the Flutter SDK, and be running on the [master channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels).
+
+Master channel: build from 2018-02-20 or later
+
+To view your current version, run `flutter --version`. You can run `flutter upgrade` to update to the latest build from the channel you're on. 
 
 ### Terminal
 
 To analyze your app with Dart 2 analysis / compile-time checks,
-pass the preview flag to the flutter analyze:
+pass the preview flag to flutter analyze:
 
 ```
 flutter analyze --preview-dart-2
 ```
 
-To run your app, and verify if it passes Dart 2 run-time checks,
+To run your app and verify if it passes Dart 2 run-time checks,
 pass the preview flag to the flutter run command:
 
 ```
 flutter run --preview-dart-2
 ```
 
-
 ### Android Studio / IntelliJ IDEA
 
-A version of the Flutter plugin with Dart 2 preview support will be launched soon!
+A version of the Flutter plugin with Dart 2 preview support will be launched soon.
 
-### VS Code
+### Visual Studio Code
 
-A version of the Dart Code plugin with Dart 2 preview support will be launched soon!
+A release version of the Dart Code plugin with Dart 2 preview support will be launched soon. In the meantime, you can download the [latest beta version](https://github.com/Dart-Code/Dart-Code/releases/download/v2.9.0-beta.4/dart-code-2.9.0-beta.4.vsix) and install it from Visual Studio by pressing Ctrl-Shift-P or Command-Shift-P to launch the Command Bar and then running the **Extensions: Install from VSIX...** command. When the release version of the plug-in is available in the marketplace, you will automatically be upgraded.
