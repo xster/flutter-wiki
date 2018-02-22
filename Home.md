@@ -1,3 +1,5 @@
-Most of the contents in this wiki are for engineers building Flutter.
+This wiki is primarily aimed at engineers building or making contributions to Flutter.
 
-For docs for users, check out [flutter.io](https://flutter.io)
+The API reference can be found at the [Flutter documentation site](https://docs.flutter.io/).
+
+For general information on the Flutter project, including tutorials and samples, check out [flutter.io](https://flutter.io).
