@@ -1,4 +1,4 @@
-Flutter has the following channels (as selected by `flutter channel`):
+Flutter has the following channels, in increasing order of stability:
 
 * `master`: The current tip-of-tree, absolute latest cutting edge build. Usually functional, though sometimes we accidentally break things.
 
@@ -7,6 +7,20 @@ Flutter has the following channels (as selected by `flutter channel`):
 * `beta`: Every few weeks, we pick the "best" `dev` build of the previous month or so, and promote it to `beta`. These builds have been tested with our [[codelabs]].
 
 Eventually we will also have a `release` build, which will be the best `beta` build of the previous year or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
+
+## How to change channels
+
+You can see what channel you're on with the following command:
+
+```
+$ flutter channel
+Flutter channels:
+  beta
+  dev
+* master
+```
+
+To switch channels, run `flutter channel [<channel-name>]`, and then run `flutter upgrade` to ensure you're on the latest.
 
 See also:
 
