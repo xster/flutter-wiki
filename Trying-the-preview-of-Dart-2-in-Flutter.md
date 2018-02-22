@@ -9,19 +9,22 @@ Changes that may break Flutter apps and packages have, and will continue to, be 
 [flutter-dev](https://groups.google.com/forum/#!forum/flutter-dev) Google Group as
 [breaking changes](https://groups.google.com/forum/#!searchin/flutterdev/subject$3A%22breaking$20change%22%7Csort:date).
 
+Dart 2 is large change, and while the latest development builds of Flutter include some of Dart 2, most features are kept behind an opt-in flag while we perform final testing. However, we'd encourage you to turn the flag on during development and file issues if you see unexpected behavioural changes with the flag enabled.
+
 ## Previewing Dart 2 with Flutter
 
-Dart 2 is large change, and not only because we significantly reworked Dart’s type system and extended core libraries. We have also introduced a common front-end infrastructure which enables us to evolve the language faster and build tools that were previously very difficult to build. 
+To preview Dart 2 you need a recent build of the Flutter SDK:
 
-While the latest development builds of Flutter include Dart 2, most features are kept behind an opt-in flag while we perform final testing. However, we'd encourage you to turn the flag on during development and file issues if you see unexpected behavioral changes with the flag enabled.
+* [Master channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels): build from 2018-02-20 or later
+* Alpha channel: not compatible
 
-To preview Dart 2 you need a recent build of the Flutter SDK, and be running on the [master channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels).
+To view your current version, run `flutter --version`. Sample version output with the key values highlighted:
 
-```
-Master channel: build from 2018-02-20 or later
-```
-
-To view your current version, run `flutter --version`. You can run `flutter upgrade` to update to the latest build from the channel you're on. 
+`$ flutter --version`<br>
+`Flutter 0.1.5-pre.9 •` **`channel master`** `• git@github.com:flutter/flutter.git`<br>
+`Framework • revision 21c514fc56 (34 hours ago) •` **`2018-02-20 23:22:58 -0800`**<br>
+`Engine • revision ead227f118`<br>
+`Tools • Dart 2.0.0-dev.28.0.flutter-0b4f01f759`
 
 ### Terminal
 
