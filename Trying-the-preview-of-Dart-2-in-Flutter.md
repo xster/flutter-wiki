@@ -41,7 +41,11 @@ flutter run --preview-dart-2
 
 ### Android Studio / IntelliJ IDEA
 
-A version of the Flutter plugin with Dart 2 preview support will be launched soon.
+A version of the Flutter plugin with Dart 2 preview support will be launched shortly! This will include an easy way to opt-into trying out Dart 2.
+
+In the meantime, to try Dart 2 out today:
+- For Dart 2 at runtime, open the launch configuration for your application, and add ‘--preview-dart-2’ to the additional arguments field.
+- For Dart 2 at analysis time, you’ll need to add an additional flag to the analysis server by editing the IntelliJ registry. Type shift-cmd-A (or shift-ctrl-A) to open the find actions dialog; type ‘registry’ and select the associated entry to open the IntelliJ registry. Then, search for the ‘dart.server.additional.arguments registry key, and add --preview-dart-2 to its value. Restart IntelliJ (or restart the analysis server from the Dart Analysis view) for this setting to take effect.
 
 ### Visual Studio Code
 
