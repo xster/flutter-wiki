@@ -55,4 +55,4 @@ Install or upgrade the Flutter plugin so that you have version 22 or later, then
 1. Install/upgrade the Dart Code plugin so that you have version 2.9 or later
 1. Open Code>Settings>Preferences
 1. Search for the setting 'dart.previewDart2' and set it to true as a user setting (for all projects), or a workspace setting (for current workspace)
-1. Restart VS Code
+1. Click 'Reload Project' in the banner stating that the Dart/Flutter settings have changed (alternatively, restart VS Code)
