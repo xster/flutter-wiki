@@ -16,7 +16,7 @@ Dart 2 is large change, and while the latest development builds of Flutter inclu
 To preview Dart 2 you need a recent build of the Flutter SDK:
 
 * Dev [channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels): build from 2018-02-22 or later
-* Master: build from 2018-02-20 or later
+* Master channel: build from 2018-02-20 or later
 
 To view your current version, run `flutter --version`. Sample version output with the key values highlighted:
 
