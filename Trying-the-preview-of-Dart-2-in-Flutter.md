@@ -44,16 +44,17 @@ flutter run --preview-dart-2
 
 ### Android Studio / IntelliJ IDEA
 
-A version of the Flutter plugin with Dart 2 preview support will be launched shortly! This will include an easy way to opt-into trying out Dart 2.
-
-In the meantime, to try Dart 2 out today:
-- For Dart 2 at runtime, open the launch configuration for your application, and add ‘--preview-dart-2’ to the additional arguments field.
-- For Dart 2 at analysis time, you’ll need to add an additional flag to the analysis server by editing the IntelliJ registry. Type shift-cmd-A (or shift-ctrl-A) to open the find actions dialog; type ‘registry’ and select the associated entry to open the IntelliJ registry. Then, search for the ‘dart.server.additional.arguments registry key, and add --preview-dart-2 to its value. Restart IntelliJ (or restart the analysis server from the Dart Analysis view) for this setting to take effect.
+Install or upgrade the Flutter plugin so that you have version 22 or later, then:
+1. Create a Flutter project
+1. Open **Settings**, and select 'Flutter' under 'Languages & Frameworks'
+1. Check the 'Run applications with --preview-dart-2' checkbox under 'Experiments'
+1. Restart Android Studio / IntelliJ
 
 ### Visual Studio Code
 
-A release version of the Dart Code plugin with Dart 2 preview support will be launched soon. In the meantime, you can download the [latest beta version](https://github.com/Dart-Code/Dart-Code/releases/download/v2.9.0-beta.4/dart-code-2.9.0-beta.4.vsix) and install it from Visual Studio by pressing Ctrl-Shift-P or Command-Shift-P to launch the Command Bar and then running the **Extensions: Install from VSIX...** command. 
+1. Install/upgrade the Dart Code plugin so that you have version 2.9 or later
+1. Open Code>Settings>Preferences
+1. Search for the setting 'dart.previewDart2' and set it to true as a user setting (for all projects), or a workspace setting (for current workspace)
+1. Restart VS Code
 
 ![Screenshot of the user interface to install extensions](https://i.imgur.com/SxqiFBQ.png)
-
-When the release version of the plug-in is available in the marketplace, you will automatically be upgraded.
