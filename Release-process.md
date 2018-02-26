@@ -36,6 +36,7 @@ A few days before the scheduled beta release date, start these steps:
 1. Once you have found a good build, wait until the scheduled release date.
 1. Push that commit to the `beta` branch (vX.Y.Z is the tag of the selected version):
    ```
+   git fetch upstream
    git checkout vX.Y.Z
    git push upstream HEAD:beta
    ```
