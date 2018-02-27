@@ -1,5 +1,6 @@
 The Flutter team currently maintains the following codelabs:
 
+* [Write Your First Flutter App](https://flutter.io/get-started/codelab/)
 * [Building Beautiful UIs with Flutter](https://codelabs.developers.google.com/codelabs/flutter/)
 * [Firebase for Flutter](https://codelabs.developers.google.com/codelabs/flutter-firebase/)
 
