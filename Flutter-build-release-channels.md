@@ -1,12 +1,20 @@
+## Flutter's channels
+
 Flutter has the following channels, in increasing order of stability:
 
-* `master`: The current tip-of-tree, absolute latest cutting edge build. Usually functional, though sometimes we accidentally break things.
+### master
 
-* `dev` (previously known as `alpha`): The latest fully-tested build. Usually functional, but see [[Bad Builds]] for a list of known "bad" dev builds.
+The current tip-of-tree, absolute latest cutting edge build. Usually functional, though sometimes we accidentally break things.
 
-* `beta`: Every few weeks, we pick the "best" `dev` build of the previous month or so, and promote it to `beta`. These builds have been tested with our [[codelabs]].
+### dev
 
-Eventually we will also have a `release` build, which will be the best `beta` build of the previous year or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
+Previously known as `alpha`, this is the latest fully-tested build. Usually functional, but see [[Bad Builds]] for a list of known "bad" dev builds.
+
+### beta
+
+Every few weeks, we pick the "best" `dev` build of the previous month or so, and promote it to `beta`. These builds have been tested with our [[codelabs]].
+
+> Eventually we will also have a `release` build, which will be the best `beta` build of the previous year or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
 
 ## How to change channels
 
@@ -22,16 +30,29 @@ Flutter channels:
 
 To switch channels, run `flutter channel [<channel-name>]`, and then run `flutter upgrade` to ensure you're on the latest.
 
-### Issues and Workarounds
-**Issue**: When switching channels, you see an error message `Unable to upgrade Flutter: no upstream repository configured.` 
+### Known issues and workarounds
 
-**Workaround**: You could get into this state if you ran `flutter channel beta` before the beta channel was officially released, due to a bug that has now been fixed. To resolve, run the following command from the root directory where Flutter is installed:
+#### Issue
+
+When switching channels, you see an error message `Unable to upgrade Flutter: no upstream repository configured.` 
+
+#### Workaround
+
+You could get into this state if you ran `flutter channel beta` before the beta channel was officially released, due to a bug that has now been fixed. To resolve, run the following command from the root directory where Flutter is installed:
 ```bash
 $ git fetch origin; git branch -u origin/beta beta; flutter channel beta 
 ```  
 After running this command, you should be back on the `beta` branch and be able to run `flutter upgrade` to complete the upgrade process.
 
-See also:
+#### Issue
+
+After running `flutter upgrade`, the flutter tool crashed with a message about "Cannot find executable for /path/to/dart"
+
+#### Workaround
+
+This will only happen when you first upgrade.  The issue has since been fixed, and after the first time it happens, you won't see the crash again.
+
+## See also
 
 * [[Release process]], which describes the details for how we push builds from channel to channel.
 * [[Changelog]], where we describe changes since the last beta release.
