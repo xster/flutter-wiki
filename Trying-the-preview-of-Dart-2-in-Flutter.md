@@ -22,10 +22,10 @@ To preview Dart 2 you need a recent build of the Flutter SDK from one of the fol
 To view your current version, run `flutter --version`. Sample version output with the key values highlighted:
 
 `$ flutter --version`<br>
-`Flutter `**0.1.4 • channel beta**`• git@github.com:flutter/flutter.git`<br>
-`Framework • revision 21c514fc56 (34 hours ago) •` **`2018-02-19 21:12:17 -0800`**<br>
-`Engine • revision ead227f118`<br>
-`Tools • Dart 2.0.0-dev.28.0.flutter-0b4f01f759`
+`Flutter `**`0.1.4 • channel beta`**`• git@github.com:flutter/flutter.git`<br>
+`Framework • revision f914e701c5 (7 days ago) •` **`2018-02-19 21:12:17 -0800`**<br>
+`Engine • revision 13cf22c284`<br>
+`Tools • Dart 2.0.0-dev.27.0-flutter-0d5cf900b0`
 
 ### Terminal
 
