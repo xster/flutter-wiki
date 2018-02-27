@@ -50,7 +50,7 @@ After running `flutter upgrade`, the flutter tool crashed with a message about "
 
 #### Workaround
 
-This will only happen when you first upgrade.  The issue has since been fixed, and after the first time it happens, you won't see the crash again.
+This will only happen when you first upgrade.  The issue has [since been fixed](https://github.com/flutter/flutter/pull/14353#discussion_r170812774), and after the first time it happens, you won't see the crash again.
 
 ## See also
 
