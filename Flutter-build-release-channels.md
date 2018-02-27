@@ -10,17 +10,26 @@ Eventually we will also have a `release` build, which will be the best `beta` bu
 
 ## How to change channels
 
-You can see what channel you're on with the following command:
+You can see which channel you're on with the following command:
 
 ```
 $ flutter channel
 Flutter channels:
-  beta
+* beta
   dev
-* master
+  master
 ```
 
 To switch channels, run `flutter channel [<channel-name>]`, and then run `flutter upgrade` to ensure you're on the latest.
+
+### Issues and Workarounds
+**Issue**: When switching channels, you see an error message `Unable to upgrade Flutter: no upstream repository configured.` 
+
+**Workaround**: You could get into this state if you ran `flutter channel beta` before the beta channel was officially released, due to a bug that has now been fixed. To resolve, run the following command from the root directory where Flutter is installed:
+```bash
+$ git fetch origin; git branch -u origin/beta beta; flutter channel beta 
+```  
+After running this command, you should be back on the `beta` branch and be able to run `flutter upgrade` to complete the upgrade process.
 
 See also:
 
