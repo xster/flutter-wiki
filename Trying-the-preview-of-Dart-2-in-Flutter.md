@@ -23,7 +23,7 @@ To view your current version, run `flutter --version`. Sample version output wit
 
 `$ flutter --version`<br>
 `Flutter `**0.1.4 • channel beta**`• git@github.com:flutter/flutter.git`<br>
-`Framework • revision 21c514fc56 (34 hours ago) •` **`2018-02-20 23:22:58 -0800`**<br>
+`Framework • revision 21c514fc56 (34 hours ago) •` **`2018-02-19 21:12:17 -0800`**<br>
 `Engine • revision ead227f118`<br>
 `Tools • Dart 2.0.0-dev.28.0.flutter-0b4f01f759`
 
