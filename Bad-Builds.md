@@ -1,7 +1,7 @@
 This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel:
 
 ## v0.0.23 - v0.1.4
-* Android Gallery gradle build fails on tagged commits without the -pre.x suffix. [#14912](https://github.com/flutter/flutter/issues/14912)
+* Android Gallery gradle build fails on tagged commits without the `-pre.x` suffix. [#14912](https://github.com/flutter/flutter/issues/14912)
 
 ## v0.1.1 - v0.1.2
 
