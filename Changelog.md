@@ -1,6 +1,13 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.1.6 (since v0.1.4)
+## Changes in v0.1.8 (since v0.1.5)
+
+## Changes in v0.1.5 (since v0.1.4)
+
+### v0.1.5
+
+#### Fixed Flutter Gallery build on Android
+[#14714](https://github.com/flutter/flutter/pull/14714) fixed the groovy script for the Flutter Gallery, thus fixing [#14912](https://github.com/flutter/flutter/issues/14912).
 
 ## Changes in v0.1.4 (since v0.0.20)
 
