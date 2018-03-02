@@ -3,7 +3,7 @@ Animated GIFs are useful for documentating animations. Here’s how to make them
 ## Capturing video of an Android device
 
  * This feature is available on KitKat and later.
- * Make sure to launch the app using --no-checked for faster performance.
+ * Make sure to launch the app using `flutter run --release` for faster performance.
  * Start recording video by running this command on the command line:
 
     ```adb shell screenrecord /sdcard/recording.mp4```
