@@ -43,6 +43,7 @@ A few days before the scheduled beta release date, start these steps:
    git checkout vX.Y.Z
    git push upstream HEAD:beta
    ```
+1. Wait for the Travis and AppVeyor builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches).  If they fail, investigate the failure(s), and consider whether a newer dev build should be pushed to beta before any announcements are made.
 1. Send an e-mail to flutter-dev that includes the latest section of the [[Changelog]] page.
 1. Update the [[Changelog]] page so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
 1. Done!
