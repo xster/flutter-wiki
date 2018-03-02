@@ -29,7 +29,7 @@ the standard Dart formatter does not handle well. We are
 to make `dartfmt` aware of these patterns.
 
 
-In defense of the extra work that hand formatting entails
+In defense of the extra work that hand-formatting entails
 ---------------------------------------------------------
 
 Flutter code might eventually be read by hundreds of thousands of people each day.
@@ -285,6 +285,21 @@ move to the new API, you should use this format:
 ///
 /// The rest of the comments
 ```
+
+### Use `///` for public-quality private documentation
+
+In general, private code can and should also be documented. If that documentation is of good enough
+quality that we could include it verbatim when making the class public (i.e. it satisfies all the
+style guidelines above), then use you can use `///` for those docs, even though they're private.
+
+Documentation of private APIs that is not of sufficient quality should only use `//`. That way, if
+we ever make the corresponding class public, those documentation comments will be flagged as missing,
+and we will know to examine them more carefully.
+
+Feel free to be conservative in what you consider "sufficient quality". It's ok to use `//` even if
+you have multiple paragraphs of documentation; that's a sign that we should carefully rereview the
+documentation when making the code public.
+
 
 Coding patterns and catching bugs early
 ---------------------------------------
