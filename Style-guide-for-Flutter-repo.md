@@ -852,3 +852,18 @@ have a convention of their own (e.g. `path` is imported `as path`).
 As a general rule, when you have a lot of constants, wrap them in a
 class. For examples of this, see
 [lib/src/material/colors.dart](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/material/colors.dart)
+
+
+Features we expect every widget to implement
+--------------------------------------------
+
+Now that the Flutter framework is mature, we expect every new widget to implement all of the following:
+
+- full accessibility, so that on both Android and iOS the widget works with the native accessibility tools.
+- full localisation with default translations for all our default languages.
+- full support for both right-to-left and left-to-right layouts, driven by the ambient Directionality.
+- full support for text scaling up to at least 3.0x.
+- documentation for every member; see the section above for writing prompts to write documentation.
+- good performance even when used with large amounts of user data.
+- a complete lifecycle contract with no resource leaks (documented, if it differs from usual widgets).
+- tests for all the above as well as all the unique functionality of the widget itself.
