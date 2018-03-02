@@ -1,4 +1,4 @@
-This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel:
+This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel. See [[Bad Build Identification]] for details on how to identify builds that should be listed here.
 
 ## v0.1.6 - v0.1.8
 
