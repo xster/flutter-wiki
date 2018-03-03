@@ -35,7 +35,8 @@ A few days before the scheduled beta release date, start these steps:
     * can be used to run the [[codelabs]]. You will have to manually run the build through all the current code labs to verify that the build is good.
     * can be used to build and run the Flutter Gallery:
         * via `flutter build apk`
-        * via `flutter run`
+        * via `flutter build ios`
+        * via `flutter run` (on both Android and iOS)
 1. Once you have found a good build, wait until the scheduled release date.
 1. Push that commit to the `beta` branch (vX.Y.Z is the tag of the selected version):
    ```
