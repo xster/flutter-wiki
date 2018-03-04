@@ -100,7 +100,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 | Action Item | Owner | Issue | Notes |
 |-------------|-------|-------|-------|
-| Make the flutter tool alert users when an upgrade is available. || #14920 ||
+| Make the flutter tool alert users when an upgrade is available. | [@tvolkert](https://github.com/tvolkert) | #14920 ||
 
 ### Process
 
@@ -112,7 +112,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 | Update release process to require that the Travis build go green on the beta branch before sending out any announcements or issuing any public communications. | [@tvolkert](https://github.com/tvolkert) || Done |
 | Make a beta pusher group in GitHub, to control who has access to push beta releases. | [@Hixie](https://github.com/Hixie) || Done |
 | Update beta release process to require that the candidate dev build “can be successfully upgraded to from the dev build to which the beta branch currently points.” | [@tvolkert](https://github.com/tvolkert) || Done |
-| Update the release process to include downloading and installing the packaged archive for the dev build that represents the prior beta -- and ensuring that it’s able to upgrade to the newest release. | [@gspencergoog](https://github.com/gspencergoog) |||
+| Update the release process to include downloading and installing the packaged archive for the dev build that represents the prior beta -- and ensuring that it’s able to upgrade to the newest release. | [@gspen...](https://github.com/gspencergoog) |||
 
 ### Fixes
 
