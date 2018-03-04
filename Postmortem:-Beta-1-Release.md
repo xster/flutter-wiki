@@ -106,7 +106,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 | Action Item | Owner | Issue | Notes |
 |-------------|-------|-------|-------|
-| Add a wiki page on identifying bad builds | [@tvolkert](https://github.com/tvolkert) ||Done|
+| Add a wiki page on identifying bad builds | [@tvolkert](https://github.com/tvolkert) | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |Done|
 | Send an email to the core Flutter team about the need to think about marking builds as bad. | [@tvolkert](https://github.com/tvolkert) || Done
 | Update our release process to call out the need to ensure that the gallery can be built and run. | [@tvolkert](https://github.com/tvolkert) || Done |
 | Update release process to require that the Travis build go green on the beta branch before sending out any announcements or issuing any public communications. | [@tvolkert](https://github.com/tvolkert) || Done |
