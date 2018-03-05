@@ -7,7 +7,7 @@ Owners: [@tvolkert](https://github.com/tvolkert), [@Hixie](https://github.com/Hi
 
 Description: Flutter launched beta 1 on February 27, 2018.  This document attempts to dissect what could have gone smoother strictly from a technical release process point of view.<br>
 
-## Timeline (all times in PST/PDT)
+## Timeline (all times in PST)
 
 ### _2018/02/20 - 2018/02/25_
 
