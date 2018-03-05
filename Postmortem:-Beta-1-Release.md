@@ -20,8 +20,8 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 | _11:40_ | [@tvolkert](https://github.com/tvolkert) tries to push v0.1.4 to beta but doesn’t have sufficient permissions, because the branch is protected on GitHub. |
 | _12:02_ | [@Hixie](https://github.com/Hixie) creates a “beta pusher” group so [@tvolkert](https://github.com/tvolkert) can push the beta release. |
 | _12:07_ | [@tvolkert](https://github.com/tvolkert) pushes v0.1.4 to the beta branch |
-| _12:20_ | [@mit-mit](https://github.com/mit-mit) tries to upgrade to the new beta and runs into #15096.  The exact cause is not yet know. |
-| _12:39_ | From similar reports from [@timsneath](https://github.com/timsneath) and [@mit-mit](https://github.com/mit-mit), [@tvolkert](https://github.com/tvolkert) notices that switching channels doesn’t fetch updated refs from GitHub and files #14893. |
+| _12:20_ | [@mit-mit](https://github.com/mit-mit) tries to upgrade to the new beta and runs into [#15096](https://github.com/flutter/flutter/issues/15096).  The exact cause is not yet know. |
+| _12:39_ | From similar reports from [@timsneath](https://github.com/timsneath) and [@mit-mit](https://github.com/mit-mit), [@tvolkert](https://github.com/tvolkert) notices that switching channels doesn’t fetch updated refs from GitHub and files [#14893](https://github.com/flutter/flutter/issues/14893). |
 | _14:40_ | [@timsneath](https://github.com/timsneath) runs into more trouble upgrading.  [@tvolkert](https://github.com/tvolkert) begins trying to diagnose based on the reports. |
 | _16:53_ | After a few back-and-forths with [@timsneath](https://github.com/timsneath) over email, [@tvolkert](https://github.com/tvolkert) enlists the help of [@jason-simmons](https://github.com/jason-simmons) and [@cbracken](https://github.com/cbracken) in tracking down the cause for the problems [@timsneath](https://github.com/timsneath) is encountering.  The goal is to determine whether the problems are an outlier unique to [@timsneath's](https://github.com/timsneath) setup or whether they’re likely to affect most users once the influx of users begins. |
 | _17:30_ | [@jason-simmons](https://github.com/jason-simmons) discovers that before #14507 (v0.0.24), the “channel” command could create local (non-tracking) branches and that if [@timsneath](https://github.com/timsneath) was bitten by this, it would explain the behavior he’s seeing.  The team tentatively decides the errors that [@timsneath](https://github.com/timsneath) is seeing are likely an outlier. |
@@ -31,7 +31,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 | Time | |
 | --- | --- |
-| _01:48_ | [@mit-mit](https://github.com/mit-mit) discovers that the gallery doesn’t run against the beta build and files #14912.
+| _01:48_ | [@mit-mit](https://github.com/mit-mit) discovers that the gallery doesn’t run against the beta build and files [#14912](https://github.com/flutter/flutter/issues/14912).
 | _02:18_ | [@mravn-google](https://github.com/mravn-google) tracks down the cause of the failing gallery builds and discovers that it’s already been fixed in #14714 (v0.1.5).
 | _06:00_ | The beta release is announced publicly.
 | _09:30_ | The Flutter team decides to push v0.1.5 to beta to pick up the fix to the gallery builds.  [@tvolkert](https://github.com/tvolkert) begins testing v0.1.5.
@@ -42,7 +42,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 | --- | --- |
 | _10:00_ | [@tvolkert](https://github.com/tvolkert) pushes v0.1.5 to beta.
 | _10:20_ | [@tvolkert](https://github.com/tvolkert) announces the updated beta to the flutter-dev mailing list.
-| _16:00_ | [@tvolkert](https://github.com/tvolkert) discovers that docs.flutter.io did not update to reflect the beta release and files #15002.
+| _16:00_ | [@tvolkert](https://github.com/tvolkert) discovers that docs.flutter.io did not update to reflect the beta release and files [#15002](https://github.com/flutter/flutter/issues/15002).
 
 ## Lessons Learned
 
@@ -50,13 +50,13 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 * Beta 1 was successfully released on the target date!
 
-* Most users have been able to successfully install Flutter against the beta release or upgrade from the dev channel.  We’ve received only a few reports of problems; e.g. #15074, #14959
+* Most users have been able to successfully install Flutter against the beta release or upgrade from the dev channel.  We’ve received only a few reports of problems; e.g. [#15074](https://github.com/flutter/flutter/issues/15074), [#14959](https://github.com/flutter/flutter/issues/14959)
 
 * When the report of the failing gallery build hit, we were able to successfully vet a new dev build and push a new release to beta a day and a half later.
 
 ### What Didn't Work
 
-* Our internal Google tests purposely don’t exercise our external build code paths (e.g. Gradle builds) -- since within Google, everything is built using Bazel.  This meant that although the gallery was unable to be built on the beta branch (#14912), we had no knowledge of this failure until after beta was pushed (and [@mit-mit](https://github.com/mit-mit) manually discovered the breakage).  The bug had actually already been fixed on a newer dev build (in #14714), but we didn’t mark the affected build range as bad until after this was discovered and traced back to code that pointed to the existing fix. Our external tests were also allowing failures on Travis, which was intentional at the time because we didn’t yet have confidence in those tests.  In addition to fixing the issue, #14714 also enabled those tests on Travis.
+* Our internal Google tests purposely don’t exercise our external build code paths (e.g. Gradle builds) -- since within Google, everything is built using Bazel.  This meant that although the gallery was unable to be built on the beta branch ([#14912](https://github.com/flutter/flutter/issues/14912)), we had no knowledge of this failure until after beta was pushed (and [@mit-mit](https://github.com/mit-mit) manually discovered the breakage).  The bug had actually already been fixed on a newer dev build (in #14714), but we didn’t mark the affected build range as bad until after this was discovered and traced back to code that pointed to the existing fix. Our external tests were also allowing failures on Travis, which was intentional at the time because we didn’t yet have confidence in those tests.  In addition to fixing the issue, #14714 also enabled those tests on Travis.
 
 * The Flutter release process didn’t call out the need to build and run the gallery as part of the beta vetting process, which further allowed the previous issue to go unnoticed.
 
@@ -72,7 +72,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 * We pushed a follow-on beta build (v0.1.4 -> v0.1.5) the day after launch to fix the issue with the gallery building.  Yet absent of reading our dev email list, users had no way of knowing that an upgrade was available because the flutter tool doesn’t alert them.
 
-* The release process calls for the person doing the roll to simulate the upgrade path of our users, but it says “can be successfully upgraded to from an earlier dev build,” which is not explicitly the same upgrade that our users will face; they’ll be upgrading from one of the previous beta releases.  This distinction would have led us to realize that such users would be bitten by #15096.
+* The release process calls for the person doing the roll to simulate the upgrade path of our users, but it says “can be successfully upgraded to from an earlier dev build,” which is not explicitly the same upgrade that our users will face; they’ll be upgrading from one of the previous beta releases.  This distinction would have led us to realize that such users would be bitten by [#15096](https://github.com/flutter/flutter/issues/15096).
 
 * Users who stay exclusively on the beta channel and only upgrade when new beta releases are available will have Git repositories without any of the newer refs that have been added since their last upgrade.  The person doing the beta release, on the other hand, will have a fresh clone of our Git repository and will be simulating our users’ upgrade path by issuing a `git reset --hard <old-version>` command.  This distinction turned out to be substantive when trying to reproduce an error report from [@timsneath](https://github.com/timsneath).  Ideally, the person doing the roll would be able to construct a Git repository synced to the previous beta release without any refs newer than that release.
 
@@ -82,9 +82,9 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 * Until Feb 7 (#14507), we had a bug in the channel switching logic that would create branches as local (non-tracking) branches.  If users tried to upgrade such channels, they’d get an error message about “no upstream repository configured.”  Users who had tried switching to the beta channel that we had quietly pushed in December 2017 were bitten by this and found their local Git repository in a bad state.  This likely only affected a very small number of users (perhaps only members of the Flutter team), but [@timsneath](https://github.com/timsneath) was one such user, and it took some time to remotely diagnose what was going on with his setup and whether his problems were indicative of a larger issue that was going to affect a large subset of our users.  This time added uncertainty to our launch during crunch-time, where we weren’t sure if we should call off the launch announcements.
 
-* The change that prepared the docs site for the beta launch (#14606) had a bug in it whereby docs would never get updated on the main docs site (#15002), and unfortunately this didn’t get caught in code review (partially due to GitHub code review’s auto-folding of very relevant content).  This means that the main docs site hasn’t been updated since ~Feb 13 (and will now get updated in the next beta push).
+* The change that prepared the docs site for the beta launch (#14606) had a bug in it whereby docs would never get updated on the main docs site ([#15002](https://github.com/flutter/flutter/issues/15002)), and unfortunately this didn’t get caught in code review (partially due to GitHub code review’s auto-folding of very relevant content).  This means that the main docs site hasn’t been updated since ~Feb 13 (and will now get updated in the next beta push).
 
-* Once the beta branch was pushed, Travis began failing due to #14975.  A similar failure had happened on master and was fixed by #14853, but the implications of that failure and how it’d manifest on the beta branch caused some confusion as to whether there was a real problem with the beta release.
+* Once the beta branch was pushed, Travis began failing due to [#14975](https://github.com/flutter/flutter/issues/14975).  A similar failure had happened on master and was fixed by #14853, but the implications of that failure and how it’d manifest on the beta branch caused some confusion as to whether there was a real problem with the beta release.
 
 ## Action items
 
@@ -93,14 +93,14 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 | Action Item | Owner | Issue | Notes |
 |-------------|-------|-------|-------|
 | Ensure that Travis tests the ability to build the gallery. | [@xster](https://github.com/xster) || Done |
-| Add a hidden `--version` argument to `flutter upgrade` to allow the person doing a beta roll to better simulate the upgrade path. | [@tvolkert](https://github.com/tvolkert) | #14970 ||
-| Fetch upstream refs before switching channels in the “channel” command. | [@tvolkert](https://github.com/tvolkert) | #14893 | Done |
+| Add a hidden `--version` argument to `flutter upgrade` to allow the person doing a beta roll to better simulate the upgrade path. | [@tvolkert](https://github.com/tvolkert) | [#14970](https://github.com/flutter/flutter/issues/14970) ||
+| Fetch upstream refs before switching channels in the “channel” command. | [@tvolkert](https://github.com/tvolkert) | [#14893](https://github.com/flutter/flutter/issues/14893) | Done |
 
 ### Mitigation
 
 | Action Item | Owner | Issue | Notes |
 |-------------|-------|-------|-------|
-| Make the flutter tool alert users when an upgrade is available. | [@tvolkert](https://github.com/tvolkert) | #14920 ||
+| Make the flutter tool alert users when an upgrade is available. | [@tvolkert](https://github.com/tvolkert) | [#14920](https://github.com/flutter/flutter/issues/14920) ||
 
 ### Process
 
@@ -118,5 +118,5 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 | Action Item | Owner | Issue | Notes |
 |-------------|-------|-------|-------|
-| Fix docs to get uploaded on the next beta push | [@tvolkert](https://github.com/tvolkert) | #15002 | Done |
-| Fix create_test.dart to depend on package:flutter_test for its “package” template tests (not package:test) | [@tvolkert](https://github.com/tvolkert) | #14975 | Done |
+| Fix docs to get uploaded on the next beta push | [@tvolkert](https://github.com/tvolkert) | [#15002](https://github.com/flutter/flutter/issues/15002) | Done |
+| Fix create_test.dart to depend on package:flutter_test for its “package” template tests (not package:test) | [@tvolkert](https://github.com/tvolkert) | [#14975](https://github.com/flutter/flutter/issues/14975) | Done |
