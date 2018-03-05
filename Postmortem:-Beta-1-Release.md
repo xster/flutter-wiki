@@ -11,7 +11,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 ### _2018/02/20 - 2018/02/25_
 
-[@tvolkert](https://github.com/tvolkert) tests `v0.1.4` in preparation for releasing it to beta on 2018/02/27.
+[@tvolkert](https://github.com/tvolkert) tests v0.1.4 in preparation for releasing it to beta on 2018/02/27.
 
 ### _2018/02/26_
 
