@@ -63,8 +63,8 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 * The Flutter team didn’t have on its radar to mark builds as bad when they saw or fixed issues that would warrant marking a build as bad.  It’d be nice to have a better (ideally more automated) process around this.
 
 * The release process instructs the person doing the release to ensure that the build:
-  > can be successfully upgraded to from an earlier dev build (via 'flutter upgrade')<br>
-  > can be successfully upgraded from to a later dev builds (via 'flutter upgrade')
+  > can be successfully upgraded _to_ from an earlier dev build (via 'flutter upgrade')<br>
+  > can be successfully upgraded _from_ to a later dev builds (via 'flutter upgrade')
 
   Yet, there’s no way to cause the upgrade to stop at the target build - it always upgrades to tip-of-tree on the relevant branch.  This means that the person doing the release is not experiencing the exact same upgrade path that the user will be experiencing.
 
