@@ -11,7 +11,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 ### _2018/02/20 - 2018/02/25_
 
-[@tvolkert](https://github.com/tvolkert) tests v0.1.4 in preparation for releasing it to beta on 2018/02/27.
+[@tvolkert](https://github.com/tvolkert) tests `v0.1.4` in preparation for releasing it to beta on 2018/02/27.
 
 ### _2018/02/26_
 
@@ -41,7 +41,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 | Time | |
 | --- | --- |
 | _10:00_ | [@tvolkert](https://github.com/tvolkert) pushes v0.1.5 to beta.
-| _10:20_ | [@tvolkert](https://github.com/tvolkert) announces the updated beta to the flutter-dev mailing list.
+| _10:20_ | [@tvolkert](https://github.com/tvolkert) [announces](https://groups.google.com/d/msg/flutter-dev/AFj7Rd_MNhY/lkMfRTDwAQAJ) the updated beta to the flutter-dev mailing list.
 | _16:00_ | [@tvolkert](https://github.com/tvolkert) discovers that docs.flutter.io did not update to reflect the beta release and files [#15002](https://github.com/flutter/flutter/issues/15002).
 
 ## Lessons Learned
