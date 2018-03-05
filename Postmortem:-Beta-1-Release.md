@@ -70,7 +70,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
 * [@tvolkert](https://github.com/tvolkert), who was doing the roll, didn’t have permission to update `HEAD:beta` because it’s a restricted branch on GitHub.
 
-* We pushed a follow-on beta build (v0.1.4 -> v0.1.5) the day after launch to fix the issue with the gallery building.  Yet absent of reading our dev email list, users had no way of knowing that an upgrade was available because the flutter tool doesn’t alert them.
+* We pushed a follow-on beta build (v0.1.4 -> v0.1.5) the day after launch to fix the issue with the gallery building.  Yet absent of [reading the flutter-dev email list](https://groups.google.com/forum/#!msg/flutter-dev/AFj7Rd_MNhY/lkMfRTDwAQAJ), users had no way of knowing that an upgrade was available because the flutter tool doesn’t alert them.
 
 * The release process calls for the person doing the roll to simulate the upgrade path of our users, but it says “can be successfully upgraded to from an earlier dev build,” which is not explicitly the same upgrade that our users will face; they’ll be upgrading from one of the previous beta releases.  This distinction would have led us to realize that such users would be bitten by [#15096](https://github.com/flutter/flutter/issues/15096).
 
