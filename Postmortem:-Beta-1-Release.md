@@ -93,6 +93,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 | Action Item | Owner | Issue | Notes |
 |-------------|-------|-------|-------|
 | Ensure that Travis tests the ability to build the gallery. | [@xster](https://github.com/xster) || [Done](https://github.com/flutter/flutter/pull/14714) |
+| Build all examples on Travis and AppVeyor on the dev branch. | [@xster](https://github.com/xster) | [#15164](https://github.com/flutter/flutter/issues/15164) ||
 | Add a hidden `--version` argument to `flutter upgrade` to allow the person doing a beta roll to better simulate the upgrade path. | [@tvolkert](https://github.com/tvolkert) | [#14970](https://github.com/flutter/flutter/issues/14970) ||
 | Fetch upstream refs before switching channels in the “channel” command. | [@tvolkert](https://github.com/tvolkert) | [#14893](https://github.com/flutter/flutter/issues/14893) | [Done](https://github.com/flutter/flutter/pull/14896) |
 
