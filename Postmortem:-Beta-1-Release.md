@@ -68,7 +68,7 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 
   Yet, there’s no way to cause the upgrade to stop at the target build - it always upgrades to tip-of-tree on the relevant branch.  This means that the person doing the release is not experiencing the exact same upgrade path that the user will be experiencing.
 
-* [@tvolkert](https://github.com/tvolkert), who was doing the roll, didn’t have permission to update HEAD:beta because it’s a restricted branch on GitHub.
+* [@tvolkert](https://github.com/tvolkert), who was doing the roll, didn’t have permission to update `HEAD:beta` because it’s a restricted branch on GitHub.
 
 * We pushed a follow-on beta build (v0.1.4 -> v0.1.5) the day after launch to fix the issue with the gallery building.  Yet absent of reading our dev email list, users had no way of knowing that an upgrade was available because the flutter tool doesn’t alert them.
 
