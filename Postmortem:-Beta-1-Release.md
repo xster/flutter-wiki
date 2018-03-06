@@ -18,9 +18,9 @@ Description: Flutter launched beta 1 on February 27, 2018.  This document attemp
 | Time | |
 | --- | --- |
 | _11:40_ | [@tvolkert](https://github.com/tvolkert) tries to push v0.1.4 to beta but doesn’t have sufficient permissions, because the branch is protected on GitHub. |
-| _12:02_ | [@Hixie](https://github.com/Hixie) creates a “beta pusher” group so [@tvolkert](https://github.com/tvolkert) can push the beta release. |
+| _12:02_ | [@Hixie](https://github.com/Hixie) adds [@tvolkert](https://github.com/tvolkert) to the beta branch ACL so can push the beta release. |
 | _12:07_ | [@tvolkert](https://github.com/tvolkert) pushes v0.1.4 to the beta branch |
-| _12:20_ | [@mit-mit](https://github.com/mit-mit) tries to upgrade to the new beta and runs into [#15096](https://github.com/flutter/flutter/issues/15096).  The exact cause is not yet know. |
+| _12:20_ | [@mit-mit](https://github.com/mit-mit) tries to upgrade to the new beta and runs into [#15096](https://github.com/flutter/flutter/issues/15096).  The exact cause is not yet known. |
 | _12:39_ | From similar reports from [@timsneath](https://github.com/timsneath) and [@mit-mit](https://github.com/mit-mit), [@tvolkert](https://github.com/tvolkert) notices that switching channels doesn’t fetch updated refs from GitHub and files [#14893](https://github.com/flutter/flutter/issues/14893). |
 | _14:40_ | [@timsneath](https://github.com/timsneath) runs into more trouble upgrading.  [@tvolkert](https://github.com/tvolkert) begins trying to diagnose based on the reports. |
 | _16:53_ | After a few back-and-forths with [@timsneath](https://github.com/timsneath) over email, [@tvolkert](https://github.com/tvolkert) enlists the help of [@jason-simmons](https://github.com/jason-simmons) and [@cbracken](https://github.com/cbracken) in tracking down the cause for the problems [@timsneath](https://github.com/timsneath) is encountering.  The goal is to determine whether the problems are an outlier unique to [@timsneath's](https://github.com/timsneath) setup or whether they’re likely to affect most users once the influx of users begins. |
