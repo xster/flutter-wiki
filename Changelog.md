@@ -2,9 +2,19 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.2.x (since v0.1.5)
 
+### v0.2.0
+
+[flutter/engine#4742](https://github.com/flutter/engine/pull/4742) updated assets to be read directly out of the APK on Android. As a result, leading slashes are no longer supported in image asset paths:
+
+> #### Before
+>     new Image.asset('/foo/bar.png')
+>
+> #### After:
+>     new Image.asset('foo/bar.png')
+
 ### v0.1.9
 
-[#14901](https://github.com/flutter/flutter/pull/14901) A [Slider](https://docs.flutter.io/flutter/material/Slider-class.html) visual update changed the colors, opacities, and the value indicator shape and behavior. It also removes the "thumbOpenAtMin" flag from the Slider class, which is no longer needed, and can be emulated by the custom thumb shape support.
+[#14901](https://github.com/flutter/flutter/pull/14901) A [Slider](https://docs.flutter.io/flutter/material/Slider-class.html) visual update changed the colors, opacities, and the value indicator shape and behavior. It also removed the "`thumbOpenAtMin`" flag from the Slider class, which is no longer needed, and can be emulated by the custom thumb shape support.
 
 ## Changes in v0.1.5 (since v0.1.4)
 
