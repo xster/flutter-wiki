@@ -3,13 +3,28 @@ This page documents interesting or noteworthy changes, including all notable bre
 ## Changes in v0.2.x (since v0.1.5)
 
 ### v0.2.2
-[flutter/flutter#15303](https://github.com/flutter/flutter/pull/15303) updated the `showDialog` function to take a builder and deprecated the `widget` parameter.
+[flutter/flutter#15484](https://github.com/flutter/flutter/pull/15484) changed the meaning of the `TextFormField` `initialValue` constructor parameter
+
+The TextFormField initialValue parameter no longer unconditionally initializes the text property of its TextEditingController. If you create a TextFormField and provide a controller, the initialValue must be null, which is now the default. If you're providing a controller you can specify it's initial text value with the TextEditingController text property.
 
 > #### Before
->     showDialog(context: context, child: new Text('hello'))
+>     new TextFormField(
+>       initialValue: 'Hello World',
+>       controller: _myTextEditingController,
+>     );
 >
 > #### After
->     showDialog(context: context, builder: (BuildContext context) => new Text('hello'))
+>     new TextFormField(
+>       controller: _myTextEditingController ..text = 'Hello World',
+>     )
+>     // Or more typically:
+>     _myTextEditingController = new TextEditingController(
+>       text: 'Hello World',
+>      );
+>      new TextFormField(
+>        controller: _myTextEditingController,
+>      );
+
 
 [flutter/flutter#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
 
