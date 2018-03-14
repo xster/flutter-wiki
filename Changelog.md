@@ -3,7 +3,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 ## Changes in v0.2.x (since v0.1.5)
 
 ### v0.2.2
-[flutter/flutter#15484](https://github.com/flutter/flutter/pull/15484) changed the meaning of the `TextFormField` `initialValue` constructor parameter
+[flutter/flutter#15484](https://github.com/flutter/flutter/pull/15484) changed the meaning of the `TextFormField` `initialValue` constructor parameter.
 
 The TextFormField initialValue parameter no longer unconditionally initializes the text property of its TextEditingController. If you create a TextFormField and provide a controller, the initialValue must be null, which is now the default. If you're providing a controller you can specify it's initial text value with the TextEditingController text property.
 
