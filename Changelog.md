@@ -25,6 +25,13 @@ The TextFormField initialValue parameter no longer unconditionally initializes t
 >       controller: _myTextEditingController,
 >     );
 
+[flutter/flutter#15303](https://github.com/flutter/flutter/pull/15303) updated the `showDialog` function to take a builder and deprecated the `widget` parameter.
+
+> #### Before
+>     showDialog(context: context, child: new Text('hello'))
+>
+> #### After
+>     showDialog(context: context, builder: (BuildContext context) => new Text('hello'))
 
 [flutter/flutter#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
 
