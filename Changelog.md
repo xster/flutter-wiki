@@ -2,6 +2,23 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.2.x (since v0.1.5)
 
+### v0.2.2
+[flutter/flutter#15303](https://github.com/flutter/flutter/pull/15303) updated the `showDialog` function to take a builder and deprecated the `widget` parameter.
+
+> #### Before
+>     showDialog(context: context, child: new Text('hello'))
+>
+> #### After
+>     showDialog(context: context, builder: (BuildContext context) => new Text('hello'))
+
+[flutter/flutter#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
+
+> #### Before
+>     expect(widget.color, Colors.blue.shade500) // primary color
+>
+> #### After
+>     expect(widget.color, Colors.blue) // primary color
+
 ### v0.2.0
 
 [flutter/engine#4742](https://github.com/flutter/engine/pull/4742) updated assets to be read directly out of the APK on Android. As a result, leading slashes are no longer supported in image asset paths:
