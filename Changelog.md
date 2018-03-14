@@ -20,10 +20,10 @@ The TextFormField initialValue parameter no longer unconditionally initializes t
 >     // Or more typically:
 >     _myTextEditingController = new TextEditingController(
 >       text: 'Hello World',
->      );
->      new TextFormField(
->        controller: _myTextEditingController,
->      );
+>     );
+>     new TextFormField(
+>       controller: _myTextEditingController,
+>     );
 
 
 [flutter/flutter#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
