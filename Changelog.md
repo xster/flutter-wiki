@@ -2,7 +2,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.2.x (since v0.1.5)
 
-### v0.2.3
+### v0.2.3 (upcoming release)
 
 [https://github.com/flutter/flutter/pull/15537] removed SemanticsSortOrder. From now on traversal sorting is done among sibling nodes only. More details available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/iCoLnW31heE).
 
