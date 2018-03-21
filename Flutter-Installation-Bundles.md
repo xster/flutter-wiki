@@ -19,11 +19,11 @@ To recreate what an installation bundle provides, do this:
 1) _OPTIONAL_: `flutter ide-config --overwrite` will generate and update IDE configuration files for the Flutter repo. You only need to do this if you are using an IDE like IntelliJ or VS Code.
 1) In a temporary directory, run `flutter create --template=app app_sample`, `flutter create --template=package package_sample`, and `flutter create --template=plugin plugin_sample`.  You may then remove the app_sample, package_sample, and plugin_sample directories.  This will populate the pub cache with any additional packages needed for creating new flutter projects using each of those templates.
 
-These steps will set up your machine to have pre-cached all of the necessary components for working offline, or for avoiding large downloads on slow connections.
+These steps will set up your machine to pre-cache all of the necessary components for working offline, or for avoiding large downloads on slow connections.
 
 Another alternative to the above steps is to run the prepare_package.dart script directly (which is what we use to create the installation bundles in the first place).  You would invoke that script like this:
 
-1) Go as far as the `flutter doctor` step in the above steps (or if you have a working flutter repo already: it can be from another channel).
+1) Go as far as the `flutter doctor` step in the above steps (or if you have a working flutter repo already, you can skip that: it can be from another channel, but use a fairly current one for best results).
 1) Invoke `./bin/cache/dart-sdk/bin/dart ./dev/bots/prepare_package.dart --temp_dir $TMPDIR --revision $REVISION --branch master --output $PWD`, where `TMPDIR` is set to a directory where there are several gigabytes of free space, and `REVISION` is set to the 40-character git hash of the revision you wish to be working on.
 
 This will build an archive bundle in $PWD that has done all of the above steps, and contains the `master` branch.
