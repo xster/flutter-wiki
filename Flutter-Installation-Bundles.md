@@ -1,6 +1,6 @@
 # DRAFT
 
-Flutter has installation bundles which you can download and install for both the Beta and Dev channels.  These bundles are the easiest way to set up and get going with Flutter development, but they are not the only way.
+Flutter has installation bundles which you can download and install for both the [Beta and Dev channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels). These bundles are the easiest way to set up and get going with Flutter development, but they are not the only way.
 
 Notably, if you would like to work using the unstable `master` branch instead of the Beta or Dev channel code, you will need to construct your installation using the more detailed steps below.
 
@@ -18,7 +18,7 @@ To recreate what an installation bundle provides, do this:
 1) `flutter doctor` to check your installation and build the initial snapshot of the `flutter` tool. Install any missing software it tells you about, such as the Android SDK, or XCode tools.
 1) `flutter update-packages` will download all of the pub package dependencies needed to build any of the packages in the Flutter main distribution.
 1) `flutter precache` will make sure that the `flutter` tool's cache of binary artifacts is up-to-date.
-1) OPTIONAL: `flutter ide-config --overwrite` will generate and update IDE configuration files for the Flutter repo. You only need to do this if you are using an IDE like IntelliJ or VSCode.
+1) OPTIONAL: `flutter ide-config --overwrite` will generate and update IDE configuration files for the Flutter repo. You only need to do this if you are using an IDE like IntelliJ or VS Code.
 1) In a temporary directory, run `flutter create --template=app app_sample`, `flutter create --template=package package_sample`, and `flutter create --template=plugin plugin_sample`.  You may then remove the app_sample, package_sample, and plugin_sample directories.  This will populate the pub cache with any additional packages needed for creating new flutter projects using each of those templates.
 
 These steps will set up your machine to have pre-cached all of the necessary components for working offline, or for avoiding large downloads on slow connections.
