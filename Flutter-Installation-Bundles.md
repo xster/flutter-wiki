@@ -26,4 +26,4 @@ Another alternative to the above steps is to run the prepare_package.dart script
 1) Go as far as the `flutter doctor` step in the above steps (or if you have a working flutter repo already, you can skip that: it can be from another channel, but use a fairly current one for best results).
 1) Invoke `./bin/cache/dart-sdk/bin/dart ./dev/bots/prepare_package.dart --temp_dir $TMPDIR --revision $REVISION --branch master --output $PWD`, from the `flutter` root, where `TMPDIR` is set to a directory where there are several gigabytes of free space, and `REVISION` is set to the 40-character git hash of the revision you wish to be working on.
 
-This will build an archive bundle in $PWD that has done all of the above steps, and contains the `master` branch.
+This will build an archive bundle in the current directory that has done all of the above steps, and contains the `master` branch.
