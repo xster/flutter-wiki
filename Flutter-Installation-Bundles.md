@@ -1,5 +1,3 @@
-# DRAFT
-
 Flutter has installation bundles which you can download and install for both the [Beta and Dev channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels). These bundles are the easiest way to set up and get going with Flutter development, but they are not the only way.
 
 Notably, if you would like to work using the unstable `master` branch instead of the Beta or Dev channel code, you will need to construct your installation using the more detailed steps below.
