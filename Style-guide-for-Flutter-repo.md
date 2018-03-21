@@ -446,7 +446,7 @@ const String kSaveButtonTitle = 'Save';
 const Color _kBarrierColor = Colors.black54;
 ```
 
-However, where possible avoid global constants. Rather than `kDefaultButtonColor`, consider `Button.defaultColor`. If necessary, consider creating a class with a private constructor to hold relevant constants.
+However, where possible avoid global constants. Rather than `kDefaultButtonColor`, consider `Button.defaultColor`. If necessary, consider creating a class with a private constructor to hold relevant constants. It's not necessary to add the `k` prefix to non-global constants.
 
 
 ### Naming rules for typedefs and function variables
