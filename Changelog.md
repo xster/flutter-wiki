@@ -4,7 +4,9 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ### v0.2.3 (upcoming release)
 
-[https://github.com/flutter/flutter/pull/15537] removed SemanticsSortOrder. From now on traversal sorting is done among sibling nodes only. More details available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/iCoLnW31heE).
+[flutter/flutter#15416](https://github.com/flutter/flutter/pull/15416) removed `package:http` from Flutter and replaced all usages with the `dart:io` `HttpClient`. If you use `package:http` you must add it as a dependency in your `pubspec.yaml` to continue using it. `createHttpClient` was also removed after being marked deprecated. To change how the framework creates http clients, you can use [HttpOverrides](https://docs.flutter.io/flutter/dart-io/HttpOverrides-class.html) from `dart:io` to provide your own `createHttpClient` callback globally or per zone. More details are available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/AnqDqgQ6vus).
+
+[flutter/flutter#15537](https://github.com/flutter/flutter/pull/15537) removed SemanticsSortOrder. From now on traversal sorting is done among sibling nodes only. More details available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/iCoLnW31heE).
 
 ### v0.2.2
 [flutter/flutter#15484](https://github.com/flutter/flutter/pull/15484) changed the meaning of the `TextFormField` `initialValue` constructor parameter.
