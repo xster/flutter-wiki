@@ -1,6 +1,6 @@
 This page describes the process for updating the material design icons:
 
- 1. Use git to clone ~~https://github.com/google/material-design-icons~~ (there's a secret file somewhere) and https://github.com/google/fonts
+ 1. Use git to clone https://goto.google.com/flutter-material-font (internal Google access only) and https://github.com/google/fonts
  2. Create a fonts.zip file to upload to Google Storage:
 ```
     STAGING=/tmp/fonts_staging
