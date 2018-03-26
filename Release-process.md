@@ -26,7 +26,7 @@ This is the process for rolling the "beta" branch. The beta branch holds a versi
 A few days before the scheduled beta release date, start these steps:
 
 1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that:
-    * is at least seven days old.
+    * is at least seven days old, meaning the tag was added at least 7 days ago (the commit itself will probably be even older!).
     * is not listed on the [[Bad Builds]] page.
     * is newer than the current [latest commit on the `beta` branch](https://github.com/flutter/flutter/commits/beta).
     * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via 'flutter upgrade')
