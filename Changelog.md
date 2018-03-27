@@ -1,8 +1,10 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.2.x (since v0.1.5)
+## Changes in v0.2.x (since v0.2.3) - beta 2
 
-### v0.2.3 (upcoming release)
+## Changes in v0.2.3 (since v0.1.5) - beta 1 update
+
+### v0.2.3
 [flutter/flutter#15871](https://github.com/flutter/flutter/pull/15871) changed the default configuration of the `AndroidManifest.xml` created by `flutter create`.  "screenLayout" and "desnity" are now included by default in the configChanges attribute, preventing flutter apps from restarting when these change.
 
 [flutter/flutter#15416](https://github.com/flutter/flutter/pull/15416) removed `package:http` from Flutter and replaced all usages with the `dart:io` `HttpClient`. If you use `package:http` you must add it as a dependency in your `pubspec.yaml` to continue using it. `createHttpClient` was also removed after being marked deprecated. To change how the framework creates http clients, you can use [HttpOverrides](https://docs.flutter.io/flutter/dart-io/HttpOverrides-class.html) from `dart:io` to provide your own `createHttpClient` callback globally or per zone. More details are available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/AnqDqgQ6vus).
@@ -62,14 +64,14 @@ The TextFormField initialValue parameter no longer unconditionally initializes t
 
 [#14901](https://github.com/flutter/flutter/pull/14901) A [Slider](https://docs.flutter.io/flutter/material/Slider-class.html) visual update changed the colors, opacities, and the value indicator shape and behavior. It also removed the "`thumbOpenAtMin`" flag from the Slider class, which is no longer needed, and can be emulated by the custom thumb shape support.
 
-## Changes in v0.1.5 (since v0.1.4)
+## Changes in v0.1.5 (since v0.1.4) - beta 1.1
 
 ### v0.1.5
 
 #### Fixed Flutter Gallery build on Android
 [#14714](https://github.com/flutter/flutter/pull/14714) fixed the groovy script for the Flutter Gallery, thus fixing [#14912](https://github.com/flutter/flutter/issues/14912).
 
-## Changes in v0.1.4 (since v0.0.20)
+## Changes in v0.1.4 (since v0.0.20) - beta 1
 
 ### v0.1.3
 
