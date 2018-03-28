@@ -11,7 +11,7 @@ To recreate what an installation bundle provides, do this:
 1) `git clone -b master https://github.com/flutter/flutter.git` to clone the Flutter Git repo into the directory "flutter" in the current directory.
 1) Change directories into the newly created "flutter" directory.
 1) Add the Flutter `bin` directory to your path:
-    - Windows: `set PATH="%PATH%;%CD%/bin/flutter"`
+    - Windows: `set PATH="%PATH%;%CD%\bin\flutter"`
     - Other platforms: `export PATH="$PATH:$PWD/flutter"`
 1) `flutter doctor` to check your installation and build the initial snapshot of the `flutter` tool. Install any missing software it tells you about, such as the Android SDK, or XCode tools.
 1) `flutter update-packages` will download all of the pub package dependencies needed to build any of the packages in the Flutter main distribution.
