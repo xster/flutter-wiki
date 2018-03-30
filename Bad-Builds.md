@@ -6,7 +6,7 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 
 ## v0.2.4
 
-* Flutter tool invocation from xcode_backend.sh never exists. [#15944](https://github.com/flutter/flutter/issues/15944)
+* Flutter tool invocation from xcode_backend.sh never exits. [#15944](https://github.com/flutter/flutter/issues/15944)
 * Crash when doing full restart that spawns an isolate. [#15894](https://github.com/flutter/flutter/issues/15894)
 * Default `TabBar` `indicatorColor` doesn't contrast with its background. [#15958](https://github.com/flutter/flutter/issues/15958)
 
