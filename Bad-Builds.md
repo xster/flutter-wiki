@@ -1,5 +1,9 @@
 This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel. See [[Bad Build Identification]] for details on how to identify builds that should be listed here.
 
+## v0.2.5
+
+* Tooltip of FAB doesn't end up as semantics label of FAB [#16063](https://github.com/flutter/flutter/issues/16063)
+
 ## v0.2.4
 
 * Flutter tool invocation from xcode_backend.sh never exists. [#15944](https://github.com/flutter/flutter/issues/15944)
