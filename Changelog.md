@@ -6,19 +6,19 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 [#15416](https://github.com/flutter/flutter/pull/15416) removed `package:http` from Flutter and replaced all usages with the `HttpClient` from `dart:io`. If you use `package:http` you must add it as a dependency in your `pubspec.yaml` to continue using it. `createHttpClient()` was also removed after being marked deprecated. To change how the framework creates http clients, you can use [HttpOverrides](https://docs.flutter.io/flutter/dart-io/HttpOverrides-class.html) from `dart:io` to provide your own `createHttpClient()` callback globally or per zone. More details are available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/AnqDqgQ6vus).
 
-[flutter/flutter#15871](https://github.com/flutter/flutter/pull/15871) changed the default configuration of the `AndroidManifest.xml` created by `flutter create`.  "screenLayout" and "desnity" are now included by default in the configChanges attribute, preventing flutter apps from restarting when these change.
+[#15871](https://github.com/flutter/flutter/pull/15871) changed the default configuration of the `AndroidManifest.xml` created by `flutter create`.  "screenLayout" and "desnity" are now included by default in the configChanges attribute, preventing flutter apps from restarting when these change.
 
 ### v0.2.4
 
 [#15565](https://github.com/flutter/flutter/pull/15565) turned Dart 2 mode on by default.  To run in Dart 1 mode, you can still use `--no-preview-dart-2`.
 
-[flutter/flutter#15537](https://github.com/flutter/flutter/pull/15537) removed SemanticsSortOrder. From now on traversal sorting is done among sibling nodes only. More details available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/iCoLnW31heE).
+[#15537](https://github.com/flutter/flutter/pull/15537) removed SemanticsSortOrder. From now on traversal sorting is done among sibling nodes only. More details available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/iCoLnW31heE).
 
 ## Changes in v0.2.3 (since v0.1.5) - beta 1 update
 
 ### v0.2.2
 
-[flutter/flutter#15484](https://github.com/flutter/flutter/pull/15484) changed the meaning of the `TextFormField` `initialValue` constructor parameter.
+[#15484](https://github.com/flutter/flutter/pull/15484) changed the meaning of the `TextFormField` `initialValue` constructor parameter.
 
 The TextFormField initialValue parameter no longer unconditionally initializes the text property of its TextEditingController. If you create a TextFormField and provide a controller, the initialValue must be null, which is now the default. If you're providing a controller you can specify it's initial text value with the TextEditingController text property.
 
@@ -40,7 +40,7 @@ The TextFormField initialValue parameter no longer unconditionally initializes t
 >       controller: _myTextEditingController,
 >     );
 
-[flutter/flutter#15303](https://github.com/flutter/flutter/pull/15303) updated the `showDialog` function to take a builder and deprecated the `widget` parameter.
+[#15303](https://github.com/flutter/flutter/pull/15303) updated the `showDialog` function to take a builder and deprecated the `widget` parameter.
 
 > #### Before
 >     showDialog(context: context, child: new Text('hello'))
@@ -48,7 +48,7 @@ The TextFormField initialValue parameter no longer unconditionally initializes t
 > #### After
 >     showDialog(context: context, builder: (BuildContext context) => new Text('hello'))
 
-[flutter/flutter#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
+[#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
 
 > #### Before
 >     expect(widget.color, Colors.blue.shade500) // primary color
