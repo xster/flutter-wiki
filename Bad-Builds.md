@@ -1,12 +1,15 @@
 This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel. See [[Bad Build Identification]] for details on how to identify builds that should be listed here.
 
+## v0.2.4 - v0.2.6
+
+* Flutter tool invocation from xcode_backend.sh never exits. [#15944](https://github.com/flutter/flutter/issues/15944)
+
 ## v0.2.5
 
 * Tooltip of FAB doesn't end up as semantics label of FAB [#16063](https://github.com/flutter/flutter/issues/16063)
 
 ## v0.2.4
 
-* Flutter tool invocation from xcode_backend.sh never exits. [#15944](https://github.com/flutter/flutter/issues/15944)
 * Crash when doing full restart that spawns an isolate. [#15894](https://github.com/flutter/flutter/issues/15894)
 * Default `TabBar` `indicatorColor` doesn't contrast with its background. [#15958](https://github.com/flutter/flutter/issues/15958)
 
