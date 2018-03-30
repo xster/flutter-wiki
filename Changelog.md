@@ -2,12 +2,14 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.2.x (since v0.2.3) - beta 2
 
+### v0.2.5
+
+[flutter/flutter#15416](https://github.com/flutter/flutter/pull/15416) removed `package:http` from Flutter and replaced all usages with the `dart:io` `HttpClient`. If you use `package:http` you must add it as a dependency in your `pubspec.yaml` to continue using it. `createHttpClient` was also removed after being marked deprecated. To change how the framework creates http clients, you can use [HttpOverrides](https://docs.flutter.io/flutter/dart-io/HttpOverrides-class.html) from `dart:io` to provide your own `createHttpClient` callback globally or per zone. More details are available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/AnqDqgQ6vus).
+
 ## Changes in v0.2.3 (since v0.1.5) - beta 1 update
 
 ### v0.2.3
 [flutter/flutter#15871](https://github.com/flutter/flutter/pull/15871) changed the default configuration of the `AndroidManifest.xml` created by `flutter create`.  "screenLayout" and "desnity" are now included by default in the configChanges attribute, preventing flutter apps from restarting when these change.
-
-[flutter/flutter#15416](https://github.com/flutter/flutter/pull/15416) removed `package:http` from Flutter and replaced all usages with the `dart:io` `HttpClient`. If you use `package:http` you must add it as a dependency in your `pubspec.yaml` to continue using it. `createHttpClient` was also removed after being marked deprecated. To change how the framework creates http clients, you can use [HttpOverrides](https://docs.flutter.io/flutter/dart-io/HttpOverrides-class.html) from `dart:io` to provide your own `createHttpClient` callback globally or per zone. More details are available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/AnqDqgQ6vus).
 
 [flutter/flutter#15537](https://github.com/flutter/flutter/pull/15537) removed SemanticsSortOrder. From now on traversal sorting is done among sibling nodes only. More details available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/iCoLnW31heE).
 
