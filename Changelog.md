@@ -26,51 +26,51 @@ This page documents interesting or noteworthy changes, including all notable bre
 
   The TextFormField initialValue parameter no longer unconditionally initializes the text property of its TextEditingController. If you create a TextFormField and provide a controller, the initialValue must be null, which is now the default. If you're providing a controller you can specify it's initial text value with the TextEditingController text property.
 
-> #### Before
->     new TextFormField(
->       initialValue: 'Hello World',
->       controller: _myTextEditingController,
->     );
->
-> #### After
->     new TextFormField(
->       controller: _myTextEditingController ..text = 'Hello World',
->     )
->     // Or more typically:
->     _myTextEditingController = new TextEditingController(
->       text: 'Hello World',
->     );
->     new TextFormField(
->       controller: _myTextEditingController,
->     );
+  > #### Before
+  >     new TextFormField(
+  >       initialValue: 'Hello World',
+  >       controller: _myTextEditingController,
+  >     );
+  >
+  > #### After
+  >     new TextFormField(
+  >       controller: _myTextEditingController ..text = 'Hello World',
+  >     )
+  >     // Or more typically:
+  >     _myTextEditingController = new TextEditingController(
+  >       text: 'Hello World',
+  >     );
+  >     new TextFormField(
+  >       controller: _myTextEditingController,
+  >     );
 
-[#15303](https://github.com/flutter/flutter/pull/15303) updated the `showDialog` function to take a builder and deprecated the `widget` parameter.
+* [#15303](https://github.com/flutter/flutter/pull/15303) updated the `showDialog` function to take a builder and deprecated the `widget` parameter.
 
-> #### Before
->     showDialog(context: context, child: new Text('hello'))
->
-> #### After
->     showDialog(context: context, builder: (BuildContext context) => new Text('hello'))
+  > #### Before
+  >     showDialog(context: context, child: new Text('hello'))
+  >
+  > #### After
+  >     showDialog(context: context, builder: (BuildContext context) => new Text('hello'))
 
-[#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
+* [#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
 
-> #### Before
->     expect(widget.color, Colors.blue.shade500) // primary color
->
-> #### After
->     expect(widget.color, Colors.blue) // primary color
+  > #### Before
+  >     expect(widget.color, Colors.blue.shade500) // primary color
+  >
+  > #### After
+  >     expect(widget.color, Colors.blue) // primary color
 
 ## Changes in v0.2.3 (since v0.1.5) - beta 1 update
 
 ### v0.2.0
 
-[flutter/engine#4742](https://github.com/flutter/engine/pull/4742) updated assets to be read directly out of the APK on Android. As a result, leading slashes are no longer supported in image asset paths:
+* [flutter/engine#4742](https://github.com/flutter/engine/pull/4742) updated assets to be read directly out of the APK on Android. As a result, leading slashes are no longer supported in image asset paths:
 
-> #### Before
->     new Image.asset('/foo/bar.png')
->
-> #### After:
->     new Image.asset('foo/bar.png')
+  > #### Before
+  >     new Image.asset('/foo/bar.png')
+  >
+  > #### After:
+  >     new Image.asset('foo/bar.png')
 
 ### v0.1.9
 
