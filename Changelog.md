@@ -14,10 +14,6 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 [#15537](https://github.com/flutter/flutter/pull/15537) removed SemanticsSortOrder. From now on traversal sorting is done among sibling nodes only. More details available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/iCoLnW31heE).
 
-## Changes in v0.2.3 (since v0.1.5) - beta 1 update
-
-### v0.2.2
-
 [#15484](https://github.com/flutter/flutter/pull/15484) changed the meaning of the `TextFormField` `initialValue` constructor parameter.
 
 The TextFormField initialValue parameter no longer unconditionally initializes the text property of its TextEditingController. If you create a TextFormField and provide a controller, the initialValue must be null, which is now the default. If you're providing a controller you can specify it's initial text value with the TextEditingController text property.
@@ -55,6 +51,8 @@ The TextFormField initialValue parameter no longer unconditionally initializes t
 >
 > #### After
 >     expect(widget.color, Colors.blue) // primary color
+
+## Changes in v0.2.3 (since v0.1.5) - beta 1 update
 
 ### v0.2.0
 
