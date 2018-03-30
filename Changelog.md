@@ -12,11 +12,9 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 [#15565](https://github.com/flutter/flutter/pull/15565) turned Dart 2 mode on by default.  To run in Dart 1 mode, you can still use `--no-preview-dart-2`.
 
-## Changes in v0.2.3 (since v0.1.5) - beta 1 update
-
-### v0.2.3
-
 [flutter/flutter#15537](https://github.com/flutter/flutter/pull/15537) removed SemanticsSortOrder. From now on traversal sorting is done among sibling nodes only. More details available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/iCoLnW31heE).
+
+## Changes in v0.2.3 (since v0.1.5) - beta 1 update
 
 ### v0.2.2
 
