@@ -48,7 +48,7 @@ flutter run --preview-dart-2
 Install or upgrade the Flutter plugin so that you have version 22 or later, then:
 1. Create a Flutter project
 1. Open **Settings**, and select 'Flutter' under 'Languages & Frameworks'
-1. Check the 'Run applications with --preview-dart-2' checkbox under 'Experiments'
+1. Set the 'Run applications in Dart 2.0:' option to 'Enable Dart 2'
 1. Restart Android Studio / IntelliJ
 
 ### Visual Studio Code
