@@ -2,7 +2,7 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 
 ## v0.2.9
 
-[#16228](https://github.com/flutter/flutter/issues/16228)
+* Android license status shows as "unknown" with certain Android SDK versions. [#16228](https://github.com/flutter/flutter/issues/16228)
 
 ## v0.2.4 - v0.2.6
 
