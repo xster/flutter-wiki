@@ -12,7 +12,7 @@ you to develop using Dart 2, including updating your applications and packages t
 
 Should you need to temporarily opt-put of Dart 2, you can use these steps:
 
-### Terminal
+### From the Terminal
 
 To opt-out on the command-line:
 
