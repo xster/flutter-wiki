@@ -5,8 +5,10 @@ you to develop using Dart 2, including updating your applications and packages t
 
 ## How to update your code
 
-- todo:
-- [www.dartlang.org/dart-2](https://www.dartlang.org/dart-2)
+A few tips on how to resolve Dart 2 issues in existing Flutter code:
+
+- Follow the notes in the [breaking change notification](https://groups.google.com/forum/#!topic/flutter-dev/H8dDhWg_c8I)
+- Consult the general [www.dartlang.org/dart-2](https://www.dartlang.org/dart-2) guidance
 
 ## Opting out
 
