@@ -11,7 +11,7 @@ None yet, we're still experimenting.
 ## Turn the Flutter Project into a Module
 The following experiment allows to use a Flutter project as an Android activity. The Android and Flutter projects live in separate directories.
 
-This approach works best if the communication between the existing Android application and the Flutter activity is limited and the Flutter activity can be developed as a separate application first. With the given instructions, the combined application does not support hot-reload.
+This approach works best if the communication between the existing Android application and the Flutter activity is limited. Also, the combined application does not support hot-reload (with the given instructions) and it's therefore more convenient if the Flutter activity can be developed as a separate application first.
 
 Fundamentally, a Flutter application is turned into an Android activity. The existing Android project declares a dependency on the Flutter activity which is then automatically built and pulled in during the build process of the Android application.
 
