@@ -106,7 +106,7 @@ index 9686b2f..65fe00b 100644
 ```
 Since the `FlutterApplication` was responsible for initializing the system, we now need to add an initialization call to the `onCreate` method of the Activity:
 
-```
+``` Java
 public class MainActivity extends FlutterActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
