@@ -84,21 +84,37 @@ index 5dfc491..206c8c2 100644
          versionCode 1
 ```
 
-At this point we can also remove the `android:label` from the `<application>` tag in Flutters `AndroidManifest.xml`. This is not required, because the Android app can force an overwrite of that label, but it requires more work on the other side.
+At this point we can also remove the `android:name`, `android:label` and `android:icon` from the `<application>` tag in Flutters `AndroidManifest.xml`. This is not required, because the Android app can force an overwrite of these attributes, but it requires more work on the other side.
 
 ``` diff
 diff --git a/android/flutter_part/src/main/AndroidManifest.xml b/android/flutter_part/src/main/AndroidManifest.xml
-index 9686b2f..6430571 100644
+index 9686b2f..65fe00b 100644
 --- a/android/flutter_part/src/main/AndroidManifest.xml
 +++ b/android/flutter_part/src/main/AndroidManifest.xml
-@@ -14,7 +14,6 @@
-         FlutterApplication and put your custom class here. -->
-    <application
-        android:name="io.flutter.app.FlutterApplication"
+@@ -12,10 +12,7 @@
+          In most cases you can leave this as-is, but you if you want to provide
+          additional functionality it is fine to subclass or reimplement
+          FlutterApplication and put your custom class here. -->
+-    <application
+-        android:name="io.flutter.app.FlutterApplication"
 -        android:label="flutter_part"
-        android:icon="@mipmap/ic_launcher">
-        <activity
-            android:name=".MainActivity"
+-        android:icon="@mipmap/ic_launcher">
++    <application>
+         <activity
+             android:name=".MainActivity"
+             android:launchMode="singleTop"
+```
+Since the `FlutterApplication` was responsible for initializing the system, we now need to add an initialization call to the `onCreate` method of the Activity:
+
+```
+public class MainActivity extends FlutterActivity {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    io.flutter.view.FlutterMain.startInitialization(this.getApplicationContext());  // <= New.
+    super.onCreate(savedInstanceState);
+    GeneratedPluginRegistrant.registerWith(this);
+  }
+}
 ```
 
 ## On the Android Side
