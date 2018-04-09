@@ -1,17 +1,8 @@
-## Dart 2 introduction
+## Previewing Dart 2 with Flutter beta 1
 
-Dart 2 is an update to the Dart programming language that introduces:
-  * [Strong compile-time type checks](https://www.dartlang.org/dart-2#strong-mode-and-static-typing)
-  * Optional new/const keyword when calling a constructor (e.g., change `child: new Text('Hi')` to `child: Text('Hi')`)
-  * Various smaller language changes
+**Note**: In Flutter beta 2, Dart 2 is on by default
 
-Changes that may break Flutter apps and packages have, and will continue to, be communicated to the
-[flutter-dev](https://groups.google.com/forum/#!forum/flutter-dev) Google Group as
-[breaking changes](https://groups.google.com/forum/#!searchin/flutterdev/subject$3A%22breaking$20change%22%7Csort:date).
-
-Dart 2 is large change, and while the latest development builds of Flutter include some of Dart 2, most features are kept behind an opt-in flag while we perform final testing. However, we'd encourage you to turn the flag on during development and file issues if you see unexpected behavioural changes with the flag enabled.
-
-## Previewing Dart 2 with Flutter
+The following steps apply to Flutter beta 1:
 
 To preview Dart 2 you need a recent build of the Flutter SDK from one of the following [channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels):
 
