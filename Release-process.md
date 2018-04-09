@@ -46,8 +46,8 @@ A few days before the scheduled beta release date, start these steps:
    ```
    If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator to request that they add you to that list using [the beta branch configuration page](https://github.com/flutter/flutter/settings/branches/beta).
 1. Wait for the Travis and AppVeyor builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches).  If they fail, investigate the failure(s), and consider whether a newer dev build should be pushed to beta before any announcements are made.
-1. Wait for the packaging build to complete, and download the packages built by them. On each system, do the following (these will be automated shortly, but until then...):
-   - Unpack and check to see that a new project can be created with `flutter create --offline`
+1. Wait for the packaging build to complete, and download the [packages](https://flutter.io/sdk-archive/) built by them. On each system, do the following (these will be automated shortly, but until then...):
+   - Unpack and check to see that a new project can be created with `flutter create --offline foo`
    - Check that it doesn't build a new snapshot the first time flutter runs.
    - Check that we have the right channel and version set.
 1. Send an e-mail to flutter-dev that includes the latest section of the [[Changelog]] page.
