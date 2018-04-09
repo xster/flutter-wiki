@@ -1,10 +1,12 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.2.x (since v0.2.3) - beta 2
+## Changes in v0.2.x (since v0.2.8) - beta 3
 
 ### v0.2.9
 
 * [#16187](https://github.com/flutter/flutter/pull/16187) updated the `Card` widget's shape and elevation.
+
+## Changes in v0.2.8 (since v0.2.3) - beta 2
 
 ### v0.2.5
 
