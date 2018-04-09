@@ -16,7 +16,7 @@ This approach works best if the communication between the existing Android appli
 Fundamentally, a Flutter application is turned into an Android activity. The existing Android project declares a dependency on the Flutter activity which is then automatically built and pulled in during the build process of the Android application.
 
 ### In the Flutter Tools Project
-The gradle library for Flutter currently assumes that it deals with an Application extension. We need to change one file in the flutter repository to make it work for supporting libraries (not necessary after [#16300](https://github.com/flutter/flutter/pull/16300) lands):
+The gradle library for Flutter assumed that it dealt with an Application extension. This has been fixed on Master (with #731ed1b11b388f714eaeb3ed03969f27d195e1a2). Since this version hasn't been released yet, users might need to apply the following patch to their Flutter tools:
 
 ``` diff
 diff --git a/packages/flutter_tools/gradle/flutter.gradle b/packages/flutter_tools/gradle/flutter.gradle
@@ -44,7 +44,6 @@ index c421a64b9..fdde2d4c9 100644
     }
 }
 ```
-Minor note: the android property of the project object is a decorated object.
 
 ### On the Flutter Side
 As a simplification, we don't implement any communication between the container app and the Flutter activity. It would be trivial to support intent-based messages, but other forms of communications are probably simple as well.
