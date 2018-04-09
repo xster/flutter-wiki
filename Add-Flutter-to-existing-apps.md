@@ -16,7 +16,7 @@ This approach works best if the communication between the existing Android appli
 Fundamentally, a Flutter application is turned into an Android activity. The existing Android project declares a dependency on the Flutter activity which is then automatically built and pulled in during the build process of the Android application.
 
 ### In the Flutter Tools Project
-The gradle library for Flutter assumed that it dealt with an Application extension. This has been fixed on Master (with https://github.com/flutter/flutter/commit/731ed1b11b388f714eaeb3ed03969f27d195e1a2). Since this version hasn't been released yet, users might need to apply the following patch to their Flutter tools:
+The gradle library for Flutter assumed that it dealt with an Application extension. This has been fixed on Master (with [731ed1b](https://github.com/flutter/flutter/commit/731ed1b11b388f714eaeb3ed03969f27d195e1a2)). Since this version hasn't been released yet, users might need to apply the following patch to their Flutter tools:
 
 ``` diff
 diff --git a/packages/flutter_tools/gradle/flutter.gradle b/packages/flutter_tools/gradle/flutter.gradle
