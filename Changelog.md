@@ -8,6 +8,10 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.2.8 (since v0.2.3) - beta 2
 
+### v0.2.8
+
+* [#16040](https://github.com/flutter/flutter/pull/16040) adds an API to let `CupertinoTabScaffold`'s current tab be programmatically changed via its `CupertinoTabBar`'s `currentIndex`.
+
 ### v0.2.5
 
 * [#15416](https://github.com/flutter/flutter/pull/15416) removed `package:http` from Flutter and replaced all usages with the `HttpClient` from `dart:io`. If you use `package:http` you must add it as a dependency in your `pubspec.yaml` to continue using it.
@@ -17,6 +21,8 @@ This page documents interesting or noteworthy changes, including all notable bre
   More details are available [in the announcement](https://groups.google.com/forum/#!topic/flutter-dev/AnqDqgQ6vus).
 
 * [#15871](https://github.com/flutter/flutter/pull/15871) changed the default configuration of the `AndroidManifest.xml` created by `flutter create`.  "screenLayout" and "density" are now included by default in the configChanges attribute, preventing flutter apps from restarting when these change.
+
+* [#15324](https://github.com/flutter/flutter/pull/15324) adds a new CupertinoRefreshControl widget styled after the iOS pull-to-refresh pattern. Demo available in the Flutter Gallery.
 
 ### v0.2.4
 
@@ -65,6 +71,8 @@ This page documents interesting or noteworthy changes, including all notable bre
   >
   > #### After
   >     expect(widget.color, Colors.blue) // primary color
+
+* [#15548](https://github.com/flutter/flutter/pull/15548) adds debugging flags `debugDisableClipLayers`, `debugDisablePhysicalShapeLayers` and `debugDisableOpacityLayers` to help with performance diagnosis of rasterizing speed.
 
 ## Changes in v0.2.3 (since v0.1.5) - beta 1 update
 
