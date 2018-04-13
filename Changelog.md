@@ -2,6 +2,9 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.2.x (since v0.2.8) - beta 3
 
+### v0.2.11
+* [#16039](https://github.com/flutter/flutter/pull/16039) and [#16447](https://github.com/flutter/flutter/pull/16447) substantially revised the `Chip` implementation, added new chip types: `InputChip`, `ChoiceChip`, `FilterChip`, `ActionChip`, and updated the appearance of chips.
+
 ### v0.2.9
 
 * [#16187](https://github.com/flutter/flutter/pull/16187) updated the `Card` widget's shape and elevation.
