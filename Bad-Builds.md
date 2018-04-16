@@ -1,5 +1,9 @@
 This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel. See [[Bad Build Identification]] for details on how to identify builds that should be listed here.
 
+## v0.2.10 - v0.2.12
+
+* iOS release binary sizes are bloated with image encoding support. The fix required an API update to `Image.toByteData()`.  Since the API containing the image encoding was immediately changed, we don't want to release the bad API. [#16537](https://github.com/flutter/flutter/issues/16537)
+
 ## v0.2.9
 
 * Android license status shows as "unknown" with certain Android SDK versions. [#16228](https://github.com/flutter/flutter/issues/16228)
