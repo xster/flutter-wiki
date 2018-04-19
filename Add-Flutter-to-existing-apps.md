@@ -168,3 +168,25 @@ After that the Flutter activity can be launched like any other Android activity:
         startActivity(intent);
     }
 ```
+
+### Hot Reload / Restart
+Flutter can hot reload and restart code inside an existing Android application. Invoking `flutter run` with the `--use-application-binary` flag launches the Android application and connects to the Flutter VM once it is available.
+
+However, before this works we need to make sure that the application is compiled in the mode that `flutter run` expects. Specifically, `flutter run` is (currently) using the `dart-preview-2` flag, whereas a simple compilation with `gradle` doesn't include this flag by default.
+
+In the existing Android project's `gradle.properties` file add the following line:
+```
+preview-dart-2=true
+```
+
+This flag will become unnecessary, once the Dart 2 semantics is always on by default.
+
+Make sure that the application is rebuilt. (The easiest is usually to run `./gradlew assembleDebug`).
+
+In the flutter-part directory, run Flutter with the existing Android application as follows:
+
+```
+flutter run --use-application-binary ../MyApplication/app/build/outputs/apk/debug/app-debug.apk
+```
+
+This assumes that the existing Android application is named `MyApplication` and is located directly next to the Flutter directory. Once the application launches, navigate to the Flutter activity, at which point Flutter will automatically connect to the VM.
