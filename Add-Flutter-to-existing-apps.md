@@ -190,3 +190,102 @@ flutter run --use-application-binary ../MyApplication/app/build/outputs/apk/debu
 ```
 
 This assumes that the existing Android application is named `MyApplication` and is located directly next to the Flutter directory. Once the application launches, navigate to the Flutter activity, at which point Flutter will automatically connect to the VM.
+
+Note that the Android application includes a snapshot of the Flutter activity. As long as the application is not recompiled it will start up with that state. However, a restart (pressing "R") will upload the latest code.
+
+### Troubleshooting
+Here are common error messages and how they can be fixed.
+
+---
+
+```
+Unable to resolve dependency for ':app@debug/compileClasspath': Could not resolve project :flutter_part.
+```
+This error message happens when the Flutter project is still an application. Make sure to update the `android/app/build.gradle`.
+
+---
+
+```
+Library projects cannot set applicationId. applicationId is set to 'com.example.flutterpart' in default config.
+```
+As explained by the error message: Library projects cannot have `applicationId`s. Just delete that line in `android/app/build.gradle`.
+
+---
+
+```
+Manifest merger failed : Attribute application@label value=(@string/app_name) from AndroidManifest.xml:8:9-41
+	is also present at [:flutter_part] AndroidManifest.xml:27:9-37 value=(flutter_part).
+	Suggestion: add 'tools:replace="android:label"' to <application> element at AndroidManifest.xml:5:5-22:19 to override.
+```
+
+This happens when the flutter-part's `AndroidManifest.xml` still contains `android:name`, `android:label` and `android:icon` attributes in the `<application>` tag. Either remove them, or override them (as suggested in the error message).
+
+---
+
+```
+Element type "application" must be followed by either attribute specifications, ">" or "/>".
+```
+
+This happens when deleting `android:name`, `android:label` and `android:icon` from the `AndroidManifest.xml` file without leaving the closing `>` for the `application` tag. Just add the `>` where you deleted 
+these attributes.
+
+---
+
+Two launcher entries are added when the Android application is installed.
+
+This happens when the `AndroidManifest.xml` still contains the `<intent-filter>` entry.
+
+---
+
+When invoking `flutter run` with the Android application's `apk` the application starts in the Flutter app.
+
+This happens when the `AndroidManifest.xml` still contains the `<intent-filter>` entry. In that case `flutter run` immediately launches the Flutter activity.
+
+---
+
+```
+04-19 17:20:29.404 18661-18661/com.example.floitsch.myapplication E/FlutterMain: Flutter initialization failed.
+    java.lang.NullPointerException: Attempt to invoke virtual method 'void io.flutter.view.ResourceExtractor.waitForCompletion()' on a null object reference
+        at io.flutter.view.FlutterMain.ensureInitializationComplete(FlutterMain.java:184)
+        at io.flutter.app.FlutterActivityDelegate.onCreate(FlutterActivityDelegate.java:152)
+        at io.flutter.app.FlutterActivity.onCreate(FlutterActivity.java:81)
+        at com.example.flutterpart.MainActivity.onCreate(MainActivity.java:11)
+```
+
+This error indicates that the `Flutter` engine wasn't initialized yet. Make sure that the Flutter activity's `onCreate` starts with `io.flutter.view.FlutterMain.startInitialization(this.getApplicationContext());`.
+
+---
+
+```
+04-19 17:23:25.351 19107-19107/com.example.floitsch.myapplication E/AndroidRuntime: FATAL EXCEPTION: main
+    Process: com.example.floitsch.myapplication, PID: 19107
+    android.content.ActivityNotFoundException: Unable to find explicit activity class {com.example.floitsch.myapplication/com.example.flutterpart.MainActivity}; have you declared this activity in your AndroidManifest.xml?
+        at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:1933)
+        at android.app.Instrumentation.execStartActivity(Instrumentation.java:1616)
+        at android.app.Activity.startActivityForResult(Activity.java:4487)
+```
+
+This error message can have two reasons:
+1. the `build.gradle` file is missing the dependency entry (`implementation project(":flutter_part")`), or
+2. the (qualified) name of the activity is different.
+
+---
+
+When invoking `flutter run --use-application-binary`.
+
+```
+Hot reload was rejected:
+Dart_NewStringFromUTF8 expects argument 'str' to be valid UTF-8.
+```
+or
+```
+W/flutter (19559): [WARNING:flutter/runtime/dart_controller.cc(194)] Failed to load package map: /data/user/0/com.example.floitsch.myapplication/cache/flutter_partJIFUUQ/flutter_part/.packages
+E/flutter (19559): [ERROR:topaz/lib/tonic/logging/dart_error.cc(16)] Dart_NewStringFromUTF8 expects argument 'str' to be valid UTF-8.
+E/flutter (19559): [ERROR:topaz/lib/tonic/logging/dart_error.cc(16)] Dart_GetClosure expects argument 'library' to be non-null.
+```
+or (in newer versions):
+```
+E/flutter (19892): [ERROR:topaz/lib/tonic/logging/dart_error.cc(16)] Dart_LoadScriptFromSnapshot expects parameter 'buffer' to be a script type snapshot with a valid length.
+```
+
+These error messages happen, when the application isn't compiled with `preview-dart-2`. Make sure to add `preview-dart-2` to the Android application's `gradle.properties` and recompile the Android application.
