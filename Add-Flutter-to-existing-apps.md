@@ -140,8 +140,6 @@ project(':flutter_part').projectDir = new File(settingsDir, '../flutter_part/and
 
 At this point the project won't compile anymore because the Flutter module needs to know where the Flutter project is located. We fix this by updating the `local.properties` file:
 
-Finally, before being able to compile, we need to tell the Android application where Flutter is installed by updating the local.properties file:
-
 ```
 flutter.sdk=/usr/local/google/home/floitsch/code/flutter/flutter
 ```
