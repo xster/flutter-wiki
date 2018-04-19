@@ -53,14 +53,12 @@ We start by creating a fresh Flutter project:
 ᐅ flutter create flutter_part
 ```
 
-Since we want to merge two Android projects it's recommended (required?) to change the directory-name of the Flutter Android application. I chose `flutter_part`. While not necessary (things worked without it) it's recommended to change the `build.gradle`'s `project.evaluationDependsOn` to the new name.
-
 Changing an application to become an activity library is done in the `build.gradle` file:
 ``` diff
-diff --git a/android/flutter_part/build.gradle b/android/flutter_part/build.gradle
-index 5dfc491..206c8c2 100644
---- a/android/flutter_part/build.gradle
-+++ b/android/flutter_part/build.gradle
+diff --git a/android/app/build.gradle b/android/app/build.gradle
+index 5dfc491..c903d8f 100644
+--- a/android/app/build.gradle
++++ b/android/app/build.gradle
 @@ -11,7 +11,7 @@ if (flutterRoot == null) {
      throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
  }
@@ -70,14 +68,12 @@ index 5dfc491..206c8c2 100644
  apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
  
  android {
-@@ -23,7 +23,9 @@ android {
+@@ -22,8 +22,6 @@ android {
+     }
  
      defaultConfig {
-         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
 -        applicationId "com.example.flutterpart"
-+
-+        // Libraries must not have `applicationId`s.
-+        // applicationId "com.example.flutterpart"
          minSdkVersion 16
          targetSdkVersion 27
          versionCode 1
@@ -85,11 +81,13 @@ index 5dfc491..206c8c2 100644
 
 At this point we can also remove the `android:name`, `android:label` and `android:icon` from the `<application>` tag in Flutters `AndroidManifest.xml`. This is not required, because the Android app can force an overwrite of these attributes, but it requires more work on the other side.
 
+Also, we remove the `intent-filter` entry, since we don't expect the Flutter activity to be launched directly.
+
 ``` diff
-diff --git a/android/flutter_part/src/main/AndroidManifest.xml b/android/flutter_part/src/main/AndroidManifest.xml
+diff --git a/android/app/src/main/AndroidManifest.xml b/android/app/src/main/AndroidManifest.xml
 index 9686b2f..65fe00b 100644
---- a/android/flutter_part/src/main/AndroidManifest.xml
-+++ b/android/flutter_part/src/main/AndroidManifest.xml
+--- a/android/app/src/main/AndroidManifest.xml
++++ b/android/app/src/main/AndroidManifest.xml
 @@ -12,10 +12,7 @@
           In most cases you can leave this as-is, but you if you want to provide
           additional functionality it is fine to subclass or reimplement
@@ -102,8 +100,19 @@ index 9686b2f..65fe00b 100644
          <activity
              android:name=".MainActivity"
              android:launchMode="singleTop"
+@@ -30,10 +27,6 @@
+             <meta-data
+                 android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+                 android:value="true" />
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN"/>
+-                <category android:name="android.intent.category.LAUNCHER"/>
+-            </intent-filter>
+         </activity>
+     </application>
+ </manifest>
 ```
-Since the `FlutterApplication` was responsible for initializing the system, we now need to add an initialization call to the `onCreate` method of the Activity:
+Since the `FlutterApplication` was responsible for initializing the system, we now need to add an initialization call to the `onCreate` method of the Activity (`android/app/src/main/java/com/example/flutterpart/MainActivity.java`):
 
 ``` Java
 public class MainActivity extends FlutterActivity {
@@ -125,35 +134,33 @@ The minimal requirement for the Android application must be set to the same (or 
 The Flutter project must get referenced in the `settings.gradle` file:
 ```
 include ':app', ':flutter_part'
-project(':flutter_part').projectDir = new File(settingsDir, '../flutter_part/android/flutter_part')
+project(':flutter_part').projectDir = new File(settingsDir, '../flutter_part/android/app')
 ```
 (This assumes that the Flutter project lives in a directory adjacent to the Android application.)
 
-Similarly, we need to change the application's gradle file so that it depends on the library:
-
-``` diff
-diff --git a/app/build.gradle b/app/build.gradle
-index 1ec1b83..58d5f8d 100644
---- a/app/build.gradle
-+++ b/app/build.gradle
-@@ -16,6 +16,10 @@ android {
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-+
-+    dependencies {
-+        implementation project(":flutter_part")
-+    }
-}
- 
-dependencies {
-```
+At this point the project won't compile anymore because the Flutter module needs to know where the Flutter project is located. We fix this by updating the `local.properties` file:
 
 Finally, before being able to compile, we need to tell the Android application where Flutter is installed by updating the local.properties file:
+
 ```
 flutter.sdk=/usr/local/google/home/floitsch/code/flutter/flutter
 ```
 This line was copied from the Flutter directory's `local.properties` file.
+
+Now, we need to change the application's gradle file so that it depends on the library:
+
+``` diff
+diff --git a/app/build.gradle b/app/build.gradle
+index 000886d..82dd2f3 100644
+--- a/app/build.gradle
++++ b/app/build.gradle
+@@ -26,4 +26,5 @@ dependencies {
+     testImplementation 'junit:junit:4.12'
+     androidTestImplementation 'com.android.support.test:runner:1.0.1'
+     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
++    implementation project(":flutter_part")
+ }
+```
 
 After that the Flutter activity can be launched like any other Android activity:
 ``` Java
