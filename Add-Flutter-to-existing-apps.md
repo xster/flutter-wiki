@@ -193,6 +193,9 @@ This assumes that the existing Android application is named `MyApplication` and 
 
 Note that the Android application includes a snapshot of the Flutter activity. As long as the application is not recompiled it will start up with that state. However, a restart (pressing "R") will upload the latest code.
 
+### Plugins
+TBD.
+
 ### Troubleshooting
 Here are common error messages and how they can be fixed.
 
