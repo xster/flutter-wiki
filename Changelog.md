@@ -20,7 +20,7 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 
 * `dart:async`: Removed the deprecated `defaultValue` parameter on `Stream.firstWhere` and `Stream.lastWhere`.
 * `dart:core`: Added `tryParse` static method to `int`, `double`, `num`, `BigInt`, `Uri` and `DateTime`, and deprecated `onError` parameter on `int.parse`, `double.parse`, and `num.parse`.
-
+* The `new` keyword can now always be omitted. The `const` keyword is required to create a constant expression, although within the expression, further `const` keywords can also be omitted.
 
 ## Changes in v0.2.8 (since v0.2.3) - beta 2
 
