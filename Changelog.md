@@ -1,6 +1,13 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.2.x (since v0.2.8)
+## Changes in v0.3.x (since v0.2.8)
+
+We are aware of a potential problem with certificate validation in the `HttpClient` implementation.
+To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang/sdk/issues/32936).
+
+### v0.3.1
+
+* [engine/4932](https://github.com/flutter/engine/pull/4932) introduced a new shell embedding API with numerous new features, in particular, a single process can now host multiple Flutter shells.
 
 ### v0.2.11
 * [#16039](https://github.com/flutter/flutter/pull/16039) and [#16447](https://github.com/flutter/flutter/pull/16447) substantially revised the `Chip` implementation, added new chip types: `InputChip`, `ChoiceChip`, `FilterChip`, `ActionChip`, and updated the appearance of chips.
