@@ -16,6 +16,12 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 
 * [#16187](https://github.com/flutter/flutter/pull/16187) updated the `Card` widget's shape and elevation.
 
+### Dart changes since Flutter v0.2.8
+
+* `dart:async`: Removed the deprecated `defaultValue` parameter on `Stream.firstWhere` and `Stream.lastWhere`.
+* `dart:core`: Added `tryParse` static method to `int`, `double`, `num`, `BigInt`, `Uri` and `DateTime`, and deprecated `onError` parameter on `int.parse`, `double.parse`, and `num.parse`.
+
+
 ## Changes in v0.2.8 (since v0.2.3) - beta 2
 
 ### v0.2.8
