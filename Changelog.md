@@ -7,7 +7,7 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 
 ### v0.3.1
 
-* [flutter/engine#4932](https://github.com/flutter/engine/pull/4932) introduced a new shell embedding API with numerous new features, in particular, a single process can now host multiple Flutter shells.
+* [flutter/engine#4932](https://github.com/flutter/engine/pull/4932) introduced a new shell embedding API with numerous new features.  In particular, a single process can now host multiple Flutter shells.
 
 * [flutter/engine#4762](https://github.com/flutter/engine/pull/4762) and [flutter/engine#5008](https://github.com/flutter/engine/pull/5008) introduced `Image.toByteData()`, which is used to get the raw RGBA bytes of an `Image` instance in `dart:ui`.
 
