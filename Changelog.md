@@ -1,6 +1,8 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.3.x (since v0.2.8)
+## Changes in v0.3.x (since v0.3.1)
+
+## Changes in v0.3.1 (since v0.2.8)
 
 We are aware of a potential problem with certificate validation in the `HttpClient` implementation.
 To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang/sdk/issues/32936).
