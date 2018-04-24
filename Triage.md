@@ -18,7 +18,7 @@ If you recognise that this bug is a duplicate of an existing bug, add a referenc
 
 ## Labels
 
-You can see our list of labels here: https://github.com/flutter/flutter/labels
+_See also: [List of labels](https://github.com/flutter/flutter/labels)_
 
 If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels.
 
@@ -36,7 +36,7 @@ Finally, label the issue based on what area of the project the bug relates to:
 
 ## Milestone
 
-You can see our list of milestones here: https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open
+_See also: [List of milestones](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open)_
 
 Make a judgement call:
 
