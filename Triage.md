@@ -1,12 +1,12 @@
 # Guidelines for triage
 
-The process of triaging bugs is to look at the most recent bug with no labels, and to go through the following steps. Then, once the bug has been properly triaged per these steps, go back and look at whatever is now the most recent bug with no labels, and continue this process while there are bugs to process in this way.
+The process of triaging bugs is to look at [the least recently updated bug with no labels](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Alabel+sort%3Aupdated-asc), and to go through the following steps. Then, once the bug has been properly triaged per these steps, go back and look at whatever is now the least recently updated bug with no labels, and continue this process while there are bugs to process in this way.
 
 ## Overview
 
 First, look at the bug report, and try to understand what the described problem is. Edit the original comment to remove boilerplate that the bug reporter didn't remove.
 
-If the bug is unclear, and we have previously asked for more detail, and the bug reporter has had a chance to provide additional feedback but has not been able to do so in a way that makes the bug actionable, either apologise for us not being able to fix it and then close the bug, or add the "waiting for customer response" label, depending on your confidence that the reporter will be able to eventually provide sufficient detail. Then, skip the remaining steps.
+If the bug is unclear, and we have previously asked for more detail, and the bug reporter has had a chance to provide additional feedback but has not been able to do so in a way that makes the bug actionable, either apologise for us not being able to fix it and then close the bug, or add the `waiting for customer response` label, depending on your confidence that the reporter will be able to eventually provide sufficient detail. Then, skip the remaining steps.
 
 If their report is unclear, doesn't give sufficient steps to reproduce, or is otherwise lacking in sufficient detail for us to act on it, add a comment asking for additional information, then skip the remaining steps.
 
@@ -18,20 +18,25 @@ If you recognise that this bug is a duplicate of an existing bug, add a referenc
 
 ## Labels
 
-If any of the labels prefixed with "a:" apply, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels.
+You can see our list of labels here: https://github.com/flutter/flutter/labels
 
-Add any of the applicable "severe: *" labels, typically only one will apply but sometimes "regression" will apply in conjunction with one of the others. If it's a very serious bug that should block releases, consider adding the "TODAY" label.
+If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels.
 
-Label the issue based on what area of the project the bug relates to:
+Add any of the applicable "severe: *" labels; typically only one will apply but sometimes "regression" will apply in conjunction with one of the others. If it's a very serious bug that should block releases, consider adding the "TODAY" label as well.
+
+If it's something that looks trivial to fix, add the `easy bug` label.
+
+Finally, label the issue based on what area of the project the bug relates to:
 
 - If it's a documentation bug, add one of the labels with the "d:" prefix.
-- If it's a bug with the underlying engine, add "engine" and optionally one of the bugs with the "e:" prefix. Consider one of the bugs with the "dependency" prefix if the bug is related to one of those areas.
-- If it's a bug with the Flutter framework, add "framework" and optionally one of the bugs with the "f:" prefix.
-- If it's a bug with plugins, add "plugin" and optionally one of the labels with the "p:" prefix.
-- If it's a bug with the "flutter" tool, add "tool" and optionally one of the labels with the "t:" prefix.
-- If it's something that looks trivial to fix, add the "easy bug" label.
+- If it's a bug with the underlying engine, add `engine` and optionally one of the bugs with the "e:" prefix. Consider one of the bugs with the "dependency" prefix if the bug is related to one of those areas.
+- If it's a bug with the Flutter framework, add `framework` and optionally one of the bugs with the "f:" prefix.
+- If it's a bug with plugins, add `plugin` and optionally one of the labels with the "p:" prefix.
+- If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
 
 ## Milestone
+
+You can see our list of milestones here: https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open
 
 Make a judgement call:
 
