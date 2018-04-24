@@ -2,7 +2,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.3.x (since v0.3.1)
 
-## Changes in v0.3.1 (since v0.2.8)
+## Changes in v0.3.1 (since v0.2.8) - beta 3
 
 We are aware of a potential problem with certificate validation in the `HttpClient` implementation.
 To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang/sdk/issues/32936).
