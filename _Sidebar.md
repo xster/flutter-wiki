@@ -13,6 +13,7 @@ Flutter Wiki
 - [[Bug prioritization]]
 - [[Upgrading dependencies]]
 - [Breaking Changes](https://flutter.io/design-principles/#handling-breaking-changes)
+- [[Triage]]
 
 ## Tips
 - [[Making animated GIFs of Flutter apps]]
