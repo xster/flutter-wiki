@@ -2,6 +2,10 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.3.x (since v0.3.1)
 
+### v0.3.3
+
+* [flutter/engine#5060](https://github.com/flutter/engine/pull/5060) introduced the ability to encode a `dart:ui Image` into a PNG in `Image.toByteData()`
+
 ## Changes in v0.3.1 (since v0.2.8) - beta 3
 
 We are aware of a potential problem with certificate validation in the `HttpClient` implementation.
