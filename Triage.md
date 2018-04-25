@@ -8,7 +8,9 @@ First, look at the bug report, and try to understand what the described problem 
 
 If the bug is unclear, and we have previously asked for more detail, and the bug reporter has had a chance to provide additional feedback but has not been able to do so in a way that makes the bug actionable, either apologise for us not being able to fix it and then close the bug, or add the `waiting for customer response` label, depending on your confidence that the reporter will be able to eventually provide sufficient detail. Then, skip the remaining steps.
 
-If their report is unclear, doesn't give sufficient steps to reproduce, or is otherwise lacking in sufficient detail for us to act on it, add a comment asking for additional information, then skip the remaining steps.
+If their report is unclear, doesn't give sufficient steps to reproduce, or is otherwise lacking in sufficient detail for us to act on it, add a polite comment asking for additional information, then skip the remaining steps.
+
+If the issue describes something that you know for a fact has been fixed since the bug report was filed, add a cheerful comment saying so, close the issue, and skip the remaining steps.
 
 If the bug is clear enough for us to act on it, continue with the following steps.
 
