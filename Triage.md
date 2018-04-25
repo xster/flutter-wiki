@@ -56,7 +56,7 @@ Add one of the following people to the bug:
 
 - If it's Dart-related, @a-siva
 
-- If it's related to the "flutter" tool, @tvolkert
+- If it's related to the "flutter" tool or Fuchsia, @tvolkert
 
 - Otherwise, add @Hixie
 
