@@ -2,9 +2,37 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.3.x (since v0.3.1)
 
+### v0.3.6
+
+* [#17094](https://github.com/flutter/flutter/pull/17094) introduced the ability to do golden image testing in widget tests.  Within a widget test, you can now use the following matcher to ensure that your widget's rasterized image matches a golden file (e.g. `foo.png`):
+
+  ```dart
+  await expectLater(find.byType(MyWidget), matchesGoldenFile('foo.png'));
+  ```
+
+  ### Breaking change
+
+  One of the consequences of this change is that all tests run through `flutter test` now explicitly depend on `package:flutter_test`.  Users of `flutter test` will need to update their `pubspec.yaml` file to include the following if it does not already exist:
+
+  ```
+  dev_dependencies:
+    flutter_test:
+      sdk: flutter
+  ```
+
+  If your `pubspec.yaml` does not contain the requisite dependency, and you run `flutter test`, you will see errors of the following form:
+
+  ```
+  compiler message: Error: Could not resolve the package 'flutter_test' in 'package:flutter_test/flutter_test.dart'.
+  ```
+
 ### v0.3.3
 
-* [flutter/engine#5060](https://github.com/flutter/engine/pull/5060) introduced the ability to encode a `dart:ui Image` into a PNG in `Image.toByteData()`
+* [flutter/engine#5060](https://github.com/flutter/engine/pull/5060) introduced the ability to encode a `dart:ui Image` into a PNG via `Image.toByteData()`.  Callers wishing to get encoded bytes may pass the `format` argument, like so:
+
+  ```dart
+  image.toByteData(format: ui.ImageByteFormat.png);
+  ```
 
 ## Changes in v0.3.1 (since v0.2.8) - beta 2 update
 
