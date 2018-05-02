@@ -70,8 +70,8 @@ As part of rolling a release, an "all in one" archive of the release is created 
 
 A particular archive for a given target platform can be found by consulting one of these JSON files:
 
-* (releases_macos.json)[https://storage.googleapis.com/flutter_infra/releases/releases_macos.json]
-* (releases_windows.json)[https://storage.googleapis.com/flutter_infra/releases/releases_windows.json]
-* (releases_linux.json)[https://storage.googleapis.com/flutter_infra/releases/releases_linux.json]
+* [releases_macos.json](https://storage.googleapis.com/flutter_infra/releases/releases_macos.json)
+* [releases_windows.json](https://storage.googleapis.com/flutter_infra/releases/releases_windows.json)
+* [releases_linux.json](https://storage.googleapis.com/flutter_infra/releases/releases_linux.json)
 
 Once the desired release has been located, the download link for it is the combination of the `base_url` with the `archive` tag on the release entry. The hash for the currently released archive for the dev and beta channels are listed under the `current_dev` and `current_beta` tags, respectively.
