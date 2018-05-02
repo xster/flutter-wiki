@@ -68,4 +68,10 @@ As part of rolling a release, an "all in one" archive of the release is created 
 1. Pre-build IntelliJ configuration
 1. A copy of MinGit on Windows
 
-A particular archive can be found by consulting [this JSON file](https://storage.googleapis.com/flutter_infra/releases/releases.json).  Once the desired release has been located, the download link for it is the combination of the `base_url` with the `mac_archive`, `linux_archive`, or `win_archive` tags on the release entry, depending upon which platform you are interested in. The hash for the currently released archive for the dev and beta channels are listed under the `current_dev` and `current_beta` tags, respectively.
+A particular archive for a given target platform can be found by consulting one of these JSON files:
+
+* (releases_macos.json)[https://storage.googleapis.com/flutter_infra/releases/releases_macos.json]
+* (releases_windows.json)[https://storage.googleapis.com/flutter_infra/releases/releases_windows.json]
+* (releases_linux.json)[https://storage.googleapis.com/flutter_infra/releases/releases_linux.json]
+
+Once the desired release has been located, the download link for it is the combination of the `base_url` with the `archive` tag on the release entry. The hash for the currently released archive for the dev and beta channels are listed under the `current_dev` and `current_beta` tags, respectively.
