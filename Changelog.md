@@ -2,7 +2,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.3.x (since v0.3.1)
 
-### v0.3.6
+### v0.3.7
 * [#17021](https://github.com/flutter/flutter/pull/17021) added implicit a11y scrolling for iOS. For this, viewports define a cache extend before the leading as well as after the trailing edge and slivers are expected to provide semantics information if they fall into the cache extent.
 
   ### Breaking change
