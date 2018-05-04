@@ -3,6 +3,12 @@ This page documents interesting or noteworthy changes, including all notable bre
 ## Changes in v0.3.x (since v0.3.1)
 
 ### v0.3.6
+* [#17021](https://github.com/flutter/flutter/pull/17021) added implicit a11y scrolling for iOS. For this, viewports define a cache extend before the leading as well as after the trailing edge and slivers are expected to provide semantics information if they fall into the cache extent.
+
+  ### Breaking change
+  With this change, children of a viewport that are currently not visible in the viewport are now considered off-stage. To find them in a test, specify `skipOffstage: false` on the Finder.
+
+### v0.3.6
 
 * [#17094](https://github.com/flutter/flutter/pull/17094) introduced the ability to do golden image testing in widget tests.  Within a widget test, you can now use the following matcher to ensure that your widget's rasterized image matches a golden file (e.g. `foo.png`):
 
