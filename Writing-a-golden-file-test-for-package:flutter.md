@@ -5,7 +5,10 @@ Put a `RepaintBoundary` widget around the part of the subtree that you want to v
 Add an expectation along the following lines:
 
 ```dart
-  await expectLater(find.byType(RepaintBoundary), matchesGoldenFile('test_name.subtest.subfile.png'));
+  await expectLater(
+    find.byType(RepaintBoundary),
+    matchesGoldenFile('test_name.subtest.subfile.png'),
+  );
 ```
 
 The first argument is a finder that specifies the widget to screenshot.
