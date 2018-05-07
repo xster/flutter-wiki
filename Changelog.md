@@ -1,8 +1,8 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.3.x (since v0.3.2)
+## Changes in v0.4.x (since v0.3.2)
 
-### v0.3.7
+### v0.4.0
 * [#17021](https://github.com/flutter/flutter/pull/17021) added implicit a11y scrolling for iOS. For this, viewports define a cache extend before the leading as well as after the trailing edge and slivers are expected to provide semantics information if they fall into the cache extent.
 
   ### Breaking change
