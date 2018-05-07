@@ -35,4 +35,5 @@ Flutter Wiki
 - [Design philosophy](https://flutter.io/design-principles/)
 - [[Changelog]]
 - [[Test coverage for package:flutter]]
+- [[Writing a golden-file test for package:flutter]]
 - [[Postmortems]]
