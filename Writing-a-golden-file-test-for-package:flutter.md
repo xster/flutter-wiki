@@ -21,7 +21,7 @@ Run `flutter test` again, but without the `--update-goldens` flag, to verify tha
 
 Commit the images to the goldens repo. You do this by going into the `bin/cache/pkg/goldens/` directory, which is actually a git checkout of our goldens repo, using `git add` for all your new files, using `git commit -a` to create a commit (in the commit message, link to the bug you are fixing, if possible, e.g. "Goldens for https://github.com/flutter/flutter/issues/17262"), and then pushing the files to the repo using `git push git@github.com:flutter/goldens.git master`.
 
-This updates the goldens repo but does not make the images actually available yet. To make them available, you then update the `bin/interna/goldens.version` file in your Flutter repo to the hash of the [commit you just pushed to the goldens repo](https://github.com/flutter/goldens/commits/master).
+This updates the goldens repo but does not make the images actually available yet. To make them available, you then update the `bin/internal/goldens.version` file in your Flutter repo to the hash of the [commit you just pushed to the goldens repo](https://github.com/flutter/goldens/commits/master).
 
 Now run `flutter test` again, without the `--update-goldens` flag, to verify that the goldens match the uploaded images.
 
