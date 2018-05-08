@@ -1,3 +1,14 @@
+Update (05/08/2018):
+
+If you’d like to install Flutter using [an installation bundle](https://flutter.io/sdk-archive/), you can replace the domain of the original URL with a trusted mirror (e.g., https://storage.flutter-io.cn) to speed it up. For example:
+
+* Original URL: https://storage.googleapis.com/flutter_infra/releases/beta/windows/flutter_windows_v0.3.2-beta.zip
+* Mirrored URL: https://storage.flutter-io.cn/flutter_infra/releases/beta/windows/flutter_windows_v0.3.2-beta.zip
+
+You will still need to set up two environment variables to upgrade Flutter and use the pub package repository in China. Please follow the instructions below.
+
+----
+
 If you’re installing or using Flutter in China, it may be helpful to use a trustworthy local mirror site that hosts Flutter’s dependencies. To instruct the Flutter tool to use an alternate storage location, you will need to set two environment variables, `PUB_HOSTED_URL` and `FLUTTER_STORAGE_BASE_URL`, before running the `flutter` command. 
 
 Taking MacOS or Linux as an example, here are the first few steps in the setup process for using a mirror site.  Run the following in a Bash shell from the directory where you wish to store your local Flutter clone:
