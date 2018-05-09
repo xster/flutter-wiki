@@ -8,12 +8,15 @@ Add an expectation along the following lines:
   await expectLater(
     find.byType(RepaintBoundary),
     matchesGoldenFile('test_name.subtest.subfile.png'),
+    skip: !PLatform.isLinux,
   );
 ```
 
 The first argument is a finder that specifies the widget to screenshot.
 
 The argument to `matchesGoldenFile` is the filename for the screen shot. The part up to the first dot should exactly match the test filename (e.g. if your test is `widgets/foo_bar_test.dart`, use `foo_bar`). The `subtest` part should be unique to this `testWidgets` entry, and the part after that should be unique within the `testWidgets` entry. This allows each file to have multiple `testWidgets` tests each with their own namespace for the images, and then allows for disambiguation within each test in case there are multiple screen shots per test.
+
+The `skip` argument is used because we have slight rendering differences across platforms, and we don't yet have the infrastructure in place to allow the developer to update their golden files on all three supported host platforms -- so we chose Linux as the host platform upon which we'd run golden file tests.
 
 Once you have written your test, run `flutter test --update-goldens test/foo/bar_test.dart` in the `flutter` package directory (where the filename is the relative path to your new test). This will update the images in `bin/cache/pkg/goldens/packages/flutter/test/`; the directories below that will match the hierarchy of the directories in the `test` directory of the `flutter` package. Verify that the images are what you expect; update your test and repeat this step until you are happy.
 
