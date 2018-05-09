@@ -422,6 +422,11 @@ any case where you could figure out the actual type. Always specialize
 generic types where possible. Explicitly type all list and map
 literals.
 
+This achieves two purposes: it verifies that the type that the compiler
+would infer matches the type you expect, and it makes the code self-documenting
+in the case where the type is not obvious (e.g. when calling anything other
+than a constructor).
+
 Always avoid "var". Use "dynamic" if you are being explicit that the
 type is unknown. Use "Object" if you are being explicit that you want
 an object that implements `==` and `hashCode`.
@@ -456,10 +461,9 @@ the callback argument or property, and `handleFoo` for the method
 that is called.
 
 If you have a callback with arguments but you want to ignore the
-arguments, name them `_`, `__`, `___`, etc. If you name any of them,
-name all of them. Always be explicit with the types of variables in
-callbacks unless you are ignoring them (and have named them with
-underscores).
+arguments, give the type and names of the arguments anyway. That way,
+if someone copies and pastes your code, they will not have to look up
+what the arguments are.
 
 
 ### Spell words in identifiers and comments correctly
@@ -479,7 +483,7 @@ If a word is correctly spelt (according to our sources of truth as described in 
 
 For examples, prefer `toolbar`, `scrollbar`, but `appBar` ('app bar' in documentation), `tabBar` ('tab bar' in documentation).
 
-Similarly, prefer `offstage` rather than 'offStage`.
+Similarly, prefer `offstage` rather than `offStage`.
 
 
 ### Avoid double negatives in APIs
