@@ -1,5 +1,9 @@
 This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel. See [[Bad Build Identification]] for details on how to identify builds that should be listed here.
 
+## v0.4.2
+
+* Seen reports of android_arm snapshot builds with hardfp when it should be softfp, see [#17387](https://github.com/flutter/flutter/issues/17387)
+
 ## v0.3.1 - ???
 
 * Accessibility on iOS is broken, see [#16904](https://github.com/flutter/flutter/issues/16904).
