@@ -2,7 +2,7 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 
 ## v0.4.2
 
-* Seen reports of android_arm snapshot builds with hardfp when it should be softfp, see [#17387](https://github.com/flutter/flutter/issues/17387)
+* Windows-specific bug in which android_arm release/profile snapshots build with hardfp when they should use softfp, see [#17387](https://github.com/flutter/flutter/issues/17387).
 
 ## v0.3.1 - ???
 
