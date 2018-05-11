@@ -23,6 +23,7 @@ Flutter Wiki
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
 - [Enabling Dart 2 in Flutter](https://github.com/flutter/flutter/wiki/Trying-the-preview-of-Dart-2-in-Flutter)
 - [[Using Flutter in China]]
+- [[Continuous delivery with Flutter]]
 
 ## Commands
 - [[The flutter daemon mode]]
