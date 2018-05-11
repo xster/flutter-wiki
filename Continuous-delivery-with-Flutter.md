@@ -50,7 +50,7 @@ The main aspects to consider is since cloud instances are ephemeral and untruste
 
 Both [Travis](https://docs.travis-ci.com/user/environment-variables/#Encrypting-environment-variables) and [Cirrus](https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables) (randomly chosen examples, you can use any CI systems you wish) support the concept of encrypted environment variables to store private data.
 
-**Take precaution to not re-echo those variable values back onto the console in your test scripts**. Those variables are also not available in pull requests until they're merged to ensure that malicious actors cannot create a pull request that prints these secrets out. Be careful interactions with these secrets in pull requests you accept and merge.
+**Take precaution to not re-echo those variable values back onto the console in your test scripts**. Those variables are also not available in pull requests until they're merged to ensure that malicious actors cannot create a pull request that prints these secrets out. Be careful with interactions with these secrets in pull requests you accept and merge.
  
 1. Make login credentials ephemeral
     * ![](https://imgur.com/p0A5Lyt.png) On Android:
