@@ -85,3 +85,6 @@ Both [Travis](https://docs.travis-ci.com/user/environment-variables/#Encrypting-
          * `cd android` or `cd ios`
          * `bundle exec fastlane [name of the lane]`
 
+# Reference
+
+The Flutter Gallery in the Flutter repo uses the above for continuous deployment. It can be used as an example. https://github.com/flutter/flutter/tree/master/examples/flutter_gallery. The Travis script is at https://github.com/flutter/flutter/blob/master/.travis.yml.
