@@ -16,8 +16,8 @@ Follow these steps while testing the build and deployment process or if you will
     * ![](https://imgur.com/p0A5Lyt.png) In your `[project]/android` directory, run `fastlane init`
     * ![](https://imgur.com/J4Hw6AU.png) In your `[project]/ios` directory, run `fastlane init`
 4. Edit the `Appfile`s to ensure it has adequate matadata for your app
-    * ![](https://imgur.com/p0A5Lyt.png) Ensure package_name in `[project]/android/Appfile` matches your package in pubspec.yaml
-    * ![](https://imgur.com/J4Hw6AU.png) Ensure app_identifier in `[project]/ios/Appfile` also matches. Also fill in `apple_id`, `itc_team_id`, `team_id` with your account info
+    * ![](https://imgur.com/p0A5Lyt.png) Ensure `package_name` in `[project]/android/Appfile` matches your package in pubspec.yaml
+    * ![](https://imgur.com/J4Hw6AU.png) Ensure `app_identifier` in `[project]/ios/Appfile` also matches. Also fill in `apple_id`, `itc_team_id`, `team_id` with your account info
 5. Set up your local log in credentials for the stores
     * ![](https://imgur.com/p0A5Lyt.png) Follow https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply and ensure that `fastlane supply init` can successfully sync data from your Play Store console. Treat the .json file like your password and do not check it into any public source control repositories. 
     * ![](https://imgur.com/J4Hw6AU.png) Your iTunes Connect username is already in your `Appfile`'s `apple_id` field. You can set `FASTLANE_PASSWORD` shell environment variable with your iTunes Connect password. Otherwise, you'll be prompted whe uploading to iTunes/TestFlight
