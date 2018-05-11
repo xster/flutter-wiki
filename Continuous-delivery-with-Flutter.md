@@ -46,7 +46,7 @@ Follow these steps while testing the build and deployment process or if you will
 
 Follow the local setup section first to make sure the process works before migrating onto a cloud system like Travis.
 
-The main aspects to consider is since cloud instances are ephemeral and untrusted, won't be can't leave credentials like your Play Store service account JSON or your iTunes distribution certificate on the server.
+The main aspects to consider is since cloud instances are ephemeral and untrusted, you won't be leaving your credentials like your Play Store service account JSON or your iTunes distribution certificate on the server.
 
 Both [Travis](https://docs.travis-ci.com/user/environment-variables/#Encrypting-environment-variables) and [Cirrus](https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables) (randomly chosen examples, you can use any CI systems you wish) support the concept of encrypted environment variables to store private data.
 
