@@ -292,3 +292,168 @@ E/flutter (19892): [ERROR:topaz/lib/tonic/logging/dart_error.cc(16)] Dart_LoadSc
 ```
 
 These error messages happen, when the application isn't compiled with `preview-dart-2`. Make sure to add `preview-dart-2` to the Android application's `gradle.properties` and recompile the Android application.
+
+# Experiments/iOS
+With the right setup Flutter can be used as a UIViewController embedded in an existing app.
+
+The following steps integrate a Flutter app `embedded` (with a layout like that of `flutter create`) into an existing iOS app `embedder`.
+
+### Disable bitcode
+Currently the flutter aot compiled code is not compatible with bitcode.
+
+Go to the project view of `embedder` and choose the build target. Go to the "build settings" tab. Find "Enable bitcode" and switch to "no".
+
+### Create a Flutter group/folder
+The flutter compilation will place artifacts here.
+
+Right-click the `embedder` project and choose "new Group" name the group Flutter. 
+
+### Create and use a flutter settings .xcconfig file
+The settings file contains information about the location of the flutter installation, the flutter framework (contains the engine) and the flutter app you want to integrate. It also contains the build mode (debug/profile/release).
+
+For a flutter project `flutter build` creates this settings file automatically (`Generated.xcconfig`). For this scenario we have to create and maintain it manually. 
+
+Right click the "Flutter" group and choose "new file" choose the "configuration settings file", give it a name (eg. FlutterConfig.xcconfig). Replace the template with something like:
+```
+FLUTTER_ROOT=/path/to/flutter
+FLUTTER_APPLICATION_PATH=/path/to//embedded
+FLUTTER_TARGET=/path/to/embedded/lib/main.dart
+FLUTTER_BUILD_MODE=debug // replace with "release" for running the flutter app in release mode.
+FLUTTER_BUILD_DIR=build
+SYMROOT=${SOURCE_ROOT}/../build/ios
+FLUTTER_FRAMEWORK_DIR=/path/to/flutter/bin/cache/artifacts/engine/ios // replace with ios-release for running the flutter app in release mode
+PREVIEW_DART_2=true
+```
+An easy way to get the paths right to copy it from `embedded` (after running it with `flutter run`).
+
+
+Now this configuration file must be included in your existing xcconfig file with the line:
+```
+#include "Flutter/FlutterConfig.xccfonfig"
+```
+
+If you have no existing xcconfig file for your target you can create one (for example `Debug.xcconfig`) and point your target to it by going to the project view, choosing the project, take the "info" tab, go to the "Configurations" section, and choose `Debug` for the target.
+
+### Create a `AppFrameworkInfo.plist` file
+This file is copied into the `app.framework` that contains the code snapshot.
+
+Right click the "Flutter" folder, "New File" , "Property List", name it `AppFrameworkInfo.plist`. Give it the following contents:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundleDevelopmentRegion</key>
+        <string>en</string>
+        <key>CFBundleExecutable</key>
+        <string>App</string>
+        <key>CFBundleIdentifier</key>
+        <string>io.flutter.flutter.app</string>
+        <key>CFBundleInfoDictionaryVersion</key>
+        <string>6.0</string>
+        <key>CFBundleName</key>
+        <string>App</string>
+        <key>CFBundlePackageType</key>
+        <string>FMWK</string>
+        <key>CFBundleShortVersionString</key>
+        <string>1.0</string>
+        <key>CFBundleSignature</key>
+        <string>????</string>
+        <key>CFBundleVersion</key>
+        <string>1.0</string>
+        <key>UIRequiredDeviceCapabilities</key>
+        <array>
+            <string>arm64</string>
+        </array>
+        <key>MinimumOSVersion</key>
+        <string>8.0</string>
+    </dict>
+</plist>
+```
+
+### Make a build-step that calls `xcode-backend.sh`
+The `xcode-backend.sh` script compiles the flutter app, and copies the right engine to the "Flutter" folder.
+
+In the project view, choose the target, go to the "Build Phases" tab, press "+" in the upper left corner. Choose "New Run Script Phase". Change the script to `/bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" build`. Drag the phase to be after "Target dependencies" or "Check Pods Manifest.lock".
+
+### Add the Flutter artifacts to the project.
+First build the target. This will fail, but before failing it will run `xcode-backend.sh`.
+Right click the "Flutter" folder. Choose "Add Files to "embedded"". Mark the files/folders `app.framework`, `flutter.framework` and `flutter_assets`.
+
+Now go to the project view, and choose the target. Go to the "General" tab and in the "Embedded Binaries" section, press "+" and choose the "app.framework" and "flutter.framework" frameworks.
+
+### Make your ApplicationDelegate a FlutterApplicationDelegate
+This 
+
+Make your ApplicationDelegate inherit from the FlutterApplicationDelegate, something akin to (`AppDelegate.h`):
+
+```
+#import <UIKit/UIKit.h>
+#import <Flutter/Flutter.h>
+
+@interface AppDelegate : FlutterAppDelegate <UIApplicationDelegate>
+
+
+@end
+```
+
+If the current AppDelegate is already inheriting from another class you can copy code from 
+[FlutterAppDelegate.mm](https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Source/FlutterAppDelegate.mm).
+
+### Use a FlutterViewController in your App
+Now you can insert a FlutterViewController somewhere in your code (or in a storyboard).
+The following code demonstrates pushing a FlutterViewController to the current NavigationController, and receiving messages from Flutter.
+
+```
+#include <Flutter/Flutter.h>
+
+...
+
+- (void)pushFlutter {
+    if (!_flutterViewController) {
+       _flutterViewController = [[FlutterViewController alloc] initWithProject:nil nibName:nil bundle:nil];
+       messageChannel = [FlutterBasicMessageChannel messageChannelWithName:@"channel"
+                                                           binaryMessenger:_flutterViewController
+                                                                      codec:[FlutterStandardMessageCodec sharedInstance]];
+        UINavigationController*  __weak weakSelf = self;
+        [messageChannel setMessageHandler:^(id message, FlutterReply reply) {
+            // Any message on this channel pops the Flutter view.
+            [[weakSelf navigationController] popViewControllerAnimated:YES];
+            reply(@"");
+        }];
+    }
+    NSAssert([self navigationController], @"Must have a NaviationController");
+    [[self navigationController]  pushViewController:_flutterViewController2 animated:YES];
+}
+```
+The Dart side can use the channel like:
+```
+import 'package:flutter/services.dart';
+
+BasicMessageChannel channel =
+    new BasicMessageChannel("channel", new StandardMessageCodec());
+
+void pop() {
+  channel.send({});
+}
+```
+
+If you use several Flutter views  you can use `[_flutterViewController setInitialRoute:@"route/for/view"]` and dispatch from Dart.
+
+Now you should be able to run the project from xCode!
+
+### Running with hot reload enabled.
+Compile the project to an app (remember to put it in debug-mode from the xcconfig file to enable hot reload).
+From the command-line you should be able to do something like from the folder of `embedder`:
+
+```
+/usr/bin/env xcrun xcodebuild build -configuration Debug ONLY_ACTIVE_ARCH=YES VERBOSE_SCRIPT_LOGGING=YES -project embedder.xcodeproj -scheme embedder BUILD_DIR=build/ios -sdk iphoneos -arch arm64
+```
+
+And then (from inside the folder of `embedded`) run:
+```
+flutter run --use-application-binary /path/to/embedder/build/ios/Debug-iphoneos/embedder.app
+```
+
+### Plugins
+TBD.
