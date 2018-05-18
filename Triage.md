@@ -58,6 +58,8 @@ Add one of the following people to the bug:
 
 - If it's related to the "flutter" tool or Fuchsia, @tvolkert
 
+- If it's related to Material widgets, @HansMuller.
+
 - Otherwise, add @Hixie
 
 ## Additional comments
