@@ -44,7 +44,7 @@ A few days before the scheduled beta release date, start these steps (you will p
    git checkout vX.Y.Z
    git push upstream HEAD:beta
    ```
-   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator to request that they add you to that list using [the beta branch configuration page](https://github.com/flutter/flutter/settings/branches/beta).
+   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members).
 1. Wait for the Travis and AppVeyor builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches).  If they fail, investigate the failure(s), and consider whether a newer dev build should be pushed to beta before any announcements are made.
 1. Wait for the packaging build to complete, and download the [packages](https://flutter.io/sdk-archive/) built by them. On each system, do the following (these will be automated shortly, but until then...):
    - Unpack and check to see that a new project can be created with `flutter create --offline foo`
