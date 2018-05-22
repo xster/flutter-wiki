@@ -23,7 +23,7 @@ If a bug is subsequently found on this release, please mark that commit as bad o
 
 This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the dev branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
 
-A few days before the scheduled beta release date, start these steps:
+A few days before the scheduled beta release date, start these steps (you will probably want to do this on macOS in order to test all parts of the codelabs and builds):
 
 1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that:
     * is at least seven days old, meaning the tag was added at least 7 days ago (the commit itself will probably be even older!).
