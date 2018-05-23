@@ -28,3 +28,11 @@ The `flutter-io.cn` server is a provisional mirror for Flutter dependencies and 
 
 Known issue:
 * Running the Flutter Gallery app from source requires assets hosted on a domain this workaround currently doesn't support. You can subscribe to [this bug](https://github.com/flutter/flutter/issues/13763) to receive updates. In the meantime, you can check out Flutter Gallery from Google Play or third-party app stores you trust.
+
+***
+Other community-run mirror sites:
+* Shanghai Jiaotong University Linux User Group
+  * FLUTTER_STORAGE_BASE_URL: https://mirrors.sjtug.sjtu.edu.cn/
+  * PUB_HOSTED_URL: https://dart-pub.mirrors.sjtug.sjtu.edu.cn/
+
+Please use these community mirror sites only if you _trust_ the provider. The Flutter team cannot verify their reliability nor security.
