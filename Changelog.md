@@ -7,6 +7,8 @@ This page documents interesting or noteworthy changes, including all notable bre
 ### v0.4.4
 * [#17620](https://github.com/flutter/flutter/pull/17620) slightly reduces the default dimensions of `Checkbox`, `Radio`, and `Switch` to better conform to the latest Material design specs.
 
+* [#17637](https://github.com/flutter/flutter/pull/17637) Updates `Checkbox`, `Radio`, and `Switch` to use the `ThemeData` `toggleableActiveColor` instead of `accentColor`.
+
 * [#17586](https://github.com/flutter/flutter/pull/17586) added a new `background` property to `TextStyle`, which may affect subclasses.
 
 ### v0.4.0
