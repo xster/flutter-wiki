@@ -14,6 +14,8 @@ This is the process for updating the "dev" branch. This should happen _at least_
    bin/cache/dart-sdk/bin/dart dev/tools/lib/roll_dev.dart --increment=z
    ```
    ...and follow the prompts.
+
+   If you are doing a dev roll that is the first roll since the last beta, then you should use `--increment=y` instead.
 1. Done!
 
 If a bug is subsequently found on this release, please mark that commit as bad on the [[Bad Builds]] page.
@@ -51,7 +53,7 @@ A few days before the scheduled beta release date, start these steps (you will p
    - Check that it doesn't build a new snapshot the first time flutter runs.
    - Check that we have the right channel and version set.
 1. Update the [[Changelog]] page so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
-1. Do a dev roll where you increment the Y number.
+1. Inform the person currently doing the dev roll that they should increment the Y number instead of the Z number (`--increment=y`).
 1. Create [a new milestone](https://github.com/flutter/flutter/milestones/new) for the beta release after whatever the last beta release that has a milestone. For example, if there are currently milestones for beta12-beta18, create beta19, with a date one week before the scheduled date for that beta.
 1. Move all the open bugs in the current milestone to the Overdue milestone.
 1. Close the current [milestone](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open).
