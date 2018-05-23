@@ -1,7 +1,7 @@
+# Deprecation Notice
+**Note**: As of Flutter beta 2 and later, Dart 2 is on by default. This article only applies to older versions of Flutter, and will be deleted as the last few users upgrade to more current releases.
+
 ## Previewing Dart 2 with Flutter beta 1
-
-**Note**: In Flutter beta 2, Dart 2 is on by default
-
 The following steps apply to Flutter beta 1:
 
 To preview Dart 2 you need a recent build of the Flutter SDK from one of the following [channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels):
