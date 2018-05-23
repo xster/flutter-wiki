@@ -9,7 +9,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 * [#17637](https://github.com/flutter/flutter/pull/17637) updates `Checkbox`, `Radio`, and `Switch` to use the `ThemeData` `toggleableActiveColor` instead of `accentColor`.
 
-* [#17586](https://github.com/flutter/flutter/pull/17586) added a new `background` property to `TextStyle`, which may affect subclasses.
+* [#17586](https://github.com/flutter/flutter/pull/17586) added a new `background` property to `TextStyle`. Subclasses need to make this property is handled in constructors and `copyWith`.
 
 ### v0.4.0
 * [#17021](https://github.com/flutter/flutter/pull/17021) added implicit a11y scrolling for iOS. For this, viewports define a cache extend before the leading as well as after the trailing edge and slivers are expected to provide semantics information if they fall into the cache extent.
