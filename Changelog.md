@@ -2,6 +2,12 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.4.x (since v0.3.2)
 
+### v0.4.4
+
+[#17620](https://github.com/flutter/flutter/pull/17620) changes the dimensions of `Checkbox`, `Radio`, and `Switch`.
+
+[#17586](https://github.com/flutter/flutter/pull/17586) added a new `background` property to `TextStyle`, which may affect subclasses.
+
 ### v0.4.0
 * [#17021](https://github.com/flutter/flutter/pull/17021) added implicit a11y scrolling for iOS. For this, viewports define a cache extend before the leading as well as after the trailing edge and slivers are expected to provide semantics information if they fall into the cache extent.
 
