@@ -1,6 +1,8 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes, that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.4.x (since v0.3.2)
+## Changes in v0.5.x (since v0.4.4)
+
+## Changes in v0.4.4 (since v0.3.2)
 
 ### v0.4.4
 * [#17620](https://github.com/flutter/flutter/pull/17620) changes the dimensions of `Checkbox`, `Radio`, and `Switch`.
