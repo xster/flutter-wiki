@@ -5,7 +5,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 ## Changes in v0.4.4 (since v0.3.2)
 
 ### v0.4.4
-* [#17620](https://github.com/flutter/flutter/pull/17620) changes the dimensions of `Checkbox`, `Radio`, and `Switch`.
+* [#17620](https://github.com/flutter/flutter/pull/17620) slightly reduces the default dimensions of `Checkbox`, `Radio`, and `Switch` to better conform to the latest Material design specs.
 
 * [#17586](https://github.com/flutter/flutter/pull/17586) added a new `background` property to `TextStyle`, which may affect subclasses.
 
