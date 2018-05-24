@@ -59,3 +59,22 @@ A few days before the scheduled beta release date, start these steps (you will p
 1. Close the current [milestone](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open).
 1. Send an e-mail to flutter-dev that includes the latest section of the [[Changelog]] page.
 1. Done!
+
+## Applying emergency fixes
+
+Sometimes there are security fixes that must be released as soon as possible. The process described below is intended to address this use case. (This process should not be used for non-security fixes. It is extremely risky to publish out-of-band releases like this and causes no end of trouble. Only the absolute most critical fixes are appropriate to be handled in this way.)
+
+1. Let _VERSION_ be `v0.0.0-hotfix.1` where `v0.0.0` matches the version of the framework that you are hot fixing, and `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth).
+1. If this requires a change to the engine or its dependencies:
+   1. Locally create a branch on the engine repo starting from the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version`)
+   1. Update the branch accordingly. Keep fixes to a strict minimum. If the fix involves applying a fix from an upstream dependency (e.g. Dart), use a hot fix release applied to the same original commit that the engine previously depended on; do not merely roll the dependency normally.
+   1. Push this branch to GitHub as a PR for testing; also compile and test the branch locally on Mac, Windows, and Linux, running all the tests the engine provides. DO NOT LAND THIS PR. Close it once you have the code reviewed and tested.
+   1. Once the code is reviewed, push the commit to a branch on the engine repository named _VERSION_ (see above).
+   1. Force the chrome infra bots to build the specific commit you just pushed. (View the page for each bot, and force a build with the commit hash of the commit you just pushed.)
+   1. Wait for the engine bots to have completed their work.
+1. Locally create a branch on the framework repo starting from the framework commit of the build that you are fixing.
+1. Update the branch accordingly. If necessary, update the `engine.version` to point to the engine you just built.
+1. Test this build on all platforms. Run the devicelab locally. Test the codelabs. Upload this branch to GitHub for testing. DO NOT LAND THIS PR. Close it once you have the code reviewed and tested.
+1. Once the code is reviewed, push the commit to a branch on the framework repository named _VERSION_ (see above). Tag this commit _VERSION_ as well.
+1. If this is an update to the current `beta` build, force push this commit to the `beta` branch.
+1. Send an e-mail to flutter-dev regarding this update.
