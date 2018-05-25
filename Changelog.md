@@ -2,14 +2,17 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.5.x (since v0.4.4)
 
-## Changes in v0.4.4 (since v0.3.2)
+### v0.5.0
 
-### v0.4.4
+* [#17661](https://github.com/flutter/flutter/pull/17661) changed the layout and size of `ListTile` to better conform to the latest Material design specs.
+
 * [#17620](https://github.com/flutter/flutter/pull/17620) slightly reduces the default dimensions of `Checkbox`, `Radio`, and `Switch` to better conform to the latest Material design specs.
 
-* [#17637](https://github.com/flutter/flutter/pull/17637) updates `Checkbox`, `Radio`, and `Switch` to use the `ThemeData` `toggleableActiveColor` instead of `accentColor`.
+* [#17637](https://github.com/flutter/flutter/pull/17637) updates `Checkbox`, `Radio`, and `Switch` to use the `ThemeData` `toggleableActiveColor`. If you are using a light theme and are not specifying an `accentColor` in your `ThemeData`, these controls will now use a higher contrast shade from the primary swatch.
 
 * [#17586](https://github.com/flutter/flutter/pull/17586) added a new `background` property to `TextStyle`. Subclasses need to make this property is handled in constructors and `copyWith`.
+
+## Changes in v0.4.4 (since v0.3.2)
 
 ### v0.4.0
 * [#17021](https://github.com/flutter/flutter/pull/17021) added implicit a11y scrolling for iOS. For this, viewports define a cache extend before the leading as well as after the trailing edge and slivers are expected to provide semantics information if they fall into the cache extent.
