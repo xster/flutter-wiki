@@ -315,21 +315,13 @@ For a flutter project `flutter build` creates this settings file automatically (
 
 Right click the "Flutter" group and choose "new file" choose the "configuration settings file", give it a name (eg. FlutterConfig.xcconfig). Replace the template with something like:
 ```
-FLUTTER_ROOT=/path/to/flutter
-FLUTTER_APPLICATION_PATH=/path/to//embedded
-FLUTTER_TARGET=/path/to/embedded/lib/main.dart
-FLUTTER_BUILD_MODE=debug // replace with "release" for running the flutter app in release mode.
-FLUTTER_BUILD_DIR=build
-SYMROOT=${SOURCE_ROOT}/../build/ios
-FLUTTER_FRAMEWORK_DIR=/path/to/flutter/bin/cache/artifacts/engine/ios // replace with ios-release for running the flutter app in release mode
-PREVIEW_DART_2=true
+#include "./path/to/embedded/ios/Flutter/Generated.xcconfig"
 ```
 An easy way to get the paths right to copy it from `embedded` (after running it with `flutter run`).
 
-
 Now this configuration file must be included in your existing xcconfig file with the line:
 ```
-#include "Flutter/FlutterConfig.xccfonfig"
+#include "Flutter/FlutterConfig.xcconfig"
 ```
 
 If you have no existing xcconfig file for your target you can create one (for example `Debug.xcconfig`) and point your target to it by going to the project view, choosing the project, take the "info" tab, go to the "Configurations" section, and choose `Debug` for the target.
