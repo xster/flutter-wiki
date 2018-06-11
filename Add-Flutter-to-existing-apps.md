@@ -335,6 +335,8 @@ Now this configuration file must be included in your existing xcconfig file with
 If you have no existing xcconfig file for your target you can create one (for example `Debug.xcconfig`) and point your target to it by going to the project view, choosing the project, take the "info" tab, go to the "Configurations" section, and choose `Debug` for the target.
 
 ### Create a `AppFrameworkInfo.plist` file
+_This step is no longer needed after https://github.com/flutter/flutter/pull/18358)._
+
 This file is copied into the `app.framework` that contains the code snapshot.
 
 Right click the "Flutter" folder, "New File" , "Property List", name it `AppFrameworkInfo.plist`. Give it the following contents:
