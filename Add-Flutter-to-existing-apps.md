@@ -376,23 +376,155 @@ Right click the "Flutter" folder. Choose "Add Files to "embedded"". Mark the fil
 
 Now go to the project view, and choose the target. Go to the "General" tab and in the "Embedded Binaries" section, press "+" and choose the "app.framework" and "flutter.framework" frameworks.
 
-### Make your ApplicationDelegate a FlutterApplicationDelegate
-This 
+### Make your ApplicationDelegate a `FlutterAppLifeCycleProvider`
+This will forward app lifecycle events to your plugins and keep the connection to the flutter tools open during pause. 
 
-Make your ApplicationDelegate inherit from the FlutterApplicationDelegate, something akin to (`AppDelegate.h`):
+* Create a `FlutterPluginAppLifeCycleDelegate` and forward events to it. 
+* And then implement `FlutterAppLifeCycleProvider` to get notified when plugins subscribe for events.
 
+Here is the minimal code forwarding all events:
+
+AppDelegate.h:
 ```
 #import <UIKit/UIKit.h>
 #import <Flutter/Flutter.h>
 
-@interface AppDelegate : FlutterAppDelegate <UIApplicationDelegate>
-
-
+@interface AppDelegate : FlutterAppDelegate <UIApplicationDelegate, FlutterAppLifeCycleProvider>
 @end
 ```
 
-If the current AppDelegate is already inheriting from another class you can copy code from 
-[FlutterAppDelegate.mm](https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Source/FlutterAppDelegate.mm).
+AppDelegate.m:
+```
+#import <Flutter/Flutter.h>
+
+@interface AppDelegate ()
+
+@end
+
+@implementation AppDelegate
+
+{
+    FlutterPluginAppLifeCycleDelegate *_lifeCycleDelegate;
+}
+- (instancetype)init {
+    NSLog(@"Hej");
+    if (self = [super init]) {
+        _lifeCycleDelegate = [[FlutterPluginAppLifeCycleDelegate alloc] init];
+    }
+    return self;
+}
+
+- (BOOL)application:(UIApplication*)application
+didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+    return [_lifeCycleDelegate application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+// Returns the key window's rootViewController, if it's a FlutterViewController.
+// Otherwise, returns nil.
+- (FlutterViewController*)rootFlutterViewController {
+    UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if ([viewController isKindOfClass:[FlutterViewController class]]) {
+        return (FlutterViewController*)viewController;
+    }
+    return nil;
+}
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
+    [super touchesBegan:touches withEvent:event];
+    
+    // Pass status bar taps to key window Flutter rootViewController.
+    if (self.rootFlutterViewController != nil) {
+        [self.rootFlutterViewController handleStatusBarTouches:event];
+    }
+}
+
+- (void)applicationDidEnterBackground:(UIApplication*)application {
+    [_lifeCycleDelegate applicationDidEnterBackground:application];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication*)application {
+    [_lifeCycleDelegate applicationWillEnterForeground:application];
+}
+
+- (void)applicationWillResignActive:(UIApplication*)application {
+    [_lifeCycleDelegate applicationWillResignActive:application];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication*)application {
+    [_lifeCycleDelegate applicationDidBecomeActive:application];
+}
+
+- (void)applicationWillTerminate:(UIApplication*)application {
+    [_lifeCycleDelegate applicationWillTerminate:application];
+}
+
+- (void)application:(UIApplication*)application
+didRegisterUserNotificationSettings:(UIUserNotificationSettings*)notificationSettings {
+    [_lifeCycleDelegate application:application
+didRegisterUserNotificationSettings:notificationSettings];
+}
+
+- (void)application:(UIApplication*)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken {
+    [_lifeCycleDelegate application:application
+didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication*)application
+didReceiveRemoteNotification:(NSDictionary*)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
+    [_lifeCycleDelegate application:application
+       didReceiveRemoteNotification:userInfo
+             fetchCompletionHandler:completionHandler];
+}
+
+- (BOOL)application:(UIApplication*)application
+            openURL:(NSURL*)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id>*)options {
+    return [_lifeCycleDelegate application:application openURL:url options:options];
+}
+
+- (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url {
+    return [_lifeCycleDelegate application:application handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication*)application
+            openURL:(NSURL*)url
+  sourceApplication:(NSString*)sourceApplication
+         annotation:(id)annotation {
+    return [_lifeCycleDelegate application:application
+                                   openURL:url
+                         sourceApplication:sourceApplication
+                                annotation:annotation];
+}
+
+- (void)application:(UIApplication*)application
+performActionForShortcutItem:(UIApplicationShortcutItem*)shortcutItem
+  completionHandler:(void (^)(BOOL succeeded))completionHandler NS_AVAILABLE_IOS(9_0) {
+    [_lifeCycleDelegate application:application
+       performActionForShortcutItem:shortcutItem
+                  completionHandler:completionHandler];
+}
+
+- (void)application:(UIApplication*)application
+handleEventsForBackgroundURLSession:(nonnull NSString*)identifier
+  completionHandler:(nonnull void (^)(void))completionHandler {
+    [_lifeCycleDelegate application:application
+handleEventsForBackgroundURLSession:identifier
+                  completionHandler:completionHandler];
+}
+
+- (void)application:(UIApplication*)application
+performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
+    [_lifeCycleDelegate application:application performFetchWithCompletionHandler:completionHandler];
+}
+
+- (void)addApplicationLifeCycleDelegate:(NSObject<FlutterPlugin>*)delegate {
+    [_lifeCycleDelegate addDelegate:delegate];
+}
+
+@end
+```
 
 ### Use a FlutterViewController in your App
 Now you can insert a FlutterViewController somewhere in your code (or in a storyboard).
