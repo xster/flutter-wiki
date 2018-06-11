@@ -20,9 +20,7 @@ If you recognise that this bug is a duplicate of an existing bug, add a referenc
 
 ## Labels
 
-_See also: [List of labels](https://github.com/flutter/flutter/labels)_
-
-**General rule: The more labels the better!**
+_See also: [List of labels](https://github.com/flutter/flutter/labels)_ **General rule: The more labels an issue has, the better!**
 
 If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels.
 
