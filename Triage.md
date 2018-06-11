@@ -22,6 +22,8 @@ If you recognise that this bug is a duplicate of an existing bug, add a referenc
 
 _See also: [List of labels](https://github.com/flutter/flutter/labels)_
 
+**General rule: The more labels the better!**
+
 If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels.
 
 Add any of the applicable "severe: *" labels; typically only one will apply but sometimes "regression" will apply in conjunction with one of the others. If it's a very serious bug that should block releases, consider adding the "TODAY" label as well.
