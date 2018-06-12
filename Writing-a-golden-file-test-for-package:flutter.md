@@ -28,4 +28,4 @@ This updates the goldens repo but does not make the images actually available ye
 
 Now run `flutter test` again, without the `--update-goldens` flag, to verify that the goldens match the uploaded images.
 
-If they do, you are ready to submit your PR for review. The reviewer should also verify your golden files, so make sure to point to your goldens repo commit in your PR description.
+If they do, you are ready to submit your PR for review. The reviewer should also verify your golden files, so make sure to point to your goldens repo commit in your PR description. If you find the golden tests fail on some platforms, see the notes above about adding a skip line.
