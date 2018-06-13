@@ -13,6 +13,8 @@ project (the framework itself and all our sample code). Flutter application deve
 are welcome to follow this style as well, but this is by no means required. Flutter
 will work regardless of what style is used to author applications that use it.
 
+toc::[]
+
 Overview
 --------
 
