@@ -1,3 +1,7 @@
+:toc: macro
+:toc-title:
+:toclevels: 99
+
 Introduction
 ------------
 
@@ -100,7 +104,6 @@ not actually documented.
 
 Example (from [`CircleAvatar`](http://docs.flutter.io/flutter/material/CircleAvatar-class.html)):
 
-<!-- skip -->
 ```dart
 // BAD:
 
@@ -184,7 +187,6 @@ their task all the way up to the class or method they actually need.
 
 Example:
 
-<!-- skip -->
 ```dart
 // GOOD:
 
@@ -374,7 +376,6 @@ options.
 
 Example:
 
-<!-- skip -->
 ```dart
 // BAD:
 new EdgeInsets.TRBL(0.0, 8.0, 0.0, 8.0);
@@ -389,7 +390,6 @@ new EdgeInsets.symmetric(horizontal: 8.0);
 When defining mutable properties that mark a class dirty when set, use
 the following pattern:
 
-<!-- skip -->
 ```dart
 /// Documentation here (don't wait for a later commit).
 TheType get theProperty => _theProperty;
@@ -608,7 +608,6 @@ arguments two characters from the previous line.
 
 Example:
 
-<!-- skip -->
 ```dart
 Foo f = new Foo(
   bar: 1.0,
@@ -625,7 +624,6 @@ And vice versa.
 
 Example:
 
-<!-- skip -->
 ```dart
 // BAD:
   foo(
@@ -670,7 +668,6 @@ Use double quotes for nested strings.
 
 Example:
 
-<!-- skip -->
 ```dart
 print('Hello ${name.split(" ")[0]}');
 ```
@@ -683,7 +680,6 @@ on a single line.
 
 Example:
 
-<!-- skip -->
 ```dart
 // BAD:
 String capitalize(String s) =>
@@ -708,7 +704,6 @@ you can instead use the `=>` form. When doing this, the closing `]`, `}`, or
 
 For example:
 
-<!-- skip -->
 ```dart
     // GOOD, but slightly more verbose than necessary since it doesn't use =>
     @override
@@ -768,7 +763,6 @@ returns.)
 
 Example:
 
-<!-- skip -->
 ```dart
 // BAD:
 if (notReady) return;
