@@ -13,6 +13,9 @@ project (the framework itself and all our sample code). Flutter application deve
 are welcome to follow this style as well, but this is by no means required. Flutter
 will work regardless of what style is used to author applications that use it.
 
+Table of Contents
+-----------------
+
 toc::[]
 
 Overview
@@ -308,19 +311,6 @@ documentation when making the code public.
 Coding patterns and catching bugs early
 ---------------------------------------
 
-### Run the Dart Analyzer before submitting code
-
-While editing code using IntelliJ with [our plugins](https://flutter.io/intellij-ide/), the 
-Analyzer runs automatically in the background, preventing surprises later when you need 
-to submit the code.
-
-Run `flutter analyze --flutter-repo` prior to submitting your code for review.
-
-Avoid checking in code that increases the output of the analyzer. If a warning
-must be allowed due to a bug in the analyzer file a bug with the Dart team at
-<http://dartbug.com/new>.
-
-
 ### Use asserts liberally to enforce contracts and invariants
 
 `assert()` allows us to be diligent about correctness without paying a
@@ -362,13 +352,12 @@ abstract class RenderBox extends RenderObject {
 ```
 
 
-### Avoid using "if" chains on enum values
+### Avoid using "if" chains or `?:` or `==` with enum values
 
-Use `switch` if you are examining an enum (and avoid using `if` chains
-with enums), since the analyzer will warn you if you missed any of the
+Use `switch` if you are examining an enum, since the analyzer will warn you if you missed any of the
 values when you use `switch`.
 
-Similarly, avoid using `? ... : ...` with expressions involving enums.
+Avoid using `if` chains, `? ... : ...`, or, in general, any expressions involving enums.
 
 
 ### Prefer specialized functions, methods and constructors
@@ -417,6 +406,7 @@ Start the method with any asserts you need to validate the value.
 Prefer using a local const or a static const in a relevant class than using a
 global constant.
 
+
 ### Avoid using "var"
 
 All variables and arguments are typed; avoid "dynamic" or "Object" in
@@ -438,6 +428,13 @@ assign to a more narrowly-typed variable (this avoids the type check
 in release mode; "as" is not compiled out in release mode). If you
 don't know whether the type is correct, check using "is" (this avoids
 the exception that "as" raises).
+
+
+### Never check if a port is available before using it, and other race conditions.
+
+If you look for an available port, then try to open it, it's extremely likely that several times a week some other code will open that port between your check and when you open the port, and that will cause a failure.
+
+Race conditions like this are the primary cause of flaky tests, which waste everyone's time.
 
 
 Naming
