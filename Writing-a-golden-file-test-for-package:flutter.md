@@ -8,7 +8,7 @@ Add an expectation along the following lines:
   await expectLater(
     find.byType(RepaintBoundary),
     matchesGoldenFile('test_name.subtest.subfile.png'),
-    skip: !PLatform.isLinux, // explanation
+    skip: !Platform.isLinux, // explanation
   );
 ```
 
