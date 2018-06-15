@@ -2,6 +2,10 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.5.x (since v0.4.4)
 
+### v0.5.5
+
+* [#18488](https://github.com/flutter/flutter/pull/18488) made the `--debug-port` argument to `flutter trace` required, because the previous behaviour was unreliable and caused flaky tests.
+
 ### v0.5.2
 
 * [#18096](https://github.com/flutter/flutter/pull/18096) changed the rendering of the character counter in text fields to more closely match the Material design specifications.
