@@ -1,4 +1,6 @@
 This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel. See [[Bad Build Identification]] for details on how to identify builds that should be listed here.
+## v0.5.4
+* Dart VM crashes on certain eval calls, see [#18573](https://github.com/flutter/flutter/issues/18573).
 
 ## v0.4.2
 
