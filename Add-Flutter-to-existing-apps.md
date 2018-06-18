@@ -407,7 +407,6 @@ AppDelegate.m:
     FlutterPluginAppLifeCycleDelegate *_lifeCycleDelegate;
 }
 - (instancetype)init {
-    NSLog(@"Hej");
     if (self = [super init]) {
         _lifeCycleDelegate = [[FlutterPluginAppLifeCycleDelegate alloc] init];
     }
