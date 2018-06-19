@@ -10,7 +10,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 * [#18096](https://github.com/flutter/flutter/pull/18096) changed the rendering of the character counter in text fields to more closely match the Material design specifications.
 
-## Changes in v0.5.1 (since v0.3.2) - beta 5
+## Changes in v0.5.1 (since v0.4.4) - beta 5
 
 ### v0.5.0
 
