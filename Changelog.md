@@ -1,6 +1,6 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes (including changes to the layout or rendering which might affect [golden file testing](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/matchesGoldenFile.html)), that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.5.x (since v0.5.1)
+## Changes in v0.6.x (since v0.5.1)
 
 ### v0.5.5
 
@@ -22,7 +22,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 * [#17586](https://github.com/flutter/flutter/pull/17586) added a new `background` property to `TextStyle`. Subclasses must ensure that this property is handled in constructors and `copyWith`.
 
-## Changes in v0.4.4 (since v0.3.2)
+## Changes in v0.4.4 (since v0.3.2) - beta 4
 
 ### v0.4.0
 * [#17021](https://github.com/flutter/flutter/pull/17021) added implicit a11y scrolling for iOS. For this, viewports define a cache extend before the leading as well as after the trailing edge and slivers are expected to provide semantics information if they fall into the cache extent.
