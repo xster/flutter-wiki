@@ -1,6 +1,6 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes (including changes to the layout or rendering which might affect [golden file testing](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/matchesGoldenFile.html)), that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.5.x (since v0.4.4)
+## Changes in v0.5.x (since v0.5.1)
 
 ### v0.5.5
 
@@ -9,6 +9,8 @@ This page documents interesting or noteworthy changes, including all notable bre
 ### v0.5.2
 
 * [#18096](https://github.com/flutter/flutter/pull/18096) changed the rendering of the character counter in text fields to more closely match the Material design specifications.
+
+## Changes in v0.5.1 (since v0.3.2) - beta 5
 
 ### v0.5.0
 
