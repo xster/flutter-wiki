@@ -5,7 +5,7 @@
 Introduction
 ------------
 
-_Please also read our [Design Principles](https://flutter.io/design-principles/) which
+_Please also read our https://flutter.io/design-principles/[Design Principles] which
 includes our code review philosophy and our code of conduct._
 
 This style guide describes the preferred style for code written as part of the Flutter
@@ -28,13 +28,13 @@ Secondary goals are to increase the likelihood of catching bugs quickly, and
 avoiding arguments when there are disagreements.
 
 In general, when writing code for the Flutter repository, follow our
-[Design Principles](https://flutter.io/design-principles/) for all code and
-the [Dart style guide](https://www.dartlang.org/guides/language/effective-dart/)
+https://flutter.io/design-principles/[Design Principles] for all code and
+the https://www.dartlang.org/guides/language/effective-dart/[Dart style guide]
 for Dart code, except where that would contradict this page.
 
 We do not yet use `dartfmt`. Flutter code tends to use patterns that
 the standard Dart formatter does not handle well. We are
-[working with the Dart team](https://github.com/dart-lang/dart_style/issues/442)
+https://github.com/dart-lang/dart_style/issues/442[working with the Dart team]
 to make `dartfmt` aware of these patterns.
 
 
@@ -95,7 +95,7 @@ libraries should have a dartdoc comment, consisting of three slashes
 (rather than two slashes as used for regular comments).
 
 In general, follow the
-[Dart documentation guide](https://www.dartlang.org/effective-dart/documentation/#doc-comments)
+https://www.dartlang.org/effective-dart/documentation/#doc-comments[Dart documentation guide]
 except where that would contradict this page.
 
 ### Avoid useless documentation
@@ -107,7 +107,7 @@ Avoid checking in such documentation, because it is no better than no
 documentation but will prevent us from noticing that the identifier is
 not actually documented.
 
-Example (from [`CircleAvatar`](http://docs.flutter.io/flutter/material/CircleAvatar-class.html)):
+Example (from http://docs.flutter.io/flutter/material/CircleAvatar-class.html[`CircleAvatar`]):
 
 ```dart
 // BAD:
@@ -266,16 +266,16 @@ Examples:
 
 * A diagram for the AppBar widget
 
-![image](https://flutter.github.io/assets-for-api-docs/material/app_bar.png)
+image::https://flutter.github.io/assets-for-api-docs/material/app_bar.png[]
 
 
 * A screenshot for the Card widget
 
-![image](https://user-images.githubusercontent.com/348942/28338544-2c3681b8-6bbe-11e7-967d-fcd7c830bf53.png)
+image::https://user-images.githubusercontent.com/348942/28338544-2c3681b8-6bbe-11e7-967d-fcd7c830bf53.png[]
 
 ### Clearly mark deprecated APIs
 
-According to Flutter's [Design Principles](https://flutter.io/design-principles/#handling-breaking-changes),
+According to Flutter's https://flutter.io/design-principles/#handling-breaking-changes[Design Principles],
 use `@deprecated` with a clear
 recommendation of what to use instead.
 
@@ -319,9 +319,6 @@ checked mode.
 
 The following example is from `box.dart`:
 
-<!--
-dynamic _debugDoingBaseline;
--->
 ```dart
 abstract class RenderBox extends RenderObject {
   // ...
@@ -468,7 +465,7 @@ what the arguments are.
 ### Spell words in identifiers and comments correctly
 
 Our primary source of truth for spelling is the
-[Material Design Specification](https://material.google.com/).
+https://material.google.com/[Material Design Specification].
 Our secondary source of truth is dictionaries.
 
 Avoid "cute" spellings. For example, 'colors', not 'colorz'.
@@ -824,20 +821,20 @@ As per normal Dart conventions, a package should have a single import
 that reexports all of its API.
 
 > For example,
-> [rendering.dart](https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/rendering.dart)
+> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/rendering.dart[rendering.dart]
 > exports all of lib/src/rendering/*.dart
 
 If a package uses, as part of its exposed API, types that it imports
 from a lower layer, it should reexport those types.
 
 > For example,
-> [material.dart](https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/material.dart)
+> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/material.dart[material.dart]
 > reexports everything from
-> [widgets.dart](https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/widgets.dart).
+> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/widgets.dart[widgets.dart].
 > Similarly, the latter
-> [reexports](https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/src/widgets/basic.dart)
+> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/src/widgets/basic.dart[reexports]
 > many types from
-> [rendering.dart](https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/rendering.dart),
+> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/rendering.dart[rendering.dart],
 > such as `BoxConstraints`, that it uses in its API. On the other
 > hand, it does not reexport, say, `RenderProxyBox`, since that is not
 > part of the widgets API.
@@ -856,14 +853,14 @@ By convention, `dart:ui` is imported using `import 'dart:ui' show
 level will have done it for you), and as `import 'dart:ui' as ui show
 ...;` for low-level APIs, in both cases listing all the identifiers
 being imported. See
-[basic_types.dart](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/painting/basic_types.dart)
+https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/painting/basic_types.dart[basic_types.dart]
 in the `painting` package for details of which identifiers we import
 which way. Other packages are usually imported undecorated unless they
 have a convention of their own (e.g. `path` is imported `as path`).
 
 As a general rule, when you have a lot of constants, wrap them in a
 class. For examples of this, see
-[lib/src/material/colors.dart](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/material/colors.dart)
+https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/material/colors.dart[lib/src/material/colors.dart].
 
 
 Features we expect every widget to implement
