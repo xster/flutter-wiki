@@ -4,8 +4,9 @@ Status: draft
 
 # Recommendations
 
-2018-06-20 You may want to wait for the new Flutter module template of [the flutter_module branch](https://github.com/flutter/flutter/tree/flutter_module) to land on Flutter master.
-We're getting closer!
+2018-06-20 You may want to wait for the new Flutter module template of [the flutter_module branch](https://github.com/flutter/flutter/tree/flutter_module) to land on Flutter master. We're getting closer!
+Today, #18633 landed, bringing Flutter tooling support for plugins when adding Flutter as a library to an
+Android app as detailed below.
 
 # Experiments, Android
 
