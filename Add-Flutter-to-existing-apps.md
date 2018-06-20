@@ -132,19 +132,32 @@ This section explains how the existing Android application can use the Flutter a
 For simplicity we assume a fresh Android application (with a button) that has been created using Android Studio.
 The minimal requirement for the Android application must be set to the same (or higher) minimal requirement as Flutter (minSdkVersion: 16).
 
-The Flutter project must get referenced in the `settings.gradle` file:
+The Flutter project and any plugins must be included in the `settings.gradle` file:
 ```
 include ':app', ':flutter_part'
-project(':flutter_part').projectDir = new File(settingsDir, '../flutter_part/android/app')
+def flutterProjectRoot = new File(settingsDir, '../flutter_part')
+project(':flutter_part').projectDir = new File(flutterProjectRoot, 'android/app')
+
+def plugins = new Properties()
+def pluginsFile = new File(flutterProjectRoot, '.flutter-plugins')
+if (pluginsFile.exists()) {
+    pluginsFile.withReader('UTF-8') { reader -> plugins.load(reader) }
+}
+
+plugins.each { name, path ->
+    def pluginDirectory = flutterProjectRoot.toPath().resolve(path).resolve('android').toFile()
+    include ":$name"
+    project(":$name").projectDir = pluginDirectory
+}
 ```
 (This assumes that the Flutter project lives in a directory adjacent to the Android application.)
 
 At this point the project won't compile anymore because the Flutter module needs to know where the Flutter project is located. We fix this by updating the `local.properties` file:
 
 ```
-flutter.sdk=/usr/local/google/home/floitsch/code/flutter/flutter
+flutter.sdk=/your/path/to/flutter
 ```
-This line was copied from the Flutter directory's `local.properties` file.
+This line can be copied from the Flutter projects's `android/local.properties` file.
 
 Now, we need to change the application's gradle file so that it depends on the library:
 
@@ -180,7 +193,7 @@ In the existing Android project's `gradle.properties` file add the following lin
 preview-dart-2=true
 ```
 
-This flag will become unnecessary, once the Dart 2 semantics is always on by default.
+This flag will become unnecessary, once the Dart 2 semantics is always on by default. (It is now)
 
 Make sure that the application is rebuilt. (The easiest is usually to run `./gradlew assembleDebug`).
 
@@ -193,9 +206,6 @@ flutter run --use-application-binary ../MyApplication/app/build/outputs/apk/debu
 This assumes that the existing Android application is named `MyApplication` and is located directly next to the Flutter directory. Once the application launches, navigate to the Flutter activity, at which point Flutter will automatically connect to the VM.
 
 Note that the Android application includes a snapshot of the Flutter activity. As long as the application is not recompiled it will start up with that state. However, a restart (pressing "R") will upload the latest code.
-
-### Plugins
-TBD.
 
 ### Troubleshooting
 Here are common error messages and how they can be fixed.
