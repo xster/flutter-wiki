@@ -4,7 +4,8 @@ Status: draft
 
 # Recommendations
 
-None yet, we're still experimenting.
+2018-06-20 You may want to wait for the new Flutter module template of [the flutter_module branch](https://github.com/flutter/flutter/tree/flutter_module) to land on Flutter master.
+We're getting closer!
 
 # Experiments, Android
 
