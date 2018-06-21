@@ -1,13 +1,16 @@
 ## Dart 2
 
-Dart 2 support was opt-in in Flutter beta 1; in beta 2, Dart 2 is enabled by default. We strongly encourage 
-you to develop using Dart 2, including updating your applications and packages to incorporate any [breaking changes](https://groups.google.com/forum/#!topic/flutter-dev/H8dDhWg_c8I) you may experience.
+Dart 2 support was opt-in in Flutter beta 1; in beta 2 and later beta channel builds,
+Dart 2 is enabled by default. We strongly encourage 
+you to develop using a recent beta channel build,
+including updating your applications and packages to incorporate any [breaking changes](https://groups.google.com/forum/#!topic/flutter-dev/H8dDhWg_c8I) you may experience.
 
 ## How to update your code
 
 A few tips on how to resolve Dart 2 issues in existing Flutter code:
 
-- Make sure to update both the Flutter SDK to beta 2, and your [Flutter IDE plugin](/get-started/editor/)
+- Make sure to update both the Flutter SDK to a recent beta channel build,
+  and your [Flutter IDE plugin](/get-started/editor/)
   for Android Studio, IntelliJ, or VS Code.
 
 - Validate that your code passes static analysis (from the terminal, run `flutter analyze`,
