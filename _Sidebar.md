@@ -19,6 +19,7 @@ Flutter Wiki
 - [[Making animated GIFs of Flutter apps]]
 - [[Updating Material Design Fonts]]
 - [Hot Reload](https://flutter.io/hot-reload/)
+- [[Obfuscating Dart Code]]
 - [[Creating Responsive Apps]]
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
 - [[Using Flutter in China]]
