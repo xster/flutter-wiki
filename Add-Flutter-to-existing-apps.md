@@ -13,7 +13,7 @@ Making it easy to add Flutter to an existing app is work in progress, tracked by
 
 # Android
 
-## <span id="android-module-preview">Preview</span>: Use the Flutter module template
+## Preview: Use the Flutter module template
 *Applies once [#18697](https://github.com/flutter/flutter/pull/18697) lands.*
 
 ### Create a Flutter module
@@ -86,7 +86,7 @@ Flutter view. The `lib/main.dart` file of the Flutter module project template co
 `switch` on the provided route string. It is up to you which route strings you want and
 how to interpret them.
 
-## <span id="android-experiment">Experiment</span>: Turn the Flutter Project into a Module
+## Experiment: Turn the Flutter Project into a Module
 *This guide below is based on an early experiment to add a Flutter Activity to an existing Android app. It works with the Flutter master branch from 2018-06-20 and onwards. The guide contains a lot of manual steps which we are working to make unnecessary.*
 
 The following experiment allows to use a Flutter project as an Android activity. The Android and Flutter projects live in separate directories.
@@ -376,7 +376,7 @@ These error messages occur with older versions of Flutter, when the application 
 
 # iOS
 
-## <span id="ios-experiment">Experiment</span>: Integrate FlutterViewController
+## Experiment: Integrate FlutterViewController
 *The guide below is based on an early experiment to add Flutter to an existing iOS app. It contains a lot of
 manual steps which we are working on making unnecessary.*
 
@@ -669,6 +669,6 @@ flutter run --use-application-binary /path/to/embedder/build/ios/Debug-iphoneos/
 ### Plugins
 TBD.
 
-[android-module-preview]: #android-module-preview
-[android-experiment]: #android-experiment
-[ios-experiment]: #ios-experiment
+[android-module-preview]: #preview-use-the-flutter-module-template
+[android-experiment]: #experiment-turn-the-flutter-project-into-a-module
+[ios-experiment]: #experiment-integrate-flutterviewcontroller
