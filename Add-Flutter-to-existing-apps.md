@@ -3,7 +3,8 @@ Making it easy to add Flutter to an existing app is work in progress, tracked by
 # Recommendations
 *As this is work in progress, recommendations change frequently at the moment. You may want to wait until some of the dust has settled.*
 
-2018-06-22 Android: Follow the [Flutter module guide below][android-module-preview].
+2018-06-22 Preview of new Flutter module template for Android. Follow the [guide below][android-module-preview] to
+try it out.
 
 2018-06-20 You may want to wait for the new Flutter module template of [the flutter_module branch](https://github.com/flutter/flutter/tree/flutter_module) to land on Flutter master. We're getting closer! Today, [#18633](https://github.com/flutter/flutter/pull/18633) landed on Flutter master, bringing Flutter tooling support for plugins when adding Flutter as a library to an Android app as detailed in the [experimental guide below][android-experiment]. The Flutter module will make the process much easier, and bring support for adding Flutter Views rather than just Activities.
 
