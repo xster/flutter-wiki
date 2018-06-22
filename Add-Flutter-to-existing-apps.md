@@ -31,12 +31,16 @@ an Android library.
 Include the Flutter module as a sub-project in the host app's `settings.gradle`:
 ```groovy
 // MyApp/settings.gradle
-include ':app'                                                      // assumed existing content
-setBinding(new Binding([gradle: this]))                                                  // new
-evaluate(new File(settingsDir.parentFile, 'my_flutter/.android/include_flutter.groovy')) // new
+include ':app'                                     // assumed existing content
+setBinding(new Binding([gradle: this]))                                 // new
+evaluate(new File(                                                      // new
+  settingsDir.parentFile,                                               // new
+  'my_flutter/.android/include_flutter.groovy'                          // new
+))                                                                      // new
 ```
-The binding and script evaluation allows the Flutter module to `include` itself (as `:flutter`) as
-well as any Flutter plugins used by the module (as `:package_info`, `:video_player`, etc).
+The binding and script evaluation allows the Flutter module to `include` itself (as `:flutter`)
+and any Flutter plugins used by the module (as `:package_info`, `:video_player`, etc) in the
+evaluation context of your `settings.gradle`.
  
 Introduce an `implementation` dependency on the Flutter module from your app:
 ```groovy
