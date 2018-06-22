@@ -15,7 +15,7 @@ try it out.
 # Android
 
 ## Preview: Use the Flutter module template
-*Applies to work off the flutter/flutter master branch after [#18697](https://github.com/flutter/flutter/pull/18697) which landed on 2018-06-22. The functionality described below is an early **preview**: Until it has landed on the beta branch, it is subject to change without warning.*
+*Applies to work off the flutter/flutter master branch after [#18697](https://github.com/flutter/flutter/pull/18697) which landed on 2018-06-22. The functionality described below is in early, bleeding-edge **preview**: Until it has landed on the beta branch, it is subject to change without warning.*
 
 ### Create a Flutter module
 Let's assume you have an existing Android app at `some/path/MyApp`, and that you want
