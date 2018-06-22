@@ -23,9 +23,9 @@ your Flutter project as a sibling:
 $ cd some/path/
 $ flutter create -t module my_flutter
 ```
-This creates a `some/path/my_flutter/` Flutter module project with some boilerplate
-Dart code and an `.android/` subfolder that exposes the module project as an Android
-library.
+This creates a `some/path/my_flutter/` Flutter module project with some Dart code
+to get you started and an `.android/` subfolder that wraps up the module project in
+an Android library.
 
 ### Make the host app depend on the Flutter module
 Include the Flutter module as a sub-project in the host app's `settings.gradle`:
