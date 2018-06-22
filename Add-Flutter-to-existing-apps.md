@@ -1,14 +1,94 @@
 Making it easy to add Flutter to an existing app is work in progress, tracked by [#14821](https://github.com/flutter/flutter/issues/14821). This page documents ongoing experiments and will be updated as we find more and better ways to do this, and as we build out tooling to aid.
 
-Status: draft
-
 # Recommendations
+*As this is work in progress, recommendations change frequently at the moment. You may want to wait until some of the dust has settled.*
 
-2018-06-20 You may want to wait for the new Flutter module template of [the flutter_module branch](https://github.com/flutter/flutter/tree/flutter_module) to land on Flutter master. We're getting closer! Today, [#18633](https://github.com/flutter/flutter/pull/18633) landed on Flutter master, bringing Flutter tooling support for plugins when adding Flutter as a library to an Android app as detailed below. The Flutter module will make the process much easier, and bring support for adding Flutter Views rather than just Activities.
+2018-06-22 Android: Wait for [#18697](https://github.com/flutter/flutter/pull/18697) to land. Then follow the [Flutter module guide below][android-module-preview].
 
-# Experiments, Android
+2018-06-20 You may want to wait for the new Flutter module template of [the flutter_module branch](https://github.com/flutter/flutter/tree/flutter_module) to land on Flutter master. We're getting closer! Today, [#18633](https://github.com/flutter/flutter/pull/18633) landed on Flutter master, bringing Flutter tooling support for plugins when adding Flutter as a library to an Android app as detailed in the [experimental guide below][android-experiment]. The Flutter module will make the process much easier, and bring support for adding Flutter Views rather than just Activities.
 
-## Turn the Flutter Project into a Module
+2018-06-11 iOS: Follow the [experimental guide below][ios-experiment].
+
+2018-04-09 Android: Follow the [experimental guide below][android-experiment].
+
+# Android
+
+## <span id="android-module-preview">Preview</span>: Use the Flutter module template
+*Applies once [#18697](https://github.com/flutter/flutter/pull/18697) lands.*
+
+### Create a Flutter module
+Let's assume you have an existing Android app at `some/path/MyApp`, and that you want
+your Flutter project as a sibling:
+```
+$ cd some/path/
+$ flutter create -t module my_flutter
+```
+This creates a `some/path/my_flutter/` Flutter module project with some boilerplate
+Dart code and an `.android/` subfolder that exposes the module project as an Android
+library.
+
+### Make the host app depend on the Flutter module
+Include the Flutter module as a sub-project in the host app's `settings.gradle`:
+```groovy
+// MyApp/settings.gradle
+include ':app'                                                      // assumed existing content
+setBinding(new Binding([gradle: this]))                                                  // new
+evaluate(new File(settingsDir.parentFile, 'my_flutter/.android/include_flutter.groovy')) // new
+```
+The binding and script evaluation allows the Flutter module to `include` itself (as `:flutter`) as
+well as any Flutter plugins used by the module (as `:package_info`, `:video_player`, etc).
+ 
+Introduce an `implementation` dependency on the Flutter module from your app:
+```groovy
+// MyApp/app/build.gradle
+:
+dependencies {
+  implementation project(':flutter')
+  :
+}
+```
+
+### Use the Flutter module from your Java code
+
+Use the Flutter module's Java API to add Flutter views to your host app. This can be done
+by directly using `Flutter.createView`:
+```java
+// MyApp/app/src/main/java/some/package/MainActivity.java
+fab.setOnClickListener(new View.OnClickListener() {
+  @Override
+  public void onClick(View view) {
+    View flutterView = Flutter.createView(
+      MainActivity.this,
+      getLifecycle(),
+      "route1"
+    );
+    FrameLayout.LayoutParams layout = new FrameLayout.LayoutParams(600, 800);
+    layout.leftMargin = 100;
+    layout.topMargin = 200;
+    addContentView(flutterView, layout);
+  }
+});
+```
+It is also possible to create a `FlutterFragment` that takes care of lifecycle by itself:
+```java
+// MyApp/app/src/main/java/some/package/SomeActivity.java
+fab.setOnClickListener(new View.OnClickListener() {
+ @Override
+ public void onClick(View view) {
+   FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+   tx.replace(R.id.someContainer, Flutter.createFragment("route1"));
+   tx.commit();
+ }
+});
+```
+Above we use the string `"route1"` to tell the Dart code which widget to display in the
+Flutter view. The `lib/main.dart` file of the Flutter module project template contains a
+`switch` on the provided route string. It is up to you which route strings you want and
+how to interpret them.
+
+## <span id="android-experiment">Experiment</span>: Turn the Flutter Project into a Module
+*This guide below is based on an early experiment to add a Flutter Activity to an existing Android app. It works with the Flutter master branch from 2018-06-20 and onwards. The guide contains a lot of manual steps which we are working to make unnecessary.*
+
 The following experiment allows to use a Flutter project as an Android activity. The Android and Flutter projects live in separate directories.
 
 This approach works best if the communication between the existing Android application and the Flutter activity is limited. Also, the combined application does not support hot-reload (with the given instructions) and it's therefore more convenient if the Flutter activity can be developed as a separate application first.
@@ -125,7 +205,7 @@ public class MainActivity extends FlutterActivity {
 }
 ```
 
-## On the Android Side
+### On the Android Side
 This section explains how the existing Android application can use the Flutter activity.
 
 For simplicity we assume a fresh Android application (with a button) that has been created using Android Studio.
@@ -184,15 +264,6 @@ After that the Flutter activity can be launched like any other Android activity:
 
 ### Hot Reload / Restart
 Flutter can hot reload and restart code inside an existing Android application. Invoking `flutter run` with the `--use-application-binary` flag launches the Android application and connects to the Flutter VM once it is available.
-
-However, before this works we need to make sure that the application is compiled in the mode that `flutter run` expects. Specifically, `flutter run` is (currently) using the `dart-preview-2` flag, whereas a simple compilation with `gradle` doesn't include this flag by default.
-
-In the existing Android project's `gradle.properties` file add the following line:
-```
-preview-dart-2=true
-```
-
-This flag will become unnecessary, once the Dart 2 semantics is always on by default. (It is now)
 
 Make sure that the application is rebuilt. (The easiest is usually to run `./gradlew assembleDebug`).
 
@@ -301,9 +372,14 @@ or (in newer versions):
 E/flutter (19892): [ERROR:topaz/lib/tonic/logging/dart_error.cc(16)] Dart_LoadScriptFromSnapshot expects parameter 'buffer' to be a script type snapshot with a valid length.
 ```
 
-These error messages happen, when the application isn't compiled with `preview-dart-2`. Make sure to add `preview-dart-2` to the Android application's `gradle.properties` and recompile the Android application.
+These error messages occur with older versions of Flutter, when the application isn't compiled with `preview-dart-2`. Make sure to add `preview-dart-2` to the Android application's `gradle.properties` and recompile the Android application.
 
-# Experiments/iOS
+# iOS
+
+## <span id="ios-experiment">Experiment</span>: Integrate FlutterViewController
+*The guide below is based on an early experiment to add Flutter to an existing iOS app. It contains a lot of
+manual steps which we are working on making unnecessary.*
+
 With the right setup Flutter can be used as a UIViewController embedded in an existing app.
 
 The following steps integrate a Flutter app `embedded` (with a layout like that of `flutter create`) into an existing iOS app `embedder`.
@@ -592,3 +668,7 @@ flutter run --use-application-binary /path/to/embedder/build/ios/Debug-iphoneos/
 
 ### Plugins
 TBD.
+
+[android-module-preview]: #android_module_preview
+[android-experiment]: #android_experiment
+[ios-experiment]: #ios_experiment
