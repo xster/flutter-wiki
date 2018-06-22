@@ -50,17 +50,23 @@ Make a judgement call:
 
 ## People
 
-Add one of the following people to the bug:
+If the bug needs attention sooner rather than later, add one of the following people to the bug:
 
-- If it's engine-related, @cbracken
+- If it's engine-related, @cbracken.
 
-- If it's Dart-related, @a-siva
+- If it's Dart-related, @a-siva.
 
-- If it's related to the "flutter" tool or Fuchsia, @tvolkert
+- If it's related to the "flutter" tool, @tvolkert and @gspencer-goog.
+
+- If it's related to Fuchsia, @tvolkert.
 
 - If it's related to Material widgets, @HansMuller.
 
-- Otherwise, add @Hixie
+- If it's related to iOS, @xster.
+
+- If it's related to using Flutter in existing non-Flutter apps, @matthew-carroll.
+
+- Otherwise, add @Hixie.
 
 ## Additional comments
 
