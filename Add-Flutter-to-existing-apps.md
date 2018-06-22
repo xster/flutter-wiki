@@ -669,6 +669,6 @@ flutter run --use-application-binary /path/to/embedder/build/ios/Debug-iphoneos/
 ### Plugins
 TBD.
 
-[android-module-preview]: #android_module_preview
-[android-experiment]: #android_experiment
-[ios-experiment]: #ios_experiment
+[android-module-preview]: #android-module-preview
+[android-experiment]: #android-experiment
+[ios-experiment]: #ios-experiment
