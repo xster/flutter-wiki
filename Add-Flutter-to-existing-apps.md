@@ -14,7 +14,9 @@ Making it easy to add Flutter to an existing app is work in progress, tracked by
 # Android
 
 ## Preview: Use the Flutter module template
-*Applies once [#18697](https://github.com/flutter/flutter/pull/18697) lands.*
+*Applies once [#18697](https://github.com/flutter/flutter/pull/18697) lands on flutter/flutter
+master branch. Please note that what is described here is a **preview**. Until the functionality
+has landed on a milestone branch, it is subject to change without warning.*
 
 ### Create a Flutter module
 Let's assume you have an existing Android app at `some/path/MyApp`, and that you want
