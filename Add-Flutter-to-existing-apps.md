@@ -91,6 +91,20 @@ Flutter view. The `lib/main.dart` file of the Flutter module project template co
 `switch` on the provided route string. It is up to you which route strings you want and
 how to interpret them.
 
+### Hot restart/reload
+
+You can now build and launch your host app in the same way that you're used to. But if you want
+to hot reload changes to Dart code within it, you currently (this is work in progress) need to
+launch the built apk using Flutter tooling:
+
+```
+$ cd MyApp
+$ ./gradlew app:assembleDebug
+$ cd ../xyz
+$ flutter run --use-application-binary \
+    ../MyApp/app/build/outputs/apk/debug/app-debug.apk
+```
+
 ## Experiment: Turn the Flutter Project into a Module
 *This guide below is based on an early experiment to add a Flutter Activity to an existing Android app. It works with the Flutter master branch from 2018-06-20 and onwards. The guide contains a lot of manual steps which we are working to make unnecessary.*
 
