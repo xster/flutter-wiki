@@ -24,7 +24,7 @@ $ cd some/path/
 $ flutter create -t module my_flutter
 ```
 This creates a `some/path/my_flutter/` Flutter module project with some Dart code
-to get you started and an `.android/` subfolder that wraps up the module project in
+to get you started and a `.android/` subfolder that wraps up the module project in
 an Android library.
 
 ### Make the host app depend on the Flutter module
