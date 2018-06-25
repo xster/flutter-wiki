@@ -56,7 +56,7 @@ If the bug needs attention sooner rather than later, add one of the following pe
 
 - If it's Dart-related, @a-siva.
 
-- If it's related to the "flutter" tool, @tvolkert and @gspencer-goog.
+- If it's related to the "flutter" tool, @tvolkert and @gspencergoog.
 
 - If it's related to Fuchsia, @tvolkert.
 
