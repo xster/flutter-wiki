@@ -14,8 +14,7 @@ extra-gen-snapshot-options=--obfuscate
 
 ### Step 1 - Modify the "build aot" call
 
-Add the following flag to the `build aot` call in the
-`<ProjectRoot>/packages/flutter_tools/bin/xcode_backend.sh` file:
+Add the following flag to the `build aot` call in the `<ProjectRoot>/packages/flutter_tools/bin/xcode_backend.sh` file:
 
 ```
 ${extra_gen_snapshot_options_or_none}
@@ -35,17 +34,16 @@ fi
 In the project root of your app, run the following two commands:
 
 ```
-run git commit -am "Enable obfuscation on iOS"
+git commit -am "Enable obfuscation on iOS"
 flutter
 ```
 
 ### Step 3 - Modify the release config
 
-In `<ProjectRoot>/ios/Flutter/Release.xcconfig>`, add the
-following line:
+In `<ProjectRoot>/ios/Flutter/Release.xcconfig`, add the following line:
 
 ```
 EXTRA_GEN_SNAPSHOT_OPTIONS=--obfuscate
 ```
 
-For information on obfuscating the Android host, see [Minify and obfuscate](https://flutter.io/android-release/#minify-and-obfuscate) in [Preparing an Android App for Release](https://flutter.io/android-release/#minify-and-obfuscate).
+For information on obfuscating the Android host, see [Enabling Proguard](https://flutter.io/android-release/#enabling-proguard) in [Preparing an Android App for Release](https://flutter.io/android-release/#minify-and-obfuscate).
