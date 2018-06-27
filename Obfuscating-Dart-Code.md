@@ -48,4 +48,4 @@ following line:
 EXTRA_GEN_SNAPSHOT_OPTIONS=--obfuscate
 ```
 
-For information on obfuscating the Android wrapper, see [Minify and obfuscate](https://flutter.io/android-release/#minify-and-obfuscate) in [Preparing an Android App for Release](https://flutter.io/android-release/#minify-and-obfuscate).
+For information on obfuscating the Android host, see [Minify and obfuscate](https://flutter.io/android-release/#minify-and-obfuscate) in [Preparing an Android App for Release](https://flutter.io/android-release/#minify-and-obfuscate).
