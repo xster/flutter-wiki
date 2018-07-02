@@ -3,6 +3,8 @@ Making it easy to add Flutter to an existing app is work in progress, tracked by
 # Recommendations
 *As this is work in progress, recommendations change frequently at the moment. You may want to wait until some of the dust has settled.*
 
+2018-07-02 Added details for using flutter attach to get a hot reload-based workflow.
+
 2018-06-22 A preview of the new Flutter module template is now available for Android. Follow the [guide below][android-module-preview] to try it out.
 
 2018-06-20 You may want to wait for the new Flutter module template of [the flutter_module branch](https://github.com/flutter/flutter/tree/flutter_module) to land on Flutter master. We're getting closer! Today, [#18633](https://github.com/flutter/flutter/pull/18633) landed on Flutter master, bringing Flutter tooling support for plugins when adding Flutter as a library to an Android app as detailed in the [experimental guide below][android-experiment]. The Flutter module will make the process much easier, and bring support for adding Flutter Views rather than just Activities.
@@ -90,7 +92,7 @@ Flutter view. The `lib/main.dart` file of the Flutter module project template co
 `switch` on the provided route string. It is up to you which route strings you want and
 how to interpret them.
 
-### Hot restart/reload
+### Hot restart/reload, option 1: Using `flutter run`
 
 You can now build and launch your host app in the same way that you're used to. But if you want
 to hot reload changes to Dart code within it, you currently (this is work in progress) need to
@@ -103,6 +105,21 @@ $ cd ../xyz
 $ flutter run --use-application-binary \
     ../MyApp/app/build/outputs/apk/debug/app-debug.apk
 ```
+
+### Hot restart/reload, option 2: Using `flutter attach`
+
+1. Run the Flutter tooling in 'attached' mode:
+    ```
+    cd <path to your Flutter module>
+    flutter attach
+    ```
+
+1. Run your Android app as you in the same way that you're used to (e.g., by pressing Run in Android Studio).
+
+1. Navigate to an area of the app that uses Flutter. The terminal message should now change from `Listening.` to `Synchronizing files to device`.
+
+You can now edit the Flutter `.dart` code, and the changes can be hot reloaded by pressing `r` in the terminal.
+
 
 ## Experiment: Turn the Flutter Project into a Module
 *This guide below is based on an early experiment to add a Flutter Activity to an existing Android app. It works with the Flutter master branch from 2018-06-20 and onwards. The guide contains a lot of manual steps which we are working to make unnecessary.*
