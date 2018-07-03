@@ -4,7 +4,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ### v0.5.6
 * [#18614](https://github.com/flutter/flutter/pull/18614) added `isInstanceOf` as a function exported from Flutter, because package:matcher has deprecated its implementation of `isInstanceOf`.
-* [flutter/engine#5517](https://github.com/flutter/engine/pull/5517) enabled the --sync-async Dart flag.
+* [flutter/engine#5517](https://github.com/flutter/engine/pull/5517) enabled the `--sync-async` Dart flag.
 
 ### v0.5.5
 
