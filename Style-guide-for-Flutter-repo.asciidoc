@@ -235,8 +235,10 @@ The documentation should use consistent terminology:
 
  * _method_ - a member of a class that is a non-anonymous closure
  * _function_ - a callable non-anonymous closure that isn't a member of a class
- * _parameter_ - the variable used in a method body.
- * _argument_ - the value passed to a method call.
+ * _parameter_ - a variable defined in a closure signature and possibly used in the closure body.
+ * _argument_ - the value passed to a closure when calling it.
+
+Prefer the term "call" to the term "invoke" when talking about jumping to a closure.
 
 Typedef dartdocs should usually start with the phrase "Signature for...".
 
