@@ -2,7 +2,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 ## Changes in v0.6.x (since v0.5.1)
 
-### v0.6.0 (probably)
+### v0.6.1 (probably)
 
 * [#19025](https://github.com/flutter/flutter/pull/19025) renamed `CupertinoRefreshControl` to `CupertinoSliverRefreshControl` for consistency.
 
