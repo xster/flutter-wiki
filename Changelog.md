@@ -1,6 +1,6 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes (including changes to the layout or rendering which might affect [golden file testing](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/matchesGoldenFile.html)), that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.6.x (since v0.5.6)
+## Changes in v0.7.x (since v0.5.6)
 
 ### v0.6.1 (probably)
 
