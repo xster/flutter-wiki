@@ -1,10 +1,12 @@
 This page documents interesting or noteworthy changes, including all notable breaking changes (including changes to the layout or rendering which might affect [golden file testing](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/matchesGoldenFile.html)), that have been made to Flutter since the last time we released a beta version.
 
-## Changes in v0.6.x (since v0.5.1)
+## Changes in v0.6.x (since v0.5.6)
 
 ### v0.6.1 (probably)
 
 * [#19025](https://github.com/flutter/flutter/pull/19025) renamed `CupertinoRefreshControl` to `CupertinoSliverRefreshControl` for consistency.
+
+## Changes in v0.5.x (since v0.5.1)
 
 ### v0.5.6
 * [#18614](https://github.com/flutter/flutter/pull/18614) added `isInstanceOf` as a function exported from Flutter, because package:matcher has deprecated its implementation of `isInstanceOf`.
