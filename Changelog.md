@@ -2,7 +2,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes in v0.7.x (since v0.5.5)
+## Changes in v0.6.x (since v0.5.1)
 
 ### v0.6.0, v0.6.1, or v0.7.0 (not yet clear)
 
@@ -11,8 +11,6 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ### v0.5.6
 * [#18614](https://github.com/flutter/flutter/pull/18614) added `isInstanceOf` as a function exported from Flutter, because package:matcher has deprecated its implementation of `isInstanceOf`.
 * [flutter/engine#5517](https://github.com/flutter/engine/pull/5517) enabled the `--sync-async` Dart flag.
-
-## Changes in v0.5.x (since v0.5.1)
 
 ### v0.5.5
 
