@@ -28,7 +28,7 @@ The following axes, as described above, exist:
 In addition, some versions can select alternative graphics backends:
 
 * iOS can choose between: OpenGL, software
-* Android can choose between: Vulkan, OpenGL
+* Android can choose between: Vulkan, OpenGL, software
 * Fuchsia can choose between: Vulkan
 * macOS can choose between, OpenGL, software, headless (debug only)
 * Linux can choose between: OpenGL, software, headless (debug only)
