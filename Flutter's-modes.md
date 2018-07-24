@@ -23,13 +23,20 @@ The following axes, as described above, exist:
 
 * debug, release, profile
 * opt, unopt
-* iOS, Android, Fuchsia, macOS, Linux, Windows
+* iOS, Android, macOS, Linux, Windows
 
 In addition, some versions can select alternative graphics backends:
 
 * iOS can choose between: OpenGL, software
 * Android can choose between: Vulkan, OpenGL, software
-* Fuchsia can choose between: Vulkan
 * macOS can choose between, OpenGL, software, headless (debug only)
 * Linux can choose between: OpenGL, software, headless (debug only)
 * Windows can choose between: OpenGL, software, headless (debug only)
+
+Separate from all the above, Fuchsia has the following modes:
+
+* AOT, JIT, interpreted DBC
+* Observatory present, observatory absent
+* opt, unopt
+
+In total therefore there are 3*2*(2+3+2+2+2) + 1*2*3 + 3*2*2 modes, which is 84 modes.
