@@ -16,3 +16,20 @@ In addition, for our purposes during development, each of the above should be ab
 Debug mode produces a script snapshot, which is basically tokenized sources. Comments and whitespace are missing, literals are canonicalized. There is no machine code, tree-shaking or obfuscation.
 
 Profile and release modes produce app-aot snapshots, either as dylibs (iOS and Fuchsia) or 4-tuples of blobs (Android). Both include machine code for all the compiled functions, code metadata, method dictionaries, class and library structures, types, etc. The machine code is fully position-independent. The dylib additionally has DWARF debug info such as function names and source positions. There is tree-shaking. Obfuscation is opt-in.
+
+### Matrix
+
+The following axes, as described above, exist:
+
+* debug, release, profile
+* opt, unopt
+* iOS, Android, Fuchsia, macOS, Linux, Windows
+
+In addition, some versions can select alternative graphics backends:
+
+* iOS can choose between: OpenGL, software
+* Android can choose between: Vulkan, OpenGL
+* Fuchsia can choose between: Vulkan
+* macOS can choose between, OpenGL, software, headless (debug only)
+* Linux can choose between: OpenGL, software, headless (debug only)
+* Windows can choose between: OpenGL, software, headless (debug only)
