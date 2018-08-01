@@ -4,7 +4,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes in v0.6.x (since v0.5.1)
 
-### v0.6.0 (probably)
+### v0.6.0
 
 * [#19025](https://github.com/flutter/flutter/pull/19025) renamed `CupertinoRefreshControl` to `CupertinoSliverRefreshControl` for consistency.
 * [#19317](https://github.com/flutter/flutter/pull/19317) Add cursorWidth and cursorRadius to TextField (Material) cursor.
