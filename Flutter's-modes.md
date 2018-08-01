@@ -39,4 +39,4 @@ Separate from all the above, Fuchsia has the following modes:
 * Observatory present, observatory absent
 * opt, unopt
 
-In total therefore there are 3*2*(2+3+2+2+2) + 1*2*3 + 3*2*2 modes, which is 84 modes.
+In total therefore there are 3&times;2&times;(2+3+2+2+2) + 1&times;2&times;3 + 3&times;2&times;2 modes, which is 84 modes.
