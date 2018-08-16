@@ -144,7 +144,7 @@ for your app to come up:
 ```
 $ cd some/path/my_flutter
 $ flutter attach
-Waiting for a connection from Flutter on Nexus 5X
+Waiting for a connection from Flutter on Nexus 5X...
 ```
 Launch `MyApp` in debug mode from Android Studio (or whichever way you usually
 do it). Navigate to an area of the app that uses Flutter. Then turn back to the
