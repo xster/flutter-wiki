@@ -95,12 +95,12 @@ by itself:
 ```java
 // MyApp/app/src/main/java/some/package/SomeActivity.java
 fab.setOnClickListener(new View.OnClickListener() {
- @Override
- public void onClick(View view) {
-   FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-   tx.replace(R.id.someContainer, Flutter.createFragment("route1"));
-   tx.commit();
- }
+  @Override
+  public void onClick(View view) {
+    FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+    tx.replace(R.id.someContainer, Flutter.createFragment("route1"));
+    tx.commit();
+  }
 });
 ```
 Above we use the string `"route1"` to tell the Dart code which widget to display
