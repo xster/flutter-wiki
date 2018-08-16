@@ -5,7 +5,7 @@ necessary tooling.
 
 Last updated August 16, 2018.
 
-The "add2app" support is **in preview**, and is so far only available in the
+The "add2app" support is **in preview**, and is so far only available on the
 master channel.
 
 ## The Flutter module project template
