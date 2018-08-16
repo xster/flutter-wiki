@@ -1,35 +1,49 @@
-Making it easy to add Flutter to an existing app is work in progress, tracked by [#14821](https://github.com/flutter/flutter/issues/14821). This page documents ongoing experiments and will be updated as we find more and better ways to do this, and as we build out tooling to aid.
+Making it easy to add Flutter to an existing app is work in progress,
+tracked by [#14821](https://github.com/flutter/flutter/issues/14821). This page
+documents the current state of that work and will be updated as we build out the
+necessary tooling.
 
-This support is in preview, and is generally only available in the master channel.
+Last updated August 16, 2018.
 
-# Recommendations
-*As this is work in progress, recommendations change frequently at the moment. You may want to wait until some of the dust has settled.*
+The "add2app" support is **in preview**, and is so far only available in the
+master channel.
 
-2018-07-02 Added details for using flutter attach to get a hot reload-based workflow.
+## The Flutter module project template
 
-2018-06-22 A preview of the new Flutter module template is now available for Android. Follow the [guide below][android-module-preview] to try it out.
+Flutter projects created using `flutter create xxx` include very simple host
+apps for your Flutter/Dart code (a single-Activity Android host and a
+single-ViewController iOS host). You can modify these host apps to suit your
+needs and build from there.
 
-2018-06-20 You may want to wait for the new Flutter module template of [the flutter_module branch](https://github.com/flutter/flutter/tree/flutter_module) to land on Flutter master. We're getting closer! Today, [#18633](https://github.com/flutter/flutter/pull/18633) landed on Flutter master, bringing Flutter tooling support for plugins when adding Flutter as a library to an Android app as detailed in the [experimental guide below][android-experiment]. The Flutter module will make the process much easier, and bring support for adding Flutter Views rather than just Activities.
+But if you're starting off with an *existing* host app for either platform,
+you'll likely want to include your Flutter project in that app as some form of
+library instead.
 
-2018-06-11 iOS: Follow the [experimental guide below][ios-experiment].
+This is what the Flutter module template provides. Executing
+`flutter create -t module xxx` produces a Flutter project containing an Android
+library and a Cocoapods pod designed for consumption by your existing host app.
 
-2018-04-09 Android: Follow the [experimental guide below][android-experiment].
-
-# Android
-
-## Preview: Use the Flutter module template
-*Applies to work off the flutter/flutter master branch after [#18697](https://github.com/flutter/flutter/pull/18697) which landed on 2018-06-22. The functionality described below is in early, bleeding-edge **preview**: Until it has landed on the beta branch, it is subject to change without warning.*
+## Android
 
 ### Create a Flutter module
-Let's assume you have an existing Android app at `some/path/MyApp`, and that you want
-your Flutter project as a sibling:
+Let's assume you have an existing Android app at `some/path/MyApp`, and that you
+want your Flutter project as a sibling:
 ```
 $ cd some/path/
 $ flutter create -t module my_flutter
 ```
-This creates a `some/path/my_flutter/` Flutter module project with some Dart code
-to get you started and a `.android/` subfolder that wraps up the module project in
-an Android library.
+This creates a `some/path/my_flutter/` Flutter module project with some Dart
+code to get you started and a `.android/` hidden subfolder that wraps up the
+module project in an Android library.
+
+(While not required in what follows, if you so desire, you can build that library
+using Gradle:
+```
+$ cd .android/
+$ ./gradlew flutter:assembleDebug
+```
+This results in a `flutter-debug.aar` archive file in
+`.android/Flutter/build/outputs/aar/`.)
 
 ### Make the host app depend on the Flutter module
 Include the Flutter module as a sub-project in the host app's `settings.gradle`:
@@ -42,10 +56,10 @@ evaluate(new File(                                                      // new
   'my_flutter/.android/include_flutter.groovy'                          // new
 ))                                                                      // new
 ```
-The binding and script evaluation allows the Flutter module to `include` itself (as `:flutter`)
-and any Flutter plugins used by the module (as `:package_info`, `:video_player`, etc) in the
-evaluation context of your `settings.gradle`.
- 
+The binding and script evaluation allows the Flutter module to `include` itself
+(as `:flutter`) and any Flutter plugins used by the module (as `:package_info`,
+`:video_player`, etc) in the evaluation context of your `settings.gradle`.
+
 Introduce an `implementation` dependency on the Flutter module from your app:
 ```groovy
 // MyApp/app/build.gradle
@@ -57,9 +71,8 @@ dependencies {
 ```
 
 ### Use the Flutter module from your Java code
-
-Use the Flutter module's Java API to add Flutter views to your host app. This can be done
-by directly using `Flutter.createView`:
+Use the Flutter module's Java API to add Flutter views to your host app. This
+can be done by directly using `Flutter.createView`:
 ```java
 // MyApp/app/src/main/java/some/package/MainActivity.java
 fab.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +90,8 @@ fab.setOnClickListener(new View.OnClickListener() {
   }
 });
 ```
-It is also possible to create a `FlutterFragment` that takes care of lifecycle by itself:
+It is also possible to create a `FlutterFragment` that takes care of lifecycle
+by itself:
 ```java
 // MyApp/app/src/main/java/some/package/SomeActivity.java
 fab.setOnClickListener(new View.OnClickListener() {
@@ -89,40 +103,68 @@ fab.setOnClickListener(new View.OnClickListener() {
  }
 });
 ```
-Above we use the string `"route1"` to tell the Dart code which widget to display in the
-Flutter view. The `lib/main.dart` file of the Flutter module project template contains a
-`switch` on the provided route string. It is up to you which route strings you want and
-how to interpret them.
+Above we use the string `"route1"` to tell the Dart code which widget to display
+in the Flutter view. The `lib/main.dart` file of the Flutter module project
+template should `switch` on (or otherwise interpret) the provided route string,
+available as `window.defaultRouteName`, to determine which widget to create and
+pass to `runApp`. Schematically,
+```dart
+import 'dart:ui';
+import 'package:flutter/material.dart';
 
-### Hot restart/reload, option 1: Using `flutter run`
+void main() => runApp(_widgetForRoute(window.defaultRouteName));
 
-You can now build and launch your host app in the same way that you're used to. But if you want
-to hot reload changes to Dart code within it, you currently (this is work in progress) need to
-launch the built apk using Flutter tooling:
-
+Widget _widgetForRoute(String route) {
+  switch (route) {
+    case 'route1':
+      return SomeWidget(...);
+    case 'route2':
+      return SomeOtherWidget(...);
+    default:
+      return Center(
+        child: Text('Unknown route: $route', textDirection: TextDirection.ltr),
+      );
+  }
+}
 ```
-$ cd MyApp
-$ ./gradlew app:assembleDebug
-$ cd ../xyz
-$ flutter run --use-application-binary \
-    ../MyApp/app/build/outputs/apk/debug/app-debug.apk
+It is entirely up to you which route strings you want and how to interpret them.
+
+### Building and running your app
+You build and run `MyApp` in exactly the same way that you did before you added
+the Flutter module dependency, typically using Android Studio. The same goes for
+editing, debugging, and profiling your Android code.
+
+### Hot restart/reload and debugging Dart code
+Full IDE integration to support working with the Flutter/Dart code of your
+hybrid app is work in progress. But the fundamentals are already present via the
+Flutter command line tools and the Dart Observatory web user interface.
+
+Connect a device or launch an emulator. Then make Flutter CLI tooling listen
+for your app to come up:
 ```
+$ cd some/path/my_flutter
+$ flutter attach
+Waiting for a connection from Flutter on Nexus 5X
+```
+Launch `MyApp` in debug mode from Android Studio (or whichever way you usually
+do it). Navigate to an area of the app that uses Flutter. Then turn back to the
+terminal, and you should see output similar to the following:
+```
+Done.
+Syncing files to device Nexus 5X...                          5.1s
 
-### Hot restart/reload, option 2: Using `flutter attach`
-
-1. Run the Flutter tooling in 'attached' mode:
-    ```
-    cd <path to your Flutter module>
-    flutter attach
-    ```
-
-1. Run your Android app as you in the same way that you're used to (e.g., by pressing Run in Android Studio).
-
-1. Navigate to an area of the app that uses Flutter. The terminal message should now change from `Listening.` to `Synchronizing files to device`.
-
-You can now edit the Flutter `.dart` code, and the changes can be hot reloaded by pressing `r` in the terminal.
+🔥  To hot reload changes while running, press "r". To hot restart (and rebuild state), press "R".
+An Observatory debugger and profiler on Nexus 5X is available at: http://127.0.0.1:59556/
+For a more detailed help message, press "h". To quit, press "q".
+```
+You can now edit the Dart code in `my_flutter`, and the changes can be hot
+reloaded by pressing `r` in the terminal. You can also paste the URL above into
+your browser to use the Dart Observatory for setting breakpoints, analyzing
+memory retention and other debugging tasks.
 
 # iOS
+
+TBD
 
 ## Experiment: Integrate FlutterViewController
 *The guide below is based on an early experiment to add Flutter to an existing iOS app. It contains a lot of
@@ -140,12 +182,12 @@ Go to the project view of `embedder` and choose the build target. Go to the "bui
 ### Create a Flutter group/folder
 The flutter compilation will place artifacts here.
 
-Right-click the `embedder` project and choose "new Group" name the group Flutter. 
+Right-click the `embedder` project and choose "new Group" name the group Flutter.
 
 ### Create and use a flutter settings .xcconfig file
 The settings file contains information about the location of the flutter installation, the flutter framework (contains the engine) and the flutter app you want to integrate. It also contains the build mode (debug/profile/release).
 
-For a flutter project `flutter build` creates this settings file automatically (`Generated.xcconfig`). For this scenario we have to create and maintain it manually. 
+For a flutter project `flutter build` creates this settings file automatically (`Generated.xcconfig`). For this scenario we have to create and maintain it manually.
 
 Right click the "Flutter" group and choose "new file" choose the "configuration settings file", give it a name (eg. FlutterConfig.xcconfig). Replace the template with something like:
 ```
@@ -211,9 +253,9 @@ Right click the "Flutter" folder. Choose "Add Files to "embedded"". Mark the fil
 Now go to the project view, and choose the target. Go to the "General" tab and in the "Embedded Binaries" section, press "+" and choose the "app.framework" and "flutter.framework" frameworks.
 
 ### Make your ApplicationDelegate a `FlutterAppLifeCycleProvider`
-This will forward app lifecycle events to your plugins and keep the connection to the flutter tools open during pause. 
+This will forward app lifecycle events to your plugins and keep the connection to the flutter tools open during pause.
 
-* Create a `FlutterPluginAppLifeCycleDelegate` and forward events to it. 
+* Create a `FlutterPluginAppLifeCycleDelegate` and forward events to it.
 * And then implement `FlutterAppLifeCycleProvider` to get notified when plugins subscribe for events.
 
 Here is the minimal code forwarding all events:
@@ -264,7 +306,7 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
     [super touchesBegan:touches withEvent:event];
-    
+
     // Pass status bar taps to key window Flutter rootViewController.
     if (self.rootFlutterViewController != nil) {
         [self.rootFlutterViewController handleStatusBarTouches:event];
@@ -416,7 +458,3 @@ flutter run --use-application-binary /path/to/embedder/build/ios/Debug-iphoneos/
 
 ### Plugins
 TBD.
-
-[android-module-preview]: #preview-use-the-flutter-module-template
-[android-experiment]: #experiment-turn-the-flutter-project-into-a-module
-[ios-experiment]: #experiment-integrate-flutterviewcontroller
