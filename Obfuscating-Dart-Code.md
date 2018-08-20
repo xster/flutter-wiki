@@ -2,7 +2,7 @@ Code obfuscation hides function and class names in your compiled Dart code, maki
 
 Note that Dart obfuscation has not yet been thoroughly tested. Please [file a bug](https://github.com/flutter/flutter/issues) if you experience any issues. For more information, see [this issue on Stack Overflow](https://stackoverflow.com/questions/50542764/how-to-obfuscate-flutter-apps).
 
-## iOS
+## Android
 
 Add the following line to `<ProjectRoot>/android/gradle.properties`:
 
@@ -10,7 +10,7 @@ Add the following line to `<ProjectRoot>/android/gradle.properties`:
 extra-gen-snapshot-options=--obfuscate
 ```
 
-## Android
+## iOS
 
 ### Step 1 - Modify the "build aot" call
 
