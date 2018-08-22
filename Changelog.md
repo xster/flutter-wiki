@@ -5,7 +5,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ## Changes in v0.6.x (since v0.5.1)
 
 ### v0.6.0
-
+* Dart SDK updated to 2.1.0-dev.0.0. Package and plugin authors whose pubspec.yaml includes an `sdk` constraint should update the upper bound to `<3.0.0`. 
 * [#19025](https://github.com/flutter/flutter/pull/19025) renamed `CupertinoRefreshControl` to `CupertinoSliverRefreshControl` for consistency.
 * [#19317](https://github.com/flutter/flutter/pull/19317) Add cursorWidth and cursorRadius to TextField (Material) cursor.
 * [#20116](https://github.com/flutter/flutter/pull/20116) reduced release binary sizes by ~2MB
