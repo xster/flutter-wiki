@@ -1,3 +1,5 @@
+(This wiki page applies to people migrating code written before February 2017. It is unlikely to still be relevant.)
+
 ## Introduction
 
 Prior to [Pull Request 7902](https://github.com/flutter/flutter/pull/7902) -- which was merged to master on February 6th 2017 -- we used a custom build process when building for Android. We now build for Android using the same standard 'gradle-based' build process that Android Studio project uses. This makes it easier to edit the native Android code; after the upgrade you can open the `android` folder in Android Studio, and it will know how to build the project, and will allow you to add java code.
