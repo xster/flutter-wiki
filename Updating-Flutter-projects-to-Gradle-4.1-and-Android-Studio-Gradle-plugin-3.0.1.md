@@ -1,3 +1,5 @@
+(This wiki page applies to people migrating code written before December 2017. It is unlikely to still be relevant.)
+
 ## Introduction
 
 Prior to [#13492](https://github.com/flutter/flutter/pull/13492) (merged on 2017-12-13), Flutter tooling created projects whose Android part used Gradle 3.3 and the Android Studio Gradle plugin version 2.3.3.
