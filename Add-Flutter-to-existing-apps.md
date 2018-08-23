@@ -162,7 +162,7 @@ reloaded by pressing `r` in the terminal. You can also paste the URL above into
 your browser to use the Dart Observatory for setting breakpoints, analyzing
 memory retention and other debugging tasks.
 
-# iOS
+## iOS
 
 ### Create a Flutter module
 Let's assume you have an existing iOS app at `some/path/MyApp`, and that you
