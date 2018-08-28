@@ -2,7 +2,9 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes in v0.6.x (since v0.5.1)
+## Changes since v0.6.0
+
+## Changes in v0.6.0 (since v0.5.1) - beta 6
 
 ### v0.6.0
 * Dart SDK updated to a Dart 2 build (2.1.0-dev.0.0). Package and plugin authors should ensure their `pubspec.yaml` files include a Dart SDK constraint with an upper bound of `<3.0.0`. See the [Getting ready for Dart 2 post](https://medium.com/dartlang/getting-ready-for-dart-2-and-making-your-packages-look-great-on-the-pub-site-118464d7f59d) for details.
