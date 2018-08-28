@@ -268,7 +268,7 @@ Examples:
 
 * A diagram for the AppBar widget
 
-image::https://flutter.github.io/assets-for-api-docs/material/app_bar.png[]
+image::https://flutter.github.io/assets-for-api-docs/assets/material/app_bar.png[]
 
 
 * A screenshot for the Card widget
