@@ -223,7 +223,7 @@ In `Flutter.xcconfig`:
 #include "../../my_flutter/.ios/Flutter/Generated.xcconfig"
 ENABLE_BITCODE=NO
 ```
-Then include `Flutter.xcconfig` from both the Debug the Release configuration
+Then include `Flutter.xcconfig` from both the Debug and the Release configuration
 files:
 
 In `Debug.xcconfig`:
