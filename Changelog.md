@@ -10,6 +10,9 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ### v0.7.3
 * [#20966](https://github.com/flutter/flutter/pull/20966) adds `CupertinoTimerPicker`.
 
+### v0.7.2
+* [#20929](https://github.com/flutter/flutter/pull/20929) fixes bug where `CupertinoPageScaffold` wasn't insetting its content when the keyboard is shown.
+
 ### v0.7.1
 * [#19637](https://github.com/flutter/flutter/pull/19637) `CupertinoNavigationBar` and `CupertinoSliverNavigationBar` now auto-populate their title and back button labels based on their `CupertinoPageRoute.title`.
 
