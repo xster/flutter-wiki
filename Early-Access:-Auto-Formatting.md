@@ -1,1 +1,0 @@
-This has graduated from early access. Please see our [documentation on flutter.io](https://flutter.io/formatting/).
