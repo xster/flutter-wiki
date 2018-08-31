@@ -30,7 +30,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#18381](https://github.com/flutter/flutter/pull/18381) improves visual fidelity of `CupertinoAlertDialog`.
 
 ### v0.5.8
-* [#19284](https://github.com/flutter/flutter/pull/19284) adds multi-column CupertinoPicker support for off-axis cylindrical projection.
+* [#19284](https://github.com/flutter/flutter/pull/19284) adds multi-column `CupertinoPicker` support for off-axis cylindrical projection.
 
 ### v0.5.7
 * [#18469](https://github.com/flutter/flutter/pull/18469) added a `CupertinoApp` for creating iOS styled apps.
