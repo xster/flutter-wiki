@@ -1,7 +1,7 @@
-Update (05/08/2018):
+There's now a localized website for Flutter in China, here: https://flutter-io.cn. 
 
-If you’d like to install Flutter using [an installation bundle](https://flutter.io/sdk-archive/), you can replace the domain of the original URL with a trusted mirror (e.g., https://storage.flutter-io.cn) to speed it up. For example:
-
+Update (May 2018):
+If you’d like to install Flutter using [an installation bundle](https://flutter.io/sdk-archive/), you can replace the domain of the original URL with a trusted mirror to speed it up. For example:
 * Original URL: https://storage.googleapis.com/flutter_infra/releases/beta/windows/flutter_windows_v0.3.2-beta.zip
 * Mirrored URL: https://storage.flutter-io.cn/flutter_infra/releases/beta/windows/flutter_windows_v0.3.2-beta.zip
 
