@@ -4,6 +4,15 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since v0.6.0
 
+### v0.7.4
+* [#20322](https://github.com/flutter/flutter/pull/20322) performs parallax transitions between `CupertinoNavigationBar`s and `CupertinoSliverNavigationBar`s when navigating between pages.
+
+### v0.7.3
+* [#20966](https://github.com/flutter/flutter/pull/20966) adds `CupertinoTimerPicker`.
+
+### v0.7.1
+* [#19637](https://github.com/flutter/flutter/pull/19637) `CupertinoNavigationBar` and `CupertinoSliverNavigationBar` now auto-populate their title and back button labels based on their `CupertinoPageRoute.title`.
+
 ## Changes in v0.6.0 (since v0.5.1) - beta 6
 
 ### v0.6.0
@@ -11,6 +20,14 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#19025](https://github.com/flutter/flutter/pull/19025) renamed `CupertinoRefreshControl` to `CupertinoSliverRefreshControl` for consistency.
 * [#19317](https://github.com/flutter/flutter/pull/19317) Add cursorWidth and cursorRadius to TextField (Material) cursor.
 * [#20116](https://github.com/flutter/flutter/pull/20116) reduced release binary sizes by ~2MB
+* [#20267](https://github.com/flutter/flutter/pull/20267) adds `CupertinoSegmentedControl'.
+* [#19232](https://github.com/flutter/flutter/pull/19232) adds `CupertinoActionSheet` for iOS-style bottom pop-up sheets.
+* [#20101](https://github.com/flutter/flutter/pull/20101) improves `CupertinoScrollbar` visual fidelity during overscrolls.
+* [#19789](https://github.com/flutter/flutter/pull/19789) adds support for infinite scrolling and looped scrolling for `CupertinoPicker`.
+* [#18381](https://github.com/flutter/flutter/pull/18381) improves visual fidelity of `CupertinoAlertDialog`.
+
+### v0.5.8
+* [#19284](https://github.com/flutter/flutter/pull/19284) adds multi-column CupertinoPicker support for off-axis cylindrical projection.
 
 ### v0.5.7
 * [#18469](https://github.com/flutter/flutter/pull/18469) added a `CupertinoApp` for creating iOS styled apps.
