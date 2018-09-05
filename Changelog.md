@@ -2,10 +2,12 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since v0.6.0
+## Changes since v0.7.3
 
 ### v0.7.4
 * [#20322](https://github.com/flutter/flutter/pull/20322) performs parallax transitions between `CupertinoNavigationBar`s and `CupertinoSliverNavigationBar`s when navigating between pages.
+
+## Changes in v0.7.3 (since v0.6.0) - beta 7
 
 ### v0.7.3
 * [#20966](https://github.com/flutter/flutter/pull/20966) adds `CupertinoTimerPicker`.
