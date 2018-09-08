@@ -4,4 +4,4 @@ Each week, we ensure that bugs marked with these labels have someone assigned to
 
 Be wary in marking bugs as "customer blocker". We have finite resources, and several customers. If you have one "blocker" bug, then we have a clear sign of what to look at. If you have twenty, it will be difficult for us to know where to start.
 
-Current customer blockers: https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22customer+blocker%22
+Current customer blockers: https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22
