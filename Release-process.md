@@ -65,8 +65,9 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 
 1. Let _VERSION_ be `v0.0.0-hotfix.1` where `v0.0.0` matches the version of the framework that you are hot fixing, and `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth).
 1. If this requires a change to the engine or its dependencies:
-   1. Locally create a branch on the engine repo starting from the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version`): `git checkout $COMMIT -b $VERSION`
-   1. Update the branch accordingly. Keep fixes to a strict minimum. If the fix involves applying a fix from an upstream dependency (e.g. Dart), use a hot fix release applied to the same original commit that the engine previously depended on; do not merely roll the dependency normally.
+   1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo).
+   1. Locally create a branch on the engine repo starting from that commit: `git checkout $COMMIT -b $VERSION`
+   1. Update the branch accordingly, ideally by doing a `git cherry-pick` of the commit you need. Keep fixes to a strict minimum. If the fix involves applying a fix from an upstream dependency (e.g. Dart), use a hot fix release applied to the same original commit that the engine previously depended on; do not merely roll the dependency normally.
    1. Push this branch to GitHub as a PR for testing; also compile and test the branch locally on Mac, Windows, and Linux, running all the tests the engine provides. DO NOT LAND THIS PR. Close it once you have the code reviewed and tested.
    1. Once the code is reviewed, push the commit to a branch on the engine repository named _VERSION_ (see above).
    1. Force the chrome infra bots to build the specific commit you just pushed. (View the page for each bot, and force a build with the commit hash of the commit you just pushed.)
