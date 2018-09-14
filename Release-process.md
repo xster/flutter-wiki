@@ -76,7 +76,7 @@ Sometimes there are security fixes that must be released as soon as possible. Th
    1. Once this is reviewed and the tests have run, land the PR _on the branch_. (Check that you're not landing it on master!)
    1. Force the chrome infra bots to build the specific commit you just pushed. (View the page for each bot, and force a build with the commit hash of the commit you just pushed.)
    1. Wait for the engine bots to have completed their work.
-   1. Lock down the branch on GitHub.
+   1. Lock down the _VERSION_ branch on GitHub.
 1. Locally create a branch on the framework repo starting from the framework commit of the build that you are fixing. (`git checkout $OLDVERSION -b $VERSION`)
 1. Push this branch to GitHub. (`git push upstream $VERSION`)
 1. Update your local branch accordingly. If applicable, update the `engine.version` to point to the engine you just built.
@@ -84,5 +84,6 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Push your local branch to your GitHub fork of the Flutter framework. (`git push origin $VERSION`)
 1. Create a PR from your recently pushed branch, using the _VERSION_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix.
 1. Once the code is reviewed, land the PR onto the _VERSION_ branch.
+1. Lock down the _VERSION_ branch on GitHub.
 1. If this is an update to the current `beta` build, also force push this commit to the `beta` branch.
 1. Send an e-mail to flutter-dev regarding this update.
