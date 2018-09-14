@@ -24,14 +24,14 @@ If a bug is subsequently found on this release, please mark that commit as bad o
 
 This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the dev branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
 
-A few days before the scheduled beta release date, start these steps (you will probably want to do this on macOS in order to test all parts of the codelabs and builds):
+A few days before the scheduled beta release date, start these steps. You will probably want to do this on macOS in order to test all parts of the codelabs and builds. These steps should be done using the [official download](https://flutter.io/get-started/install/) instead of a local checkout of the repo.
 
 1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that:
     * was tagged at least seven days before the beta release date (the commit itself will probably be even older!). You can see when a tag was added using `git log -1 --format=%ai v0.0.0`.
     * is not listed on the [[Bad Builds]] page.
     * is newer than the current [latest commit on the `beta` branch](https://github.com/flutter/flutter/commits/beta).
-    * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via 'flutter upgrade')
-    * can be successfully upgraded _from_ to a later dev build (via 'flutter upgrade')
+    * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via `git rebase v0.0.0 && flutter upgrade`)
+    * can be successfully upgraded _from_ to a later dev build (via `git reset --hard v0.0.0 && git clean -f && flutter upgrade`)
     * can switch channels successfully (via 'flutter channel')
     * can be used to run the [[codelabs]]. You will have to manually run the build through all the current code labs to verify that the build is good.
     * can be used to build and run the Flutter Gallery:
