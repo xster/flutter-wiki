@@ -65,6 +65,7 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 
 1. Let _TAG_ be the tag of the version of the framework that you are hot fixing, e.g. `v0.0.0`.
 1. Let _VERSION_ be `$TAG-hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `v0.0.0-hotfix.1`.
+1. Let _OLDVERSION_ be _TAG_ if this is the first patch to this version, or else be the full branch name of the previous patch (e.g. if _VERSION_ is `v0.0.0-hotfix.2` then _OLDVERSION_ is `v0.0.0-hotfix.1`).
 1. If this requires a change to the engine or its dependencies:
    1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo).
    1. Locally create a branch on the engine repo starting from that commit: `git checkout $COMMIT -b $VERSION`
