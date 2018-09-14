@@ -67,7 +67,7 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Let _VERSION_ be `$TAG-hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `v0.0.0-hotfix.1`.
 1. Let _OLDVERSION_ be _TAG_ if this is the first patch to this version, or else be the full branch name of the previous patch (e.g. if _VERSION_ is `v0.0.0-hotfix.2` then _OLDVERSION_ is `v0.0.0-hotfix.1`).
 1. If this requires a change to the engine or its dependencies:
-   1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo).
+   1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo for _OLDVERSION_).
    1. Locally create a branch on the engine repo starting from that commit: `git checkout $COMMIT -b $VERSION`
    1. Update the branch accordingly, ideally by doing a `git cherry-pick` of the commit you need. Keep fixes to a strict minimum. If the fix involves applying a fix from an upstream dependency (e.g. Dart), use a hot fix release applied to the same original commit that the engine previously depended on; do not merely roll the dependency normally.
    1. Push this branch to your own GitHub fork of the engine (`git push origin $VERSION`).
@@ -77,7 +77,7 @@ Sometimes there are security fixes that must be released as soon as possible. Th
    1. Force the chrome infra bots to build the specific commit you just pushed. (View the page for each bot, and force a build with the commit hash of the commit you just pushed.)
    1. Wait for the engine bots to have completed their work.
    1. Lock down the branch on GitHub.
-1. Locally create a branch on the framework repo starting from the framework commit of the build that you are fixing. (`git checkout $TAG -b $VERSION`)
+1. Locally create a branch on the framework repo starting from the framework commit of the build that you are fixing. (`git checkout $OLDVERSION -b $VERSION`)
 1. Push this branch to GitHub. (`git push upstream $VERSION`)
 1. Update your local branch accordingly. If applicable, update the `engine.version` to point to the engine you just built.
 1. Test this build on all platforms. Run the devicelab locally. Test the codelabs.
