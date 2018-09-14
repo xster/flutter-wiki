@@ -27,7 +27,7 @@ This is the process for rolling the "beta" branch. The beta branch holds a versi
 A few days before the scheduled beta release date, start these steps (you will probably want to do this on macOS in order to test all parts of the codelabs and builds):
 
 1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that:
-    * is at least seven days old, meaning the tag was added at least 7 days ago (the commit itself will probably be even older!). You can see when a tag was added using `git log -1 --format=%ai v0.0.0`.
+    * was tagged at least seven days before the beta release date (the commit itself will probably be even older!). You can see when a tag was added using `git log -1 --format=%ai v0.0.0`.
     * is not listed on the [[Bad Builds]] page.
     * is newer than the current [latest commit on the `beta` branch](https://github.com/flutter/flutter/commits/beta).
     * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via 'flutter upgrade')
