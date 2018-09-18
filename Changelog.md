@@ -2,7 +2,9 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since v0.7.3
+## Changes since v.0.8.2
+
+## Changes in v0.8.2 (since v0.7.3) - beta 8
 
 ### v0.7.4
 * [#20322](https://github.com/flutter/flutter/pull/20322) performs parallax transitions between `CupertinoNavigationBar`s and `CupertinoSliverNavigationBar`s when navigating between pages.
