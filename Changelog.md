@@ -4,6 +4,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since v.0.8.2
 
+### v0.9.2
+
+* [#21540](https://github.com/flutter/flutter/pull/21540) added a `transform()` method to [`Animatable`](https://docs.flutter.io/flutter/animation/Animatable-class.html). It is implemented by `Tween` (the main subclass of `Animatable`) but classes that subclass `Animatable` directly will need to implement it. Typically the existing `evaluate()` method can be changed to implement `transform()` instead, using the value given by the argument to `transform()` rather than the current value of the animation provided to `evaluate()`. `evaluate()` now has a default implementation that defers to `transform()`.
+
 ## Changes in v0.8.2 (since v0.7.3) - beta 8
 
 ### v0.7.4
