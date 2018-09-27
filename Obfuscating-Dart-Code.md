@@ -9,6 +9,7 @@ Add the following line to `<ProjectRoot>/android/gradle.properties`:
 ```
 extra-gen-snapshot-options=--obfuscate
 ```
+For information on obfuscating the Android host, see [Enabling Proguard](https://flutter.io/android-release/#enabling-proguard) in [Preparing an Android App for Release](https://flutter.io/android-release/#minify-and-obfuscate).
 
 ## iOS
 
@@ -45,5 +46,3 @@ In `<ProjectRoot>/ios/Flutter/Release.xcconfig`, add the following line:
 ```
 EXTRA_GEN_SNAPSHOT_OPTIONS=--obfuscate
 ```
-
-For information on obfuscating the Android host, see [Enabling Proguard](https://flutter.io/android-release/#enabling-proguard) in [Preparing an Android App for Release](https://flutter.io/android-release/#minify-and-obfuscate).
