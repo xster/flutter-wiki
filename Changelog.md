@@ -6,7 +6,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ### v0.9.4
 
-* [#21715](https://github.com/flutter/flutter/pull/21715), MaterialPageRoute transitions are now defined by the Theme. Added (optional) support for Android P style page transitions. The MaterialPageRoute support for "hosting" another route to reuse its buildTransitions() method was removed because PageTransitionsBuilders, including CupertinoPageTransitionBuilder, are standalone objects.
+* [#21715](https://github.com/flutter/flutter/pull/21715), The default MaterialPageRoute transition is now defined by the Theme. Added (optional) support for Android P style page transitions. The MaterialPageRoute support for "hosting" another route to reuse its buildTransitions() method was removed because PageTransitionsBuilders, including CupertinoPageTransitionBuilder, are standalone objects.
 
 ### v0.9.3
 
