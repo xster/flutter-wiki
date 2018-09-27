@@ -30,16 +30,7 @@ if [[ -n "$EXTRA_GEN_SNAPSHOT_OPTIONS" ]]; then
 fi
 ```
 
-### Step 2 - Apply your changes
-
-In the project root of your app, run the following two commands:
-
-```
-git commit -am "Enable obfuscation on iOS"
-flutter
-```
-
-### Step 3 - Modify the release config
+### Step 2 - Modify the release config
 
 In `<ProjectRoot>/ios/Flutter/Release.xcconfig`, add the following line:
 
