@@ -4,6 +4,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since v.0.8.2
 
+### v0.9.4
+
+* [#21715](https://github.com/flutter/flutter/pull/21715), MaterialPageRoute transitions are now defined by the Theme. Added (optional) support for Android P style page transitions. The MaterialPageRoute support for "hosting" another route to reuse its buildTransitions() method was removed because PageTransitionsBuilders, including CupertinoPageTransitionBuilder, are standalone objects.
+
 ### v0.9.3
 
 * [#22108](https://github.com/flutter/flutter/pull/22108) changed the output of `flutter doctor` slightly, which may affect automated scripts that depended on the exact output.
