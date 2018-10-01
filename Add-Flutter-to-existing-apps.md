@@ -307,7 +307,6 @@ Remove one occurrence.
 
 ### Make the host app depend on the Flutter framework
 
-#### Setting up CocoaPods
 Integrating the Flutter framework requires use of the CocoaPods dependency manager.
 This is because the Flutter framework needs to be available also to any Flutter plugins
 that you might include in my_flutter.
