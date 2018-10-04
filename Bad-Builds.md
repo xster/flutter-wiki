@@ -1,5 +1,8 @@
 This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel. See [[Bad Build Identification]] for details on how to identify builds that should be listed here. See also the [[Changelog]].
 
+## v0.9.5 - v0.9.6
+* Upload to iOS app store is broken, see [#22306](https://github.com/flutter/flutter/issues/22306).
+
 ## v0.5.2 - v0.5.6
 * Dart VM crashes on certain eval calls, see [#18573](https://github.com/flutter/flutter/issues/18573).
 
