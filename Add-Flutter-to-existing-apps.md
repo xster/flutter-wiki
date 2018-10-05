@@ -3,24 +3,25 @@ tracked by [#14821](https://github.com/flutter/flutter/issues/14821). This page
 documents the current state of that work and will be updated as we build out the
 necessary tooling.
 
-Last updated October 1, 2018.
+Last updated October 5, 2018.
 
-The "add2app" support is **in preview**, and is so far only available on the
-master channel.
+The "add2app" support is **in preview**, and is so far **only available on the
+master channel**.
 
 ## The Flutter module project template
 
-Flutter projects created using `flutter create xxx` include very simple host
+Previously Flutter projects created using `flutter create xxx` included very simple host
 apps for your Flutter/Dart code (a single-Activity Android host and a
-single-ViewController iOS host). You can modify these host apps to suit your
+single-ViewController iOS host). You could modify these host apps to suit your
 needs and build from there.
 
 But if you're starting off with an *existing* host app for either platform,
 you'll likely want to include your Flutter project in that app as some form of
 library instead.
 
-This is what the Flutter module template provides. Executing
-`flutter create -t module xxx` produces a Flutter project containing an Android
+This is what the Flutter module provides. Executing
+`flutter create xxx` from the master channel after October 4th 2018
+produces a Flutter project containing an Android
 library and a Cocoapods pod designed for consumption by your existing host app.
 
 ## Android
@@ -30,7 +31,7 @@ Let's assume you have an existing Android app at `some/path/MyApp`, and that you
 want your Flutter project as a sibling:
 ```
 $ cd some/path/
-$ flutter create -t module my_flutter
+$ flutter create my_flutter
 ```
 This creates a `some/path/my_flutter/` Flutter module project with some Dart
 code to get you started and a `.android/` hidden subfolder that wraps up the
@@ -169,7 +170,7 @@ Let's assume you have an existing iOS app at `some/path/MyApp`, and that you
 want your Flutter project as a sibling:
 ```
 $ cd some/path/
-$ flutter create -t module my_flutter
+$ flutter create my_flutter
 ```
 This creates a `some/path/my_flutter/` Flutter module project with some Dart
 code to get you started and a `.ios/` hidden subfolder that wraps up the
