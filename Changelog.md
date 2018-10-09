@@ -2,7 +2,10 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since v.0.8.2
+## Changes since v0.9.4
+
+## Changes in v0.9.4 (since v0.8.2 ) - beta 9
+
 ### v0.9.7
 * [flutter/engine#6393](https://github.com/flutter/engine/pull/6393) adds nullability annotations to Android MethodChannel/MethodCall.
 
