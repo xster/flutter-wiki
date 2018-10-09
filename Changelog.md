@@ -4,6 +4,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since v.0.8.2
 ### v0.9.7
+* [flutter/engine#6417](https://github.com/flutter/engine/pull/6417) fixes the [height](https://docs.flutter.io/flutter/painting/TextStyle/height.html) support of TextStyle. Before the fix, the height was always treated as 1.0.
 * [flutter/engine#6393](https://github.com/flutter/engine/pull/6393) adds nullability annotations to Android MethodChannel/MethodCall.
 
 ### v0.9.6
