@@ -1,6 +1,7 @@
 The Flutter team currently maintains the following codelabs:
 
-* [Write Your First Flutter App](https://flutter.io/get-started/codelab/)
+* [Write Your First Flutter App, part 1](https://flutter.io/get-started/codelab/)
+* [Write Your First Flutter App, part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
 
 If you find errors with the codelabs, please create [issues](https://github.com/flutter/flutter/issues) with the [dev: docs - codelab](https://github.com/flutter/flutter/labels/dev%3A%20docs%20-%20codelab) and [TODAY](https://github.com/flutter/flutter/labels/%E2%9A%A0%20TODAY) labels.
 
