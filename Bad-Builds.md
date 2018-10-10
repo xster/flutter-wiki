@@ -3,6 +3,9 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 ## v0.10.0 - 
 * Workflows that require customizing the underlying `android` or `ios` apps and newly created apps using `cupertino_icons` are broken by [#22565](https://github.com/flutter/flutter/pull/22565).
 
+## v0.9.7 - v0.10.0
+* The colorScheme of ButtonTheme and minWidth of MaterialButton are not properly handled. See [#22789](https://github.com/flutter/flutter/issues/22789), [flutter/flutter#22880](https://github.com/flutter/flutter/pull/22880), and [flutter/flutter#22919](https://github.com/flutter/flutter/pull/22919)
+
 ## v0.9.6 - v0.9.7
 * Copy/pasting broken on iOS in material apps, see [#22624](https://github.com/flutter/flutter/issues/22624).
 
