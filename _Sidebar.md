@@ -16,6 +16,7 @@ Flutter Wiki
 - [[Triage]]
 
 ## Tips
+- [[Add Flutter to existing apps]]
 - [[Making animated GIFs of Flutter apps]]
 - [[Updating Material Design Fonts]]
 - [Hot Reload](https://flutter.io/hot-reload/)
