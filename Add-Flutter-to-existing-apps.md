@@ -1,6 +1,7 @@
 Making it easy to add Flutter to an existing app is work in progress,
-tracked by [#14821](https://github.com/flutter/flutter/issues/14821). This page
-documents the current state of that work and will be updated as we build out the
+tracked by the [Add2App project](https://github.com/flutter/flutter/projects/28). 
+
+This page documents the current state of that work and will be updated as we build out the
 necessary tooling.
 
 Last updated October 1, 2018.
