@@ -26,7 +26,7 @@ If any of the labels prefixed with "a:" apply to the issue, add those labels. If
 
 Add any of the applicable "severe: *" labels; typically only one will apply but sometimes "regression" will apply in conjunction with one of the others. If it's a very serious bug that should block releases, consider adding the "TODAY" label as well.
 
-If it's something that looks trivial to fix, add the `easy bug` label.
+If it's something that looks trivial to fix, add the `easy fix` label.
 
 Finally, label the issue based on what area of the project the bug relates to:
 
