@@ -4,6 +4,27 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since v0.10.0
 * [#22977](https://github.com/flutter/flutter/pull/22977) replaces most of `Null` by `void`. See [the mail proposing this change](https://groups.google.com/forum/#!topic/flutter-dev/b7TKGqERNTM).
+* [#22985](https://github.com/flutter/flutter/pull/22985) Implement correct orthographic projection
+* [#23104](https://github.com/flutter/flutter/pull/23104) Update wrapping message
+* [#22924](https://github.com/flutter/flutter/pull/22924) Support for disabling interactive TextField caret and selection
+* [#22870](https://github.com/flutter/flutter/pull/22870) Use new `mixin` syntax for super-mixins
+* [#22022](https://github.com/flutter/flutter/pull/22022) allow command line option "--project-name" in flutter create
+* [#23126](https://github.com/flutter/flutter/pull/23126) Dispatch a Flutter.Navigation event each time navigation occurs.
+* [#23183](https://github.com/flutter/flutter/pull/23183) Fix bug where gradle build rule would rerun on switching from
+* [#22394](https://github.com/flutter/flutter/pull/22394) Fix out of range spring simulation in ClampingScrollSimulation
+* [#23174](https://github.com/flutter/flutter/pull/23174) enable lint prefer_void_to_null
+* [#23184](https://github.com/flutter/flutter/pull/23184) TextTheme.apply() should not assume non-null TextStyle fields
+* [#23168](https://github.com/flutter/flutter/pull/23168) Added Mongolian (mn) translations
+* [#23167](https://github.com/flutter/flutter/pull/23167) Fix disabled formfield validation
+* [#23015](https://github.com/flutter/flutter/pull/23015) Finalize editing when hitting the enter key on a single line TextField
+* [#23021](https://github.com/flutter/flutter/pull/23021) Make it easier to use CocoaPods to Add2App for iOS
+* [#22825](https://github.com/flutter/flutter/pull/22825) fix Curves.bounceInOut math
+* [#22977](https://github.com/flutter/flutter/pull/22977) Prefer void to null
+* [#22822](https://github.com/flutter/flutter/pull/22822) Adds callback for Long Press Up
+* [#18770](https://github.com/flutter/flutter/pull/18770) Add `disabledHint` to DropdownButton
+* [#21657](https://github.com/flutter/flutter/pull/21657) Make AndroidView take gesture recognizer factories.
+* [#22449](https://github.com/flutter/flutter/pull/22449) Add support for text shadows
+
 
 ## Changes since v0.9.4
 
