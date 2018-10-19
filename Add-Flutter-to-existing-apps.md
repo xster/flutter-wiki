@@ -209,7 +209,7 @@ following to integrate with your `my_flutter` app:
 
 1. Add the following lines to your `Podfile`:
 ```ruby
-  flutter_application_path = '/Users/dnfield/src/ios_test_mod/'
+  flutter_application_path = 'path/to/flutter_app/'
   eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
 ```
 1. Run `pod install`.
