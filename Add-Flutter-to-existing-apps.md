@@ -534,3 +534,47 @@ You can now edit the Dart code in `my_flutter`, and the changes can be hot
 reloaded by pressing `r` in the terminal. You can also paste the URL above into
 your browser to use the Dart Observatory for setting breakpoints, analyzing
 memory retention and other debugging tasks.
+
+#### Debugging specific instances of Flutter
+
+It's possible to add multiple instances of Flutter (`root isolates`) to an app. `flutter attach` connects to all of the available isolates by default. Any commands sent from the attached CLI are then forwarded to each of the attached isolates.
+
+List all attached isolates by typing `l` from an attached `flutter` CLI tool. If unspecified, isolate names are automatically generated from the dart entry point file and function name.
+
+Example `l` output for an application that's displaying two Flutter isolates simultaneously:
+
+```
+Connected views:
+  main.dart$main-517591213 (isolates/517591213)
+  main.dart$main-332962855 (isolates/332962855)
+```
+
+Attach to specific isolates instead in two steps:
+
+1. Name the Flutter root isolate of interest in its Dart source.
+```dart
+// main.dart
+import 'dart:ui' as ui;
+
+void main() {
+  ui.window.setIsolateDebugName("debug isolate");
+  // ...
+}
+```
+
+2. Run `flutter attach` with the `--isolate-filter` option.
+```
+$ flutter attach --isolate-filter='debug'
+Waiting for a connection from Flutter...
+Done.
+Syncing files to device...      1.1s
+
+🔥  To hot reload changes while running, press "r". To hot restart (and rebuild state), press "R".
+An Observatory debugger and profiler is available at: http://127.0.0.1:43343/
+For a more detailed help message, press "h". To detach, press "d"; to quit, press "q".
+
+Connected view:
+  debug isolate (isolates/642101161)
+```
+
+You can check out [`93573de`](https://github.com/flutter/flutter/commit/93573de2165c750fdeefcd2d620e2b8bd494fed6) for a more detailed example.
