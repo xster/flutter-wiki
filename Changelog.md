@@ -24,6 +24,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#18770](https://github.com/flutter/flutter/pull/18770) Add `disabledHint` to DropdownButton
 * [#21657](https://github.com/flutter/flutter/pull/21657) Make AndroidView take gesture recognizer factories.
 * [#22449](https://github.com/flutter/flutter/pull/22449) Add support for text shadows
+* Skia update that changes the low level implementation of blurs and anti aliasing, which may break golden tests.
 
 
 ## Changes since v0.9.4
