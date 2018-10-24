@@ -241,6 +241,19 @@ phase.
 
 You should now be able to build the project using `⌘B`. 
 
+#### Under the hood
+
+If you have some reason to do this manually or debug why these steps aren't working, here's what's going on under the hood:
+
+1. `Flutter.framework` (the Engine library) is getting embedded into your app for you.  This has to match up with the release type (debug/profile/release) as well as the architecture for your app (arm*, i386, x86_64, etc.).  Cocoapods pulls this in as a vendored framework and makes sure it gets embedded into your native app.
+2. `App.framework` (your Flutter application binary) is embedded into your app.
+3. `flutter_assets` folder is getting embedded as a resource - it contains fonts, images, and in certain build modes it also contains binary files required by the engine at runtime.  __Problems with this folder can lead to runtime errors such as "Could not run engine for configuration" - usually indicating that either the folder is not getting embedded, or you're trying to cross a JIT application with an AOT enabled engine, or vice versa!__
+4. Any plugins are getting added as Cocoapods.  In theory, it should be possible to manually merge those in as well, but that becomes much more specific to the plugin itself.
+5. Bitcode is disabled for every target in your project.  This is a requirement to link with the Flutter Engine.
+6. Generated.xcconfig (containing Flutter-specific environment varaibles) is included in the release and debug .xcconfig files that Cocoapods generates.
+
+The build phase script (xcode_backend.sh) is ensuring that the binaries you build stay up to date with the Dart code that's actually in the folder.  It also attempt to respect your build configuration setting once [this pull request](https://github.com/flutter/flutter/pull/23387) lands.
+
 ### Write code to use FlutterViewController from your host app
 The proper place to do this will be specific to your host app. Here is an
 example that makes sense for the blank screen of the host app generated
