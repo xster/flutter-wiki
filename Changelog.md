@@ -2,7 +2,9 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since v0.10.0
+## Changes since v0.9.4
+
+### v0.10.1
 * [#22977](https://github.com/flutter/flutter/pull/22977) replaces most of `Null` by `void`. See [the mail proposing this change](https://groups.google.com/forum/#!topic/flutter-dev/b7TKGqERNTM).
 * [#22985](https://github.com/flutter/flutter/pull/22985) Implement correct orthographic projection
 * [#23104](https://github.com/flutter/flutter/pull/23104) Update wrapping message
@@ -25,9 +27,6 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#21657](https://github.com/flutter/flutter/pull/21657) Make AndroidView take gesture recognizer factories.
 * [#22449](https://github.com/flutter/flutter/pull/22449) Add support for text shadows
 * Skia update that changes the low level implementation of blurs and anti aliasing, which may break golden tests.
-
-
-## Changes since v0.9.4
 
 ### v0.9.7
 * [flutter/engine#6393](https://github.com/flutter/engine/pull/6393) adds nullability annotations to Android MethodChannel/MethodCall.
