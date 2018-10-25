@@ -830,20 +830,20 @@ As per normal Dart conventions, a package should have a single import
 that reexports all of its API.
 
 > For example,
-> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/rendering.dart[rendering.dart]
+> https://github.com/flutter/flutter/blob/master/packages/flutter/lib/rendering.dart[rendering.dart]
 > exports all of lib/src/rendering/*.dart
 
 If a package uses, as part of its exposed API, types that it imports
 from a lower layer, it should reexport those types.
 
 > For example,
-> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/material.dart[material.dart]
+> https://github.com/flutter/flutter/blob/master/packages/flutter/lib/material.dart[material.dart]
 > reexports everything from
-> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/widgets.dart[widgets.dart].
+> https://github.com/flutter/flutter/blob/master/packages/flutter/lib/widgets.dart[widgets.dart].
 > Similarly, the latter
-> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/src/widgets/basic.dart[reexports]
+> https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/basic.dart[reexports]
 > many types from
-> https://github.com/flutter/engine/blob/master/sky/packages/sky/lib/rendering.dart[rendering.dart],
+> https://github.com/flutter/flutter/blob/master/packages/flutter/lib/rendering.dart[rendering.dart],
 > such as `BoxConstraints`, that it uses in its API. On the other
 > hand, it does not reexport, say, `RenderProxyBox`, since that is not
 > part of the widgets API.
