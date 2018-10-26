@@ -12,9 +12,9 @@ Previously known as `alpha`, this is the latest fully-tested build. Usually func
 
 ### beta
 
-Every few weeks, we pick the "best" `dev` build of the previous month or so, and promote it to `beta`. These builds have been tested with our [[codelabs]].
+Every month, we pick the "best" `dev` build of the previous month or so, and promote it to `beta`. These builds have been tested with our [[codelabs]].
 
-> Eventually we will also have a `release` build, which will be the best `beta` build of the previous year or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
+> Eventually we will also have a `stable` build, which will be the best `beta` build of the previous quarter or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
 
 ## How to change channels
 
