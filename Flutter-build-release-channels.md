@@ -34,11 +34,7 @@ To switch channels, run `flutter channel [<channel-name>]`, and then run `flutte
 
 ### Known issues and workarounds
 
-#### Issue
-
-When switching channels, you see an error message `Unable to upgrade Flutter: no upstream repository configured.` 
-
-#### Workaround
+#### When switching channels, you see an error message `Unable to upgrade Flutter: no upstream repository configured.` 
 
 You could get into this state if you ran `flutter channel beta` before the beta channel was officially released, due to a bug that has now been fixed. To resolve, run the following command from the root directory where Flutter is installed:
 ```bash
@@ -46,11 +42,7 @@ $ git fetch origin; git branch -u origin/beta beta; flutter channel beta
 ```  
 After running this command, you should be back on the `beta` branch and be able to run `flutter upgrade` to complete the upgrade process.
 
-#### Issue
-
-After running `flutter upgrade`, the flutter tool crashed with a message about "Cannot find executable for /path/to/dart"
-
-#### Workaround
+#### After running `flutter upgrade`, the flutter tool crashed with a message about "Cannot find executable for /path/to/dart"
 
 This will only happen when you first upgrade.  The issue has [since been fixed](https://github.com/flutter/flutter/pull/14353#discussion_r170812774), and after the first time it happens, you won't see the crash again.
 
