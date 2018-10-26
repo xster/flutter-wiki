@@ -8,13 +8,15 @@ The current tip-of-tree, absolute latest cutting edge build. Usually functional,
 
 ### dev
 
-Previously known as `alpha`, this is the latest fully-tested build. Usually functional, but see [[Bad Builds]] for a list of known "bad" dev builds.
+The latest fully-tested build. Usually functional, but see [[Bad Builds]] for a list of known "bad" dev builds. We continually try to roll `master` to `dev`. Doing so involves running many more tests than those that we run during `master` development, which is why this is not actually the same to `master`.
 
 ### beta
 
 Every month, we pick the "best" `dev` build of the previous month or so, and promote it to `beta`. These builds have been tested with our [[codelabs]].
 
-> Eventually we will also have a `stable` build, which will be the best `beta` build of the previous quarter or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
+### stable
+
+Eventually we will also have a `stable` build, which will be the best `beta` build of the previous quarter or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
 
 ## How to change channels
 
