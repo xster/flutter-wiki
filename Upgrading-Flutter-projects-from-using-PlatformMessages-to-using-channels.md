@@ -1,3 +1,5 @@
+(This wiki page applies to people migrating code written before March 2017. It is unlikely to still be relevant.)
+
 # Introduction
 Prior to pull requests [flutter/flutter#8837](https://github.com/flutter/flutter/pull/8837) and [flutter/engine#3482](https://github.com/flutter/engine/pull/3482), both merged on March 17 2017, communication between Flutter app components written in Dart and host platform app components written for Android or iOS was accomplished by sending and receiving string/JSON messages using methods defined in the following types:
 
