@@ -1,10 +1,8 @@
-Flutter has installation bundles which you can download and install for both the [Beta and Dev channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels). These bundles are the easiest way to set up and get going with Flutter development, but they are not the only way.
+Flutter has installation bundles which you can download and install for both the [beta and dev channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels).
 
-Notably, if you would like to work using the unstable `master` branch instead of the Beta or Dev channel code, you will need to construct your installation using the more detailed steps below.
+The installation bundles were designed to allow you to have a completely populated environment without having to first download the Git repository, then compile the flutter tool, etc.
 
-The installation bundles were designed to allow you to have a completely populated environment.
-
-To recreate what an installation bundle provides, do this:
+Creating an installation bundle consists of running the following steps. These steps will pre-cache all of the necessary components for working offline. One could follow these steps e.g. to create an installation bundle for the `master` branch.
 
 1) _OPTIONAL_: Set and export the `PUB_CACHE` environment variable to point to the location where you would like your pub cache to be stored.  If you don't set this, it will be stored in pub's default location in your home directory (varies based on your OS). Alternatively, if you create the `flutter/.pub-cache` directory before any commands that invoke `pub` (e.g. the `flutter packages` command), then the flutter tool will automatically use it, and you won't have to set PUB_CACHE in your environment.
 1) _WINDOWS ONLY_: Download and install a command line version of Git.  Windows doesn't come with git pre-installed, so you'll have to download it from one of the many sources on the Internet.
@@ -18,8 +16,6 @@ To recreate what an installation bundle provides, do this:
 1) `flutter precache` will make sure that the `flutter` tool's cache of binary artifacts is up-to-date.
 1) _OPTIONAL_: `flutter ide-config --overwrite` will generate and update IDE configuration files for the Flutter repo. You only need to do this if you are using an IDE like IntelliJ or VS Code.
 1) In a temporary directory, run `flutter create --template=app app_sample`, `flutter create --template=package package_sample`, and `flutter create --template=plugin plugin_sample`.  You may then remove the app_sample, package_sample, and plugin_sample directories.  This will populate the pub cache with any additional packages needed for creating new flutter projects using each of those templates.
-
-These steps will set up your machine to pre-cache all of the necessary components for working offline, or for avoiding large downloads on slow connections.
 
 Another alternative to the above steps is to run the prepare_package.dart script directly (which is what we use to create the installation bundles in the first place).  You would invoke that script like this:
 
