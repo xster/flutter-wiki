@@ -11,7 +11,6 @@ Flutter Wiki
 ## Process
 - [[Release process]]
 - [[Bug prioritization]]
-- [[Upgrading dependencies]]
 - [Breaking Changes](https://flutter.io/design-principles/#handling-breaking-changes)
 - [[Triage]]
 
