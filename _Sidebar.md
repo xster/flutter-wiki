@@ -24,7 +24,6 @@ Flutter Wiki
 - [[Using Flutter in China]]
 
 ## Commands
-- [[The flutter daemon mode]]
 - [[Flutter's modes]]
 - [[The flutter run variants]]
 
