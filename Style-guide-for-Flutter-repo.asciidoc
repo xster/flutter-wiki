@@ -21,82 +21,207 @@ toc::[]
 Overview
 --------
 
+This document describes our approach to designing and programming Flutter,
+from high-level architectural principles all the way to indentation rules.
+
 The primary goal of these style guidelines is to improve code readability so
 that everyone, whether reading the code for the first time or
 maintaining it for years, can quickly determine what the code does.
-Secondary goals are to increase the likelihood of catching bugs quickly, and
-avoiding arguments when there are disagreements.
+Secondary goals are to design systems that are simple, to increase the
+likelihood of catching bugs quickly, and avoiding arguments when there are
+disagreements over subjective matters.
 
-In general, when writing code for the Flutter repository, follow our
-https://flutter.io/design-principles/[Design Principles] for all code and
-the https://www.dartlang.org/guides/language/effective-dart/[Dart style guide]
-for Dart code, except where that would contradict this page.
+For anything not covered by this document, check the
+https://www.dartlang.org/guides/language/effective-dart/[Dart style guide]
+for more advice. That document is focused primarily on Dart-specific
+conventions, while this document is more about Flutter conventions.
 
-We do not yet use `dartfmt`. Flutter code tends to use patterns that
-the standard Dart formatter does not handle well. We are
-https://github.com/dart-lang/dart_style/issues/442[working with the Dart team]
-to make `dartfmt` aware of these patterns.
+Philosophy
+----------
 
+### Lazy programming
 
-In defense of the extra work that hand-formatting entails
----------------------------------------------------------
+Write what you need and no more, but when you write it, do it right.
 
-Flutter code might eventually be read by hundreds of thousands of people each day.
-Code that is easier to read and understand saves these people time. Saving each
-person even a second each day translates into hours or even _days_ of saved time
-each day. The extra time spent by people contributing to Flutter directly translates
-into real savings for our developers, which translates to real benefits to our end
-users as our developers learn the framework faster.
+Avoid implementing features you don't need. You can't design a feature
+without knowing what the constraints are. Implementing features "for
+completeness" results in unused code that is expensive to maintain,
+learn about, document, test, etc.
 
+When you do implement a feature, implement it the right way. Avoid
+workarounds. Workarounds merely kick the problem further down the
+road, but at a higher cost: someone will have to relearn the problem,
+figure out the workaround and how to dismantle it (and all the places
+that now use it), _and_ implement the feature. It's much better to
+take longer to fix a problem properly, than to be the one who fixes
+everything quickly but in a way that will require cleaning up later.
 
-Comments
---------
+You may hear team members say "embrace the [yak
+shave](http://www.catb.org/jargon/html/Y/yak-shaving.html)!". This is
+an encouragement to take on the larger effort necessary to perform a
+proper fix for a problem rather than just applying a band-aid.
 
-### Avoid checking in commented-out code
+### Write Test, Find Bug
 
-It will bitrot too fast to be useful, and will confuse people maintaining the
-code.
+When you fix a bug, first write a test that fails, then fix the bug
+and verify the test passes.
 
+When you implement a new feature, write tests for it.
 
-### Avoid checking in comments that ask questions
-
-Find the answers to the questions, or describe the confusion, including
-references to where you found answers.
-
-If commenting on a workaround due to a bug, also leave a link to the bug and
-a TODO to clean it up when the bug is fixed.
-
-Example:
-
-```
-// BAD:
-
-// What should this be?
-
-// This is a workaround.
+If something isn't tested, it is very likely to regress or to get "optimized away".
+If you want your code to remain in the codebase, you should make sure to test it.
 
 
-// GOOD:
+### Avoid duplicating state
 
-// According to this specification, this should be 2.0, but according to that
-// specification, it should be 3.0. We split the difference and went with
-// 2.5, because we didn't know what else to do.
-
-// TODO(username): Converting color to RGB because class Color doesn't support
-//                 hex yet. See http://link/to/a/bug/123
-```
+There should be no objects that represent live state that reflect
+some state from another source, since they are expensive to maintain.
+(The Web's `HTMLCollection` object is an example of such an object.)
+In other words, **keep only one source of truth**, and **don't replicate
+live state**.
 
 
-Documentation comments (dartdocs)
----------------------------------
+### Getters feel faster than methods
 
-We use "dartdoc" for our documentation. All public members in Flutter
-libraries should have a dartdoc comment, consisting of three slashes
-(rather than two slashes as used for regular comments).
+Property getters should be efficient (e.g. just returning a cached
+value, or an O(1) table lookup). If an operation is inefficient, it
+should be a method instead. (Looking at the Web again: we would have
+`document.getForms()`, not `document.forms`, since it walks the entire tree).
+
+Similarly, a getter that returns a Future should not kick-off the work
+represented by the future, since getters appear idempotent and side-effect free.
+Instead, the work should be started from a method or constructor, and the
+getter should just return the preexisting Future.
+
+
+### No synchronous slow work
+
+There should be no APIs that require synchronously completing an
+expensive operation (e.g. computing a full app layout outside of the
+layout phase). Expensive work should be asynchronous.
+
+
+### Layers
+
+We use a layered framework design, where each layer addresses a
+narrowly scoped problem and is then used by the next layer to solve
+a bigger problem. This is true both at a high level (widgets relies
+on rendering relies on painting) and at the level of individual
+classes and methods (e.g. `Text` uses `RichText` and `DefaultTextStyle`).
+
+Convenience APIs belong at the layer above the one they are simplifying.
+
+
+### Avoid complecting (braiding multiple concepts together)
+
+Each API should be self-contained and should not know about other features.
+Interleaving concepts leads to _complexity_.
+
+For example:
+
+- Many Widgets take a `child`. Widgets should be entirely agnostic about the type
+of that child. Don't use `is` or similar checks to act differently based on the
+type of the child.
+
+- Render objects each solve a single problem. Rather than having a render object
+handle both clipping and opacity, we have one render object for clipping, and one
+for opacity.
+
+- In general, prefer immutable objects over mutable data. Immutable objects can
+be passed around safely without any risk that a downstream consumer will change
+the data. (Sometimes, in Flutter, we pretend that some objects are immutable even
+when they technically are not: for example, widget child lists are often technically
+implemented by mutable `List` instances, but the framework will never modify them
+and in fact cannot handle the user modifying them.) Immutable data also turns out
+to make animations much simpler through _lerping_.
+
+
+### Prefer general APIs, but use dedicated APIs where there is a reason
+
+For example, having dedicated APIs for performance reasons is fine. If one
+specific operation, say clipping a rounded rectangle, is expensive
+using the general API but could be implemented more efficiently
+using a dedicated API, then that is where we would create a dedicated API.
+
+
+### Avoid APIs that encourage bad practices
+
+For example, don't provide APIs that walk entire trees, or that encourage
+O(N^2) algorithms, or that encourage sequential long-lived operations where
+the operations could be run concurrently.
+
+In particular:
+
+  - String manipulation to generate data or code that will subsequently
+    be interpreted or parsed is a bad practice as it leads to code
+    injection vulnerabilities.
+
+  - If an operation is expensive, that expense should be represented
+    in the API (e.g. by returning a `Future` or a `Stream`).  Avoid
+    providing APIs that hide the expense of tasks.
+
+
+### Avoid exposing API cliffs
+
+Convenience APIs that wrap some aspect of a service from one environment
+for exposure in another environment (for example, exposing an Android API
+in Dart), should expose/wrap the complete API, so that there's no cognitive cliff
+when interacting with that service (where you are fine using the exposed
+API up to a point, but beyond that have to learn all about the underlying
+service).
+
+
+### Avoid exposing API oceans
+
+APIs that wrap underlying services but prevent the underlying API from
+being directly accessed (e.g. how `dart:ui` exposes Skia) should carefully
+expose only the best parts of the underlying API. This may require refactoring
+features so that they are more usable. It may mean avoiding exposing
+convenience features that abstract over expensive operations unless there's a
+distinct performance gain from doing so. A smaller API surface is easier
+to understand.
+
+For example, this is why `dart:ui` doesn't expose `Path.fromSVG()`: we checked,
+and it is just as fast to do that work directly in Dart, so there is no benefit
+to exposing it. That way, we avoid the costs (bigger API surfaces are more
+expensive to maintain, document, and test, and put a compatibility burden on
+the underlying API).
+
+
+Documentation (dartdocs, javadocs, etc)
+---------------------------------------
+
+We use "dartdoc" for our Dart documentation, and similar technologies for the documentation
+of our APIs in other languages, such as ObjectiveC and Java. All public members in Flutter
+libraries should have a documentation.
 
 In general, follow the
 https://www.dartlang.org/effective-dart/documentation/#doc-comments[Dart documentation guide]
 except where that would contradict this page.
+
+### Answer your own questions straight away
+
+When working on Flutter, if you find yourself asking a question about
+our systems, please place whatever answer you subsequently discover
+into the documentation in the same place where you first looked for
+the answer. That way, the documentation will consist of answers to real
+questions, where people would look to find them. Do this right away;
+it's fine if your otherwise-unrelated PR has a bunch of documentation
+fixes in it to answer questions you had while you were working on your PR.
+
+We try to avoid reliance on "oral tradition". It should be possible
+for anyone to begin contributing without having had to learn all the
+secrets from existing team members. To that end, all processes should
+be documented (typically on the wiki), code should be self-explanatory
+or commented, and conventions should be written down, e.g. in our style
+guide.
+
+There is one exception: it's better to _not_ document something in our API
+docs than to document it poorly. This is because if you don't document it,
+it still appears on our list of things to document. Feel free to remove
+documentation that violates our the rules below (especially the next one),
+so as to make it reappear on the list.
+
 
 ### Avoid useless documentation
 
@@ -129,6 +254,8 @@ final Color backgroundColor;
 /// avatar to animate to the new size.
 final double radius;
 ```
+
+### Writing prompts for good documentation
 
 If you are having trouble coming up with useful documentation, here are some prompts that might help you write more detailed prose:
 
@@ -168,6 +295,7 @@ where possible, even if the result is somewhat terse.
 ```
 
 In particular, avoid saying "Note:". It adds nothing.
+
 
 ### Leave breadcrumbs in the comments
 
@@ -210,23 +338,18 @@ You can also use "See also" links, is in:
 ```
 /// See also:
 ///
-/// * [FooBar].
+/// * [FooBar], which is another way to peel oranges.
 /// * [Baz], which quuxes the wibble.
 ```
+
 Each line should end with a period. Prefer "which..." rather than parentheticals on such lines.
+There should be a blank line between "See also:" and the first item in the bulleted list.
+
 
 ### Refactor the code when the documentation would be incomprehensible
 
 If writing the documentation proves to be difficult because the API is
 convoluted, then rewrite the API rather than trying to document it.
-
-
-### If you have a question, put the answer in the documentation.
-
-Put the answer to your question where you went to look for the answer. That way, the
-documentation will consist of answers to real questions, where people would look to
-find them. Do this right away; it's fine if your otherwise-unrelated PR has a bunch of
-documentation fixes in it to answer questions you had while you were working on your PR.
 
 
 ### Canonical terminology
@@ -274,6 +397,7 @@ image::https://flutter.github.io/assets-for-api-docs/assets/material/app_bar.png
 * A screenshot for the Card widget
 
 image::https://user-images.githubusercontent.com/348942/28338544-2c3681b8-6bbe-11e7-967d-fcd7c830bf53.png[]
+
 
 ### Clearly mark deprecated APIs
 
@@ -419,14 +543,8 @@ in the case where the type is not obvious (e.g. when calling anything other
 than a constructor).
 
 Always avoid "var". Use "dynamic" if you are being explicit that the
-type is unknown. Use "Object" if you are being explicit that you want
-an object that implements `==` and `hashCode`.
-
-Avoid using "as". If you know the type is correct, use an assertion or
-assign to a more narrowly-typed variable (this avoids the type check
-in release mode; "as" is not compiled out in release mode). If you
-don't know whether the type is correct, check using "is" (this avoids
-the exception that "as" raises).
+type is unknown, but prefer "Object" and casting, as using `dynamic`
+disables all static checking.
 
 
 ### Never check if a port is available before using it, and other race conditions.
@@ -435,6 +553,7 @@ If you look for an available port, then try to open it, it's extremely likely th
 
 Race conditions like this are the primary cause of flaky tests, which waste everyone's time.
 
+
 ### Have good hygiene when using temporary directories
 
 Give the directory a unique name that starts with `flutter_` and ends with a period (followed by the autogenerated random string).
@@ -442,6 +561,7 @@ Give the directory a unique name that starts with `flutter_` and ends with a per
 For consistency, name the `Directory` object that points to the temporary directory `tempDir`, and create it with `createTempSync` unless you need to do it asynchronously (e.g. to show progress while it's being created).
 
 Always clean up the directory when it is no longer needed. In tests, use the `tryToDelete` convenience function to delete the directory.
+
 
 Naming
 ------
@@ -470,6 +590,9 @@ arguments, give the type and names of the arguments anyway. That way,
 if someone copies and pastes your code, they will not have to look up
 what the arguments are.
 
+Never call a method `onFoo`. If a property is called `onFoo` it must be
+a function type. (For all values of "Foo".)
+
 
 ### Spell words in identifiers and comments correctly
 
@@ -481,14 +604,18 @@ Avoid "cute" spellings. For example, 'colors', not 'colorz'.
 
 Prefer US English spellings. For example, 'colorize', not 'colourise'.
 
+Prefer compound words over "cute" spellings to avoid conflicts with reserved words. For example, 'classIdentifier', not 'klass'.
+
 
 ### Capitalize identifiers consistent with their spelling
 
-If a word is correctly spelt (according to our sources of truth as described in the previous section) as a single word, then it should not have any inner capitalization or spaces.
+If a word is correctly spelled (according to our sources of truth as described in the previous section) as a single word, then it should not have any inner capitalization or spaces.
 
 For examples, prefer `toolbar`, `scrollbar`, but `appBar` ('app bar' in documentation), `tabBar` ('tab bar' in documentation).
 
 Similarly, prefer `offstage` rather than `offStage`.
+
+Avoid starting class names with `iOS` since that would have to capitalize as `Ios` which is not how that is spelled. (Use "Cupertino" or "UiKit" instead.)
 
 
 ### Avoid double negatives in APIs
@@ -517,11 +644,64 @@ In other words, do not use the `library` keyword, unless it is a
 documented top-level library intended to be imported by users.
 
 
+Comments
+--------
+
+### Avoid checking in commented-out code
+
+It will bitrot too fast to be useful, and will confuse people maintaining the
+code.
+
+
+### Avoid checking in comments that ask questions
+
+Find the answers to the questions, or describe the confusion, including
+references to where you found answers.
+
+If commenting on a workaround due to a bug, also leave a link to the bug and
+a TODO to clean it up when the bug is fixed.
+
+Example:
+
+```
+// BAD:
+
+// What should this be?
+
+// This is a workaround.
+
+
+// GOOD:
+
+// According to this specification, this should be 2.0, but according to that
+// specification, it should be 3.0. We split the difference and went with
+// 2.5, because we didn't know what else to do.
+
+// TODO(username): Converting color to RGB because class Color doesn't support
+//                 hex yet. See http://link/to/a/bug/123
+```
+
 Formatting
 ----------
 
 These guidelines have no technical effect, but they are still important purely
 for consistency and readability reasons.
+
+We do not yet use `dartfmt`. Flutter code tends to use patterns that
+the standard Dart formatter does not handle well. We are
+https://github.com/dart-lang/dart_style/issues/442[working with the Dart team]
+to make `dartfmt` aware of these patterns.
+
+
+### In defense of the extra work that hand-formatting entails
+
+Flutter code might eventually be read by hundreds of thousands of people each day.
+Code that is easier to read and understand saves these people time. Saving each
+person even a second each day translates into hours or even _days_ of saved time
+each day. The extra time spent by people contributing to Flutter directly translates
+into real savings for our developers, which translates to real benefits to our end
+users as our developers learn the framework faster.
+
 
 ### Constructors come first in a class
 
@@ -600,10 +780,25 @@ abstract class Foo extends StatelessWidget {
 
 ### Prefer line length of 80 characters
 
-Aim for a line length of 80 characters, but go over if breaking the
-line would make it less readable. When wrapping lines, avoid doing so
-around assignment operators. Indent the next line by two characters
-or align the expressions, whichever makes the code more readable.
+Aim for a line length of 80 characters, but prefer going over if breaking the
+line would make it less readable or if it would make the line less consistent with other nearby lines.
+
+```
+// BAD
+final int a = 1;
+final int b = 2;
+final int c =
+    a.very.very.very.very.very.long.expression.that.returns.three.eventually().but.is.very.long();
+final int d = 4;
+final int e = 5;
+
+// BETTER
+final int a = 1;
+final int b = 2;
+final int c = a.very.very.very.very.very.long.expression.that.returns.three.eventually().but.is.very.long();
+final int d = 4;
+final int e = 5;
+```
 
 
 ### Indent multi-line argument and parameter lists by 2 characters
@@ -669,7 +864,8 @@ foo2(bar, baz);
 
 ### Prefer single quotes for strings
 
-Use double quotes for nested strings.
+Use double quotes for nested strings or (optionally) for strings that contain single quotes.
+For all other strings, use single quotes.
 
 Example:
 
@@ -678,7 +874,7 @@ print('Hello ${name.split(" ")[0]}');
 ```
 
 
-### Consider using "=>" for short functions and methods
+### Consider using `=>` for short functions and methods
 
 But only use `=>` when everything, including the function declaration, fits
 on a single line.
@@ -885,6 +1081,10 @@ Now that the Flutter framework is mature, we expect every new widget to implemen
 - good performance even when used with large amounts of user data.
 - a complete lifecycle contract with no resource leaks (documented, if it differs from usual widgets).
 - tests for all the above as well as all the unique functionality of the widget itself.
+
+It's the job of the programmer to provide these before submitting a PR.
+
+It's the job of the reviewer to check that all these are present when reviewing a PR.
 
 
 Deciding where to put code
