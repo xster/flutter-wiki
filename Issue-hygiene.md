@@ -14,6 +14,27 @@ We use [many labels](https://github.com/flutter/flutter/labels).
 See also: [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly.
 
 
+## Prioritization
+
+Some teams using Flutter have a special relationship with the Flutter team.
+
+We provide such customers with a label in our GitHub issue tracker, and
+encourage them to mark bugs as "customer blocker" (for the most serious bugs)
+or "customer critical" (for still important but not quite as serious bugs)
+if they are very important and deserve immediate attention.
+
+Each week, we ensure that bugs marked with these labels have someone assigned
+to them so that they are likely to get traction (this process is described
+in the second section of the page on [[Triage]]).
+
+Be wary in marking bugs as "customer blocker". We have finite resources,
+and several customers. If you have one "blocker" bug, then we have a clear
+sign of what to look at. If you have twenty, it will be difficult for us
+to know where to start.
+
+Current customer blockers: https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22
+
+
 ## Milestones
 
 We use [several milestones](https://github.com/flutter/flutter/milestones).
@@ -37,26 +58,16 @@ for advice on how to that successfully.)
 Bugs assigned to a specific bucket are bugs we are intended to address by a particular
 date. Any bug assigned to a bucket should have a specific dedicated assignee as well.
 
+### Other milestones
 
-## Prioritization
+The "Scheduled customer work" milestone 
 
-Some teams using Flutter have a special relationship with the Flutter team.
-
-We provide such customers with a label in our GitHub issue tracker, and
-encourage them to mark bugs as "customer blocker" (for the most serious bugs)
-or "customer critical" (for still important but not quite as serious bugs)
-if they are very important and deserve immediate attention.
-
-Each week, we ensure that bugs marked with these labels have someone assigned
-to them so that they are likely to get traction (this process is described
-in the second section of the page on [[Triage]]).
-
-Be wary in marking bugs as "customer blocker". We have finite resources,
-and several customers. If you have one "blocker" bug, then we have a clear
-sign of what to look at. If you have twenty, it will be difficult for us
-to know where to start.
-
-Current customer blockers: https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22
+Each week, we check any bug with the "customer: blocker" or "customer: critical" labels.
+If we can find an owner for such a bug right away, it will be assigned a bucket milestone
+and given an explicit assignee. If we cannot, then it will be put into either the
+"Scheduled customer work" milestone (meaning the issue will be resolved once we can find
+an engineer to take it on) or the "Declined customer request" milestone (meaning that we
+do not expect ever to do this work; please escalate).
 
 
 ## Assigning bugs
