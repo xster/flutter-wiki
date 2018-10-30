@@ -24,7 +24,11 @@ If you recognise that this bug is a duplicate of an existing bug, add a referenc
 
 If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels.
 
-Add any of the applicable "severe: *" labels; typically only one will apply but sometimes "regression" will apply in conjunction with one of the others. If it's a very serious bug that should block releases, consider adding the "TODAY" label as well.
+Add any of the applicable "severe: *" labels; typically only one will apply but sometimes "regression" will apply in conjunction with one of the others.
+
+If it's a very serious bug that should block releases, consider adding the "TODAY" label as well.
+
+If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the "customer: crowd" label (which means it affects many people) and then either the "customer blocker" label (if it's blocking people) or the "customer critical" label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document).
 
 If it's something that looks trivial to fix, add the `easy fix` label.
 
