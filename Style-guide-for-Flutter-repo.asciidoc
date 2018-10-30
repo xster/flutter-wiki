@@ -56,8 +56,8 @@ that now use it), _and_ implement the feature. It's much better to
 take longer to fix a problem properly, than to be the one who fixes
 everything quickly but in a way that will require cleaning up later.
 
-You may hear team members say "embrace the [yak
-shave](http://www.catb.org/jargon/html/Y/yak-shaving.html)!". This is
+You may hear team members say "embrace the http://www.catb.org/jargon/html/Y/yak-shaving.html[yak
+shave]!". This is
 an encouragement to take on the larger effort necessary to perform a
 proper fix for a problem rather than just applying a band-aid.
 
