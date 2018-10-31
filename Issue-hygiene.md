@@ -88,6 +88,14 @@ for advice on how to that successfully.)
 Bugs assigned to a specific bucket are bugs we are intended to address by a particular
 date. Any bug assigned to a bucket should have a specific dedicated assignee as well.
 
+Contributors working to address an issue should self-assign the issue to a relevant 
+bucket to indicate to others when you anticipate completing the issue. Buckets are a
+statement of what we anticipate doing and when, and thus concrete; they are not
+aspirational, in that simply assigning an issue to a bucket without the commitment of
+its assignee will not further work on the issue on its own. (See “Assigning Issues”, 
+below.)
+
+
 ### Other milestones
 
 The "Scheduled customer work" milestone indicates issues that we are intending to fix
@@ -103,9 +111,9 @@ If you are a customer and your bug is placed in the "Declined customer request"
 milestone, please escalate with your team contact.
 
 
-## Assigning bugs
+## Assigning Issues
 
-Bugs are typically self-assigned. Only assign a bug to someone else if
+Issues are typically self-assigned. Only assign a bug to someone else if
 they have explicitly volunteered to do the task.
 
 Only assign a bug to yourself when you are actively working on it. If
