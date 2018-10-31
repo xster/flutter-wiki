@@ -11,7 +11,9 @@ This page mostly talks about how we handle things for the flutter/flutter issue 
 
 We use [many labels](https://github.com/flutter/flutter/labels).
 
-See also: [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly.
+See also:
+
+ * [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly.
 
 
 ## Prioritization
