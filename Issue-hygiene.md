@@ -41,7 +41,9 @@ and several customers. If you have one "blocker" bug, then we have a clear
 sign of what to look at. If you have twenty, it will be difficult for us
 to know where to start.
 
-Current customer blockers: https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22
+See also:
+
+ * [Current customer blockers](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22)
 
 ### Thumbs-up reactions
 
@@ -50,11 +52,13 @@ To vote on an issue, use the "Thumbs-up" emoji to react to the issue.
 When examining issues, we use the number of thumbs-up reactions to an issue
 as a guide to its priority.
 
-All open issues sorted by thumbs-up: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc
+See also:
 
-Feature requests by thumbs-up: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22
+ * [All open issues sorted by thumbs-up](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc)
 
-Bugs by thumbs-up: https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22+
+ * [Feature requests by thumbs-up](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22)
+
+ * [Bugs by thumbs-up](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22+)
 
 We ignore other emoji reactions.
 
