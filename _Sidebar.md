@@ -36,23 +36,25 @@ Flutter Wiki
 - [[Obfuscating Dart Code]]
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
 - [[Using Flutter in China]]
+- [[Making animated GIFs of Flutter apps]]
 
-## Documentation on the Wiki
-- [[Setting up the Engine development environment]]
+## Framework repo
 - [[Setting up the Framework development environment]]
 - [[The flutter tool]]
 - [[Running examples]]
 - [[Using the Dart analyzer]]
-- [[Flutter's modes]]
 - [[The flutter run variants]]
+
+## Engine repo
+- [[Setting up the Engine development environment]]
 - [[The Engine architecture]]
+- [[Flutter's modes]]
 - [[Engine disk footprint]]
 - [[Custom Flutter engine embedders]]
 - [[Engine-specific Service Protocol extensions]]
 - [[Flutter engine operation in AOT Mode]]
-- [[Making animated GIFs of Flutter apps]]
+
+## Infrastructure
 - [[Flutter Installation Bundles]]
 - [[Autorollers]]
-
-## Documentation elsewhere
 - [Flutter's Build Infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md)
