@@ -30,6 +30,8 @@ Flutter Wiki
 - [[Making animated GIFs of Flutter apps]]
 
 ## Internal documentation
+- [[Setting up the Engine development environment]]
+- [[Setting up the Framework development environment]]
 - [[Flutter's modes]]
 - [[The flutter run variants]]
 - [[Writing a golden-file test for package:flutter]]
