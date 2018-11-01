@@ -1,3 +1,5 @@
+_(This page is referenced by comments in the Flutter codebase.)_
+
 Write your test as a normal test, using `testWidgets` and `await tester.pumpWidget` and so on.
 
 Put a `RepaintBoundary` widget around the part of the subtree that you want to verify. If you don't, the output will be a 2400x1800 image, since the tests by default use an 800x600 viewport with a device pixel ratio of 3.0.
