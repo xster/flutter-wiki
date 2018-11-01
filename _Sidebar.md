@@ -37,6 +37,7 @@ Flutter Wiki
 ## Documentation on the Wiki
 - [[Setting up the Engine development environment]]
 - [[Setting up the Framework development environment]]
+- [[The flutter tool]]
 - [[Running examples]]
 - [[Using the Dart analyzer]]
 - [[Flutter's modes]]
