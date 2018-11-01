@@ -51,7 +51,8 @@ Run the following steps to set up your environment:
    files so you can open the main flutter directory as a project and run examples
    from within the IDE.
 
+Next steps:
 
-
-
-See https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+ * [[Running examples]], to see if your setup works.
+ * [[Style guide for Flutter repo]], to learn how to write code for Flutter.
+ * [[Tree hygiene]], to learn about how to submit patches.
