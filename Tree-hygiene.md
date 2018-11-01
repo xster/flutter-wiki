@@ -156,7 +156,7 @@ If you do have access, you can just click the green "Merge pull request" button 
 of your pull request. Please squash commits (GitHub does this for you by default normally).
 
 
-## Emergencies
+## Landing a patch in a hurry (for emergencies)
 
 If you really need to check something in in a hurry, for example
 because everything is broken and you can fix it, then pick someone on
@@ -168,6 +168,16 @@ someone marks a patch as TBR and gives your name as the reviewer, you
 should review the patch as soon as possible. If a reviewer finds
 problems with a patch marked TBR, the issues should be fixed as soon
 as possible.
+
+In general, if you are reverting the very last commit, you can land
+the commit without waiting for the bots to complete, since by definition
+you are bringing the tree back to a known configuration.
+
+If you're either adding new code or reverting a commit that isn't the last
+commit, then you are still bringing the tree to a new state, so please
+still wait for all the pre-commit tests to go green even if you are unable
+to find someone to review the patch before you land. (But then, if you
+aren't able to find anyone to review your patch, is it really an emergency?)
 
 
 ## Regressions
