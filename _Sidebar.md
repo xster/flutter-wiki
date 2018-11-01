@@ -23,8 +23,10 @@ Flutter Wiki
 - [[Postmortems]]
 
 ## Writing tests
-- [[Writing a golden-file test for package:flutter]]
+- [[Running tests]]
+- [[Writing tests]]
 - [[Test coverage for package:flutter]]
+- [[Writing a golden-file test for package:flutter]]
 
 ## Experimental features
 - [[Add Flutter to existing apps]]
@@ -36,6 +38,8 @@ Flutter Wiki
 ## Documentation on the Wiki
 - [[Setting up the Engine development environment]]
 - [[Setting up the Framework development environment]]
+- [[Running examples]]
+- [[Using the Dart analyzer]]
 - [[Flutter's modes]]
 - [[The flutter run variants]]
 - [[Making animated GIFs of Flutter apps]]
