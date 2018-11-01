@@ -1,6 +1,6 @@
 ## How to view test coverage
 
-The easiest way to see our overall test coverage is using the [Flutter page on Coveralls](https://coveralls.io/github/flutter/flutter?branch=master).  The graph at the top is updated with green commit to the master branch.
+The easiest way to see our overall test coverage should be using the [Flutter page on Coveralls](https://coveralls.io/github/flutter/flutter?branch=master). The graph at the top is supposed to be updated with green commit to the master branch. Unfortunately Coveralls has been broken for Flutter for a long time and no progress has been made to resolve [the issue](https://github.com/lemurheavy/coveralls-public/issues/1103).
 
 When you run `flutter update-packages`, we download the latest coverage data for `package:flutter` to `packages/flutter/coverage/lcov.info`.  This data isn't synchronized in any way with the revision of `flutter.git` you're using, so there's a bit of a race condition between when you update your checkout of `flutter.git` and when you download the coverage file.  Most of the time, a little version skew isn't too harmful, but it's valuable to be aware that it might exist.
 
