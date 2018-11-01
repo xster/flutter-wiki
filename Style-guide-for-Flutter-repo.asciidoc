@@ -64,7 +64,7 @@ When you fix a bug, first write a test that fails, then fix the bug
 and verify the test passes.
 
 When you implement a new feature, write tests for it. Check the code coverage
-to make sure every line of your new code is tested. See [[Test coverage for package:flutter]].
+to make sure every line of your new code is tested. See https://github.com/flutter/flutter/wiki/Test-coverage-for-package%3Aflutter[Test coverage for package:flutter].
 
 If something isn't tested, it is very likely to regress or to get "optimized away".
 If you want your code to remain in the codebase, you should make sure to test it.
