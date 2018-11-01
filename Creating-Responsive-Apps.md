@@ -1,4 +1,4 @@
-(this page will be deleted once we move it to flutter.io -- see https://github.com/flutter/website/issues/1567)
+_(this page will be deleted once we move it to flutter.io -- see https://github.com/flutter/website/issues/1567)_
 
 Flutter allows you to create apps that self-adapt to the device's screen size and orientation.
 
