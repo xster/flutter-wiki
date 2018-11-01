@@ -1,3 +1,5 @@
+_(this page will be deleted once we move it to flutter.io -- see https://github.com/flutter/website/issues/1567)_
+
 IntelliJ is a full-featured IDE; it supports refactorings, code navigation, debugging, searching, and source control integration.
 
 The following is a subjective take on getting IntelliJ to be a bit more lightweight (and slightly speedier) editor. Your mileage may vary.
