@@ -19,6 +19,12 @@ Flutter Wiki
   - [[Changelog]]
   - [[Bad Builds]]
   - [[Bad Build Identification]]
+- [[Updating Material Design Fonts]]
+- [[Postmortems]]
+
+## Writing tests
+- [[Writing a golden-file test for package:flutter]]
+- [[Test coverage for package:flutter]]
 
 ## Experimental features
 - [[Add Flutter to existing apps]]
@@ -27,19 +33,13 @@ Flutter Wiki
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
 - [[Using Flutter in China]]
 
-## Tips
-- [[Making animated GIFs of Flutter apps]]
-
-## Internal documentation
+## Documentation on the Wiki
 - [[Setting up the Engine development environment]]
 - [[Setting up the Framework development environment]]
 - [[Flutter's modes]]
 - [[The flutter run variants]]
-- [[Writing a golden-file test for package:flutter]]
-- [[Test coverage for package:flutter]]
+- [[Making animated GIFs of Flutter apps]]
 - [[Flutter Installation Bundles]]
-- [[Updating Material Design Fonts]]
-- [[Postmortems]]
 
-## Other documentation
+## Documentation elsewhere
 - [Flutter's Build Infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md)
