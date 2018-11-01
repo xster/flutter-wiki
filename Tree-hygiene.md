@@ -60,6 +60,31 @@ The general process for submitting code to a Flutter repository is as follows:
    goes wrong, revert your patch and study the problem.
 
 
+## Using git
+
+Assuming your environment has been configured according to the instructions in
+[[Setting up the Engine development environment]] or
+[[Setting up the Framework development environment]],
+follow these steps to start working on a patch:
+
+ * `git fetch upstream`
+ * `git checkout upstream/master -b name_of_your_branch`
+ * Hack away.
+ * `git commit -a -m "<your informative commit message>"`
+ * `git push origin name_of_your_branch`
+
+GitHub provides you with a link for submitting the pull request in the message output by `git push`.
+
+Please make sure all your patches have detailed commit messages explaining what the problem was and
+what the solution is.
+
+You must complete the
+[Contributor License Agreement](https://cla.developers.google.com/clas).
+You can do this online, and it only takes a minute.
+If you've never submitted code before, you must add your (or your
+organization's) name and contact info to the [AUTHORS](AUTHORS) file.
+
+
 ## Getting a code review
 
 Every PR must be code-reviewed before check-in, including things like
@@ -120,6 +145,15 @@ find someone to actually review it. ("RSLGTM" means "Rubber Stamp
 Looks Good To Me".) If you mark a patch as RSLGTM, you are still
 sharing the responsibility for the patch with its author. Reviewing a
 patch as RSLGTM should be a rare event.
+
+
+## Landing a patch
+
+Once you have submitted your patch and received your LGTM, if you do not have commit access to
+the repository yet, then wait for one of the project maintainers to submit it for you.
+
+If you do have access, you can just click the green "Merge pull request" button on the GitHub UI
+of your pull request. Please squash commits (GitHub does this for you by default normally).
 
 
 ## Emergencies
