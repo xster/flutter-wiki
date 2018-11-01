@@ -10,8 +10,8 @@ Flutter Wiki
 
 ## Process
 - Our [[Values]]
-- [[Issue hygiene]] and [[Triage]]
 - [[Tree hygiene]]
+- [[Issue hygiene]] and [[Triage]]
 - [[Style guide for Flutter repo]]
 - [[Release process]]
   - [[Flutter build release channels]]
