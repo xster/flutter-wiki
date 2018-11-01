@@ -1,3 +1,5 @@
+_(This page is referenced by comments in the Flutter codebase.)
+
 This page describes the process for updating the material design icons:
 
  1. Use git to clone ~~https://github.com/google/material-design-icons~~ https://goto.google.com/flutter-material-font (Google-only, sorry) and https://github.com/google/fonts
