@@ -16,7 +16,10 @@ We support several kinds of tests:
 
 Our bots run on our [test and build infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md).
 
-## Running tests
+## Running unit tests
+
+Flutter tests use the `flutter_test` package ([source](https://github.com/flutter/flutter/tree/master/packages/flutter_test), [API documentation](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/flutter_test-library.html)),
+which provides flutter-specific extensions on top of the [Dart `test` package](https://pub.dartlang.org/packages/test).
 
 To automatically find all files named `*_test.dart` inside a package's `test/` subdirectory, and
 run them inside the headless flutter shell as a test, use the `flutter test` command, e.g:
@@ -26,14 +29,11 @@ run them inside the headless flutter shell as a test, use the `flutter test` com
 
 Individual tests can also be run directly, e.g.: `flutter test lib/my_app_test.dart`
 
-You can view these tests on a device by running them directly using `flutter run`. For tests inside the `packages/flutter` directory, you will need to copy them to the `test/` directory of an actual app (e.g. the flutter gallery), since the `flutter` package itself is not set up to execute as an application (which is
-necessary to run a test).
-
-
-## Unit tests
-
-Flutter tests use the `flutter_test` package ([source](https://github.com/flutter/flutter/tree/master/packages/flutter_test), [API documentation](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/flutter_test-library.html)),
-which provides flutter-specific extensions on top of the [Dart `test` package](https://pub.dartlang.org/packages/test).
+You can view these tests on a device by running them directly using `flutter run`.
+For tests inside the `packages/flutter` directory, you will need to copy them to
+(or symlink to them from) the `test/` directory of an actual app (e.g. the flutter
+gallery), since the `flutter` package itself is not set up to execute as an
+application (which is necessary to use `flutter run` with a test).
 
 Unit tests run with `flutter test` run inside a headless flutter shell on your workstation,
 you won't see any UI. You can use `print` to generate console output or you can interact
