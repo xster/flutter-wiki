@@ -50,3 +50,5 @@ If you've built your own flutter engine (see [[Setting up the Engine development
 can pass `--local-engine` to change what flutter shell `flutter test` uses. For example,
 if you built an engine in the `out/host_debug_unopt` directory, you can pass
 `--local-engine=host_debug_unopt` to run the tests in that engine.
+
+To learn how to see how well tested the codebase is, see [[Test coverage for package:flutter]].
