@@ -20,7 +20,7 @@ If you use Emacs, you can use the `coverlay` package. Use `coverlay-load-file` t
 
 ## How to see new test coverage quickly
 
-If you're using a Linux machine, you can see the updated coverage after adding a test quickly using the `--merge-coverage` option to `flutter test`.  For example, suppose you added a test case to `test/material/dialog_test.dart`.  You can run `flutter test --merge-coverage test/material/dialog_test.dart` to run just that one test and merge the coverage data into your view. In Atom, to get lcov-info to see the new data, sometimes you need to change tabs. In Emacs, to see new data, press `C-c C-l g`.
+If you're using a Linux machine, you can see the updated coverage after adding a test quickly using the `--merge-coverage` option to `flutter test`. For example, suppose you added a test case to `test/material/dialog_test.dart`. You can run `flutter test --merge-coverage test/material/dialog_test.dart` to run just that one test and merge the coverage data into your view. In Atom, to get lcov-info to see the new data, sometimes you need to change tabs. In Emacs, to see new data, press `C-c C-l g`.
 
 Merging coverage works by combining the `packages/flutter/coverage/lcov.base.info` coverage data, which `flutter update-packages` downloaded from the cloud, with the coverage data from that one test run.  The combined data is written back into `packages/flutter/coverage/lcov.info`, where it is picked up by the lcov-info plugin.
 
