@@ -1,1 +1,1 @@
-Flutter • [Write Test Find Bug](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#write-test-find-bug) • Embrace the Yak Shave • https://flutter.io/
+Flutter • [Write Test Find Bug](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#write-test-find-bug) • [Embrace the Yak Shave](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#lazy-programming) • https://flutter.io/
