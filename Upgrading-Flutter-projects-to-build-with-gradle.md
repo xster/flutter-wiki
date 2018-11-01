@@ -1,4 +1,4 @@
-(This wiki page applies to people migrating code written before February 2017. It is unlikely to still be relevant.)
+(This wiki page applies to people migrating code written before February 2017. It is unlikely to still be relevant. The `flutter` tool directs people to this page when a non-Gradle project is detected.)
 
 ## Introduction
 
