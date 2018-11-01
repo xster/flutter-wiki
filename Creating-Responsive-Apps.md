@@ -1,3 +1,5 @@
+(this page will be deleted once we move it to flutter.io -- see https://github.com/flutter/website/issues/1567)
+
 Flutter allows you to create apps that self-adapt to the device's screen size and orientation.
 
 There are two basic approaches to creating Flutter apps with responsive design:
