@@ -1,3 +1,5 @@
+_(The `flutter` tool points to this page in its introduction message.)_
+
 If you have not opted-out of Flutter's analytics and crash reporting, when a `flutter` command crashes it attempts to send a crash report to Google in order to help Google contribute improvements to Flutter over time. A crash report may contain the following information:
 
 * The name and version of your local operating system
