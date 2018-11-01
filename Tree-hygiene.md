@@ -1,7 +1,7 @@
 This page covers how to land a PR and other aspects of writing code for
 Flutter other than the actual writing of the code. For guidance on
 designing APIs, documenting, and formatting your code, see the
-[Style guide for Flutter repo] document.
+[[Style guide for Flutter repo]] document.
 
 ## Overview
 
