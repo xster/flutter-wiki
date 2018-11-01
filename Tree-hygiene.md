@@ -227,6 +227,9 @@ to make a change that will require developers to change their code:
     - A request that people notify you if this change will be a problem,
       perhaps by discussing the change in the issue tracker on the pull request.
 
+    You may not have permission to post to this list yet. If you do not, please contact
+    [Ian](ian@hixie.ch) or [Ray](rischpater@google.com).
+
  3. **If folks agree that the benefits of changing the API outweigh the stablity
     costs**, you can proceed with the normal code review process for making
     changes. You should leave some time between steps 2 and 3 (at a bare minimum
