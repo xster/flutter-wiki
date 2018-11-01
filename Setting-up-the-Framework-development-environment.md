@@ -1,7 +1,3 @@
-
-Getting the code and configuring your environment
--------------------------------------------------
-
 Make sure you have the following dependencies available:
 
  * Linux, Mac OS X, or Windows.
