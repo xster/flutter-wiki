@@ -1,4 +1,4 @@
-_(This page is referenced by comments in the Flutter codebase.)
+_(This page is referenced by comments in the Flutter codebase.)_
 
 This page describes the process for updating the material design icons:
 
