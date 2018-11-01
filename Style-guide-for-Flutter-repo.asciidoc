@@ -71,13 +71,13 @@ If you want your code to remain in the codebase, you should make sure to test it
 
 We support several kinds of tests:
 
-* Unit tests, e.g. using [`flutter_test`](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/flutter_test-library.html).
+* Unit tests, e.g. using https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/flutter_test-library.html[`flutter_test`].
 
-* Golden-file testing, comparing pixels. See [[Writing a golden-file test for package:flutter]].
+* Golden-file testing, comparing pixels. See https://github.com/flutter/flutter/wiki/Writing-a-golden-file-test-for-package%3Aflutter[Writing a golden-file test for package:flutter].
 
-* End-to-end tests, e.g. using [`flutter_driver`](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_driver/flutter_driver-library.html) and our [device lab](https://github.com/flutter/flutter/blob/master/dev/devicelab/README.md).
+* End-to-end tests, e.g. using https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_driver/flutter_driver-library.html[`flutter_driver`] and our https://github.com/flutter/flutter/blob/master/dev/devicelab/README.md[device lab].
 
-Our bots run on our [test and build infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md).
+Our bots run on our https://github.com/flutter/flutter/blob/master/dev/bots/README.md[test and build infrastructure].
 
 
 ### Avoid duplicating state
