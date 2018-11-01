@@ -63,10 +63,21 @@ proper fix for a problem rather than just applying a band-aid.
 When you fix a bug, first write a test that fails, then fix the bug
 and verify the test passes.
 
-When you implement a new feature, write tests for it.
+When you implement a new feature, write tests for it. Check the code coverage
+to make sure every line of your new code is tested. See [[Test coverage for package:flutter]].
 
 If something isn't tested, it is very likely to regress or to get "optimized away".
 If you want your code to remain in the codebase, you should make sure to test it.
+
+We support several kinds of tests:
+
+* Unit tests, e.g. using [`flutter_test`](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_test/flutter_test-library.html).
+
+* Golden-file testing, comparing pixels. See [[Writing a golden-file test for package:flutter]].
+
+* End-to-end tests, e.g. using [`flutter_driver`](https://master-docs-flutter-io.firebaseapp.com/flutter/flutter_driver/flutter_driver-library.html) and our [device lab](https://github.com/flutter/flutter/blob/master/dev/devicelab/README.md).
+
+Our bots run on our [test and build infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md).
 
 
 ### Avoid duplicating state
