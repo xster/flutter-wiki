@@ -23,8 +23,7 @@ Flutter Wiki
 - [[Postmortems]]
 
 ## Writing tests
-- [[Running tests]]
-- [[Writing tests]]
+- [[Running and writing tests]]
 - [[Test coverage for package:flutter]]
 - [[Writing a golden-file test for package:flutter]]
 
