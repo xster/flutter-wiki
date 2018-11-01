@@ -1,37 +1,42 @@
 [[[https://github.com/flutter/identity-assets/blob/master/assets/logo_square/Flutter-Mark-square-220.png|alt="Flutter Logo"|height=150px|width=150px]]](https://flutter.io)
 
 Flutter Wiki
-===
+============
 
-- [[Home]]
-- [Developer Site](https://flutter.io/)
-- [API Reference (release)](https://docs.flutter.io/index.html)
+- [flutter.io](https://flutter.io/)
+- [API Reference (stable)](https://docs.flutter.io/index.html)
 - [API Reference (master)](https://master-docs-flutter-io.firebaseapp.com/)
+- [Contributor Guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
 
 ## Process
+- Our [[Values]]
+- [[Issue hygiene]] and [[Triage]]
+- [[Tree hygiene]]
+- [[Style guide for Flutter repo]]
 - [[Release process]]
-- [Breaking Changes](https://flutter.io/design-principles/#handling-breaking-changes)
-- [[Triage]]
+  - [[Flutter build release channels]]
+  - [[Changelog]]
+  - [[Bad Builds]]
+  - [[Bad Build Identification]]
 
-## Tips
+## Experimental features
 - [[Add Flutter to existing apps]]
-- [[Making animated GIFs of Flutter apps]]
-- [[Updating Material Design Fonts]]
-- [[Obfuscating Dart Code]]
 - [[Creating Responsive Apps]]
+- [[Obfuscating Dart Code]]
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
 - [[Using Flutter in China]]
 
-## Commands
+## Tips
+- [[Making animated GIFs of Flutter apps]]
+
+## Internal documentation
+- [[Flutter Installation Bundles]]
+- [[Updating Material Design Fonts]]
 - [[Flutter's modes]]
 - [[The flutter run variants]]
-
-## Contributing
-- [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
-- [[Style guide for Flutter repo]]
-- [Design philosophy](https://flutter.io/design-principles/)
-- [[Changelog]]
+- [[Postmortems]]
 - [[Test coverage for package:flutter]]
 - [[Writing a golden-file test for package:flutter]]
-- [[Postmortems]]
+
+## Other documentation
 - [Flutter's Build Infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md)
