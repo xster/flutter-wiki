@@ -23,26 +23,34 @@ Make sure you have the following dependencies available:
 
 Run the following steps to set up your environment:
 
- * Ensure that `adb` (from the Android platform tools) is in your path (e.g.,
+1. Ensure that `adb` (from the Android platform tools) is in your path (e.g.,
    that `which adb` prints sensible output).
- * Fork `https://github.com/flutter/flutter` into your own GitHub account. If
+
+2. Fork `https://github.com/flutter/flutter` into your own GitHub account. If
    you already have a fork, and are now installing a development environment on
    a new machine, make sure you've updated your fork so that you don't use stale
    configuration options from long ago.
- * If you haven't configured your machine with an SSH key that's known to github then
+
+3. If you haven't configured your machine with an SSH key that's known to github then
    follow the directions here: https://help.github.com/articles/generating-ssh-keys/.
- * `git clone git@github.com:<your_name_here>/flutter.git`
- * `cd flutter`
- * `git remote add upstream git@github.com:flutter/flutter.git` (So that you
+
+4. `git clone git@github.com:<your_name_here>/flutter.git`
+
+5. `cd flutter`
+
+6. `git remote add upstream git@github.com:flutter/flutter.git` (So that you
    fetch from the master repository, not your clone, when running `git fetch`
    et al.)
- * Add this repository's `bin` directory to your path. That will let you use the
+
+7. Add this repository's `bin` directory to your path. That will let you use the
    `flutter` command in this directory more easily.
- * Run `flutter update-packages` This will fetch all the Dart packages that
+
+8. Run `flutter update-packages` This will fetch all the Dart packages that
    Flutter depends on. (You can replicate mwost of what this script does by running
    `pub get` in each directory that contains a `pubspec.yaml` file, which is rather
    tedious, hence the script.)
- * If you plan on using IntelliJ as your IDE, then also run
+
+9. If you plan on using IntelliJ as your IDE, then also run
    `flutter ide-config --overwrite` to create all of the IntelliJ configuration
    files so you can open the main flutter directory as a project and run examples
    from within the IDE.
