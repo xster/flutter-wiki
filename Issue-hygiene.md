@@ -13,6 +13,8 @@ We use [many labels](https://github.com/flutter/flutter/labels).
 
 The bugs with the `severe` prefix are just that --- bugs bearing a specific severity. Note that severity in and of itself does not imply a specific time-to-service; rather it provides clues as to the nature of the defect, just as other labels do. 
 
+The `TODAY` label indicates a high-priority issue such as a build break, regression or failure in existing features that would keep us from shipping the current build. We sweep issues with the `TODAY` label frequently to ensure that each has an owner and is being worked on with appropriate alacrity.
+
 See also:
 
  * [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly.
