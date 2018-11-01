@@ -30,13 +30,13 @@ Flutter Wiki
 - [[Making animated GIFs of Flutter apps]]
 
 ## Internal documentation
-- [[Flutter Installation Bundles]]
-- [[Updating Material Design Fonts]]
 - [[Flutter's modes]]
 - [[The flutter run variants]]
-- [[Postmortems]]
-- [[Test coverage for package:flutter]]
 - [[Writing a golden-file test for package:flutter]]
+- [[Test coverage for package:flutter]]
+- [[Flutter Installation Bundles]]
+- [[Updating Material Design Fonts]]
+- [[Postmortems]]
 
 ## Other documentation
 - [Flutter's Build Infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md)
