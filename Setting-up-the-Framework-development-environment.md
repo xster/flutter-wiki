@@ -54,5 +54,6 @@ Run the following steps to set up your environment:
 Next steps:
 
  * [[Running examples]], to see if your setup works.
+ * [[The flutter tool]], to learn about how the `flutter` command line tool works.
  * [[Style guide for Flutter repo]], to learn how to write code for Flutter.
  * [[Tree hygiene]], to learn about how to submit patches.
