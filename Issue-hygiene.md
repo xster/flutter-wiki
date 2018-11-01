@@ -11,11 +11,7 @@ This page mostly talks about how we handle things for the flutter/flutter issue 
 
 We use [many labels](https://github.com/flutter/flutter/labels).
 
-Some labels (those prefixed with `customer`) indicate key customers with which Flutter has a special relationship. Those customers are invited to label their bugs with the appropriate customer label. 
-
 The bugs with the `severe` prefix are just that --- bugs bearing a specific severity. Note that severity in and of itself does not imply a specific time-to-service; rather it provides clues as to the nature of the defect, just as other labels do. 
-
-There are two exceptions to this: `severe:customer critical` and `severe:customer blocking`. We reserve these labels for those issues that those customers with a special relationship to Flutter may use to get the team's attention. Be wary of overusing these labels, however. If you flag only a single item as critical or blocking, it gives the team a clear signal as to what's important to you. If you label a number of such issues that way, we cannot immediately tell what is truly important for our collaboration with you.
 
 See also:
 
