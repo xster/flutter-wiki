@@ -191,11 +191,14 @@ There is no shame in making mistakes.
 
 ## Handling breaking changes
 
-We're attempting to stablize the APIs for the
-[packages in the SDK](https://github.com/flutter/flutter/tree/master/packages).
-To make a change that will require developers to change their code:
+In general, we want to avoid making changes to Flutter and its dependencies
+that force developers using Flutter to change their code in order to upgrade
+to new versions of flutter.
 
- 1. Use the `severe: API break` label on the relevant issue.
+Sometimes, however, doing this is necessary for the greater good. In those cases,
+to make a change that will require developers to change their code:
+
+ 1. Put the `severe: API break` label on the relevant issue.
 
  2. Send an e-mail to <mailto:flutter-announce@googlegroups.com> to socialize
     your proposed change. The purpose of this e-mail is to see if you can
