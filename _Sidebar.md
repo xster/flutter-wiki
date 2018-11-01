@@ -3,7 +3,7 @@
 Flutter Wiki
 ============
 
-- [[Wiki Home]]
+- [[Home]] of the Wiki
 - [flutter.io](https://flutter.io/)
 - [API Reference (stable)](https://docs.flutter.io/index.html)
 - [API Reference (master)](https://master-docs-flutter-io.firebaseapp.com/)
