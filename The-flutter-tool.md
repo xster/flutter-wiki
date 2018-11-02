@@ -49,8 +49,6 @@ If you need to pin a particular version, edit the table at the top of the `updat
 
 ## Using a locally-built engine with the `flutter` tool
 
-### General
-
 To allow the tool to be used with a locally-built engine, the `flutter` tool accepts two
 global parameters: `local-engine-src-path`, which specifies the path to your engine repository,
 and  `local-engine`, which specifies which build of the engine to use.
