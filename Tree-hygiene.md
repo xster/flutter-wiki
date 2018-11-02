@@ -27,6 +27,13 @@ The general process for submitting code to a Flutter repository is as follows:
    Make sure it is tested. Consider using the code coverage tools to check that all
    your new code is covered by tests (see [[Test coverage for package:flutter]]).
 
+   You must follow the guidelines described in the [[Style guide for Flutter repo]].
+   Files must not have trailing spaces and the analyzer must not report anything.
+   (See [[Using the Dart analyzer]]).
+   For the engine repository, C, C++, and Objective-C code should be formatted with
+   `clang-format` before submission (use `buildtools/<OS>/clang/bin/clang-format
+   --style=file -i`).
+
 5. Submit this branch as a PR to the relevant Flutter repository.
 
 6. Get your code reviewed (see below). You should probably reach out to the relevant
