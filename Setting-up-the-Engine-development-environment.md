@@ -1,1 +1,109 @@
-See https://github.com/flutter/engine/blob/master/CONTRIBUTING.md
+_If you've already built the engine and have the configuration set up but merely need a refresher on
+actually compiling the code, jump to the relevant sections below._
+
+Make sure you have the following dependencies available:
+
+ * Linux, macOS, or Windows.
+
+     * Linux supports cross-compiling artifacts for Android, but not iOS.
+
+     * macOS supports cross-compiling artifacts for Android and iOS.
+
+     * Windows doesn't support cross-compiling artifacts for either Android or iOS.
+
+ * git (used for source version control).
+
+ * An IDE. [Android Studio with the Flutter plugin](https://flutter.io/using-ide/) is
+   our flagship IDE. You can use whatever IDE you feel most comfortable with.
+
+ * An ssh client (used to authenticate with GitHub).
+
+ * Chromium's
+   [depot_tools](http://commondatastorage.googleapis.com/chrome-infradocs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up)
+   (make sure it's in your path). We use the `gclient` tool from depot_tools.
+
+ * Python (used by many of our tools, including 'gclient').
+
+ * On macOS and Linux: curl and unzip (used by `gclient sync`).
+
+ * On Windows: Visual Studio (required for non-Googlers only).
+
+ * On macOS: Xcode.
+
+ * Recommended for Googlers: Goma for distributed builds.
+
+You do not need [Dart](https://www.dartlang.org/downloads/linux.html) installed,
+as a Dart tool chain is automatically downloaded as part of the "getting the code"
+step. Similarly for the Android SDK, it's downloaded by the `gclient sync` step below.
+
+Run the following steps to set up your environment:
+
+1. Fork `https://github.com/flutter/engine` into your own GitHub account. If
+   you already have a fork, and are now installing a development environment on
+   a new machine, make sure you've updated your fork so that you don't use stale
+   configuration options from long ago. Do not clone this repo locally, scripts
+   will take care of that for you.
+
+2. If you haven't configured your machine with an SSH key that's known to github then
+   follow the directions here: https://help.github.com/articles/generating-ssh-keys/.
+
+3. Create an empty directory for your copy of the repository. For best
+   results, call it `engine`: some of the tools assume this name when
+   working across repositories. (They can be configured to use other
+   names too; this isn't a strict requirement. It just makes things easier.)
+
+4. Create a `.gclient` file in the `engine` directory with the
+   following contents, replacing `<your_name_here>` with your GitHub
+   account name:
+
+   ```python
+   solutions = [
+     {
+       "managed": False,
+       "name": "src/flutter",
+       "url": "git@github.com:<your_name_here>/engine.git",
+       "custom_deps": {},
+       "deps_file": "DEPS",
+       "safesync_url": "",
+     },
+   ]
+   ```
+
+5. `cd engine` (Change to the directory in which you put the
+   `.gclient` file.)
+
+6. `gclient sync` This will fetch all the source code that Flutter
+   depends on. Avoid interrupting this script, it can leave your
+   repository in an inconsistent state that is tedious to clean up.
+   (This step automatically runs `git clone`, among other things.)
+
+7. `cd src/flutter` (Change to the `flutter` directory of the `src`
+   directory that `gclient sync` created in your `engine` directory.)
+
+8. `git remote add upstream git@github.com:flutter/engine.git` (So
+   that you fetch from the master `flutter/engine` repository, not
+   your clone, when running `git fetch` et al.)
+
+9. `cd ..` (Return to the `src` directory that `gclient sync` created
+    in your `engine` directory.)
+
+10. If you're on Linux, run: `sudo ./build/install-build-deps-android.sh`
+
+11. If you're on Linux, run: `sudo ./build/install-build-deps.sh`
+
+12. If you're on Mac, install Oracle's Java JDK, version 1.7 or later.
+
+13. If you're on Mac, install `ant`: `brew install ant`
+
+14. If you're on Windows, install Visual Studio (non-Google developers only).
+
+15. If you're planning on working on the
+    [buildroot](https://github.com/flutter/buildroot) repository as
+    well, and have a local checkout of that repository, run the
+    following commands in the `src` directory to update your git
+    remotes accordingly:
+
+    ```bash
+    git remote rename origin upstream
+    git remote add origin git@github.com:<your_name_here>/buildroot.git
+    ```
