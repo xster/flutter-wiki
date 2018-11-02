@@ -45,3 +45,41 @@ run `flutter update-packages --force-upgrade` to resynchronize all the `pubspec.
 This does a full cross-package version solve for the entire repository.
 
 If you need to pin a particular version, edit the table at the top of the `update_packages.dart` file.
+
+
+## Using a locally-built engine with the `flutter` tool
+
+### General
+
+To allow the tool to be used with a locally-built engine, the `flutter` tool accepts two
+global parameters: `local-engine-src-path`, which specifies the path to your engine repository,
+and  `local-engine`, which specifies which build of the engine to use.
+
+A typical invocation would be: `--local-engine-src-path /path/to/engine/src --local-engine=android_debug_unopt`.
+
+If your engine is in a directory called `engine` that is a peer to the framework repository's `flutter` directory, then you can omit `--local-engine-src-path` and only specify `--local-engine`.
+
+You can also set the environment variable `$FLUTTER_ENGINE` instead of specifying `--local-engine-src-path`.
+
+The `--local-engine` should specify the build of the engine to use, e.g. a profile build for Android, a debug build for Android, or whatever. It must match the other arguments provided to the tool, e.g. don't use the `android_debug_unopt` build when you specify `--release`, since the Debug build expects to compile and run Dart code in a JIT environment, while `--release` implies a Release build which uses AOT compilation.
+
+Additionally if you've modified the Dart sources in your engine,
+you will need to add a `dependency_overrides` section to point to your
+modified `package:sky_engine` and `package:sky_services` to the
+`pubspec.yaml` for the flutter app you're using the custom engine
+with. A typical example would be:
+
+```yaml
+dependency_overrides:
+  sky_engine:
+    path: /path/to/flutter/engine/out/host_debug/gen/dart-pkg/sky_engine
+  sky_services:
+    path: /path/to/flutter/engine/out/host_debug/gen/dart-pkg/sky_services
+```
+
+Replace `host_debug` with the actual build that you want to use (similar to `--local-engine`, but typically
+a host build rather than a device build).
+
+If you do this, you can omit `--local-engine-src-path` and not bother to set `$FLUTTER_ENGINE`, as
+the `flutter` tool will use these paths to determine the engine also! The tool tries really hard to
+figure out where your local build of the engine is if you specify `--locale-engine`.
