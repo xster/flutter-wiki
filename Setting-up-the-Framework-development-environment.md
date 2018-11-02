@@ -1,11 +1,16 @@
 Make sure you have the following dependencies available:
 
  * Linux, Mac OS X, or Windows.
+
  * git (used for source version control).
+
  * An IDE. [Android Studio with the Flutter plugin](https://flutter.io/using-ide/) is
    our flagship IDE. You can use whatever IDE you feel most comfortable with.
+
  * An ssh client (used to authenticate with GitHub).
+
  * Python (used by some of our tools).
+
  * The Android platform tools.
 
    You can install this using one of the following commands:
