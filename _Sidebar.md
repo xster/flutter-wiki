@@ -52,6 +52,7 @@ Flutter Wiki
 - [[Custom Flutter engine embedders]]
 - [[Engine-specific Service Protocol extensions]]
 - [[Flutter engine operation in AOT Mode]]
+- [[Crashes]]
 
 ## Infrastructure
 - [[Flutter Installation Bundles]]
