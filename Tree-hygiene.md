@@ -205,6 +205,12 @@ the future. Postmortems are emphatically _not_ about assigning blame.
 
 There is no shame in making mistakes.
 
+If the regression still left the tree in a green state (meaning that
+the failure is one we were not previously testing for), please update
+the [[Bad Builds]] page to note which builds were affected, so that we
+don't release a beta build with the regression. Then, write a test for
+this failure mode! See [[Running and writing tests]] for more details.
+
 
 ## Handling breaking changes
 
