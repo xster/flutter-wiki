@@ -10,6 +10,9 @@ The shells implement platform-specific code such as communicating with IMEs (on-
 
 The Dart VM implements the normal Dart core libraries, plus an additional library called `dart:ui` to provide low-level access to Skia features and the shell. The shells can also communicate directly to Dart code via [Platform Channels](https://flutter.io/platform-channels/) which bypass the engine.
 
+![Flutter Architecture Diagram](https://raw.githubusercontent.com/flutter/engine/master/docs/flutter_overview.svg?sanitize=true)
+
+
 ## Threading
 
 ### Overview
@@ -101,8 +104,3 @@ Our text rendering stack is as follows:
 - A minikin derivative we call libtxt (font selection, bidi, line breaking).
 - HarfBuzz (glyph selection, shaping).
 - Skia (rendering/GPU back-end), which uses FreeType for font rendering on Android and Fuchsia, and CoreGraphics for font rendering on iOS.
-
-## Architecture Diagram
-
-![Flutter Architecture Diagram](https://raw.githubusercontent.com/flutter/engine/master/docs/flutter_overview.svg?sanitize=true)
-
