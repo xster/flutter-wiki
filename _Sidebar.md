@@ -54,6 +54,7 @@ Flutter Wiki
 - [[Engine-specific Service Protocol extensions]]
 - [[Flutter engine operation in AOT Mode]]
 - [[Crashes]]
+- [[Supporting legacy platforms]]
 
 ## Infrastructure
 - [[Flutter Installation Bundles]]
