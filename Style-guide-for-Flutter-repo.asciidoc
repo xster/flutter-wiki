@@ -58,6 +58,7 @@ shave]!". This is
 an encouragement to take on the larger effort necessary to perform a
 proper fix for a problem rather than just applying a band-aid.
 
+
 ### Write Test, Find Bug
 
 When you fix a bug, first write a test that fails, then fix the bug
@@ -200,6 +201,13 @@ feature doesn't actually solve their use case completely, don't dismiss their
 concerns as esoteric. Often, what seems like the problem when you start a
 project turns out to be a trivial concern compared to the real issues faced
 by real developers.
+
+### Designing new APIs
+
+If you're designing a new API or a new feature, consider writing a design doc,
+typically using Google Docs or by writing it in a GitHub issue. Then, get
+feedback from the relevant people, e.g. send it to `flutter-dev` or post it on
+Gitter.
 
 
 Documentation (dartdocs, javadocs, etc)
