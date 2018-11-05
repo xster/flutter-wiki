@@ -112,3 +112,21 @@ Next steps:
 
  * [[Compiling the engine]] explains how to actually get builds, now that you have the code.
  * [[The flutter tool]] has a section explaining how to use custom engine builds.
+
+
+## Editor autocomplete support
+
+[cquery](https://github.com/cquery-project/cquery) is a highly scalable C/C++/Objective-C language server that supports IDE features like go-to-definition, call hierarchy, autocomplete, find reference etc that works reasonably well with our engine repo. 
+
+It [supports](https://github.com/cquery-project/cquery/wiki/Editor-configuration) editors like VSCode, emacs, vim etc. 
+
+To set up:
+1. Install cquery
+    1. `brew install --HEAD cquery` on osx or
+    1. [Build from source](https://github.com/cquery-project/cquery/wiki/Getting-started)
+1. Generate compile_commands.json which our GN tool already does such as via `src/flutter/tools/gn --ios --unoptimized` 
+1. Install an editor extension such as [VSCode-cquery](https://marketplace.visualstudio.com/items?itemName=cquery-project.cquery)
+    1. VSCode-query requires the compile_commands.json to be at the project root. Copy or symlink `src/out/compile_commands.json` to `src/` or `src/flutter`.
+    1. Follow [Setting up the extension](https://github.com/cquery-project/cquery/wiki/Visual-Studio-Code#setting-up-the-extension) to configure VSCode-query.
+
+![](https://media.giphy.com/media/xjIrToRDVvMPvjkBcl/giphy.gif)
