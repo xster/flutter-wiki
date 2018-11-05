@@ -14,7 +14,9 @@ Make sure you have the following dependencies available:
  * git (used for source version control).
 
  * An IDE. [Android Studio with the Flutter plugin](https://flutter.io/using-ide/) is
-   our flagship IDE. You can use whatever IDE you feel most comfortable with.
+   our flagship IDE. You can use whatever IDE you feel most comfortable with. See also
+   the section at the bottom of this page for advice on setting up autocomplete with
+   a tool called `cquery`.
 
  * An ssh client (used to authenticate with GitHub).
 
