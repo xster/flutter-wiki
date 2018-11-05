@@ -14,6 +14,7 @@ Flutter Wiki
 - [[Tree hygiene]]
 - [[Issue hygiene]] and [[Triage]]
 - [[Style guide for Flutter repo]]
+- [[Running and writing tests]]
 - [[Release process]]
   - [[Flutter build release channels]]
   - [[Changelog]]
@@ -23,17 +24,14 @@ Flutter Wiki
 - [[Updating Material Design Fonts]]
 - [[Postmortems]]
 
-## Writing tests
-- [[Running and writing tests]]
-- [[Test coverage for package:flutter]]
-- [[Writing a golden-file test for package:flutter]]
-
 ## Framework repo
 - [[Setting up the Framework development environment]]
 - [[The flutter tool]]
 - [[Running examples]]
 - [[Using the Dart analyzer]]
 - [[The flutter run variants]]
+- [[Test coverage for package:flutter]]
+- [[Writing a golden-file test for package:flutter]]
 
 ## Engine repo
 - [[Setting up the Engine development environment]]
