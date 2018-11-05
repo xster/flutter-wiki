@@ -4,7 +4,7 @@ The Flutter Engine is a portable runtime for high-quality mobile applications. I
 
 ## Architecture overview
 
-Flutter's engine takes core technologies, Skia, a 2D graphics rendering library, and Dart, a VM for a garbage-collected object-oriented language, and hosts them in a shell. Different platforms have different shells, for example we have shells for [Android](https://github.com/flutter/engine/tree/master/shell/platform/android) and [iOS](https://github.com/flutter/engine/tree/master/shell/platform/darwin). We also have an [embedder API](https://github.com/flutter/engine/tree/master/shell/platform/embedder) which allows Flutter's engine to be used as a library.
+Flutter's engine takes core technologies, Skia, a 2D graphics rendering library, and Dart, a VM for a garbage-collected object-oriented language, and hosts them in a shell. Different platforms have different shells, for example we have shells for [Android](https://github.com/flutter/engine/tree/master/shell/platform/android) and [iOS](https://github.com/flutter/engine/tree/master/shell/platform/darwin). We also have an [embedder API](https://github.com/flutter/engine/tree/master/shell/platform/embedder) which allows Flutter's engine to be used as a library (see [[Custom Flutter Engine Embedders]]).
 
 The shells implement platform-specific code such as communicating with IMEs (on-screen keyboards) and the system's application lifecycle events.
 
