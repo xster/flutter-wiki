@@ -1,5 +1,7 @@
 This is a list of all the dev branch commits that are considered "bad" and should not be released to a more stable channel. See [[Bad Build Identification]] for details on how to identify builds that should be listed here. See also the [[Changelog]].
 
+**If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
+
 ## v0.10.0 - 
 * Workflows that require customizing the underlying `android` or `ios` apps and newly created apps using `cupertino_icons` are broken by [#22565](https://github.com/flutter/flutter/pull/22565).
 
