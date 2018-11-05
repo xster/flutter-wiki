@@ -26,6 +26,7 @@ Flutter Wiki
 
 ## Framework repo
 - [[Setting up the Framework development environment]]
+- [[The Framework architecture]]
 - [[The flutter tool]]
 - [[Running examples]]
 - [[Using the Dart analyzer]]
