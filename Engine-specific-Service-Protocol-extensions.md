@@ -1,6 +1,6 @@
 The Flutter engine adds several extensions to the [Dart VM Service Protocol](https://github.com/dart-lang/sdk/blob/master/runtime/vm/service/service.md). The Flutter Engine specific extensions are documented here. Applications may also choose to register their [own extensions](https://api.dartlang.org/stable/1.24.3/dart-developer/registerExtension.html).
 
-## List Views: `_flutter.listViews`
+## List views: `_flutter.listViews`
 
 Tooling requests this very early in the application lifecycle to ask for the details of the root isolate.
 
@@ -27,7 +27,7 @@ Response:
 }
 ```
 
-## Run In View (a.k.a Cold Reload, Cold Restart, Restart, Capital "R" Reload, Not-Hot Reload...): `_flutter.runInView`
+## Hot restart: `_flutter.runInView`
 
 The IDE has requested (or the user pressed ‘R’ from the ‘flutter run’ interactive console) a cold reload. For example, this happens when the user presses the green play button.
 
@@ -64,7 +64,7 @@ Response:
 The object in the **view** key is constructed in the same way as the views in the **List Views** method.
 
 
-## Flush UI Thread Tasks: `_flutter.flushUIThreadTasks`
+## Flush UI thread tasks: `_flutter.flushUIThreadTasks`
 
 Does nothing but waits for all pending tasks on the UI thread to be completed before returning success to the service protocol caller.
 
@@ -76,7 +76,7 @@ Response:
 {"type": "Success"}
 ```
 
-## Screenshot view as PNG: `_flutter.screenshot`
+## Get screenshot of view as PNG: `_flutter.screenshot`
 
 Get the screenshot as PNG of a random Flutter view on the device.
 
@@ -91,7 +91,7 @@ Response:
 }
 ```
 
-## Screenshot Skia Picture: `_flutter.screenshotSkp`
+## Get screenshot of view as Skia picture: `_flutter.screenshotSkp`
 
 Get the Skia SKP of a random Flutter view on the device.
 
@@ -106,7 +106,7 @@ Response:
 }
 ```
 
-## Update Asset Bundle Path: `_flutter.setAssetBundlePath`
+## Update asset bundle path: `_flutter.setAssetBundlePath`
 
 In case of a hot-reload, the service protocol handles source code updates. However, there may be changes to assets. The DevFS updates assets in an separate directory that needs to be used by the engine.
 
