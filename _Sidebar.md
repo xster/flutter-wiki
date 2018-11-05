@@ -28,14 +28,6 @@ Flutter Wiki
 - [[Test coverage for package:flutter]]
 - [[Writing a golden-file test for package:flutter]]
 
-## Experimental features
-- [[Add Flutter to existing apps]]
-- [[Creating Responsive Apps]]
-- [[Obfuscating Dart Code]]
-- [[IntelliJ + Flutter Setup Tips and Tricks]]
-- [[Using Flutter in China]]
-- [[Making animated GIFs of Flutter apps]]
-
 ## Framework repo
 - [[Setting up the Framework development environment]]
 - [[The flutter tool]]
@@ -60,3 +52,11 @@ Flutter Wiki
 - [[Flutter Installation Bundles]]
 - [[Autorollers]]
 - [Flutter's Build Infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md)
+
+## Experimental features
+- [[Add Flutter to existing apps]]
+- [[Creating Responsive Apps]]
+- [[Obfuscating Dart Code]]
+- [[IntelliJ + Flutter Setup Tips and Tricks]]
+- [[Using Flutter in China]]
+- [[Making animated GIFs of Flutter apps]]
