@@ -11,9 +11,9 @@ This page mostly talks about how we handle things for the flutter/flutter issue 
 
 We use [many labels](https://github.com/flutter/flutter/labels).
 
-The bugs with the `severe` prefix are just that --- bugs bearing a specific severity. Note that severity in and of itself does not imply a specific time-to-service; rather it provides clues as to the nature of the defect, just as other labels do. 
+The `severe:` prefix indicates labels regarding a level of severity (e.g. regressions, new features, crashes). Severity in and of itself does not imply a specific time-to-service; rather it provides clues as to the nature of the defect, just as other labels do. A bug may have the `severe: crash` label, but e.g. if it relates to the `flutter` tool crashing when run with the system date set to 1998, we are not likely to consider it a high priority.
 
-The `TODAY` label indicates a high-priority issue such as a build break, regression or failure in existing features that would keep us from shipping the current build. We sweep issues with the `TODAY` label frequently to ensure that each has an owner and is being worked on with appropriate alacrity.
+The `TODAY` label indicates a high-priority issue such as a build break, regression or failure in existing features that would keep us from shipping the current build. We look at issues with the `TODAY` label frequently to ensure that each has an owner and is being worked on with appropriate alacrity.
 
 See also:
 
