@@ -4,11 +4,9 @@ The Flutter engine adds several extensions to the [Dart VM Service Protocol](htt
 
 Tooling requests this very early in the application lifecycle to ask for the details of the root isolate.
 
-### Request
-
 No arguments.
 
-### Response
+Response:
 
 ```json
 {
@@ -35,9 +33,7 @@ The IDE has requested (or the user pressed ‘R’ from the ‘flutter run’ in
 
 Used to "cold reload" a running application where the shell (along with the platform view and its rasterizer bindings) remains the same but the root isolate is torn down and restarted with the new configuration. Only used in the development workflow.
 
-### Request
-
-4 arguments:
+Four arguments:
 
 ```
 viewId = _flutterView/0x14ba08c68
@@ -46,7 +42,7 @@ packagesFile = /path/to/application/.packages
 assetDirectory = /path/to/application/build/flutter_assets
 ```
 
-### Response
+Response:
 
 ```json
 {
@@ -72,25 +68,21 @@ The object in the **view** key is constructed in the same way as the views in th
 
 Does nothing but waits for all pending tasks on the UI thread to be completed before returning success to the service protocol caller.
 
-## Request
-
 No arguments.
 
-## Response
+Response:
 
 ```json
 {"type": "Success"}
 ```
 
-# Screenshot view as PNG: `_flutter.screenshot`
+## Screenshot view as PNG: `_flutter.screenshot`
 
 Get the screenshot as PNG of a random Flutter view on the device.
 
-## Request
-
 No arguments.
 
-## Response
+Response:
 
 ```json
 {
@@ -103,11 +95,9 @@ No arguments.
 
 Get the Skia SKP of a random Flutter view on the device.
 
-## Request
-
 No arguments.
 
-## Response
+Response:
 
 ```json
 {
@@ -116,20 +106,18 @@ No arguments.
 }
 ```
 
-# Update Asset Bundle Path: `_flutter.setAssetBundlePath`
+## Update Asset Bundle Path: `_flutter.setAssetBundlePath`
 
 In case of a hot-reload, the service protocol handles source code updates. However, there may be changes to assets. The DevFS updates assets in an separate directory that needs to be used by the engine.
 
-## Request
-
-2 arguments:
+Two arguments:
 
 ```
 viewId = _flutterView/0x15bf057f8
 assetDirectory = /path/to/flutter_assets
 ```
 
-## Response
+Response:
 
 ```json
 {
