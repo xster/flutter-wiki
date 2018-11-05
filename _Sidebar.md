@@ -46,6 +46,7 @@ Flutter Wiki
 ## Engine repo
 - [[Setting up the Engine development environment]]
 - [[Compiling the engine]]
+- [[Debugging the engine]]
 - [[The Engine architecture]]
 - [[Flutter's modes]]
 - [[Engine disk footprint]]
