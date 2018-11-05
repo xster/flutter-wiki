@@ -20,7 +20,6 @@ Flutter Wiki
   - [[Bad Builds]]
   - [[Bad Build Identification]]
 - [[Rolling Dart]]
-- [[Rolling Skia]]
 - [[Rolling the engine]]
 - [[Updating Material Design Fonts]]
 - [[Postmortems]]
