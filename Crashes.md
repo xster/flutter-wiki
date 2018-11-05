@@ -45,3 +45,26 @@ adb logcat | ~/dev/engine/src/third_party/android_tools/ndk/prebuilt/linux-x86_6
 The dSYM file for `App.framework` (which contains the app-specific code) can be located in the directory of your app under `build/dSYMs.noindex/App.framework.dSYM` for release and profile builds created with `flutter build ios`. 
 
 The dSYM file for `Flutter.framework` (which is the Flutter Engine) for ios-release builds can be downloaded from Google Cloud Storage. Follow the steps from the Android section in this guide, but in the last step use a download url following this schema: `https://storage.cloud.google.com/flutter_infra/flutter/38a646e14cc25f5a56a989c6a5787bf74e0ea386/ios-release/Flutter.dSYM.zip` (replace the engine hash with your hash).
+
+#### Crashes in Dart AOT code
+
+If the crash is in AOT Dart code (in `--release` or `--profile` builds) on iOS, and you can build your own engine, these steps will be helpful for the VM team to fix the bug:
+
+* Prepare a reduced test case.
+* Compile the engine in profile mode and disable optimizations for symbolicated traces.
+  * `sky/tools/gn --ios --unopt --runtime-mode profile; ninja -C out/ios_profile_unopt -j800`.
+* Launch the application via the Xcode project and make it crash in the debugger.
+* File a bug on [dart-lang/sdk](https://github.com/dart-lang/sdk/issues/new).
+* Dump the register state and paste it into the bug.
+  * In `lldb`, `register read`.
+* Copy the backtrace and paste it into the bug.
+  * In `lldb`, `thread backtrace`. Assumes you are on the thread that crashed. If not, `thread select n`.
+* Disassemble the last frame and paste it into the bug.
+  * In `lldb`, `frame select 0` then `disassemble --frame`.
+* Disassemble using the `gen_snapshot` and paste the function into the bug for more detailed information.
+  * In the backtrace, look for the name of the precompiled function that caused the crash.
+  * Open `SnapshotterInvoke` from Xcode and to the `RunCommand ... Snapshotter` call, add the `--disassemble` flags.
+  * Modify the `RunCommand` function to dump to a file.
+  * Build again. The results should end up in the file.
+  * Look for the function name (by substring match) in this file and copy out that information to the bug.
+* Ping someone on dart-lang/sdk.
