@@ -12,4 +12,8 @@ Skia also uses an auto-roller for Fuchsia; see <https://fuchsia-roll.skia.org/>.
 
 The engine is automatically rolled to the framework.
 
-The bot updates <https://github.com/flutter/flutter/blob/master/bin/internal/engine.version> to point to the latest revision of the engine whose artifacts built successfully.
+The bot updates <https://github.com/flutter/flutter/blob/master/bin/internal/engine.version> to point to the latest revision of the engine *whose artifacts built successfully*, as determined by looking at the [Waterfall](https://build.chromium.org/p/client.flutter/waterfall).
+
+If you make a breaking change to the engine, you'll need to land the change to `engine.version` manually in
+the same PR to the framework as the one where you fix the framework to work with the new API. In general, it
+is very advisable to not make a breaking change to our APIs, and thus avoid this problem entirely.
