@@ -1,4 +1,4 @@
-When you build the engine for Android, the `--android-cpu=arm` targets `armeabi-v7a`, not `armeabi`.
+When you build the engine for Android, the `--android-cpu=arm` targets `armeabi-v7a` (ARMv7), not `armeabi` (ARMv6).
     
 ## Compiling `libflutter.so` for armeabi
 
