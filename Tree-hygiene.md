@@ -212,6 +212,19 @@ don't release a beta build with the regression. Then, write a test for
 this failure mode! See [[Running and writing tests]] for more details.
 
 
+## Avoid "Revert "Revert "Revert "Revert "Fix foo"""" commit messages
+
+Please limit yourself to one "Revert" per commit message, otherwise we won't
+have any idea what is actually landing. Is it putting us back to where we were before?
+Is it adding new code? Is it a controversial new feature that actually caused
+a regression before but is now fixed (we hope)?
+
+Only use "Revert" if you are actually returning us to a known-good state.
+When you later revert the revert, just land the PR afresh with the original commit message,
+possibly updated with the information since collected (and ideally, including a link
+to the original PR and to the revert PR so that people can follow the breadcrumbs later).
+
+
 ## Handling breaking changes
 
 In general, we want to avoid making changes to Flutter and its dependencies
