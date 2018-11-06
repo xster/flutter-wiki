@@ -2,7 +2,9 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since v0.9.4
+## Changes since v0.10.2
+
+## Changes in v0.10.2 (since v0.9.4) - beta 10
 
 ### v0.10.1
 * [#23755](https://github.com/flutter/flutter/pull/23755) Removed direct dependency of flutter_test on `package:test`. Flutter now requires test version 1.5.1 and mockito version 4.0.0.
