@@ -4,7 +4,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since v0.10.2
 * [#23755](https://github.com/flutter/flutter/pull/23755) Removed direct dependency of flutter_test on `package:test`. Flutter now requires test version 1.5.1 and mockito version 4.0.0.
-* [#24024](https://github.com/flutter/flutter/pull/24024)[flutter/engine#6760](https://github.com/flutter/engine/pull/6760) Upgrade harfbuzz to 2.1.0, Significantly improved text layout, and zero-width-joiner support for better emojis on iOS.
+* [#24024](https://github.com/flutter/flutter/pull/24024) and [flutter/engine#6760](https://github.com/flutter/engine/pull/6760) Upgrade harfbuzz to 2.1.0, Significantly improved text layout, and zero-width-joiner (zwj) support for better emojis on iOS.
 
 ## Changes in v0.10.2 (since v0.9.4) - beta 10
 
