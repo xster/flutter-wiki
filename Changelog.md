@@ -7,7 +7,14 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#24024](https://github.com/flutter/flutter/pull/24024) and [flutter/engine#6760](https://github.com/flutter/engine/pull/6760) Upgraded harfbuzz to 2.1.0, Significantly improved text layout, and zero-width-joiner (zwj) support for better emojis on iOS.
 * [#23417](https://github.com/flutter/flutter/pull/23417) provide `null` when locale is unavailable or invalid instead of `_`.
 
+### v0.11.0
+* [#23320](https://github.com/flutter/flutter/pull/23320) adds back swipe gesture support for Cupertino navigation bars' cross-page transitions.
+
 ## Changes in v0.10.2 (since v0.9.4) - beta 10
+
+### v0.10.2
+* [#23194](https://github.com/flutter/flutter/pull/23194) adds CupertinoTextField, an iOS styled text entry field.
+* [#23221](https://github.com/flutter/flutter/pull/23221) adds RTL support for Cupertino navigation bars' cross-page transitions.
 
 ### v0.10.1
 * [#22977](https://github.com/flutter/flutter/pull/22977) replaces most of `Null` by `void`. See [the mail proposing this change](https://groups.google.com/forum/#!topic/flutter-dev/b7TKGqERNTM).
