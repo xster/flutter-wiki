@@ -21,7 +21,7 @@ Make sure you have the following dependencies available:
  * An ssh client (used to authenticate with GitHub).
 
  * Chromium's
-   [depot_tools](http://commondatastorage.googleapis.com/chrome-infradocs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up)
+   [depot_tools](http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up)
    (make sure it's in your path). We use the `gclient` tool from depot_tools.
 
  * Python (used by many of our tools, including 'gclient').
