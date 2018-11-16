@@ -3,6 +3,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
 ## Changes since v0.10.2
+* [https://github.com/flutter/engine/pull/6883] - FlutterViewController will no longer load your app's splash screen by default.  The implementation of that has been moved to a new method `loadDefaultSplashScreenView`.
 * [#23755](https://github.com/flutter/flutter/pull/23755) Removed direct dependency of flutter_test on `package:test`. Flutter now requires test version 1.5.1 and mockito version 4.0.0. 
 
   ### Breaking change:
