@@ -31,16 +31,17 @@ encourage them to mark bugs as "customer blocker" (for the most serious bugs)
 or "customer critical" (for still important but not quite as serious bugs)
 if they are very important and deserve immediate attention.
 
-Each week, we ensure that bugs marked with these labels have someone assigned
-to them so that they are likely to get traction (this process is described
-in the second section of the page on [[Triage]]).
-
 We also have two special customer labels. The "customer: crowd" label is used
 to represent bugs that are affecting large numbers of people; during initial
 [[Triage]], high-profile bugs get labeled in this way to bring them to the 
 attention of the engineering team. The "customer: product" label is used by
 the team to bring issues that product management and senior leads want resolved
 to the attention of the engineering team.
+
+Each week, we look at all the bugs marked with the "customer blocker" and "customer critical"
+labels, and see if we can address them ahead of other bugs (though there is no guarantee
+that we will; it mostly depends on how close a relationship we have with the relevant customer).
+This process is described in the second section of the page on [[Triage]]).
 
 Be wary in marking bugs as "customer blocker". We have finite resources,
 and several customers. If you have one "blocker" bug, then we have a clear
