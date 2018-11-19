@@ -6,7 +6,7 @@ We use an auto-roller for Skia rolls. It's status can be viewed at <https://skia
 
 The bot updates the `skia_revision` line of <https://github.com/flutter/engine/blob/master/DEPS>.
 
-Skia also uses an auto-roller for Fuchsia; see <https://fuchsia-roll.skia.org/>.
+Skia also uses an auto-roller for Fuchsia; see <https://autoroll-internal.skia.org/r/fuchsia-autoroll>.
 
 ## Engine to Framework
 
