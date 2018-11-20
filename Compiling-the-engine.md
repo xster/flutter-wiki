@@ -21,7 +21,7 @@ Run the following steps, from the `src` directory created in the steps above:
     * `ninja -C out/android_debug_unopt_x64` for x64 emulators.
     * `ninja -C out/host_debug_unopt` for host-side executables.
     * These commands can be combined. Ex: `ninja -C out/android_debug_unopt && ninja -C out/host_debug_unopt`
-    * For Googlers, consider also using the option `-j 1000` to parallelize the build using Goma.
+    * For Googlers, consider also using the option `-j 100` to parallelize the build using Goma.
 
 This builds a debug-enabled ("unoptimized") binary configured to run Dart in
 checked mode ("debug"). There are other versions, see [[Flutter's modes]].
