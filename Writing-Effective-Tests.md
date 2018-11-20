@@ -20,7 +20,7 @@ test('RenderViewport', () {...});
 // etc.
 ```
 
-The above test names do not communicate anything useful to the developer reading the tests. The developer probably already knew which object was being tested, so these names are no better than an empty string. Instead, each test should succinctly declare the behavior under test and/or the expected results:
+The above test names do not communicate anything useful to the developer reading the tests. The developer probably already knows which object is being tested, so these names are no better than an empty string. Instead, each test should succinctly declare the behavior under test and/or the expected results:
 
 ```dart
 // Better test name
