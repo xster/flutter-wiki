@@ -9,3 +9,7 @@ All OpenGL calls in Skia are guarded by either the `GR_GL_CALL_NOERRCHECK` or `G
 Due to the number of events traced to the timeline, the trace buffer may be filled up very quickly. Unless you want to see only the traces for the past few frames, use an endless trace buffer (`flutter --trace-startup` turns on an endless trace buffer).
 
 Also, make sure to run your application with the `--trace-skia` flag.
+
+## Debugging iOS builds with Xcode
+
+If you open your iOS .xcodeproject or .xcworkspace in Xcode, you can set breakpoints e.g. in `main.m`.  From there, you can use `lldb` to set a breakpoint on the relevant engine source, e.g. `(lldb) br set -f FlutterViewController.mm -l 123`.
