@@ -2,6 +2,9 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
+## v0.11.6 - v0.11.9
+* Suffers from splash screen not loading propertly for iOS apps (https://github.com/flutter/flutter/issues/24563)
+
 ## v0.10.3 - v0.11.6
 * Suffers from hot reload flakiness (https://github.com/flutter/flutter/issues/24400)
 
