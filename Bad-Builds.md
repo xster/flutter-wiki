@@ -5,7 +5,7 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 ## v0.10.3 - v0.11.6
 * Suffers from hot reload flakiness (https://github.com/flutter/flutter/issues/24400)
 
-## v0.10.0 - v.10.x (?)
+## v0.10.0 - v0.11.1
 * Workflows that require customizing the underlying `android` or `ios` apps and newly created apps using `cupertino_icons` are broken by [#22565](https://github.com/flutter/flutter/pull/22565).
 
 ## v0.10.0
