@@ -13,3 +13,7 @@ Also, make sure to run your application with the `--trace-skia` flag.
 ## Debugging iOS builds with Xcode
 
 If you open your iOS .xcodeproject or .xcworkspace in Xcode, you can set breakpoints e.g. in `main.m`.  From there, you can use `lldb` to set a breakpoint on the relevant engine source, e.g. `(lldb) br set -f FlutterViewController.mm -l 123`.
+
+## Debugging Android builds with gdb
+
+See https://github.com/flutter/engine/blob/master/sky/tools/flutter_gdb#L13
