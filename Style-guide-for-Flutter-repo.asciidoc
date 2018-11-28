@@ -137,6 +137,34 @@ and in fact cannot handle the user modifying them.) Immutable data also turns ou
 to make animations much simpler through _lerping_.
 
 
+### Avoid secret (or global) state
+
+A function should operate only on its arguments and, if it is an instance
+method, data stored on its object. This makes the code significantly easier
+to understand.
+
+For example, when reading this code:
+
+```dart
+// ... imports something that defines foo and bar ...
+
+void main() {
+  foo(1);
+  bar(2);
+}
+```
+
+...the reader should be confident that nothing in the call to `foo` could affect anything in the
+call to `bar`.
+
+This usually means structuring APIs so that they either take all relevant inputs as arguments, or so
+that they are based on objects that are created with the relevant input, and can then be called to
+operate on those inputs.
+
+This significantly aids in making code testable and in making code understandable and debuggable.
+When code operates on secret global state, it's much harder to reason about.
+
+
 ### Prefer general APIs, but use dedicated APIs where there is a reason
 
 For example, having dedicated APIs for performance reasons is fine. If one
