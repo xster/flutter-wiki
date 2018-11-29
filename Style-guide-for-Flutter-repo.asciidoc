@@ -599,13 +599,13 @@ disables all static checking.
 
 ### Never check if a port is available before using it, never add timeouts, and other race conditions.
 
-* If you look for an available port, then try to open it, it's extremely likely that several times a week some other code will open that port between your check and when you open the port, and that will cause a failure.
+If you look for an available port, then try to open it, it's extremely likely that several times a week some other code will open that port between your check and when you open the port, and that will cause a failure.
 
-  Instead, have the code that opens the port pick an available port and return it, rather than being given a (supposedly) available port.
+> Instead, have the code that opens the port pick an available port and return it, rather than being given a (supposedly) available port.
 
-* If you have a timeout, then it's very likely that several times a week some other code will happen to run while your timeout is running, and your "really conservative" timeout will trigger even though it would have worked fine if the timeout was one second longer, and that will cause a failure.
+If you have a timeout, then it's very likely that several times a week some other code will happen to run while your timeout is running, and your "really conservative" timeout will trigger even though it would have worked fine if the timeout was one second longer, and that will cause a failure.
 
-  Instead, have the code that would time out just display a message saying that things are unexpectedly taking a long time, so that someone interactively using the tool can see that something is fishy, but an automated system won't be affected.
+> Instead, have the code that would time out just display a message saying that things are unexpectedly taking a long time, so that someone interactively using the tool can see that something is fishy, but an automated system won't be affected.
 
 Race conditions like this are the primary cause of flaky tests, which waste everyone's time.
 
