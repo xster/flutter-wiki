@@ -21,6 +21,8 @@ One way to use a `FlutterFragment` is to declare it in an XML layout file.
 
 Reminder, declaring a `FlutterFragment`, or any other `Fragment`, within an XML layout file prevents the `Fragment` from being programmatically removed at runtime.
 
+**TODO(mattcarroll):** Add support for XML attributes for splash screen, initial route, and possibly app bundle path. This work is currently blocked by the fact that the engine buildroot does not support AAR production, which prevents including any XML resources of any kind.
+
 ## Instantiate a FlutterFragment in code
 
 ```java
