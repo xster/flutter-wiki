@@ -13,7 +13,8 @@ https://github.com/flutter/engine/pull/6399
 ## Choose your adventure
 
 * [Add a Flutter app in a standalone Activity](https://github.com/flutter/flutter/wiki/Experimental:-Add-Flutter-Activity)
-* Add a Flutter app in a Fragment
+* [Add a Flutter app in a Fragment](https://github.com/flutter/flutter/wiki/Experimental:-Add-Flutter-Fragment)
 * Add a Flutter app in a View
+* Add Flutter app(s) in a Fragment ViewPager
 * Add Flutter app(s) in a ListView
 * Add Flutter app(s) in a RecyclerView
