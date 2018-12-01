@@ -98,4 +98,100 @@ Creating a `FlutterView` does not automatically create a Dart execution context 
   flutterView.resetAccessibilityTree();
 ```
 
+### Implement needed Android callbacks
+
+```java
+  @Override
+  public void onStart() {
+    super.onStart();
+    
+    flutterLifecycleChannel.send("AppLifecycleState.inactive");
+  }
+
+  @Override
+  public void onPostResume() {
+    super.onPostResume();
+    
+    flutterView.updateAccessibilityFeatures();
+    platformPlugin.onPostResume();
+    flutterLifecycleChannel.send("AppLifecycleState.resumed");
+  }
+
+  @Override
+  public void onPause() {
+    super.onPause();
+  
+    flutterLifecycleChannel.send("AppLifecycleState.inactive");
+  }
+
+  @Override
+  public void onStop() {
+    super.onStop();
+
+    flutterLifecycleChannel.send("AppLifecycleState.paused");
+  }
+
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+
+    // When an Activity is destroyed, you can either destroy the FlutterEngine, or you can
+    // simply detach your FlutterEngine from the FlutterView and keep it for later use.
+    flutterEngine.getPluginRegistry().onViewDestroy(flutterEngine);
+    flutterView.detachFromFlutterRenderer();
+    if (wantToDestroyEngine) {
+      flutterEngine.destroy();
+    }
+  }
+
+  @Override
+  public void onBackPressed() {
+    super.onBackPressed();
+    
+    flutterNavigationChannel.invokeMethod("popRoute", null);
+  }
+
+  @Override
+  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    flutterEngine.getPluginRegistry().onRequestPermissionsResult(requestCode, permissions, grantResults);
+  }
+
+  @Override
+  public void onNewIntent(@NonNull Intent intent) {
+    flutterEngine.getPluginRegistry().onNewIntent(intent);
+  }
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    flutterEngine.getPluginRegistry().onActivityResult(requestCode, resultCode, data);
+  }
+
+  @Override
+  public void onUserLeaveHint() {
+    flutterEngine.getPluginRegistry().onUserLeaveHint();
+  }
+
+  @Override
+  public void onTrimMemory(int level) {
+    super.onTrimMemory(level);
+
+    if (level == TRIM_MEMORY_RUNNING_LOW) {
+      sendMemoryPressureWarningToFlutter();
+    }
+  }
+
+  @Override
+  public void onLowMemory() {
+    super.onLowMemory();
+
+    sendMemoryPressureWarningToFlutter();
+  }
+
+  private void sendMemoryPressureWarningToFlutter() {
+    Map<String, Object> message = new HashMap<>(1);
+    message.put("type", "memoryPressure");
+    flutterSystemChannel.send(message);
+  }
+```
+
 **TODO(mattcarroll):** fill in rest of this document
