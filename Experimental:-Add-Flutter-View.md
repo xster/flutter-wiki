@@ -215,3 +215,5 @@ Flutter requires many signals from the host operating system. When using a `Flut
     flutterSystemChannel.send(message);
   }
 ```
+
+By the time a developer has implemented all above responsibilities, he/she has essentially re-implemented `FlutterFragment`. Therefore, for maintenance purposes, developers should only directly use a `FlutterView` when there is a good reason not to use a `FlutterFragment`.
