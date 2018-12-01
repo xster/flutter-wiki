@@ -24,6 +24,10 @@ Creating a `FlutterView` does not automatically create a Dart execution context 
 
 ### Create and configure a FlutterEngine
 
+The `FlutterEngine` Java object represents your executing Flutter app, including Dart execution, platform channel registration, and plugin registration. A `FlutterView` is responsible for displaying pixels that come from a given `FlutterEngine`. `FlutterView` and `FlutterEngine` can vary independently - a single `FlutterView` can switch between different `FlutterEngine`s, and a single `FlutterEngine` can be attached to, and detached from, multiple `FlutterView`s.
+
+A `FlutterEngine` represents a single app execution.  If you want to execute 3 different Flutter entrypoints, either concurrently or serially, then you will eventually create 3 `FlutterEngine` instances. This Wiki page only illustrates the creation of a single `FlutterEngine` and associated `FlutterView`
+
 ```java
   // Instantiate a new FlutterEngine.
   flutterEngine = new FlutterEngine(context, resources, false);
@@ -34,6 +38,8 @@ Creating a `FlutterView` does not automatically create a Dart execution context 
 ```
 
 ### Create and configure platform plugin
+
+Fundamental communication between the Android platform and your Flutter app takes place over a `MethodChannel` with the name `"flutter/platform"`. For example, Android's `onPostResume()` call must be forwarded over the `flutterPlatformChannel` with the message `"AppLifecycleState.resumed"`.
 
 ```java
   platformPlugin = new PlatformPlugin(activity);
@@ -46,6 +52,14 @@ Creating a `FlutterView` does not automatically create a Dart execution context 
 ```
 
 ### Create and configure fundamental channels
+
+In addition to the "platform plugin", a few other method channels are required for sending important Android events.
+
+The lifecycle channel is responsible for communicating Android lifecycle events to Flutter (except `onPostResume()` which is covered by the platform plugin).
+
+The system channel is responsible for sending memory pressure warnings from Android to Flutter.
+
+The navigation channel is responsible for sending initial route, push route, and pop route requests to Flutter. Developers should ensure that Android's hardware back button sends a `"popRoute"` message to Flutter, unless a developer has a specific reason to prevent back button behavior in his/her Flutter app.
 
 ```java
   flutterLifecycleChannel = new BasicMessageChannel<>(
@@ -69,6 +83,8 @@ Creating a `FlutterView` does not automatically create a Dart execution context 
 
 ### Attach the FlutterEngine to the FlutterView
 
+A `FlutterView` does not know anything about a given Flutter application until a `FlutterEngine` is "attached" to the `FlutterView`. To attach a `FlutterEngine` to a `FlutterView`, pass the engine's `FlutterRenderer` and `DartExecutor` to the `FlutterView`.
+
 ```java
   flutterView.attachToFlutterRenderer(
     flutterEngine.getRenderer(),
@@ -77,6 +93,10 @@ Creating a `FlutterView` does not automatically create a Dart execution context 
 ```
 
 ### Start running your Flutter/Dart app
+
+To start executing a Flutter app, invoke `runFromBundle()` on a `FlutterEngine`'s `DartExecutor`. `FlutterRunArguments` need to be configured as desired before invoking `runFromBundle()`.
+
+An initial route can optionally be configured before execution begins.
 
 ```java
   if (flutterEngine.getDartExecutor().isApplicationRunning()) {
@@ -99,6 +119,8 @@ Creating a `FlutterView` does not automatically create a Dart execution context 
 ```
 
 ### Implement needed Android callbacks
+
+Flutter requires many signals from the host operating system. When using a `FlutterActivity` or `FlutterFragment`, all or most of these signals are forwarded on the developer's behalf. When using a `FlutterView`, developers must carefully forward each relevant call manually.
 
 ```java
   @Override
@@ -193,5 +215,3 @@ Creating a `FlutterView` does not automatically create a Dart execution context 
     flutterSystemChannel.send(message);
   }
 ```
-
-**TODO(mattcarroll):** fill in rest of this document
