@@ -1,0 +1,42 @@
+:img: https://github.com/lookAtYouInc/lookatmybaby/wiki/images
+
+:toc:
+:toc-placement!:
+
+Common issues Flutter developers might run into and how to fix or work around.
+
+toc::[]
+
+== Pub dependencies
+
+=== Corrupted cache
+
+Especially with plugin packages it was seen several times that the package in the pub cache was corrupted.
+
+==== Symptoms 
+Usually syntax errors at build time about code in dependencies.
+
+==== Causes 
+
+Unknown
+IDEs or editors used by developers might not prevent editing plugin files and when they navigate into plugin code they might accidentally modify the code.
+
+==== Ways to fix
+
+- Run `pub cache repair`
+This might take quite some time and re-downloads every package in the cache, even outdated versions that might not be used anymore by any project on disk.
+
+- Delete `~/.pub-cache/hosted` and/or `~/.pub-cache/git` (for Git dependencies).
+This requires to run `flutter packages get` in all active projects on your machine afterwards.
+
+- Delete a specific package or package version. 
+Look up the exact path in cache for a specific package in the `.packages` file of your project.
+For example for `firebase_auth`
+```
+firebase_auth:file:///Users/someuser/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.6.6/lib/
+```
+To fix this package delete `///Users/someuser/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.6.6/` (`lib/` removed) and run `flutter packages get`.
+
+==== Related information
+- https://www.dartlang.org/tools/pub/cmd/pub-cache
+- https://www.dartlang.org/tools/pub/environment-variables
