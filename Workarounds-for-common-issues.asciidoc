@@ -18,7 +18,7 @@ Usually syntax errors at build time about code in dependencies.
 
 ==== Causes 
 
-Unknown
+Unknown.
 IDEs or editors used by developers might not prevent editing plugin files and when they navigate into plugin code they might accidentally modify the code.
 
 ==== Ways to fix
@@ -40,3 +40,70 @@ To fix this package delete `///Users/someuser/.pub-cache/hosted/pub.dartlang.org
 ==== Related information
 - https://www.dartlang.org/tools/pub/cmd/pub-cache
 - https://www.dartlang.org/tools/pub/environment-variables
+
+== Proxy
+
+=== Flutter commands can not access the Internet
+
+In a network where the Internet can only be reached through a proxy and Flutter commands fail.
+
+==== Symtoms
+
+// TODO
+   
+==== Causes
+
+Proxy setting incomplete or invalid.
+
+==== Ways to fix
+
+- See https://github.com/flutter/flutter/wiki/Using-Flutter-in-China
+
+==== Related information
+N/A
+
+=== Hot-reload not working
+
+When a proxy is configured hot-reload does often not work.
+
+==== Symptoms 
+
+// TODO
+
+==== Causes 
+
+Proxy setting incomplete or invalid. 
+Localhost is redirected to the proxy.
+
+==== Ways to fix
+
+- Set environment variable `no_proxy=127.0.0.1`
+
+==== Related information
+
+- https://github.com/flutter/flutter/issues/16875#issuecomment-384758566
+- https://stackoverflow.com/questions/9546324/adding-directory-to-path-environment-variable-in-windows[Adding directory to PATH Environment Variable in Windows]
+- https://stackoverflow.com/questions/19287379/how-do-i-add-to-the-windows-path-variable-using-setx-having-weird-problems[How do I add to the Windows PATH variable using setx? Having weird problems]
+
+
+= Empty Template for new recipes
+
+== Topic name  
+
+=== Issue title
+
+Issue description
+
+==== Symptoms 
+Explain seen symptoms
+
+==== Causes 
+
+Explain what causes this issue
+
+==== Ways to fix
+
+- Do this, do that as well
+
+==== Related information
+- https://example.com/some_link.html
