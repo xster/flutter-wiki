@@ -48,11 +48,41 @@ flutter doctor
 
 [CAUTION]
 ==== 
-Caution! The `git stash drop` command drops customizations you might have made to the Flutter installation.
+The `git stash drop` command drops customizations you might have made to the Flutter installation.
 ====
 
 ==== Related information
 (none yet)
+
+
+== Flutter project files  
+
+=== Generated project files outdated
+
+==== Symptoms 
+// TODO
+
+==== Causes 
+
+When a project is created with `flutter create foo` several files in the `ios/` and `android/` sub-directories are created.
+
+Newer Flutter versions might generate these files a bit differently and projects created with older Flutter versions might cause issues.  
+
+==== Ways to fix
+
+- Delete the `ios/` and `android/` directories and run `flutter create .` to re-generate these directories.
+
+[CAUTION]
+==== 
+Custom changes will be lost and need to be re-applied.
+This is easist if the project is committed to a version control system like Git.  
+====
+
+
+==== Related information
+- (empty)
+
+
 
 
 == Pub dependencies
@@ -157,6 +187,7 @@ Explain what causes this issue
 
 ==== Related information
 - https://example.com/some_link.html
+
 
 = AsciiDoc Recipes
 
