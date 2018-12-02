@@ -18,6 +18,8 @@ Common issues Flutter developers might run into and recipes how to fix or work a
 
 toc::[]
 
+= Flutter Recipes
+
 == Flutter installation  
 
 === Flutter installation corrupted
@@ -134,6 +136,8 @@ Localhost is redirected to the proxy.
 
 = Empty Template for new recipes
 
+Copy from the following line down
+
 == Topic name  
 
 === Issue title
@@ -153,3 +157,15 @@ Explain what causes this issue
 
 ==== Related information
 - https://example.com/some_link.html
+
+= AsciiDoc Recipes
+
+==== AsciiDoc Syntax Quick Reference
+
+- https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+
+==== GitHub Flavored AsciiDoc
+
+Some workarounds for common issues with AsciiDoc on GitHub 
+
+- https://gist.github.com/dcode/0cfbf2699a1fe9b46ff04c41721dda74
