@@ -7,6 +7,39 @@ Common issues Flutter developers might run into and how to fix or work around.
 
 toc::[]
 
+== Flutter installation  
+
+=== Flutter installation corrupted
+
+The Flutter install directory is in an inconsistent state and that causes all kinds of troubles.
+
+==== Symptoms 
+
+// TODO
+
+==== Causes 
+
+Unclear
+
+==== Ways to fix
+
+- Run the following commands in the Flutter install directory:
+[source,sh] 
+----
+git clean -xfd
+git stash save --keep-index
+git stash drop
+git pull
+flutter doctor
+----
+
+Caution! The `git stash drop` command drops customizations you might have made to the Flutter installation.
+
+
+==== Related information
+(none yet)
+
+
 == Pub dependencies
 
 === Corrupted cache
@@ -60,7 +93,7 @@ Proxy setting incomplete or invalid.
 - See https://github.com/flutter/flutter/wiki/Using-Flutter-in-China
 
 ==== Related information
-N/A
+(none yet)
 
 === Hot-reload not working
 
