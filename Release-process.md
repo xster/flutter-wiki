@@ -2,32 +2,27 @@ For an overview of the various Flutter release channels, see [[Flutter build rel
 
 ## Rolling the dev channel
 
-This is the process for updating the "dev" branch. This should happen _at least_ once a week, ideally more often.
+Google engineers regularly roll the master branch into the dev branch and as part of this process label the
+build that was rolled with a version number. The process for doing this includes testing Flutter against a wide
+range of Google-internal tests, which is why it is not currently a process that people outside Google can do.
 
-1. Check that the tree is green [on the cocoon dashboard](https://flutter-dashboard.appspot.com/build.html) (which includes the status of our builds [on Travis](https://travis-ci.org/flutter/flutter/builds) and [on the infra bots](https://build.chromium.org/p/client.flutter/waterfall)). If the tree isn't green, please work with the relevant engineers to fix the build, reverting bad patches if necessary.
-1. Ensure there are no issues labeled [TODAY](https://github.com/flutter/flutter/labels/%E2%9A%A0%20TODAY). These are issues people have found that are critical regressions. If there are any such bugs, please work with the relevant engineers to have them fixed.
-1. Ensure your local workspace is configured according to the instructions in Flutter's [`CONTRIBUTING.md`](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md) and that your current directory is a flutter/flutter clone.
-1. On a clean branch of the Flutter repository, run:
-   ```
-   pushd dev/tools; pub get; popd
-   bin/cache/dart-sdk/bin/dart dev/tools/lib/roll_dev.dart --increment=z
-   ```
-   ...and follow the prompts.
+We are looking at what we can do to generalize this process so that we can run tests from other sources as
+part of verifying the quality of a build we want to roll to `dev`, as part of which we would also return this
+process to a public one which any contributor (including non-Google contributors) could do.
 
-   If you are doing a dev roll that is the first roll since the last beta, then you should use `--increment=y` instead.
-1. Done!
-
-If a bug is subsequently found on this release, please mark that commit as bad on the [[Bad Builds]] page.
+If you find a bug that should prevent us from rolling a particular `dev` build to our `beta` and `stable` channels, please mark that commit as bad on the [[Bad Builds]] page.
 
 
 ## Rolling the beta channel
 
-This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the dev branch) as having no new serious bugs. We intend to release to the beta branch on a predictable schedule, though that schedule hasn't yet been published.
+This is the process for rolling the "beta" branch. The beta branch holds a version of Flutter that we have verified (through at least a week of usage on the dev branch) as having no new serious bugs.
 
-A few days before the scheduled beta release date, start these steps. You will probably want to do this on macOS in order to test all parts of the codelabs and builds. These steps should be done using the [official download](https://flutter.io/get-started/install/) instead of a local checkout of the repo.
+We roll to the beta branch at the start of each month. Bugs intended to be fixed in a particular month's release are tagged with the milestone of that month, and need to be fixed by the last `dev` release of the previous month.
+
+At the start of the month, start these steps. You will probably want to do this on macOS in order to test all parts of the codelabs and builds. These steps should be done using the [official download](https://flutter.io/get-started/install/) instead of a local checkout of the repo.
 
 1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that:
-    * was tagged at least seven days before the beta release date (the commit itself will probably be even older!). You can see when a tag was added using `git log -1 --format=%ai v0.0.0`.
+    * was tagged in the previous month. You can see when a tag was added using `git log -1 --format=%ai v0.0.0`.
     * is not listed on the [[Bad Builds]] page.
     * is newer than the current [latest commit on the `beta` branch](https://github.com/flutter/flutter/commits/beta).
     * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via `git rebase v0.0.0 && flutter upgrade`)
@@ -38,14 +33,16 @@ A few days before the scheduled beta release date, start these steps. You will p
         * via `flutter build apk`
         * via `flutter build ios`
         * via `flutter run` (on both Android and iOS)
-1. Once you have found a good build, wait until the scheduled release date.
+1. Once you have found a good build, wait until seven days after that build was rolled to `dev`.
+1. Check that the build is still not listed on the [[Bad Builds]] page. If it has been marked as bad since you
+started this process, then start over but with the next older eligible build.
 1. Push that commit to the `beta` branch (vX.Y.Z is the tag of the selected version):
    ```
    git fetch upstream
    git checkout vX.Y.Z
    git push upstream HEAD:beta
    ```
-   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members).
+   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator (e.g. Hixie) to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members).
 1. Wait for the Cirrus builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches).  If they fail, investigate the failure(s), and consider whether a newer dev build should be pushed to beta before any announcements are made.
 1. Wait for the packaging build to complete, and download the [packages](https://flutter.io/sdk-archive/) built by them. On each system, do the following (these will be automated shortly, but until then...):
    - Unpack and check to see that a new project can be created with `flutter create --offline foo`
@@ -53,10 +50,9 @@ A few days before the scheduled beta release date, start these steps. You will p
    - Check that we have the right channel and version set.
 1. Update the [[Changelog]] page so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
 1. Inform the person currently doing the dev roll that they should increment the Y number instead of the Z number (`--increment=y`).
-1. Create [a new milestone](https://github.com/flutter/flutter/milestones/new) for the beta release after whatever the last beta release that has a milestone. For example, if there are currently milestones for beta12-beta18, create beta19, with a date one week before the scheduled date for that beta. (This should result in 7 open milestones with real dates including the current one which you're about to close below.)
 1. Move all the open bugs in the current milestone to the Overdue milestone.
 1. Close the current [milestone](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open).
-1. Send an e-mail to flutter-dev that includes the latest section of the [[Changelog]] page.
+1. Send an e-mail to flutter-announce that includes the latest section of the [[Changelog]] page.
 1. Done!
 
 ## Applying emergency fixes
