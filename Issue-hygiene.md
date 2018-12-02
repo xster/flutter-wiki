@@ -11,9 +11,9 @@ This page mostly talks about how we handle things for the flutter/flutter issue 
 
 We use [many labels](https://github.com/flutter/flutter/labels).
 
-The `severe:` prefix indicates labels regarding a level of severity (e.g. regressions, new features, crashes). Severity in and of itself does not imply a specific time-to-service; rather it provides clues as to the nature of the defect, just as other labels do. A bug may have the `severe: crash` label, but e.g. if it relates to the `flutter` tool crashing when run with the system date set to 1998, we are not likely to consider it a high priority.
+The `severe:` prefix indicates labels regarding a level of severity (e.g. regressions, new features, crashes). Severity in and of itself does not say how fast we will fix the bug; rather it provides clues as to the nature of the defect, just as other labels do. A bug may have the `severe: crash` label, but e.g. if it relates to the `flutter` tool crashing when run with the system date set to 1998, we are not likely to consider it a high priority.
 
-The `TODAY` label indicates a high-priority issue such as a build break, regression or failure in existing features that would keep us from shipping the current build. We look at issues with the `TODAY` label frequently to ensure that each has an owner and is being worked on with appropriate alacrity.
+The `TODAY` label indicates a high-priority issue such as a build break, regression or failure in existing features that would keep us from shipping the current build. We look at issues with the `TODAY` label frequently to ensure that each has an owner and is being worked on.
 
 See also:
 
@@ -88,13 +88,16 @@ not hesitate to contribute a PR to address it! (See our
 [contribution guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
 for advice on how to that successfully.)
 
-### Buckets
+### Months (aka release milestones)
 
-Bugs assigned to a specific bucket are bugs we are intended to address by a particular
-date. Any bug assigned to a bucket should have a specific dedicated assignee as well.
+Bugs assigned to a specific month (e.g. "February 2021") are bugs we are intended to address before the release
+that for the given month. Any bug assigned to a month should have a specific dedicated
+assignee as well.
+
+See the [[Release process]] page for more details about our release schedule.
 
 Contributors working to address an issue should self-assign the issue to a relevant 
-bucket to indicate to others when you anticipate completing the issue. Buckets are a
+bucket to indicate to others when you anticipate completing the issue. Release milestones are a
 statement of what we anticipate doing and when, and thus concrete; they are not
 aspirational, in that simply assigning an issue to a bucket without the commitment of
 its assignee will not further work on the issue on its own. (See “Assigning Issues”, 
@@ -141,7 +144,10 @@ away. By extension, "unlicking the cookie" means indicating to the
 rest of the team that you are not actually going to work on the bug
 right away after all, e.g. by unassigning the bug from yourself.
 
-When a bug is assigned, it should also have a milestone.
+When a bug is assigned, it should also have a specific release milestone (one of the
+milestones that refers to a specific month). Be conservative in assigning the
+milestone. It is infinitely preferable for a bug to be fixed earlier than expected
+than it is for it to slip from release to release.
 
 
 ## File bugs for everything
