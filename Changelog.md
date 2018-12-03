@@ -2,6 +2,16 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
+## Changes through and including 0.11.3
+* Skia and engine rolls to address the following:
+  * [video_player image distortion problem after last flutter update 0.11.3](https://github.com/flutter/flutter/issues/24402)
+  * [Green, flickering bar over camera preview](https://github.com/flutter/flutter/issues/24289)
+  * [Image rendering issues on Adreno 3xx devices after upgrade from 0.9.4 to 0.10.2](https://github.com/flutter/flutter/issues/24517)
+* Engine rolls to fix 
+  * [Prepend [NSLocale currentLocale] for first locale on iOS to ensure countryCode exists. Allow language-only locales.](https://github.com/flutter/engine/issues/6995)
+  * [Changes to unblock Fuchsia roll](https://github.com/flutter/engine/issues/6949)
+* Various fixes to tooling for documentation, documentation, and documentation accompanying the templates.
+
 ## Changes since v0.10.2
 * [flutter/engine#6883](https://github.com/flutter/engine/pull/6883) - FlutterViewController will no longer load your app's splash screen by default.  The implementation of that has been moved to a new method `loadDefaultSplashScreenView`.
 * [#23755](https://github.com/flutter/flutter/pull/23755) Removed direct dependency of flutter_test on `package:test`. Flutter now requires test version 1.5.1 and mockito version 4.0.0. 
