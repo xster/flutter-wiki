@@ -2,7 +2,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes through and including 0.11.3
+## Changes through and including 1.0.0
 * Skia and engine rolls to address the following:
   * [video_player image distortion problem after last flutter update 0.11.3](https://github.com/flutter/flutter/issues/24402)
   * [Green, flickering bar over camera preview](https://github.com/flutter/flutter/issues/24289)
