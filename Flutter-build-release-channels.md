@@ -16,7 +16,7 @@ Every month, we pick the "best" `dev` build of the previous month or so, and pro
 
 ### stable
 
-Eventually we will also have a `stable` build, which will be the best `beta` build of the previous quarter or so, but we haven't yet reached a quality level that we are sufficiently happy with to use this label yet.
+When we believe we have a particularly good build, we promote it to the `stable` channel. This has so far happened only once, with our 1.0 launch. We intend to do this more or less every quarter, but this may vary.
 
 ## How to change channels
 
@@ -25,7 +25,8 @@ You can see which channel you're on with the following command:
 ```
 $ flutter channel
 Flutter channels:
-* beta
+* stable
+  beta
   dev
   master
 ```
