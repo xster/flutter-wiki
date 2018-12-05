@@ -25,7 +25,7 @@ flutter doctor
 
 After these steps, you should be able to continue [setting up Flutter](https://flutter.io/setup/) normally.  From here on, packages fetched by `flutter packages get` will be downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL` and `FLUTTER_STORAGE_BASE_URL` are set.
 
-The `flutter-io.cn` server is a provisional mirror for Flutter dependencies and packages maintained by [GDG China](http://www.chinagdg.com/). The Flutter team cannot guarantee long-term availability of this service. You’re free to use other mirrors if they become available. If you’re interested in setting up your own mirror in China, please contact flutter-dev@googlegroups.com for assistance. 
+The `flutter-io.cn` server is a provisional mirror for Flutter dependencies and packages maintained by the community. The Flutter team cannot guarantee long-term availability of this service. You’re free to use other mirrors if they become available. If you’re interested in setting up your own mirror in China, please contact flutter-dev@googlegroups.com for assistance. 
 
 Known issue:
 * Running the Flutter Gallery app from source requires assets hosted on a domain this workaround currently doesn't support. You can subscribe to [this bug](https://github.com/flutter/flutter/issues/13763) to receive updates. In the meantime, you can check out Flutter Gallery from Google Play or third-party app stores you trust.
