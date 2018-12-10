@@ -33,10 +33,11 @@ At the start of the month, start these steps. You will probably want to do this 
         * via `flutter build apk`
         * via `flutter build ios`
         * via `flutter run` (on both Android and iOS)
-1. Once you have found a good build, wait until seven days after that build was rolled to `dev`.
+1. Let other contributors know that you have picked a build and are planning on rolling the beta channel (in particular, let the contributor channel on Gitter know, let @Hixie know, and let @kf6gpe know).
+1. Wait until seven days after your selected commit was rolled to `dev`.
 1. Check that the build is still not listed on the [[Bad Builds]] page. If it has been marked as bad since you
-started this process, then start over but with the next older eligible build.
-1. Push that commit to the `beta` branch (vX.Y.Z is the tag of the selected version):
+started this process, then start over from step 1 but with the next oldest eligible build.
+1. Push the selected commit to the `beta` branch (vX.Y.Z is the tag of the selected version):
    ```
    git fetch upstream
    git checkout vX.Y.Z
@@ -54,6 +55,20 @@ started this process, then start over but with the next older eligible build.
 1. Close the current [milestone](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open).
 1. Send an e-mail to flutter-announce that includes the latest section of the [[Changelog]] page.
 1. Done!
+
+## Rolling the stable channel
+
+This is the process for rolling the "stable" branch. We generally intend to roll the stable branch every quarter or so, probably with more fanfare than a regular beta roll. The steps below are the technical steps required for the roll; there will most likely be more coordination around the roll that are not discussed here.
+
+1. Pick a commit that has been rolled to the `beta` branch using the process above. Typically, this will be done in coordination with a public event (e.g. Flutter Live) and so much discussion will have happened regarding exactly which commit to use, so this process doesn't go into detail as to how to select the commit.
+1. Push the selected commit to the `stable` branch (vX.Y.Z is the tag of the selected version):
+   ```
+   git fetch upstream
+   git checkout vX.Y.Z
+   git push upstream HEAD:stable
+   ```
+   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the stable branch on GitHub. Contact a repository administrator (e.g. Hixie) for advice.
+
 
 ## Applying emergency fixes
 
