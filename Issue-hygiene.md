@@ -24,7 +24,10 @@ See also:
 
 ### Customers
 
-Some teams using Flutter have a special relationship with the Flutter team.
+Some teams using Flutter have a special relationship with the Flutter team
+(e.g. they're collaborating with us on a new feature, or they're working
+with us on a product demo for an upcoming event). This is usually a fairly
+short-term arrangement for a specific business purpose.
 
 We provide such customers with a label in our GitHub issue tracker, and
 encourage them to mark bugs as "customer blocker" (for the most serious bugs)
