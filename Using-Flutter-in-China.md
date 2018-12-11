@@ -1,4 +1,4 @@
-_(This page will be deleted on November 5th 2018; see flutter.io for more recent information. When deleting this page, update `bin/internal/update_dart_sdk.sh` and the `flutter` tool.)_
+_(This page will be deleted momentarily; see flutter.io for more recent information. When deleting this page, update `bin/internal/update_dart_sdk.sh` and the `flutter` tool.)_
 
 There's now a localized website for Flutter in China, here: https://flutter-io.cn. 
 
