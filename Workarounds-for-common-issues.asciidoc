@@ -155,7 +155,7 @@ Localhost is redirected to the proxy.
 
 ==== Ways to fix
 
-- Set environment variable `no_proxy=127.0.0.1`
+- Set environment variable `NO_PROXY=127.0.0.1`
 
 ==== Related information
 
