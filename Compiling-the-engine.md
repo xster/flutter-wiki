@@ -3,7 +3,7 @@
 
 These steps build the engine used by `flutter run` for Android devices.
 
-Run the following steps, from the `src` directory created in the steps above:
+Run the following steps, from the `src` directory created in [Setting up the Engine development environment](https://github.com/flutter/flutter/wiki/Setting-up-the-Engine-development-environment):
 
 1. `git pull upstream master` in `src/flutter` to update the Flutter Engine repo.
 
