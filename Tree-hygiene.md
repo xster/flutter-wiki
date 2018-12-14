@@ -138,6 +138,10 @@ readability and adherence to the
 Use [these best practices](https://mtlynch.io/human-code-reviews-1/)
 when reviewing code and providing comments.
 
+As a reviewer, you are the last line of defense. Take a step back. What problem
+is the PR trying to solve? Is it a real problem? What other solutions could we
+consider? What could we do to make this even better?
+
 Reviewers should not give an LGTM unless the patch has tests that verify
 all the affected code, or unless a test would make no sense. If you
 review a patch, you are sharing the responsibility for the patch with
