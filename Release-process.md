@@ -97,4 +97,4 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Once the code is reviewed, land the PR onto the _VERSION_ branch.
 1. Lock down the _VERSION_ branch on GitHub.
 1. If this is an update to the current `beta` build, also force push this commit to the `beta` branch.
-1. Send an e-mail to flutter-dev regarding this update.
+1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
