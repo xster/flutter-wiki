@@ -73,7 +73,7 @@ Run the following steps, from the `src` directory created in the steps above:
 
 3. `./flutter/tools/gn --ios --unoptimized` to prepare build files for device-side executables (or `--ios --simulator --unoptimized` for simulator).
   * This also produces an Xcode project for working with the engine source code at `out/ios_debug_unopt`
-  * For a discussion on the various flags and modes, see [[Flutter's mode]].
+  * For a discussion on the various flags and modes, see [[Flutter's modes]].
 
 4. `./flutter/tools/gn --unoptimized` to prepare the build files for host-side executables.
 
