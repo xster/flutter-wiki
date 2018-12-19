@@ -182,8 +182,9 @@ any time soon, but we agree that it's something we should work on in
 the coming years. Consider escalating the issue, as described below, to
 raise its priority further.
 
-If the milestone is "Scheduled customer work", then we are likely to address
-the issue in the near term, we just need to find time. Please hold on.
+If the milestone is "Scheduled customer work" or "Near-term goals",
+then we are likely to address the issue in the near term, we just
+need to find time. Please hold on.
 
 Otherwise, the milestone should be a precise description of when we expect
 the work to be done by. It may not be accurate; we often end up slipping
