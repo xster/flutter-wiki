@@ -108,7 +108,7 @@ below.)
 
 ### Near-term Goals
 
-This special milestone is used as a stepping stone from Goals to a specific month. A subteam
+This special milestone is sometimes used as a stepping stone from Goals to a specific month. A subteam
 will triage bugs in the Goals milestone, determine that they should work a specific subset of
 issues, and put them in Near-term Goals. Then, later, when they are scheduling work, they will
 move bugs from Near-term Goals to a specific month, and assign a specific engineer.
