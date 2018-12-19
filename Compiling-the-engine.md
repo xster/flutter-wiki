@@ -78,7 +78,7 @@ Run the following steps, from the `src` directory created in the steps above:
 4. `./flutter/tools/gn --unoptimized` to prepare the build files for host-side executables.
 
 5. `ninja -C out/ios_debug_unopt && ninja -C out/host_debug_unopt` to build all artifacts (use `out/ios_debug_sim_unopt` for Simulator).
-    * For Googlers, consider also using the option `-j 1000` to parallelize the build using Goma.
+    * For Googlers, consider also using the option `-j 100` to parallelize the build using Goma.
 
 See [[The flutter tool]] for instructions on how to use the `flutter` tool with a local engine.
 You will typically use the `ios_debug_unopt` build to debug the engine on a device, and
