@@ -89,7 +89,7 @@ are things that we're unlikely to work on at all. However, we accept contributio
 regardless of the milestone, so if you care about an issue marked "Future", do
 not hesitate to contribute a PR to address it! (See our
 [contribution guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
-for advice on how to that successfully.)
+for advice on how to do that successfully.)
 
 ### Months (aka release milestones)
 
