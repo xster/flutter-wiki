@@ -81,8 +81,8 @@ This is easist if the project is committed to a version control system like Git.
 
 ==== Related information
 - https://github.com/flutter/flutter/issues/12573
-
-
+- https://github.com/flutter/flutter/issues/12983
+- https://github.com/flutter/flutter/issues/9827
 
 
 == Pub dependencies
