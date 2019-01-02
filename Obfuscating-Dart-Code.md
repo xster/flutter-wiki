@@ -15,7 +15,7 @@ For information on obfuscating the Android host, see [Enabling Proguard](https:/
 
 ### Step 1 - Modify the "build aot" call
 
-Add the following flag to the `build aot` call in the `<ProjectRoot>/packages/flutter_tools/bin/xcode_backend.sh` file:
+Add the following flag to the `build aot` call in the `<FlutterRoot>/packages/flutter_tools/bin/xcode_backend.sh` file:
 
 ```
 ${extra_gen_snapshot_options_or_none}
