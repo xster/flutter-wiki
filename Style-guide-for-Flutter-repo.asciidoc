@@ -424,11 +424,11 @@ Sample code should go in a section of the documentation that has a `## Sample co
 For example, below is the sample code for building an infinite list of children with the ListView widget:
 
 ```dart
-new ListView.builder(
-  padding: new EdgeInsets.all(8.0),
+ListView.builder(
+  padding: const EdgeInsets.all(8.0),
   itemExtent: 20.0,
   itemBuilder: (BuildContext context, int index) {
-    return new Text('entry $index');
+    return Text('entry $index');
   },
 ) 
 ```
@@ -542,10 +542,10 @@ Example:
 
 ```dart
 // BAD:
-new EdgeInsets.TRBL(0.0, 8.0, 0.0, 8.0);
+const EdgeInsets.TRBL(0.0, 8.0, 0.0, 8.0);
 
 // GOOD:
-new EdgeInsets.symmetric(horizontal: 8.0);
+const EdgeInsets.symmetric(horizontal: 8.0);
 ```
 
 
@@ -867,7 +867,7 @@ arguments two characters from the previous line.
 Example:
 
 ```dart
-Foo f = new Foo(
+Foo f = Foo(
   bar: 1.0,
   quux: 2.0,
 );
@@ -967,17 +967,17 @@ For example:
     // GOOD, but slightly more verbose than necessary since it doesn't use =>
     @override
     Widget build(BuildContext context) {
-      return new PopupMenuButton<String>(
+      return PopupMenuButton<String>(
         onSelected: (String value) { print('Selected: $value'); },
         itemBuilder: (BuildContext context) {
           return <PopupMenuItem<String>>[
-            new PopupMenuItem<String>(
+            PopupMenuItem<String>(
               value: 'Friends',
-              child: new MenuItemWithIcon(Icons.people, 'Friends', '5 new')
+              child: MenuItemWithIcon(Icons.people, 'Friends', '5 new')
             ),
-            new PopupMenuItem<String>(
+            PopupMenuItem<String>(
               value: 'Events',
-              child: new MenuItemWithIcon(Icons.event, 'Events', '12 upcoming')
+              child: MenuItemWithIcon(Icons.event, 'Events', '12 upcoming')
             ),
           ];
         }
@@ -987,16 +987,16 @@ For example:
     // GOOD, does use =>, slightly briefer
     @override
     Widget build(BuildContext context) {
-      return new PopupMenuButton<String>(
+      return PopupMenuButton<String>(
         onSelected: (String value) { print('Selected: $value'); },
         itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-          new PopupMenuItem<String>(
+          PopupMenuItem<String>(
             value: 'Friends',
-            child: new MenuItemWithIcon(Icons.people, 'Friends', '5 new')
+            child: MenuItemWithIcon(Icons.people, 'Friends', '5 new')
           ),
-          new PopupMenuItem<String>(
+          PopupMenuItem<String>(
             value: 'Events',
-            child: new MenuItemWithIcon(Icons.event, 'Events', '12 upcoming')
+            child: MenuItemWithIcon(Icons.event, 'Events', '12 upcoming')
           ),
         ]
       );
