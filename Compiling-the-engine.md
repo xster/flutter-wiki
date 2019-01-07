@@ -126,6 +126,10 @@ You can only build selected binaries on Windows (mainly `gen_snapshot`).
 
 ## Running a Flutter app with a local engine
 
-Once the appropriate version of the engine is built, `flutter run --local-engine=XXXX` may be used to run an app with the local engine where `XXXX` should be replaced with the version you wish to use. For example, use `--local-engine=android_debug_unopt` to run a debug android engine or `--local-engine=ios_debug_sim_unopt` to run a debug iOS simulator engine.
+Once the appropriate version of the engine is built, run your Flutter app with:
+
+`flutter run --local-engine=XXXX`
+
+to run an app with the local engine where `XXXX` should be replaced with the version you wish to use. For example, use `--local-engine=android_debug_unopt` to run a debug android engine or `--local-engine=ios_debug_sim_unopt` to run a debug iOS simulator engine.
 
 It is important to always have a `host_XXXX` version of the engine built when using a local engine since Flutter uses the host build's version of Dart.
