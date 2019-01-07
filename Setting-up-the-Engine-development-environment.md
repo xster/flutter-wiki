@@ -109,6 +109,21 @@ Run the following steps to set up your environment:
     git remote rename origin upstream
     git remote add origin git@github.com:<your_name_here>/buildroot.git
     ```
+16. Additionally if you've modified dart sources in `flutter/engine`, you'll
+    need to add a `dependency_overrides` section to point to your modified
+    `package:sky_engine` and `package:sky_services` to the `pubspec.yaml`
+    for the flutter app you're using the custom engine with.  A typical
+    example would be:
+
+    ```	
+    dependency_overrides:	
+      sky_engine:	
+        path: /path/to/flutter/engine/out/host_debug/gen/dart-pkg/sky_engine	
+      sky_services:	
+        path: /path/to/flutter/engine/out/host_debug/gen/dart-pkg/sky_services	
+    ```	
+    Depending on the platform you choose below, you will need to replace `host_debug` with the appropriate 
+    directory.
 
 Next steps:
 
