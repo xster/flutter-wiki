@@ -2,6 +2,8 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
+## Changes after 1.0.0
+* [#23424] (https://github.com/flutter/flutter/pull/23424) by default, the drag gesture detector's onStart function will be called when a drag gesture is detected instead of on touch down. To use the old functionality with a given drag gesture recognizer, the dragStartBehavior variable should be set DragStartBehavior.down.
 ## Changes through and including 1.0.0
 * Skia and engine rolls to address the following:
   * [video_player image distortion problem after last flutter update 0.11.3](https://github.com/flutter/flutter/issues/24402)
