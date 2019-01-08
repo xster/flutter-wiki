@@ -27,6 +27,7 @@ Caring about the developer means creating a joyful and productive development ex
 
 We respect our users, whoever they are.
 
+***
 
 See also: 
 
