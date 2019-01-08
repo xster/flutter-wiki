@@ -26,3 +26,10 @@ Caring about the end user means having high quality support for accessibility, t
 Caring about the developer means creating a joyful and productive development experience with quick iteration cycles, creating usable, simple, reliable, predictable APIs, giving the developer full access to the underlying platform, and so forth.
 
 We respect our users, whoever they are.
+
+
+See also: 
+
+- [Code of Conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md)
+
+- [Contributor Guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
