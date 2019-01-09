@@ -6,7 +6,7 @@ The process of triaging bugs is to first go through these bug lists and make sur
 
 2. [the bugs with no labels at all](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Alabel+sort%3Aupdated-asc), then
 
-3. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A%22a%3A+tests%22+sort%3Aupdated-asc+).
+3. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A%22a%3A+tests%22+sort%3Aupdated-asc+).
 
 Finally, one should look at [the least recently updated bugs of any kind](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-asc) and see if they are still relevant, applying new labels, updating the subject line if necessary, providing an update if necessary, etc.
 
@@ -57,6 +57,7 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a bug with the underlying engine, add `engine` and optionally one of the bugs with the "e:" prefix. Consider one of the bugs with the "dependency" prefix if the bug is related to one of those areas.
 - If it's a bug with the Flutter framework, add `framework` and optionally one of the bugs with the "f:" prefix.
 - If it's a bug with plugins, add `plugin` and optionally one of the labels with the "p:" prefix.
+- If it's a bug with packages, add `package` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
 
 Bugs relating to the website should be moved to the `flutter/website` repo.
@@ -103,7 +104,7 @@ We regularly check that the following PRs are not being neglected, and have appr
 
 * [The flutter/flutter PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3Atool+sort%3Aupdated-asc)
 
-* [PRs in our esoteric repos](https://github.com/pulls?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+archived%3Afalse+user%3Aflutter+sort%3Aupdated-asc+-repo%3Aflutter%2Fflutter+-repo%3Aflutter%2Fengine+-repo%3Aflutter%2Fplugins+-repo%3Aflutter%2Fwebsite+-repo%3Aflutter%2Fflutter-intellij)
+* [PRs in our esoteric repos](https://github.com/pulls?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+archived%3Afalse+user%3Aflutter+sort%3Aupdated-asc+-repo%3Aflutter%2Fflutter+-repo%3Aflutter%2Fengine+-repo%3Aflutter%2Fplugin-repo%3Aflutter%2Fpackage+-repo%3Aflutter%2Fwebsite+-repo%3Aflutter%2Fflutter-intellij)
 
 * [All open PRs](https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3Aflutter+sort%3Aupdated-asc)
 
@@ -186,17 +187,30 @@ If you come across a bug that is unrelated to the framework, remove the `framewo
 
 If you come across a bug that is unrelated to the tool, remove the `tool` label and leave a comment explaining why. That will send it back to triage.
 
-## Plugins and Ecosystem
+## Plugins, Packages, and Ecosystem
+
+### Plugins
 
 * [Plugins PRs](https://github.com/flutter/plugins/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-asc)
-* [Packages PRs](https://github.com/flutter/packages/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugins+sort%3Aupdated-asc+label%3A%22TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugins+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugins+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
-* [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugins+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
-* [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugins+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
-* [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugins+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22)
-* [Popular feature requests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugins+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22)
-* [Old issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugins+sort%3Aupdated-asc)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22TODAY%22)
+* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
+* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
+* [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
+* [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22)
+* [Popular feature requests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22)
+* [Old issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc)
 
-If you come across a bug that is unrelated to our plugins or packages, remove the `plugins` label and leave a comment explaining why. That will send it back to triage.
+### Packages
+
+* [Packages PRs](https://github.com/flutter/packages/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-asc)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22TODAY%22)
+* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
+* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
+* [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
+* [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22)
+* [Popular feature requests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22)
+* [Old issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc)
+
+If you come across a bug that is unrelated to our plugins or packages, remove the `plugin` or `package` label and leave a comment explaining why. That will send it back to triage.
