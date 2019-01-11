@@ -238,6 +238,20 @@ feedback from the relevant people, e.g. send it to `flutter-dev` or post it on
 Gitter.
 
 
+Policies
+--------
+
+This section defines some policies that we have decided to honor. In the absence of a very specific policy in this section, the general philosophies in the section above are controlling.
+
+### Plugin compatibility
+
+We guarantee that a plugin published with a version equal to or greater than 1.0.0 will require no more recent a version of Flutter than the latest stable release at the time that the plugin was released. (Plugins may support older versions too, but that is not guaranteed.)
+
+### Workarounds
+
+We are willing to implement temporary (one week or less) workarounds (e.g. `//ignore` hacks) if it helps a high profile developer or prolific contributor with a painful transition. Please contact @Hixie (ian@hixie.ch) if you need to make use of this option.
+
+
 Documentation (dartdocs, javadocs, etc)
 ---------------------------------------
 
