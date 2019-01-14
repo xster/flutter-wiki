@@ -7,6 +7,18 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#23424](https://github.com/flutter/flutter/pull/23424) By default, a drag gesture detector's onStart callback will be called with the location of where a drag gesture is detected (ie. after dragging a certain number of pixels) instead of at the touch down location. To use the old functionality with a given drag gesture recognizer, the dragStartBehavior variable of the recognizer should be set DragStartBehavior.down.
 * [#26238](https://github.com/flutter/flutter/pull/26238) removed the long-deprecated `TwoLevelList` widget. Use `ListView` with `ExpansionTile` instead.
 
+### v1.1.5
+
+* [#25593](https://github.com/flutter/flutter/pull/25593) Let CupertinoTabScaffold also automatically handle keyboard insets with or without CupertinoPageScaffold.
+* [#24457](https://github.com/flutter/flutter/pull/24457) Implements double-tap to select word in TextField and CupertinoTextField.
+
+### v1.1.3
+
+* [#23759](https://github.com/flutter/flutter/pull/23759) Adds CupertinoTheme, support for Cupertino adaptation of Material Theme and limited support for Cupertino dark theme.
+
+### v1.1.1
+
+* [##25183](https://github.com/flutter/flutter/pull/25183) Add `navigatorKey` API to CupertinoTabView.
 
 ## Changes through and including 1.0.0
 
@@ -34,13 +46,14 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#23583](https://github.com/flutter/flutter/pull/23583) Improved localization algorithm with scriptCodes and full preferred locales list support, breaking changes to callbacks when locales are changed (pass list instead of single locale).
 
 ### v0.11.0
-* [#23320](https://github.com/flutter/flutter/pull/23320) adds back swipe gesture support for Cupertino navigation bars' cross-page transitions.
+* [#23320](https://github.com/flutter/flutter/pull/23320) Adds back swipe gesture support for Cupertino navigation bars' cross-page transitions.
+* [#23320](https://github.com/flutter/flutter/pull/23322) Adds support for Hero transitions across multiple Navigators.
 
 ## Changes in v0.10.2 (since v0.9.4) - beta 10
 
 ### v0.10.2
-* [#23194](https://github.com/flutter/flutter/pull/23194) adds CupertinoTextField, an iOS styled text entry field.
-* [#23221](https://github.com/flutter/flutter/pull/23221) adds RTL support for Cupertino navigation bars' cross-page transitions.
+* [#23194](https://github.com/flutter/flutter/pull/23194) Adds CupertinoTextField, an iOS styled text entry field.
+* [#23221](https://github.com/flutter/flutter/pull/23221) Adds RTL support for Cupertino navigation bars' cross-page transitions.
 
 ### v0.10.1
 * [#22977](https://github.com/flutter/flutter/pull/22977) replaces most of `Null` by `void`. See [the mail proposing this change](https://groups.google.com/forum/#!topic/flutter-dev/b7TKGqERNTM).
