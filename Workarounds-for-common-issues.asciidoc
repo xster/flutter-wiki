@@ -75,11 +75,12 @@ Newer Flutter versions might generate these files a bit differently and projects
 [CAUTION]
 ==== 
 Custom changes will be lost and need to be re-applied.
-This is easist if the project is committed to a version control system like Git.  
+This is easiest if the project is committed to a version control system like Git.  
 ====
 
 
 ==== Related information
+- https://github.com/flutter/flutter/issues/14974
 - https://github.com/flutter/flutter/issues/12573
 - https://github.com/flutter/flutter/issues/12983
 - https://github.com/flutter/flutter/issues/9827
