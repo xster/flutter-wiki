@@ -216,19 +216,22 @@ following to integrate with your `my_flutter` app:
 
 1. Add the following lines to your `Podfile`:
 ```ruby
-  flutter_application_path = 'path/to/flutter_app/'
+  flutter_application_path = 'path/to/my_flutter/'
   eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
 ```
-1. Run `pod install`.
+2. Run `pod install`.
 
 Whenever you change the Flutter plugin dependencies in `some/path/my_flutter/pubspec.yaml`,
 you need to run `flutter packages get` from `some/path/my_flutter` to refresh the list
 of plugins read by the `podhelper.rb` script. Then run `pod install` again from
 `some/path/MyApp`.
 
-
 The `podhelper.rb` script will ensure that your plugins and the Flutter.framework
 get added to your project, and also ensure that bitcode is disabled for all targets.
+
+3. Disable Bitcode for your target
+
+As Flutter doesn't support bitcode now. You need to disable `ENABLE_BITCODE` flag located in your target's `Build Settings->Build Options->Enable Bitcode` part.
 
 #### Add a build phase for building the Dart code
 Select the top-level `MyApp` project in the Project navigator.
@@ -266,7 +269,7 @@ The proper place to do this will be specific to your host app. Here is an
 example that makes sense for the blank screen of the host app generated
 by Xcode 10.0.
 
-First declare your app delegate to be a subclass of `FlutterAppDelegate`.
+First declare your app delegate to be a subclass of `FlutterAppDelegate`. Then define a FlutterEngine property, which help you to register a plugin without a FlutterViewController instance.
 
 In `AppDelegate.h`:
 ```objective-c
@@ -274,6 +277,7 @@ In `AppDelegate.h`:
 #import <Flutter/Flutter.h>
 
 @interface AppDelegate : FlutterAppDelegate
+@property (nonatomic,strong) FlutterEngine *flutterEngine;
 @end
 ```
 
@@ -289,7 +293,9 @@ needs to override other methods here:
 // This override can be omitted if you do not have any Flutter Plugins.
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [GeneratedPluginRegistrant registerWithRegistry:self];
+  self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
+  [self.flutterEngine runWithEntrypoint:nil];
+  [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -304,10 +310,12 @@ import FlutterPluginRegistrant // Only if you have Flutter Plugins.
 
 @UIApplicationMain
 class AppDelegate: FlutterAppDelegate {
-
+  var flutterEngine : FlutterEngine?;
   // Only if you have Flutter plugins.
-  override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    GeneratedPluginRegistrant.register(with: self);
+  override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    self.flutterEngine = FlutterEngine(name: "io.flutter", project: nil);
+    self.flutterEngine?.run(withEntrypoint: nil);
+    GeneratedPluginRegistrant.register(with: self.flutterEngine);
     return super.application(application, didFinishLaunchingWithOptions: launchOptions);
   }
 
@@ -325,6 +333,7 @@ Make your app delegate implement the `FlutterAppLifeCycleProvider` protocol, e.g
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, FlutterAppLifeCycleProvider>
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic,strong) FlutterEngine *flutterEngine;
 @end
 ```
 
@@ -344,7 +353,9 @@ The implementation should mostly just delegate to a `FlutterPluginAppLifeCycleDe
 
 - (BOOL)application:(UIApplication*)application
 didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-    [GeneratedPluginRegistrant registerWithRegistry:self]; // Only if you are using Flutter plugins.
+    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
+    [self.flutterEngine runWithEntrypoint:nil];
+    [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine]; // Only if you are using Flutter plugins.
     return [_lifeCycleDelegate application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -458,6 +469,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 `ViewController.m`:
 ```objective-c
 #import <Flutter/Flutter.h>
+#import "AppDelegate.h"
 #import "ViewController.h"
 
 @implementation ViewController
@@ -474,7 +486,8 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 }
 
 - (void)handleButtonAction {
-    FlutterViewController* flutterViewController = [[FlutterViewController alloc] init];
+    FlutterEngine *flutterEngine = [(AppDelegate *)[[UIApplication sharedApplication] delegate] flutterEngine];
+    FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
     [self presentViewController:flutterViewController animated:false completion:nil];
 }
 @end
@@ -499,7 +512,8 @@ class ViewController: UIViewController {
   }
 
   @objc func handleButtonAction() {
-    let flutterViewController = FlutterViewController()
+    let flutterEngine = (UIApplication.shared.delegate as? AppDelegate)?.flutterEngine;
+    let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)!;
     self.present(flutterViewController, animated: false, completion: nil)
   }
 }
