@@ -429,6 +429,7 @@ Prefer the term "call" to the term "invoke" when talking about jumping to a clos
 
 Typedef dartdocs should usually start with the phrase "Signature for...".
 
+
 ### Provide sample code
 
 Sample code helps developers learn your API quickly. Writing sample code also helps you think through how your API is going to be used by app developers.
@@ -496,6 +497,44 @@ and we will know to examine them more carefully.
 Feel free to be conservative in what you consider "sufficient quality". It's ok to use `//` even if
 you have multiple paragraphs of documentation; that's a sign that we should carefully rereview the
 documentation when making the code public.
+
+
+### Use correct grammar
+
+Avoid starting a sentence with a lowercase letter.
+
+```dart
+// BAD
+
+/// [foo] must not be null.
+
+// GOOD
+
+/// The [foo] argument must not be null.
+```
+
+
+### Dartdoc-specific requirements
+
+The first paragraph of any dartdoc section must be a short self-contained sentence that explains the purpose
+and meaning of the item being documented. Subsequent paragraphs then must elaborate. Avoid having the first paragraph have multiple sentences. (This is because the first paragraph gets extracted and used in tables of
+contents, etc, and so has to be able to stand alone and not take up a lot of room.)
+
+When referencing an argument, use square brackets if the argument corresponds to a property as well, otherwise
+use backticks.
+
+```dart
+// GOOD
+
+  /// Creates a foobar, which allows a baz to quux the bar.
+  ///
+  /// The [bar] argument must not be null.
+  ///
+  /// The `baz` argument must be greater than zero.
+  Foo({ this.bar, int baz }) : assert(bar != null), assert(baz > 0);
+```
+
+Avoid using terms like "above" or "below" to reference one dartdoc section from another. Dartdoc sections are often shown alone on a Web page, the full context of the class is not present.
 
 
 Coding patterns and catching bugs early
