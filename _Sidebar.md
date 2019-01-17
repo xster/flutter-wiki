@@ -8,6 +8,7 @@ Flutter Wiki
 - [[Roadmap]]
 - [API Reference (stable)](https://docs.flutter.io)
 - [API Reference (master)](https://master-docs.flutter.io)
+- [[Glossary]]
 - [Contributor Guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
 - [Code of Conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md)
 
