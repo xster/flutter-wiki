@@ -6,6 +6,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * [#23424](https://github.com/flutter/flutter/pull/23424) By default, a drag gesture detector's onStart callback will be called with the location of where a drag gesture is detected (ie. after dragging a certain number of pixels) instead of at the touch down location. To use the old functionality with a given drag gesture recognizer, the dragStartBehavior variable of the recognizer should be set DragStartBehavior.down.
 * [#26238](https://github.com/flutter/flutter/pull/26238) removed the long-deprecated `TwoLevelList` widget. Use `ListView` with `ExpansionTile` instead.
+* [#7442](https://github.com/flutter/engine/pull/7442) `Picture.toImage` now returns a `Future<Image>`
 
 ### v1.1.5
 
