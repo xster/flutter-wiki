@@ -17,3 +17,7 @@ If you open your iOS .xcodeproject or .xcworkspace in Xcode, you can set breakpo
 ## Debugging Android builds with gdb
 
 See https://github.com/flutter/engine/blob/master/sky/tools/flutter_gdb#L13
+
+## Logging in the engine
+
+Flutter tool will by default parse out any non-error output from the engine. Error logs will be displayed. Logging is handled though the FML library's `logging.h`
