@@ -5,6 +5,7 @@ Flutter Wiki
 
 - [[Home]] of the Wiki
 - [flutter.io](https://flutter.io/)
+- [Roadmap]
 - [API Reference (stable)](https://docs.flutter.io)
 - [API Reference (master)](https://master-docs.flutter.io)
 - [Contributor Guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
