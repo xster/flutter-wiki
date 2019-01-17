@@ -13,6 +13,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#25593](https://github.com/flutter/flutter/pull/25593) Let CupertinoTabScaffold also automatically handle keyboard insets with or without CupertinoPageScaffold.
 * [#24457](https://github.com/flutter/flutter/pull/24457) Implements double-tap to select word in TextField and CupertinoTextField.
 
+### v1.1.4
+
+* [#25585](https://github.com/flutter/flutter/pull/25585) Add fontFamilyFallback to TextStyle to specify custom font fallback order.
+
 ### v1.1.3
 
 * [#23759](https://github.com/flutter/flutter/pull/23759) Adds CupertinoTheme, support for Cupertino adaptation of Material Theme and limited support for Cupertino dark theme.
