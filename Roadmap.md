@@ -8,7 +8,7 @@ We’ve established some broad themes that we want to focus on over the coming y
 - Dynamic updates
 - Tooling
 
-Our plans will of course evolve over time based on customer feedback and new market opportunities. The list here shouldn't be viewed either as exhaustive, nor a promise that we will complete all this work. If you have feedback about what you think we should be working on, we encourage you to get in touch (e.g. by filing an issue or emailing the flutter-dev mailing list). And as Flutter is an open source project, we invite contributions both towards the themes presented below and in other areas.
+Our plans will of course evolve over time based on customer feedback and new market opportunities. The list here shouldn't be viewed either as exhaustive, nor a promise that we will complete all this work. If you have feedback about what you think we should be working on, we encourage you to get in touch (e.g. by [filing an issue](https://github.com/flutter/flutter/issues/new/choose) or [emailing the flutter-dev mailing list](https://groups.google.com/forum/#!forum/flutter-dev)). And as Flutter is an open source project, we invite contributions both towards the themes presented below and in other areas.
 ## Release Channels and Cadence
 Flutter developers can select a “channel” from which to receive updates. We have four channels: master, dev, beta and stable, with increasing levels of stability and confidence of quality but longer lead time for changes to propagate. 
 
