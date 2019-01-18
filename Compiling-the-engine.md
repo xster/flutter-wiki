@@ -35,6 +35,10 @@ See [[The flutter tool]] for instructions on how to use the `flutter` tool with 
 You will typically use the `android_debug_unopt` build to debug the engine on a device, and
 `android_debug_unopt_x64` to debug in on a simulator.
 
+Note that if you use particular android or ios engine build, you will need to have corresponding 
+host build available next to it: if you use `android_debug_unopt`, you should have built `host_debug_unopt`,
+`android_profile` -> `host_profile`, etc. One caveat concerns cpu-flavored builds like `android_debug_unopt_x86`: you won't be able to build `host_debug_unopt_x86` as that configuration is not supported. What you are expected to do is to build `host_debug_unopt` and symlink `host_debug_unopt_x86` to it.
+
 ### Compiling everything that matters on Linux
 
 The following script will update all the builds that matter if you're developing on Linux and testing on Android and created the `.gclient` file in `~/dev/engine`:
