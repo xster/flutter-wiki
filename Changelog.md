@@ -16,10 +16,12 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ### v1.1.4
 
 * [#25585](https://github.com/flutter/flutter/pull/25585) Add fontFamilyFallback to TextStyle to specify custom font fallback order.
+* [#24554](https://github.com/flutter/flutter/pull/24554) Adds Force Press gesture detector and recognizer.
 
 ### v1.1.3
 
 * [#23759](https://github.com/flutter/flutter/pull/23759) Adds CupertinoTheme, support for Cupertino adaptation of Material Theme and limited support for Cupertino dark theme.
+* [#25384](https://github.com/flutter/flutter/pull/25384) Adds support for the text editing floating cursor. On iOS devices, the cursor can be moved by force pressing or long pressing the spacebar on the keyboard.
 
 ### v1.1.1
 
