@@ -16,7 +16,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ### v1.1.4
 
 * [#25585](https://github.com/flutter/flutter/pull/25585) Add fontFamilyFallback to TextStyle to specify custom font fallback order.
-* [#24554](https://github.com/flutter/flutter/pull/24554) Adds Force Press gesture detector and recognizer.
+* [#24554](https://github.com/flutter/flutter/pull/24554) Adds Force Press gesture detector and recognizer for iOS devices with screen pressure sensors.
 
 ### v1.1.3
 
