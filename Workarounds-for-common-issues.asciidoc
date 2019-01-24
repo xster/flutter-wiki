@@ -53,7 +53,7 @@ The `git stash drop` command drops customizations you might have made to the Flu
 
 ==== Related information
 - https://github.com/flutter/flutter/issues/25220
-
+- https://github.com/flutter/flutter/issues/1963
 
 == Flutter project files  
 
