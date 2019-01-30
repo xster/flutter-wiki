@@ -104,7 +104,7 @@ These steps build the engine used by `flutter test` on a host workstation.
 2. `gclient sync` to update your dependencies.
 
 3. `./flutter/tools/gn --unoptimized` to prepare your build files.
-   * `--unoptimized` disables C++ compiler optimizations and does not strip debug symbols.
+   * `--unoptimized` disables C++ compiler optimizations. On macOS, binaries are emitted unstripped; on Linux, unstripped binaries are emitted to an `exe.unstripped` subdirectory of the build.
 
 4. `ninja -C out/host_debug_unopt` to build a desktop unoptimized binary.
     * If you skipped `--upoptimized`, use `ninja -C out/host_debug` instead.
