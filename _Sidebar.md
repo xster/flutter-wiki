@@ -45,8 +45,9 @@ Flutter Wiki
 - [[Flutter's modes]]
 - [[Engine disk footprint]]
 - [[Custom Flutter engine embedders]]
-- [[Engine-specific Service Protocol extensions]]
+- [[Custom Flutter Engine Embedding in AOT Mode]]
 - [[Flutter engine operation in AOT Mode]]
+- [[Engine-specific Service Protocol extensions]]
 - [[Crashes]]
 - [[Supporting legacy platforms]]
 
