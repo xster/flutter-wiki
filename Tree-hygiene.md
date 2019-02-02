@@ -129,6 +129,12 @@ before you're ready to check code in. Also, don't hesitate to ask for
 multiple people to review your code, and don't hesitate to provide unsolicited
 comments on other people's PRs. The more reviews the better.
 
+A reviewer may in some circumstances consider the code satisfactory
+without having fully reviewed or understood it. If a reviewer has not
+fully reviewed the code, they admit to this by saying "RSLGTM" rather
+than just "LGTM". If you feel your code needs a real review, please
+find someone to actually review it. ("RSLGTM" means "Rubber Stamp
+Looks Good To Me".)
 
 ## How to review code
 
@@ -144,18 +150,21 @@ As a reviewer, you are the last line of defense. Take a step back. What problem
 is the PR trying to solve? Is it a real problem? What other solutions could we
 consider? What could we do to make this even better?
 
+Once you are satisfied with the contribution, and _only_ once you are satisfied,
+write a comment that includes the phrase LGTM (or use the GitHub "Approval" mechanism).
+If you feel like you are being worn down, hand the review to someone else. Consider
+our [conflict reslotuion](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md#conflict-resolution)
+policy if you feel like you are being forced to agree to something you don't like.
+
 Reviewers should not give an LGTM unless the patch has tests that verify
 all the affected code, or unless a test would make no sense. If you
 review a patch, you are sharing the responsibility for the patch with
 its author. You should only give an LGTM if you would feel confident
 answering questions about the code.
 
-A reviewer may in some circumstances consider the code satisfactory
-without having fully reviewed or understood it. If a reviewer has not
-fully reviewed the code, they admit to this by saying "RSLGTM" rather
-than just "LGTM". If you feel your code needs a real review, please
-find someone to actually review it. ("RSLGTM" means "Rubber Stamp
-Looks Good To Me".) If you mark a patch as RSLGTM, you are still
+If you are 100% sure the patch is good and has no issues but you haven't
+really fully reviewed or understood it, you can give it a rubber-stamp
+review by marking it RSLGTM. If you mark a patch as RSLGTM, you are still
 sharing the responsibility for the patch with its author. Reviewing a
 patch as RSLGTM should be a rare event.
 
