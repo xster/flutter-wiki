@@ -10,6 +10,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#7442](https://github.com/flutter/engine/pull/7442) `Picture.toImage` now returns a `Future<Image>`
 * [#7497](https://github.com/flutter/engine/pull/7497) Embedder API: `main_path` and `packages_path` in `FlutterProjectArgs` have been renamed to indicate that they should no longer be provided.
 * [#7567](https://github.com/flutter/engine/pull/7567) Embedder API: The `FlutterResult` type has been renamed to `FlutterEngineResult`.
+* [#26332](https://github.com/flutter/flutter/pull/26332) Strut: fine tuned control over text minimum line heights, allows forcing the line height to be a specified height.
+* [#7414](https://github.com/flutter/engine/pull/7414) dart:ui: Rename dart:ui ParagraphStyle.lineHeight to ParagraphStyle.height. This property previously did not do anything and was renamed to stay consistent with TextStyle.height.
 
 ### v1.1.5
 
