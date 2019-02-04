@@ -792,6 +792,30 @@ Example:
 //                 hex yet. See http://link/to/a/bug/123
 ```
 
+### Comment all `// ignores`
+
+Sometimes, it is necessary to write code that the analyzer is unhappy with.
+
+If you find yourself in this situation, consider how you got there. Is the analyzer actually correct but you
+don't want to admit it? Think about how you could refactor your code so that the analyzer is happy. If such a
+refactor would make the code better, do it. (It might be a lot of work... embrace the yak shave.)
+
+If you are really really sure that you have no choice but to silence the analyzer, use `// ignore: `. The ignore
+directive should be on the same line as the analyzer warning.
+
+If the ignore is temporary (e.g. a workaround for a bug in the compiler or analyzer, or a workaround for some known problem in Flutter that you cannot fix), then add a link to the relevant bug, as follows:
+
+```
+  foo(); // ignore: lint_code, https://link.to.bug/goes/here
+```
+
+If the ignore directive is permanent, e.g. because one of our lints has some unavoidable false positives and in this case violating the lint is definitely better than all other options, then add a comment explaining why:
+
+```
+  foo(); // ignore: lint_code, sadly there is no choice but to do
+  // this because we need to twiddle the quux and the bar is zorgle.
+```
+
 Formatting
 ----------
 
