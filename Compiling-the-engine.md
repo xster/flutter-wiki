@@ -63,7 +63,7 @@ flutter/tools/gn --android --runtime-mode=release
 cd out
 find . -mindepth 1 -maxdepth 1 -type d | xargs -n 1 sh -c 'ninja -C $0 || exit 255'
 ```
-
+For `--runtime-mode=profile` build, please also consider adding `--no-lto` option to the `gn` command. It will make linking much faster with a small sacrifice on the binary size and memory usage (which probably doesn't matter for debugging or performance benchmark purposes.)
 
 ## Compiling for iOS (from macOS)
 
