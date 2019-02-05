@@ -1,5 +1,7 @@
 _(This page is referenced by comments in the Flutter codebase.)_
 
+## Tutorial
+
 Write your test as a normal test, using `testWidgets` and `await tester.pumpWidget` and so on.
 
 Put a `RepaintBoundary` widget around the part of the subtree that you want to verify. If you don't, the output will be a 2400x1800 image, since the tests by default use an 800x600 viewport with a device pixel ratio of 3.0.
@@ -31,3 +33,19 @@ This updates the goldens repo but does not make the images actually available ye
 Now run `flutter test` again, without the `--update-goldens` flag, to verify that the goldens match the uploaded images.
 
 If they do, you are ready to submit your PR for review. The reviewer should also verify your golden files, so make sure to point to your goldens repo commit in your PR description. If you find the golden tests fail on some platforms, see the notes above about adding a skip line.
+
+## Updating a golden file
+
+If renderings change, then rather than replacing the golden file in-situ, create new files with new names, and update the tests to point to those. Then, add the old file names [to the README file](https://github.com/flutter/goldens/edit/master/README.md).
+
+This allows multiple people to contribute simultaneously without conflicting with each other.
+
+Once your main PR has landed, please come back and delete the obsolete files listed in the README.
+
+## Summary of rules for the golden repo
+
+* Commit messages with updates to the golden files must be of the form `Goldens for https://github.com/flutter/flutter/issues/123456`
+
+* Don't update files, create new ones.
+
+* Delete obsolete files once your PR has landed.
