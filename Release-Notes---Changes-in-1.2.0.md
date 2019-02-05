@@ -2,7 +2,7 @@ The following issues were addressed between 1.0.0 and 1.2.0:
 
 | Label | Number of Issues & Issue Links |
 | --- | --- |
-| framework | 87 issues with this issue| 
+| framework | 87 issues with this label| 
 |   | [(flutter/flutter#25788) Add Robert Penner’s easing functions](https://github.com/flutter/flutter/pull/25788) |
 |   | [(flutter/flutter#25984) use RRect to draw avatar check on chip](https://github.com/flutter/flutter/pull/25984) |
 |   | [(flutter/flutter#23424) Teach drag start behaviors to DragGestureRecognizer](https://github.com/flutter/flutter/pull/23424) |
