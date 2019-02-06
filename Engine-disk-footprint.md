@@ -27,3 +27,7 @@ In [devicelab](https://github.com/flutter/flutter/tree/master/dev/devicelab) we 
 * Size of VM & isolate snapshots (data and instructions)
   * Compressed in APK: `hello_world_android__compile/snapshot_compressed_bytes`
   * Uncompressed: `hello_world_android__compile/snapshot_uncompressed_bytes`
+
+## Comparing AOT Snapshot Sizes
+
+A detailed comparison of AOT snapshot sizes can be performed using the [instructions documented here](https://github.com/flutter/flutter/wiki/Comparing-AOT-Snapshot-Sizes).
