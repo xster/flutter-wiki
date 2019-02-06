@@ -44,6 +44,7 @@ Flutter Wiki
 - [[The Engine architecture]]
 - [[Flutter's modes]]
 - [[Engine disk footprint]]
+- [[Comparing AOT Snapshot Sizes]]
 - [[Custom Flutter engine embedders]]
 - [[Custom Flutter Engine Embedding in AOT Mode]]
 - [[Flutter engine operation in AOT Mode]]
