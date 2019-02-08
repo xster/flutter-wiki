@@ -242,9 +242,9 @@ to the original PR and to the revert PR so that people can follow the breadcrumb
 
 ## Handling breaking changes
 
-In general, we want to avoid making changes to Flutter and its dependencies
-that force developers using Flutter to change their code in order to upgrade
-to new versions of flutter.
+In general, we want to avoid making changes to Flutter, its dependencies,
+our plugins, or our packages, that force developers using Flutter to
+change their code in order to upgrade to new versions of flutter.
 
 Sometimes, however, doing this is necessary for the greater good. In those cases,
 to make a change that will require developers to change their code:
