@@ -249,7 +249,8 @@ change their code in order to upgrade to new versions of flutter.
 Sometimes, however, doing this is necessary for the greater good. In those cases,
 to make a change that will require developers to change their code:
 
- 1. Put the `severe: API break` label on the relevant issue.
+ 1. Put the `severe: API break` label on the relevant issue. You must have
+    an issue, see the overview section above!
 
  2. Send an e-mail to <mailto:flutter-announce@googlegroups.com> to socialize
     your proposed change. The purpose of this e-mail is to see if you can
@@ -266,7 +267,8 @@ to make a change that will require developers to change their code:
     - A brief justification for the change.
 
     - A link to the relevant issue, and any PRs you may have already posted relating to
-      this change.
+      this change. The issue you link to should be the one on which you put the
+      `severe: API break` label as discussed above.
 
     - Clear mechanical steps for porting the code from the old form to the new
       form, if possible. If not possible, clear steps for figuring out how to
@@ -279,7 +281,7 @@ to make a change that will require developers to change their code:
       perhaps by discussing the change in the issue tracker on the pull request.
 
     You may not have permission to post to this list yet. If you do not, please contact
-    [Ian](ian@hixie.ch) or [Ray](rischpater@google.com).
+    [Ray](rischpater@google.com).
 
  3. **If folks agree that the benefits of changing the API outweigh the stablity
     costs**, you can proceed with the normal code review process for making
@@ -289,12 +291,15 @@ to make a change that will require developers to change their code:
 
  4. If you landed a breaking change, add a bullet point to the top section of
     the [Changelog page on the wiki](https://github.com/flutter/flutter/wiki/Changelog),
-    describing your change and
-    linking to your e-mail in [the mailing list archives](https://groups.google.com/forum/#!forum/flutter-dev).
+    describing your change either and
+    linking to your e-mail in [the mailing list archives](https://groups.google.com/forum/#!forum/flutter-dev)
+    or including the same information, in particular what the change is, why we made
+    the change, and how to migrate code affected by the change.
+
     To figure out the correct version heading for the changelog run
     `git fetch upstream && flutter --version`. For example, if it says
-    "Flutter 0.0.23-pre.10" in the output your changelog entry should be under
-    heading "Changes since 0.0.22".
+    "Flutter 1.2.23-pre.10" in the output your changelog entry should be under
+    heading "Changes since 1.2.22".
 
 Where possible, even "breaking" changes should be made in a backwards-compatible way,
 for example by introducing a new class and marking the old class `@deprecated`. When
