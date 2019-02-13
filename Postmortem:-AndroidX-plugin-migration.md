@@ -7,20 +7,22 @@ Owners: @mklim, @amirh, @dnfield, @hixie
 ## Summary
 
 Description: The flutter/plugins repo was updated with a breaking change to
-resolve flutter/flutter#23995. The change migrated and deprecated Android
-dependencies in the plugins' `build.gradle` files and required any apps using
-the plugins to also have Gradle files that were either migrated or compatible
-with the AndroidX. Gradle errors in hard-to-debug ways on Flutter apps broken by
-the change, without surfacing a clear explanation or migration path to affected
-users. In addition this was a known breaking change but originally incorrectly
-incremented the minor semantic version number in 6/32 of the affected packages.
+resolve
+[flutter/flutter#23995](https://github.com/flutter/flutter/issues/23995). The
+change migrated and deprecated Android dependencies in the plugins'
+`build.gradle` files and required any apps using the plugins to also have Gradle
+files that were either migrated or compatible with the AndroidX. Gradle errors
+in hard-to-debug ways on Flutter apps broken by the change, without surfacing a
+clear explanation or migration path to affected users. In addition this was a
+known breaking change but originally incorrectly incremented the minor semantic
+version number in 6/32 of the affected packages.
 
 Component: `flutter/plugins`
 
 Date/time: 2019-01-24 13:24 -0800
 
-Duration: 4 days for the semantic versioning problem. Gradle confusion is still
-ongoing.
+Duration: 4 days for the semantic versioning problem. 2 weeks for the confusing
+Gradle error.
 
 User impact: Users pinned to the major version of firebase_analytics,
 firebase_database, firebase_messaging, firebase_storage, google_sign_in, and
@@ -33,17 +35,21 @@ major version are affected by the confusing Gradle error.
 ### 2019-01-24
 
 * 13:24 - First breaking change with incorrect versioning merged,
-  flutter/plugins#1103.
-* 14:20 - flutter/plugins#1103 uploaded to pub. **&lt;START OF OUTAGE&gt;**
+  [flutter/plugins#1103](https://github.com/flutter/plugins/pull/1103).
+* 14:20 - [flutter/plugins#1103](https://github.com/flutter/plugins/pull/1103)
+  uploaded to pub. **&lt;START OF OUTAGE&gt;**
 
 ### 2019-01-25
 
-* 09:44 - flutter/plugins#1115, the final commit with breaking changes and
-  incorrect semver, is merged to master.
+* 09:44 - [flutter/plugins#1115](https://github.com/flutter/plugins/pull/1115),
+  the final commit with breaking changes and incorrect semver, is merged to
+  master.
 * 10:55 - Final batch of incorrectly versioned plugins is published to pub.
-* 13:53 - @hixie files flutter/flutter#27106 for the obscure Gradle error
-  following a fresh run of `flutter create` on the `stable` channel. Links the
-  error to the AndroidX migration and tags @mklim, @amirh, and @dnfield.
+* 13:53 - @hixie files
+  [flutter/flutter#27106](https://github.com/flutter/flutter/issues/27106) for
+  the obscure Gradle error following a fresh run of `flutter create` on the
+  `stable` channel. Links the error to the AndroidX migration and tags @mklim,
+  @amirh, and @dnfield.
 * 14:03 - @mklim confirms the root cause of the error as an incompatibility
   between the app and plugin's Gradle files. *(The semantic versioning issue is
   not known at this point.)*
@@ -56,17 +62,19 @@ major version are affected by the confusing Gradle error.
 ### 2019-01-26
 
 * 00:30 - Email back and forth begins with pub maintainers.
-* 08:07 - flutter/flutter#27128 filed about upgrading a >= 1.0.0 plugin's minor
-  version number.
-* 12:33 - @mklim briefly explains the problem in flutter/flutter#27128 and
+* 08:07 -
+  [flutter/flutter#27128](https://github.com/flutter/flutter/issues/27128) filed
+  about upgrading a >= 1.0.0 plugin's minor version number.
+* 12:33 - @mklim briefly explains the problem in
+  [flutter/flutter#27128](https://github.com/flutter/flutter/issues/27128) and
   recommends to downgrade plugin versions since a revert for `flutter stable` is
   incoming. However his comment doesn't have details on all of the plugins to
   downgrade and what versions to downgrade them to. User discussion continues on
   this bug over the next 48 hours.
-* 14:00 - Discussion with pub maintainers concludes. The affected
-  packages can't be replaced because pub has safeguards against removing a
-  "stable" package version. Decided to replace the packages with a patch+1
-  revert, and then a patch+2 migration with the minimum Flutter SDK constraint.
+* 14:00 - Discussion with pub maintainers concludes. The affected packages can't
+  be replaced because pub has safeguards against removing a "stable" package
+  version. Decided to replace the packages with a patch+1 revert, and then a
+  patch+2 migration with the minimum Flutter SDK constraint.
 
 ### 2019-01-28
 
@@ -80,30 +88,63 @@ major version are affected by the confusing Gradle error.
   edited. Decide that the semver problem should be fixed by patching the 6
   affected plugins with a revert and then incrementing them with a major bump
   and the migration.
-* 11:45 - @mklim updates flutter/flutter#27128 with a detailed description of
-  the bug, root cause, way to fix via migration or downgrade, and plan to fix
-  the semantic versioning for the affected plugins.
-* 14:28 - flutter/plugins#1127 (the patch revert) is merged to master.
-* 15:05 - flutter/plugins#1128 (the correct forward roll) is merged to master.
+* 11:45 - @mklim updates
+  [flutter/flutter#27128](https://github.com/flutter/flutter/issues/27128) with
+  a detailed description of the bug, root cause, way to fix via migration or
+  downgrade, and plan to fix the semantic versioning for the affected plugins.
+* 14:28 - [flutter/plugins#1127](https://github.com/flutter/plugins/pull/1127)
+  (the patch revert) is merged to master.
+* 15:05 - [flutter/plugins#1128](https://github.com/flutter/plugins/pull/1128)
+  (the correct forward roll) is merged to master.
 * 15:08 - @dnfield alerts users following the AndroidX migration
-  (flutter/flutter#23995) of the semantic version issues and that there's going
-  to be a major version bump.
+  ([flutter/flutter#23995](https://github.com/flutter/flutter/issues/23995)) of
+  the semantic version issues and that there's going to be a major version bump.
 * 15:46 - The last affected package is updated on pub with both the patch revert
- and the forward roll with correct semver bump. **&lt;END OF OUTAGE&gt;**
-* 15:58 - @mklim updates flutter/flutter#27128 and flutter/flutter#23995 with
+  and the forward roll with correct semver bump. **&lt;END OF SEMVER
+  OUTAGE&gt;**
+* 15:58 - @mklim updates
+  [flutter/flutter#27128](https://github.com/flutter/flutter/issues/27128) and
+  [flutter/flutter#23995](https://github.com/flutter/flutter/issues/23995) with
   info on the 6 packages that have had their semantic versions updated.
-* 17:09 - @mklim updates flutter/flutter#27106 with more details on the bug and
-  the fixed semantic versioning problem.
+* 17:09 - @mklim updates
+  [flutter/flutter#27106](https://github.com/flutter/flutter/issues/27106) with
+  more details on the bug and the fixed semantic versioning problem.
+
+### 2019-01-30
+
+* 10:27 - @mklim updates the Flutter website via
+  [flutter/website#2310](https://github.com/flutter/website/pull/2310) to
+  explain how to import a Flutter app into the Android Studio IDE for automatic
+  migration.
+* 11:28 - @mklim opens
+  [flutter/plugins#1138](https://github.com/flutter/plugins/pull/1138) so that
+  the plugins warn about the AndroidX migration when Gradle fails to compile.
+
+### 2019-02-05
+
+* 13:41- mklim@ opens
+  [flutter/flutter#27566](https://github.com/flutter/flutter/pull/27566) to
+  detect gradle error messages and link to a Flutter AndroidX migration guide on
+  the Flutter website in Flutter itself.
+* 17:35 - mklim@ opens
+  [flutter/website#2349](https://github.com/flutter/website/pull/2349) to add a
+  migration guide to AndroidX for Flutter apps and plugins.
+
+### 2019-02-07
+
+* 13:23 - [flutter/website#2349](https://github.com/flutter/website/pull/2349)
+  is merged.
+* 17:30 - [flutter/plugins#1138](https://github.com/flutter/plugins/pull/1138)
+  and [flutter/flutter#27566](https://github.com/flutter/flutter/pull/27566) are
+  merged. Plugins are uploaded with the change. **&lt;END OF GRADLE ERROR
+  OUTAGE&gt;**
 
 ## Impact
 
 ### Some first party plugin users were broken in a minor version upgrade
 
-The affected plugins were firebase_analytics, firebase_database,
-firebase_messaging, firebase_storage, google_sign_in, and url_launcher.
-
-So far it looks like the only issue filed for this directly has been
-flutter/flutter#27128.
+It looks like the only issue filed for this directly has been
+[flutter/flutter#27128](https://github.com/flutter/flutter/issues/27128).
 
 ### All first party plugin users were broken in a confusing way
 
@@ -111,17 +152,19 @@ An explanation and migration path exists in the CHANGELOG.md of each plugin, but
 this information is hard to find and the actual Gradle error is not helpful.
 Several bugs on Github have been filed from affected users.
 
-* flutter/flutter#27106
-* flutter/flutter#27226
-* flutter/flutter#27146
-* flutter/flutter#27156
+* [flutter/flutter#27106](https://github.com/flutter/flutter/issues/27106)
+* [flutter/flutter#27226](https://github.com/flutter/flutter/issues/27226)
+* [flutter/flutter#27146](https://github.com/flutter/flutter/issues/27146)
+* [flutter/flutter#27156](https://github.com/flutter/flutter/issues/27156)
 
 ## Root causes
 
-flutter/plugins#1103, flutter/plugins#1115 migrated the plugins to support
-AndroidX instead of the original Android support libraries. See #23995 for more
-details, but in short the original support libraries are deprecated and not
-recommended for Android app development anymore.
+[flutter/plugins#1103](https://github.com/flutter/plugins/pull/1103),
+[flutter/plugins#1115](https://github.com/flutter/plugins/pull/1115) migrated
+the plugins to support AndroidX instead of the original Android support
+libraries. See #23995 for more details, but in short the original support
+libraries are deprecated and not recommended for Android app development
+anymore.
 
 This was a known breaking change and the changelog links to the official
 [migration steps](https://developer.android.com/jetpack/androidx/migrate). BUT
@@ -174,28 +217,35 @@ did not provide any obvious ways to debug the incompatibility.
 
 ### Prevention
 
-* flutter/flutter#27110 - Test the plugins from a blank, stable `flutter create`
-  template on the plugins CI
+* [flutter/flutter#27110](https://github.com/flutter/flutter/issues/27110) -
+  Test the plugins from a blank, stable `flutter create` template on the plugins
+  CI
 
 ### Detection
 
-* flutter/flutter#27258 - The plugins releasing process should be improved to
-  help detect regressions.
+* [flutter/flutter#27258](https://github.com/flutter/flutter/issues/27258) - The
+  plugins releasing process should be improved to help detect regressions.
 
 ### Mitigation
 
-* flutter/flutter#14818 - Translate Gradle errors into actionable steps for our
-  users when possible.
-* dart-lang/pub#2038 - Show a migration prompt and ask for confirmation on
-  updating a breaking change in pub.
-* dart-lang/pub-dartlang-dart#378 - Tag specific pub releases as broken.
+* [flutter/flutter#14818](https://github.com/flutter/flutter/issues/14818) -
+  Translate Gradle errors into actionable steps for our users when possible.
+* [dart-lang/pub#2038](https://github.com/dart-lang/pub/issues/2038) - Show a
+  migration prompt and ask for confirmation on updating a breaking change in
+  pub.
+* [dart-lang/pub-dartlang-dart#378](https://github.com/dart-lang/pub-dartlang-dart/issues/378) - Tag
+  specific pub releases as broken.
 
 ### Process
 
-* flutter/flutter#27258 - Have a better/more formalized releasing process for
-  flutter/plugins.
+* [flutter/flutter#27258](https://github.com/flutter/flutter/issues/) - Have a
+  better/more formalized releasing process for flutter/plugins.
 
 ### Fixes
 
-* flutter/plugins#1127
-* flutter/plugins#1128
+* [flutter/plugins#1127](https://github.com/flutter/plugins/pull/1127)
+* [flutter/plugins#1128](https://github.com/flutter/plugins/pull/1128)
+* [flutter/website#2310](https://github.com/flutter/website/pull/2310)
+* [flutter/plugins#1138](https://github.com/flutter/plugins/pull/1138)
+* [flutter/flutter#27566](https://github.com/flutter/flutter/pull/27566)
+* [flutter/website#2349](https://github.com/flutter/website/pull/2349)
