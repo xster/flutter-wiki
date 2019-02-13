@@ -122,11 +122,11 @@ major version are affected by the confusing Gradle error.
 
 ### 2019-02-05
 
-* 13:41- mklim@ opens
+* 13:41- @mklim opens
   [flutter/flutter#27566](https://github.com/flutter/flutter/pull/27566) to
   detect gradle error messages and link to a Flutter AndroidX migration guide on
   the Flutter website in Flutter itself.
-* 17:35 - mklim@ opens
+* 17:35 - @mklim opens
   [flutter/website#2349](https://github.com/flutter/website/pull/2349) to add a
   migration guide to AndroidX for Flutter apps and plugins.
 
