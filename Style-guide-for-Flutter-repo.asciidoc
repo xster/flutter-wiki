@@ -434,19 +434,39 @@ Typedef dartdocs should usually start with the phrase "Signature for...".
 
 Sample code helps developers learn your API quickly. Writing sample code also helps you think through how your API is going to be used by app developers.
 
-Sample code should go in a section of the documentation that has a `## Sample code` header. This will then be checked by automated tools.
+Sample code should go in a section of the documentation that begins with `{@tool sample}`, and ends with `{@end-tool}`. This will then be checked by automated tools, and extracted and formatted for display on the API documentation web site [docs.flutter.io](https://docs.flutter.io).
 
-For example, below is the sample code for building an infinite list of children with the ListView widget:
+For example, below is the sample code for building an infinite list of children with the ListView widget, as it would appear in the Flutter source code for the ListView widget:
 
 ```dart
-ListView.builder(
-  padding: const EdgeInsets.all(8.0),
-  itemExtent: 20.0,
-  itemBuilder: (BuildContext context, int index) {
-    return Text('entry $index');
-  },
-) 
+/// A scrollable list of widgets arranged linearly.
+/// 
+/// ...
+/// 
+/// {@tool sample}
+/// An infinite list of children:
+///
+/// ```dart
+/// ListView.builder(
+///   padding: EdgeInsets.all(8.0),
+///   itemExtent: 20.0,
+///   itemBuilder: (BuildContext context, int index) {
+///     return Text('entry $index');
+///   },
+/// )
+/// ```
+/// {@end-tool}
+class ListView {
+  // ...
 ```
+
+#### Provide full application samples.
+
+Our UI research has shown that developers prefer to see examples that are in the context of an entire app. So, whenever it makes sense, provide an example that can be presented as part of an entire application instead of just a simple sample like the one above.
+
+This can be done using the `{@tool snippet --template=<template>}` ... `{@end-tool}` dartdoc indicators, where `<template>` is the name of a template that the given blocks of dart code can be inserted into. See [here](https://github.com/flutter/flutter/blob/master/dev/snippets/README.md) for more details about writing these kinds of examples, and [here](https://github.com/flutter/flutter/blob/master/dev/snippets/config/templates/README.md) for a list and description of the available templates.
+
+Application examples will be presented on the API documentation website along with information about how to instantiate the example as an application that can be run. IDEs viewing the Flutter source code may also offer the option of creating a new project with the example.
 
 ### Provide illustrations, diagrams or screenshots
 
