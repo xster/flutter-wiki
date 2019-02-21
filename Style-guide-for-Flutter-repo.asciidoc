@@ -952,7 +952,7 @@ line would make it less readable, or if it would make the line less consistent
 with other nearby lines. Prefer avoiding line breaks after assignment operators.
 
 ```
-// BAD
+// BAD (breaks after assignment operator and still goes over 80 chars)
 final int a = 1;
 final int b = 2;
 final int c =
@@ -960,7 +960,7 @@ final int c =
 final int d = 4;
 final int e = 5;
 
-// BETTER
+// BETTER (consistent lines, not much longer than the earlier example)
 final int a = 1;
 final int b = 2;
 final int c = a.very.very.very.very.very.long.expression.that.returns.three.eventually().but.is.very.long();
@@ -969,14 +969,14 @@ final int e = 5;
 ```
 
 ```
-// BAD
+// BAD (breaks after assignment operator)
 final List<FooBarBaz> _members =
   <FooBarBaz>[const Quux(), const Qaax(), const Qeex()];
 
-// BETTER
+// BETTER (only slightly goes over 80 chars)
 final List<FooBarBaz> _members = <FooBarBaz>[const Quux(), const Qaax(), const Qeex()];
 
-// BETTER STILL
+// BETTER STILL (fits in 80 chars)
 final List<FooBarBaz> _members = <FooBarBaz>[
   const Quux(),
   const Qaax(),
