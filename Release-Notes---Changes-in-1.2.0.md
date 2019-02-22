@@ -312,7 +312,6 @@ The following issues were addressed between 1.0.0 and 1.2.0:
 |   | [(flutter/flutter#7315) Android Emulator does not show box shadows](https://github.com/flutter/flutter/issues/7315) |
 |   | [(flutter/flutter#24440) Adding support for android app bundle - Issue #17829](https://github.com/flutter/flutter/pull/24440) |
 |   | [(flutter/flutter#25221) Support ANDROID_SDK_ROOT in addition to ANDROID_HOME](https://github.com/flutter/flutter/pull/25221) |
-|   | [(flutter/flutter#6886) EGL_BAD_ACCESS on Vivante GC1000 (driver doesn't support making a window context current on a non-platform main thread)](https://github.com/flutter/flutter/issues/6886) |
 |   | [(flutter/flutter#25154) Don't require the AVD folder to exist in order to run `flutter emulators`](https://github.com/flutter/flutter/pull/25154) |
 | f: gestures | 4 issues with this label | 
 |   | [(flutter/flutter#23424) Teach drag start behaviors to DragGestureRecognizer](https://github.com/flutter/flutter/pull/23424) |
@@ -343,19 +342,16 @@ The following issues were addressed between 1.0.0 and 1.2.0:
 |   | [(flutter/flutter#7306) Broken links on website](https://github.com/flutter/flutter/issues/7306) |
 | e: device-specific | 2 issues with this label | 
 |   | [(flutter/flutter#7315) Android Emulator does not show box shadows](https://github.com/flutter/flutter/issues/7315) |
-|   | [(flutter/flutter#6886) EGL_BAD_ACCESS on Vivante GC1000 (driver doesn't support making a window context current on a non-platform main thread)](https://github.com/flutter/flutter/issues/6886) |
 | engine | 2 issues with this label | 
 |   | [(flutter/flutter#7227) Figure out why license script didn't pick up the license for the Ahem font](https://github.com/flutter/flutter/issues/7227) |
-|   | [(flutter/flutter#6886) EGL_BAD_ACCESS on Vivante GC1000 (driver doesn't support making a window context current on a non-platform main thread)](https://github.com/flutter/flutter/issues/6886) |
 | f: date/time picker | 2 issues with this label | 
 |   | [(flutter/flutter#23424) Teach drag start behaviors to DragGestureRecognizer](https://github.com/flutter/flutter/pull/23424) |
 |   | [(flutter/flutter#25573) Update DayPicker,DatePicker doc "see also" sections](https://github.com/flutter/flutter/pull/25573) |
 | f: scrolling | 2 issues with this label | 
 |   | [(flutter/flutter#23424) Teach drag start behaviors to DragGestureRecognizer](https://github.com/flutter/flutter/pull/23424) |
 |   | [(flutter/flutter#26209) Revert "Teach drag start behaviors to DragGestureRecognizer (#23424)"](https://github.com/flutter/flutter/pull/26209) |
-| severe: crash | 2 issues with this label | 
+| severe: crash | 1 issue with this label | 
 |   | [(flutter/flutter#7314) Flutter crash on startup (metabug)](https://github.com/flutter/flutter/issues/7314) |
-|   | [(flutter/flutter#6886) EGL_BAD_ACCESS on Vivante GC1000 (driver doesn't support making a window context current on a non-platform main thread)](https://github.com/flutter/flutter/issues/6886) |
 | t: flutter doctor | 2 issues with this label | 
 |   | [(flutter/flutter#23889) Flutter doctor error message lookup](https://github.com/flutter/flutter/pull/23889) |
 |   | [(flutter/flutter#25269) Make doctor output consistent between VS Code/IntelliJ/Android Studio when plugins are missing](https://github.com/flutter/flutter/pull/25269) |
@@ -381,8 +377,6 @@ The following issues were addressed between 1.0.0 and 1.2.0:
 |   | [(flutter/flutter#25872) Optimize cocoapods logic in flutter doctor.](https://github.com/flutter/flutter/pull/25872) |
 | dependency: skia | 1 issue with this label | 
 |   | [(flutter/flutter#7315) Android Emulator does not show box shadows](https://github.com/flutter/flutter/issues/7315) |
-| e: gpu driver bug | 1 issue with this label | 
-|   | [(flutter/flutter#6886) EGL_BAD_ACCESS on Vivante GC1000 (driver doesn't support making a window context current on a non-platform main thread)](https://github.com/flutter/flutter/issues/6886) |
 | f: routes | 1 issue with this label | 
 |   | [(flutter/flutter#25477) TransitionRoute.canTransitionFrom,To() doc update](https://github.com/flutter/flutter/pull/25477) |
 | from:contributor | 1 issue with this label | 
