@@ -705,6 +705,53 @@ expect(rect.left, 4.24264068712);
 expect(rect.left, 3.0 * math.sqrt(2));
 ```
 
+### Common boilerplates for `operator ==` and `hashCode`
+
+We have many classes that override `operator ==` and `hashCode` ("value classes"). To keep the code consistent,
+we use the following style for these methods:
+
+```dart
+  @override
+  bool operator ==(Object other) {
+    if (other.runtimeType != runtimeType)
+      return false;
+    final Foo typedOther = other;
+    return typedOther.bar == bar
+        && typedOther.baz == baz
+        && typedOther.quux == quux;
+  }
+
+  @override
+  int get hashCode => hashValues(bar, baz, quux);
+```
+
+For objects with a lot of properties, consider adding the following at the top of the `operator ==`:
+
+```dart
+    if (identical(other, this))
+      return true;
+```
+
+(We don't yet use this _exact_ style everywhere, so feel free to update code you come across that isn't yet using it.)
+
+In general, consider carefully whether overriding `operator ==` is a good idea. It can be expensive, especially
+if the properties it compares are themselves comparable with custom `operator ==`s. If you do override equality,
+you should use `@immutable` on the class hierarchy in question.
+
+
+### Override `toString`
+
+Use `Diagnosticable` (rather than directly overriding `toString`) on all but the most trivial classes. That allows us to inspect the object from https://pub.dartlang.org/packages/devtools[devtools] and IDEs.
+
+For trivial classes, override `toString` as follows, to aid in debugging:
+
+```dart
+  @override
+  String toString() => '$runtimeType($bar, $baz, $quux)';
+```
+
+...but even then, consider using Diagnosticable instead.
+
 
 Naming
 ------
@@ -951,7 +998,7 @@ Aim for a maximum line length of roughly 80 characters, but prefer going over if
 line would make it less readable, or if it would make the line less consistent
 with other nearby lines. Prefer avoiding line breaks after assignment operators.
 
-```
+```dart
 // BAD (breaks after assignment operator and still goes over 80 chars)
 final int a = 1;
 final int b = 2;
@@ -968,7 +1015,7 @@ final int d = 4;
 final int e = 5;
 ```
 
-```
+```dart
 // BAD (breaks after assignment operator)
 final List<FooBarBaz> _members =
   <FooBarBaz>[const Quux(), const Qaax(), const Qeex()];
