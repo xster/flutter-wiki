@@ -735,7 +735,7 @@ For objects with a lot of properties, consider adding the following at the top o
 (We don't yet use this _exact_ style everywhere, so feel free to update code you come across that isn't yet using it.)
 
 In general, consider carefully whether overriding `operator ==` is a good idea. It can be expensive, especially
-if the properties it compares are themselves comparable with custom `operator ==`s. If you do override equality,
+if the properties it compares are themselves comparable with a custom `operator ==`. If you do override equality,
 you should use `@immutable` on the class hierarchy in question.
 
 
