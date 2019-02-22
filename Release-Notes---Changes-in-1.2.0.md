@@ -718,8 +718,7 @@ The following issues were addressed in 426 commits.
 | [flutter/plugins#512](https://github.com/flutter/plugins/pull/512) | Support StorageReference#writeToFile |
 | [flutter/plugins#515](https://github.com/flutter/plugins/pull/515) | Add environment to Remote Config plugin pubspec |
 | [flutter/plugins#391](https://github.com/flutter/plugins/pull/391) | Add Firebase Remote Config support |
-| [flutter/plugins#510](https://github.com/flutter/plugins/pull/510) | Add more
-getters to StorageReference |
+| [flutter/plugins#510](https://github.com/flutter/plugins/pull/510) | Add more getters to StorageReference |
 | [flutter/plugins#505](https://github.com/flutter/plugins/pull/505) | [Image Picker] - Add contract tests for Android implementation |
 | [flutter/plugins#506](https://github.com/flutter/plugins/pull/506) | Add support for putData on StorageReference |
 | [flutter/plugins#504](https://github.com/flutter/plugins/pull/504) | Allow null value for startAt, endAt and equalTo database queries on Android |
