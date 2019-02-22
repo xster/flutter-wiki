@@ -153,7 +153,7 @@ consider? What could we do to make this even better?
 Once you are satisfied with the contribution, and _only_ once you are satisfied,
 write a comment that includes the phrase LGTM (or use the GitHub "Approval" mechanism).
 If you feel like you are being worn down, hand the review to someone else. Consider
-our [conflict reslotuion](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md#conflict-resolution)
+our [conflict resolution](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md#conflict-resolution)
 policy if you feel like you are being forced to agree to something you don't like.
 
 Reviewers should not give an LGTM unless the patch has tests that verify
