@@ -402,6 +402,7 @@ The following issues were addressed between 1.0.0 and 1.2.0:
 
 ## In the plugins repository
 The following issues were addressed in 426 commits.
+
 | PR | Summary |
 |---|---|
 | [flutter/plugins#691](https://github.com/flutter/plugins/pull/691) | Fix cloud functions podspec. |
