@@ -2,6 +2,9 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
+## v1.2.2
+* Android crash on startup in FlutterView.sendLocalesToDart on API < 24 (https://github.com/flutter/flutter/issues/28321)
+
 ## v1.1.1 - v1.1.2
 * Bad vector graphics caused by a Skia regression (https://github.com/flutter/flutter/issues/25426)
 
