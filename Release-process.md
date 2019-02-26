@@ -6,6 +6,8 @@ Google engineers regularly roll the master branch into the dev branch and as par
 build that was rolled with a version number. The process for doing this includes testing Flutter against a wide
 range of Google-internal tests, which is why it is not currently a process that people outside Google can do.
 
+Part of the process uses the [`roll_dev.dart`](https://github.com/flutter/flutter/blob/master/dev/tools/lib/roll_dev.dart) script.
+
 We are looking at what we can do to generalize this process so that we can run tests from other sources as
 part of verifying the quality of a build we want to roll to `dev`, as part of which we would also return this
 process to a public one which any contributor (including non-Google contributors) could do.
@@ -28,7 +30,7 @@ At the start of the month, start these steps. You will probably want to do this 
     * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via `git rebase v0.0.0 && flutter upgrade`)
     * can be successfully upgraded _from_ to a later dev build (via `git reset --hard v0.0.0 && git clean -f && flutter upgrade`)
     * can switch channels successfully (via 'flutter channel')
-    * can be used to run the [[codelabs]]. You will have to manually run the build through all the current code labs to verify that the build is good.
+    * can be used to run the [[codelabs]]. You will have to manually run the build through all the current code labs to verify that the build is good. If someone has recently joined the team, they are a good candidate for running these tests, as it will help them learn Flutter at the same time!
     * can be used to build and run the Flutter Gallery:
         * via `flutter build apk`
         * via `flutter build ios`
@@ -43,7 +45,7 @@ started this process, then start over from step 1 but with the next oldest eligi
    git checkout vX.Y.Z
    git push upstream HEAD:beta
    ```
-   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator (e.g. Hixie) to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members).
+   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator (e.g. Hixie) to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members). If the last pushed version was a hotfix, this may require temporarily unprotecting the branch.
 1. Wait for the Cirrus builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches).  If they fail, investigate the failure(s), and consider whether a newer dev build should be pushed to beta before any announcements are made.
 1. Wait for the packaging build to complete, and download the [packages](https://flutter.io/sdk-archive/) built by them. On each system, do the following (these will be automated shortly, but until then...):
    - Unpack and check to see that a new project can be created with `flutter create --offline foo`
@@ -67,7 +69,7 @@ This is the process for rolling the "stable" branch. We generally intend to roll
    git checkout vX.Y.Z
    git push upstream HEAD:stable
    ```
-   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the stable branch on GitHub. Contact a repository administrator (e.g. Hixie) for advice.
+   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the stable branch on GitHub. Contact a repository administrator (e.g. Hixie) for advice. If the last pushed version was a hotfix, this may require temporarily unprotecting the branch.
 
 
 ## Applying emergency fixes
@@ -76,25 +78,26 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 
 1. Let _TAG_ be the tag of the version of the framework that you are hot fixing, e.g. `v0.0.0`.
 1. Let _VERSION_ be `$TAG-hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `v0.0.0-hotfix.1`.
-1. Let _OLDVERSION_ be _TAG_ if this is the first patch to this version, or else be the full branch name of the previous patch (e.g. if _VERSION_ is `v0.0.0-hotfix.2` then _OLDVERSION_ is `v0.0.0-hotfix.1`).
-1. If this requires a change to the engine or its dependencies:
-   1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo for _OLDVERSION_).
+1. Let _BRANCH_ be `$TAG-hotfixes` (e.g. if _VERSION_ is `v0.0.0-hotfix.2` then _BRANCH_ is `v0.0.0-hotfixes`).
+1. If it doesn't yet exist, locally create _BRANCH_ on the framework repo starting from the framework commit of the build that you are fixing (`git fetch; git checkout $TAG -b $BRANCH`). Otherwise, switch to that branch (`git fetch; git checkout $BRANCH`).
+1. Push this branch to GitHub. (`git push upstream $BRANCH`)
+1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie, to do this).
+1. If this hot fix requires a change to the engine or its dependencies:
+   1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo for _BRANCH_).
    1. Locally create a branch on the engine repo starting from that commit: `git checkout $COMMIT -b $VERSION`
    1. Update the branch accordingly, ideally by doing a `git cherry-pick` of the commit you need. Keep fixes to a strict minimum. If the fix involves applying a fix from an upstream dependency (e.g. Dart), use a hot fix release applied to the same original commit that the engine previously depended on; do not merely roll the dependency normally.
    1. Push this branch to your own GitHub fork of the engine (`git push --set-upstream origin $VERSION`).
    1. Browse to _COMMIT_ on GitHub (`https://github.com/flutter/engine/tree/$COMMIT`), then using the "Tree" dropdown on that GitHub page, create the branch named _VERSION_.
    1. Create a PR from your recently pushed branch, using the newly created branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the branch.
    1. Once this is reviewed and the tests have run, land the PR _on the branch_. (Check that you're not landing it on master!)
-   1. Force the chrome infra bots to build the specific commit you just pushed. (View the page for each bot, and force a build with the commit hash of the commit you just pushed.)
+   1. Force [LUCI](https://ci.chromium.org/p/flutter) (the Chromium continuous integration bots) to build the specific commit you just pushed. **This isn't currently possible. Talk to Hixie and Dan about how to trigger this.**
    1. Wait for the engine bots to have completed their work.
    1. Lock down the _VERSION_ branch on GitHub.
-1. Locally create a branch on the framework repo starting from the framework commit of the build that you are fixing. (`git checkout $OLDVERSION -b $VERSION`)
-1. Push this branch to GitHub. (`git push upstream $VERSION`)
 1. Update your local branch accordingly. If applicable, update the `engine.version` to point to the engine you just built.
 1. Test this build on all platforms. Run the devicelab locally. Test the codelabs.
-1. Push your local branch to your GitHub fork of the Flutter framework. (`git push origin $VERSION`)
-1. Create a PR from your recently pushed branch, using the _VERSION_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix.
-1. Once the code is reviewed, land the PR onto the _VERSION_ branch.
-1. Lock down the _VERSION_ branch on GitHub.
+1. Push your local branch to your GitHub fork of the Flutter framework. (`git push origin $BRANCH`)
+1. Create a PR from your recently pushed branch, using the _BRANCH_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix.
+1. Once the code is reviewed, land the PR onto the _BRANCH_ branch.
+1. Tag your commit on _BRANCH_ as _TAG_. (`git tag $TAG; git push upstream $TAG`)
 1. If this is an update to the current `beta` build, also force push this commit to the `beta` branch.
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
