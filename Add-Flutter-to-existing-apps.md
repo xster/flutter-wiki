@@ -53,6 +53,16 @@ $ ./gradlew flutter:assembleDebug
 This results in a `flutter-debug.aar` archive file in
 `.android/Flutter/build/outputs/aar/`.)
 
+### Host app requirements
+Before attempting to connect your Flutter module project to your host Android app, please ensure that your host Android app declares the following source compatibility within your app's `build.gradle` file:
+
+```gradle
+compileOptions {
+  sourceCompatibility 1.8
+  targetCompatibility 1.8
+}
+```
+
 ### Make the host app depend on the Flutter module
 Include the Flutter module as a sub-project in the host app's `settings.gradle`:
 ```groovy
