@@ -72,6 +72,8 @@ to make sure every line of your new code is tested. See also: https://github.com
 If something isn't tested, it is very likely to regress or to get "optimized away".
 If you want your code to remain in the codebase, you should make sure to test it.
 
+Don't submit code with the promise to "write tests later".  Just take the
+time to write the tests properly and completely in the first place.
 
 ### Avoid duplicating state
 
