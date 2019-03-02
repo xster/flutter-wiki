@@ -21,6 +21,7 @@ Run the following steps, from the `src` directory created in [Setting up the Eng
     * `ninja -C out/android_debug_unopt_x64` for x64 emulators.
     * `ninja -C out/host_debug_unopt` for host-side executables.
     * These commands can be combined. Ex: `ninja -C out/android_debug_unopt && ninja -C out/host_debug_unopt`
+    * For MacOS, you will need older version of XCode(9.4 or below) to compile android_debug_unopt and android_debug_unopt_x86. If you only care about x64, you can ignore this
     * For Googlers, consider also using the option `-j 100` to parallelize the build using Goma.
 
 This builds a debug-enabled ("unoptimized") binary configured to run Dart in
