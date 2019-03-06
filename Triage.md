@@ -4,9 +4,7 @@ The process of triaging bugs is to first go through these bug lists and make sur
 
 1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3Atool+-label%3Ateam+-label%3A%22a%3A+tests%22+sort%3Aupdated-asc+).
 
-2. [the bugs with no labels at all](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Alabel+sort%3Aupdated-asc), then
-
-3. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A%22a%3A+tests%22+sort%3Aupdated-asc+).
+2. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A%22a%3A+tests%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
 
 Finally, one should look at [the least recently updated bugs of any kind](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-asc) and see if they are still relevant, applying new labels, updating the subject line if necessary, providing an update if necessary, etc.
 
