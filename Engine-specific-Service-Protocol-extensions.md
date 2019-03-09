@@ -27,11 +27,13 @@ Response:
 }
 ```
 
-## Hot restart: `_flutter.runInView`
+## Isolate Restart or Cold Reload: `_flutter.runInView`
 
 The IDE has requested (or the user pressed ‘R’ from the ‘flutter run’ interactive console) a cold reload. For example, this happens when the user presses the green play button.
 
 Used to "cold reload" a running application where the shell (along with the platform view and its rasterizer bindings) remains the same but the root isolate is torn down and restarted with the new configuration. Only used in the development workflow.
+
+The previous root isolate is killed and its identifier invalidated after this call. Callers can query the new isolate identifier using the `_flutter.listViews` method.
 
 Four arguments:
 
