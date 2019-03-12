@@ -542,8 +542,7 @@ The first paragraph of any dartdoc section must be a short self-contained senten
 and meaning of the item being documented. Subsequent paragraphs then must elaborate. Avoid having the first paragraph have multiple sentences. (This is because the first paragraph gets extracted and used in tables of
 contents, etc, and so has to be able to stand alone and not take up a lot of room.)
 
-When referencing an argument, use square brackets if the argument corresponds to a property as well, otherwise
-use backticks.
+When referencing an argument, use backticks. However, when referencing an argument that also corresponds to a property, use square brackets instead.
 
 ```dart
 // GOOD
