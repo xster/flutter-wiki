@@ -645,7 +645,7 @@ void set theProperty(TheType value) {
 
 The argument is called 'value' for ease of copy-and-paste reuse of
 this pattern. If for some reason you don't want to use 'value', use
-'newTheProperty' (where 'theProperty' is the property name).
+'newProperty' (where 'Property' is the property name).
 
 Start the method with any asserts you need to validate the value.
 
