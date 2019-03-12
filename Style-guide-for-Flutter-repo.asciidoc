@@ -625,6 +625,8 @@ const EdgeInsets.symmetric(horizontal: 8.0);
 
 ### Perform dirty checks in setters
 
+Dirty checks are processes to determine whether a changed values have been synchronized with the rest of the app.
+
 When defining mutable properties that mark a class dirty when set, use
 the following pattern:
 
