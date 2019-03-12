@@ -510,7 +510,7 @@ move to the new API, you should use this format:
 
 In general, private code can and should also be documented. If that documentation is of good enough
 quality that we could include it verbatim when making the class public (i.e. it satisfies all the
-style guidelines above), then use you can use `///` for those docs, even though they're private.
+style guidelines above), then you can use `///` for those docs, even though they're private.
 
 Documentation of private APIs that is not of sufficient quality should only use `//`. That way, if
 we ever make the corresponding class public, those documentation comments will be flagged as missing,
