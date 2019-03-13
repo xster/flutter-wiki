@@ -15,6 +15,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#26332](https://github.com/flutter/flutter/pull/26332) Strut: fine tuned control over text minimum line heights, allows forcing the line height to be a specified height.
 * [#7414](https://github.com/flutter/engine/pull/7414) dart:ui: Rename dart:ui ParagraphStyle.lineHeight to ParagraphStyle.height. This property previously did not do anything and was renamed to stay consistent with TextStyle.height.
 * [#27904](https://github.com/flutter/flutter/pull/27904) `PointerEvent` now implements `Diagnosticable`. Any `toString` override on a `PointerEvent` subclass [will need to be changed](https://groups.google.com/forum/#!topic/flutter-announce/ZPPRKV642Uk).
+* [#28751](https://github.com/flutter/flutter/pull/28751) Add `decorationThickness` to `TextStyle` to control the stroke thickness of text decoration.
 
 ### v1.1.5
 
