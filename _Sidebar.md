@@ -64,3 +64,6 @@ Flutter Wiki
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
 - [[Using Flutter in China]]
 - [[Making animated GIFs of Flutter apps]]
+
+## Release Notes
+- [1.2.1](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
