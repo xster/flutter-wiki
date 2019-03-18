@@ -5,7 +5,10 @@
 Introduction
 ------------
 
-This style guide describes the preferred style for code written as part of the Flutter
+This document contains some high-level philosophy and policy decisions for the Flutter
+project, and a description of specific style issues for some parts of the codebase.
+
+The style guide describes the preferred style for code written as part of the Flutter
 project (the framework itself and all our sample code). Flutter application developers
 are welcome to follow this style as well, but this is by no means required. Flutter
 will work regardless of what style is used to author applications that use it.
@@ -232,7 +235,8 @@ concerns as esoteric. Often, what seems like the problem when you start a
 project turns out to be a trivial concern compared to the real issues faced
 by real developers.
 
-### Designing new APIs
+
+### Get early feedback when designing new APIs
 
 If you're designing a new API or a new feature, consider writing a design doc,
 typically using Google Docs or by writing it in a GitHub issue. Then, get
@@ -252,6 +256,18 @@ We guarantee that a plugin published with a version equal to or greater than 1.0
 ### Workarounds
 
 We are willing to implement temporary (one week or less) workarounds (e.g. `//ignore` hacks) if it helps a high profile developer or prolific contributor with a painful transition. Please contact @Hixie (ian@hixie.ch) if you need to make use of this option.
+
+### Avoid abandonware
+
+Code that is no longer maintained should be deleted or archived in some way that clearly indicates
+that it is no longer maintained.
+
+For example, we delete rather than commenting out code. Commented-out code will bitrot too fast to be
+useful, and will confuse people maintaining the code.
+
+Similarly, all our repositories should have an owner that does regular triage of incoming issues and PRs,
+and fixes known issues. Repositories where nobody is doing triage at least monthly, preferably more often,
+should be deleted, hidden, or otherwise archived.
 
 
 Documentation (dartdocs, javadocs, etc)
@@ -839,12 +855,6 @@ documented top-level library intended to be imported by users.
 
 Comments
 --------
-
-### Avoid checking in commented-out code
-
-It will bitrot too fast to be useful, and will confuse people maintaining the
-code.
-
 
 ### Avoid checking in comments that ask questions
 
