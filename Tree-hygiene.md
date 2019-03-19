@@ -203,7 +203,7 @@ to find someone to review the patch before you land. (But then, if you
 aren't able to find anyone to review your patch, is it really an emergency?)
 
 
-## Regressions
+## Regressions in functionality
 
 If a check-in has caused a regression on the trunk, roll back the
 check-in (even if it isn't yours) unless doing so would take longer
@@ -226,6 +226,34 @@ the failure is one we were not previously testing for), please update
 the [[Bad Builds]] page to note which builds were affected, so that we
 don't release a beta build with the regression. Then, write a test for
 this failure mode! See [[Running and writing tests]] for more details.
+
+
+## Regressions in performance
+
+After each checkin, please monitor the [performance dashboard](https://flutter-dashboard.appspot.com/benchmarks.html).
+
+If you see a regression (any of the charts increasing after your commit), please
+follow these steps:
+
+* Comment on the PR acknowledging the regression.
+* If the regression is expected and is a desireable trade-off (e.g. disk size
+increased slightly in exchange for a significant improvement in speed), then
+rebaseline the relevant benchmarks (log in, then click the magnifying glass
+at the top right of each chart, then click the button to auto rebaseline and
+commit).
+* If the regression is not expected, and may be a problem in your PR, revert
+your PR and investigate.
+* If the regression is not expected, and is quite severe, revert your PR and
+investigate.
+* If the regression is not expected, and is not severe, and is definitely not
+a problem in your PR (e.g. you changed a comment and the analyzer performance
+got worse, or you deleted a README and the rasterizer slowed down), then file
+a bug, labeled with the "regression" and "performance" labels, and either
+investigate or delegate to someone to investigate. The investigation should be
+considered a high priority. It is your responsibility to make sure that the
+cause is understood within a few days.
+
+Performance regressions are not a problem so long as they are promptly dealt with.
 
 
 ## Avoid "Revert "Revert "Revert "Revert "Fix foo"""" commit messages
