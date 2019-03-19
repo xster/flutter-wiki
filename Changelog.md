@@ -2,6 +2,9 @@ This page documents interesting or noteworthy changes, including all notable bre
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
+## Changes since 1.3.8
+
+
 ## Changes since v1.0.0
 
 * [#24876](https://github.com/flutter/flutter/pull/24876) Widget tests of `EditableText` are now required to ensure that a `MediaQuery` now exists in their widget hierarchy, as `EditableText` now depends on such a `MediaQuery` in its ancestry tree in order to obtain the device pixel ratio. `MaterialApp` and `CupertinoApp` already ensure that such an ancestor exists.
