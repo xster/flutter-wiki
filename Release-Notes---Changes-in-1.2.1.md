@@ -1,4 +1,4 @@
-The following issues were addressed between 1.0.0 and 1.2.0:
+The following issues were addressed between 1.0.0 and 1.2.1:
 
 ## In the framework and engine (this also includes Dart and Skia rolls, which are not broken out here.)
 
