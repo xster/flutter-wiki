@@ -8,6 +8,8 @@ Here are some terms that we use in the Flutter project and what they mean:
 
 - **Engine**. The C++ (and Java and ObjectiveC and...) side of Flutter. Defined in the `engine` repository. Includes Skia, Dart, and other low-level components. Exposed as `dart:ui` and other Dart libraries to author code.
 
+- **Flakiness**. The tendency of a test to claim that it has passed even though it is really a failing test. Usually caused by race conditions. Please treat flaky tests as failures; attempt to find the cause and fix it.
+
 - **Framework**. The `flutter` library (`packages/flutter` in the main repository) that includes the bulk of the Dart classes exposed by Flutter, such as all the built-in widgets.
 
 - **Hot reload**. During development, causing a running application to update with new logic, without losing any of its state. This contrasts with hot restart because state is maintained despite the code being updated.
