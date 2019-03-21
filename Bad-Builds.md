@@ -2,6 +2,9 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
+## v1.3.9 - v.1.3.13
+* Android Emulator renders a white screen on first frame or after resuming from background until interaction with app or hot reload/restart (https://github.com/flutter/flutter/issues/29679)
+
 ## v1.3.9
 * Android crash on FlutterView.getAccessibilityNodeProvider due to NPE
 (https://github.com/flutter/flutter/issues/29203)
