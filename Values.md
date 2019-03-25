@@ -1,18 +1,18 @@
 # Flutter's core values
 
-## Build the best way to develop for mobile.
+## Build the best way to develop user interfaces.
 
 This tells us what we are creating. It helps narrow our focus.
 
-The best way to develop for mobile is a _productive_ way of developing.
+The best way to develop user interfaces is a _productive_ way of developing.
 
-The best way to develop for mobile creates _beautiful_ applications.
+The best way to develop user interfaces creates _beautiful_ applications.
 
-The best way to develop for mobile creates _fast_ applications.
+The best way to develop user interfaces creates _fast_ applications.
 
-The best way to develop for mobile enables developers to create applications _fast_.
+The best way to develop user interfaces enables developers to create applications _fast_.
 
-The best way to develop for mobile is _extensible_, so that we are not a barrier to developers.
+The best way to develop user interfaces is _extensible_, so that we are not a barrier to developers.
 
 
 ## Focus on the user and all else will follow.
