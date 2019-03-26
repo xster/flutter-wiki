@@ -20,6 +20,14 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#27904](https://github.com/flutter/flutter/pull/27904) `PointerEvent` now implements `Diagnosticable`. Any `toString` override on a `PointerEvent` subclass [will need to be changed](https://groups.google.com/forum/#!topic/flutter-announce/ZPPRKV642Uk).
 * [#28751](https://github.com/flutter/flutter/pull/28751) Add `decorationThickness` to `TextStyle` to control the stroke thickness of text decoration.
 
+### v1.3.0
+
+* [#28242](https://github.com/flutter/flutter/pull/28242) Adds support on Android and iOS for long-press-drag gestures in text fields to select words on Android and to move the cursor on iOS.
+
+### v1.2.1
+
+* [#27866](https://github.com/flutter/flutter/pull/27866) Fixes a bug when an iOS back swipe gesture is manually dragged back to its starting point and breaking future back swipes. 
+
 ### v1.1.5
 
 * [#25593](https://github.com/flutter/flutter/pull/25593) Let CupertinoTabScaffold also automatically handle keyboard insets with or without CupertinoPageScaffold.
