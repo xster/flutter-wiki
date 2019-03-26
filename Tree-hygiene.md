@@ -156,7 +156,7 @@ don't make sense, read the style guide again. :-)
 4. Is it testable? Is it tested? All code must be tested.
 5. Look for mistakes in indenting the code and other trivial formatting problems.
 6. Is new code licensed correctly?
-7. Is the documentation thorough and useful? Look for useless documentation and empty prose. See the [documentation section](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc) of our style guide for what that means.
+7. Is the documentation thorough and useful? Look for useless documentation, empty prose, and breadcrumbs. See the [documentation section](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc) of our style guide for what that means.
 
 Once you are satisfied with the contribution, and _only_ once you are satisfied,
 write a comment that includes the phrase LGTM (or use the GitHub "Approval" mechanism).
