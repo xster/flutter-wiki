@@ -140,15 +140,20 @@ Looks Good To Me".)
 
 Reviewers should carefully read the code and make sure they understand
 it. A reviewer should check the code for both high level concerns,
-such as whether the code's structure makes sense, as well as
-readability and adherence to the
+such as whether the approach is reasonable and whether the code's structure makes sense, as well as
+lower-level issues like how readable the code is and adherence to the
 [Flutter style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo).
 Use [these best practices](https://mtlynch.io/human-code-reviews-1/)
 when reviewing code and providing comments.
 
-As a reviewer, you are the last line of defense. Take a step back. What problem
-is the PR trying to solve? Is it a real problem? What other solutions could we
-consider? What could we do to make this even better?
+As a reviewer, you are the last line of defense. 
+
+1. Take a step back. What problem is the PR trying to solve? Is it a real problem?
+2. What other solutions could we consider? What could we do to make this even better?
+3. Is the best API? See our [philosophy](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#philosophy) section. Look for state duplication, synchronous slow work, complecting, global state,
+overly-specific APIs, API cliffs and API oceans, API design in a vacuum (without a customer). If these terms
+don't make sense, read the style guide again. :-)
+3. Is it testable? Is it tested? All code must be tested.
 
 Once you are satisfied with the contribution, and _only_ once you are satisfied,
 write a comment that includes the phrase LGTM (or use the GitHub "Approval" mechanism).
