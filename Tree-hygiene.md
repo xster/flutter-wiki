@@ -153,7 +153,10 @@ As a reviewer, you are the last line of defense.
 3. Is the best API? See our [philosophy](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#philosophy) section. Look for state duplication, synchronous slow work, complecting, global state,
 overly-specific APIs, API cliffs and API oceans, API design in a vacuum (without a customer). If these terms
 don't make sense, read the style guide again. :-)
-3. Is it testable? Is it tested? All code must be tested.
+4. Is it testable? Is it tested? All code must be tested.
+5. Look for mistakes in indenting the code and other trivial formatting problems.
+6. Is new code licensed correctly?
+7. Is the documentation thorough and useful? Look for useless documentation and empty prose. See the [documentation section](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc) of our style guide for what that means.
 
 Once you are satisfied with the contribution, and _only_ once you are satisfied,
 write a comment that includes the phrase LGTM (or use the GitHub "Approval" mechanism).
