@@ -3,7 +3,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
 ## Changes since 1.3.8
-
+* Various performance improvements to hot reload. Assets added to pubspec.yaml will be correctly synced without a hot restart. New dependencies can be added to the pubspec and synced as well, but flutter packages get must be run separately or by an IDE.
 
 ## Changes since v1.0.0
 
