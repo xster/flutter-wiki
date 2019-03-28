@@ -93,7 +93,7 @@ Run the following steps to set up your environment:
 
 11. If you're on Linux, run: `sudo ./build/install-build-deps.sh`
 
-12. If you're on Mac, install Oracle's Java JDK, version 1.7 or later.
+12. If you're on Mac, install Oracle's Java JDK, version 1.8 or later.
 
 13. If you're on Mac, install `ant`: `brew install ant`
 
