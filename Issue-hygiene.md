@@ -93,11 +93,15 @@ for advice on how to do that successfully.)
 
 ### Months (aka release milestones)
 
-Bugs assigned to a specific month (e.g. "February 2021") are bugs we are intended to address before the release
-that for the given month. Any bug assigned to a month should have a specific dedicated
-assignee as well.
+Bugs assigned to a specific month (e.g. "February 2021") are bugs we are intended to
+address before the end of that month. This usually means that the bug fix will be present
+in the release made in the next month. For example, if a bug has the milestone "February
+2021", it means that we expect the relevant PR to land on or before February 28th 2021,
+and that the beta release made in March 2021 will include the fix.
 
 See the [[Release process]] page for more details about our release schedule.
+
+Any bug assigned to a month should have a specific dedicated assignee as well.
 
 Contributors working to address an issue should self-assign the issue to a relevant 
 bucket to indicate to others when you anticipate completing the issue. Release milestones are a
