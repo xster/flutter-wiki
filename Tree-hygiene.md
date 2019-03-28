@@ -49,7 +49,7 @@ The general process for submitting code to a Flutter repository is as follows:
    directory).
 
    Wait for Cirrus to give the green light before merging a PR. Cirrus
-   runs a bunch of precommit checks (e.g. see the tests for the
+   runs a bunch of pre-commit checks (e.g. see the tests for the
    [framework](https://github.com/flutter/flutter/blob/master/dev/bots/test.dart),
    or the [engine](https://github.com/flutter/engine/blob/master/ci/build.sh)).
    These checks include checks on comments, so make sure you wait for the
@@ -239,13 +239,13 @@ this failure mode! See [[Running and writing tests]] for more details.
 
 ## Regressions in performance
 
-After each checkin, please monitor the [performance dashboard](https://flutter-dashboard.appspot.com/benchmarks.html).
+After each check-in, please monitor the [performance dashboard](https://flutter-dashboard.appspot.com/benchmarks.html).
 
 If you see a regression (any of the charts increasing after your commit), please
 follow these steps:
 
 * Comment on the PR acknowledging the regression.
-* If the regression is expected and is a desireable trade-off (e.g. disk size
+* If the regression is expected and is a desirable trade-off (e.g. disk size
 increased slightly in exchange for a significant improvement in speed), then
 rebaseline the relevant benchmarks (log in, then click the magnifying glass
 at the top right of each chart, then click the button to auto rebaseline and
@@ -321,7 +321,7 @@ to make a change that will require developers to change their code:
     You may not have permission to post to this list yet. If you do not, please contact
     [Ray](rischpater@google.com).
 
- 3. **If folks agree that the benefits of changing the API outweigh the stablity
+ 3. **If folks agree that the benefits of changing the API outweigh the stability
     costs**, you can proceed with the normal code review process for making
     changes. You should leave some time between steps 2 and 3 (at a bare minimum
     24 hours during the work week so that people in all time zones have had a
