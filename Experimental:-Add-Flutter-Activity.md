@@ -17,44 +17,33 @@ As with any other `Activity`, start by declaring the `Activity` in `AndroidManif
         android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
         android:hardwareAccelerated="true"
         android:windowSoftInputMode="adjustResize"
-        android:exported="true">
-        <!-- This keeps the window background of the activity showing
-             until Flutter renders its first frame. It can be removed if
-             there is no splash screen (such as the default splash screen
-             defined in @style/LaunchTheme). -->
-        <meta-data
-            android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
-            android:value="true" 
-            />
-    </activity>
+        android:exported="true"
+        />
 ```
 
 Notice the overridden `configChanges`. When Flutter is used as a standalone `Activity`, Flutter expects to handle all configuration changes, itself. Overriding configuration changes allows Flutter to update its UI without recreating the entire `FlutterView` within `FlutterActivity`.
 
 ### Launch FlutterActivity
 
-Assuming that your Dart entrypoint is called `main()`, and you want to start your app at the default `/` route, all you have to do is launch `FlutterActivity` with an `Intent` and no extras.
+Assuming that your Dart entrypoint is called `main()`, and you want to start your app at the initial route of `/`, all you have to do is retrieve an `Intent` from `FlutterActivity` as follows.
 
 ```java
-    startActivity(Intent(currentActivity, FlutterActivity.class));
+    // Launches FlutterActivity, runs a Dart method called 'main()', and displays an initial
+    // route in Flutter of '/'.
+    Intent defaultFlutter = new FlutterActivity.IntentBuilder().build(currentActivity);
+    startActivity(defaultFlutter);
 ```
 
-To start your Flutter app at a route other than `/`, use the `FlutterActivity#EXTRA_INITIAL_ROUTE`.
+To customize the initial Dart method that is run and/or the initial Flutter route, use `FlutterActivity`'s `IntentBuilder` to customize your use-case.
 
 ```java
-    startActivity(
-        Intent(currentActivity, FlutterActivity.class)
-            .putExtra(FlutterActivity.EXTRA_INITIAL_ROUTE, '/my/custom/route')
-    );
-```
-
-To make Flutter transparent until the 1st frame is rendered (avoiding a black screen), use `FlutterActivity#EXTRA_SHOW_SPLASH_SCREEN`
-
-```java
-    startActivity(
-        Intent(currentActivity, FlutterActivity.class)
-            .putExtra(FlutterActivity.EXTRA_SHOW_SPLASH_SCREEN, true)
-    );
+    // Launches FlutterActivity, runs a Dart method called 'someOtherMethod()', and displays an initial
+    // route in Flutter of 'someOtherRoute'.
+    Intent customFlutter = new FlutterActivity.IntentBuilder()
+      .dartEntrypoint("someOtherMethod")
+      .initialRoute("someOtherRoute")
+      .build(currentActivity);
+    startActivity(customFlutter);
 ```
 
 ## Subclassing FlutterActivity
