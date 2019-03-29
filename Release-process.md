@@ -102,6 +102,6 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Push your local branch to your GitHub fork of the Flutter framework. (`git push origin $BRANCH`)
 1. Create a PR from your recently pushed branch, using the _BRANCH_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix.
 1. Once the code is reviewed, land the PR onto the _BRANCH_ branch.
-1. Tag your commit on _BRANCH_ as _TAG_. (`git tag $TAG; git push upstream $TAG`)
+1. Tag your commit on _BRANCH_ as _VERSION_. (`git tag $TAG; git push upstream $VERSION`)
 1. If this is an update to the current `beta` build, also force push this commit to the `beta` branch.
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
