@@ -19,3 +19,11 @@ the same PR to the framework as the one where you fix the framework to work with
 is very advisable to not make a breaking change to our APIs, and thus avoid this problem entirely.
 
 When you change the `engine.version` file locally, you should delete `$FLUTTER_ROOT/bin/cache` and then run `flutter precache` to ensure that all your local artifacts and snapshots are updated. You can then run tests and be sure that they are running against the latest version of the assets you need.
+
+You may find it helpful to use the [`$ENGINE_ROOT/src/flutter/tools/engine_roll_pr_desc.sh`](https://github.com/flutter/engine/blob/master/tools/engine_roll_pr_desc.sh) to create a PR description. Doing this helps us track down what commits have rolled in more quickly, and properly link to other commits and pull requests for commenting and tracking.
+
+For example, to generate a description from hash deadbeef to beefdead:
+
+```bash
+$ ./tools/engine_roll_pr_desc.sh deadbeef..beefdead
+```
