@@ -12,8 +12,10 @@ Skia also uses an auto-roller for Fuchsia; see <https://autoroll-internal.skia.o
 
 The engine is automatically rolled to the framework.
 
-The bot updates <https://github.com/flutter/flutter/blob/master/bin/internal/engine.version> to point to the latest revision of the engine *whose artifacts built successfully*, as determined by looking at the [Waterfall](https://build.chromium.org/p/client.flutter/waterfall).
+The bot updates <https://github.com/flutter/flutter/blob/master/bin/internal/engine.version> to point to the latest revision of the engine *whose artifacts built successfully*, as determined by looking at the [Engine Console](https://ci.chromium.org/p/flutter/g/engine/console).
 
 If you make a breaking change to the engine, you'll need to land the change to `engine.version` manually in
 the same PR to the framework as the one where you fix the framework to work with the new API. In general, it
 is very advisable to not make a breaking change to our APIs, and thus avoid this problem entirely.
+
+When you change the `engine.version` file locally, you should delete `$FLUTTER_ROOT/bin/cache` and then run `flutter precache` to ensure that all your local artifacts and snapshots are updated. You can then run tests and be sure that they are running against the latest version of the assets you need.
