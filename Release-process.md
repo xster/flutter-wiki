@@ -104,8 +104,5 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie or kf6gpe, to do this).
   1. Under Branch rules add a branch rule for your branch.
   1. Enable "Require pull requests", "Require status checks to pass before merging", "Include administrators".
-1. Force push the commit to the branch for the channel _CHANNEL_ you're hotfixing.
-```
-git push upstream HEAD:$CHANNEL
-```
+1. Force push the commit to the branch for the channel _CHANNEL_ you're hotfixing (`git push upstream HEAD:$CHANNEL`)
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
