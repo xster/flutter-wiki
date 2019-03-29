@@ -37,3 +37,9 @@ Next, alter your `FragmentPagerAdapter` to return a `FlutterFragment` for the de
     }
   }
 ```
+
+You should now have a Flutter UI as one or more pages within your tabbed navigation.
+
+You may notice a delay between creation of your `FlutterFragment` and the display of your Flutter UI. This delay is caused by the warm-up time for the `FlutterEngine`. You may want to create your `FlutterFragment` ahead of time to avoid this warm-up, and cache it across `Activity` configuration changes. Or, you may want to create an instance of `FlutterEngine` ahead of time, cache it in a static reference, and then create a subclass of `FlutterFragment` that uses your static-cached `FlutterEngine` instead of automatically creating a new one.
+
+TODO(mattcarroll): link to guide for subclassing `FlutterFragment` with a cached engine.
