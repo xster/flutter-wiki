@@ -81,6 +81,7 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Let _TAG_ be the tag of the version of the framework that you are hot fixing, e.g. `v0.0.0`.
 1. Let _VERSION_ be `$TAG-hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `v0.0.0-hotfix.1`.
 1. Let _BRANCH_ be `$TAG-hotfixes` (e.g. if _VERSION_ is `v0.0.0-hotfix.2` then _BRANCH_ is `v0.0.0-hotfixes`).
+1. Let _CHANNEL_ be the channel you want to hotfix (e.g., `dev`, `beta`, `stable`).
 1. If it doesn't yet exist, locally create _BRANCH_ on the framework repo starting from the framework commit of the build that you are fixing (`git fetch; git checkout $TAG -b $BRANCH`). Otherwise, switch to that branch (`git fetch; git checkout $BRANCH`).
 1. Push this branch to GitHub. (`git push upstream $BRANCH`)
 1. If this hot fix requires a change to the engine or its dependencies:
@@ -103,5 +104,8 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie or kf6gpe, to do this).
   1. Under Branch rules add a branch rule for your branch.
   1. Enable "Require pull requests", "Require status checks to pass before merging", "Include administrators".
-1. If this is an update to the current `beta` build, also force push this commit to the `beta` branch.
+1. Force push the commit to the branch for the channel _CHANNEL_ you're hotfixing.
+```
+git push upstream HEAD:$CHANNEL
+```
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
