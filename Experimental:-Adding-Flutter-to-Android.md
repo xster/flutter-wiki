@@ -12,3 +12,7 @@ This document (and linked documents) refers to a new and improved version of Flu
 * [Add a Flutter app in a View](https://github.com/flutter/flutter/wiki/Experimental:-Add-Flutter-View)
 * Add Flutter app(s) in a ListView
 * Add Flutter app(s) in a RecyclerView
+
+## Nuances
+
+* [Launch a Flutter app from an entrypoint other than main](https://github.com/flutter/flutter/wiki/Experimental:-Launch-Flutter-with-non-main-entrypoint)
