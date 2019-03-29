@@ -84,6 +84,8 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. If it doesn't yet exist, locally create _BRANCH_ on the framework repo starting from the framework commit of the build that you are fixing (`git fetch; git checkout $TAG -b $BRANCH`). Otherwise, switch to that branch (`git fetch; git checkout $BRANCH`).
 1. Push this branch to GitHub. (`git push upstream $BRANCH`)
 1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie, to do this).
+  1. Under Branch rules add a branch rule for your branch.
+  1. Enable "Require pull requests", "Require status checks to pass before merging", "Include administrators".
 1. If this hot fix requires a change to the engine or its dependencies:
    1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo for _BRANCH_).
    1. Locally create a branch on the engine repo starting from that commit: `git checkout $COMMIT -b $VERSION`
