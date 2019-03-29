@@ -83,3 +83,7 @@ TODO(mattcarroll)
 ### Add support for plugins
 
 TODO(mattcarroll)
+
+### Handling orientation change
+
+TODO(mattcarroll)
