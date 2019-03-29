@@ -101,8 +101,18 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Create a PR from your recently pushed branch, using the _BRANCH_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix.
 1. Once the code is reviewed, land the PR onto the _BRANCH_ branch.
 1. Tag your commit on _BRANCH_ as _VERSION_. (`git tag $TAG; git push upstream $VERSION`)
+1. Force push the commit to the branch for the channel _CHANNEL_ you're hotfixing (`git push upstream HEAD:$CHANNEL`)
 1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie or kf6gpe, to do this).
   1. Under Branch rules add a branch rule for your branch.
   1. Enable "Require pull requests", "Require status checks to pass before merging", "Include administrators".
-1. Force push the commit to the branch for the channel _CHANNEL_ you're hotfixing (`git push upstream HEAD:$CHANNEL`)
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
+
+Note that after applying a hotfix to _CHANNEL_, you will need to manually force-push the subsequent release to that channel when it's ready. To do this:
+1.  Ask a repo administrator (e.g., Hicksie, kf6gpe) to temporarily remove the branch protection on the branch for _CHANNEL_.
+1.  Perform the force push using 
+   ```
+   git fetch upstream
+   git checkout vX.Y.Z
+   git push upstream HEAD:stable --force
+   ```
+1.  _Immediately_ ask a repo administrator to reinstate branch protection on the branch for _CHANNEL_
