@@ -83,9 +83,6 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Let _BRANCH_ be `$TAG-hotfixes` (e.g. if _VERSION_ is `v0.0.0-hotfix.2` then _BRANCH_ is `v0.0.0-hotfixes`).
 1. If it doesn't yet exist, locally create _BRANCH_ on the framework repo starting from the framework commit of the build that you are fixing (`git fetch; git checkout $TAG -b $BRANCH`). Otherwise, switch to that branch (`git fetch; git checkout $BRANCH`).
 1. Push this branch to GitHub. (`git push upstream $BRANCH`)
-1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie, to do this).
-  1. Under Branch rules add a branch rule for your branch.
-  1. Enable "Require pull requests", "Require status checks to pass before merging", "Include administrators".
 1. If this hot fix requires a change to the engine or its dependencies:
    1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo for _BRANCH_).
    1. Locally create a branch on the engine repo starting from that commit: `git checkout $COMMIT -b $VERSION`
@@ -103,5 +100,8 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Create a PR from your recently pushed branch, using the _BRANCH_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix.
 1. Once the code is reviewed, land the PR onto the _BRANCH_ branch.
 1. Tag your commit on _BRANCH_ as _VERSION_. (`git tag $TAG; git push upstream $VERSION`)
+1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie or kf6gpe, to do this).
+  1. Under Branch rules add a branch rule for your branch.
+  1. Enable "Require pull requests", "Require status checks to pass before merging", "Include administrators".
 1. If this is an update to the current `beta` build, also force push this commit to the `beta` branch.
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
