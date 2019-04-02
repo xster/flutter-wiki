@@ -68,6 +68,7 @@ The general process for submitting code to a Flutter repository is as follows:
 9. Watch the post-commit tests on the dashboard to make sure everything passes. If anything
    goes wrong, revert your patch and study the problem.
 
+_See also: [[What should I work on?]]_
 
 ## Using git
 
