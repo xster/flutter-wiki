@@ -12,7 +12,7 @@ This page attempts to be a one-stop shop for figuring out what the most importan
 1. The priorities described on our [[roadmap]].
 1. [Issues sorted by thumbs-up](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc).
 
-Bugs in other bug systems should be tracked with bugs in GitHub.
+Bugs in other bug systems should be tracked with bugs in GitHub. OKRs should be reflected in the items listed above. For example, OKRs should reflect what the roadmap covers, expected customer blockers, and so forth. Work that is unique to a particular quarter would be represented by a filed bug with a milestone and assignee.
 
 Sometimes, items in the list above escalate. For example, a performance regression might get filed as a TODAY bug and thus start trumping a customer blocker issue.
 
