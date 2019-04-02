@@ -16,7 +16,7 @@ Every month, we pick the "best" `dev` build of the previous month or so, and pro
 
 ### stable
 
-When we believe we have a particularly good build, we promote it to the `stable` channel. This has so far happened only once, with our 1.0 launch. We intend to do this more or less every quarter, but this may vary.
+When we believe we have a particularly good build, we promote it to the `stable` channel. We intend to do this more or less every quarter, but this may vary. We recommend that you use this channel for all production app releases. We may ship hotfixes to the stable channel for high-priority bugs, although our intent is to do this rarely.
 
 ## How to change channels
 
