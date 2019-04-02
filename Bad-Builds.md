@@ -3,7 +3,7 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
 ## v1.4.0
-* "Detected problems with API compatibility" dialog shows on Android P (started at https://github.com/flutter/flutter/commit/697a2a828fce98ec5cffd9dd2fdb34ccd200e38a), tracking issue: #30395. Speculative fix was rolled at https://github.com/flutter/flutter/commit/d639883c5b72e6166c8241ab57114ea529f516a7.
+* "Detected problems with API compatibility" dialog shows on Android P (started at https://github.com/flutter/flutter/commit/697a2a828fce98ec5cffd9dd2fdb34ccd200e38a), tracking issue: [#30395](https://github.com/flutter/flutter/issues/30395). Speculative fix was rolled at https://github.com/flutter/flutter/commit/d639883c5b72e6166c8241ab57114ea529f516a7.
 
 ## v1.3.14
 * `flutter upgrade` will stash changes in the user's project folder.
