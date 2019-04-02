@@ -15,4 +15,5 @@ If you intend to contribute to Flutter, welcome! You are encouraged to start wit
 * [Plugin compatibility policy](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#plugin-compatibility)
 * [Reviewing code](https://github.com/flutter/flutter/wiki/Tree-hygiene#how-to-review-code)
 * [Submitting code, process for](https://github.com/flutter/flutter/wiki/Tree-hygiene#overview)
+* [Threading in the Engine](https://github.com/flutter/flutter/wiki/The-Engine-architecture#threading)
 * [When will my bug be fixed?](https://github.com/flutter/flutter/wiki/Issue-hygiene#when-will-my-bug-be-fixed)
