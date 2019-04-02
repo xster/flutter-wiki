@@ -14,3 +14,7 @@ This page attempts to be a one-stop shop for figuring out what the most importan
 Bugs in other bug systems should be tracked with bugs in GitHub.
 
 Sometimes, items in the list above escalate. For example, a performance regression might get filed as a TODAY bug and thus start trumping a customer blocker issue.
+
+See also:
+
+ * [[Issue Hygiene]], in particular the section on prioritization.
