@@ -1,5 +1,6 @@
 This page attempts to be a one-stop shop for figuring out what the most important thing to work on is, so that team members (contributors) can determine the more effective way to improve Flutter.
 
+1. Build breakage. Check the [dashboard](https://flutter-dashboard.appspot.com/build.html).
 1. [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22).
 1. [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22severe%3A+customer+blocker%22).
 1. Performance regressions. Check the [dashboard](https://flutter-dashboard.appspot.com/benchmarks.html).
