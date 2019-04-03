@@ -71,6 +71,10 @@ See the headers that come with the library for your platform for information on 
 will be available in the future; for now it may be helpful to look at [the flutter-desktop-embedding
 example](https://github.com/google/flutter-desktop-embedding/tree/master/example).
 
+In addition to the Flutter library, your application will need to bundle your Flutter assets (as created by
+`flutter build bundle`). On Windows and Linux you will also nee the ICU data from the Flutter engine
+(look for `icudtl.dat` under the `bin/cache/artifacts/engine` directory in your Flutter tree).
+
 #### macOS Note
 
 Currently you must set up your FLEView in a XIB, rather than in code (this will change in the future). To
