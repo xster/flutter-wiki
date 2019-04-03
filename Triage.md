@@ -56,6 +56,8 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a documentation bug, add one of the labels with the "d:" prefix.
 - If it's a bug with the underlying engine, add `engine` and optionally one of the bugs with the "e:" prefix. Consider one of the bugs with the "dependency" prefix if the bug is related to one of those areas.
 - If it's a bug with the Flutter framework, add `framework` and optionally one of the bugs with the "f:" prefix.
+   - If it's specific to Material widgets or the Gallery, include the "f: material" label.
+   - If it's specific to iOS widgets, include the "f: cupertino" label.
 - If it's a bug with plugins, add `plugin` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with packages, add `package` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
