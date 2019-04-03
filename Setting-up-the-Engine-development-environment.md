@@ -118,9 +118,9 @@ Run the following steps to set up your environment:
     ```	
     dependency_overrides:	
       sky_engine:	
-        path: /path/to/flutter/engine/out/host_debug/gen/dart-pkg/sky_engine	
+        path: /path/to/flutter/engine/src/out/host_debug/gen/dart-pkg/sky_engine	
       sky_services:	
-        path: /path/to/flutter/engine/out/host_debug/gen/dart-pkg/sky_services	
+        path: /path/to/flutter/engine/src/out/host_debug/gen/dart-pkg/sky_services	
     ```	
     Depending on the platform you choose below, you will need to replace `host_debug` with the appropriate 
     directory.
