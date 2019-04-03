@@ -935,8 +935,7 @@ for consistency and readability reasons.
 
 We do not yet use `dartfmt`. Flutter code tends to use patterns that
 the standard Dart formatter does not handle well. We are
-https://github.com/dart-lang/dart_style/issues/442[working with the Dart team]
-to make `dartfmt` aware of these patterns.
+https://github.com/flutter/flutter/issues/2025[working with Dart team] to make `dartfmt` aware of these patterns.
 
 
 ### In defense of the extra work that hand-formatting entails
