@@ -93,13 +93,15 @@ Run the following steps to set up your environment:
 
 11. If you're on Linux, run: `sudo ./build/install-build-deps.sh`
 
-12. If you're on Mac, install Oracle's Java JDK, version 1.8 or later.
+12. If you're on Linux, run: `sudo ./flutter/build/install-build-deps-linux-desktop.sh`
 
-13. If you're on Mac, install `ant`: `brew install ant`
+13. If you're on Mac, install Oracle's Java JDK, version 1.8 or later.
 
-14. If you're on Windows, install Visual Studio (non-Google developers only).
+14. If you're on Mac, install `ant`: `brew install ant`
 
-15. If you're planning on working on the
+15. If you're on Windows, install Visual Studio (non-Google developers only).
+
+16. If you're planning on working on the
     [buildroot](https://github.com/flutter/buildroot) repository as
     well, and have a local checkout of that repository, run the
     following commands in the `src` directory to update your git
@@ -109,7 +111,7 @@ Run the following steps to set up your environment:
     git remote rename origin upstream
     git remote add origin git@github.com:<your_name_here>/buildroot.git
     ```
-16. Additionally if you've modified dart sources in `flutter/engine`, you'll
+17. Additionally if you've modified dart sources in `flutter/engine`, you'll
     need to add a `dependency_overrides` section to point to your modified
     `package:sky_engine` and `package:sky_services` to the `pubspec.yaml`
     for the flutter app you're using the custom engine with.  A typical
