@@ -137,6 +137,22 @@ than just "LGTM". If you feel your code needs a real review, please
 find someone to actually review it. ("RSLGTM" means "Rubber Stamp
 Looks Good To Me".)
 
+
+### Who to have review your code
+
+If you aren't sure who to ask to review your code, you generally just need to wait,
+and eventually (hopefully less than a week) someone will get to it. If that isn't working,
+please reach out to one of the following people:
+
+* iOS widgets (cupertino) - @xster
+* Material widgets - @HansMuller
+* Flutter Framework - @goderbauer
+* Engine - @cbracken
+* `flutter` Tool - @zra
+* Plugins - @amirha
+* Anything else - @Hixie
+
+
 ## How to review code
 
 Reviewers should carefully read the code and make sure they understand
