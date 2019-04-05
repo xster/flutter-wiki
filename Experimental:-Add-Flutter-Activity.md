@@ -30,7 +30,7 @@ Assuming that your Dart entrypoint is called `main()`, and you want to start you
 ```java
     // Launches FlutterActivity, runs a Dart method called 'main()', and displays an initial
     // route in Flutter of '/'.
-    Intent defaultFlutter = new FlutterActivity.IntentBuilder().build(currentActivity);
+    Intent defaultFlutter = new FlutterActivity.createDefaultIntent(currentActivity);
     startActivity(defaultFlutter);
 ```
 
@@ -46,8 +46,71 @@ To customize the initial Dart method that is run and/or the initial Flutter rout
     startActivity(customFlutter);
 ```
 
-## Subclassing FlutterActivity
+## Using a cached FlutterEngine
 
-It is not expected that `FlutterActivity` should require any subclassing to alter Flutter behavior. `FlutterActivity` is only responsible for minor setup responsibilities, as well as forwarding certain `Activity` callbacks to the underlying `FlutterFragment`.
+By default, a `FlutterActivity` will create a new `FlutterEngine` when it is created. Creating a new `FlutterEngine` comes with a warm-up period that results in a blank screen for a couple seconds before Flutter is able to render its first frame.
 
-If you discover a reason why you need to subclass `FlutterActivity` to alter Flutter behavior, please [file an issue](https://github.com/flutter/flutter/issues/new) so that the framework team can consider adding that behavior to `FlutterActivity`.
+To avoid the initial visual delay of creating a new `FlutterEngine`, you can create a `FlutterEngine` instance before you need it and then use it within your `FlutterActivity`. To use an existing `FlutterEngine` in your `FlutterActivity` you will need to subclass `FlutterActivity` as shown below.
+
+```java
+public class MyFlutterActivity extends FlutterActivity implements FlutterFragment.FlutterEngineProvider {
+  // This is the method that others will use to create
+  // an Intent that launches MyFlutterActivity.
+  public static Intent createDefaultIntent(@NonNull Context launchingContext) {
+    return new IntentBuilder().build(launchingContext);
+  }
+
+  // You need to define an IntentBuilder subclass so that the
+  // IntentBuilder uses MyFlutterActivity instead of a regular FlutterActivity.
+  private static class IntentBuilder extends FlutterActivity.IntentBuilder {
+    // Override the constructor to specify your class.
+    IntentBuilder() {
+      super(MyFlutterActivity.class);
+    }
+  }
+
+  // This is the method where you provide your existing FlutterEngine instance.
+  @Nullable
+  @Override
+  public FlutterEngine getFlutterEngine(@NonNull Context context) {
+    FlutterEngine flutterEngine;
+
+    // You might hold your engine in a static variable.
+    flutterEngine = MyFlutterEngineCache.getFlutterEngine();
+
+    // or you might hold your engine in your application class.
+    flutterEngine = ((MyApp) getApplication()).getFlutterEngine();
+
+    return flutterEngine;
+  }
+}
+```
+
+Warming up a `FlutterEngine` requires that you instantiate the `FlutterEngine` and begin executing Dart code. Here is what it might look like to warm up an engine when your application starts. It is not recommended that you actually warm up a `FlutterEngine` in your `Application`'s `onCreate()` method because it will cause an app-launch lag.
+
+```java
+class MyApp extends Application {
+  private FlutterEngine flutterEngine;
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+
+    // Flutter must be initialized before FlutterEngines can be created.    
+    FlutterMain.startInitialization(this);
+    FlutterMain.ensureInitializationComplete(this, new String[]{});
+
+    // Instantiate a FlutterEngine.
+    flutterEngine = new FlutterEngine(this);
+
+    // Start running Dart code. This means that you need to select a Dart
+    // entrypoint, and an initial route when you warm up your engine.
+    DartExecutor.DartEntrypoint entrypoint = new DartExecutor.DartEntrypoint(
+      getResources().getAssets(),
+      FlutterMain.findAppBundlePath(this),
+      "main"
+    );
+    flutterEngine.getDartExecutor().executeDartEntrypoint(entrypoint);
+  }
+}
+```
