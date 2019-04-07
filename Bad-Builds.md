@@ -2,7 +2,7 @@ This is a list of all the dev branch commits that are considered "bad" and shoul
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
-## v1.4.10 -
+## v1.4.10
 * Opacity layer's child transform matrix is not initialized (started from [this engine roll](https://github.com/flutter/flutter/commit/daeaffc18838166555b480e928b3cdd8e4a5d937)), tracking issue: [#30586](https://github.com/flutter/flutter/issues/30586). Fix in progress at https://github.com/flutter/engine/pull/8467
 ## v1.4.0 - v1.4.8
 * "Detected problems with API compatibility" dialog shows on Android P (started at https://github.com/flutter/flutter/commit/697a2a828fce98ec5cffd9dd2fdb34ccd200e38a), tracking issue: [#30395](https://github.com/flutter/flutter/issues/30395). Fix was rolled at https://github.com/flutter/flutter/commit/d639883c5b72e6166c8241ab57114ea529f516a7.
