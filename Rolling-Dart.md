@@ -10,6 +10,10 @@ This document describes how to update the version of the Dart SDK that the Engin
 
 The Flutter repo does not use a `DEPS` file and `gclient` for its dependencies. Instead, the Flutter Engine version is in `flutter/bin/internal/engine.version`.
 
+## Dart Autoroller
+
+Dart is now automatically rolled into the Flutter engine repository on a regular basis. See [Autorollers](https://github.com/flutter/flutter/wiki/Autorollers) for more information.
+
 ## Using dart_roll_helper.py to roll the version of Dart used by the engine
 
 The `dart_roll_helper.py` script automates a large number of the Dart SDK roll steps, including:
