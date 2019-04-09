@@ -19,7 +19,7 @@ Our plans will of course evolve over time based on customer feedback and new mar
 
 Flutter developers can select a “channel” from which to receive updates. We have four channels: master, dev, beta and stable, with increasing levels of stability and confidence of quality but longer lead time for changes to propagate. 
 
-We plan to release one beta build each month, typically near the start of the month, and about four stable releases throughout the year. We recommend that you use the stable channel for apps released to end-users. For more details on our release process, see the [Release process](https://github.com/flutter/flutter/wiki/Release-process) wiki page.
+We release builds to the dev channel every few days, based on performing some additional testing. We plan to release one beta build each month, typically near the start of the month, and about four stable releases throughout the year. We recommend that you use the stable channel for apps released to end-users. For more details on our release process, see the [Release process](https://github.com/flutter/flutter/wiki/Release-process) wiki page.
 
 ## Themes
 
