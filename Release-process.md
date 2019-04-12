@@ -102,6 +102,14 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Once the code is reviewed, land the PR onto the _BRANCH_ branch.
 1. Tag your commit on _BRANCH_ as _VERSION_. (`git tag $TAG; git push upstream $VERSION`)
 1. Force push the commit to the branch for the channel _CHANNEL_ you're hotfixing (`git push upstream HEAD:$CHANNEL`)
+   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator (e.g. Hixie) to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members). If the last pushed version was a hotfix, this may require temporarily unprotecting the branch as well.
+1. If this is a beta release, wait for the Cirrus builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches, and check https://ci.chromium.org/p/flutter/builders/prod/Mac%20Flutter%20Packaging, 
+https://ci.chromium.org/p/flutter/builders/prod/Linux%20Flutter%20Packaging, and 
+https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). If they fail, let people know as soon as possible and investigate the failure(s) as a matter of urgency.
+1. Wait for the packaging build to complete, and download the [packages](https://flutter.io/sdk-archive/) built by them. On each system, do the following (these will be automated shortly, but until then...):
+   - Unpack and check to see that a new project can be created with `flutter create --offline foo`
+   - Check that it doesn't build a new snapshot the first time flutter runs.
+   - Check that we have the right channel and version set.
 1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie or kf6gpe, to do this).
   1. Under Branch rules add a branch rule for your branch.
   1. Enable "Require pull requests", "Require status checks to pass before merging", "Include administrators".
