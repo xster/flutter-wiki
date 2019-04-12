@@ -110,8 +110,6 @@ https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). 
    - Check that it doesn't build a new snapshot the first time flutter runs.
    - Check that we have the right channel and version set.
 1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie or kf6gpe, to do this).
-  1. Under Branch rules add a branch rule for your branch.
-  1. Enable "Require pull requests", "Require status checks to pass before merging", "Include administrators".
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
 
 Note that after applying a hotfix to _CHANNEL_, you will need to manually force-push the subsequent release to that channel when it's ready. To do this:
