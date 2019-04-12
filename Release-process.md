@@ -55,8 +55,6 @@ https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). 
    - Check that we have the right channel and version set.
 1. Update the [[Changelog]] page so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
 1. Inform the person currently doing the dev roll that they should increment the Y number instead of the Z number (`--increment=y`).
-1. Move all the open bugs in the current milestone to the Overdue milestone.
-1. Close the current [milestone](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open).
 1. Send an e-mail to flutter-announce that includes the latest section of the [[Changelog]] page.
 1. Done!
 
