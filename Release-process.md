@@ -100,7 +100,7 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 1. Push your local branch to your GitHub fork of the Flutter framework. (`git push origin $BRANCH`)
 1. Create a PR from your recently pushed branch, using the _BRANCH_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix.
 1. Once the code is reviewed, land the PR onto the _BRANCH_ branch.
-1. Tag your commit on _BRANCH_ as _VERSION_. (`git tag $TAG; git push upstream $VERSION`)
+1. Tag your commit on _BRANCH_ as _VERSION_. (`git tag $VERSION; git push upstream $VERSION`)
 1. Force push the commit to the branch for the channel _CHANNEL_ you're hotfixing (`git push upstream HEAD:$CHANNEL`). If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator (e.g. Hixie) to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members). If the last pushed version was a hotfix, this may require temporarily unprotecting the branch as well.
 1. If this is a beta release, wait for the Cirrus builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches, and check https://ci.chromium.org/p/flutter/builders/prod/Mac%20Flutter%20Packaging, 
 https://ci.chromium.org/p/flutter/builders/prod/Linux%20Flutter%20Packaging, and 
