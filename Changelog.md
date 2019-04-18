@@ -3,7 +3,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
 ## Changes since 1.3.12
-* [#30390]https://github.com/flutter/flutter/pull/30390 Slider now uses the correct color scheme, and has other visual updates such as thumb size, overlay size, and track shape.
+* [#30390](https://github.com/flutter/flutter/pull/30390) Slider now uses the correct color scheme, and has other visual updates such as thumb size, overlay size, and track shape.
 
 ## Changes since 1.3.8
 * Various performance improvements to hot reload. Assets added to pubspec.yaml will be correctly synced without a hot restart. New dependencies can be added to the pubspec and synced as well, but flutter packages get must be run separately or by an IDE.
