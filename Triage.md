@@ -2,9 +2,9 @@
 
 The process of triaging bugs is to first go through these bug lists and make sure they have all been processed as described below:
 
-1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3Atool+-label%3Ateam+-label%3A%22a%3A+tests%22+sort%3Aupdated-asc+).
+1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
 
-2. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A%22a%3A+tests%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
+2. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
 
 3. [the bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
 
@@ -16,7 +16,7 @@ For PRs, each PR should match one of the following categories:
 
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
-* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`.
+* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`.
 
 * It can have the `will need additional triage` label.
 
@@ -61,6 +61,7 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a bug with plugins, add `plugin` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with packages, add `package` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
+- If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the "☸ platform-web" label.
 
 Bugs relating to the website should be moved to the `flutter/website` repo.
 
@@ -119,6 +120,11 @@ We intend for each area of the product to go through the following triage regula
 
 * Look at open PRs and review them.
 * Look at open bugs and determine what needs to be worked on, looking at TODAY bugs, customer blockers, customer critical bugs, regressions, crashers, popular bugs and feature requests (thumbs-up reactions), and old issues.
+
+Teams can use a variety of tools to prioritize bugs.
+
+* One tool is the milestone field, in particular the "Goals", "Near-term goals", "Stretch goals", "Future", and "Scheduled customer work" milestones for work that doesn't yet have a committed target date and assigned engineer, and the dated milestones for bugs that have an assigned engineer and will definitely not slip beyond a particular month (be conservative when picking milestones!).
+* Another tool is the [Projects](https://github.com/flutter/flutter/projects) page on GitHub. Feel free to create new projects as desired, and use it as you see fit.
 
 ## Engine
 
@@ -190,6 +196,20 @@ If you come across a bug that is unrelated to the framework, remove the `framewo
 * [Old issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc)
 
 If you come across a bug that is unrelated to the tool, remove the `tool` label and leave a comment explaining why. That will send it back to triage.
+
+## Web
+
+* [Web PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A"☸+platform-web"+sort%3Aupdated-asc)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22TODAY%22)
+* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
+* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
+* [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
+* [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22)
+* [Popular feature requests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22)
+* [Old issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc)
+
+If you come across a bug that is unrelated to the Web backend, remove the `☸ platform-web` label and leave a comment explaining why. That will send it back to triage.
 
 ## Plugins, Packages, and Ecosystem
 
