@@ -167,14 +167,15 @@ As a reviewer, you are the last line of defense.
 
 1. Take a step back. What problem is the PR trying to solve? Is it a real problem?
 2. What other solutions could we consider? What could we do to make this even better?
-3. Is the best API? See our [philosophy](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#philosophy) section. Look for state duplication, synchronous slow work, complecting, global state,
+3. Is it the best API? See our [philosophy](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#philosophy) section. Look for state duplication, synchronous slow work, complecting, global state,
 overly-specific APIs, API cliffs and API oceans, API design in a vacuum (without a customer). If these terms
 don't make sense, read the style guide again. :-)
-4. Is it testable? Is it tested? All code must be tested. Are there asserts? Encourage liberal use of assertions.
-5. Look for mistakes in indenting the code and other trivial formatting problems.
-6. Is new code licensed correctly?
-7. Is the documentation thorough and useful? Look for useless documentation, empty prose, and breadcrumbs. See the [documentation section](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc) of our style guide for what that means.
-8. Check for good grammar in API docs and comments. Check that identifiers are named according to our conventions.
+4. Is it the best implementation? Again, see our [style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#coding-patterns-and-catching-bugs-early), in particular its section on good coding patterns. Are there hacks? Are we taking on more technical debt? Think of ways in which the code could break.
+5. Is it testable? Is it tested? All code must be tested. Are there asserts? Encourage liberal use of assertions.
+6. Look for mistakes in indenting the code and other trivial formatting problems.
+7. Is new code licensed correctly?
+8. Is the documentation thorough and useful? Look for useless documentation, empty prose, and breadcrumbs. See the [documentation section](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc) of our style guide for what that means.
+9. Check for good grammar in API docs and comments. Check that identifiers are named according to our conventions.
 
 Once you are satisfied with the contribution, and _only_ once you are satisfied,
 write a comment that includes the phrase LGTM (or use the GitHub "Approval" mechanism).
