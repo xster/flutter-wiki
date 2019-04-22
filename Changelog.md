@@ -5,8 +5,6 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ## Changes since 1.3.8
 * Various performance improvements to hot reload. Assets added to pubspec.yaml will be correctly synced without a hot restart. New dependencies can be added to the pubspec and synced as well, but flutter packages get must be run separately or by an IDE.
 
-* [#29188](https://github.com/flutter/flutter/pull/29188) SliverChildListDeletgate constructor is changed to non-const
-
 ## Changes since v1.0.0
 
 * [#24876](https://github.com/flutter/flutter/pull/24876) Widget tests of `EditableText` are now required to ensure that a `MediaQuery` now exists in their widget hierarchy, as `EditableText` now depends on such a `MediaQuery` in its ancestry tree in order to obtain the device pixel ratio. `MaterialApp` and `CupertinoApp` already ensure that such an ancestor exists.
@@ -21,6 +19,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#7414](https://github.com/flutter/engine/pull/7414) dart:ui: Rename dart:ui ParagraphStyle.lineHeight to ParagraphStyle.height. This property previously did not do anything and was renamed to stay consistent with TextStyle.height.
 * [#27904](https://github.com/flutter/flutter/pull/27904) `PointerEvent` now implements `Diagnosticable`. Any `toString` override on a `PointerEvent` subclass [will need to be changed](https://groups.google.com/forum/#!topic/flutter-announce/ZPPRKV642Uk).
 * [#28751](https://github.com/flutter/flutter/pull/28751) Add `decorationThickness` to `TextStyle` to control the stroke thickness of text decoration.
+
+### v1.4.9-hotfix.1
+
+* [#29188](https://github.com/flutter/flutter/pull/29188) SliverChildListDeletgate constructor is changed to non-const
 
 ### v1.3.0
 
