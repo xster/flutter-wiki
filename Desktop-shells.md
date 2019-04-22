@@ -41,6 +41,12 @@ For Windows and Linux, only the JSON codec is supported at the moment (which mea
 existing plugins would need to be changed to implement desktop support). The standard codec should be coming
 soon.
 
+### Tooling
+
+Support for desktop in the `flutter` tool is a work in progress. To use any of the support (such the host machine being listed by `flutter devices`), two things must currently be true:
+- You must not be on the `stable` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels). This is to make it clear that desktop support is not yet considered stable and production-ready.
+- You must set the `ENABLE_FLUTTER_DESKTOP` environment variable to `true`. This is to avoid interfering with existing mobile development workflows while the long-term solution is being worked out (see [#30724](https://github.com/flutter/flutter/issues/30724)).
+
 ## Prebuilt Shell Libraries
 
 The desktop libraries are not yet available in the Flutter SDK, but prebuilt versions are available for download. You will need the Flutter engine hash from the
