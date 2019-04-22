@@ -10,7 +10,6 @@ We’ve established some broad themes that we want to focus on over the coming y
 - Ease of adoption
 - Ecosystem
 - Support for platforms beyond mobile
-- Dynamic updates
 - Tooling
 
 Our plans will of course evolve over time based on customer feedback and new market opportunities. The list here shouldn't be viewed either as exhaustive, nor a promise that we will complete all this work. If you have feedback about what you think we should be working on, we encourage you to get in touch (e.g. by [filing an issue](https://github.com/flutter/flutter/issues/new/choose) or [emailing the flutter-dev mailing list](https://groups.google.com/forum/#!forum/flutter-dev)). And as Flutter is an open source project, we invite contributions both towards the themes presented below and in other areas.
@@ -63,19 +62,17 @@ We will invest in expanding Flutter to other form factors and release profiles, 
 - Making [the **Hummingbird** project](https://medium.com/flutter-io/hummingbird-building-flutter-for-the-web-e687c2a023a8) (Flutter running on the Web) available to developers.
 - Continue to experiment with **making Flutter run on desktop-class platforms** (e.g. macOS and Windows).
 
-### Dynamic updates
-
-The Dart Platform, on which Flutter is built, provides unique abilities for us to push code to your applications without redeploying the app.
-
-- **Dynamic patching on Android**, allowing for code updates to deployed to Flutter applications running on Android directly from a servers.
-- **Dynamic extension loading** to allow lazy loading of occasionally used parts of your application.
-
 ### Tooling
 
 - Continue to invest in **Visual Studio Code, Android Studio, and IntelliJ** as first-class IDEs.
-- Add support for **[Language Server Protocol](https://langserver.org/)**, and other open protocols, to our tools.
-- Make it **easy for developers to improve the quality and performance of their applications** with improved profiling and debugging experiences.
-- Continue to **improve templates** to make getting started with Flutter work quick and easy.
+- Add support for **[Language Server Protocol](https://langserver.org/)** to our tools.
+- Make it **easy for developers to improve the quality and performance of their applications** with improved profiling and debugging experiences via [Dart DevTools](https://flutter.github.io/devtools/).
+- Making sure that Flutter is easy-to-use across multiple platforms.
+
+### Changes
+
+- Dropped support for Dynamic updates in 2019. See [this bug](
+https://github.com/flutter/flutter/issues/14330#issuecomment-485565194) for details.
 
 ## Milestones & Dates
 
