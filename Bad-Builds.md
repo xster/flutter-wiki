@@ -2,6 +2,10 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
+## v1.4.9 - 
+
+* Selection handles don't appear on iOS (https://github.com/flutter/flutter/issues/31287)
+
 ## v1.4.8 - v1.4.11
 * Opacity layer's child transform matrix is not initialized (started from [this engine roll](https://github.com/flutter/flutter/commit/daeaffc18838166555b480e928b3cdd8e4a5d937)), tracking issue: [#30586](https://github.com/flutter/flutter/issues/30586). Fixed in https://github.com/flutter/engine/pull/8467 (rolled in https://github.com/flutter/flutter/commit/e09fc3574a8e4d243668c8f7b703378eca0bab24).
 
