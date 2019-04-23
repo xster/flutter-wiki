@@ -20,7 +20,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ### v1.4.9-hotfix.1
 
-* [#29188](https://github.com/flutter/flutter/pull/29188) SliverChildListDeletgate constructor is changed to non-const.
+* [#29188](https://github.com/flutter/flutter/pull/29188) SliverChildListDelegate constructor is changed to non-const.
 
 ### v1.4.4
 
