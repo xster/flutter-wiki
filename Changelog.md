@@ -7,7 +7,6 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since v1.0.0
 
-* [#24876](https://github.com/flutter/flutter/pull/24876) Widget tests of `EditableText` are now required to ensure that a `MediaQuery` now exists in their widget hierarchy, as `EditableText` now depends on such a `MediaQuery` in its ancestry tree in order to obtain the device pixel ratio. `MaterialApp` and `CupertinoApp` already ensure that such an ancestor exists.
 * [#7518](https://github.com/flutter/engine/pull/7518) The default location of the `flutter_assets` folder has been moved for iOS.
 * [#23424](https://github.com/flutter/flutter/pull/23424) By default, a drag gesture detector's onStart callback will be called with the location of where a drag gesture is detected (ie. after dragging a certain number of pixels) instead of at the touch down location. To use the old functionality with a given drag gesture recognizer, the dragStartBehavior variable of the recognizer should be set DragStartBehavior.down.
 * [#26238](https://github.com/flutter/flutter/pull/26238) removed the long-deprecated `TwoLevelList` widget. Use `ListView` with `ExpansionTile` instead.
@@ -31,6 +30,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * [#27866](https://github.com/flutter/flutter/pull/27866) Fixes a bug when an iOS back swipe gesture is manually dragged back to its starting point and breaking future back swipes. 
 * [#27697](https://github.com/flutter/flutter/pull/27697) CupertinoTextField's cursorColor default now matches the app's theme. If this is undesirable, developers can use the `cupertinoOverrideTheme` property of `ThemeData` to provide a Cupertino-specific override.
+* [#24876](https://github.com/flutter/flutter/pull/24876) Improves the general fidelity of text cursors on iOS such as rounder corners, a fading cursor blink etc.
 
 ### v1.1.5
 
