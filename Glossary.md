@@ -18,9 +18,9 @@ Here are some terms that we use in the Flutter project and what they mean:
 
 - **Framework**. The `flutter` library (`packages/flutter` in the main repository) that includes the bulk of the Dart classes exposed by Flutter, such as all the built-in widgets.
 
-- **Hot reload**. During development, causing a running application to update with new logic, without losing any of its state. This contrasts with hot restart because state is maintained despite the code being updated.
+- **Hot reload**. During development, causing a running application to update with new logic, without losing any of its state. This contrasts with hot restart because state is maintained despite the code being updated. We consider hot reload to be "hot" if it's subsecond in the normal case, significantly so in favourable conditions (e.g. fast devices, changing a small part of an application's UI).
 
-- **Hot restart**. During development, causing a running application to rerun from the beginning, using new logic, and with all state reset to initial conditions. This contrasts with a cold restart because it does not require the application to shut down, and contrasts with a hot reload because state is lost in the process.
+- **Hot restart**. During development, causing a running application to rerun from the beginning, using new logic, and with all state reset to initial conditions. This contrasts with a cold restart because it does not require the application to shut down, and contrasts with a hot reload because state is lost in the process. We consider hot restart to be "hot" if it's under four seconds in the normal case.
 
 - **Modular application delivery**. The ability to package a single app into multiple separate archives when compiling it, and download them independently as needed.
 
