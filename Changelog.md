@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * We've improved the performance of tests with coverage enabled to be more inline with existing test performance. For more information see [#23157](https://github.com/flutter/flutter/issues/23157).
 
+* Rect and RRect are now const constructable and are backed by 64 bit doubles rather than 32 bit floats internally.
+
 ## Changes since 1.3.8
 * Various performance improvements to hot reload. Assets added to pubspec.yaml will be correctly synced without a hot restart. New dependencies can be added to the pubspec and synced as well, but flutter packages get must be run separately or by an IDE.
 
