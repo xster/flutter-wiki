@@ -3,7 +3,7 @@ This page documents interesting or noteworthy changes, including all notable bre
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
 ## Changes since 1.5.7 
-* To address the bugs in https://github.com/flutter/flutter/issues/16604, the flutter tool will now always run Gradle or Xcode when asked to run/build an application. Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
+* To address the bugs in ($16604)[https://github.com/flutter/flutter/issues/16604], the flutter tool will now always run Gradle or Xcode when asked to run/build an application. Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
 
 ## Changes since 1.3.8
 * Various performance improvements to hot reload. Assets added to pubspec.yaml will be correctly synced without a hot restart. New dependencies can be added to the pubspec and synced as well, but flutter packages get must be run separately or by an IDE.
