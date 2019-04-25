@@ -49,15 +49,7 @@ Support for desktop in the `flutter` tool is a work in progress. To use any of t
 
 ## Prebuilt Shell Libraries
 
-The desktop libraries are not yet available in the Flutter SDK, but prebuilt versions are available for download. You will need the Flutter engine hash from the
-[`engine.version`](https://github.com/flutter/flutter/blob/master/bin/internal/engine.version) file
-in your Flutter framework checkout to download the correct version for your Flutter checkout. (If you use
-a mismatched version, your Flutter application will likely fail to start.) Substitute that hash in the URLs
-below in place of _`ENGINE_HASH`_
-
-* macOS: `https://storage.googleapis.com/flutter_infra/flutter/ENGINE_HASH/darwin-x64/FlutterMacOS.framework.zip`
-* Windows: `https://storage.googleapis.com/flutter_infra/flutter/ENGINE_HASH/windows-x64/windows-x64-flutter.zip`
-* Linux: `https://storage.googleapis.com/flutter_infra/flutter/ENGINE_HASH/linux-x64/linux-x64-flutter.zip`
+The desktop libraries are not currently downloaded by default, but can be downloaded to Flutter's engine artifact cache by running `flutter precache` with the `--linux`, `--macos`, or `--windows` flag, depending on your platform.
 
 ### C++ Wrapper
 
