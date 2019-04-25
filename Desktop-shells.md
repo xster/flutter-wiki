@@ -54,9 +54,7 @@ The desktop libraries are not currently downloaded by default, but can be downlo
 ### C++ Wrapper
 
 The Windows and Linux libraries provide a C API. To make it easier to use them, there is a C++ wrapper available
-which you can build into your application to provide a higher-level API surface:
-* Windows: `https://storage.googleapis.com/flutter_infra/flutter/ENGINE_HASH/windows-x64/flutter-cpp-client-wrapper.zip`
-* Linux: `https://storage.googleapis.com/flutter_infra/flutter/ENGINE_HASH/linux-x64/flutter-cpp-client-wrapper.zip`
+which you can build into your application to provide a higher-level API surface. The `precache` command above will download the source for this wrapper into a `cpp_client_wrapper` folder next to the library.
 
 ## Using the Shells
 
