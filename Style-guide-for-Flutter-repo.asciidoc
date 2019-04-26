@@ -592,11 +592,16 @@ Avoid using terms like "above" or "below" to reference one dartdoc section from 
 Coding patterns and catching bugs early
 ---------------------------------------
 
-### Use asserts liberally to enforce contracts and invariants
+### Use asserts liberally to detect contract violations and verify invariants
 
 `assert()` allows us to be diligent about correctness without paying a
 performance penalty in release mode, because Dart only evaluates asserts in
 debug mode.
+
+It should be used to verify contracts and invariants are being met as we expect.
+Asserts do not _enforce_ contracts, since they do not run at all in release builds.
+They should be used in cases where it should be impossible for the condition
+to be false without there being a bug somewhere in the code.
 
 The following example is from `box.dart`:
 
