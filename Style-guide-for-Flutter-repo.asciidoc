@@ -36,6 +36,19 @@ https://www.dartlang.org/guides/language/effective-dart/[Dart style guide]
 for more advice. That document is focused primarily on Dart-specific
 conventions, while this document is more about Flutter conventions.
 
+### A word on designing APIs
+
+Designing an API is an art. Like all forms of art, one learns by practicing. The best way to get good at designing APIs is to spend a decade or more designing them, while working closely with people who are using your APIs. Ideally, one would first do this in very controlled situations, with small numbers of developers using one's APIs, before graduating to writing APIs that will be used by hundreds of thousands or even millions of developers.
+
+In the absence of one's own experience, one can attempt to rely on the experience of others. The biggest problem with this is that sometimes explaining why an API isn't optimal is a very difficult and subtle task, and sometimes the reasoning doesn't sound convincing unless you already have a lot of experience designing them.
+
+Because of this, and contrary to almost any other situation in engineering, when you are receiving feedback about API design from an experience API designer, they will sometimes seem unhappy without quite being able to articulate why. When this happens, seriously consider that your API should be scrapped and a new solution found.
+
+This requires a different and equally important skill when designing APIs: not getting attached to one's creations. One should try many wildly different APIs, and then attempt to write code that uses those APIs, to see how they work. Throw away APIs that feel frustrating, that lead to buggy code, or that other people don't like. If it isn't elegant, it's usually better to try again than to forge ahead.
+
+An API is for life, not just for the one PR you are working on.
+
+
 Philosophy
 ----------
 
