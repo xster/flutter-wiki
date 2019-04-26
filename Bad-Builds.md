@@ -2,7 +2,7 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
-## v1.5.2 - 1.5.9
+## v1.5.2 - 1.5.8
 
 * (minor) Engine crashes when confronted with some unconstrained layouts (https://github.com/flutter/flutter/issues/31650)
 
