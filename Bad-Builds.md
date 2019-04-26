@@ -6,7 +6,7 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 * Engine crashes when confronted with unconstrained layout (https://github.com/flutter/flutter/issues/31650)
 
-## v1.4.9 - 
+## v1.3.10 - 1.5.8
 
 * Selection handles don't appear on iOS (https://github.com/flutter/flutter/issues/31287)
 
