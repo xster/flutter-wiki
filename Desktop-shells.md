@@ -37,10 +37,6 @@ Writing plugins is supported on all platforms, however, there are currently very
 desktop support ([such as these plugins from the flutter-desktop-embedding
 project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins)).
 
-For Windows and Linux, only the JSON codec is supported at the moment (which means the Dart side of most
-existing plugins would need to be changed to implement desktop support). The standard codec should be coming
-soon.
-
 ### Tooling
 
 Support for desktop in the `flutter` tool is a work in progress. To use any of the support (such the host machine being listed by `flutter devices`), two things must currently be true:
