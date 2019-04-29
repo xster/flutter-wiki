@@ -66,6 +66,7 @@ Flutter Wiki
 - [[Using Flutter in China]]
 - [[Making animated GIFs of Flutter apps]]
 - [[Desktop shells]] - building a Mac app with Flutter
+- [[Linting Flutter apps for Chrome OS]]
 
 ## Release Notes
 - [1.2.1](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
