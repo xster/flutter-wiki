@@ -18,6 +18,9 @@ rather than `flutter upgrade`.
 The `flutter` tool itself is built when you run `flutter` for the first time and each time
 you run `git pull --rebase` (or `flutter upgrade`, or anything that changes the current commit).
 
+## Documentation
+
+Markdown documentation can be found for some commands in [flutter/packages/flutter_tools/doc/](https://github.com/flutter/flutter/tree/master/packages/flutter_tools/doc).
 
 ## Making changes to the `flutter` tool
 
