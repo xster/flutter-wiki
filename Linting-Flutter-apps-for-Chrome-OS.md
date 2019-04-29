@@ -31,4 +31,4 @@ analyzer:
 ```
 	
 The warnings will show in the Dart Analysis view in IntelliJ and Android Studio or the
-Problems View in VS Code.
+Problems view in VS Code.
