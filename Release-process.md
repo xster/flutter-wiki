@@ -100,7 +100,7 @@ Sometimes there are security fixes that must be released as soon as possible. Th
          - Press Shift+Enter to schedule the build. You have to do this for every builder.
    1. Wait for the engine bots to have completed their work.
    1. Lock down the _VERSION_ branch on GitHub.
-1. Update your local branch accordingly. If applicable, update the `engine.version` to point to the engine you just built.
+1. Update your local branch accordingly (such as by `git cherry-pick -e`). If applicable, update the `engine.version` to point to the engine you just built.
 1. Test this build on all platforms. Run the devicelab locally. Test the codelabs.
 1. Push your local branch to your GitHub fork of the Flutter framework. (`git push origin $BRANCH`)
 1. Create a PR from your recently pushed branch, using the _BRANCH_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix.
