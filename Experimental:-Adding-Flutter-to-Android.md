@@ -16,3 +16,4 @@ This document (and linked documents) refers to a new and improved version of Flu
 ## Nuances
 
 * [Launch a Flutter app from an entrypoint other than main](https://github.com/flutter/flutter/wiki/Experimental:-Launch-Flutter-with-non-main-entrypoint)
+* [Re-use the same FlutterEngine between screens](https://github.com/flutter/flutter/wiki/Experimental:-Reuse-FlutterEngine-across-screens)
