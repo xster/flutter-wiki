@@ -36,6 +36,12 @@ encourage them to mark bugs as "customer blocker" (for the most serious bugs)
 or "customer critical" (for still important but not quite as serious bugs)
 if they are very important and deserve immediate attention.
 
+Some customers have their own separate bug systems, in which they track Flutter
+issues. We consider our GitHub issue list to be canonical. However, if there
+is a link from the issue in our bug system to the customer's issue in their bug
+system, and we have been granted access, we will follow that link and may
+communicate in that separate bug system when attempting to track down the issue.
+
 We also have two special customer labels. The "customer: crowd" label is used
 to represent bugs that are affecting large numbers of people; during initial
 [[Triage]], high-profile bugs get labeled in this way to bring them to the 
