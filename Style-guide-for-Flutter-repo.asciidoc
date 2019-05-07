@@ -655,6 +655,10 @@ const EdgeInsets.symmetric(horizontal: 8.0);
 Prefer using a local const or a static const in a relevant class than using a
 global constant.
 
+As a general rule, when you have a lot of constants, wrap them in a
+class. For examples of this, see
+https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/material/colors.dart[lib/src/material/colors.dart].
+
 
 ### Avoid using `if` chains or `?:` or `==` with enum values
 
@@ -1298,9 +1302,44 @@ return foo.x == x
     && foo.z == z;
 ```
 
+Conventions
+-----------
+
+### Expectations around potential crashes in the engine
+
+The engine should never crash.
+
+In unopt mode, the engine C++ code should have asserts that check for contract violations.
+
+In opt debug mode, the `dart:ui` code should have asserts that check for contract violations. These asserts should have messages that are detailed and useful, if they are not self-explanatory.
+
+In opt release mode, the exact behavior can be arbitrary so long as it is defined and non-vulnerable for every input. For example, a contract violation could be checked in Dart, with an exception thrown for invalid data; but equally valid would be for the C++ code to return early when faced with invalid data. The idea is to optimize for speed in the case where the data is valid.
+
+For practical purposes we don't currently check for out-of-memory errors. Ideally we would.
+
+
+### Features we expect every widget to implement
+
+Now that the Flutter framework is mature, we expect every new widget to implement all of the following:
+
+- full accessibility, so that on both Android and iOS the widget works with the native accessibility tools.
+- full localisation with default translations for all our default languages.
+- full support for both right-to-left and left-to-right layouts, driven by the ambient Directionality.
+- full support for text scaling up to at least 3.0x.
+- documentation for every member; see the section above for writing prompts to write documentation.
+- good performance even when used with large amounts of user data.
+- a complete lifecycle contract with no resource leaks (documented, if it differs from usual widgets).
+- tests for all the above as well as all the unique functionality of the widget itself.
+
+It's the job of the programmer to provide these before submitting a PR.
+
+It's the job of the reviewer to check that all these are present when reviewing a PR.
+
 
 Packages
 --------
+
+### Structure
 
 As per normal Dart conventions, a package should have a single import
 that reexports all of its API.
@@ -1324,7 +1363,10 @@ from a lower layer, it should reexport those types.
 > hand, it does not reexport, say, `RenderProxyBox`, since that is not
 > part of the widgets API.
 
-For the `rendering.dart` library, if you are creating new
+### Import conventions
+
+When importing the `rendering.dart` library into higher level libraries,
+if you are creating new
 `RenderObject` subclasses, import the entire library. If you are only
 referencing specific `RenderObject` subclasses, then import the
 `rendering.dart` library with a `show` keyword explicitly listing the
@@ -1343,32 +1385,9 @@ in the `painting` package for details of which identifiers we import
 which way. Other packages are usually imported undecorated unless they
 have a convention of their own (e.g. `path` is imported `as path`).
 
-As a general rule, when you have a lot of constants, wrap them in a
-class. For examples of this, see
-https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/material/colors.dart[lib/src/material/colors.dart].
+The `dart:math` library is always imported `as math`.
 
-
-Features we expect every widget to implement
---------------------------------------------
-
-Now that the Flutter framework is mature, we expect every new widget to implement all of the following:
-
-- full accessibility, so that on both Android and iOS the widget works with the native accessibility tools.
-- full localisation with default translations for all our default languages.
-- full support for both right-to-left and left-to-right layouts, driven by the ambient Directionality.
-- full support for text scaling up to at least 3.0x.
-- documentation for every member; see the section above for writing prompts to write documentation.
-- good performance even when used with large amounts of user data.
-- a complete lifecycle contract with no resource leaks (documented, if it differs from usual widgets).
-- tests for all the above as well as all the unique functionality of the widget itself.
-
-It's the job of the programmer to provide these before submitting a PR.
-
-It's the job of the reviewer to check that all these are present when reviewing a PR.
-
-
-Deciding where to put code
---------------------------
+### Deciding where to put code
 
 As a general rule, if a feature is entirely self-contained (not requiring low-level integration into the Flutter framework) and is not something with particularly wide appeal, we would encourage that that feature be provided as a package. 
 
