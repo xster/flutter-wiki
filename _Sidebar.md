@@ -69,4 +69,5 @@ Flutter Wiki
 - [[Linting Flutter apps for Chrome OS]]
 
 ## Release Notes
+- [1.5.4](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
 - [1.2.1](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
