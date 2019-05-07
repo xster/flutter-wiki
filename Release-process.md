@@ -76,9 +76,11 @@ This is the process for rolling the "stable" branch. We generally intend to roll
 
 Sometimes there are security fixes that must be released as soon as possible. The process described below is intended to address this use case. (This process should not be used for non-security fixes. It is extremely risky to publish out-of-band releases like this and causes no end of trouble. Only the absolute most critical fixes are appropriate to be handled in this way.)
 
+NB: The previous hotfix version procedure used a `-` instead of a `+` between the version string and the hotfix number. This registers as a _lower_ version in semver, which caused issues with packages using fairly tight environment constraints.
+
 1. Let _TAG_ be the tag of the version of the framework that you are hot fixing, e.g. `v0.0.0`.
-1. Let _VERSION_ be `$TAG-hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `v0.0.0-hotfix.1`.
-1. Let _BRANCH_ be `$TAG-hotfixes` (e.g. if _VERSION_ is `v0.0.0-hotfix.2` then _BRANCH_ is `v0.0.0-hotfixes`).
+1. Let _VERSION_ be `$TAG+hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `v0.0.0+hotfix.1`.
+1. Let _BRANCH_ be `$TAG-hotfixes` (e.g. if _VERSION_ is `v0.0.0+hotfix.2` then _BRANCH_ is `v0.0.0-hotfixes`).
 1. Let _CHANNEL_ be the channel you want to hotfix (e.g., `dev`, `beta`, `stable`).
 1. If it doesn't yet exist, locally create _BRANCH_ on the framework repo starting from the framework commit of the build that you are fixing (`git fetch; git checkout $TAG -b $BRANCH`). Otherwise, switch to that branch (`git fetch; git checkout $BRANCH`).
 1. Push this branch to GitHub. (`git push upstream $BRANCH`)
