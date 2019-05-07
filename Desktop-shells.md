@@ -27,7 +27,7 @@ Expect the APIs for the final shell to be radically different from the current i
 
 The current Linux shell is a GLFW placeholder, to allow early experimentation. We would like to create a library 
 that lets you embed Flutter regardless of whether you're using GTK+, Qt, wxWidgets, Motif, or another arbitrary
-toolkit for other parts of your application, but have not yet determined a good way to do that.
+toolkit for other parts of your application, but have not yet determined a good way to do that. Our current plan is to support GTK+ out of the box, in a way where adding support for other toolkits is straightforward.
 
 Expect the APIs for the final shell to be radically different from the current implementation.
 
