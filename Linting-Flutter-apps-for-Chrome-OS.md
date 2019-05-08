@@ -17,6 +17,12 @@ Analyzing ...
 warning • This hardware feature is not supported on Chrome OS • android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware
 ```
 
+### For what version of Flutter?
+
+Currently, you'll need to be on the tip-of-tree of Flutter to try this out. This will likely graduate shortly to the `dev` channel, and later, to `beta` and `stable`.
+
+`flutter channel master && flutter upgrade`
+
 ### How do I enable this?
 
 To turn this on for your Flutter app, create an file named `analysis_options.yaml`
