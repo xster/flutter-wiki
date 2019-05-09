@@ -9,13 +9,10 @@ Chrome OS best practice guidelines for Android and Flutter apps.
 
 ### What does it do?
 
-In your IDE (or when running `flutter analyze`), you'll see lints if your Flutter
+In your IDE or when running `flutter analyze` at the command line, you'll see lints if your Flutter
 app would have issues targeting Chrome OS.
 
-```
-Analyzing ...                                                      
-warning • This hardware feature is not supported on Chrome OS • android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware
-```
+[[images/cros-lint-rules-sample-results.png]]
 
 ### For what version of Flutter?
 
