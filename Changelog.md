@@ -5,6 +5,8 @@ _Flutter contributors: please feel empowered to edit this wiki page to include a
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
 ## Changes since 1.5.7 
+* To support structured error messages [#27327](https://github.com/flutter/flutter/issues/27327) the signature of InformationCollector and the context parameter of the FlutterErrorDetails constructor were changed. This should not impact you unless your package is attempting behave like part of the Flutter framework. See [this comment](https://github.com/flutter/flutter/issues/31962#issuecomment-488882515) which discusses how to write code that is forwards and backwards compatible with this change.
+
 * To address the bugs in [#16604](https://github.com/flutter/flutter/issues/16604) the flutter tool will now always run Gradle or Xcode when asked to run/build an application. Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
 
 * We've improved the performance of tests with coverage enabled to be more inline with existing test performance. For more information see [#23157](https://github.com/flutter/flutter/issues/23157).
