@@ -55,9 +55,6 @@ cd ..
 
 flutter/tools/gn --unoptimized --runtime-mode=debug
 flutter/tools/gn --android --unoptimized --runtime-mode=debug
-flutter/tools/gn --android --unoptimized --runtime-mode=profile
-flutter/tools/gn --android --unoptimized --runtime-mode=release
-flutter/tools/gn --android --runtime-mode=debug
 flutter/tools/gn --android --runtime-mode=profile
 flutter/tools/gn --android --runtime-mode=release
 
