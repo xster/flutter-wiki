@@ -4,14 +4,11 @@ _Flutter contributors: please feel empowered to edit this wiki page to include a
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since 1.5.7 
+## Changes since 1.5.8
 * To support structured error messages [#27327](https://github.com/flutter/flutter/issues/27327) the signature of InformationCollector and the context parameter of the FlutterErrorDetails constructor were changed. This should not impact you unless your package is attempting behave like part of the Flutter framework. See [this comment](https://github.com/flutter/flutter/issues/31962#issuecomment-488882515) which discusses how to write code that is forwards and backwards compatible with this change.
 
-* To address the bugs in [#16604](https://github.com/flutter/flutter/issues/16604) the flutter tool will now always run Gradle or Xcode when asked to run/build an application. Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
-
-* We've improved the performance of tests with coverage enabled to be more inline with existing test performance. For more information see [#23157](https://github.com/flutter/flutter/issues/23157).
-
-* Rect and RRect are now const constructable and are backed by 64 bit doubles rather than 32 bit floats internally.
+## Changes since 1.5.7
+* Rect and RRect are now const constructable and are backed by 64 bit doubles rather than 32 bit floats internally [engine #8695](https://github.com/flutter/engine/pull/8695).
 
 ## Changes since 1.3.8
 * Various performance improvements to hot reload. Assets added to pubspec.yaml will be correctly synced without a hot restart. New dependencies can be added to the pubspec and synced as well, but flutter packages get must be run separately or by an IDE.
@@ -27,6 +24,12 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [#7414](https://github.com/flutter/engine/pull/7414) dart:ui: Rename dart:ui ParagraphStyle.lineHeight to ParagraphStyle.height. This property previously did not do anything and was renamed to stay consistent with TextStyle.height.
 * [#27904](https://github.com/flutter/flutter/pull/27904) `PointerEvent` now implements `Diagnosticable`. Any `toString` override on a `PointerEvent` subclass [will need to be changed](https://groups.google.com/forum/#!topic/flutter-announce/ZPPRKV642Uk).
 * [#28751](https://github.com/flutter/flutter/pull/28751) Add `decorationThickness` to `TextStyle` to control the stroke thickness of text decoration.
+
+### v1.5.6
+* To address the bugs in [#16604](https://github.com/flutter/flutter/issues/16604) the flutter tool will now always run Gradle or Xcode when asked to run/build an application [#31463](https://github.com/flutter/flutter/pull/31463). Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
+
+### v1.5.0
+* We've improved the performance of tests with coverage enabled to be more inline with existing test performance in [#30811](https://github.com/flutter/flutter/pull/30811). For more information see [#23157](https://github.com/flutter/flutter/issues/23157).
 
 ### v1.4.9-hotfix.1
 
