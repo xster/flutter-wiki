@@ -6,24 +6,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since 1.5.8
 * To support structured error messages [#27327](https://github.com/flutter/flutter/issues/27327) the signature of InformationCollector and the context parameter of the FlutterErrorDetails constructor were changed [#30983](https://github.com/flutter/flutter/pull/30983). This should not impact you unless your package is attempting behave like part of the Flutter framework. See [this comment](https://github.com/flutter/flutter/issues/31962#issuecomment-488882515) which discusses how to write code that is forwards and backwards compatible with this change.
-
-## Changes since 1.5.7
 * Rect and RRect are now const constructable and are backed by 64 bit doubles rather than 32 bit floats internally [engine #8695](https://github.com/flutter/engine/pull/8695) [framework #31569](https://github.com/flutter/flutter/pull/31569).
 
 ## Changes since 1.3.8
 * Various performance improvements to hot reload. Assets added to pubspec.yaml will be correctly synced without a hot restart. New dependencies can be added to the pubspec and synced as well, but flutter packages get must be run separately or by an IDE.
-
-## Changes since v1.0.0
-
-* [#7518](https://github.com/flutter/engine/pull/7518) The default location of the `flutter_assets` folder has been moved for iOS.
-* [#26238](https://github.com/flutter/flutter/pull/26238) removed the long-deprecated `TwoLevelList` widget. Use `ListView` with `ExpansionTile` instead.
-* [#7442](https://github.com/flutter/engine/pull/7442) `Picture.toImage` now returns a `Future<Image>`
-* [#7497](https://github.com/flutter/engine/pull/7497) Embedder API: `main_path` and `packages_path` in `FlutterProjectArgs` have been renamed to indicate that they should no longer be provided.
-* [#7567](https://github.com/flutter/engine/pull/7567) Embedder API: The `FlutterResult` type has been renamed to `FlutterEngineResult`.
-* [#26332](https://github.com/flutter/flutter/pull/26332) Strut: fine tuned control over text minimum line heights, allows forcing the line height to be a specified height.
-* [#7414](https://github.com/flutter/engine/pull/7414) dart:ui: Rename dart:ui ParagraphStyle.lineHeight to ParagraphStyle.height. This property previously did not do anything and was renamed to stay consistent with TextStyle.height.
-* [#27904](https://github.com/flutter/flutter/pull/27904) `PointerEvent` now implements `Diagnosticable`. Any `toString` override on a `PointerEvent` subclass [will need to be changed](https://groups.google.com/forum/#!topic/flutter-announce/ZPPRKV642Uk).
-* [#28751](https://github.com/flutter/flutter/pull/28751) Add `decorationThickness` to `TextStyle` to control the stroke thickness of text decoration.
 
 ### v1.5.6
 * To address the bugs in [#16604](https://github.com/flutter/flutter/issues/16604) the flutter tool will now always run Gradle or Xcode when asked to run/build an application [#31463](https://github.com/flutter/flutter/pull/31463). Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
@@ -39,15 +25,30 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * [#29946](https://github.com/flutter/flutter/pull/29946) Adds support to CupertinoPageScaffold for tapping the status bar to scroll to the top of the scaffold's content.
 
+### v1.3.10
+* [#28751](https://github.com/flutter/flutter/pull/28751) Add `decorationThickness` to `TextStyle` to control the stroke thickness of text decoration.
+
 ### v1.3.0
 
 * [#28242](https://github.com/flutter/flutter/pull/28242) Adds support on Android and iOS for long-press-drag gestures in text fields to select words on Android and to move the cursor on iOS.
+* [#27904](https://github.com/flutter/flutter/pull/27904) `PointerEvent` now implements `Diagnosticable`. Any `toString` override on a `PointerEvent` subclass [will need to be changed](https://groups.google.com/forum/#!topic/flutter-announce/ZPPRKV642Uk).
 
 ### v1.2.1
 
 * [#27866](https://github.com/flutter/flutter/pull/27866) Fixes a bug when an iOS back swipe gesture is manually dragged back to its starting point and breaking future back swipes. 
 * [#27697](https://github.com/flutter/flutter/pull/27697) CupertinoTextField's cursorColor default now matches the app's theme. If this is undesirable, developers can use the `cupertinoOverrideTheme` property of `ThemeData` to provide a Cupertino-specific override.
 * [#24876](https://github.com/flutter/flutter/pull/24876) Improves the general fidelity of text cursors on iOS such as rounder corners, a fading cursor blink etc.
+* [#7567](https://github.com/flutter/engine/pull/7567) Embedder API: The `FlutterResult` type has been renamed to `FlutterEngineResult`.
+* [#26332](https://github.com/flutter/flutter/pull/26332) Strut: fine tuned control over text minimum line heights, allows forcing the line height to be a specified height.
+* [#7414](https://github.com/flutter/engine/pull/7414) dart:ui: Rename dart:ui ParagraphStyle.lineHeight to ParagraphStyle.height. This property previously did not do anything and was renamed to stay consistent with TextStyle.height.
+
+### v1.2.0
+* [#7518](https://github.com/flutter/engine/pull/7518) The default location of the `flutter_assets` folder has been moved for iOS.
+* [#7442](https://github.com/flutter/engine/pull/7442) `Picture.toImage` now returns a `Future<Image>`
+* [#7497](https://github.com/flutter/engine/pull/7497) Embedder API: `main_path` and `packages_path` in `FlutterProjectArgs` have been renamed to indicate that they should no longer be provided.
+
+### v1.1.9
+* [#26238](https://github.com/flutter/flutter/pull/26238) removed the long-deprecated `TwoLevelList` widget. Use `ListView` with `ExpansionTile` instead.
 
 ### v1.1.7
 * [#23424](https://github.com/flutter/flutter/pull/23424) By default, a drag gesture detector's onStart callback will be called with the location of where a drag gesture is detected (ie. after dragging a certain number of pixels) instead of at the touch down location. To use the old functionality with a given drag gesture recognizer, the dragStartBehavior variable of the recognizer should be set DragStartBehavior.down.
