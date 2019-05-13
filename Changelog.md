@@ -9,10 +9,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * [framework #31569](https://github.com/flutter/flutter/pull/31569)/[engine #8695](https://github.com/flutter/engine/pull/8695) Rect and RRect are now const constructable and are backed by 64 bit doubles rather than 32 bit floats internally.
 
 ### v1.5.6
-* To address the bugs in [#16604](https://github.com/flutter/flutter/issues/16604) the flutter tool will now always run Gradle or Xcode when asked to run/build an application [#31463](https://github.com/flutter/flutter/pull/31463). Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
+* To address the bugs in [#16604](https://github.com/flutter/flutter/issues/16604) the flutter tool will now always run Gradle or Xcode when asked to run/build an application. Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
 
 ### v1.5.0
-* We've improved the performance of tests with coverage enabled to be more inline with existing test performance in [#30811](https://github.com/flutter/flutter/pull/30811). For more information see [#23157](https://github.com/flutter/flutter/issues/23157).
+* [#30811](https://github.com/flutter/flutter/pull/30811) We've improved the performance of tests with coverage enabled to be more inline with existing test performance. For more information see [#23157](https://github.com/flutter/flutter/issues/23157).
 
 ### v1.4.13
 * Various performance improvements to hot reload. Assets added to pubspec.yaml will be correctly synced without a hot restart. New dependencies can be added to the pubspec and synced as well, but flutter packages get must be run separately or by an IDE.
