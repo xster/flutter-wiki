@@ -114,7 +114,7 @@ You will typically use the `host_debug_unopt` build in this setup.
 
 ## Compiling a host binary on Windows
 
-You can only build selected binaries on Windows (mainly `gen_snapshot`).
+You can only build selected binaries on Windows (mainly `gen_snapshot` and the desktop shell).
 
 1. Make sure you have Visual Studio installed (non-Googlers only).
 
@@ -124,7 +124,7 @@ You can only build selected binaries on Windows (mainly `gen_snapshot`).
 
 4. `python .\flutter\tools\gn [--unoptimized] --runtime-mode=[debug|profile|release] [--android]` to prepare your build files.
 
-5. `ninja -C .\out\<dir created by previous step> gen_snapshot` to build.
+5. `ninja -C .\out\<dir created by previous step>` to build.
 
 ## Running a Flutter app with a local engine
 
