@@ -12,22 +12,29 @@ Finally, one should look at [the least recently updated bugs of any kind](https:
 
 ## Triaging PRs
 
+When triaging PRs, it's important that incoming PRs:
+
+* Contain tests for the functionality they're providing. If it's a bug fix, there should be tests to ensure that we don't regress the bug fix. If it's new functionality, the functionality should have tests as well.
+
+* Code and tests should match our [Style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo). Look carefully for spelling mistakes and violations of our coding style; invite the contributor to fix these.
+
 For PRs, each PR should match one of the following categories:
 
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
 * It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`.
 
-* It can have the `will need additional triage` label.
+* It can have the `will need additional triage` label. 
 
+Once a PR meets these basic requirements and has an appropriate repository and label, feel free to add the `will need additional triage` label to call attention to it from the relevant team.
 
 ## Triaging issues
 
 First, look at the bug report, and try to understand what the described problem is. Edit the original comment to remove boilerplate that the bug reporter didn't remove. Edit the original comment to add backticks (\`\`\`) around blocks of stack traces, code, the output of shell scripts like `flutter doctor`, etc. These changes make the bug much easier to manage.
 
-If the bug is **still unclear** -- we have previously asked for more detail, and the bug reporter has had a chance to provide additional feedback, but has not been able to do so in a way that makes the bug actionable -- either apologize for us not being able to fix it and then close the bug, or add the `waiting for customer response` label, depending on your confidence that the reporter will be able to eventually provide sufficient detail. Then, skip the remaining steps.
-
 If their report is **unclear**, doesn't give sufficient steps to reproduce, or is otherwise lacking in sufficient detail for us to act on it, add a polite comment asking for additional information, then skip the remaining steps.
+
+If the bug is **still unclear** -- we have previously asked for more detail, and the bug reporter has had a chance to provide additional feedback, but has not been able to do so in a way that makes the bug actionable -- either apologize for us not being able to fix it and then close the bug, or add the `waiting for customer response` label, depending on your confidence that the reporter will be able to eventually provide sufficient detail. Then, skip the remaining steps.
 
 If the issue describes something that you know for a fact has been **fixed** since the bug report was filed, add a cheerful comment saying so, close the issue, and skip the remaining steps.
 
@@ -43,11 +50,11 @@ If you recognize that this bug is a duplicate of an existing bug, add a referenc
 
 If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels.
 
-Add any of the applicable "severe: *" labels; typically only one will apply but sometimes "regression" will apply in conjunction with one of the others.
+Add any of the applicable "severe: *" labels; typically only one will apply but sometimes `severe: regression` will apply in conjunction with one of the others.
 
-If it's a very serious bug that should block releases, consider adding the "TODAY" label as well. This label is reserved for build breaks, regressions in metrics, issues causing data loss for end users, etc. that would effectively block us from shipping tip of tree to users.
+If it's a very serious bug that should block releases, consider adding the `TODAY` label as well. This label is reserved for build breaks, regressions in metrics, issues causing data loss for end users, etc. that would effectively block us from shipping tip of tree to users.
 
-If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the "customer: crowd" label (which means it affects many people) and then either the "customer blocker" label (if it's blocking people) or the "customer critical" label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document).
+If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the `customer: crowd` label (which means it affects many people) and then either the `severe: customer blocker` label (if it's blocking people) or the `severe: customer critical` label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document).
 
 If it's something that looks trivial to fix, add the `easy fix` label.
 
@@ -56,8 +63,8 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a documentation bug, add one of the labels with the "d:" prefix.
 - If it's a bug with the underlying engine, add `engine` and optionally one of the bugs with the "e:" prefix. Consider one of the bugs with the "dependency" prefix if the bug is related to one of those areas.
 - If it's a bug with the Flutter framework, add `framework` and optionally one of the bugs with the "f:" prefix.
-   - If it's specific to Material widgets or the Gallery, include the "f: material" label.
-   - If it's specific to iOS widgets, include the "f: cupertino" label.
+   - If it's specific to Material widgets or the Gallery, include the `f: material` label.
+   - If it's specific to iOS widgets, include the `f: cupertino` label.
 - If it's a bug with plugins, add `plugin` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with packages, add `package` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
