@@ -122,9 +122,12 @@ You can only build selected binaries on Windows (mainly `gen_snapshot` and the d
 
 3. `gclient sync` to update your dependencies.
 
-4. `python .\flutter\tools\gn [--unoptimized] --runtime-mode=[debug|profile|release] [--android]` to prepare your build files.
+4. `python .\flutter\tools\gn --unoptimized` to prepare your build files.
+   * If you are only building `gen_snapshot`: `python .\flutter\tools\gn [--unoptimized] --runtime-mode=[debug|profile|release] [--android]`.
 
 5. `ninja -C .\out\<dir created by previous step>` to build.
+   * If you used a non-debug configuration, use `ninja -C .\out\<dir created by previous step> gen_snapshot`.
+     Release and profile are not yet supported for the desktop shell.
 
 ## Running a Flutter app with a local engine
 
