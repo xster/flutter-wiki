@@ -573,7 +573,7 @@ The first paragraph of any dartdoc section must be a short self-contained senten
 and meaning of the item being documented. Subsequent paragraphs then must elaborate. Avoid having the first paragraph have multiple sentences. (This is because the first paragraph gets extracted and used in tables of
 contents, etc, and so has to be able to stand alone and not take up a lot of room.)
 
-When referencing an argument, use backticks. However, when referencing an argument that also corresponds to a property, use square brackets instead.
+When referencing a parameter, use backticks. However, when referencing a parameter that also corresponds to a property, use square brackets instead. (This contradicts the Dart style guide, which says to use square brackets for both. We do this because of https://github.com/dart-lang/dartdoc/issues/1486[dartdoc issue 1486]. Currently, there's no way to unambiguously reference a parameter. We want to avoid cases where a parameter that happens to be named the same as a property despite having no relationship to that property gets linked to the property.)
 
 ```dart
 // GOOD
