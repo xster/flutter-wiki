@@ -350,7 +350,9 @@ to make a change that will require developers to change their code:
     describing your change either and
     linking to your e-mail in [the mailing list archives](https://groups.google.com/forum/#!forum/flutter-dev)
     or including the same information, in particular what the change is, why we made
-    the change, and how to migrate code affected by the change.
+    the change, and how to migrate code affected by the change. If you are unsure about whether or not your
+    breaking change is "notable" enough to include in the changelog, err on the side of caution and include it
+    in the changelog. 
 
     To figure out the correct version heading for the changelog run
     `git fetch upstream && flutter --version`. For example, if it says
