@@ -4,11 +4,19 @@ _Flutter contributors: please feel empowered to edit this wiki page to include a
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since 1.5.8
+## Changes since 1.6.2
+* NEXT AUTHOR: Put your breaking change notification here.
+
+### v1.6.2
+* [#32936](https://github.com/flutter/flutter/pull/32936) cleaned up the `ImageStream` listener API. `addListener()` and `removeListener()` now take an instance of `ImageStreamListener`, which contains references to the individual callbacks. See [the announcement](https://groups.google.com/forum/#!topic/flutter-announce/NWTszrEq9U0) for more information.
+
+### v1.6.1
+* [#32528](https://github.com/flutter/flutter/pull/32528) Tapping a modal bottom sheet no longer dismisses it by default.
+
+### v1.6.0
 * [#30983](https://github.com/flutter/flutter/pull/30983) To support structured error messages [#27327](https://github.com/flutter/flutter/issues/27327) the signature of InformationCollector and the context parameter of the FlutterErrorDetails constructor were changed. This should not impact you unless your package is attempting behave like part of the Flutter framework. See [this comment](https://github.com/flutter/flutter/issues/31962#issuecomment-488882515) which discusses how to write code that is forwards and backwards compatible with this change.
 * [framework #31569](https://github.com/flutter/flutter/pull/31569)/[engine #8695](https://github.com/flutter/engine/pull/8695) Rect and RRect are now const constructable and are backed by 64 bit doubles rather than 32 bit floats internally.
 * [framework #31917](https://github.com/flutter/flutter/pull/31917) <- [engine #8796](https://github.com/flutter/engine/pull/8796) <- [dart 1dd0f88c84](https://github.com/dart-lang/sdk/commit/1dd0f88c84) Fixes bug in StreamIterator which allowed constructor argument to be null. Also allowed await for on a null stream. This is now a runtime error.
-* [#32528](https://github.com/flutter/flutter/pull/32528) Tapping a modal bottom sheet no longer dismisses it by default.
 
 ### v1.5.6
 * To address the bugs in [#16604](https://github.com/flutter/flutter/issues/16604) the flutter tool will now always run Gradle or Xcode when asked to run/build an application. Previously we attempted to avoid rebuilds when we believed that the underlying application should not have changed.
