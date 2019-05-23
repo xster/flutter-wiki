@@ -348,7 +348,7 @@ to make a change that will require developers to change their code:
  4. If you landed a breaking change, add a bullet point to the top section of
     the [Changelog page on the wiki](https://github.com/flutter/flutter/wiki/Changelog),
     describing your change either and
-    linking to your e-mail in [the mailing list archives](https://groups.google.com/forum/#!forum/flutter-dev)
+    linking to your e-mail in [the mailing list archives](https://groups.google.com/forum/#!forum/flutter-announce)
     or including the same information, in particular what the change is, why we made
     the change, and how to migrate code affected by the change. If you are unsure about whether or not your
     breaking change is "notable" enough to include in the changelog, err on the side of caution and include it
