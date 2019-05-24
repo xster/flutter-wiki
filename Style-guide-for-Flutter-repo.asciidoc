@@ -852,7 +852,7 @@ Our secondary source of truth is dictionaries.
 
 Avoid "cute" spellings. For example, 'colors', not 'colorz'.
 
-Prefer US English spellings. For example, 'colorize', not 'colourise'.
+Prefer US English spellings. For example, 'colorize', not 'colourise', and 'canceled', not 'cancelled'.
 
 Prefer compound words over "cute" spellings to avoid conflicts with reserved words. For example, 'classIdentifier', not 'klass'.
 
