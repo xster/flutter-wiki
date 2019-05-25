@@ -49,3 +49,37 @@ Another way to use a `FlutterFragment` is to instantiate one within an `Activity
     }
   }
 ```
+
+## The FlutterEngine within FlutterFragment
+
+A `FlutterEngine` object is responsible for executing the Dart code in your Flutter app. By default, every `FlutterFragment` creates a new `FlutterEngine` internally to run the desired Flutter UI.
+
+One downside to having a `FlutterFragment` internally create a new `FlutterEngine` is that there is a warm-up period before the `FlutterEngine` is able to render a UI. This results in a temporary blank screen. One way to solve this is to create and start a `FlutterEngine` before the `FlutterFragment` appears, and then instruct the `FlutterFragment` to use the warmed up `FlutterEngine`. There are 2 ways to accomplish this.
+
+### Subclass FlutterFragment
+
+One way to use a pre-existing `FlutterEngine` within a `FlutterFragment` is to subclass `FlutterFragment`. Override `createFlutterEngine()` and return your warmed up `FlutterEngine` from wherever you chose to store it.
+
+```java
+public class MyFlutterFragment extends FlutterFragment {
+  @Override
+  @Nullable
+  protected FlutterEngine createFlutterEngine(@NonNull Context context) {
+    return // retrieve your FlutterEngine here.
+  }
+}
+```
+
+### Implement FlutterEngineProvider
+
+A way to use a pre-existing `FlutterEngine` within a `FlutterFragment` without subclassing `FlutterFragment` is to implement the `FlutterEngineProvider` Interface in the surrounding `Activity`.
+
+```java
+public class MyActivity extends Activity implements FlutterEngineProvider {
+  @Override
+  @Nullable
+  FlutterEngine getFlutterEngine(@NonNull Context context) {
+    return // retrieve your FlutterEngine here.
+  }
+}
+``` 
