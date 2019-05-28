@@ -47,6 +47,8 @@ Support for desktop in the `flutter` tool is a work in progress. To use any of t
 
 The desktop libraries are not currently downloaded by default, but can be downloaded to Flutter's engine artifact cache by running `flutter precache` with the `--linux`, `--macos`, or `--windows` flag, depending on your platform.
 
+Only `debug` libraries are currently available.
+
 ### C++ Wrapper
 
 The Windows and Linux libraries provide a C API. To make it easier to use them, there is a C++ wrapper available
