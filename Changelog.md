@@ -6,6 +6,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ## Changes since 1.6.2
 * NEXT AUTHOR: Put your breaking change notification here.
+* [#33148](https://github.com/flutter/flutter/pull/33148) ExpandIcon now uses Colors.white60 instead of Colors.white54 when dark theme is used (ThemeData.brightness is set to Brightness.dark).
 
 ### v1.6.2
 * [#32936](https://github.com/flutter/flutter/pull/32936) cleaned up the `ImageStream` listener API. `addListener()` and `removeListener()` now take an instance of `ImageStreamListener`, which contains references to the individual callbacks. See [the announcement](https://groups.google.com/forum/#!topic/flutter-announce/NWTszrEq9U0) for more information.
