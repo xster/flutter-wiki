@@ -24,11 +24,11 @@ We roll to the beta branch at the start of each month. Bugs intended to be fixed
 At the start of the month, start these steps. You will probably want to do this on macOS in order to test all parts of the codelabs and builds. These steps should be done using the [official download](https://flutter.io/get-started/install/) instead of a local checkout of the repo.
 
 1. Pick a [recent dev build](https://github.com/flutter/flutter/tags) that:
-    * was tagged in the previous month. You can see when a tag was added using `git log -1 --format=%ai v0.0.0`.
+    * was tagged in the previous month. You can see when a given tag (eg `X.Y.Z`) was added using `git log -1 --format=%ai vX.Y.Z`.
     * is not listed on the [[Bad Builds]] page.
     * is newer than the current [latest commit on the `beta` branch](https://github.com/flutter/flutter/commits/beta).
-    * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via `git rebase v0.0.0 && flutter upgrade`)
-    * can be successfully upgraded _from_ to a later dev build (via `git reset --hard v0.0.0 && git clean -f && flutter upgrade`)
+    * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via `git rebase vX.Y.Z && flutter upgrade`)
+    * can be successfully upgraded _from_ to a later dev build (via `git reset --hard vX.Y.Z && git clean -f && flutter upgrade`)
     * can switch channels successfully (via 'flutter channel')
     * can be used to run the [[codelabs]]. You will have to manually run the build through all the current code labs to verify that the build is good. If someone has recently joined the team, they are a good candidate for running these tests, as it will help them learn Flutter at the same time!
     * can be used to build and run the Flutter Gallery:
@@ -78,9 +78,9 @@ Sometimes there are security fixes that must be released as soon as possible. Th
 
 NB: The previous hotfix version procedure used a `-` instead of a `+` between the version string and the hotfix number. This registers as a _lower_ version in semver, which caused issues with packages using fairly tight environment constraints.
 
-1. Let _TAG_ be the tag of the version of the framework that you are hot fixing, e.g. `v0.0.0`.
-1. Let _VERSION_ be `$TAG+hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `v0.0.0+hotfix.1`.
-1. Let _BRANCH_ be `$TAG-hotfixes` (e.g. if _VERSION_ is `v0.0.0+hotfix.2` then _BRANCH_ is `v0.0.0-hotfixes`).
+1. Let _TAG_ be the tag of the version of the framework that you are hot fixing, e.g. `vX.Y.Z`.
+1. Let _VERSION_ be `$TAG+hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `vX.Y.Z+hotfix.1`.
+1. Let _BRANCH_ be `$TAG-hotfixes` (e.g. if _VERSION_ is `vX.Y.Z+hotfix.2` then _BRANCH_ is `vX.Y.Z-hotfixes`).
 1. Let _CHANNEL_ be the channel you want to hotfix (e.g., `dev`, `beta`, `stable`).
 1. If it doesn't yet exist, locally create _BRANCH_ on the framework repo starting from the framework commit of the build that you are fixing (`git fetch; git checkout $TAG -b $BRANCH`). Otherwise, switch to that branch (`git fetch; git checkout $BRANCH`).
 1. Push this branch to GitHub. (`git push upstream $BRANCH`)
