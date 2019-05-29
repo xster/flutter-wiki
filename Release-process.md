@@ -27,7 +27,7 @@ At the start of the month, start these steps. You will probably want to do this 
     * was tagged in the previous month. You can see when a given tag (eg `X.Y.Z`) was added using `git log -1 --format=%ai vX.Y.Z`.
     * is not listed on the [[Bad Builds]] page.
     * is newer than the current [latest commit on the `beta` branch](https://github.com/flutter/flutter/commits/beta).
-    * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via `git rebase vX.Y.Z && flutter upgrade`)
+    * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via `git reset --hard vX.Y.Z && flutter upgrade`)
     * can be successfully upgraded _from_ to a later dev build (via `git reset --hard vX.Y.Z && git clean -f && flutter upgrade`)
     * can switch channels successfully (via 'flutter channel')
     * can be used to run the [[codelabs]]. You will have to manually run the build through all the current code labs to verify that the build is good. If someone has recently joined the team, they are a good candidate for running these tests, as it will help them learn Flutter at the same time!
