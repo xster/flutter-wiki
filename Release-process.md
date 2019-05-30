@@ -38,9 +38,8 @@ At the start of the month, start these steps. You will probably want to do this 
         1. Run `flutter doctor` and `git log` to make sure you were correctly upgraded. You should be on the latest dev release.
     * can be successfully upgraded _from_ to a later dev build:
         1. Find and download the dev-channel release of the build you intend to roll to beta in https://flutter.dev/docs/development/tools/sdk/releases. We'll refer to this release as `v<ROLL>`.
-(via `git reset --hard vX.Y.Z && git clean -f && flutter upgrade`)
         1. Unpack the downloaded zip file into a clean directory, and navigate into that directory
-        1. Run `./bin/flutter doctor` to make sure the archive is working and reports the current dev version and dev channel
+        1. Run `./bin/flutter doctor` to make sure the archive is working and reports the correct dev version (`v<ROLL>`) and dev channel
         1. Run `git log` to double-check that the archive is at the right commit
         1. Run `./bin/flutter upgrade`
         1. Run `flutter doctor` and `git log` to make sure you were correctly upgraded. You should be on the latest dev release.
