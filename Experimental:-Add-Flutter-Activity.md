@@ -114,3 +114,28 @@ class MyApp extends Application {
   }
 }
 ```
+
+## FlutterActivity with a transparent background
+
+To display a `FlutterActivity` with a transparent background, you must apply a theme with the appropriate styles, and launch the `FlutterActivity` with the correct configuration.
+
+First, ensure that the theme that is applied to your `FlutterActivity` contains the following style attribute:
+
+```xml
+<style name="MyTheme" parent="@style/MyParentTheme">
+  <item name="android:windowIsTranslucent">true</item>
+</style>
+```
+
+Second, when you launch your `FlutterActivity`, configure it to have a transparent background as shown below:
+
+```java
+startActivity(
+  FlutterActivity
+    .createBuilder()
+    .backgroundMode(FlutterActivity.BackgroundMode.transparent)
+    .build(context)
+);
+```
+
+With the above changes, if your Flutter UI has any transparent areas, those areas will show through to the `Activity` beneath your `FlutterActivity`.
