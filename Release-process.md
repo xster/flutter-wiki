@@ -27,7 +27,15 @@ At the start of the month, start these steps. You will probably want to do this 
     * was tagged in the previous month. You can see when a given tag (eg `X.Y.Z`) was added using `git log -1 --format=%ai vX.Y.Z`.
     * is not listed on the [[Bad Builds]] page.
     * is newer than the current [latest commit on the `beta` branch](https://github.com/flutter/flutter/commits/beta).
-    * can be successfully upgraded _to_ from the dev build to which the beta branch currently points (via `git reset --hard vX.Y.Z && flutter upgrade`)
+    * can be successfully upgraded _to_ from the dev build to which the beta branch currently points. The upgrade path has no way to upgrade to a specific release; it always upgrades the user to the latest release on that channel. Thus, the closest approximation to this check you can perform is to simulate a user who is on the dev channel _at the current beta release_ and who runs `flutter upgrade`:
+        1. Downloaded the latest beta channel release from https://flutter.dev/docs/development/tools/sdk/releases.  We'll refer to this release as <existing_beta_release>.
+        1. Unpack the downloaded zip file into a clean directory, and navigate into that directory
+        1. Run `./bin/flutter doctor` to make sure the archive is working and reports the current beta version
+        1. Run `git log` to double-check that the archive is at the right commit
+        1. Run `./bin/flutter channel dev` to switch to the dev channel
+        1. Run `git reset --hard <existing_beta_version>` to fake being on that release while on the dev channel
+        1. Run `./bin/flutter upgrade`
+        1. Run `flutter doctor` and `git log` to make sure you were correctly upgraded. You should be on the latest dev release.
     * can be successfully upgraded _from_ to a later dev build (via `git reset --hard vX.Y.Z && git clean -f && flutter upgrade`)
     * can switch channels successfully (via 'flutter channel')
     * can be used to run the [[codelabs]]. You will have to manually run the build through all the current code labs to verify that the build is good. If someone has recently joined the team, they are a good candidate for running these tests, as it will help them learn Flutter at the same time!
