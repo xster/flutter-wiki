@@ -44,7 +44,7 @@ At the start of the month, start these steps. You will probably want to do this 
         1. Run `./bin/flutter upgrade`
         1. Run `flutter doctor` and `git log` to make sure you were correctly upgraded. You should be on the latest dev release.
     * can switch channels successfully (via 'flutter channel')
-    * can be used to run the [[codelabs]]. You will have to manually run the build through all the current code labs to verify that the build is good. If someone has recently joined the team, they are a good candidate for running these tests, as it will help them learn Flutter at the same time!
+    * can be used to run the Write Your First Flutter App [[codelabs]], parts 1 and 2. You will have to manually run the build through these code labs to verify that the build is good. If someone has recently joined the team, they are a good candidate for running these tests, as it will help them learn Flutter at the same time!
     * can be used to build and run the Flutter Gallery:
         * via `flutter build apk`
         * via `flutter build ios`
