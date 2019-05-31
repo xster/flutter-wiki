@@ -59,7 +59,7 @@ started this process, then start over from step 1 but with the next oldest eligi
    git checkout vX.Y.Z
    git push upstream HEAD:beta
    ```
-   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator (e.g. Hixie) to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members). If the last pushed version was a hotfix, this may require temporarily unprotecting the branch.
+   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator (e.g. Hixie) to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members). If the last pushed version was a hotfix, this may require temporarily unprotecting the branch and force pushing the branch.
 1. Wait for the Cirrus builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches, and check https://ci.chromium.org/p/flutter/builders/prod/Mac%20Flutter%20Packaging, 
 https://ci.chromium.org/p/flutter/builders/prod/Linux%20Flutter%20Packaging, and 
 https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). If they fail, investigate the failure(s), and consider whether a newer dev build should be pushed to beta before any announcements are made.
