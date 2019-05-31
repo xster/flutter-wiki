@@ -4,8 +4,10 @@ _Flutter contributors: please feel empowered to edit this wiki page to include a
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since 1.6.2
+## Changes since 1.6.3
 * NEXT AUTHOR: Put your breaking change notification here.
+
+### v1.6.3
 * [#33148](https://github.com/flutter/flutter/pull/33148) ExpandIcon now uses Colors.white60 instead of Colors.white54 when dark theme is used (ThemeData.brightness is set to Brightness.dark).
 
 ### v1.6.2
