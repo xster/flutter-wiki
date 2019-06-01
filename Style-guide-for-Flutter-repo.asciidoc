@@ -458,6 +458,8 @@ The documentation should use consistent terminology:
 
 Prefer the term "call" to the term "invoke" when talking about jumping to a closure.
 
+Prefer the term "member variable" to the term "instance variable" when talking about variables associated with a specific object.
+
 Typedef dartdocs should usually start with the phrase "Signature for...".
 
 
