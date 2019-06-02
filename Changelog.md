@@ -7,6 +7,9 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ## Changes since 1.6.3
 * NEXT AUTHOR: Put your breaking change notification here.
 
+### v1.7.1
+* [#33480](https://github.com/flutter/flutter/issues/33480) FadeInImage no longer supports the `placeholderSemanticLabel` property.
+
 ### v1.6.3
 * [#33148](https://github.com/flutter/flutter/pull/33148) ExpandIcon now uses Colors.white60 instead of Colors.white54 when dark theme is used (ThemeData.brightness is set to Brightness.dark).
 
