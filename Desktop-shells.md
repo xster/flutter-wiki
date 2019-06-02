@@ -56,16 +56,16 @@ which you can build into your application to provide a higher-level API surface.
 
 ## Using the Shells
 
-Since `flutter create` does not yet support desktop, you will need to write a runner application
-yourself, and link in the library, as well as any plugins you are using. This will require some familiarity
-with doing native development on your platform(s); if you don't already have experience with that, you'll
-probably want to check back later, when `flutter create` support for desktop is available.
+Since `flutter create` does not yet support desktop, you will need a runner application. The
+[flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding)
+has simple runners for each desktop platform that work with the `flutter`
+tool's in-progress desktop support.
 
-See the headers that come with the library for your platform for information on using them. More documentation
-will be available in the future; for now it may be helpful to look at [the flutter-desktop-embedding
-example](https://github.com/google/flutter-desktop-embedding/tree/master/example).
-
-In addition to the Flutter library, your application will need to bundle your Flutter assets (as created by
+Alternately you can write your own application using the shells if you are familiar
+with doing native development on your platform(s). See the headers that come with the library for your
+platform for information on using them. More documentation will be available in the future; for now it may
+be helpful to look at the flutter-desktop-embedding example to see how it uses them. In addition to linking
+the Flutter library, your application will need to bundle your Flutter assets (as created by
 `flutter build bundle`). On Windows and Linux you will also nee the ICU data from the Flutter engine
 (look for `icudtl.dat` under the `bin/cache/artifacts/engine` directory in your Flutter tree).
 
