@@ -56,10 +56,10 @@ which you can build into your application to provide a higher-level API surface.
 
 ## Using the Shells
 
-Since there is currently no tooling support for desktop shells, you will need to write a runner application
+Since `flutter create` does not yet support desktop, you will need to write a runner application
 yourself, and link in the library, as well as any plugins you are using. This will require some familiarity
 with doing native development on your platform(s); if you don't already have experience with that, you'll
-probably want to check back later, when `flutter` tool support for desktop is available.
+probably want to check back later, when `flutter create` support for desktop is available.
 
 See the headers that come with the library for your platform for information on using them. More documentation
 will be available in the future; for now it may be helpful to look at [the flutter-desktop-embedding
