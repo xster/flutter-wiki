@@ -160,9 +160,10 @@ is available on macOS but not Linux or Windows.
 
 Most applications will need to set the font (e.g., via `ThemeData`) based
 on the host platform, or set a specific font that is bundled with the
-application.
+application. Other widgets that doesn't use `ThemeData` may not display
+without extra font specification (e.g., the `DEBUG` banner's text).
 
-Symptoms of missing fonts include text failing to display and console logging
+Symptoms of missing fonts include text failing to display and/or console logging
 about failure to load fonts.
 
 ### Plugins
