@@ -8,7 +8,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 * NEXT AUTHOR: Put your breaking change notification here.
 
 ### v1.7.1
-* [#33480](https://github.com/flutter/flutter/issues/33480) FadeInImage no longer supports the `placeholderSemanticLabel` property.
+* [#33480](https://github.com/flutter/flutter/issues/33480) The `FadeInImage` widget no longer supports the `placeholderSemanticLabel` property.
+
+### v1.6.7
+* [#32374](https://github.com/flutter/flutter/issues/32374) The `Image` widget now supports two new properties: `frameBuilder`, and `loadingBuilder`, which enable callers to easily add a placeholder image which the image ios loading, add effects to the image once it loads (such as fading it in), and monitor the loading progress of the image (e.g. to show the user a loading indicator).
 
 ### v1.6.3
 * [#33148](https://github.com/flutter/flutter/pull/33148) ExpandIcon now uses Colors.white60 instead of Colors.white54 when dark theme is used (ThemeData.brightness is set to Brightness.dark).
