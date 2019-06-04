@@ -77,3 +77,5 @@ https://github.com/flutter/flutter/issues/14330#issuecomment-485565194) for deta
 ## Milestones & Dates
 
 If you’re interested in observing what we’ve planned out on a monthly basis, you can look through our [milestones](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open) page on GitHub. Having said that, be aware that issues often change milestones and none of the milestones should be viewed as committed dates.
+
+We're also tracking a number of time-specific requirements imposed by platform vendors; see [here](https://github.com/flutter/flutter/wiki/Flutter-Critical-Requirement-Dates) for a list of issues.
