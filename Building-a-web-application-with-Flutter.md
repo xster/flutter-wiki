@@ -37,7 +37,18 @@ $ flutter doctor
 > [✓] Connected device (1 available)
 ```
 
-flutter run -d web or just flutter run (with no other devices) will launch the application using dartdevc in a Chrome browser.  To see additional build runner output,  you can run with -v. If there are issues with changes not propagating or compilation errors that can't be resolved, run `flutter clean` and then file a bug describing what you changed.
+flutter run will launch the application using the development compiler in a Chrome browser. The name of the web "device" is currently "web", but this doesn't need to be specified if there are no other devices attached.
+
+```
+$ flutter run -d web
+> Running "flutter pub get" in hello_world...                         0.4s
+> Compiling lib/main.dart for the Web...                              1.0s
+> 
+> 🔥  To hot restart (and rebuild state), press "R".
+> For a more detailed help message, press "h". To quit, press "q".
+```
+
+To see additional build output, you can run with -v. If there are issues with changes not propagating or compilation errors that can't be resolved, run `flutter clean` and then file a bug describing what you changed.
 
 This includes a basic hot restart functionality: though IDEs do support hot reload on save, this functionality does not exist yet for flutter web. While flutter web intends to support modern browsers for shipped applications, for development we require the use of a chrome browser to make use of Chrome devtools.
 
