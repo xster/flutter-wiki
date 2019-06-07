@@ -80,19 +80,27 @@ When a device lab test fails, it is important to be able to run the test locally
 Sometimes a device lab test fails due to engine changes that you've made. In these cases, you'd like to run the impacted device lab tests locally with your local version of the engine. To do this, pass the appropriate flags to `run.dart`:
 
 ```
-../../bin/cache/dart-sdk/bin/dart bin/run.dart --local-engine-src-path=[path_to_src] --local-engine=[engine_build_for_your_device] -t [name_of_test]
+../../bin/cache/dart-sdk/bin/dart bin/run.dart \
+  --local-engine-src-path=[path_to_src] \
+  --local-engine=[engine_build_for_your_device] \
+  -t [name_of_test]
 ```
 
 If your local Flutter engine is in the same directory as your `flutter/` directory then you can omit the `--local-engine-src-path` parameter because it will be resolved automatically:
 
 ```
-../../bin/cache/dart-sdk/bin/dart bin/run.dart --local-engine=[engine_build_for_your_device] -t [name_of_test]
+../../bin/cache/dart-sdk/bin/dart bin/run.dart \
+  --local-engine=[engine_build_for_your_device] \
+  -t [name_of_test]
 ```
 
 The following is an example of what running the local engine command might look like:
 
 ```
-../../bin/cache/dart-sdk/bin/dart bin/run.dart --local-engine-src-path=/Users/myname/flutter/engine/src --local-engine=android_debug_unopt_x86 -t external_ui_integration_test
+../../bin/cache/dart-sdk/bin/dart bin/run.dart \
+  --local-engine-src-path=/Users/myname/flutter/engine/src \
+  --local-engine=android_debug_unopt_x86 \
+  -t external_ui_integration_test
 ```
 
 The above command would use the local Flutter engine located at `/Users/myname/flutter/engine` to execute the `external_ui_integration_test` test on an Android emulator, which is why the `android_debug_unopt_x86` version of the engine is used.
