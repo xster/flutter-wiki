@@ -37,7 +37,7 @@ $ flutter doctor
 > [✓] Connected device (1 available)
 ```
 
-flutter run will launch the application using the development compiler in a Chrome browser. The name of the web "device" is currently "web", but this doesn't need to be specified if there are no other devices attached.
+`flutter run` will launch the application using the development compiler in a Chrome browser. The name of the web "device" is currently "web", but this doesn't need to be specified if there are no other devices attached.
 
 ```
 $ flutter run -d web
