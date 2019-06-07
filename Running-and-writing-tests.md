@@ -52,3 +52,47 @@ if you built an engine in the `out/host_debug_unopt` directory, you can pass
 `--local-engine=host_debug_unopt` to run the tests in that engine.
 
 To learn how to see how well tested the codebase is, see [[Test coverage for package:flutter]].
+
+## Running device lab tests locally
+
+Flutter runs a number of end-to-end tests in a device lab. The Flutter repo contains code for bootstrapping and executing these tests, in addition to the tests themselves.
+
+The code that runs the device lab end-to-end tests can be found here:
+
+```
+dev/devicelab
+```
+
+The tests that run in the device lab can be found here:
+
+```
+dev/integration_tests
+```
+
+When a device lab test fails, it is important to be able to run the test locally to verify the problem and intended solution. To execute a device lab test locally, do the following:
+
+1. Navigate in your terminal to the `dev/devicelab` directory.
+1. Ensure that a physical device, simulator, or emulator is connected.
+1. Execute the command: `../../bin/cache/dart-sdk/bin/dart bin/run.dart -t [name_of_test]` where `[name_of_test]` is replaced by the name of the test you want to run as defined within `dev/devicelab/manifest.yaml`.
+
+### Device lab tests with a local engine
+
+Sometimes a device lab test fails due to engine changes that you've made. In these cases, you'd like to run the impacted device lab tests locally with your local version of the engine. To do this, pass the appropriate flags to `run.dart`:
+
+```
+../../bin/cache/dart-sdk/bin/dart bin/run.dart --local-engine-src-path=[path_to_src] --local-engine=[engine_build_for_your_device] -t [name_of_test]
+```
+
+If your local Flutter engine is in the same directory as your `flutter/` directory then you can omit the `--local-engine-src-path` parameter because it will be resolved automatically:
+
+```
+../../bin/cache/dart-sdk/bin/dart bin/run.dart --local-engine=[engine_build_for_your_device] -t [name_of_test]
+```
+
+The following is an example of what running the local engine command might look like:
+
+```
+../../bin/cache/dart-sdk/bin/dart bin/run.dart --local-engine-src-path=/Users/myname/flutter/engine/src --local-engine=android_debug_unopt_x86 -t external_ui_integration_test
+```
+
+The above command would use the local Flutter engine located at `/Users/myname/flutter/engine` to execute the `external_ui_integration_test` test on an Android emulator, which is why the `android_debug_unopt_x86` version of the engine is used.
