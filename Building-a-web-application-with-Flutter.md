@@ -86,7 +86,11 @@ A release build uses dart2js instead of the development compiler to produce a si
 Unit tests can be run on the web with the argument `--platform=chrome`. This will compile the tests to JavaScript and run them in a headless Chrome browser. Note that there are still compatibility issues with many flutter tests and bugs with the test bootstrap itself that will need to be resolved.
 
 ```
-flutter test --platform=chrome
+$ flutter test --platform=chrome
+> Downloading Web SDK...                                              1.1s
+> Running "flutter pub get" in flutter...                             0.4s
+>                                                                        
+> Compiling test/scheduler/debug_test.dart for the Web...   
 ```
 
 
