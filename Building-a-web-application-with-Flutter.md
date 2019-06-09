@@ -83,6 +83,11 @@ A release build uses dart2js instead of the development compiler to produce a si
 
 ### Tests
 
-Unit tests can be run on the web with flutter test --platform=chrome. There are still compatibility issues with many flutter tests and bugs with the test bootstrap itself that will need to be resolved, including the engine roll https://github.com/flutter/flutter/pull/34062.
+Unit tests can be run on the web with the argument `--platform=chrome`. This will compile the tests to JavaScript and run them in a headless Chrome browser. Note that there are still compatibility issues with many flutter tests and bugs with the test bootstrap itself that will need to be resolved.
+
+```
+flutter test --platform=chrome
+```
+
 
 There is no current support for driver tests.
