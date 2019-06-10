@@ -282,18 +282,6 @@ Similarly, all our repositories should have an owner that does regular triage of
 and fixes known issues. Repositories where nobody is doing triage at least monthly, preferably more often,
 should be deleted, hidden, or otherwise archived.
 
-### Handle illegal arguments
-
-It's inevitable that a complex software system will sometimes issue function calls with illegal arguments. Asserts are usually injected into those functions to catch them before errors propogate and evolves into something unrecognizable and catastrophic.
-
-Flutter requires such asserts to satifsfy the following properties:
-
-1. In the debug mode, the asserts should not crash the Flutter app. It can treat the function call is no-op.
-2. In the debug mode, the asserts should print useful error messages with proper stack traces and actions on how to fix the issue.
-3. In the release mode, the error should not go undetected to trigger undefined behaviors or security issues. A controlled termination (crash) is Ok in the release mode because the performance overhead of a debug-mode error handling might be too costly.
-
-See https://github.com/flutter/engine/pull/8758 for an example of the debug-mode handling, and https://github.com/flutter/engine/pull/8585 for an example of the release-mopde handling of the same issue.
-
 
 Documentation (dartdocs, javadocs, etc)
 ---------------------------------------
