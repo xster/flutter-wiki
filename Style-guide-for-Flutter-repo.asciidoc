@@ -1309,7 +1309,7 @@ Conventions
 
 ### Expectations around potential crashes in the engine
 
-The engine should never crash.
+The engine should never crash in an uncontrolled fashion.
 
 In unopt mode, the engine C++ code should have asserts that check for contract violations.
 
