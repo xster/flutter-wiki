@@ -31,17 +31,20 @@ toolkit for other parts of your application, but have not yet determined a good 
 
 Expect the APIs for the final shell to be radically different from the current implementation.
 
-### Plugins
-
-Writing plugins is supported on all platforms, however, there are currently very few plugins that actually have
-desktop support ([such as these plugins from the flutter-desktop-embedding
-project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins)).
-
 ### Tooling
 
 Support for desktop in the `flutter` tool is a work in progress. To use any of the support (such the host machine being listed by `flutter devices`), two things must currently be true:
 - You must not be on the `stable` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels). This is to make it clear that desktop support is not yet considered stable and production-ready.
 - You must set the `ENABLE_FLUTTER_DESKTOP` environment variable to `true`. This is to avoid interfering with existing mobile development workflows while the long-term solution is being worked out (see [#30724](https://github.com/flutter/flutter/issues/30724)).
+
+### Plugins
+
+Writing plugins is supported on all platforms, however there are currently very few plugins that actually have
+desktop support. As with the overall status above, the macOS plugin APIs and structure are relatively stable, while Windows and Linux will change significantly.
+
+Plugin tooling is implemented for macOS, so adding a plugin to `pubspec.yaml` will automatically add the necessary native code to your project if the plugin has macOS support. On Windows and Linux, for now you must manually update your native build (`vcxproj`, `Makefile`) to build each plugin, include the its header, and link its shared library into the executable.
+
+The [plugins section of the flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) has examples of both building and using plugins in their current state.
 
 ## Prebuilt Shell Libraries
 
