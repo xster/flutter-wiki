@@ -374,6 +374,8 @@ class FooInterface {
 If you use `@deprecated`, make sure to remember to actually remove the feature a few
 months later (after the next stable release), do not just leave it forever!
 
+It is possible that a breaking change would only affect the master or dev branches. Even in these cases, it is still best to follow this procedure for the change. When it doubt, announce the changes.
+
 
 ### Google-only responsibilities
 
