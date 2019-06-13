@@ -32,6 +32,7 @@ Flutter Wiki
 - [[Setting up the Framework development environment]]
 - [[The Framework architecture]]
 - [[The flutter tool]]
+- [API Docs code block generation](https://github.com/flutter/flutter/tree/master/dev/snippets)
 - [[Running examples]]
 - [[Using the Dart analyzer]]
 - [[The flutter run variants]]
