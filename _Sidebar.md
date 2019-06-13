@@ -1,13 +1,13 @@
-[[[https://github.com/flutter/identity-assets/blob/master/assets/flutter-logo-180x120.png|alt="Flutter Logo"|height=120px|width=180px]]](https://flutter.io)
+[[[https://github.com/flutter/identity-assets/blob/master/assets/flutter-logo-180x120.png|alt="Flutter Logo"|height=120px|width=180px]]](https://flutter.dev)
 
 Flutter Wiki
 ============
 
 - [[Home]] of the Wiki
-- [flutter.io](https://flutter.io/)
+- [flutter.dev](https://flutter.dev/)
 - [[Roadmap]]
-- [API Reference (stable)](https://docs.flutter.io)
-- [API Reference (master)](https://master-docs.flutter.io)
+- [API Reference (stable)](https://docs.flutter.dev)
+- [API Reference (master)](https://master-docs.flutter.dev)
 - [[Glossary]]
 - [Contributor Guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
 - [Code of Conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md)
