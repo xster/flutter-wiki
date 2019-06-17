@@ -11,14 +11,17 @@ Add an expectation along the following lines:
 ```dart
   await expectLater(
     find.byType(RepaintBoundary),
-    matchesGoldenFile('test_name.subtest.subfile.png'),
+    matchesGoldenFile(
+      'test_name.subtest.subfile.png',
+      version: 0,
+    ),
     skip: !Platform.isLinux, // explanation
   );
 ```
 
 The first argument is a finder that specifies the widget to screenshot.
 
-The argument to `matchesGoldenFile` is the filename for the screen shot. The part up to the first dot should exactly match the test filename (e.g. if your test is `widgets/foo_bar_test.dart`, use `foo_bar`). The `subtest` part should be unique to this `testWidgets` entry, and the part after that should be unique within the `testWidgets` entry. This allows each file to have multiple `testWidgets` tests each with their own namespace for the images, and then allows for disambiguation within each test in case there are multiple screen shots per test.
+The arguments to `matchesGoldenFile` are the filename for the screen shot and a version number. For the filename, the part up to the first dot should exactly match the test filename (e.g. if your test is `widgets/foo_bar_test.dart`, use `foo_bar`). The `subtest` part should be unique to this `testWidgets` entry, and the part after that should be unique within the `testWidgets` entry. This allows each file to have multiple `testWidgets` tests each with their own namespace for the images, and then allows for disambiguation within each test in case there are multiple screen shots per test. The version number is used to differentiate historical golden files and is incorporated into the file. When we update a golden file, a new file is created rather than updating the old one, and the version number provides distinction between the old and the new.
 
 The `skip` argument is used if we have slight rendering differences across platforms, as we don't yet have the infrastructure in place to allow the developer to update their golden files on all three supported host platforms. When you find that the golden files differ from platform to platform (by finding that the precommit tests on Windows or Mac fail, typically!), add in the skip line as above, then describe the difference in the comment. We chose Linux as the host platform upon which we run golden file tests. If you don't have a Linux box and need someone to generate the goldens for you, cc @Hixie on your PR.
 
@@ -36,7 +39,7 @@ If they do, you are ready to submit your PR for review. The reviewer should also
 
 ## Updating a golden file
 
-If renderings change, then rather than replacing the golden file in-situ, create new files with new names, and update the tests to point to those. Then, add the old file names [to the README file](https://github.com/flutter/goldens/edit/master/README.md).
+If renderings change, then rather than replacing the golden file in-situ, create new files with new names (incrementing the version number), and update the tests to point to those. Then, add the old file names [to the README file](https://github.com/flutter/goldens/edit/master/README.md).
 
 This allows multiple people to contribute simultaneously without conflicting with each other.
 
@@ -46,6 +49,6 @@ Once your main PR has landed, please come back and delete the obsolete files lis
 
 * Commit messages with updates to the golden files must be of the form `Goldens for https://github.com/flutter/flutter/issues/123456`
 
-* Don't update files, create new ones.
+* Don't update files, create new ones with an incremented version number.
 
 * Delete obsolete files once your PR has landed.
