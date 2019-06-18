@@ -7,6 +7,9 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ## Changes since 1.6.3
 * NEXT AUTHOR: Put your breaking change notification here.
 
+### v1.7.4
+* [#30069](https://github.com/flutter/flutter/pull/30069) Text inline widgets allows embedding arbitrary widgets inline with text. `TextSpan` has also been reworked to inherit from `InlineSpan`, in order to support `WidgetSpan`, which is used to define inline widgets. Existing uses of `TextSpan` should not assume the object is of type `TextSpan` anymore.
+
 ### v1.7.1
 * [#33480](https://github.com/flutter/flutter/issues/33480) The `FadeInImage` widget no longer supports the `placeholderSemanticLabel` property.
 
