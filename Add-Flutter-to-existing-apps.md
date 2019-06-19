@@ -180,6 +180,16 @@ reloaded by pressing `r` in the terminal. You can also paste the URL above into
 your browser to use the Dart Observatory for setting breakpoints, analyzing
 memory retention and other debugging tasks.
 
+If you wish to specify the port number and/or disable auth codes (not recommended)
+for your app, you can do so with intent flags, e.g.
+
+```
+--ei observatory-port 12345 --eb disable-service-auth-codes
+```
+
+These can be entered in [Android Studio via the `Launch Flags`](https://developer.android.com/studio/run/rundebugconfig#opening).
+
+
 ## iOS
 
 ### Create a Flutter module
