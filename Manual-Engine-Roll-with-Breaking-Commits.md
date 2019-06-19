@@ -1,5 +1,3 @@
-# Manual Engine Roll with Breaking Commits
-
 Due to the newly added framework presubmit tests, if your engine commit breaks the framework in some way, **build_and_test_host** will likely catch it. In some cases, that breakage is intended and it requires a subsequent framework change (a.k.a., a manual engine roll) to fix the breakage.
 
 While the breaking commit landed in the engine tree but the manual engine roll has not landed in the framework tree, all engine PRs could fail **build_and_test_host** unless those PRs are created based on an older engine tree without that breaking commit.
