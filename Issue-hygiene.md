@@ -36,6 +36,9 @@ encourage them to mark bugs as "customer blocker" (for the most serious bugs)
 or "customer critical" (for still important but not quite as serious bugs)
 if they are very important and deserve immediate attention.
 
+(Bugs marked "customer blocker" or "customer critical" must have the corresponding
+customer label as well, so that we know who is actually asking for the issue.)
+
 Some customers have their own separate bug systems, in which they track Flutter
 issues. We consider our GitHub issue list to be canonical. However, if there
 is a link from the issue in our bug system to the customer's issue in their bug
