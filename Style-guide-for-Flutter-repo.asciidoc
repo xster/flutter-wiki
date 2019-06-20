@@ -191,6 +191,22 @@ using the general API but could be implemented more efficiently
 using a dedicated API, then that is where we would create a dedicated API.
 
 
+### Avoid the lowest common denominator
+
+It is common for SDKs that target multiple platforms (or metaplatforms that 
+themeselves run on multiple platforms, like the Web) to provide APIs that
+work on all their target platforms. Unfortunately, this usually means that
+features that are unique to one platform or another are unavailable.
+
+For Flutter, we want to avoid this by explicitly aiming to be the best way
+to develop for each platform individually. Our ability to be used cross-
+platform is secondary to our ability to be used on each platform. For example,
+https://master-api.flutter.dev/flutter/services/TextInputAction-class.html[TextInputAction]
+has values that only make sense on some platforms. Similarly, our platform
+channel mechanism is designed to allow separate extensions to be created on
+each platform.
+
+
 ### Avoid APIs that encourage bad practices
 
 For example, don't provide APIs that walk entire trees, or that encourage
