@@ -16,7 +16,7 @@ The web workflow is still gated behind the environment variable FLUTTER_WEB, whi
 $ flutter devices
 > 1 connected device:
 > 
-> web • web • web-javascript • Google Chrome 75.0.3770.80 
+> Chrome • chrome • web-javascript • Google Chrome 75.0.3770.80 
 ```
 
 ```
@@ -37,10 +37,10 @@ $ flutter doctor
 > [✓] Connected device (1 available)
 ```
 
-`flutter run` will launch the application using the development compiler in a Chrome browser. The name of the web "device" is currently "web", but this doesn't need to be specified if there are no other devices attached.
+`flutter run` will launch the application using the development compiler in a Chrome browser. The name of the web "device" is currently "chrome", but this doesn't need to be specified if there are no other devices attached.
 
 ```
-$ flutter run -d web
+$ flutter run -d chrome
 > Running "flutter pub get" in hello_world...                         0.4s
 > Compiling lib/main.dart for the Web...                              1.0s
 > 
@@ -70,7 +70,7 @@ ninja -C out/host_debug_unopt
 And then to run with a locally built web engine:
 
 ```
-flutter run -d web --local-engine=host_debug_unopt
+flutter run -d chrome --local-engine=host_debug_unopt
 ```
 
 The web implementation of `dart:ui` is located at https://github.com/flutter/engine/tree/master/lib/stub_ui and the rules to build the sdk are located at https://github.com/flutter/engine/tree/master/web_sdk.
