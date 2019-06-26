@@ -27,6 +27,10 @@ Caring about the developer means creating a joyful and productive development ex
 
 We respect our users, whoever they are.
 
+## Openness
+
+Flutter is an open source project, in the full senses of the word: we are open to ideas, we are open to contributions, our code and our roadmap are open, our priorities are open. Transparency leads to a higher quality product. While our team is currently primarily formed of employees from Google, we aspire to grow and welcome anyone to join the team.
+
 ***
 
 See also: 
