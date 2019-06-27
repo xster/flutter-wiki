@@ -302,8 +302,12 @@ In general, we want to avoid making changes to Flutter, its dependencies,
 our plugins, or our packages, that force developers using Flutter to
 change their code in order to upgrade to new versions of flutter.
 
-Sometimes, however, doing this is necessary for the greater good. In those cases,
-to make a change that will require developers to change their code:
+Sometimes, however, doing this is necessary for the greater good. We want our APIs to be
+intuitive; if being backwards-compatible requires making an API into something that we would
+never have designed that way unless forced to by circumstances, then we should instead break
+the API and make it good.
+
+In those cases, to make a change that will require developers to change their code:
 
  1. Put the `severe: API break` label on the relevant issue. You must have
     an issue, see the overview section above!
