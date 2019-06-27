@@ -65,7 +65,7 @@ Flutter Wiki
 - [[Creating Responsive Apps]]
 - [[Obfuscating Dart Code]]
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
-- [[Using Flutter in China](https://flutter.dev/community/china)]
+- [Using Flutter in China](https://flutter.dev/community/china)
 - [[Making animated GIFs of Flutter apps]]
 - [[Desktop shells]] - building a Mac app with Flutter
 - [[Linting Flutter apps for Chrome OS]]
