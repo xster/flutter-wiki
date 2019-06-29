@@ -70,6 +70,7 @@ Flutter Wiki
 - [[Desktop shells]] - building a Mac app with Flutter
 - [[Linting Flutter apps for Chrome OS]]
 - [[Building a web application with Flutter]]
+- [[Code generation in Flutter]]
 
 ## Release Notes
 - [1.5.4](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
