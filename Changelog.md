@@ -4,7 +4,7 @@ _Flutter contributors: please feel empowered to edit this wiki page to include a
 
 See also [[Bad Builds]], which lists dev releases that are known to have major bugs or regressions.
 
-## Changes since 1.6.3
+
 * NEXT AUTHOR: Put your breaking change notification here.
 
 * [#34684](https://github.com/flutter/flutter/pull/34684) The return type of the almost never used `ParentDataWidget.debugDescribeInvalidAncestorChain` method is now `Iterable<DiagnosticsNode>` instead of `String`. Existing uses can call `.join('\n')` on the return value if they need to continue to use a `String` instead of a `DiagnosticsNode`.
