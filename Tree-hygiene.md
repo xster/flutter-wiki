@@ -309,7 +309,8 @@ commits. That makes the next roll very hard to manage: it's difficult to triage 
 or a new performance regression caused by the next roll, since that roll will include all the commits
 in the paused period.
 
-Therefore, reverting a roller commit is not the default action if it causes a performance regression.
+Therefore, reverting a roller commit or pausing the auto-roller is 
+*NOT* the default action if it causes a performance regression.
 The default action should be to file an issue with labels "performance", "regression", and "TODAY"
 immediately, and start investigating which leaf-commit caused the regression. Once the leaf-commit
 is identified, check if it's an expected trade-off. If so, remove the "TODAY" label and try to see
