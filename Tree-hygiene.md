@@ -276,13 +276,45 @@ investigate.
 * If the regression is not expected, and is not severe, and is definitely not
 a problem in your PR (e.g. you changed a comment and the analyzer performance
 got worse, or you deleted a README and the rasterizer slowed down), then file
-a bug, labeled with the "regression" and "performance" labels, and either
+a bug, labeled with the "regression", "performance", "TODAY" labels, and either
 investigate or delegate to someone to investigate. The investigation should be
 considered a high priority. It is your responsibility to make sure that the
 cause is understood within a few days.
 
 Performance regressions are not a problem so long as they are promptly dealt with.
+Therefore, Flutter considers all unexpected performance regressions to be TODAY,
+or the highest-priority issues until we have it under control
+(e.g. we know what caused it and either have a fix under way or have determined
+it is an acceptable trade-off).
 
+### Performance regressions caused by auto-roller commits
+
+Although reverting a normal commit that caused performance regressions is the default
+behavior, reverting an [auto-roller](https://github.com/flutter/flutter/wiki/Autorollers)
+(e.g., an engine-roller commit like https://github.com/flutter/flutter/commit/fdcb57b69eff2162e9aead6dec0f8058788e7608)
+commit could cause some complications:
+
+1. The auto-roller commit usually include multiple commits of the source repo (e.g., engine-roller
+commit includes multiple commits of https://github.com/flutter/engine). This can be applied
+recursively as the engine-roller commit includes a dart-roller commit, or a skia-roller commit.
+Therefore, a roller commit could actually include a ton of leaf-level commits, which makes it
+really hard to triage which leaf commit actually caused the regression.
+
+2. The auto-roller will try to roll again as soon as possible that will reland any changes reverted
+by a Flutter commit revert. So in order to keep the revert effective, one has to either
+(1) pause the auto-roller, or (2) revert the leaf commit in the source repo.
+
+3. If the auto-roller is paused for a long time (say 1 day), the source repo will accumulate many
+commits. That makes the next roll very hard to manage: it's difficult to triage a build failure
+or a new performance regression caused by the next roll, since that roll will include all the commits
+in the paused period.
+
+Therefore, reverting a roller commit is not the default action if it causes a performance regression.
+The default action should be to file an issue with labels "performance", "regression", and "TODAY"
+immediately, and start investigating which leaf-commit caused the regression. Once the leaf-commit
+is identified, check if it's an expected trade-off. If so, remove the "TODAY" label and try to see
+if there's any way to mitigate the regression. If not, revert the leaf commit in the source repo
+and let the auto-roller apply that revert. Once the revert is rolled into Flutter, close the issue.
 
 ## Avoid "Revert "Revert "Revert "Revert "Fix foo"""" commit messages
 
