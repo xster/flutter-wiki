@@ -150,6 +150,7 @@ please reach out to one of the following people:
 * Engine - @cbracken
 * `flutter` Tool - @zra
 * Plugins - @amirha
+* Performance - @liyuqian
 * Anything else - @Hixie
 
 
