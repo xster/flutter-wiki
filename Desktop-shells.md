@@ -33,7 +33,7 @@ Expect the APIs for the final shell to be radically different from the current i
 
 ### Tooling
 
-Support for desktop in the `flutter` tool is a work in progress. To use any of the support (such the host machine being listed by `flutter devices`), you must not be on the `stable` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels). This is to make it clear that desktop support is not yet considered stable and production-ready.
+Support for desktop in the `flutter` tool is a work in progress. To use any of the support (such the host machine being listed by `flutter devices`), you must be on the `master` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels). This is to make it clear that desktop support is not yet considered stable and production-ready.
 
 ### Plugins
 
