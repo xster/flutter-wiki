@@ -205,6 +205,8 @@ the repository yet, then wait for one of the project maintainers to submit it fo
 If you do have access, you can just click the green "Merge pull request" button on the GitHub UI
 of your pull request. Please squash commits (GitHub does this for you by default normally).
 
+### Squashing commits
+
 When you squash commits, by default, GitHub will concatenate all your commit messages to form a unified commit message.  This often yields an overly verbose commit message with many unhelpful entries (e.g. "fix typo").  Please double-check (and hand-edit if necessary) your commit message before merging such that the message contains a helpful description of the overall change.
 
 ## Landing a patch in a hurry (for emergencies)
