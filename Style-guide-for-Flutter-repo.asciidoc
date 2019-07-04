@@ -680,8 +680,7 @@ https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/material
 
 ### Avoid using `if` chains or `?:` or `==` with enum values
 
-Use `switch` if you are examining an enum, since the analyzer will warn you if you missed any of the
-values when you use `switch`.
+Use `switch` with a `default` case if you are examining an enum, since the analyzer will warn you if you missed any of the values when you use `switch`.
 
 Avoid using `if` chains, `? ... : ...`, or, in general, any expressions involving enums.
 
