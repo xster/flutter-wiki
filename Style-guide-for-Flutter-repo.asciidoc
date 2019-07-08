@@ -273,6 +273,19 @@ feedback from the relevant people, e.g. send it to `flutter-dev` or post it on
 Gitter.
 
 
+### Only log actionable messages to the console
+
+If the logs contain messages that the user can safely ignore, then they will do so, and eventually their logs
+will be so chatty and verbose that they will miss the critical messages. Therefore, only log actual errors and
+actionable warnings (warnings that can always be dealt with and fixed).
+
+Never log "informational" messages by default. It is possible that it may be useful to have messages on certain topics while debugging those topics. To deal with that, have debug flags you can enable that enable extra logging for particular topics. For example, setting `debugPrintLayouts` to true enables logging of layouts.
+
+This also applies to our unopt builds. It's annoying for other people on the team to have to wade through messages that aren't directly relevant to their work. Rely on feature flags, not verbosity levels, when deciding
+to output messages. The one exception to this is reporting useful milestones; for example, the `flutter` tool in
+verbose mode (`-v`) reports meaningful steps that it is executing because those are almost always useful.
+
+
 Policies
 --------
 
