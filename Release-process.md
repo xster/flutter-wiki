@@ -77,13 +77,17 @@ https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). 
 This is the process for rolling the "stable" branch. We generally intend to roll the stable branch every quarter or so, probably with more fanfare than a regular beta roll. The steps below are the technical steps required for the roll; there will most likely be more coordination around the roll that are not discussed here.
 
 1. Pick a commit that has been rolled to the `beta` branch using the process above. Typically, this will be done in coordination with a public event (e.g. Flutter Live) and so much discussion will have happened regarding exactly which commit to use, so this process doesn't go into detail as to how to select the commit.
+1. Double-check that no critical bugs have been filed against the beta release that would warrant an extra hotfix.
 1. Push the selected commit to the `stable` branch (vX.Y.Z is the tag of the selected version):
    ```
    git fetch upstream
    git checkout vX.Y.Z
    git push upstream HEAD:stable
    ```
-   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the stable branch on GitHub. Contact a repository administrator (e.g. Hixie) for advice. If the last pushed version was a hotfix, this may require temporarily unprotecting the branch.
+   If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the stable branch on GitHub. Contact a repository administrator (e.g. @Hixie) for advice. If the last pushed version was a hotfix, this may require temporarily unprotecting the branch.
+1. Wait for the Cirrus builds on the stable branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches, and check https://ci.chromium.org/p/flutter/builders/prod/Mac%20Flutter%20Packaging, 
+https://ci.chromium.org/p/flutter/builders/prod/Linux%20Flutter%20Packaging, and 
+https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). If they fail, let people know as soon as possible and investigate the failure(s) as a matter of urgency.
 
 
 ## Applying emergency fixes
