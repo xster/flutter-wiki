@@ -172,7 +172,7 @@ As a reviewer, you are the last line of defense.
 overly-specific APIs, API cliffs and API oceans, API design in a vacuum (without a customer). If these terms
 don't make sense, read the style guide again. :-)
 4. Is it the best implementation? Again, see our [style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#coding-patterns-and-catching-bugs-early), in particular its section on good coding patterns. Are there hacks? Are we taking on more technical debt? Think of ways in which the code could break.
-5. Is it testable? Is it tested? All code must be tested. Are there asserts? Encourage liberal use of assertions.
+5. Is it testable? Is it tested? *All code must be tested.* Are there asserts? Encourage liberal use of assertions.
 6. Look for mistakes in indenting the code and other trivial formatting problems.
 7. Is new code licensed correctly?
 8. Is the documentation thorough and useful? Look for useless documentation, empty prose, and breadcrumbs. See the [documentation section](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc) of our style guide for what that means.
