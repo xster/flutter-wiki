@@ -88,6 +88,7 @@ This is the process for rolling the "stable" branch. We generally intend to roll
 1. Wait for the Cirrus builds on the stable branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches, and check https://ci.chromium.org/p/flutter/builders/prod/Mac%20Flutter%20Packaging, 
 https://ci.chromium.org/p/flutter/builders/prod/Linux%20Flutter%20Packaging, and 
 https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). If they fail, let people know as soon as possible and investigate the failure(s) as a matter of urgency.
+1. Double-check that the API docs have updated at [api.flutter.dev](https://api.flutter.dev/). The footer at the bottom of the page shows the version against which the docs were built. It should show the stable release you just pushed.
 
 
 ## Applying emergency fixes
