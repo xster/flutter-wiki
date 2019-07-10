@@ -9,7 +9,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ### v1.8.1
 
-* [#36900](https://github.com/dart-lang/sdk/issues/36900) Improves type safety by fixing the return value of certain API that return `Uint8List` but are declared to return `List<int>`. Read the breaking change [announcement](https://groups.google.com/forum/#!topic/flutter-dev/zKWTAMJTvos) for error fixes.
+* [#36900](https://github.com/dart-lang/sdk/issues/36900) Improves type safety by fixing the return value of certain API that return `Uint8List` but are declared to return `List<int>`. Read the breaking change [announcement](https://groups.google.com/a/dartlang.org/forum/#!msg/announce/wcy9wW8Lk9A/v2h9JwQRDQAJ) for error fixes.
 
 ### v1.7.6
 
