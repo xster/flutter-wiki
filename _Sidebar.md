@@ -73,5 +73,6 @@ Flutter Wiki
 - [[Code generation in Flutter]]
 
 ## Release Notes
+- [1.7.8](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8)
 - [1.5.4](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
 - [1.2.1](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
