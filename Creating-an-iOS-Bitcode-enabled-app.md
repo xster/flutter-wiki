@@ -15,7 +15,7 @@ src$ autoninja -C out/ios_profile
 src$ autoninja -C out/host_profile
 ```
 
-In your Xcode project, ensure that `ENABLE_BITCODE` is set to `YES` for all targets. See this [StackOverflow question](https://stackoverflow.com/questions/31205133/how-to-enable-bitcode-in-xcode-7) if you're not sure how to do that - the steps are still roughly the same in Xcode 10.
+In your Xcode project, ensure that `ENABLE_BITCODE` is set to `YES` for all targets. See this [StackOverflow question](https://stackoverflow.com/questions/31205133/how-to-enable-bitcode-in-xcode-7) if you're not sure how to do that - the steps are still roughly the same in Xcode 10. If you are using plugins, you will also have to do this step after each Pod install to prevent the framework from resetting this value on you, and remove any `config.build_settings['ENABLE_BITCODE'] = 'NO'` from the Podfile.
 
 You should then be able to build your application using a `--local-engine` flag.  E.g.
 
