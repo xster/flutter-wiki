@@ -7,8 +7,11 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+### v1.8.2
+
+* [#9041](https://github.com/flutter/engine/pull/9041) TextStyle.height and StrutStyle.height is properly implemented as a multiple of font size instead of a multiple of the font-provided height. When height is null or omitted, the font-provided height will be used. When height is provided, the height of the line will be `fontSize * height`. See the [announcement](https://groups.google.com/forum/#!topic/flutter-announce/ZmnseDOW9Wc) for more information.
+
 ### v1.8.1
-* [#9041](https://github.com/flutter/engine/pull/9041) TextStyle.height and StrutStyle.height is properly implemented as a multiple of font size instead of a multiple of the font-provided height. When height is null or omitted, the font-provided height will be used. When height is provided, the height of the line will be `fontSize * height`. 
 
 * [#36900](https://github.com/dart-lang/sdk/issues/36900) Improves type safety by fixing the return value of certain API that return `Uint8List` but are declared to return `List<int>`. Read the breaking change [announcement](https://groups.google.com/a/dartlang.org/forum/#!msg/announce/wcy9wW8Lk9A/v2h9JwQRDQAJ) for error fixes.
 
