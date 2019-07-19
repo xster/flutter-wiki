@@ -215,3 +215,14 @@ the feature as a team, or to fund hiring someone to work on the feature,
 or to mark the issue with a thumbs-up reaction. We regularly look through
 all issues sorted by the number of thumbs-up reactions to determine the
 relative priority of upcoming work, so that is one way to change our mind.
+
+## Provide reduced test cases
+
+To debug a problem, we will need to be able to reproduce it. The best way
+to help us do that is to provide code, licensed according to [the BSD license
+used by Flutter](https://github.com/flutter/flutter/blob/master/LICENSE), that
+has been reduced as far as possible (such that removing anything further stops
+showing the bug). Attach such a file or files to the issue itself.
+
+For legal reasons, we cannot debug problems that require looking at proprietary
+code or, generally, code that is not publicly available.
