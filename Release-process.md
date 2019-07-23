@@ -78,6 +78,7 @@ This is the process for rolling the "stable" branch. We generally intend to roll
 
 1. Pick a commit that has been rolled to the `beta` branch using the process above. Typically, this will be done in coordination with a public event (e.g. Flutter Live) and so much discussion will have happened regarding exactly which commit to use, so this process doesn't go into detail as to how to select the commit.
 1. Double-check that no critical bugs have been filed against the beta release that would warrant an extra hotfix.
+1. Check the analytics for the selected commit on the beta branch to see if it has any spikes in crashes, lost users, etc. If you don't have access to the analytics contact kf6gpe or Hixie.
 1. Push the selected commit to the `stable` branch (vX.Y.Z is the tag of the selected version):
    ```
    git fetch upstream
@@ -139,7 +140,7 @@ https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). 
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
 
 Note that after applying a hotfix to _CHANNEL_, you will need to manually force-push the subsequent release to that channel when it's ready. To do this:
-1.  Ask a repo administrator (e.g., Hicksie, kf6gpe) to temporarily remove the branch protection on the branch for _CHANNEL_.
+1.  Ask a repo administrator (e.g., Hixie, kf6gpe) to temporarily remove the branch protection on the branch for _CHANNEL_.
 1.  Perform the force push using 
    ```
    git fetch upstream
