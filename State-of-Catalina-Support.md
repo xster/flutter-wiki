@@ -1,4 +1,4 @@
-Members of the Flutter team are working to bring full macOS Catalina support to Flutter. In the mean time, we know that some of you have wanted to use the macOS Catalina betas with Flutter. Here’s [christopherfujino](http://www.github.com/christopherfujino)’s step-by-step diary of what he’s experienced getting it working, which is helping inform the team’s work as to what’s necessary.
+Members of the Flutter team are working to bring full macOS Catalina support to Flutter. Work is being track on the GitHub project [Flutter on macOS Catalina Support](https://github.com/orgs/flutter/projects/4?add_cards_query=is%3Aopen). In the mean time, we know that some of you have wanted to use the macOS Catalina betas with Flutter. Here’s [christopherfujino](http://www.github.com/christopherfujino)’s step-by-step diary of what he’s experienced getting it working, which is helping inform the team’s work as to what’s necessary.
 
 ## OS Setup
 
