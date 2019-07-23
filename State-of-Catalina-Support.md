@@ -11,10 +11,10 @@ Members of the Flutter team are working to bring full macOS Catalina support to 
 ## Journal
 
 1. Downloaded stable flutter sdk from flutter.dev, v1.7.8+hotfix.3
-2. OS X prompts if iterm2 should be allowed access to “$HOME/Downloads”(?!)
-3. When I enter the command “`flutter/bin/flutter doctor`”, OS X says “dart” can’t be opened because it was not downloaded from the App Store
-    1. After going to Settings -> Security & Privacy -> Open Anyway, I get another dialog: “dart” is a Unix app downloaded from the Internet. Are you sure you want to open it?
-    2. On clicking “open”, a new “Terminal” window was opened, and then it executes just “dart”, without any arguments, and then the terminal session exits.
+2. OS X prompts if iterm2 should be allowed access to `$HOME/Downloads`
+3. When I enter the command `flutter/bin/flutter doctor`, OS X says “dart” can’t be opened because it was not downloaded from the App Store
+    1. After going to Settings -> Security & Privacy -> Open Anyway, I get another dialog: `dart` is a Unix app downloaded from the Internet. Are you sure you want to open it?
+    2. On clicking “open”, a new “Terminal” window was opened, and then it executes just `dart`, without any arguments, and then the terminal session exits.
 4. When I re-issue the same command, “`flutter/bin/flutter doctor`”, this time the actual flutter tool is run, however a new dialog is opened: “kernel-service.dart.snapshot” can’t be opened because Apple cannot check it for malicious software.
     3. When I go to Settings -> Security & Privacy -> Open Anyway, nothing happens. The text next to the button says: `kernel-service.dart.snapshot` was blocked from opening because it is not from an identified developer. Re-running the command results in no change.
 5. Trying to switch channels failed with: 
