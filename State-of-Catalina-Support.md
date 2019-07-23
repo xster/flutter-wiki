@@ -1,9 +1,6 @@
 Members of the Flutter team are working to bring full macOS Catalina support to Flutter. In the mean time, we know that some of you have wanted to use the macOS Catalina betas with Flutter. Here’s [christopherfujino](http://www.github.com/christopherfujino)’s step-by-step diary of what he’s experienced getting it working, which is helping inform the team’s work as to what’s necessary.
 
-
 ## OS Setup
-
-
 
 1. This was on a new Mac Mini, right from the Apple Store
 1. Upgraded OS to Catalina preview, via [https://www.apple.com/macos/catalina-preview/](https://www.apple.com/macos/catalina-preview/)
@@ -68,15 +65,12 @@ bin/flutter: line 183:  8210 Abort trap: 6           "$DART" --packages="$FLUTTE
 
 ## Issues
 
-
-
 1. Gatekeeper preventing “kernel-service.dart.snapshot” from executing [#36714](https://github.com/flutter/flutter/issues/36714)
 2. [Xcode] Cannot build 32-bit APK on XCode >= 10 [flutter #36114](https://github.com/flutter/flutter/issues/36114) [Dart #36839](https://github.com/dart-lang/sdk/issues/36839)
 3. Website will need to updated to illustrate how to update path for zsh (Catalina’s default shell)
-4. [Xcode] Cocoapod path not broken (maybe related to beta xcode?)
+4. [Xcode] Cocoapod path broken by upgrading system ruby version [#36786](https://github.com/flutter/flutter/issues/36786)
 5. [Xcode] Maybe update website documentation to reflect new location in Xcode of how to configure signing certificate
 6. [Xcode] For each flutter app that I tried to run on an iOS device, I had to add my signing certificate in XCode.
-
 
 ## Links
 1. [Official Apple Preview Website](https://www.apple.com/macos/catalina-preview/)
