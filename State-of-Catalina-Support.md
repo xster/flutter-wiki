@@ -36,19 +36,19 @@ thread=5891, isolate=(null)(0x0)
 -- End of DumpStackTrace
 bin/flutter: line 183:  8210 Abort trap: 6           "$DART" --packages="$FLUTTER_TOOLS_DIR/.packages" $FLUTTER_TOOL_ARGS "$SNAPSHOT_PATH" "$@"
 ```
-6. Following [this article](https://www.imore.com/how-open-apps-unidentified-developers-mac) and [this comment](https://github.com/flutter/flutter/issues/33890#issuecomment-505160047), I disabled Gatekeeper globally, so that binaries can execute without being signed. Now flutter doctor no longer throws the dialog about “kernel-service.dart.snapshot” being unsigned. I was also able to successfully switch channels to master. [Issue](#bookmark=id.25e6jsylorxh)
-7. Under “flutter doctor” (FlutterValidator), “Downloaded executables cannot execute on host”. [Issue](#bookmark=id.7mbconxtxa5o)
-8. We will have to update website documentation on updating path to reflect that Catalina will default to zsh. I updated my path in $HOME/.zshrc. [Issue](#bookmark=id.f2ofxa8u7wdj)
+6. Following [this article](https://www.imore.com/how-open-apps-unidentified-developers-mac) and [this comment](https://github.com/flutter/flutter/issues/33890#issuecomment-505160047), I disabled Gatekeeper globally, so that binaries can execute without being signed. Now flutter doctor no longer throws the dialog about “kernel-service.dart.snapshot” being unsigned. I was also able to successfully switch channels to master. [Issue](https://github.com/flutter/flutter/issues/36714)
+7. Under “flutter doctor” (FlutterValidator), “Downloaded executables cannot execute on host”. [Issue](https://github.com/flutter/flutter/issues/22598)
+8. We will have to update website documentation on updating path to reflect that Catalina will default to zsh. I updated my path in $HOME/.zshrc. [Issue](https://github.com/flutter/website/issues/2856)
 9. I don’t know how to install xcode. Tried the app store, I’m getting weird hits, including tutorials and xcode plugins, but I don’t see an actual xcode install...so it turns out the App Store version of Xcode doesn’t support Catalina. I needed to install the beta version from [https://developer.apple.com/download](https://developer.apple.com/download)
 10. Even after installing the Xcode beta, flutter doctor can’t detect it. The instructions “sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer” don’t work because xcode isn’t at that location. **Fixed**: .app file was in $HOME/Downloads/
-11. [Cocoapods not detected](https://paste.googleplex.com/5337691329658880), looks like [this issue](https://github.com/CocoaPods/CocoaPods/issues/6898). **Fixed** with “sudo gem install -n /usr/local/bin cocoapods”. Ran “pod setup” and cocoapods support detected. [Issue](#bookmark=id.cmv5tr1c75c2)
+11. [Cocoapods not detected](https://paste.googleplex.com/5337691329658880), looks like [this issue](https://github.com/CocoaPods/CocoaPods/issues/6898). **Fixed** with “sudo gem install -n /usr/local/bin cocoapods”. Ran “pod setup” and cocoapods support detected. [Issue](https://github.com/flutter/flutter/issues/36786)
 12. With ios 13 simulator, issued “flutter run”, it worked.
 13. Attempted to run on ipod touch in debug:
     1. No valid code signing certs
     1. Following instructions, “open ios/Runner.xcworkspace” -> Xcode
-    1. In Xcode 11.0 beta 4, the signing interface is no longer under “General”, but in its own category, “Signing & Capabilities” [Issue](#bookmark=id.ytjcs6eq4hd6)
+    1. In Xcode 11.0 beta 4, the signing interface is no longer under “General”, but in its own category, “Signing & Capabilities” [Issue](https://github.com/flutter/website/issues/2857)
     1. Re-running “flutter run”, hit [this issue](https://github.com/flutter/flutter/issues/35989), however it doesn’t seem Catalina-dependent. “Flutter clean” fixed it.
-14. It seems like for each new Flutter app to be run on an iOS device, the cert needs to be added in Xcode. [Issue](#bookmark=id.yem94kf91g67)
+14. It seems like for each new Flutter app to be run on an iOS device, the cert needs to be added in Xcode. [Issue](https://github.com/flutter/flutter/issues/36788)
 15. Attempted to run on ipod touch in release:
     1. Successful
 16. Downloaded Android Studio/SDK
