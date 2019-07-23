@@ -6,17 +6,12 @@ Members of the Flutter team are working to bring full macOS Catalina support to 
 
 
 1. This was on a new Mac Mini, right from the Apple Store
-2. Upgraded OS to Catalina preview, via [https://www.apple.com/macos/catalina-preview/](https://www.apple.com/macos/catalina-preview/)
-3. Followed the playbook we have for setting up hosts in Flutter’s device lab (hosted on Google premises)
-4. Brew cask install chrome, wasn’t able to execute unsigned application
-5. Used a Googler dev account.
-6. On macOS Catalina v10.15 Beta (19A512f), XCode Beta 11.0
-7. On iterm2
-
+1. Upgraded OS to Catalina preview, via [https://www.apple.com/macos/catalina-preview/](https://www.apple.com/macos/catalina-preview/)
+1. Used a Googler dev account.
+1. On macOS Catalina v10.15 Beta (19A512f), XCode Beta 11.0
+1. On iterm2
 
 ## Journal
-
-
 
 1. Downloaded stable flutter sdk from flutter.dev, v1.7.8+hotfix.3
 2. OS X prompts if iterm2 should be allowed access to “$HOME/Downloads”(?!)
@@ -24,7 +19,7 @@ Members of the Flutter team are working to bring full macOS Catalina support to 
     1. After going to Settings -> Security & Privacy -> Open Anyway, I get another dialog: “dart” is a Unix app downloaded from the Internet. Are you sure you want to open it?
     2. On clicking “open”, a new “Terminal” window was opened, and then it executes just “dart”, without any arguments, and then the terminal session exits.
 4. When I re-issue the same command, “`flutter/bin/flutter doctor`”, this time the actual flutter tool is run, however a new dialog is opened: “kernel-service.dart.snapshot” can’t be opened because Apple cannot check it for malicious software.
-    3. When I go to Settings -> Security & Privacy -> Open Anyway, nothing happens. The text next to the button says: “kernel-service.dart.snapshot” was blocked from opening because it is not from an identified developer. Re-running the command results in no change.
+    3. When I go to Settings -> Security & Privacy -> Open Anyway, nothing happens. The text next to the button says: `kernel-service.dart.snapshot` was blocked from opening because it is not from an identified developer. Re-running the command results in no change.
 5. Trying to switch channels failed with: 
 ```
 flutter@macN1 flutter % bin/flutter channel master
