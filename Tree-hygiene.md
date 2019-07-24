@@ -405,6 +405,7 @@ doing this, include a description of how to transition in the deprecation notice
 example:
 
 ```dart
+// TODO(username): Remove this when it goes to stable, https://...link-to-issue.../...
 @Deprecated('FooInterface has been deprecated because ...; it is recommended that you transition to the new FooDelegate.')
 class FooInterface {
   /// ...
@@ -412,7 +413,8 @@ class FooInterface {
 ```
 
 If you use `@deprecated`, make sure to remember to actually remove the feature a few
-months later (after the next stable release), do not just leave it forever!
+months later (after the next stable release), do not just leave it forever! To make sure
+that you don't forget, add it to the [[Pending Deprecations]] page.
 
 It is possible that a breaking change would only affect the master or dev branches. Even in these cases, it is still best to follow this procedure for the change. When it doubt, announce the changes.
 
