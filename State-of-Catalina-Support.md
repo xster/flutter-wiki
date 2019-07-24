@@ -2,14 +2,10 @@ Members of the Flutter team are working to bring full macOS Catalina support to 
 
 ## Known Issues
 
-1. Gatekeeper preventing “kernel-service.dart.snapshot” from executing [#36714](https://github.com/flutter/flutter/issues/36714)
-  a. Workaround: `sudo spctl --master-disable`
-2. [Xcode] Cannot build 32-bit APK on XCode >= 10 [flutter #36114](https://github.com/flutter/flutter/issues/36114) [Dart #36839](https://github.com/dart-lang/sdk/issues/36839)
-  a. Workaround: install Xcode version 9
-3. Website will need to be updated to illustrate how to update path for zsh (Catalina’s default shell) [website #2856](https://github.com/flutter/website/issues/2856)
-  a. Workaround: `echo 'export PATH="[PATH_TO_FLUTTER_GIT_DIRECTORY]/bin:$PATH"' >> $HOME/.zshrc`
-4. Cocoapod path broken by upgrading system ruby version [#36786](https://github.com/flutter/flutter/issues/36786)
-  a. Workaround: reinstall cocoapods, e.g. `sudo gem install cocoapods`.
+1. Gatekeeper preventing “kernel-service.dart.snapshot” from executing [#36714](https://github.com/flutter/flutter/issues/36714) **Workaround**: `sudo spctl --master-disable`
+2. [Xcode] Cannot build 32-bit APK on XCode >= 10 [flutter #36114](https://github.com/flutter/flutter/issues/36114) [Dart #36839](https://github.com/dart-lang/sdk/issues/36839) **Workaround**: install Xcode version 9
+3. Website will need to be updated to illustrate how to update path for zsh (Catalina’s default shell) [website #2856](https://github.com/flutter/website/issues/2856) **Workaround**: `echo 'export PATH="[PATH_TO_FLUTTER_GIT_DIRECTORY]/bin:$PATH"' >> $HOME/.zshrc`
+4. Cocoapod path broken by upgrading system ruby version [#36786](https://github.com/flutter/flutter/issues/36786) **Workaround**: reinstall cocoapods, e.g. `sudo gem install cocoapods`.
 5. [Xcode] Update website documentation to reflect new location in Xcode of how to configure signing certificate [website #2857](https://github.com/flutter/website/issues/2857)
 6. [Xcode] For each flutter app that I tried to run on an iOS device, I had to add my signing certificate in XCode [#36788](https://github.com/flutter/flutter/issues/36788)
 
