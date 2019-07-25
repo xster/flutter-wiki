@@ -58,7 +58,9 @@ Before attempting to connect your Flutter module project to your host Android ap
 
 ```gradle
 android {
+
   ...
+
   compileOptions {
     sourceCompatibility 1.8
     targetCompatibility 1.8
