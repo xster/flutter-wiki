@@ -48,7 +48,7 @@ If you recognize that this bug is a duplicate of an existing bug, add a referenc
 
 **General rule: The more labels an issue has, the better!** _See also: [List of labels](https://github.com/flutter/flutter/labels)_
 
-If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels.
+If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels. If it's specific to running on a desktop platform, include "a: desktop" as well.
 
 Add any of the applicable "severe: *" labels; typically only one will apply but sometimes `severe: regression` will apply in conjunction with one of the others.
 
