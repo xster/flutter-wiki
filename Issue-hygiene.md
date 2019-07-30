@@ -121,6 +121,11 @@ aspirational, in that simply assigning an issue to a bucket without the commitme
 its assignee will not further work on the issue on its own. (See “Assigning Issues”, 
 below.)
 
+In some cases, a month may have a feature-specific milestone in addition to the general month 
+milestone. This is for tracking burndowns in [ZenHub](https://www.zenhub.com/); some subteams
+are using burndown charts against specific completion milestones and need their own milestone
+for tracking. Other rules for release milestones still apply.
+
 ### Near-term Goals
 
 This special milestone is sometimes used as a stepping stone from Goals to a specific month. A subteam
