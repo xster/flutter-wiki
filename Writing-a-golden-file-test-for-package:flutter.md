@@ -15,7 +15,6 @@ Add an expectation along the following lines:
       'test_name.subtest.subfile.png',
       version: 0,
     ),
-    skip: !Platform.isLinux, // explanation
   );
 ```
 
@@ -23,7 +22,7 @@ The first argument is a finder that specifies the widget to screenshot.
 
 The arguments to `matchesGoldenFile` are the filename for the screen shot and a version number. For the filename, the part up to the first dot should exactly match the test filename (e.g. if your test is `widgets/foo_bar_test.dart`, use `foo_bar`). The `subtest` part should be unique to this `testWidgets` entry, and the part after that should be unique within the `testWidgets` entry. This allows each file to have multiple `testWidgets` tests each with their own namespace for the images, and then allows for disambiguation within each test in case there are multiple screen shots per test. The version number is used to differentiate historical golden files and is appended to the end of the filename. When we update a golden file, a new file is created rather than updating the old one, and the version number provides distinction between the old and the new.
 
-The `skip` argument is used if we have slight rendering differences across platforms, as we don't yet have the infrastructure in place to allow the developer to update their golden files on all three supported host platforms. When you find that the golden files differ from platform to platform (by finding that the precommit tests on Windows or Mac fail, typically!), add in the skip line as above, then describe the difference in the comment. We chose Linux as the host platform upon which we run golden file tests. If you don't have a Linux box and need someone to generate the goldens for you, cc @Hixie on your PR.
+We chose Linux as the host platform upon which we run golden file tests. All of the reference images found in [flutter/goldens](https://github.com/flutter/goldens) are generated on Linux. If you don't have a Linux box and need someone to generate the goldens for you, cc **@Hixie** on your PR. Otherwise, the golden file test will be skipped on local platforms that are not Linux. This is due to slight rendering differences across platforms, as we don't yet have the infrastructure in place to allow the developer to update their golden files on all three supported host platforms. *The infrastructure to support golden file testing across all platforms for package:flutter is currently in development.*
 
 Once you have written your test, run `flutter test --update-goldens test/foo/bar_test.dart` in the `flutter` package directory (where the filename is the relative path to your new test). This will update the images in `bin/cache/pkg/goldens/packages/flutter/test/`; the directories below that will match the hierarchy of the directories in the `test` directory of the `flutter` package. Verify that the images are what you expect; update your test and repeat this step until you are happy.
 
