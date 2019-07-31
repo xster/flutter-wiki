@@ -1,12 +1,11 @@
 ## Intro
 
-Making it easy to add Flutter to an existing app is work in progress,
-tracked by the [Add-to-App project](https://github.com/flutter/flutter/projects/28). 
+Making it easy to add Flutter to an existing app is work in progress. 
 
 This page documents the current state of that work and will be updated as we build out the
 necessary tooling.
 
-Last updated November 26, 2018.
+Last updated July 31, 2019.
 
 The "add-to-app" support is **in preview**, and is so far only available on the
 master channel.
@@ -29,7 +28,7 @@ library instead.
 
 This is what the Flutter module template provides. Executing
 `flutter create -t module xxx` produces a Flutter project containing an Android
-library and a Cocoapods pod designed for consumption by your existing host app.
+library and a CocoaPods pod designed for consumption by your existing host app.
 
 ## Android
 
@@ -45,7 +44,10 @@ code to get you started and a `.android/` hidden subfolder that wraps up the
 module project in an Android library.
 
 ### Host app requirements
-Before attempting to connect your Flutter module project to your host Android app, please ensure that your host Android app declares the following source compatibility within your app's `build.gradle` file, under the `android { }` block, such as:
+Before attempting to connect your Flutter module project to your host Android app, 
+please ensure that your host Android app declares the following source 
+compatibility within your app's `build.gradle` file, under the `android { }` 
+block, such as:
 
 ```gradle
 android {
@@ -61,7 +63,10 @@ android {
 There are two ways to achieve this:
 
 #### 1. Depend on the Android Archive (AAR)
-This allows your team to build the host app without requiring to install the Flutter tool. You can distribute the artifacts from a local or remote repository.
+This packages your Flutter library as a generic local Maven repository comprised 
+of AARs and POMs artifacts. This allows your team to build the host app without
+needing install the SDK. You can distribute the artifacts from a local or remote 
+repository.
 
 Let's assume you built a Flutter module at `some/path/my_flutter`, then run:
 ```
@@ -69,7 +74,7 @@ $ cd some/path/my_flutter
 $ flutter build aar
 ```
 
-This command creates a [local repository](https://docs.gradle.org/current/userguide/repository_types.html#sub:maven_local), with the following files:
+This command creates (by default in release mode) a [local repository](https://docs.gradle.org/current/userguide/repository_types.html#sub:maven_local), with the following files:
 
 ```
 build/host/outputs/repo
@@ -130,7 +135,9 @@ dependencies {
 ```
 
 #### 2. Depend on the module's source code
-This allows you to edit and refresh the Flutter module UI, but your team must install the Flutter tool to build the host app.
+This enables a one-step build for both your Android project and Flutter project. 
+This is convenient when working on both parts simultaneously but, but your team
+must install the Flutter SDK to build the host app.
 
 Include the Flutter module as a sub-project in the host app's `settings.gradle`:
 ```groovy
