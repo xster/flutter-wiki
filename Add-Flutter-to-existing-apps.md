@@ -228,6 +228,7 @@ some/path/
       :
 ```
 
+
 #### Add your Flutter app to your Podfile
 Integrating the Flutter framework requires use of the CocoaPods dependency manager.
 This is because the Flutter framework needs to be available also to any Flutter plugins
@@ -236,43 +237,48 @@ that you might include in my_flutter.
 Please refer to [cocoapods.org](https://cocoapods.org/) for how to install CocoaPods
 on your development machine, if needed.
 
-If your host application (`MyApp`) is already using Cocoapods, you only have to do the
+If your host application (`MyApp`) is already using CocoaPods, you only have to do the
 following to integrate with your `my_flutter` app:
 
 1. Add the following lines to your `Podfile`:
 ```ruby
   flutter_application_path = 'path/to/my_flutter/'
-  eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+  load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 ```
-2. Run `pod install`.
+
+2. For each Xcode [target](https://guides.cocoapods.org/syntax/podfile.html#target) that 
+needs to embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
+```ruby
+  target 'MyApp' do
+    install_all_flutter_pods(flutter_application_path)
+  end
+  target 'MyAppTests' do
+    install_all_flutter_pods(flutter_application_path)
+  end
+```
+
+3. Run `pod install`.
 
 Whenever you change the Flutter plugin dependencies in `some/path/my_flutter/pubspec.yaml`,
 you need to run `flutter packages get` from `some/path/my_flutter` to refresh the list
 of plugins read by the `podhelper.rb` script. Then run `pod install` again from
 `some/path/MyApp`.
 
-The `podhelper.rb` script will ensure that your plugins and the Flutter.framework
-get added to your project, and also ensure that bitcode is disabled for all targets.
+The `podhelper.rb` script will ensure that your plugins, the Flutter.framework, and the App.framework
+are embedded in your project.
 
-3. Disable Bitcode for your target
+4. Disable Bitcode for your targets
 
-As Flutter doesn't support bitcode now. You need to disable `ENABLE_BITCODE` flag located in your target's `Build Settings->Build Options->Enable Bitcode` part.
+As Flutter doesn't support bitcode now. Set the `ENABLE_BITCODE` flag by changing your 
+targets' `Build Settings->Build Options->Enable Bitcode` setting to No.
 
 #### Add a build phase for building the Dart code
-Select the top-level `MyApp` project in the Project navigator.
+~~Select the top-level `MyApp` project in the Project navigator.
 Select __TARGET__ `MyApp` in the left part of the main view, and
 then select the `Build Phases` tab. Add a new build phase by clicking
-the `+` towards the top left of the main view. Select `New Run Script Phase`. 
-Expand the new `Run Script`, just appended to the list of phases.
+the `+` towards the top left of the main view…~~ 
 
-Paste the following into the text area just below the Shell field:
-```sh
-"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" build
-"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" embed
-```
-
-Finally, drag the new build phase to just after the Target Dependencies
-phase.
+CocoaPods will add the build phase automatically as of [flutter/flutter#36793](https://github.com/flutter/flutter/pull/36793), and this step is no longer necessary.  If you have previously added this build phase, you must remove it.
 
 You should now be able to build the project using `⌘B`. 
 
@@ -280,14 +286,17 @@ You should now be able to build the project using `⌘B`.
 
 If you have some reason to do this manually or debug why these steps aren't working, here's what's going on under the hood:
 
-1. `Flutter.framework` (the Engine library) is getting embedded into your app for you.  This has to match up with the release type (debug/profile/release) as well as the architecture for your app (arm*, i386, x86_64, etc.).  Cocoapods pulls this in as a vendored framework and makes sure it gets embedded into your native app.
-2. `App.framework` (your Flutter application binary) is embedded into your app.
+1. `Flutter.framework` (the Engine library) is getting embedded into your app for you.  This has to match up with the release type 
+(debug/profile/release) as well as the architecture for your app (arm*, i386, x86_64, etc.).  CocoaPods pulls this in as a vendored 
+framework and makes sure it gets embedded into your native app.
+2. `App.framework` (your Flutter application binary) is embedded into your app.  CocoaPods also pulls this in as a vendored framework and 
+makes sure it gets embedded into your native app.
 3. ~~`flutter_assets` folder is getting embedded as a resource - it contains fonts, images, and in certain build modes it also contains binary files required by the engine at runtime.  __Problems with this folder can lead to runtime errors such as "Could not run engine for configuration" - usually indicating that either the folder is not getting embedded, or you're trying to cross a JIT application with an AOT enabled engine, or vice versa!__~~ The `flutter_assets` folder gets embedded into `App.framework` as of [flutter/flutter#26630](https://github.com/flutter/flutter/pull/26630), and this step is no longer necessary.
-4. Any plugins are getting added as Cocoapods.  In theory, it should be possible to manually merge those in as well, but that becomes much more specific to the plugin itself.
-5. Bitcode is disabled for every target in your project.  This is a requirement to link with the Flutter Engine.
-6. Generated.xcconfig (containing Flutter-specific environment varaibles) is included in the release and debug .xcconfig files that Cocoapods generates.
-
-The build phase script (xcode_backend.sh) is ensuring that the binaries you build stay up to date with the Dart code that's actually in the folder.  It also attempt to respect your build configuration setting once [this pull request](https://github.com/flutter/flutter/pull/23387) lands.
+4. Any plugins are added as CocoaPod pods.  In theory, it should be possible to manually merge those in as well, but those instructions
+vary on the pod dependencies of each plugin.
+5. A build script is added to the Podfile targets that call `install_all_flutter_pods` to ensure that the binaries you build stay up to date 
+with the Dart code that's actually in the folder.  It also uses your Xcode build configuration (Debug, Profile, Release) to embed the matching 
+release type of `Flutter.framework` and `App.framework`.
 
 ### Write code to use FlutterViewController from your host app
 The proper place to do this will be specific to your host app. Here is an
