@@ -38,29 +38,18 @@ Let's assume you have an existing Android app at `some/path/MyApp`, and that you
 want your Flutter project as a sibling:
 ```
 $ cd some/path/
-$ flutter create -t module my_flutter
+$ flutter create -t module --org com.example my_flutter
 ```
 This creates a `some/path/my_flutter/` Flutter module project with some Dart
 code to get you started and a `.android/` hidden subfolder that wraps up the
 module project in an Android library.
-
-(While not required in what follows, if you so desire, you can build that library
-using Gradle:
-```
-$ cd .android/
-$ ./gradlew flutter:assembleDebug
-```
-This results in a `flutter-debug.aar` archive file in
-`.android/Flutter/build/outputs/aar/`.)
 
 ### Host app requirements
 Before attempting to connect your Flutter module project to your host Android app, please ensure that your host Android app declares the following source compatibility within your app's `build.gradle` file, under the `android { }` block, such as:
 
 ```gradle
 android {
-
-  ...
-
+  //...
   compileOptions {
     sourceCompatibility 1.8
     targetCompatibility 1.8
@@ -69,6 +58,80 @@ android {
 ```
 
 ### Make the host app depend on the Flutter module
+There are two ways to achieve this:
+
+#### 1. Depend on the Android Archive (AAR)
+This allows your team to build the host app without requiring to install the Flutter tool. You can distribute the artifacts from a local or remote repository.
+
+Let's assume you built a Flutter module at `some/path/my_flutter`, then run:
+```
+$ cd some/path/my_flutter
+$ flutter build aar
+```
+
+This command creates a [local repository](https://docs.gradle.org/current/userguide/repository_types.html#sub:maven_local), with the following files:
+
+```
+build/host/outputs/repo
+└── com
+    └── example
+        └── my_flutter
+            └── flutter_release
+                ├── 1.0
+                │   ├── flutter_release-1.0.aar
+                │   ├── flutter_release-1.0.aar.md5
+                │   ├── flutter_release-1.0.aar.sha1
+                │   ├── flutter_release-1.0.pom
+                │   ├── flutter_release-1.0.pom.md5
+                │   └── flutter_release-1.0.pom.sha1
+                ├── maven-metadata.xml
+                ├── maven-metadata.xml.md5
+                └── maven-metadata.xml.sha1
+```
+
+To depend on the AAR, the host app needs to be able to find these files. 
+
+To do that, edit `app/build.gradle` in your host app such as it includes
+the local repository and the dependency:
+
+```gradle
+// MyApp/app/build.gradle
+
+android {
+  // ...
+}
+
+repositories {
+  maven {
+    url 'some/path/my_flutter/build/host/outputs/repo'
+  }
+}
+
+dependencies {
+  // ...
+  releaseCompile ('com.example.my_flutter:flutter_release:1.0@aar') {
+    transitive = true
+  }
+}
+```
+
+You can also build the debug variant by running `flutter build aar --debug`
+and then adding the dependency in your host app:
+
+```gradle
+// MyApp/app/build.gradle
+
+dependencies {
+  // ...
+  debugCompile ('com.example.my_flutter:flutter_debug:1.0@aar') {
+    transitive = true
+  }
+}
+```
+
+#### 2. Depend on the module's source code
+This allows you to edit and refresh the Flutter module UI, but your team must install the Flutter tool to build the host app.
+
 Include the Flutter module as a sub-project in the host app's `settings.gradle`:
 ```groovy
 // MyApp/settings.gradle
@@ -86,12 +149,12 @@ The binding and script evaluation allows the Flutter module to `include` itself
 Introduce an `implementation` dependency on the Flutter module from your app:
 ```groovy
 // MyApp/app/build.gradle
-:
+
 dependencies {
   implementation project(':flutter')
-  :
 }
 ```
+
 
 ### Use the Flutter module from your Java code
 Use the Flutter module's Java API to add Flutter views to your host app. This
