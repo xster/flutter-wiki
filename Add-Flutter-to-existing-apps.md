@@ -228,7 +228,6 @@ some/path/
       :
 ```
 
-
 #### Add your Flutter app to your Podfile
 Integrating the Flutter framework requires use of the CocoaPods dependency manager.
 This is because the Flutter framework needs to be available also to any Flutter plugins
