@@ -303,6 +303,9 @@ Integrating the Flutter framework requires use of the CocoaPods dependency manag
 This is because the Flutter framework needs to be available also to any Flutter plugins
 that you might include in my_flutter.
 
+If you added Flutter to your existing iOS application prior to July 30, 2019 you may need to
+[upgrade your environment](https://github.com/flutter/flutter/wiki/Upgrading-Flutter-added-to-existing-iOS-Xcode-project).
+
 Please refer to [cocoapods.org](https://cocoapods.org/) for how to install CocoaPods
 on your development machine, if needed.
 
