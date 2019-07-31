@@ -271,14 +271,6 @@ are embedded in your project.
 As Flutter doesn't support bitcode now. Set the `ENABLE_BITCODE` flag by changing your 
 targets' `Build Settings->Build Options->Enable Bitcode` setting to No.
 
-#### Add a build phase for building the Dart code
-~~Select the top-level `MyApp` project in the Project navigator.
-Select __TARGET__ `MyApp` in the left part of the main view, and
-then select the `Build Phases` tab. Add a new build phase by clicking
-the `+` towards the top left of the main view…~~ 
-
-CocoaPods will add the build phase automatically as of [flutter/flutter#36793](https://github.com/flutter/flutter/pull/36793), and this step is no longer necessary.  If you have previously added this build phase, you must remove it.
-
 You should now be able to build the project using `⌘B`. 
 
 #### Under the hood
@@ -290,10 +282,9 @@ If you have some reason to do this manually or debug why these steps aren't work
 framework and makes sure it gets embedded into your native app.
 2. `App.framework` (your Flutter application binary) is embedded into your app.  CocoaPods also pulls this in as a vendored framework and 
 makes sure it gets embedded into your native app.
-3. ~~`flutter_assets` folder is getting embedded as a resource - it contains fonts, images, and in certain build modes it also contains binary files required by the engine at runtime.  __Problems with this folder can lead to runtime errors such as "Could not run engine for configuration" - usually indicating that either the folder is not getting embedded, or you're trying to cross a JIT application with an AOT enabled engine, or vice versa!__~~ The `flutter_assets` folder gets embedded into `App.framework` as of [flutter/flutter#26630](https://github.com/flutter/flutter/pull/26630), and this step is no longer necessary.
-4. Any plugins are added as CocoaPod pods.  In theory, it should be possible to manually merge those in as well, but those instructions
+3. Any plugins are added as CocoaPod pods.  In theory, it should be possible to manually merge those in as well, but those instructions
 vary on the pod dependencies of each plugin.
-5. A build script is added to the Podfile targets that call `install_all_flutter_pods` to ensure that the binaries you build stay up to date 
+4. A build script is added to the Podfile targets that call `install_all_flutter_pods` to ensure that the binaries you build stay up to date 
 with the Dart code that's actually in the folder.  It also uses your Xcode build configuration (Debug, Profile, Release) to embed the matching 
 release type of `Flutter.framework` and `App.framework`.
 
