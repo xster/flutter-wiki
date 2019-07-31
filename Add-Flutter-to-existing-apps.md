@@ -65,8 +65,8 @@ There are two ways to achieve this:
 #### 1. Depend on the Android Archive (AAR)
 This packages your Flutter library as a generic local Maven repository comprised 
 of AARs and POMs artifacts. This allows your team to build the host app without
-needing install the SDK. You can distribute the artifacts from a local or remote 
-repository.
+needing to install the Flutter SDK. You can then distribute the artifacts from 
+a local or remote repository.
 
 Let's assume you built a Flutter module at `some/path/my_flutter`, then run:
 ```
@@ -136,7 +136,7 @@ dependencies {
 
 #### 2. Depend on the module's source code
 This enables a one-step build for both your Android project and Flutter project. 
-This is convenient when working on both parts simultaneously but, but your team
+This is convenient when working on both parts simultaneously, but your team
 must install the Flutter SDK to build the host app.
 
 Include the Flutter module as a sub-project in the host app's `settings.gradle`:
