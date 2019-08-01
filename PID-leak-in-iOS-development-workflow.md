@@ -7,7 +7,7 @@ It may be relevant to you if:
 
 ### Problem
 
-When a *debug-mode* app is installed on an iOS device and launched from within the device, it will reserve a PID (process ID) which is not reclaimed by iOS until the device restarts. Since there is a limit on the number of outstanding PIDs in iOS (~1000), you many not be able to launch apps after some point.
+When a *debug-mode* app is installed on an iOS device and launched from within the device, it will leak some system resources per launch which are not reclaimed by iOS until the device restarts. You many not be able to launch apps after some point.
 
 ### Solutions
 
