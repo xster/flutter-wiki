@@ -256,7 +256,7 @@ If you come across a bug that is unrelated to the Web backend, remove the `☸ p
 
 If you come across a bug that is unrelated to our plugins or packages, remove the `plugin` or `package` label and leave a comment explaining why. That will send it back to triage.
 
-## Web
+## Desktop
 
 * [Desktop PRs on the engine](https://github.com/flutter/engine/pulls?q=is%3Aopen+is%3Apr+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc)
 * [Desktop PRs on the framework](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc)
