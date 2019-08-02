@@ -1264,6 +1264,91 @@ of the line that has the opening punctuation, so that you can easily determine
 what's going on by just scanning the indentation on the left edge.
 
 
+### Prefer single line for short collection-if and collection-for
+
+If the code fits in a single line don't split it.
+
+For example:
+
+```dart
+// BAD
+final List<String> args = <String>[
+  'test',
+  if (useFlutterTestFormatter) '-rjson'
+  else '-rcompact',
+  '-j1',
+  if (!hasColor)
+    '--no-color',
+  for (final String opt in others)
+    opt,
+];
+
+// GOOD
+final List<String> args = <String>[
+  'test',
+  if (useFlutterTestFormatter) '-rjson' else '-rcompact',
+  '-j1',
+  if (!hasColor) '--no-color',
+  for (final String opt in others) opt,
+];
+```
+
+Otherwise indent with 2 spaces
+
+```dart
+// GOOD
+final List<String> args = <String>[
+  'test',
+  if (useFlutterTestFormatter)
+    '-rjson.very.very.very.very.very.very.very.very.long'
+  else
+    '-rcompact.very.very.very.very.very.very.very.very.long',
+  '-j1',
+  if (!hasColor)
+    '--no-color.very.very.very.very.very.very.very.very.long',
+  for (final String opt in others)
+    methodVeryVeryVeryVeryVeryVeryVeryVeryVeryLong(opt),
+];
+```
+
+### Put spread inside collection-if or collection-for on the same line
+
+Spreads inside collection-if or collection-for are used to insert several elements. It's easier to read to have spread on the line of `if`, `else`, or `for`. 
+
+```dart
+// BAD
+final List<String> args = <String>[
+  'test',
+  if (condA) 
+    ...<String>[
+      'b',
+      'c',
+    ]
+  else
+    '-rcompact',
+  for (final String opt in others)
+    ...<String>[
+      m1(opt),
+      m2(opt),
+    ],
+];
+
+// GOOD
+final List<String> args = <String>[
+  'test',
+  if (condA) ...<String>[
+    'b',
+    'c',
+  ] else
+    '-rcompact',
+  for (final String opt in others) ...<String>[
+    m1(opt),
+    m2(opt),
+  ],
+];
+```
+
+
 ### Use braces for long functions and methods
 
 Use a block (with braces) when a body would wrap onto more than one line (as opposed to using `=>`; the cases where you can use `=>` are discussed in the previous two guidelines).
