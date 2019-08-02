@@ -961,7 +961,7 @@ parenthesis. A TODO is not a commitment that the person referenced will fix the
 problem. Thus, when you create a TODO, it is almost always your username
 that is given.
 
-Including an issue link in TODOs is highly encouraged.
+Including an issue link in a TODO description is required.
 
 ### Comment all `// ignores`
 
