@@ -1,9 +1,10 @@
 (This wiki page applies to people who added Flutter to an existing iOS application before August 2019.)
 
 # Introduction
-Prior to pull request [flutter/flutter#36793](https://github.com/flutter/flutter/pull/36793) merged on July 30, 2019, adding Flutter to an existing iOS application required changes to the Podfile and adding a Run Script build phase to the existing Xcode project.  To update to Flutter past this pull request, you must alter your Podfile and delete the Run Script build phase.
+Prior to pull request [flutter/flutter#36793](https://github.com/flutter/flutter/pull/36793) merged on July 30, 2019 (`Flutter 1.8.4-pre.21`), adding Flutter to an existing iOS application required changes to the Podfile and adding a Run Script build phase to the existing Xcode project.  To update to Flutter past this pull request, you must alter your Podfile and delete the Run Script build phase.
 
-The instructions have been updated on the [Add Flutter to existing apps](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#add-your-flutter-app-to-your-podfile) Wiki page.
+The instructions have been updated on the [Add Flutter to existing apps](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#add-your-flutter-app-to-your-podfile) Wiki page. Ensure you are on the [master channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) and run 
+`flutter upgrade` before following these instructions.
 
 ## Podfile
 
