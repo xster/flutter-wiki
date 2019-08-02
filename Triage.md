@@ -2,8 +2,10 @@
 
 The process of triaging bugs is to first go through these bug lists and make sure they have all been processed as described below:
 
+<!--ALL-LABELS-->
 1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
 
+<!--ALL-LABELS-->
 2. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
 
 3. [the bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
@@ -22,6 +24,7 @@ For PRs, each PR should match one of the following categories:
 
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
+<!--ALL-LABELS-->
 * It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`.
 
 * It can have the `will need additional triage` label. 
@@ -60,6 +63,7 @@ If it's something that looks trivial to fix, add the `easy fix` label.
 
 Finally, label the issue based on what area of the project the bug relates to:
 
+<!--ALL-LABELS-->
 - If it's a documentation bug, add one of the labels with the "d:" prefix.
 - If it's a bug with the underlying engine, add `engine` and optionally one of the bugs with the "e:" prefix. Consider one of the bugs with the "dependency" prefix if the bug is related to one of those areas.
 - If it's a bug with the Flutter framework, add `framework` and optionally one of the bugs with the "f:" prefix.
@@ -136,6 +140,7 @@ Teams can use a variety of tools to prioritize bugs.
 
 * One tool is the milestone field, in particular the "Goals", "Near-term goals", "Stretch goals", "Future", and "Scheduled customer work" milestones for work that doesn't yet have a committed target date and assigned engineer, and the dated milestones for bugs that have an assigned engineer and will definitely not slip beyond a particular month (be conservative when picking milestones!).
 * Another tool is the [Projects](https://github.com/flutter/flutter/projects) page on GitHub. Feel free to create new projects as desired, and use it as you see fit.
+* In some circumstances, we can create new milestones that parallel the dated milestones. Contact @Hixie before going down this route.
 
 ## Engine
 
@@ -249,3 +254,11 @@ If you come across a bug that is unrelated to the Web backend, remove the `☸ p
 * [Old issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc)
 
 If you come across a bug that is unrelated to our plugins or packages, remove the `plugin` or `package` label and leave a comment explaining why. That will send it back to triage.
+
+
+## Adding a new team
+
+To add a new team:
+
+1. Create a new section above, copying-and-pasting one of the existing sections, and update it accordingly.
+2. Update all the parts of this wiki page that are labeled (in the source) with `<!--ALL-LABELS-->`.
