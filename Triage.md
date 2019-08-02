@@ -72,8 +72,8 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a bug with plugins, add `plugin` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with packages, add `package` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
-- If it's specific to writing desktop Windows, macOS, Linux, or Web apps with Flutter, add the "a: desktop" label.
-- If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the "☸ platform-web" label.
+- If it's specific to writing desktop Windows, macOS, Linux, or Web apps with Flutter, add the `a: desktop` label.
+- If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the `☸ platform-web` label.
 
 Bugs relating to the website should be moved to the `flutter/website` repo.
 
