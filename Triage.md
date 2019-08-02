@@ -3,10 +3,10 @@
 The process of triaging bugs is to first go through these bug lists and make sure they have all been processed as described below:
 
 <!--ALL-LABELS-->
-1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
+1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
 
 <!--ALL-LABELS-->
-2. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
+2. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
 
 3. [the bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
 
@@ -25,7 +25,7 @@ For PRs, each PR should match one of the following categories:
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
 <!--ALL-LABELS-->
-* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`.
+* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`.
 
 * It can have the `will need additional triage` label. 
 
@@ -72,6 +72,7 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a bug with plugins, add `plugin` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with packages, add `package` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
+- If it's specific to writing desktop Windows, macOS, Linux, or Web apps with Flutter, add the "a: desktop" label.
 - If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the "☸ platform-web" label.
 
 Bugs relating to the website should be moved to the `flutter/website` repo.
@@ -255,6 +256,20 @@ If you come across a bug that is unrelated to the Web backend, remove the `☸ p
 
 If you come across a bug that is unrelated to our plugins or packages, remove the `plugin` or `package` label and leave a comment explaining why. That will send it back to triage.
 
+## Web
+
+* [Desktop PRs on the engine](https://github.com/flutter/engine/pulls?q=is%3Aopen+is%3Apr+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc)
+* [Desktop PRs on the framework](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22TODAY%22)
+* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
+* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
+* [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
+* [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22)
+* [Popular feature requests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22)
+* [Old issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc)
+
+If you come across a bug that is unrelated to desktop app development, remove the `a: desktop` label and leave a comment explaining why. That will send it back to triage.
 
 ## Adding a new team
 
