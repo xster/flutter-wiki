@@ -92,7 +92,9 @@ Make a judgement call:
 If you have something to say regarding the bug, for example if you happen to notice what the problem is, or if you have some insight based on having seen many other bugs over time, feel free to add a comment to that effect. Your experience is valuable and may help both the reporter and the rest of the Flutter team.
 
 
-# Critical issue triage
+# Critical triage
+
+## Issues
 
 When doing the critical issue triage (as opposed to the new issue triage as above), we check each bug in the following lists:
 
@@ -105,12 +107,14 @@ When doing the critical issue triage (as opposed to the new issue triage as abov
 * [Most requested features](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+sort%3Areactions-%2B1-desc): none of the top 20ish bugs are new, and they've all been considered before and have appropriate milestones.
 * [Most requested bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22+): nothing surprising in the list; consider adding `customer: crowd` `customer critical` labels.
 
-We also want to regularly check https://developer.apple.com/news/ for updates that might affect us.
-
 In addition, a bot takes care of these:
 * [Bugs pending feedback](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22waiting+for+customer+response%22+sort%3Aupdated-desc): close bugs with outstanding requests after 4 weeks, remove the label for bugs with answers.
 
-# Critical PR triage
+## News
+
+We also want to regularly check https://developer.apple.com/news/ for updates that might affect us.
+
+## PRs
 
 We regularly check that the following PRs are not being neglected, and have appropriate labels:
 
