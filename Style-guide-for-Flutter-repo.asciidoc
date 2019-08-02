@@ -932,7 +932,7 @@ Comments
 Find the answers to the questions, or describe the confusion, including
 references to where you found answers.
 
-If commenting on a workaround due to a bug, also leave a link to the bug and
+If commenting on a workaround due to a bug, also leave a link to the issue and
 a TODO to clean it up when the bug is fixed.
 
 Example:
@@ -954,6 +954,14 @@ Example:
 // TODO(username): Converting color to RGB because class Color doesn't support
 //                 hex yet. See http://link/to/a/bug/123
 ```
+
+TODOs should include the string TODO in all caps, followed by the GitHub username of
+the person with the best _context_ about the problem referenced by the TODO in
+parenthesis. A TODO is not a commitment that the person referenced will fix the
+problem. Thus, when you create a TODO, it is almost always your username
+that is given.
+
+Including an issue link in TODOs is highly encouraged.
 
 ### Comment all `// ignores`
 
