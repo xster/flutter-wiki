@@ -1,7 +1,5 @@
 # 2019
 
-With the [release of Flutter 1.0](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html), we’ve made a good start but we’ve still got lots of work to do!
-
 In the interest of transparency, we want to share high-level details of our roadmap, so that others can see our priorities and make plans based off the work we are doing.
 
 We’ve established some broad themes that we want to focus on over the coming year:
