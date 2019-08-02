@@ -158,7 +158,9 @@ Teams can use a variety of tools to prioritize bugs.
 
 If you come across a bug that is unrelated to the engine, remove the `engine` label and leave a comment explaining why. That will send it back to triage.
 
-## Material Design
+## Design languages
+
+### Material Design
 
 * [Material Design PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc)
 * [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22TODAY%22)
@@ -172,7 +174,7 @@ If you come across a bug that is unrelated to the engine, remove the `engine` la
 
 If you come across a bug that is unrelated to material design, remove the `f: material design` label and leave a comment explaining why. That will send it to the framework triage process.
 
-## Cupertino
+### Cupertino
 
 * [Cupertino PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc)
 * [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22TODAY%22)
