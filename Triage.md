@@ -25,7 +25,7 @@ For PRs, each PR should match one of the following categories:
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
 <!--ALL-LABELS-->
-* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`.
+* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `a: existing-apps`.
 
 * It can have the `will need additional triage` label. 
 
@@ -74,6 +74,7 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
 - If it's specific to writing desktop Windows, macOS, Linux, or Web apps with Flutter, add the `a: desktop` label.
 - If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the `☸ platform-web` label.
+- If it's an issue involving integrating Flutter as a library into an existing mobile application, add `a: existing-apps`. 
 
 Bugs relating to the website should be moved to the `flutter/website` repo.
 
