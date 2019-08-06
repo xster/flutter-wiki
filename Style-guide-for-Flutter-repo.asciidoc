@@ -36,6 +36,18 @@ https://www.dartlang.org/guides/language/effective-dart/[Dart style guide]
 for more advice. That document is focused primarily on Dart-specific
 conventions, while this document is more about Flutter conventions.
 
+In some cases (for example, line wrapping around `if` statements) the
+Dart style guide differs from the Flutter guide. For Flutter project code,
+the Flutter guide governs. The differences are a result of slightly different
+priorities. The Flutter guide is designed for making code highly readable
+even to people who have never seen the code before and are new to Dart, as
+the Flutter framework code will be read millions of times more than it is written.
+The Dart guide, on the other hand, is designed to provide a more balanced approach
+that assumes that the writing of the code will be a bigger proportion of the
+interactions with the code, and that the reader is more experienced with Dart.
+(Since the `dartfmt` tool uses the Dart guide, we do not use `dartfmt` for the
+Flutter repository. However, we do recommend its use in general.)
+
 ### A word on designing APIs
 
 Designing an API is an art. Like all forms of art, one learns by practicing. The best way to get good at designing APIs is to spend a decade or more designing them, while working closely with people who are using your APIs. Ideally, one would first do this in very controlled situations, with small numbers of developers using one's APIs, before graduating to writing APIs that will be used by hundreds of thousands or even millions of developers.
