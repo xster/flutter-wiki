@@ -55,7 +55,7 @@ to the attention of the engineering team.
 Each week, we look at all the bugs marked with the "customer blocker" and "customer critical"
 labels, and see if we can address them ahead of other bugs (though there is no guarantee
 that we will; it mostly depends on how close a relationship we have with the relevant customer).
-This process is described in the second section of the page on [[Triage]]).
+This process is described in the "critical triage" section of the page on [[Triage]].
 
 Be wary in marking bugs as "customer blocker". We have finite resources,
 and several customers. If you have one "blocker" bug, then we have a clear
