@@ -7,6 +7,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+### v1.8.4
+
+ * [#36964](https://github.com/flutter/flutter/pull/36964) The constant `kMinInteractiveSize` was [removed from widgets/text_selection.dart](https://github.com/flutter/flutter/pull/36964/files#diff-c5ec5c0feb019f74a2ece02fe3463e20L625) and replaced with `kMinInteractiveDimension` in [widgets/constants.dart](https://github.com/flutter/flutter/pull/36964/files#diff-0edb12c018af00abfaf17d51372a672bR16).  See the [announcement](https://groups.google.com/forum/#!topic/flutter-announce/IALsYuwhzNk) for more information.
+
 ### v1.8.3
 
 ### v1.8.2
