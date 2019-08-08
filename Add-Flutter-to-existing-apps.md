@@ -109,6 +109,7 @@ android {
 repositories {
   maven {
     url 'some/path/my_flutter/build/host/outputs/repo'
+    // This is relative to the location of the build.gradle file if using a relative path. 
   }
 }
 
