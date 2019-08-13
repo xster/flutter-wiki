@@ -18,6 +18,7 @@ Flutter Wiki
 - [[Issue hygiene]] and [[Triage]]
 - [[Style guide for Flutter repo]]
 - [[Project teams]]
+- [[Contributor access]]
 - [[What should I work on?]]
 - [[Running and writing tests]]
 - [[Release process]]
