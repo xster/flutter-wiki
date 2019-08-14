@@ -20,6 +20,11 @@ See also:
  * [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly.
 
 
+### Adding labels
+
+Labels are more or less free, so we can add them pretty easily. Please mention it to other team members first, so that they know what you are planning and can give feedback. Please make sure labels use a consistent color and naming scheme (e.g. all the framework-related labels are blue and start with `f:`).
+
+
 ## Prioritization
 
 _See also: [[What should I work on?]]_
