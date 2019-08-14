@@ -1,3 +1,5 @@
+For people who make the occasional contribution to Flutter (filing an issue, submitting the occasional PR), the default set of permissions is fine. However, if you are a frequent contributor, whether helping us in triage, or often fixing bugs, or regularly improving our documentation, you may find your life is more pleasant with commit access.
+
 We grant commit access (which includes full rights to the issue database, such as being able to edit labels) to people who have gained our trust and demonstrated a commitment to Flutter.
 
 Specifically, if you meet one of the following criteria and you have a sponsor (someone who already has contributor access and agrees that you should be granted access), then please contact @Hixie and ask if you can be granted access. The possible criteria are:
