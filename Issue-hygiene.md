@@ -24,6 +24,7 @@ See also:
 
 Labels are more or less free, so we can add them pretty easily. Please mention it to other team members first, so that they know what you are planning and can give feedback. Please make sure labels use a consistent color and naming scheme (e.g. all the framework-related labels are blue and start with `f:`).
 
+Labels should be used for adding information to a bug. If you plan to use a label to find all instances of a particular topic (e.g. finding all PRs where someone wrote a design doc), be aware that there's no way to force people to label issues or PRs. You can, however, rely on automation to do it, for example you could write a script that labels all PRs that affect the framework.
 
 ## Prioritization
 
