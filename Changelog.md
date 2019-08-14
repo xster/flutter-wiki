@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#37556](https://github.com/flutter/flutter/pull/37556) `RawChip.selected` is now non-nullable. This was an inconsistency in the chips API that was cleaned up.
+
 * [#10481](https://github.com/flutter/engine/pull/10481) The Android Embedding interface changes. `FlutterActivity.createBuilder()` has been replaced with `FlutterActivity.withNewEngine()` and `FlutterFragment.Builder()` has been replaced with `FlutterFragment.NewEngineFragmentBuilder()`. 
 
 * [#36964](https://github.com/flutter/flutter/pull/36964) The constant `kMinInteractiveSize` was [removed from widgets/text_selection.dart](https://github.com/flutter/flutter/pull/36964/files#diff-c5ec5c0feb019f74a2ece02fe3463e20L625) and replaced with `kMinInteractiveDimension` in [widgets/constants.dart](https://github.com/flutter/flutter/pull/36964/files#diff-0edb12c018af00abfaf17d51372a672bR16).  See the [announcement](https://groups.google.com/forum/#!topic/flutter-announce/IALsYuwhzNk) for more information.
