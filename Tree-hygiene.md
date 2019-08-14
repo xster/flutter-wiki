@@ -348,6 +348,10 @@ In those cases, to make a change that will require developers to change their co
  1. Put the `severe: API break` label on the relevant issue. You must have
     an issue, see the overview section above!
 
+    - If your change affects an *existing golden file* test, also include the
+      `will affect goldens` label on your change, and check [Writing a golden
+      file test for package flutter](https://github.com/flutter/flutter/wiki/Writing-a-golden-file-test-for-package:flutter) for guidelines to update the golden properly.
+
  2. Send an e-mail to <mailto:flutter-announce@googlegroups.com> to socialize
     your proposed change. The purpose of this e-mail is to see if you can
     get consensus around your change. **You are not telling people that
