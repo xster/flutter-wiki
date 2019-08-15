@@ -74,7 +74,8 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
 - If it's specific to writing desktop Windows, macOS, Linux, or Web apps with Flutter, add the `a: desktop` label.
 - If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the `☸ platform-web` label.
-- If it's an issue involving integrating Flutter as a library into an existing mobile application, add `a: existing-apps`. 
+- If it's an issue involving integrating Flutter as a library into an existing mobile application, add `a: existing-apps`.
+- If it's an issue that is repeatedly frustrating developers when using non-experimental Flutter features (e.g. performing mobile app builds, dealing with text input, using supported IDEs), add `a: annoyance`. If unsure, consult with DevRel (filiph@). 
 
 Bugs relating to the website should be moved to the `flutter/website` repo.
 
