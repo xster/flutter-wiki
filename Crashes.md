@@ -46,6 +46,10 @@ The dSYM file for `App.framework` (which contains the app-specific code) can be 
 
 The dSYM file for `Flutter.framework` (which is the Flutter Engine) for ios-release builds can be downloaded from Google Cloud Storage. Follow the steps from the Android section in this guide, but in the last step use a download url following this schema: `https://storage.cloud.google.com/flutter_infra/flutter/38a646e14cc25f5a56a989c6a5787bf74e0ea386/ios-release/Flutter.dSYM.zip` (replace the engine hash with your hash).
 
+#### Symbolicating local builds
+
+If you built your local engine in debug or profile Dart modes, the framework's dylib's symbols aren't stripped and are available by default. 
+
 #### Crashes in Dart AOT code
 
 If the crash is in AOT Dart code (in `--release` or `--profile` builds) on iOS, and you can build your own engine, these steps will be helpful for the VM team to fix the bug:
