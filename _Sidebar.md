@@ -4,7 +4,6 @@ Flutter Wiki
 ============
 
 - [[Home]] of the Wiki
-<!-- - [flutter.dev](https://flutter.dev/)  (hidden because the list is getting long and this is linked elsewhere) -->
 - [[Roadmap]]
 - [API Reference (stable)](https://docs.flutter.dev)
 - [API Reference (master)](https://master-docs.flutter.dev)
