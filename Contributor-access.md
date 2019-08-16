@@ -12,3 +12,10 @@ Specifically, if you meet one of the following criteria and you have a sponsor (
 Being granted access means that you will be added to the "flutter-hackers" group on GitHub. This privilege is granted with some expectation of responsibility: contributors are people who care about Flutter and want to help Flutter along our [[roadmap]]. A contributor is not just someone who can make changes or comment on issues, but someone who has demonstrated their ability to collaborate with the team, get the most knowledgeable people to review code, contribute high-quality code, follow through to fix bugs (in code or tests), and provide meaningful insights on issues.
 
 We grant access optimistically based on a reasonably small volume of evidence of good faith. Correspondingly, we will remove access quickly if we find our trust has been violated. Contributors with commit access must still follow all our processes and policies, and must follow our [code of conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md) rigorously. (Please read it, it's stricter than most.)
+
+## Process
+
+The actual process (as followed by GitHub admins) is as follows:
+
+1. Verify the identity of the person making the request.
+2. Click the "Add a member" button on [the flutter-hackers team page](https://github.com/orgs/flutter/teams/flutter-hackers/members) on GitHub.
