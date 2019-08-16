@@ -15,7 +15,7 @@ We grant access optimistically based on a reasonably small volume of evidence of
 
 ## Process
 
-The actual process (as followed by GitHub admins) is as follows:
+The actual process (as followed by flutter repo admins) is as follows:
 
 1. Verify the identity of the person making the request.
 1. Verify that they qualify under the terms described above.
