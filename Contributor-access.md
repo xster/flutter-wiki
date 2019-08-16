@@ -20,3 +20,4 @@ The actual process (as followed by GitHub admins) is as follows:
 1. Verify the identity of the person making the request.
 1. Verify that they qualify under the terms described above.
 1. Click the "Add a member" button on [the flutter-hackers team page](https://github.com/orgs/flutter/teams/flutter-hackers/members) on GitHub.
+1. Type their name in the text field, select them, then click the "Invite" button.
