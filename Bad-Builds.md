@@ -2,6 +2,10 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
+## v1.9.0 -
+
+Platform views do not display on iPhones (starting from commit 54439bf53454872aec2a9af098d051e311b2e756) (https://github.com/flutter/flutter/issues/38735)
+
 ## v1.7.6 - v1.7.11
 WebView is sized (0,0) for some pages on Android (https://github.com/flutter/flutter/issues/35291)
 
