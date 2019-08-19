@@ -49,3 +49,13 @@ To find out when a given engine commit rolled into the framework:
 1. To find the published Flutter versions that contain this commit, follow the process above.
 
 ### Finding the Engine commit that contains Dart SDK commit X
+
+To find out when a given Dart SDK commit rolled into the engine:
+
+1. ...
+
+### Finding the Skia commit that contains Dart SDK commit X
+
+To find out when a given Skia commit rolled into the engine:
+
+1. ...
