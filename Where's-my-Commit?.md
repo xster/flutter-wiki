@@ -18,7 +18,9 @@ To find the published Flutter versions that contain any given commit in `flutter
 
    <img src="https://user-images.githubusercontent.com/15253456/63279347-ace5d000-c25d-11e9-89a6-f2bd37359e8e.png" alt="Versions" width="65%;" />
 
-   The list of versions here is comprehensive (it lists every individual version that contains the commit).  If there are no versions listed there, it means that this commit has not yet been published to the dev channel and exists only on master.
+   The list of versions here is comprehensive (it lists every individual version that contains the commit).
+
+   If there are no versions listed there, it means that this commit has not yet been published to the dev channel and exists only on master.
 
    If there are too many version tags to display cleanly, GitHub hides them behind an ellipsis.  For example:
 
