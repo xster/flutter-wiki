@@ -82,6 +82,8 @@ To find out when a given Dart SDK change rolled into the engine:
 
 ### Finding the Skia commit that contains Dart SDK commit X
 
-To find out when a given Skia commit rolled into the engine:
+To find out when a given Skia commit rolled into the engine, follow the same process as above for "Finding the Engine commit that contains Dart SDK commit X", with the following differences:
 
-1. ...
+1. The review CLs will have URLs of the form `https://skia-review.googlesource.com/c/skia/+/<cl_number>` instead of `https://dart-review.googlesource.com/c/sdk/+/<cl_number>`.
+
+1. The roll commits will start with "_Roll src/third_party/skia ..._" instead of "_Roll src/third_party/dart ..._".
