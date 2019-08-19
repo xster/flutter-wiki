@@ -25,6 +25,7 @@ Flutter Wiki
   - [[Changelog]]
   - [[Bad Builds]]
   - [[Bad Build Identification]]
+  - [[Where's my Commit?]]
 - [[Rolling Dart]]
 - [[Manual Engine Roll with Breaking Commits]]
 - [[Updating Material Design Fonts]]
