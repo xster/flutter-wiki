@@ -18,7 +18,15 @@ To find the published Flutter versions that contain any given commit in `flutter
 
    <img src="https://user-images.githubusercontent.com/15253456/63279347-ace5d000-c25d-11e9-89a6-f2bd37359e8e.png" alt="Versions" width="65%;" />
 
-   If there are no versions listed there, it means that this commit has not yet been published to the dev channel and exists only on master.
+   The list of versions here is comprehensive (it lists every individual version that contains the commit).  If there are no versions listed there, it means that this commit has not yet been published to the dev channel and exists only on master.
+
+   If there are too many version tags to display cleanly, GitHub hides them behind an ellipsis.  For example:
+
+   <img src="https://user-images.githubusercontent.com/15253456/63285807-73b45c80-c26b-11e9-9e6f-6e21a09cfe85.png" alt="Too many version tags get hidden" width="65%;" />
+
+   Clicking on that ellipsis will expand the list out to show all version tags that contain the commit.  For example:
+
+   <img src="https://user-images.githubusercontent.com/15253456/63285936-b413da80-c26b-11e9-9cc9-0d2754100a2e.png" alt="See all the version tags" width="65%;" />
 
 ### Finding the Framework commit that contains Engine commit X
 
@@ -62,7 +70,7 @@ To find out when a given Dart SDK change rolled into the engine:
 
    <img src="https://user-images.githubusercontent.com/15253456/63281947-a4dc5f00-c262-11e9-86b3-3435525d82b1.png" alt="Dart SDK commit sha" width="65%;" />
 
-1. Note the time that the commit landed.  For example:
+1. Note the time (and the timezone!) that the commit landed.  For example:
 
    <img src="https://user-images.githubusercontent.com/15253456/63282366-832fa780-c263-11e9-8413-5f6707bd2c76.png" alt="Commit timestamp" width="65%;" />
 
