@@ -11,10 +11,7 @@ any code using these libraries to need to be updated and recompiled after any Fl
 
 ### macOS
 
-This is the most mature of the desktop platforms (for various reasons, including that it's quite close to iOS, which we already support).
-
-Classes starting with `Flutter` are shared with iOS, and should be essentially stable. Classes starting with
-`FLE` are still in early stages.
+This is the most mature of the desktop platforms (for various reasons, including that it's quite close to iOS, which we already support). The Objective-C API layer is largely stable at this point, so breaking changes there should be rare.
 
 ### Windows
 
@@ -40,6 +37,8 @@ Support for desktop in the `flutter` tool is a work in progress. To use any of t
 
 Run `flutter config` to see your current settings, as well as the commands to disable the feature again.
 
+The tooling interface for desktop (e.g., the commands to be run by the native build system, or the paths of files created by the `flutter` tool as part of the build) are subject to change without warning.
+
 ### Plugins
 
 Writing plugins is supported on all platforms, however there are currently very few plugins that actually have
@@ -51,14 +50,14 @@ The [plugins section of the flutter-desktop-embedding project](https://github.co
 
 ## Prebuilt Shell Libraries
 
-The desktop libraries are not currently downloaded by default, but can be downloaded to Flutter's engine artifact cache by running `flutter precache` with the `--linux`, `--macos`, or `--windows` flag, depending on your platform.
-
 Only `debug` libraries are currently available.
+
+By default, `precache` does not fetch desktop libraries; if you want to include them when running `precache` pass the `--linux`, `--macos`, or `--windows` flag depending on your platform. Since they are downloaded on demand by build steps, this is necessary only if you specifically want to pre-cache the artifacts.
 
 ### C++ Wrapper
 
 The Windows and Linux libraries provide a C API. To make it easier to use them, there is a C++ wrapper available
-which you can build into your application to provide a higher-level API surface. The `precache` command above will download the source for this wrapper into a `cpp_client_wrapper` folder next to the library.
+which you can build into your application to provide a higher-level API surface. The source for it is downloaded with the library.
 
 ## Using the Shells
 
@@ -75,27 +74,10 @@ the Flutter library, your application will need to bundle your Flutter assets (a
 `flutter build bundle`). On Windows and Linux you will also nee the ICU data from the Flutter engine
 (look for `icudtl.dat` under the `bin/cache/artifacts/engine` directory in your Flutter tree).
 
-#### macOS Note
-
-Currently you must set up your FLEView in a XIB, rather than in code (this will change in the future). To
-do so:
-* Drag in an OpenGL View.
-* Change the class to FLEView.
-* Check the Double Buffer option. If your view doesn't draw, you have likely forgotten this step.
-* Check the Supports Hi-Res Backing option. If you only see a portion of your application when running on
-  a high-DPI monitor, you have likely forgotten this step.
-
 ### Plugins
 
 #### macOS
-When you set up your FLEViewController, before calling `launchEngine...`,
-call `-registerWithRegistrar:` on each plugin you want to use. For
-instance:
-
-```objc
-  [XYZMyAwesomePlugin registerWithRegistrar:
-      [myFlutterViewController registrarForPlugin:"XYZMyAwesomePlugin"]];
-```
+Plugin registration is generated automatically by the `flutter` tool during a build.
 
 #### Windows/Linux
 
@@ -119,7 +101,7 @@ to one of the supported values in order to avoid 'Unknown platform' exceptions.
 This should be done as early as possible.
 
 In the simplest case, where the code will only run on desktop and the behavior
-should be consistent on all platforms, you can hard-code a single target:
+should be consistent on all platforms, you can hard-code a single target. E.g.,:
 
 ```dart
 import 'package:flutter/foundation.dart'
@@ -153,9 +135,11 @@ void _setTargetPlatformForDesktop() {
 }
 ```
 
-Note that the target platform you use will affect not only the behavior and
-appearance of the widgets, but also the expectations Flutter will have for
-what is available on the platform, such as fonts.
+Note that the choices of overrides in the examples above are arbitrary;
+you could use any supported target platforms in either version. The target
+platform you use will affect not only the behavior and appearance of the widgets,
+but also the expectations Flutter will have for what is available on the platform,
+such as fonts.
 
 ### Fonts
 
