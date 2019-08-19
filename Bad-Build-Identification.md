@@ -10,6 +10,8 @@ First, you need to identify which commit introduced the issue and which commit f
 
 In this case, the breaking change affects builds as far back as `v0.1.5`.  Once the fix commit has landed, you'll know which build picked up the fix.
 
+More detailed information can be found in the [Where's my Commit?](https://github.com/flutter/flutter/wiki/Where's-my-Commit%3F) wiki page.
+
 #### What do I do once I know which dev releases are affected?
 
 You update the [[Bad Builds]] page accordingly.
