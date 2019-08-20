@@ -5,7 +5,7 @@ We grant commit access (which includes full rights to the issue database, such a
 Specifically, if you meet one of the following criteria and you have a sponsor (someone who already has contributor access and agrees that you should be granted access), then please ask on the #server-support [[chat]] channel if you can be made a member of the team. The possible criteria are:
 
 * You have submitted several PRs that have landed successfully (received an LGTM, PR was merged, no regressions reported, PR was not reverted).
-* You have a history of participating productively in our [[chat], helping with [[Triage]], helping other contributors track down problems, finding meaningful issues in submitted PRs.
+* You have a history of participating productively in our [[chat]] channels, helping with [[Triage]], helping other contributors track down problems, finding meaningful issues in submitted PRs.
 * You are employed by a company with a history of contributing to Flutter, for the purpose of yourself regularly contributing to Flutter.
 * You represent a development team that creates applications, plugins, or packages using Flutter and have a close relationship with our developer relations team, including having a customer label (see [Issue hygiene, Customers](https://github.com/flutter/flutter/wiki/Issue-hygiene#customers)).
 
