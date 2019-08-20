@@ -18,6 +18,7 @@ We grant access optimistically based on a reasonably small volume of evidence of
 The actual process (as followed by flutter repo admins) is as follows:
 
 1. Verify the identity of the person making the request.
-1. Verify that they qualify under the terms described above.
+1. Verify that they qualify under all the terms described above. If you know them, you can be their sponsor, otherwise, make sure they have one.
 1. Click the "Add a member" button on [the flutter-hackers team page](https://github.com/orgs/flutter/teams/flutter-hackers/members) on GitHub.
 1. Type their name in the text field, select them, then click the "Invite" button.
+1. If they are on Discord, add them to the "team" group there too. Be sure to verify that you are promoting the right person; multiple people can have the same nickname on Discord!
