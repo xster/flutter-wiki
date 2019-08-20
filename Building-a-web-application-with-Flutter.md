@@ -10,7 +10,13 @@ Only the flutter gallery and hello_world have been configured to work with flutt
 
 ### Tooling
 
-The web workflow is still gated behind the environment variable FLUTTER_WEB, which must be set to true in the shell in question. (The env check will be removed for the command line shortly https://github.com/flutter/flutter/pull/33867 lands and in IDE's much later). If this is setup correctly, then flutter devices will output a device named web. flutter doctor will also check for a locatable chrome executable which is required for development mode and tests. If one cannot be found, try setting the CHROME_EXECUTABLE environment variable to the path to your Chrome executable.
+Use the `config` command to enable:
+
+```
+flutter config --enable-web
+```
+
+If this is set up correctly, Flutter devices will output a device named chrome. Flutter doctor will also check for a locatable chrome executable which is required for development mode and tests. If one cannot be found, try setting the CHROME_EXECUTABLE environment variable to the path to your Chrome executable.
 
 ```
 $ flutter devices
