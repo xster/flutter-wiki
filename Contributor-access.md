@@ -9,13 +9,13 @@ Specifically, if you meet one of the following criteria and you have a sponsor (
 * You are employed by a company with a history of contributing to Flutter, for the purpose of yourself regularly contributing to Flutter.
 * You represent a development team that creates applications, plugins, or packages using Flutter and have a close relationship with our developer relations team, including having a customer label (see [Issue hygiene, Customers](https://github.com/flutter/flutter/wiki/Issue-hygiene#customers)).
 
-Being granted access means that you will be added to the "flutter-hackers" group on GitHub. This privilege is granted with some expectation of responsibility: contributors are people who care about Flutter and want to help Flutter along our [[roadmap]]. A contributor is not just someone who can make changes or comment on issues, but someone who has demonstrated their ability to collaborate with the team, get the most knowledgeable people to review code, contribute high-quality code, follow through to fix bugs (in code or tests), and provide meaningful insights on issues.
+Being granted access means that you will be added to the "flutter-hackers" group on GitHub and the "team" role on Discord. This privilege is granted with some expectation of responsibility: contributors are people who care about Flutter and want to help Flutter along our [[roadmap]]. A contributor is not just someone who can make changes or comment on issues, but someone who has demonstrated their ability to collaborate with the team, get the most knowledgeable people to review code, contribute high-quality code, follow through to fix bugs (in code or tests), and provide meaningful insights on issues.
 
 We grant access optimistically based on a reasonably small volume of evidence of good faith. Correspondingly, we will remove access quickly if we find our trust has been violated. Contributors with commit access must still follow all our processes and policies, and must follow our [code of conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md) rigorously. (Please read it, it's stricter than most.)
 
 ## Process
 
-The actual process (as followed by flutter repo admins) is as follows:
+The actual process (as followed by Flutter repo admins) is as follows:
 
 1. Verify the identity of the person making the request.
 1. Verify that they qualify under all the terms described above. If you know them, you can be their sponsor, otherwise, make sure they have one.
