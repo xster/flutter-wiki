@@ -13,6 +13,24 @@ Being granted access means that you will be added to the "flutter-hackers" group
 
 We grant access optimistically based on a reasonably small volume of evidence of good faith. Correspondingly, we will remove access quickly if we find our trust has been violated. Contributors with commit access must still follow all our processes and policies, and must follow our [code of conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md) rigorously. (Please read it, it's stricter than most.)
 
+### Privileges
+
+Being in the GitHub "flutter-hackers" group gives you the following:
+
+* The ability to merge your own PRs once they are reviewed (see [[Tree Hygiene]]).
+
+* The ability to add labels, milestones, etc, on issues on GitHub (see [[Issue Hygiene]]).
+
+* PRs will run their tests slightly faster.
+
+Being in the Discord "team" group gives you the following:
+
+* The ability to talk without rate-limiting on the #hackers-* channels.
+
+* The ability to kick people.
+
+* The ability to manage the server emoji.
+
 ## Process
 
 The actual process (as followed by Flutter repo admins) is as follows:
