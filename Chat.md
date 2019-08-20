@@ -46,6 +46,8 @@ We currently lump all the text channels into a single category. Discord supports
 
 Direct messages are disabled on the server by default. If you wish to direct-message someone, you will need to become mutual friends.
 
+The #hackers-* channels are visible to anyone, but please only post in those channels if you are actively contributing. If you want help with your app, ask in #help instead. If you want to learn how to contribute, have a look at our [contributing guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md).
+
 See the [[contributor access]] wiki page for details on becoming a member of the "team" role.
 
 
