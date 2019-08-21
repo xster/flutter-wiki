@@ -1,6 +1,6 @@
 # Chatting on Discord
 
-The Flutter team uses a Discord server, which you are [invited to join](https://discord.gg/BS8KZyg).
+The Flutter team uses a Discord server, which you are [invited to join](https://discord.gg/BS8KZyg). The server is open to the public, though some channels are intended only for people who are actively contributing.
 
 We recommend you use the same display name on Discord and GitHub.
 
