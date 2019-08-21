@@ -18,6 +18,7 @@ We have different channels for different purposes:
 | #tree-status | Announcements about whether the trees are open or closed. | Anyone, but discussion should happen elsewhere.
 |#hackers | Chat about anything related to Flutter. | Flutter contributors.<br>Anyone can watch.
 |#hackers-* | Chat specifically about foo, where foo is something to do with Flutter development, for example "engine", "framework", "add-to-app", etc. | Flutter contributors.<br>Anyone can watch.
+| #dart | Questions about the Dart language. | Flutter contributors.<br>Anyone can watch.
 |#hackers-new | New people to the team and people who want to help them. | Flutter contributors.<br>Anyone can watch.
 |#hackers-triage | For use while triaging bugs. | Flutter contributors.<br>Anyone can watch.
 |#hidden-chat | Chat about anything related to Flutter. | Flutter contributors only.<br>Not public.
