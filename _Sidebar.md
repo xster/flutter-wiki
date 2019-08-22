@@ -30,7 +30,6 @@ Flutter Wiki
 - [[Rolling Dart]]
 - [[Manual Engine Roll with Breaking Commits]]
 - [[Updating Material Design Fonts]]
-- [[Licensing]]
 - [[Postmortems]]
 
 ## Framework repo
