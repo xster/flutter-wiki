@@ -50,7 +50,7 @@ The [plugins section of the flutter-desktop-embedding project](https://github.co
 
 ## Prebuilt Shell Libraries
 
-Only `debug` libraries are currently available.
+Only `debug` libraries are currently available for Windows and Linux.
 
 By default, `precache` does not fetch desktop libraries; if you want to include them when running `precache` pass the `--linux`, `--macos`, or `--windows` flag depending on your platform. Since they are downloaded on demand by build steps, this is necessary only if you specifically want to pre-cache the artifacts.
 
@@ -71,7 +71,7 @@ with doing native development on your platform(s). See the headers that come wit
 platform for information on using them. More documentation will be available in the future; for now it may
 be helpful to look at the flutter-desktop-embedding example to see how it uses them. In addition to linking
 the Flutter library, your application will need to bundle your Flutter assets (as created by
-`flutter build bundle`). On Windows and Linux you will also nee the ICU data from the Flutter engine
+`flutter build bundle`). On Windows and Linux you will also need the ICU data from the Flutter engine
 (look for `icudtl.dat` under the `bin/cache/artifacts/engine` directory in your Flutter tree).
 
 ### Plugins
