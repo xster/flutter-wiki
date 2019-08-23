@@ -5,22 +5,18 @@ The new Android embedding introduces a new Java API for plugins. However, old pl
 The following example shows how to use the Android plugin shim to setup a standard `FlutterActivity`.
 
 ```java
-public class FlutterShimPluginActivity extends FlutterActivity implements FlutterFragment.FlutterEngineProvider {
+public class FlutterShimPluginActivity extends FlutterActivity {
 
   @Override
-  public FlutterEngine getFlutterEngine(@NonNull Context context) {
-    // Create the FlutterEngine that will back this Activity.
-    FlutterEngine flutterEngine = new FlutterEngine(context);
-
+  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
     // Create a ShimPluginRegistry and wrap the FlutterEngine with the shim.
-    // TODO(mattcarroll): update this example with a real PlatformViewsController.
-    ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine, null);
+    ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(
+      flutterEngine, 
+      new PlatformViewsController()
+    );
 
     // Use the GeneratedPluginRegistrant to add every plugin that's in the pubspec.
     GeneratedPluginRegistrant.registerWith(shimPluginRegistry);
-
-    // Return the configured FlutterEngine.
-    return flutterEngine;
   }
 }
 ```
