@@ -24,11 +24,7 @@ A `FlutterEngine` must go through 2 steps to be fully initialized. First, an ins
 FlutterEngine engine = new FlutterEngine(appContext);
 
 // Define a DartEntrypoint
-DartExecutor.DartEntrypoint entrypoint = new DartExecutor.DartEntrypoint(
-  androidAssetManager,
-  FlutterMain.findAppBundlePath(appContext),
-  "main"
-);
+DartExecutor.DartEntrypoint entrypoint = new DartExecutor.createDefault();
 
 // Execute the DartEntrypoint within the FlutterEngine.
 engine.getDartExecutor().executeDartEntrypoint(entrypoint);
