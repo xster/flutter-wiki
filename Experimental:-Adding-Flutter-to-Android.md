@@ -10,8 +10,6 @@ This document (and linked documents) refers to a new and improved version of Flu
 * [Add a Flutter app in a Fragment](https://github.com/flutter/flutter/wiki/Experimental:-Add-Flutter-Fragment)
 * [Add Flutter app(s) in a Fragment ViewPager](https://github.com/flutter/flutter/wiki/Experimental:-Add-Flutter-Fragment-ViewPager)
 * [Add a Flutter app in a View](https://github.com/flutter/flutter/wiki/Experimental:-Add-Flutter-View)
-* Add Flutter app(s) in a ListView
-* Add Flutter app(s) in a RecyclerView
 
 ## Nuances
 
