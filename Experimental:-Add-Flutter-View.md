@@ -13,30 +13,9 @@ If you really need to add Flutter as a single `View` then do the following.
 
 ## How to use FlutterView
 
-### Ensure Flutter is initialized
-
-At some point before setting up your `FlutterView` with a `FlutterEngine`, be sure that Flutter is initialized. You can call the following method from your `Application`, `Activity` or any other place that executes before the creation of your `FlutterEngine` instance.
-
-```java
-FlutterMain.ensureInitializationComplete(applicationContext, new String[]{});
-```
-
 ### Create and start a FlutterEngine
 
-Setup a `FlutterEngine` instance wherever you plan to create and control your `FlutterView`, e.g., in your `Activity`.
-
-```java
-FlutterEngine flutterEngine = new FlutterEngine(this);
-flutterEngine.getDartExecutor().executeDartEntrypoint(
-  new DartExecutor.DartEntrypoint(
-    getAssets(),
-    FlutterMain.findAppBundlePath(applicationContext),
-    "main"
-  )
-);
-```
-
-Calling `executeDartEntrypoint()` on your `FlutterEngine`'s `DartExecutor` will cause the specified Dart method to being executing. Thus, at this point your Flutter app is running.
+Create and start a `FlutterEngine` by following the appropriate instructions. See the [FlutterEngine page](https://github.com/flutter/flutter/wiki/Experimental:-Reuse-FlutterEngine-across-screens)
 
 ### Create a FlutterView and add to layout
 
