@@ -6,45 +6,105 @@ Typically, a Flutter app begins execution at the Dart method called `main()`, ho
 
 ## FlutterActivity
 
-To use a `FlutterActivity` with a custom Dart entrypoint, do the following.
+Two options are available to specify a non-standard Dart entrypoint for a `FlutterActivity`.
+
+### Option 1: AndroidManifest.xml meta-data
+
+Specify your desired Dart entrypoint as `meta-data` in your `AndroidManifest.xml`:
+
+```xml
+<application ...>
+  <activity
+    android:name="io.flutter.embedding.android.FlutterActivity"
+    ...
+    >
+    <meta-data
+      android:name="io.flutter.Entrypoint"
+      android:value="myMainDartMethod"
+      />
+  </activity>
+</application>
+```
+
+Option 2: Subclass `FlutterActivity` and override a method
+
+Override the `getDartEntrypointFunctionName()` method:
 
 ```java
-// Launches FlutterActivity and runs a Dart method called mySpecialScreen().
-Intent defaultFlutter = new FlutterActivity.IntentBuilder()
-  .dartEntrypoint("mySpecialScreen")
-  .build(currentActivity);
-startActivity(defaultFlutter);
+public class MyFlutterActivity extends FlutterActivity {
+  @Override
+  @NonNull
+  public String getDartEntrypointFunctionName() {
+    return "myMainDartMethod";
+  }
+}
 ```
 
 ## FlutterFragment
 
-To use a `FlutterActivity` with a custom Dart entrypoint, do the following.
+Two options are available to specify a non-standard Dart entrypoint for a `FlutterFragment`.
+
+### Option 1: Use FlutterFragmentBuilder
 
 ```java
-// Create a FlutterFragment that runs a Dart method called mySpecialScreen().
-FlutterFragment flutterFragment = new FlutterFragment.Builder()
-  .dartEntrypoint("mySpecialScreen")
+// Example for a FlutterFragment that creates its own FlutterEngine.
+//
+// Note: a Dart entrypoint cannot be set when using a cached engine because the
+// cached engine has already started executing Dart.
+FlutterFragment flutterFragment = new FlutterFragment
+  .withNewEngine()
+  .dartEntrypoint("myMainDartMethod")
   .build();
 ```
 
-## FlutterView
-
-To use a `FlutterView` with a custom Dart entrypoint, do the following.
+### Option 2: Subclass FlutterFragment
 
 ```java
-// Configure your entrypoint.
-DartExecutor.DartEntrypoint entrypoint = new DartExecutor.DartEntrypoint(  
-  getResources().getAssets(),
-  FlutterMain.findAppBundlePath(getContext()),
-  'mySpecialScreen',
-);
+public class MyFlutterFragment extends FlutterFragment {
+  @Override
+  @NonNull
+  public String getDartEntrypointFunctionName() {
+    return "myMainDartMethod";
+  }
+}
+```
 
-// Create a new FlutterEngine to run your entrypoint.
-FlutterEngine engine = new FlutterEngine();
-engine.getDartExecutor().executeDartEntrypoint(entrypoint);
+## FlutterEngine
 
-// Connect your FlutterEngine to your FlutterView.
-flutterView.attachToFlutterEngine(engine);
+When manually initializing a `FlutterEngine`, you take on the responsibility of
+invoking the desired Dart entrypoint, even if you want the standard `main()` method.
+The following examples illustrate how to execute a Dart entrypoint with a 
+`FlutterEngine`.
+
+Example using standard entrypoint:
+
+```java
+// Instantiate a new FlutterEngine.
+FlutterEngine flutterEngine = new FlutterEngine(context);
+
+// Start executing Dart using a default entrypoint, which resolves to "main()".
+flutterEngine
+  .getDartExecutor()
+  .executeDartEntrypoint(
+    DartEntrypoint.createDefault();
+  );
+```
+
+Example using custom entrypoint:
+
+```java
+// Instantiate a new FlutterEngine.
+FlutterEngine flutterEngine = new FlutterEngine(context);
+
+// Start executing Dart using a custom entrypoint.
+flutterEngine
+  .getDartExecutor()
+  .executeDartEntrypoint(
+    new DartEntrypoint(
+      FlutterMain.findAppBundlePath(),
+      "myMainDartMethod"
+    )
+  );
 ```
 
 # Avoid Tree Shaking in Release
@@ -53,7 +113,7 @@ When you build in release mode, your Dart code is tree-shaken. This means that t
 
 ```dart
 @pragma('vm:entry-point')
-void mySpecialScreen() {
+void myMainDartMethod() {
   // implementation
 }
 ```
