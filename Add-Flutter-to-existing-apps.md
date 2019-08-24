@@ -5,10 +5,16 @@ Making it easy to add Flutter to an existing app is work in progress.
 This page documents the current state of that work and will be updated as we build out the
 necessary tooling.
 
-Last updated July 31, 2019.
+Last updated August 23, 2019.
 
 The "add-to-app" support is **in preview**, and is so far only available on the
 master channel.
+
+## Flutter's new Android embedding
+
+If you came here looking for information about Flutter's new Android embedding, please see [the pages dedicated to the new embedding](https://github.com/flutter/flutter/wiki/Experimental:-Adding-Flutter-to-Android).
+
+This guide refers to usage of classes under `io.flutter.facade.*`, e.g., `io.flutter.facade.FlutterFragment`. These classes are in the process of being deprecated. The deprecated `io.flutter.facade.FlutterFragment` will be replaced by the newer `io.flutter.embedding.android.FlutterFragment`. Since both version of `FlutterFragment` are in technical preview, and neither one of them is API stable, we recommend using [the new FlutterFragment](https://github.com/flutter/flutter/wiki/Experimental:-Add-Flutter-Fragment).
 
 ## Disclaimer
 
