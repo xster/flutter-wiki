@@ -279,10 +279,9 @@ by real developers.
 
 ### Get early feedback when designing new APIs
 
-If you're designing a new API or a new feature, consider writing a design doc,
-typically using Google Docs or by writing it in a GitHub issue. Then, get
-feedback from the relevant people, e.g. send it to `flutter-dev` or post it on
-Gitter.
+If you're designing a new API or a new feature, consider [writing a design doc](https://github.com/flutter/flutter/wiki/Chat#design-documents).
+Then, get feedback from the relevant people, e.g. send it to `flutter-dev` or
+post it on the [relevant chat channel](https://github.com/flutter/flutter/wiki/Chat#existing-channels).
 
 
 ### Only log actionable messages to the console
