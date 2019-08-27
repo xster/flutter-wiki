@@ -15,9 +15,9 @@ A first-party native library can be included either as source or as a (signed) `
 
 ### Source
 
-Add the C/C++/Objective-C sources to the Xcode project and add the following prefix to the exported symbol declarations to ensure they are visible to Dart:
+Add the C/C++/Objective-C/Swift sources to the Xcode project and add the following prefix to the exported symbol declarations to ensure they are visible to Dart:
 
-Objective-C
+C/C++/Objective-C:
 ```c
 extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute((used))
 ```
