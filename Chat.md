@@ -45,11 +45,12 @@ We currently lump all the text channels into a single category. Discord supports
 
 ## Policies
 
-Direct messages are disabled on the server by default. If you wish to direct-message someone, you will need to become mutual friends.
-
 The #hackers-* channels are visible to anyone, but please only post in those channels if you are actively contributing. If you want help with your app, ask in #help instead. If you want to learn how to contribute, have a look at our [contributing guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md).
 
 See the [[contributor access]] wiki page for details on becoming a member of the "team" role.
+
+Please don't direct-message people unless they are comfortable with it (ask publicly first).
+You can disable direct messages on this server by changing your Privacy settings for the server, or on a global basis by changing your Privacy & Safety user settings.
 
 
 # Design documents
