@@ -135,7 +135,9 @@ Next steps:
 
 ## Editor autocomplete support
 
-[cquery](https://github.com/cquery-project/cquery) is a highly scalable C/C++/Objective-C language server that supports IDE features like go-to-definition, call hierarchy, autocomplete, find reference etc that works reasonably well with our engine repo. 
+On Mac, you can simply use Xcode (e.g., `open out/host_debug_unopt/products.xcodeproj`).
+
+Alternatively, [cquery](https://github.com/cquery-project/cquery) is a highly scalable C/C++/Objective-C language server that supports IDE features like go-to-definition, call hierarchy, autocomplete, find reference etc that works reasonably well with our engine repo. 
 
 It [supports](https://github.com/cquery-project/cquery/wiki/Editor-configuration) editors like VSCode, emacs, vim etc. 
 
