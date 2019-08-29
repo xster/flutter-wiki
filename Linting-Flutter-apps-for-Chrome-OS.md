@@ -1,7 +1,5 @@
 ## Linting for Flutter apps for Chrome OS
 
-_Note:_ this feature is not yet available in the Flutter stable channel.
-
 ### What is it?
 
 Flutter tooling will soon include a new set of lint rules to catch violations of
@@ -13,12 +11,6 @@ In your IDE or when running `flutter analyze` at the command line, you'll see li
 app would have issues targeting Chrome OS.
 
 [[images/cros-lint-rules-sample-results.png]]
-
-### For what version of Flutter?
-
-Currently, you'll need to be on the tip-of-tree of Flutter to try this out. This will likely graduate shortly to the `dev` channel, and later, to `beta` and `stable`.
-
-`flutter channel master && flutter upgrade`
 
 ### How do I enable this?
 
