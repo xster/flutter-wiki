@@ -93,9 +93,9 @@ To debug non-crashing code, open Xcode with `ios/Runner.xcworkspace`, expand Flu
 Using Xcode in this way will set a `$LOCAL_ENGINE` variable in your `Generated.xcconfig` file for the Flutter application. This variable will be set until you run `flutter run` again with either a different `--local-engine` option, or with none at all (which will unset it). This is important to note if you plan to re-run your Flutter `Runner.xcodeproj` directly from Xcode.
 
 
-## Compiling a host binary on macOS or Linux
+## Compiling for macOS or Linux
 
-These steps build the engine used by `flutter test` on a host workstation.
+These steps build the desktop embedding, and the engine used by `flutter test` on a host workstation.
 
 1. `git pull upstream master` in `src/flutter` to update the Flutter Engine repo.
 
@@ -112,9 +112,9 @@ See [[The flutter tool]] for instructions on how to use the `flutter` tool with 
 You will typically use the `host_debug_unopt` build in this setup.
 
 
-## Compiling a host binary on Windows
+## Compiling for Windows
 
-You can only build selected binaries on Windows (mainly `gen_snapshot` and the desktop shell).
+You can only build selected binaries on Windows (mainly `gen_snapshot` and the desktop embedding).
 
 1. Make sure you have Visual Studio installed (non-Googlers only).
 
