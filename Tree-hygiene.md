@@ -148,7 +148,7 @@ please reach out to one of the following people:
 * Material widgets - @HansMuller
 * Flutter Framework - @goderbauer
 * Engine - @cbracken
-* `flutter` Tool - @zra
+* `flutter` Tool - @zanderso
 * Plugins - @amirha
 * Performance - @liyuqian
 * Anything else - @Hixie
