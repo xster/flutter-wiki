@@ -1,20 +1,22 @@
+Currently all known issues with using Flutter on macOS Catalina Beta have been resolved and are set to be released in the next stable release. If you are currently using macOS Catalina and experience some of the following known issues, it is recommended to switch the Dev channel (`flutter channel dev`). If you are experiencing an issue not listed below that regressed with macOS Catalina, please [file a new issue](https://github.com/flutter/flutter/issues/new/choose) with "Catalina" in the title.
+
+## Resolved Issues
+
+1. [Xcode] Cannot build 32-bit APK on XCode >= 10 [flutter #36114](https://github.com/flutter/flutter/issues/36114) [Dart #36839](https://github.com/dart-lang/sdk/issues/36839). Fixed in [flutter #37445](https://github.com/flutter/flutter/pull/37445) v1.8.4.
+1. Cocoapod path broken by upgrading system ruby version [#36786](https://github.com/flutter/flutter/issues/36786) User intervention required to manually reinstall cocoapods via `sudo gem install cocoapods`, `flutter doctor` copy was updated to reflect this in [flutter #38560](https://github.com/flutter/flutter/pull/38560).
+1. [Xcode] For each flutter app that I tried to run on an iOS device, I had to add my signing certificate in XCode [#36788](https://github.com/flutter/flutter/issues/36788). Fixed in [flutter #37733](https://github.com/flutter/flutter/pull/37733) v1.9.0.
+1. Gatekeeper preventing “kernel-service.dart.snapshot” from executing [#36714](https://github.com/flutter/flutter/issues/36714). Fixed [Dart ec2d06d4](https://github.com/dart-lang/sdk/commit/ec2d06d4b9f4f0accad2b4aa841499e8e93cd70b) and by signing & notarizing binaries as of v1.9.1. Note: currently only published versions are signed & notarized as the CI process is updated. Soon every commit on master should be signed & notarized.
+
+## Old Wiki
+
 Members of the Flutter team are working to bring full macOS Catalina support to Flutter. Work is being track on the GitHub project [Flutter on macOS Catalina Support](https://github.com/orgs/flutter/projects/4?add_cards_query=is%3Aopen). In the mean time, we know that some of you have wanted to use the macOS Catalina betas with Flutter. Here’s [christopherfujino](http://www.github.com/christopherfujino)’s step-by-step diary of what he’s experienced getting it working, which is helping inform the team’s work as to what’s necessary.
-
-## Known Issues
-
-1. Gatekeeper preventing “kernel-service.dart.snapshot” from executing [#36714](https://github.com/flutter/flutter/issues/36714) **Workaround**: `sudo spctl --master-disable`
-2. [Xcode] Cannot build 32-bit APK on XCode >= 10 [flutter #36114](https://github.com/flutter/flutter/issues/36114) [Dart #36839](https://github.com/dart-lang/sdk/issues/36839) **Workaround**: install Xcode version 9
-3. Website will need to be updated to illustrate how to update path for zsh (Catalina’s default shell) [website #2856](https://github.com/flutter/website/issues/2856) **Workaround**: `echo 'export PATH="[PATH_TO_FLUTTER_GIT_DIRECTORY]/bin:$PATH"' >> $HOME/.zshrc`
-4. Cocoapod path broken by upgrading system ruby version [#36786](https://github.com/flutter/flutter/issues/36786) **Workaround**: reinstall cocoapods, e.g. `sudo gem install cocoapods`.
-5. [Xcode] Update website documentation to reflect new location in Xcode of how to configure signing certificate [website #2857](https://github.com/flutter/website/issues/2857)
-6. [Xcode] For each flutter app that I tried to run on an iOS device, I had to add my signing certificate in XCode [#36788](https://github.com/flutter/flutter/issues/36788)
 
 ## OS Setup
 
 1. This was on a new Mac Mini, right from the Apple Store
 1. Upgraded OS to Catalina preview, via [https://www.apple.com/macos/catalina-preview/](https://www.apple.com/macos/catalina-preview/)
 1. On macOS Catalina v10.15 Beta (19A512f), XCode Beta 11.0
-1. On iterm2
+1. Using iterm2
 
 ## Journal
 
