@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#38481](https://github.com/flutter/flutter/pull/38481) improves `CupertinoTimerPicker` visual fidelity.
+
 * [#37652](https://github.com/flutter/flutter/pull/37652) Change RenderObject.getTransformTo to include ancestor. Affects RenderBox.localToGlobal when an ancestor is specified.
 
 * [#37556](https://github.com/flutter/flutter/pull/37556) `RawChip.selected` is now non-nullable. This was an inconsistency in the chips API that was cleaned up.
