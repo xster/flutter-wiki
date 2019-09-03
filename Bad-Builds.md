@@ -11,13 +11,13 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 * Soft keyboard can become unresponsive [#39182](https://github.com/flutter/flutter/issues/39182), [#39047](https://github.com/flutter/flutter/issues/39047)
 
 ## v1.9.0
-* Platform views do not display on iPhones (starting from commit [54439bf](https://github.com/flutter/flutter/commit/54439bf53454872aec2a9af098d051e311b2e756)) [#38735](https://github.com/flutter/flutter/issues/38735)
+* Platform views do not display on iPhones [#38735](https://github.com/flutter/flutter/issues/38735)
 
 ## v1.7.6 - v1.7.11
-* WebView is sized (0,0) for some pages on Android (https://github.com/flutter/flutter/issues/35291)
+* WebView is sized (0,0) for some pages on Android [#35291](https://github.com/flutter/flutter/issues/35291)
 
 ## v1.7.6 - v1.7.7
-* `flutter run` yielded a significant amount of log spam (https://github.com/flutter/flutter/issues/34876)
+* `flutter run` yielded a significant amount of log spam [#34876](https://github.com/flutter/flutter/issues/34876)
 
 ## v1.7.0 - v1.7.5
 * Applications built with `flutter build appbundle` and `flutter build apk` will crash in add-to-app scenarios (https://github.com/flutter/flutter/issues/34308).
