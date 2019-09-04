@@ -52,3 +52,9 @@ src$ autoninja -C out/host_profile
 ```
 
 If you build your local engine without bitcode, make sure to disable bitcode in your consuming app, as it will otherwise fail to build.
+
+## Types of bitcode
+
+Bitcode can be either `marker` or "regular".  Marker means that there is no actual bitcode in the binary - we use this for debug and profile builds. This makes the build go faster, and since these builds should not be shipped to the store anyway they do not need to have full bitcode. Release builds get actual bitcode, which embeds blobs of structured data into your binary that can later be recompiled.
+
+Bitcode is meant to be platform independent.  Flutter and Dart use assembly code on iOS which is platform specific.  These sections of code get annotated with a `__LLVM,__asm` section to tell the compiler that they should be left as-is.
