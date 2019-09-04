@@ -141,14 +141,15 @@ move bugs from Near-term Goals to a specific month, and assign a specific engine
 
 ### Other milestones
 
-The "Scheduled customer work" milestone indicates issues that we are intending to fix
+The "Unassigned customer work" milestone indicates issues that we are intending to fix
 soon but for which we don't yet have an owner. The "Declined customer request" milestone
-indicates an issue that we do not intend to address in the near future.
+indicates an issue that we do not intend to address on the timescale requested (typically
+this means not for 6+ months).
 
 Each week, we check any bug with the "customer: blocker" or "customer: critical" labels.
 If we can find an owner for such a bug right away, it will be assigned a bucket milestone
 and given an explicit assignee. If we cannot, then it will be put into either the
-"Scheduled customer work" milestone or the "Declined customer request" milestone.
+"Unassigned customer work" milestone or the "Declined customer request" milestone.
 
 If you are a customer and your bug is placed in the "Declined customer request"
 milestone, please escalate with your team contact.
@@ -208,7 +209,7 @@ any time soon, but we agree that it's something we should work on in
 the coming years. Consider escalating the issue, as described below, to
 raise its priority further.
 
-If the milestone is "Scheduled customer work" or "Near-term goals",
+If the milestone is "Unassigned customer work" or "Near-term goals",
 then we are likely to address the issue in the near term, we just
 need to find time. Please hold on.
 
