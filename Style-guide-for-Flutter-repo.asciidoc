@@ -8,11 +8,12 @@ Introduction
 This document contains some high-level philosophy and policy decisions for the Flutter
 project, and a description of specific style issues for some parts of the codebase.
 
-The style guide describes the preferred style for code written as part of the Flutter
-project (the framework itself and all our sample code; see https://github.com/flutter/engine/blob/master/CONTRIBUTING.md#style[here] for Flutter engine
-code style). Flutter application developers
+The style portion describes the preferred style for code written as part of the Flutter
+project (the framework itself and all our sample code). Flutter application developers
 are welcome to follow this style as well, but this is by no means required. Flutter
 will work regardless of what style is used to author applications that use it.
+
+The engine repository uses https://github.com/flutter/engine/blob/master/CONTRIBUTING.md#style[other style guides for non-Dart code]. The language-neutral sections in this document still apply to engine code, however.
 
 Table of Contents
 -----------------
@@ -1469,6 +1470,21 @@ Now that the Flutter framework is mature, we expect every new widget to implemen
 It's the job of the programmer to provide these before submitting a PR.
 
 It's the job of the reviewer to check that all these are present when reviewing a PR.
+
+
+### Use of streams in Flutter framework code
+
+In general we avoid the use of `Stream` classes in Flutter framework code (and `dart:ui`). Streams in general are fine and we encourage people to use them. However, they have some disadvantages and we prefer to keep them out of the framework for this reason. For example:
+
+* Streams have a heavy API. For example, they can be synchronous or asynchronous, broadcast or single-client, and they can be paused and resumed. It is non-trivial to determine the right semantics for a particular stream when it will be used in all the ways framework code could be used, and it is non-trivial to fully implement the semantics correctly.
+
+* Streams don't have a "current value" accessor, which makes them difficult to use in `build` methods.
+
+* The APIs for manipulating streams are non-trivial (e.g. transformers).
+
+We generally prefer `Listenable` subclasses (e.g. `ValueNotifier` or `ChangeNotifier`).
+
+In the specific case of exposing a value from `dart:ui` via a callback, we expect the bindings in the framework to register a single listener and then provide a mechanism to fan the notification to multiple listeners. Sometimes this is a rather involved process (e.g. the `SchedulerBinding` exists almost entirely for the purpose of doing this for `onBeginFrame`/`onDrawFrame`, and the `GesturesBinding` exists exclusively for the purpose of doing this for pointer events). Sometimes it's simpler (e.g. propagating changes to life cycle events).
 
 
 Packages
