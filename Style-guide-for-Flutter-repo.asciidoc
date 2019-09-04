@@ -9,7 +9,8 @@ This document contains some high-level philosophy and policy decisions for the F
 project, and a description of specific style issues for some parts of the codebase.
 
 The style guide describes the preferred style for code written as part of the Flutter
-project (the framework itself and all our sample code). Flutter application developers
+project (the framework itself and all our sample code; see https://github.com/flutter/engine/blob/master/CONTRIBUTING.md#style[here] for Flutter engine
+code style). Flutter application developers
 are welcome to follow this style as well, but this is by no means required. Flutter
 will work regardless of what style is used to author applications that use it.
 
