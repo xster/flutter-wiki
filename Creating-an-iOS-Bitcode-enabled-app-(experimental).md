@@ -53,7 +53,7 @@ src$ autoninja -C out/host_profile
 
 If you build your local engine without bitcode, make sure to disable bitcode in your consuming app, as it will otherwise fail to build.
 
-## Types of bitcode
+## Additional technical details
 
 Bitcode can be either `marker` or "regular".  Marker means that there is no actual bitcode in the binary - we use this for debug and profile builds. This makes the build go faster, and since these builds should not be shipped to the store anyway they do not need to have full bitcode. Release builds get actual bitcode, which embeds blobs of structured data into your binary that can later be recompiled.
 
