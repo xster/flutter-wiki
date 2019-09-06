@@ -6,7 +6,7 @@ Flutter now has early experimental support for running flutter web applications.
 
 ### Examples
 
-Only the flutter gallery and hello_world have been configured to work with flutter for web. The additional project files can be added to an existing with the command  `flutter create .` once the feature is enabled. For a new project the web sub-project is created automatically.
+Only the flutter gallery and hello_world have been configured to work with flutter for web. The additional files required can be added to an existing project with the command  `flutter create .` once the feature is enabled. For a new project the web sub-project is created automatically.
 
 ### Tooling
 
