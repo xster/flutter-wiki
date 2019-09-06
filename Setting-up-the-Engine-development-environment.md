@@ -160,5 +160,7 @@ To set up:
 
 ### Using VSCode as an IDE for the Android Embedding
 
-1. Create a `.classpath` file in `engine/src/flutter/platform/android` containing links to all of the engine's JAR dependencies in `third_party`, including the Android SDK. It should also list the `test/` subdirectory as a `src` directory to fix incorrect package errors on the unit test files. [Here's an example file](https://gist.github.com/mklim/b0d0c9c5084d5abb9e012c051a2cb5ff) that worked as of the time of this writing.
-2. Open `engine/src/flutter/shell/platform/android` in VSCode instead of the topmost directory.
+Create a `.classpath` file in `engine/src/flutter/platform/android` so that the IDE can understand the project structure. [Here's an example file](https://gist.github.com/mklim/b0d0c9c5084d5abb9e012c051a2cb5ff) that worked as of the time of this writing.
+
+* It should contain links to all of the engine's JAR dependencies in `third_party`, including the Android SDK.
+* It should also list the `test/` subdirectory as a `src` directory to fix incorrect package errors on the unit test files.
