@@ -113,11 +113,21 @@ NB: The previous hotfix version procedure used a `-` instead of a `+` between th
    1. Create a PR from your recently pushed branch, using the newly created branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the branch.
    1. Once this is reviewed and the tests have run, land the PR _on the branch_. (Check that you're not landing it on master!)
    1. Force [LUCI](https://ci.chromium.org/p/flutter) (the Chromium continuous integration bots) to build the specific commit you just pushed. **Talk to @Hixie and @dnfield for any problem triggering the build.**
-      1. Let _ENGINECOMMIT_ be the commit you just landed on the branch.
-      1. For each [builder](https://ci.chromium.org/p/flutter/g/engine/builders), open the [RPC explorer](https://cr-buildbucket.appspot.com/rpcexplorer/services/buildbucket.v2.Builds/ScheduleBuild?request=%7B%20%20%20%20%22builder%22:%20%7B%20%20%20%20%20%20%20%20%22project%22:%20%22flutter%22,%20%20%20%20%20%20%20%20%22bucket%22:%20%22prod%22,%20%20%20%20%20%20%20%20%22builder%22:%20%22Mac%20Host%20Engine%22%20%20%20%20%7D,%20%20%20%20%22gitilesCommit%22:%20%7B%20%20%20%20%20%20%20%20%22host%22:%20%22chromium.googlesource.com%22,%20%20%20%20%20%20%20%20%22project%22:%20%22external/github.com/flutter/engine%22,%20%20%20%20%20%20%20%20%22ref%22:%20%22refs/heads/v1.4.9-hotfix.1%22,%20%20%20%20%20%20%20%20%22id%22:%20%224737fc5cd89b8f0136e927b00f2e159444b95a73%22%20%20%20%20%7D,%20%20%20%20%22requestId%22:%20%22lh_haxadasdfsfasdf22222131%22%7D#) and make the following changes:
+      1. Let _ENGINE_COMMIT_ be the commit you just landed on the branch.
+      1. For each builder in the list of [builders](https://ci.chromium.org/p/flutter/g/engine/builders):
+         1. Let _BUILDER_NAME_ be the name of the builder, fitting the pattern `buildbucket/luci.flutter.prod/{BUILDER_NAME}`
+         1. Run the following command in a terminal:
+            ```sh
+            bb add \
+                -commit "https://chromium.googlesource.com/external/github.com/flutter/engine/+/$ENGINE_COMMIT" \
+                -p no_bitcode=true \
+                -p no_maven=true \
+                "flutter/prod/$BUILDER_NAME"
+            ```
+      1. Alternatively, if you prefer a web UI over the `bb` tool, then for each [builder](https://ci.chromium.org/p/flutter/g/engine/builders), open the [RPC explorer](https://cr-buildbucket.appspot.com/rpcexplorer/services/buildbucket.v2.Builds/ScheduleBuild?request=%7B%20%20%20%20%22builder%22:%20%7B%20%20%20%20%20%20%20%20%22project%22:%20%22flutter%22,%20%20%20%20%20%20%20%20%22bucket%22:%20%22prod%22,%20%20%20%20%20%20%20%20%22builder%22:%20%22Mac%20Host%20Engine%22%20%20%20%20%7D,%20%20%20%20%22gitilesCommit%22:%20%7B%20%20%20%20%20%20%20%20%22host%22:%20%22chromium.googlesource.com%22,%20%20%20%20%20%20%20%20%22project%22:%20%22external/github.com/flutter/engine%22,%20%20%20%20%20%20%20%20%22ref%22:%20%22refs/heads/v1.4.9-hotfix.1%22,%20%20%20%20%20%20%20%20%22id%22:%20%224737fc5cd89b8f0136e927b00f2e159444b95a73%22%20%20%20%20%7D,%20%20%20%20%22requestId%22:%20%22lh_haxadasdfsfasdf22222131%22%7D#) and make the following changes:
          - Update the value in `builder.builder` to the name of the builder.
          - Update the value in `gitilesCommit.ref` to `refs/heads/$BRANCH`.
-         - Update the value in `gitilesCommit.id` to `$ENGINECOMMIT`.
+         - Update the value in `gitilesCommit.id` to `$ENGINE_COMMIT`.
          - Update the value in `requestId` to be a unique random string.
          - Press Shift+Enter to schedule the build. You have to do this for every builder.
    1. Wait for the engine bots to have completed their work.
