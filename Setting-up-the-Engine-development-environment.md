@@ -157,3 +157,8 @@ To set up:
 1. Create [snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) for header files with [this configuration](https://github.com/chromium/chromium/blob/master/tools/vscode/settings.json5). This will let you use `hdr` keyboard macro to create the boiler plate header code. Also consider some of [these settings](https://github.com/chromium/chromium/blob/master/tools/vscode/settings.json5) and [more tips](https://chromium.googlesource.com/chromium/src/+show/lkgr/docs/vscode.md).
 
 2. To format GN files on save, [consider using this extension](https://marketplace.visualstudio.com/items?itemName=persidskiy.vscode-gnformat).
+
+### Using VSCode as an IDE for the Android Embedding
+
+1. Create a `.classpath` file in `engine/src/flutter/platform/android` containing links to all of the engine's JAR dependencies in `third_party`, including the Android SDK. [Here's an example file](https://gist.github.com/mklim/b0d0c9c5084d5abb9e012c051a2cb5ff) that worked as of the time of this writing.
+2. Open `engine/src/flutter/shell/platform/android` in VSCode instead of the topmost directory.
