@@ -6,7 +6,7 @@ Flutter now has early experimental support for running flutter web applications.
 
 ### Examples
 
-Only the flutter gallery and hello_world have been configured to work with flutter for web. The additional configuration can be generated with the command  `flutter create --web .`.
+Only the flutter gallery and hello_world have been configured to work with flutter for web. The additional project files can be added to an existing with the command  `flutter create .` once the feature is enabled. For a new project the web sub-project is created automatically.
 
 ### Tooling
 
@@ -83,9 +83,9 @@ The web implementation of `dart:ui` is located at https://github.com/flutter/eng
 
 Subsequent changes to the dart sdk in the engine will require another run of `ninja -C out/host_debug_unopt` and a restart or browser refresh. Currently the web compilers do not recompile the web engine, and instead it works because the dart sdk is loaded as a separate javascript bundle in the browser during development mode.
 
-### Release builds
+### Release and profile builds
 
-A release build uses dart2js instead of the development compiler to produce a single JavaScript file. This can be run with the release flag or built using `flutter build web`. This will output files at build/web, including the assets, which need to be served together. There is no support for "building" a debug build, since they consist of potentially thousands of small files.
+A release build uses dart2js instead of the development compiler to produce a single JavaScript file. This can be run with the `flutter run -d chrome --release/--profile` flag or built using `flutter build web`. The latter will output files at build/web, including the assets, which need to be served together. A profile build contains unminified JavaScript for easier debugging, but is otherwise identical to a release build. There is no support for "building" a debug build, since they generally consist of potentially thousands of small files.
 
 ### Tests
 
