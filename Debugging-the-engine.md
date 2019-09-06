@@ -18,6 +18,18 @@ If you open your iOS .xcodeproject or .xcworkspace in Xcode, you can set breakpo
 
 See https://github.com/flutter/engine/blob/master/sky/tools/flutter_gdb#L13
 
+## Debugging Android builds with Android Studio
+
+First, import the Android embedding into Android studio.
+
+1. Import the `engine/src/flutter/shell/platform/android` subdirectory as a new project. It's important to pick this specific directory. IntelliJ needs this as the root in order to make sense of the package structure.
+2. Mark the project as depending on the engine's SDK and Java versions (currently 29 and 8). The option should be visible under `File > Project Structure > Project Settings > Project`.
+3. (Optional) Manually tell the IDE to look for any JARs needed by the embedding code in `engine/src/third_party` to fix "Missing import" errors. This needs to be done manually and for each needed `third_party` directory. The critical one is `third_party/android_support` for all the support libraries. The option should be visible under `File > Project Structure > Modules`, then by selecting the `android` module and clicking on the `Dependencies` tab.
+
+Next, build and run a flutter app using `flutter run --local-engine`. It may be helpful to [configure the Android app to wait for the local debugger on start](https://developer.android.com/reference/android/os/Debug.html#waitForDebugger()).
+
+Then hit the "Attach debugger" button in Android Studio, click "Show all processes" in the pop up, and select your app from the list and hit OK.
+
 ## Logging in the engine
 
 Flutter tool will by default parse out any non-error output from the engine. Error logs will be displayed. Logging is handled though the FML library's `logging.h`
