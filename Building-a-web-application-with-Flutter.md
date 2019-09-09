@@ -62,6 +62,10 @@ This includes a basic hot restart functionality: though IDEs do support hot relo
 
 Plugins are not currently supported in flutter web.
 
+### Upgrading from package:flutter_web
+
+See [Upgrading from package:flutter_web to the Flutter SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK) for tips on how to update your app.
+
 ### Engine development
 
 Development on the web engine requires the same setup as the normal engine workflow. Follow the setup in the engine contributing guide at [Setting-up-the-Engine-development-environment](https://github.com/flutter/flutter/wiki/Setting-up-the-Engine-development-environment).
