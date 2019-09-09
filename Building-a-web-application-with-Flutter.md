@@ -4,6 +4,8 @@ Flutter now has early experimental support for running flutter web applications.
 
 **IMPORTANT:** The unforked flutter web workflow is still missing several features currently present in flutter_web. Work is ongoing to upstream these changes in Flutter proper.
 
+If your app is using `package:flutter_web`, see [Upgrading from package:flutter_web to the Flutter SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK).
+
 ### Examples
 
 Only the flutter gallery and hello_world have been configured to work with flutter for web. The additional files required can be added to an existing project with the command  `flutter create .` once the feature is enabled. For a new project the web sub-project is created automatically.
@@ -61,10 +63,6 @@ This includes a basic hot restart functionality: though IDEs do support hot relo
 ### Plugins
 
 Plugins are not currently supported in flutter web.
-
-### Upgrading from package:flutter_web
-
-See [Upgrading from package:flutter_web to the Flutter SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK) for tips on how to update your app.
 
 ### Engine development
 
