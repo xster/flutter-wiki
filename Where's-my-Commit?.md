@@ -8,6 +8,14 @@ This page outlines the current process for determining that information.
 
 ## Process
 
+### Finding the Dart SDK commit contained in Engine commit X
+
+To find out which Dart SDK sha is contained in a particular commit of the Flutter engine:
+
+1. Let the engine commit be _ENGINE_COMMIT_
+
+1. Navigate to https://github.com/flutter/engine/blob/${ENGINE_COMMIT}/DEPS#L37 and search for the value corresponding to the _'dart_revision'_ key.
+
 ### Finding the versions that contain Framework commit X
 
 To find the published Flutter versions that contain any given commit in `flutter/flutter`:
