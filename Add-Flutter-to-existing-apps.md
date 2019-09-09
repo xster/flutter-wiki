@@ -353,11 +353,6 @@ of plugins read by the `podhelper.rb` script. Then run `pod install` again from
 The `podhelper.rb` script will ensure that your plugins, the Flutter.framework, and the App.framework
 are embedded in your project.
 
-4. Disable Bitcode for your targets
-
-As Flutter doesn't support bitcode now. Set the `ENABLE_BITCODE` flag by changing your 
-targets' `Build Settings->Build Options->Enable Bitcode` setting to No.
-
 You should now be able to build the project using `⌘B`. 
 
 #### Under the hood
