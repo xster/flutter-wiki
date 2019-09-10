@@ -389,7 +389,7 @@ The biggest change in text & accessibility for this release is the new ColorFilt
 [37828](https://github.com/flutter/flutter/pull/37828) have android_semantics_testing use adb from ENV provided android sdk
 
 
-## Web
+## Web (tech preview)
 
 Work continues on adding to the technical preview of web platform support to Flutter in this release, including a flag to tell if an app is running on the web. To see it in action, check out [main.dart](https://github.com/csells/flutter_mazegen/blob/master/lib/main.dart) in the [flutter_mazegen sample](https://github.com/csells/flutter_mazegen/).
 
@@ -426,7 +426,7 @@ Work continues on adding to the technical preview of web platform support to Flu
 [38499](https://github.com/flutter/flutter/pull/38499) Update build web compilers and configure libraries
 
 
-## Desktop
+## Desktop (experimental)
 
 We continue to move forward with the experimental support for the desktop platform in Flutter. 
 
