@@ -15,10 +15,9 @@ This is the most mature of the desktop platforms (for various reasons, including
 
 ### Windows
 
-The current Windows shell is a GLFW placeholder, to allow early experimentation. It will be replaced in the
-future with a Win32 or UWP shell that allows view-level embedding of Flutter within an application.
+The Windows shell is in early stages. It is Win32-based, but we plan to explore UWP support in the future.
 
-Expect the APIs for the final shell to be radically different from the current implementation.
+Expect the APIs for the final shell to be radically different from the current API surface.
 
 ### Linux
 
