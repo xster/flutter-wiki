@@ -391,7 +391,7 @@ The biggest change in text & accessibility for this release is the new ColorFilt
 
 ## Web (tech preview)
 
-Work continues on adding to the technical preview of web platform support to Flutter in this release, including a flag to tell if an app is running on the web. To see it in action, check out [main.dart](https://github.com/csells/flutter_mazegen/blob/master/lib/main.dart) in the [flutter_mazegen sample](https://github.com/csells/flutter_mazegen/).
+Work continues on adding to the technical preview of web platform support to Flutter in this release, including a flag to tell if an app is running on the web. To see it in action, check out [main.dart](https://github.com/csells/flutter_mazegen/blob/master/lib/main.dart) in the [flutter_mazegen sample](https://github.com/csells/flutter_mazegen/). To learn more, see [Flutter for web](https://flutter.dev/web).
 
 **[36135](https://github.com/flutter/flutter/pull/36135) add a kIsWeb constant to foundation**
 
