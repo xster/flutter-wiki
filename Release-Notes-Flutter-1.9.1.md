@@ -428,7 +428,7 @@ Work continues on adding to the technical preview of web platform support to Flu
 
 ## Desktop (experimental)
 
-We continue to move forward with the experimental support for the desktop platform in Flutter. If you'd like to take part in the experiment, see [Flutter Desktop shells](https://github.com/flutter/flutter/wiki/Desktop-shells).
+We continue to move forward with the experimental support for the desktop platform in Flutter. If you'd like to take part in the experiment, see [Flutter Desktop shells](https://flutter.dev/desktop).
 
 [32770](https://github.com/flutter/flutter/pull/32770) Dismiss modal with any button press
 
