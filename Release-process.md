@@ -89,7 +89,7 @@ This is the process for rolling the "stable" branch. We generally intend to roll
 1. Wait for the Cirrus builds on the stable branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches, and check https://ci.chromium.org/p/flutter/builders/prod/Mac%20Flutter%20Packaging, 
 https://ci.chromium.org/p/flutter/builders/prod/Linux%20Flutter%20Packaging, and 
 https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). If they fail, let people know as soon as possible and investigate the failure(s) as a matter of urgency.
-1. Double-check that the release archives have updated to point to the new release (https://storage.googleapis.com/flutter_infra/releases/releases_linux.json, https://storage.googleapis.com/flutter_infra/releases/releases_windows.json, and https://storage.googleapis.com/flutter_infra/releases/releases_macos.json)
+1. Double-check that the release archives have updated to point to the new release (https://storage.googleapis.com/flutter_infra/releases/releases_linux.json, https://storage.googleapis.com/flutter_infra/releases/releases_windows.json, and https://storage.googleapis.com/flutter_infra/releases/releases_macos.json).  Those URLs are cached, so you may have to wait for the cache TTL to expire before the pages show the new release.
 1. Double-check that the API docs have updated at [api.flutter.dev](https://api.flutter.dev/). The footer at the bottom of the page shows the version against which the docs were built. It should show the stable release you just pushed.
 
 
