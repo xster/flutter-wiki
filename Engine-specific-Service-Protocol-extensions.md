@@ -139,3 +139,21 @@ Response:
 ```
 
 The object in the **view** key is constructed in the same way as the views in the **List Views** method.
+
+## Get the display refresh rate: `_flutter.getDisplayRefreshRate`
+
+Get the display refresh rate of the actual device that runs the Flutter view. For example, most devices would return an fps of 60, while iPad Pro would return an fps of 120.
+
+One argument:
+
+```
+viewId = _flutterView/0x15bf057f8
+```
+
+Response:
+
+```json
+{
+  "fps": 60.0
+}
+```
