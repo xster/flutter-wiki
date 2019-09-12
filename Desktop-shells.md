@@ -96,7 +96,9 @@ applications are likely to require slight modifications to run.
 ### Target Platform Override
 
 Most applications will need to override the target platform for the application
-to one of the supported values in order to avoid 'Unknown platform' exceptions.
+to one of the supported values in order to avoid 'Unknown platform' exceptions,
+to work around the fact that [desktop platforms are not yet valid `TargetPlatform`
+values](https://github.com/flutter/flutter/issues/31366).
 This should be done as early as possible.
 
 In the simplest case, where the code will only run on desktop and the behavior
@@ -153,7 +155,10 @@ application. Other widgets that doesn't use `ThemeData` may not display
 without extra font specification (e.g., the `DEBUG` banner's text).
 
 Symptoms of missing fonts include text failing to display and/or console logging
-about failure to load fonts.
+about failure to load fonts, since font fallback is not yet robust on desktop
+platforms (see the [Windows](https://github.com/flutter/flutter/issues/39915),
+[macOS](https://github.com/flutter/flutter/issues/39914), and
+[Linux](https://github.com/flutter/flutter/issues/30700) issues for status).
 
 ### Plugins
 
