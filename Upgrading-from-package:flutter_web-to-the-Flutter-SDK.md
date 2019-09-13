@@ -76,6 +76,13 @@ dependencies:
 
 Remove the `FontManifest.json` file and specify the fonts the standard way. See this [cookbook article](https://flutter.dev/docs/cookbook/design/fonts) for an example.
 
+If you're using `FontManifest.json` to enabled Material Design icons as described [here](https://github.com/flutter/flutter/issues/32540#issuecomment-491498679), you can remove it and add the following to your `pubspec.yaml`:
+
+```yaml
+flutter:
+  uses-material-design: true
+```
+
 ## Move the assets
 
 Assets should be placed in a top-level `assets/` directory and specified in the `pubspec.yaml`:
