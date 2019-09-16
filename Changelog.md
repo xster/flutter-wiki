@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#40189](https://github.com/flutter/flutter/pull/40189) changes the default border color and text color of `CupertinoNavigationBar` and `CupertinoSliverNavigationBar`.
+
 * [#38481](https://github.com/flutter/flutter/pull/38481) improves `CupertinoTimerPicker` visual fidelity.
 
 * [#37652](https://github.com/flutter/flutter/pull/37652) Change RenderObject.getTransformTo to include ancestor. Affects RenderBox.localToGlobal when an ancestor is specified.
