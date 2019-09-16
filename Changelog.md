@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [dart-lang/sdk #37985](https://github.com/dart-lang/sdk/issues/37985) Inference is changed when using Null values in a FutureOr context. Namely, constraints of the forms similar to Null <: FutureOr<T> now yield Null as the solution for T.
+
 * [#40189](https://github.com/flutter/flutter/pull/40189) changes the default border color and text color of `CupertinoNavigationBar` and `CupertinoSliverNavigationBar`.
 
 * [#38481](https://github.com/flutter/flutter/pull/38481) improves `CupertinoTimerPicker` visual fidelity.
