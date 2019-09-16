@@ -12,6 +12,9 @@ _(This page is referenced by comments in the Flutter codebase.)_
 
   * Delete obsolete files from [flutter/goldens](https://github.com/flutter/goldens) once your PR has landed.
 
+* Flutter Gold Triage
+  * Visit [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) to triage golden test results when post-submit testing has completed. The status of these tests can be seen on the [Flutter Dashboard](https://flutter-dashboard.appspot.com/build.html).
+
 
 
 ## Adding a new golden file test
@@ -60,3 +63,20 @@ This allows multiple people to contribute simultaneously without conflicting wit
 Changes such as these constitute a breaking change, and should follow [Handling Breaking Changes](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes). This includes marking your PR with the `severe: API break` and `will affect goldens` labels, as well as updating the [Changelog](https://github.com/flutter/flutter/wiki/Changelog).
 
 Once your main PR has landed, please come back and delete the obsolete files listed in the README.
+
+## Flutter Gold
+
+Golden file tests for `package:flutter` are currently transitioning to use [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) for baseline and version management of golden files. When this transition is complete, the [flutter/goldens](https://github.com/flutter/goldens) repository will no longer be used for testing. If you have questions about Flutter Gold, cc **@Piinks** on your PR.
+
+### Post-Submit Triage
+
+You may notice the **FlutterGitHubBot** remind you to complete triage on Flutter Gold after merging a PR that includes a golden file test. 
+
+Once post-submit testing has completed on your change, the status of which can be seen on the [Flutter Dashboard](https://flutter-dashboard.appspot.com/build.html), you will see your change and the affected files compiled into a digest on the Flutter Gold dashboard. 
+
+Review the digest and the images that were generated, making sure they look as expected. Currently, we generate images for Linux, Mac and Windows platforms. It is common for there to be slight differences between them. The digest of each image will also include a visual diff and a closest match to images it has seen before.
+If you are pleased with your change, click the checkmark to approve the change and complete triage. 
+
+*Triage permission is restricted to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
+
+
