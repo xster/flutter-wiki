@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [flutter/engine #12128](https://github.com/flutter/engine/pull/12128) Flutter on iOS will no longer send AppLifecycleState events on the lifecycle channel when the FlutterViewController is not visible to bring it inline with behavior on Android. 
+
 * [dart-lang/sdk #37985](https://github.com/dart-lang/sdk/issues/37985) Inference is changed when using Null values in a FutureOr context. Namely, constraints of the forms similar to Null <: FutureOr<T> now yield Null as the solution for T.
 
 * [#40189](https://github.com/flutter/flutter/pull/40189) changes the default border color and text color of `CupertinoNavigationBar` and `CupertinoSliverNavigationBar`.
