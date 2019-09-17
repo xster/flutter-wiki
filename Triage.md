@@ -3,7 +3,9 @@
 The process of triaging bugs is to first go through these bug lists and make sure they have all been processed as described below:
 
 <!--ALL-LABELS-->
+<!--
 1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
+-->
 
 <!--ALL-LABELS-->
 2. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
