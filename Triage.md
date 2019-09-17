@@ -1,39 +1,20 @@
 # Guidelines for triage
 
+## Triaging issues
+
 The process of triaging bugs is to first go through these bug lists and make sure they have all been processed as described below:
 
 <!--ALL-LABELS-->
-<!--
-1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
--->
+1. [recently filed bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
 
 <!--ALL-LABELS-->
-2. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
+1. [the bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
 
-3. [the bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
+1. [the bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
 
 Finally, one should look at [the least recently updated bugs of any kind](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-asc) and see if they are still relevant, applying new labels, updating the subject line if necessary, providing an update if necessary, etc.
 
-## Triaging PRs
-
-When triaging PRs, it's important that incoming PRs:
-
-* Contain tests for the functionality they're providing. If it's a bug fix, there should be tests to ensure that we don't regress the bug fix. If it's new functionality, the functionality should have tests as well.
-
-* Code and tests should match our [Style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo). Look carefully for spelling mistakes and violations of our coding style; invite the contributor to fix these.
-
-For PRs, each PR should match one of the following categories:
-
-* It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
-
-<!--ALL-LABELS-->
-* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `a: existing-apps`.
-
-* It can have the `will need additional triage` label. 
-
-Once a PR meets these basic requirements and has an appropriate repository and label, feel free to add the `will need additional triage` label to call attention to it from the relevant team.
-
-## Triaging issues
+## General
 
 First, look at the bug report, and try to understand what the described problem is. Edit the original comment to remove boilerplate that the bug reporter didn't remove. Edit the original comment to add backticks (\`\`\`) around blocks of stack traces, code, the output of shell scripts like `flutter doctor`, etc. These changes make the bug much easier to manage.
 
@@ -105,6 +86,31 @@ Make a judgement call:
 ### Additional comments
 
 If you have something to say regarding the bug, for example if you happen to notice what the problem is, or if you have some insight based on having seen many other bugs over time, feel free to add a comment to that effect. Your experience is valuable and may help both the reporter and the rest of the Flutter team.
+
+
+# Triaging PRs
+
+The process for triaging PRs is to look at this list:
+
+<!--ALL-LABELS-->
+1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
+
+When triaging PRs, it's important that incoming PRs:
+
+* Contain tests for the functionality they're providing. If it's a bug fix, there should be tests to ensure that we don't regress the bug fix. If it's new functionality, the functionality should have tests as well.
+
+* Code and tests should match our [Style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo). Look carefully for spelling mistakes and violations of our coding style; invite the contributor to fix these.
+
+For PRs, each PR should match one of the following categories:
+
+* It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
+
+<!--ALL-LABELS-->
+* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `a: existing-apps`.
+
+* It can have the `will need additional triage` label. 
+
+Once a PR meets these basic requirements and has an appropriate repository and label, feel free to add the `will need additional triage` label to call attention to it from the relevant team.
 
 
 # Critical triage
