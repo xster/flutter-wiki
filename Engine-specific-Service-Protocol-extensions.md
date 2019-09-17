@@ -154,6 +154,7 @@ Response:
 
 ```json
 {
+  "type": "DisplayRefreshRate",
   "fps": 60.0
 }
 ```
