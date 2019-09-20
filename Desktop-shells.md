@@ -45,6 +45,8 @@ Run `flutter config` to see your current settings, as well as the commands to di
 
 Currently `flutter create` is only supported for macOS (to use it, run it with the `--macos` flag). For Windows and Linux, the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding) has simple runners for each desktop platform that work with the `flutter` tool's in-progress desktop support. See the READMEs there for details.
 
+For any platform **be sure to read the 'Flutter Application Requirements' section below!**
+
 ### `run` and `build`
 
 `flutter run` and `flutter build` are supported on all three platforms once you have added the necessary platform directory to your project (see `create` above). Breaking changes are still common on Windows and Linux however, so you should expect to need to get the latest runners from flutter-desktop-embedding after any Flutter update.
