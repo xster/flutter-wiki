@@ -43,9 +43,15 @@ The tooling interface for desktop (e.g., the commands to be run by the native bu
 Writing plugins is supported on all platforms, however there are currently very few plugins that actually have
 desktop support. As with the overall status above, the macOS plugin APIs and structure are relatively stable, while Windows and Linux will change significantly.
 
-Plugin tooling is implemented for macOS, so adding a plugin to `pubspec.yaml` will automatically add the necessary native code to your project if the plugin has macOS support. On Windows and Linux, for now you must manually update your native build (`vcxproj`, `Makefile`) to build each plugin, include the its header, and link its shared library into the executable.
+#### macOS
 
-The [plugins section of the flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) has examples of both building and using plugins in their current state.
+Plugin tooling is implemented for macOS:
+- To create a plugin, pass the `--macos` flag when you `flutter create` your plugin.
+- To use a plugin with macOS support, add it to `pubspec.yaml`; `flutter` will automatically add the necessary native code to your project, as with iOS or Android.
+
+#### Windows and Linux
+
+Plugin tooling is not yet implemented. For now you must manually update your native build (`vcxproj`, `Makefile`) to build each plugin, include its header, register it, and link its shared library with the executable. See the [plugins section of the flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) for an example plugin to use as a starting point for building your own, and for details on using plugins built from that example.
 
 ## Prebuilt Shell Libraries
 
@@ -72,21 +78,6 @@ be helpful to look at the flutter-desktop-embedding example to see how it uses t
 the Flutter library, your application will need to bundle your Flutter assets (as created by
 `flutter build bundle`). On Windows and Linux you will also need the ICU data from the Flutter engine
 (look for `icudtl.dat` under the `bin/cache/artifacts/engine` directory in your Flutter tree).
-
-### Plugins
-
-#### macOS
-Plugin registration is generated automatically by the `flutter` tool during a build.
-
-#### Windows/Linux
-
-After creating your Flutter window controller, call your plugin's registrar
-function. For instance:
-
-```cpp
-  MyAwesomePluginRegisterWithRegistrar(
-      flutter_controller.GetRegistrarForPlugin("MyAwesomePlugin"));
-```
 
 ## Flutter Application Requirements
 
