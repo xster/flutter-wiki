@@ -1,4 +1,4 @@
-Work is ongoing to extend Flutter to support desktop as a target environment, allowing developers to create macOS, Windows, and Linux applications with Flutter. On the long run, this effort will create lead to a fully integrated solution where `flutter create`, `flutter run`, and `flutter build` work for desktop platforms as they do for mobile platforms, but currently this effort is still under way.
+Work is ongoing to extend Flutter to support desktop as a target environment, allowing developers to create macOS, Windows, and Linux applications with Flutter.
 
 ## Current Status
 
@@ -27,21 +27,31 @@ toolkit for other parts of your application, but have not yet determined a good 
 
 Expect the APIs for the final shell to be radically different from the current implementation.
 
-### Tooling
+### Plugins
 
-Support for desktop in the `flutter` tool is a work in progress. To use any of the support (such the host machine being listed by `flutter devices`), you must be on the `master` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels), and you must enable the feature for your platform:
+Writing plugins is supported on all platforms, however there are currently very few plugins that actually have
+desktop support. As with the overall status above, the macOS plugin APIs and structure are relatively stable, while Windows and Linux will change significantly.
+
+## Tooling
+
+Support for desktop in the `flutter` tool is a work in progress. To use any of the support, you must be on the `master` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels), and you must enable the feature for your platform:
 * `flutter config --enable-linux-desktop` to enable Linux.
 * `flutter config --enable-macos-desktop` to enable macOS.
 * `flutter config --enable-windows-desktop` to enable Windows.
 
 Run `flutter config` to see your current settings, as well as the commands to disable the feature again.
 
-The tooling interface for desktop (e.g., the commands to be run by the native build system, or the paths of files created by the `flutter` tool as part of the build) are subject to change without warning.
+### `create`
+
+Currently `flutter create` is only supported for macOS. For Windows and Linux, the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding) has simple runners for each desktop platform that work with the `flutter` tool's in-progress desktop support. See the READMEs there for details.
+
+### `run` and `build`
+
+`flutter run` and `flutter build` are supported on all three platforms once you have added the necessary platform directory to your project (see `create` above). Breaking changes are still common on Windows and Linux however, so you should expect to need to get the latest runners from flutter-desktop-embedding after any Flutter update.
+
+Only debug mode is currently supported for Windows and Linux.
 
 ### Plugins
-
-Writing plugins is supported on all platforms, however there are currently very few plugins that actually have
-desktop support. As with the overall status above, the macOS plugin APIs and structure are relatively stable, while Windows and Linux will change significantly.
 
 #### macOS
 
@@ -52,32 +62,6 @@ Plugin tooling is implemented for macOS:
 #### Windows and Linux
 
 Plugin tooling is not yet implemented. For now you must manually update your native build (`vcxproj`, `Makefile`) to build each plugin, include its header, register it, and link its shared library with the executable. See the [plugins section of the flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) for an example plugin to use as a starting point for building your own, and for details on using plugins built from that example.
-
-## Prebuilt Shell Libraries
-
-Only `debug` libraries are currently available for Windows and Linux.
-
-By default, `precache` does not fetch desktop libraries; if you want to include them when running `precache` pass the `--linux`, `--macos`, or `--windows` flag depending on your platform. Since they are downloaded on demand by build steps, this is necessary only if you specifically want to pre-cache the artifacts.
-
-### C++ Wrapper
-
-The Windows and Linux libraries provide a C API. To make it easier to use them, there is a C++ wrapper available
-which you can build into your application to provide a higher-level API surface. The source for it is downloaded with the library.
-
-## Using the Shells
-
-Since `flutter create` does not yet support desktop, you will need a runner application. The
-[flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding)
-has simple runners for each desktop platform that work with the `flutter`
-tool's in-progress desktop support.
-
-Alternately you can write your own application using the shells if you are familiar
-with doing native development on your platform(s). See the headers that come with the library for your
-platform for information on using them. More documentation will be available in the future; for now it may
-be helpful to look at the flutter-desktop-embedding example to see how it uses them. In addition to linking
-the Flutter library, your application will need to bundle your Flutter assets (as created by
-`flutter build bundle`). On Windows and Linux you will also need the ICU data from the Flutter engine
-(look for `icudtl.dat` under the `bin/cache/artifacts/engine` directory in your Flutter tree).
 
 ## Flutter Application Requirements
 
@@ -156,3 +140,27 @@ platforms (see the [Windows](https://github.com/flutter/flutter/issues/39915),
 If your project uses any plugins (unless they have desktop support), they won't
 work, as the native side will be missing. Depending on how the Dart side of the
 plugin is written, they may fail gracefully, or may throw errors.
+
+## Add-to-App
+
+Currently there is no support for Add-to-App for any desktop platform (either via `flutter create -t module` or by flutter-desktop-embedding example). If you are familiar with doing native development on your platform(s), it is possible to integrate the desktop Flutter libraries in your own app. The is not currently much guidance, so you will be well off the beaten path, but the information below will help get you started.
+
+### Getting the Libraries
+
+Unless you want to build the Flutter engine from source, you will need a prebuilt library. The easiest way to get the right version for your version of Flutter is to run `flutter precache` with the `--linux`, `--macos`, or `--windows` flag (depending on your platform). They will be downloaded to `bin/cache/artifacts/engine/` under your Flutter tree.
+
+Only `debug` libraries are currently available for Windows and Linux.
+
+### C++ Wrapper
+
+The Windows and Linux libraries provide a C API. To make it easier to use them, there is a C++ wrapper available
+which you can build into your application to provide a higher-level API surface. The source for it is downloaded with the library. You will need to build it as part of your application.
+
+### Documentation
+
+See the headers that come with the library (or wrapper) for your platform for information on using them. More documentation will be available in the future; for now it may be helpful to look at the flutter-desktop-embedding example application to see how it uses them.
+
+### Building
+
+In addition to linking the Flutter library, your application will need to bundle your Flutter assets (as created by `flutter build bundle`). On Windows and Linux you will also need the ICU data from the Flutter engine
+(look for `icudtl.dat` under the `bin/cache/artifacts/engine` directory in your Flutter tree).
