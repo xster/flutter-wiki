@@ -63,7 +63,7 @@ add_library( native_add
 EOF
 ```
 
-Finally, add an `externalNativeBuild` section to `android/build.grade`, for
+Finally, add an `externalNativeBuild` section to `android/build.gradle`, for
 example:
 ```groovy
 android {
