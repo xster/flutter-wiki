@@ -1,1 +1,0 @@
-See [Creating responsive apps](https://flutter.dev/docs/development/ui/layout/responsive) on [flutter.dev](https://flutter.dev).
