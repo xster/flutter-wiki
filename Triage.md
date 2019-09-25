@@ -299,7 +299,7 @@ If you come across a bug that is unrelated to desktop app development, remove th
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team+infra%22+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
 * [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team+infra%22+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22)
 * [Popular feature requests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team+infra%22+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22)
-* [Old issues](https://github.com/flutter/flutter/issues?q=is%3A%22team+infra%22+is%3Aissue+label%3Atool+sort%3Aupdated-asc)
+* [Old issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team+infra%22+sort%3Aupdated-asc)
 
 If you come across a bug that is unrelated to the testing infrastructure, remove the `team: infra` label and leave a comment explaining why. That will send it back to triage.
 
