@@ -105,7 +105,7 @@ These steps build the desktop embedding, and the engine used by `flutter test` o
    * `--unoptimized` disables C++ compiler optimizations. On macOS, binaries are emitted unstripped; on Linux, unstripped binaries are emitted to an `exe.unstripped` subdirectory of the build.
 
 4. `ninja -C out/host_debug_unopt` to build a desktop unoptimized binary.
-    * If you skipped `--upoptimized`, use `ninja -C out/host_debug` instead.
+    * If you skipped `--unoptimized`, use `ninja -C out/host_debug` instead.
     * For Googlers, consider also using the option `-j 1000` to parallelize the build using Goma.
 
 See [[The flutter tool]] for instructions on how to use the `flutter` tool with a local engine.
