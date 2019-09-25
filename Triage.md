@@ -5,10 +5,10 @@
 The process of triaging bugs is to first go through these bug lists and make sure they have all been processed as described below:
 
 <!--ALL-LABELS-->
-1. [recently filed bugs with none of the classification labels](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A%22%E2%98%B8+platform-web%22+-label%3A%22a%3A+desktop%22+-label%3A%22waiting+for+customer+response%22+updated%3E%3D2019-09-10+sort%3Aupdated-desc).
+1. [recently filed bugs with none of the classification labels](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A%22%E2%98%B8+platform-web%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3A%22waiting+for+customer+response%22+updated%3E%3D2019-09-10+sort%3Aupdated-desc).
 
 <!--ALL-LABELS-->
-2. [older bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
+2. [older bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22d%3A+examples%22+-label%3A%22will+need+additional+triage%22+-label%3Ateam+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
 
 3. [bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
 
@@ -40,13 +40,15 @@ If you are confident our official documentation (on flutter.dev or api.flutter.d
 
 **General rule: The more labels an issue has, the better!** _See also: [List of labels](https://github.com/flutter/flutter/labels)_
 
-If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels. If it's specific to running on a desktop platform, include "a: desktop" as well.
+If any of the labels prefixed with "a:" apply to the issue, add those labels. If the bug is specific to a particular platform, consider adding one of the "platform-*" labels. If it's specific to running on a desktop platform, include "a: desktop" as well. If it's an issue involving integrating Flutter as a library into an existing mobile application, add `a: existing-apps`.
 
 Add any of the applicable "severe: *" labels; typically only one will apply but sometimes `severe: regression` will apply in conjunction with one of the others.
 
 If it's a very serious bug that should block releases, consider adding the `TODAY` label as well. This label is reserved for build breaks, regressions in metrics, issues causing data loss for end users, etc. that would effectively block us from shipping tip of tree to users.
 
 If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the `customer: crowd` label (which means it affects many people) and then either the `severe: customer blocker` label (if it's blocking people) or the `severe: customer critical` label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document).
+
+If it's an issue that is repeatedly frustrating developers when using non-experimental Flutter features (e.g. performing mobile app builds, dealing with text input, using supported IDEs), add `a: annoyance`. If unsure, consult with DevRel (filiph@).
 
 If it's something that looks trivial to fix, add the `easy fix` label.
 
@@ -63,8 +65,7 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
 - If it's specific to writing desktop Windows, macOS, Linux, or Web apps with Flutter, add the `a: desktop` label.
 - If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the `☸ platform-web` label.
-- If it's an issue involving integrating Flutter as a library into an existing mobile application, add `a: existing-apps`.
-- If it's an issue that is repeatedly frustrating developers when using non-experimental Flutter features (e.g. performing mobile app builds, dealing with text input, using supported IDEs), add `a: annoyance`. If unsure, consult with DevRel (filiph@). 
+- If it's related to our testing infrastructure (LUCI, Cocoon, devicelab, Cirrus, etc), add the `team: infra` label.
 
 Bugs relating to the website should be moved to the `flutter/website` repo.
 
@@ -76,7 +77,7 @@ _See also: [List of milestones](https://github.com/flutter/flutter/milestones?di
 
 Make a judgement call:
 
-- If the bug seems like a correctness issue, relates to polish and quality, or might block fully shipping broad consumer-facing apps, add it to the "Goals" milestone.
+- If the bug seems like a correctness issue, relates to polish and quality, might block fully shipping broad consumer-facing apps, or relates to something on our [Roadmap], add it to the "Goals" milestone.
 
 - If the bug seems like a far fetched future request, add it to the "Future" milestone.
 
@@ -93,7 +94,7 @@ If you have something to say regarding the bug, for example if you happen to not
 The process for triaging PRs is to look at this list:
 
 <!--ALL-LABELS-->
-1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
+1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3Atool+-label%3Ateam+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
 
 When triaging PRs, it's important that incoming PRs:
 
@@ -106,11 +107,9 @@ For PRs, each PR should match one of the following categories:
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
 <!--ALL-LABELS-->
-* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `a: existing-apps`.
+* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `team`, `team: infra`. (In addition to one of those, it may also have the `a: existing apps` label.)
 
-* It can have the `will need additional triage` label. 
-
-Once a PR meets these basic requirements and has an appropriate repository and label, feel free to add the `will need additional triage` label to call attention to it from the relevant team.
+* It can have the `will need additional triage` label. Use this if it's not clear what label it should have.
 
 
 # Critical triage
@@ -139,7 +138,8 @@ We also want to regularly check https://developer.apple.com/news/ for updates th
 
 We regularly check that the following PRs are not being neglected, and have appropriate labels:
 
-* [The flutter/flutter PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3Atool+sort%3Aupdated-asc)
+<!--ALL-LABELS-->
+* [The flutter/flutter PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3Atool+-label%3A"☸+platform-web"+sort%3Aupdated-asc) (or with the `team` label)
 
 * [PRs in our esoteric repos](https://github.com/pulls?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+archived%3Afalse+user%3Aflutter+sort%3Aupdated-asc+-repo%3Aflutter%2Fflutter+-repo%3Aflutter%2Fengine+-repo%3Aflutter%2Fplugin-repo%3Aflutter%2Fpackage+-repo%3Aflutter%2Fwebsite+-repo%3Aflutter%2Fflutter-intellij)
 
