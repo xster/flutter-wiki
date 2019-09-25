@@ -67,7 +67,7 @@ Flutter Wiki
 ## Experimental features
 - [[State of Catalina Support]]
 - [[Add Flutter to existing apps]]
-- [Creating Responsive Apps](https://flutter.dev/docs/development/ui/layout/responsive)
+- [Creating responsive apps](https://flutter.dev/docs/development/ui/layout/responsive)
 - [[Obfuscating Dart Code]]
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
 - [Using Flutter in China](https://flutter.dev/community/china)
