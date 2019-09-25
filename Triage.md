@@ -106,8 +106,8 @@ For PRs, each PR should match one of the following categories:
 
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
-<!--ALL-LABELS-->
-* It can have one of the following labels: `framework`, `engine`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `team`, `team: infra`. (In addition to one of those, it may also have the `a: existing apps` label.)
+<!--ALL-LABELS--><!-- but not all the labels are here, this is just the list of PR labels in flutter/flutter -->
+* It can have one of the following labels: `framework`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `team`, `team: infra`. (In addition to one of those, it may also have the `a: existing apps` label.)
 
 * It can have the `will need additional triage` label. Use this if it's not clear what label it should have.
 
