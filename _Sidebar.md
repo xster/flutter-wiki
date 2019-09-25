@@ -74,7 +74,7 @@ Flutter Wiki
 - [[Making animated GIFs of Flutter apps]]
 - [[Desktop shells]] - building a Mac app with Flutter
 - [[Linting Flutter apps for Chrome OS]]
-- [[Building a web application with Flutter]]
+- [Building a web application with Flutter](https://flutter.dev/docs/get-started/web)
 - [[Code generation in Flutter]]
 
 ## Release Notes
