@@ -5,7 +5,7 @@ Flutter Wiki
 
 - [[Home]] of the Wiki
 - [[Roadmap]]
-- [API Reference (stable)](https://docs.flutter.dev)
+- [API Reference (stable)](https://api.flutter.dev)
 - [API Reference (master)](https://master-docs.flutter.dev)
 - [[Glossary]]
 - [Contributor Guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
@@ -67,7 +67,7 @@ Flutter Wiki
 ## Experimental features
 - [[State of Catalina Support]]
 - [[Add Flutter to existing apps]]
-- [[Creating Responsive Apps]]
+- [Creating Responsive Apps](https://flutter.dev/docs/development/ui/layout/responsive)
 - [[Obfuscating Dart Code]]
 - [[IntelliJ + Flutter Setup Tips and Tricks]]
 - [Using Flutter in China](https://flutter.dev/community/china)
