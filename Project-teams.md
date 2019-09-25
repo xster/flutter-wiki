@@ -12,13 +12,15 @@ The Flutter project has many teams:
 
 * The Flutter framework ([everything else in flutter/flutter](https://github.com/flutter/flutter/), ["framework"](https://github.com/flutter/flutter/labels/framework))
 
-* The Engine ([flutter/engine/](https://github.com/flutter/engine) and [flutter/buildroot](https://github.com/flutter/buildroot/), ["engine"](https://github.com/flutter/flutter/labels/engine))
+* The Engine ([flutter/engine](https://github.com/flutter/engine) and [flutter/buildroot](https://github.com/flutter/buildroot/), ["engine"](https://github.com/flutter/flutter/labels/engine))
 
 * Web (some code in flutter/flutter and flutter/engine, ["☸ platform-web"](https://github.com/flutter/flutter/labels/☸%20platform-web))
 * Desktop (some code in flutter/flutter and flutter/engine, ["a: desktop"](https://github.com/flutter/flutter/labels/a%3A%20desktop))
 * Developer experience (e.g. [the devtools package](https://github.com/flutter/devtools/))
 * User Experience Research
 * Developer Relations
+
+* Infrastructure (mainly [flutter/cocoon](https://github.com/flutter/cocoon) and [flutter/flutter dev/devicelab](https://github.com/flutter/flutter/tree/master/dev), ["team: infra"](https://github.com/flutter/flutter/labels/team%3A%20infra))
 
 There are also specific cross-cutting areas of work that affect multiple subteams (e.g. accessibility, add-to-app, dynamic code loading, etc).
 
