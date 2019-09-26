@@ -60,22 +60,23 @@ Flutter Wiki
 - [[Supporting legacy platforms]]
 
 ## Infrastructure
-- [[Flutter Installation Bundles]]
 - [[Autorollers]]
 - [Flutter's Build Infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md)
+- [[Flutter Installation Bundles]]
 
 ## Experimental features
-- [[State of Catalina Support]]
 - [[Add Flutter to existing apps]]
-- [Creating responsive apps](https://flutter.dev/docs/development/ui/layout/responsive)
-- [[Obfuscating Dart Code]]
-- [[IntelliJ + Flutter Setup Tips and Tricks]]
-- [Using Flutter in China](https://flutter.dev/community/china)
-- [[Making animated GIFs of Flutter apps]]
-- [[Desktop shells]] - building a Mac app with Flutter
-- [[Linting Flutter apps for Chrome OS]]
+- [Binding to native code using dart:ffi](https://flutter.dev/docs/development/platform-integration/c-interop)
 - [Building a web application with Flutter](https://flutter.dev/docs/get-started/web)
 - [[Code generation in Flutter]]
+- [Creating responsive apps](https://flutter.dev/docs/development/ui/layout/responsive)
+- [[Desktop shells]] - building a Mac app with Flutter
+- [[IntelliJ + Flutter Setup Tips and Tricks]]
+- [[Linting Flutter apps for Chrome OS]]
+- [[Making animated GIFs of Flutter apps]]
+- [[Obfuscating Dart Code]]
+- [[State of Catalina Support]]
+- [Using Flutter in China](https://flutter.dev/community/china)
 
 ## Release Notes
 - [1.9.1](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1)
