@@ -9,7 +9,7 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 * WidgetsFlutterBinding.ensureInitialized() takes down splash screen too early [#39494](https://github.com/flutter/flutter/issues/39494)
 
-## v1.9.2 - ??
+## v1.9.2 - v1.9.7
 
 * Soft keyboard can become unresponsive [#39182](https://github.com/flutter/flutter/issues/39182), [#39047](https://github.com/flutter/flutter/issues/39047)
 
