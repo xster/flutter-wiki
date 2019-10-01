@@ -18,7 +18,7 @@ public class MyPlugin implements FlutterPlugin {
 
 As shown above, your plugin may or may not be associated with a given Flutter experience at any given moment in time. You should take care to initialize your plugin's behavior in `onAttachedToEngine()`, and then cleanup your plugin's references in `onDetachedFromEngine()`.
 
-The `FlutterPluginBinding` provides your plugin with a couple important references:
+The `FlutterPluginBinding` provides your plugin with a few important references:
 * `binding.getFlutterEngine()`: Returns the `FlutterEngine` that your plugin is attached to, providing access to components like the `DartExecutor`, `FlutterRenderer`, and more.
 * `binding.getApplicationContext()`: Returns the Android application's `Context` for the running app.
 * `binding.getLifecycle()`: Returns a reference that can be used to obtain a `Lifecycle` object. If you need to use this lifecycle reference then you need add a project dependency on Flutter's Android lifecycle package.
