@@ -1,3 +1,13 @@
+# Contents
+
+Depending on the platform you are making changes for, you may be interested in all or only some of the sections below:
+
+* [Compiling for Android](#compiling-for-android-from-macos-or-linux)
+* [Compiling for iOS (from macOS)](#compiling-for-ios-from-macos)
+* [Compiling for macOS or Linux](#compiling-for-macos-or-linux)
+* [Compiling for Windows](#compiling-for-windows)
+* [Compiling for the Web](#compiling-for-the-web)
+* [Running a Flutter app with a local engine](#running-a-flutter-app-with-a-local-engine)
 
 ## Compiling for Android (from macOS or Linux)
 
@@ -128,6 +138,17 @@ You can only build selected binaries on Windows (mainly `gen_snapshot` and the d
 5. `ninja -C .\out\<dir created by previous step>` to build.
    * If you used a non-debug configuration, use `ninja -C .\out\<dir created by previous step> gen_snapshot`.
      Release and profile are not yet supported for the desktop shell.
+
+## Compiling for the Web
+
+For building the engine for the Web we use the [felt](https://github.com/flutter/engine/blob/master/lib/web_ui/dev/README.md) tool.
+
+To test Flutter with a local build of the Web engine, add `--local-engine=host_debug_unopt` to your `flutter` command, e.g.:
+
+```
+flutter run --local-engine=host_debug_unopt -d chrome
+flutter test --local-engine=host_debug_unopt test/path/to/your_test.dart
+```
 
 ## Running a Flutter app with a local engine
 
