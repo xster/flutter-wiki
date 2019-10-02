@@ -1,3 +1,23 @@
+# Quick Migration Steps
+
+These instructions are for the ecosystem team as they implement parallel plugin support for the new embedding.
+
+1. Create a new `[MyPlugin].java` file at `dev.flutter.plugins.[myplugin]`.
+
+2. Have `[MyPlugin]` implement `FlutterPlugin`.
+
+3. (Optional) If your plugin needs an `Activity` reference, also implement `ActivityAware`.
+
+4. (Optional) If your plugin is expected to be held in a background `Service` at any point in time, implement `ServiceAware`.
+
+5. Implement each plugin method as desired. Set up references as you attach to things. Clean up references as you detach from things.
+
+6. Consider separating the `MethodChannelHandler` from the old version of `[MyPlugin]` and then use that `MethodChannelHandler` in both `io.flutter.plugins.[myplugin].[MyPlugin].java` and `dev.flutter.plugins.[myplugin].[MyPlugin].java`.
+
+7. Add a static `registerWith()` method to your new `[MyPlugin]` class and have it call through to the `registerWith()` method in your old `[MyPlugin]` class.
+
+8. (Optional but Recommended) Add unit tests to validate the serialization/deserialization of all incoming/outgoing channel messages.
+
 # Basic Plugin
 
 To get started with a Flutter Android plugin in code, start by implementing `FlutterPlugin`.
