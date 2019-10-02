@@ -7,6 +7,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [flutter/engine #12708](https://github.com/flutter/engine/pull/12708) Turned on NS_ASSUME_NONNULL_BEGIN for FlutterViewController. This is a breaking change when the view controller is initialized from Swift.
+
+* [#40166](https://github.com/flutter/flutter/pull/40166) Fixes to focus handling. If you push a route after this change, and had a 'first focus' set on a widget via FocusScopeNode.setFirstFocus, it won't currently receive focus immediately, but after this change it will. Similarly, if you pop a route after this change, the focus will go back to where it was before the route was pushed
+
 * [#40690](https://github.com/flutter/flutter/pull/40690) `ObstructingPreferredSizeWidget.fullObstruction` is replaced by `ObstructingPreferredSizeWidget.shouldFullyObstruct(BuildContext context)`.
 
 * [#40636](https://github.com/flutter/flutter/pull/40636) Updates the appearance of `CupertinoSwitch` & `CupertinoSlide`. Changes the API of `CupertinoThumbPainter` to allow for further customization.
