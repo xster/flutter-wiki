@@ -29,6 +29,9 @@ The general process for submitting code to a Flutter repository is as follows:
    Make sure it is tested. Consider using the code coverage tools to check that all
    your new code is covered by tests (see [[Test coverage for package:flutter]]).
 
+   Everything must be tested. If you think your PR should be exempt from requiring
+   tests, please contact Hixie for an exemption.
+
    You must follow the guidelines described in the [[Style guide for Flutter repo]].
    Files must not have trailing spaces and the analyzer must not report anything.
    (See [[Using the Dart analyzer]]).
