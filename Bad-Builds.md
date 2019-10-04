@@ -2,7 +2,10 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
-## v1.10.4 - ??
+## v1.10.8
+ * microbenchmarks_stock_build_iteration regression [#41919](https://github.com/flutter/flutter/issues/41919)
+
+## v1.10.4 - v1.10.6
  * iOS Gesture detector is not working well [#40863](https://github.com/flutter/flutter/issues/40863)
 
 ## v1.9.4 - v1.10.4
