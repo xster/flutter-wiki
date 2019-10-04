@@ -99,7 +99,7 @@ Your `FlutterEngine` is now pre-warmed, cached, and ready to use with a `Flutter
 ```java
 Intent intent = FlutterActivity
   .withCachedEngine("my_engine_id")
-  .build();
+  .build(context);
 
 startActivity(intent);
 ```
