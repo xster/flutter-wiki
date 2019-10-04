@@ -195,7 +195,7 @@ answering questions about the code.
 
 In general, reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system being worked on, even if the PR isn't perfect.
 
-Reviewers should always feel free to leave comments expressing that something could be better, but if it's not very important, prefix it with something like "Nit: " to let the author know that it's just a point of polish that they could choose to ignore in the current PR (these should be documented in TODO comments with a tracking issue).
+Reviewers should always feel free to leave comments expressing that something could be better, but if it's not very important, prefix it with something like "Shouldn't block this PR but: " to let the author know that it's just a point of polish that they could choose to ignore in the current PR (these should be documented in TODO comments with a tracking issue).
 
 If you are 100% sure the patch is good and has no issues but you haven't
 really fully reviewed or understood it, you can give it a rubber-stamp
