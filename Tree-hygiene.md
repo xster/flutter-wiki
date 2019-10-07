@@ -152,7 +152,7 @@ please reach out to one of the following people:
 * Flutter Framework - @goderbauer
 * Engine - @cbracken
 * `flutter` Tool - @zanderso
-* Plugins - @amirha
+* Plugins - @amirh
 * Performance - @liyuqian
 * Anything else - @Hixie
 
