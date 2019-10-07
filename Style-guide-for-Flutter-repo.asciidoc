@@ -324,6 +324,13 @@ Similarly, all our repositories should have an owner that does regular triage of
 and fixes known issues. Repositories where nobody is doing triage at least monthly, preferably more often,
 should be deleted, hidden, or otherwise archived.
 
+### Widget libraries follow the latest OEM behavior
+
+For our material and cupertino libraries, we generally implement the latest behavior unless doing so
+would be a seriously disruptive breaking change. For example, we use the latest stylings for iOS
+switch controls, but when Material Design introduced a whole new type of button, we created a new
+widget for that rather than updating the existing buttons to have the new style.
+
 
 Documentation (dartdocs, javadocs, etc)
 ---------------------------------------
