@@ -40,17 +40,3 @@ If `assembleDebug` or `assembleRelease` failed but no error message can be seen,
 This problem can be solved in two ways:
  - Please try a more recent channel, like `beta` or `dev` and restart the compilation. It may still fail, but the error will now be printed
  - Open the `$FLUTTER_ROOT/packages/flutter_tools/gradle/flutter.gradle` file in your local installation and comment the line which reads `gradle.useLogger(new FlutterEventLogger())`, then retry your build
-
-### Could not resolve com.android.tools.build:gradle:3.4.0
-
-The issue stems from misconfiguration or add-to-app use cases with manual Gradle configuration. It points to missing build script dependencies (not App dependencies!).
-Please refer to https://developer.android.com/studio/build/dependencies on how to configure the build script repositories, in the top level `.gradle` file like so:
-
-```
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-```
