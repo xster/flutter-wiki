@@ -311,7 +311,7 @@ some/path/
 
 #### Add your Flutter app to your Podfile
 Integrating the Flutter framework requires use of the CocoaPods dependency manager.
-This is because the Flutter framework needs to be available also to any Flutter plugins
+This is because the Flutter framework needs to be available to any Flutter plugins
 that you might include in my_flutter.
 
 If you added Flutter to your existing iOS application prior to July 30, 2019 or 
@@ -360,13 +360,13 @@ You should now be able to build the project using `⌘B`.
 If you have some reason to do this manually or debug why these steps aren't working, here's what's going on under the hood:
 
 1. `Flutter.framework` (the Engine library) is getting embedded into your app for you.  This has to match up with the release type 
-(debug/profile/release) as well as the architecture for your app (arm*, i386, x86_64, etc.).  CocoaPods pulls this in as a vendored 
+(debug/profile/release) as well as the architecture for your app (arm*, x86_64, etc.).  CocoaPods pulls this in as a vendored 
 framework and makes sure it gets embedded into your native app.
 2. `App.framework` (your Flutter application binary) is embedded into your app.  CocoaPods also pulls this in as a vendored framework and 
 makes sure it gets embedded into your native app.
 3. Any plugins are added as CocoaPod pods.  In theory, it should be possible to manually merge those in as well, but those instructions
 vary on the pod dependencies of each plugin.
-4. A build script is added to the Podfile targets that call `install_all_flutter_pods` to ensure that the binaries you build stay up to date 
+4. A build script is added to the Podfile targets to ensure that the binaries you build stay up to date 
 with the Dart code that's actually in the folder.  It also uses your Xcode build configuration (Debug, Profile, Release) to embed the matching 
 release type of `Flutter.framework` and `App.framework`.
 
