@@ -379,8 +379,8 @@ First declare your app delegate to be a subclass of `FlutterAppDelegate`. Then d
 
 In `AppDelegate.h`:
 ```objective-c
-#import <UIKit/UIKit.h>
-#import <Flutter/Flutter.h>
+@import UIKit;
+@import Flutter;
 
 @interface AppDelegate : FlutterAppDelegate
 @property (nonatomic,strong) FlutterEngine *flutterEngine;
@@ -390,9 +390,9 @@ In `AppDelegate.h`:
 This allows `AppDelegate.m` to be really simple, unless your host app
 needs to override other methods here:
 ```objective-c
-#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
+@import FlutterPluginRegistrant; // Only if you have Flutter Plugins
 
-#include "AppDelegate.h"
+#import "AppDelegate.h"
 
 @implementation AppDelegate
 
@@ -433,9 +433,9 @@ class AppDelegate: FlutterAppDelegate {
 
 Make your app delegate implement the `FlutterAppLifeCycleProvider` protocol, e.g.:
 ```objective-c
-#import <Flutter/Flutter.h>
-#import <UIKit/UIKit.h>
-#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
+@import Flutter;
+@import UIKit;
+@import FlutterPluginRegistrant; // Only if you have Flutter Plugins
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, FlutterAppLifeCycleProvider>
 @property (strong, nonatomic) UIWindow *window;
@@ -574,9 +574,9 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 `ViewController.m`:
 ```objective-c
-#import <Flutter/Flutter.h>
 #import "AppDelegate.h"
 #import "ViewController.h"
+@import Flutter;
 
 @implementation ViewController
 - (void)viewDidLoad {
