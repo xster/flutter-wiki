@@ -346,7 +346,7 @@ needs to embed Flutter, call `install_all_flutter_pods(flutter_application_path)
 3. Run `pod install`.
 
 Whenever you change the Flutter plugin dependencies in `some/path/my_flutter/pubspec.yaml`,
-you need to run `flutter packages get` from `some/path/my_flutter` to refresh the list
+you need to run `flutter pub get` from `some/path/my_flutter` to refresh the list
 of plugins read by the `podhelper.rb` script. Then run `pod install` again from
 `some/path/MyApp`.
 
