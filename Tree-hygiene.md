@@ -244,8 +244,8 @@ aren't able to find anyone to review your patch, is it really an emergency?)
 
 ## Regressions in functionality
 
-If a check-in has caused a regression on the trunk, revert (roll back) the
-check-in (even if it isn't yours). When the trunk is broken, it slows down
+If a check-in has caused a regression on master, revert (roll back) the
+check-in (even if it isn't yours). When master is broken, it slows down
 everyone else on the project, so we want to get the tree green again as soon
 as possible.
 
