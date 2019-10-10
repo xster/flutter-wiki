@@ -75,7 +75,6 @@ Flutter Wiki
 - [[Linting Flutter apps for Chrome OS]]
 - [[Making animated GIFs of Flutter apps]]
 - [[Obfuscating Dart Code]]
-- [[State of Catalina Support]]
 - [Using Flutter in China](https://flutter.dev/community/china)
 
 ## Release Notes
