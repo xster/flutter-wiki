@@ -69,7 +69,9 @@ The general process for submitting code to a Flutter repository is as follows:
 8. Once everything is green and you have an LGTM, land your patch.
 
 9. Watch the post-commit tests on the dashboard to make sure everything passes. If anything
-   goes wrong, revert your patch and study the problem.
+   goes wrong, revert your patch and study the problem. You should aim to be the one to
+   revert your patch. You will be racing everyone else on the team who will also be trying
+   to revert your patch.
 
 _See also: [[What should I work on?]]_
 
@@ -242,15 +244,20 @@ aren't able to find anyone to review your patch, is it really an emergency?)
 
 ## Regressions in functionality
 
-If a check-in has caused a regression on the trunk, roll back the
-check-in (even if it isn't yours) unless doing so would take longer
-than fixing the bug. When the trunk is broken, it slows down everyone
-else on the project.
+If a check-in has caused a regression on the trunk, revert (roll back) the
+check-in (even if it isn't yours). When the trunk is broken, it slows down
+everyone else on the project, so we want to get the tree green again as soon
+as possible.
+
+If you revert is a straight revert, then you do not need to wait for precommit
+tests before landing it. Just create the revert and land it, then tell the person
+whose patch you reverted, that you reverted their patch (also leave a comment
+on the PR that you reverted).
 
 If things are broken, the priority of everyone on the team should be
-helping the team fix the problem. Someone should own the issue, and
-they can delegate responsibilities to others on the team. Once the
-problem is resolved, write a
+helping the team fix the problem. Someone (you, if nobody else has yet
+taken ownership) should own the issue, and they can delegate responsibilities
+to others on the team. Once the problem is resolved, write a
 [post-mortem](https://github.com/flutter/flutter/wiki/Postmortems).
 Postmortems are about documenting what went wrong and how to avoid the
 problem (and the entire class of problems like it) from recurring in
@@ -325,6 +332,7 @@ immediately, and start investigating which leaf-commit caused the regression. On
 is identified, check if it's an expected trade-off. If so, remove the "TODAY" label and try to see
 if there's any way to mitigate the regression. If not, revert the leaf commit in the source repo
 and let the auto-roller apply that revert. Once the revert is rolled into Flutter, close the issue.
+
 
 ## Avoid "Revert "Revert "Revert "Revert "Fix foo"""" commit messages
 
