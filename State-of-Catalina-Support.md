@@ -1,4 +1,4 @@
-Currently all known issues with using Flutter on macOS Catalina Beta have been resolved and are part of the 1.9 release.  If you are experiencing an issue not listed below that regressed with macOS Catalina, please [file a new issue](https://github.com/flutter/flutter/issues/new/choose) with "Catalina" in the title.
+Currently all known issues with using Flutter on macOS Catalina have been resolved and are part of the 1.9 release.  If you are experiencing an issue not listed below that regressed with macOS Catalina, please [file a new issue](https://github.com/flutter/flutter/issues/new/choose) with "Catalina" in the title.
 
 ## Resolved Issues
 
