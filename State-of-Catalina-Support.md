@@ -1,4 +1,4 @@
-Currently all known issues with using Flutter on macOS Catalina Beta have been resolved and are set to be released in the next stable release. If you are currently using macOS Catalina and experience some of the following known issues, it is recommended to switch the Dev channel (`flutter channel dev`). If you are experiencing an issue not listed below that regressed with macOS Catalina, please [file a new issue](https://github.com/flutter/flutter/issues/new/choose) with "Catalina" in the title.
+Currently all known issues with using Flutter on macOS Catalina Beta have been resolved and are part of the 1.9 release.  If you are experiencing an issue not listed below that regressed with macOS Catalina, please [file a new issue](https://github.com/flutter/flutter/issues/new/choose) with "Catalina" in the title.
 
 ## Resolved Issues
 
