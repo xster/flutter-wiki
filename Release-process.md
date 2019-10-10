@@ -49,7 +49,7 @@ At the start of the month, start these steps. You will probably want to do this 
         * via `flutter build apk`
         * via `flutter build ios`
         * via `flutter run` (on both Android and iOS)
-1. Let other contributors know that you have picked a build and are planning on rolling the beta channel. In particular, the #announcements channel on Discord know, let @Hixie (ianh) know, and let @kf6gpe (ray) know.
+1. Let other contributors know that you have picked a build and are planning on rolling the beta channel. In particular, the #announcements channel on Discord know, let @Hixie (ianh) know, let @kf6gpe (ray) know, and let @tvolkert (todd) know.
 1. Wait until seven days after your selected commit was rolled to `dev`.
 1. Check that the build is still not listed on the [[Bad Builds]] page. If it has been marked as bad since you
 started this process, then start over from step 1 but with the next oldest eligible build.
