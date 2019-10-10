@@ -13,12 +13,12 @@ ninja -C out/host_jit_release
 This can be used with the flutter tool via the `--local-engine` flag to produce a bundle containing the jit release artifacts using the `flutter assemble` command. By default, flutter.gradle does not know how to package this artifacts so it requires custom integration into a build pipeline. Nevertheless, the artifact structure should be identical to a debug build.
 
 ```
-flutter assemble                          \
-   --local-engine=android_jit_release_x86 \
-  -dTargetPlatform=android-x86            \
-  -dBuildMode=jit-release                  \
-  -dTargetFile=path/to/main.dart          \
-  --output=build/mybundle                 \
+flutter assemble                          
+   --local-engine=android_jit_release_x86 
+  -dTargetPlatform=android-x86            
+  -dBuildMode=jit-release                  
+  -dTargetFile=path/to/main.dart          
+  --output=build/mybundle                 
   copy_flutter_bundle
 
 ```
