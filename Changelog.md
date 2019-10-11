@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#41327](https://github.com/flutter/flutter/pull/41327) Incorporates link specific semantics.
+
 * [#37896](https://github.com/flutter/flutter/pull/37896) Added a protected method `findAnnotations` to `Layer`. 
 
 * [flutter/engine #12708](https://github.com/flutter/engine/pull/12708) Turned on NS_ASSUME_NONNULL_BEGIN for FlutterViewController. This is a breaking change when the view controller is initialized from Swift.
