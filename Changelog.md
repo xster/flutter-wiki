@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#41814](https://github.com/flutter/flutter/pull/41814) Enables setting of semantics focused and focusable attributes within Focus widgets. Added `isFocusable` parameter to `matchesSemantics`.
+
 * [#41327](https://github.com/flutter/flutter/pull/41327) Incorporates link specific semantics.
 
 * [#37896](https://github.com/flutter/flutter/pull/37896) Added a protected method `findAnnotations` to `Layer`. 
