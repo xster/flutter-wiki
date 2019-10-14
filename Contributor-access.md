@@ -2,7 +2,7 @@ For people who make the occasional contribution to Flutter (filing an issue, sub
 
 We grant commit access (which includes full rights to the issue database, such as being able to edit labels) to people who have gained our trust and demonstrated a commitment to Flutter.
 
-Specifically, if you meet one of the following criteria and you have a sponsor (someone who already has contributor access and agrees that you should be granted access), then please ask your sponsor to propose, on the #server-support [[chat]] channel, that you be made a member of the team, and then reply to that message confirming that you work on Flutter. The possible criteria are:
+Specifically, if you meet one of the following criteria and you have a sponsor (someone who already has contributor access and agrees that you should be granted access), then please ask your sponsor to propose, on the #server-support [[chat]] channel, that you be made a member of the team, and then reply to that message explaining which criteria below you are claiming to meet. The possible criteria are:
 
 * You have recently submitted several PRs that have landed successfully (received an LGTM, PR was merged, no regressions reported, PR was not reverted), without needing extensive tutoring in the process.
 * You have a long history of participating productively in our [[chat]] channels, helping with [[Triage]], helping other contributors track down problems, finding meaningful issues in submitted PRs, and helping people in our #chat channel, all while demonstrating exemplary behavior that closely aligns with our [code of conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md).
