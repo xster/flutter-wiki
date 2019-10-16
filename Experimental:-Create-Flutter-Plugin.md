@@ -142,7 +142,7 @@ flutter_driver:
   sdk: flutter
 ```
 
-13. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the the minimum version to `1.9.1+hotfix.4` which is the minimum version where the v2 embedding code compiles with a migrated plugin. e.g.
+13. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the the minimum version to `1.9.1+hotfix.4` which is the minimum version we can guarantee support for .e.g.
 ```
 environment:
   sdk: ">=2.0.0-dev.28.0 <3.0.0"
