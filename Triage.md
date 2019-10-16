@@ -46,7 +46,7 @@ Add any of the applicable "severe: *" labels; typically only one will apply but 
 
 If it's a very serious bug that should block releases, consider adding the `TODAY` label as well. This label is reserved for build breaks, regressions in metrics, issues causing data loss for end users, etc. that would effectively block us from shipping tip of tree to users.
 
-If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the `customer: crowd` label (which means it affects many people) and then either the `severe: customer blocker` label (if it's blocking people) or the `severe: customer critical` label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document). For more details on the "crowd" designation, see [Issue Hygiene].
+If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the `customer: crowd` label (which means it affects many people) and then either the `severe: customer blocker` label (if it's blocking people) or the `severe: customer critical` label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document). For more details on the "crowd" designation, see [[Issue Hygiene]].
 
 If it's an issue that is repeatedly frustrating developers when using non-experimental Flutter features (e.g. performing mobile app builds, dealing with text input, using supported IDEs), add `a: annoyance`. If unsure, consult with DevRel (filiph@).
 
