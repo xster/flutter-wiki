@@ -15,9 +15,7 @@ The `severe:` prefix indicates labels regarding a level of severity (e.g. regres
 
 The `TODAY` label indicates a high-priority issue such as a build break, regression or failure in existing features that would keep us from shipping the current build. We look at issues with the `TODAY` label frequently to ensure that each has an owner and is being worked on.
 
-See also:
-
- * [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly.
+_See also: [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly._
 
 
 ### Adding labels
@@ -55,9 +53,7 @@ and several customers. If you have one "blocker" bug, then we have a clear
 sign of what to look at. If you have twenty, it will be difficult for us
 to know where to start.
 
-See also:
-
- * [Current customer blockers](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22)
+_See also: [Current customer blockers](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22)_
 
 #### Coordinating between bug systems
 
