@@ -1,22 +1,178 @@
 # Quick Migration Steps
 
-These instructions are for the ecosystem team as they implement parallel plugin support for the new embedding.
+These instructions are for the ecosystem team as they implement parallel plugin support for v2 embedding and be testable on Firebase TestLab. See current version of the `battery` plugin for an example: https://github.com/flutter/plugins/tree/master/packages/battery
 
-1. Create a new `[MyPlugin].java` file at `dev.flutter.plugins.[myplugin]`.
+1. Update the main plugin class (`*Plugin.java`) to implement `FlutterPlugin`. For more complex plugins, you can separate the `FlutterPlugin` and `MethodCallHandler` into two classes. See the next section, **Basic Plugin**, for more details on accessing app resources with the v2 embedding.
 
-2. Have `[MyPlugin]` implement `FlutterPlugin`.
+Also, note that the plugin should still contain the static `registerWith()` method to remain compatible with apps that don't use the v2 embedding.
 
-3. (Optional) If your plugin needs an `Activity` reference, also implement `ActivityAware`.
+2. **(Optional)** If your plugin needs an `Activity` reference, also implement `ActivityAware`.
 
-4. (Optional) If your plugin is expected to be held in a background `Service` at any point in time, implement `ServiceAware`.
+3. **(Optional)** If your plugin is expected to be held in a background `Service` at any point in time, implement `ServiceAware`.
 
-5. Implement each plugin method as desired. Set up references as you attach to things. Clean up references as you detach from things.
+4. Update example app `MainActivity.java` to use the v2 embedding `FlutterActivity`. e.g.
 
-6. Consider separating the `MethodChannelHandler` from the old version of `[MyPlugin]` and then use that `MethodChannelHandler` in both `io.flutter.plugins.[myplugin].[MyPlugin].java` and `dev.flutter.plugins.[myplugin].[MyPlugin].java`.
+```
+package io.flutter.plugins.firebasecoreexample;
 
-7. Add a static `registerWith()` method to your new `[MyPlugin]` class and have it call through to the `registerWith()` method in your old `[MyPlugin]` class.
+import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.embedding.engine.FlutterEngine;
+import io.flutter.plugins.firebase.core.FirebaseCorePlugin;
 
-8. (Optional but Recommended) Add unit tests to validate the serialization/deserialization of all incoming/outgoing channel messages.
+public class MainActivity extends FlutterActivity {
+  // TODO(<github-username>): Remove this once v2 of GeneratedPluginRegistrant rolls to stable. https://github.com/flutter/flutter/issues/42694
+  @Override
+  public void configureFlutterEngine(FlutterEngine flutterEngine) {
+    flutterEngine.getPlugins().add(new FirebaseCorePlugin());
+  }
+}
+```
+
+5. **(Optional)** Use `ShimPluginRegistry` to add plugins that don’t yet support the v2 embedding. e.g.
+```
+ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
+PathProviderPlugin.registerWith(
+        shimPluginRegistry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
+VideoPlayerPlugin.registerWith(
+        shimPluginRegistry.registrarFor("io.flutter.plugins.videoplayer.VideoPlayerPlugin"));
+```
+
+6. Create an `EmbeddingV1Activity.java` that uses the v1 embedding in the same folder as `MainActivity`. e.g.
+```
+package io.flutter.plugins.firebasecoreexample;
+
+import android.os.Bundle;
+import io.flutter.app.FlutterActivity;
+import io.flutter.plugins.GeneratedPluginRegistrant;
+
+public class EmbeddingV1Activity extends FlutterActivity {
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+   super.onCreate(savedInstanceState);
+   GeneratedPluginRegistrant.registerWith(this);
+ }
+}
+```
+
+7. Add the `EmbeddingV1Activity` to the **<plugin_name>/example/android/app/src/main/AndroidManifest.xml**. e.g.
+```
+<activity
+    android:name=".EmbeddingV1Activity"
+    android:theme="@style/LaunchTheme"
+         android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
+    android:hardwareAccelerated="true"
+    android:windowSoftInputMode="adjustResize">
+</activity>
+
+```
+
+8. Migrate plugin and example app to androidx. See https://flutter.dev/docs/development/androidx-migration for details.
+
+9. To have the plugin support Flutter on branches master and stable, include this gradle script in **<plugin_name>/android/build.gradle**.
+```
+// TODO(<github-username>): Remove this hack once androidx.lifecycle is included on stable. https://github.com/flutter/flutter/issues/42348
+afterEvaluate {
+    def containsEmbeddingDependencies = false
+    for (def configuration : configurations.all) {
+        for (def dependency : configuration.dependencies) {
+            if (dependency.group == 'io.flutter' &&
+                    dependency.name.startsWith('flutter_embedding') &&
+                    dependency.isTransitive())
+            {
+                containsEmbeddingDependencies = true
+                break
+            }
+        }
+    }
+    if (!containsEmbeddingDependencies) {
+        android {
+            dependencies {
+                def lifecycle_version = "2.1.0"
+                api "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+                api "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+            }
+        }
+    }
+}
+```
+
+10. Update **<plugin_name>/example/android/app/build.gradle** with androidX tests dependencies
+```
+androidTestImplementation 'androidx.test:runner:1.2.0'
+androidTestImplementation 'androidx.test:rules:1.2.0'
+androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+```
+
+11. Add tests files for `MainActivity` and `EmbeddingV1Activity` in **<plugin_name>/android/app/src/androidTest/java/<plugin-path>/**. You will need to create these directories. e.g.
+```
+package io.flutter.plugins.firebase.core;
+
+import androidx.test.rule.ActivityTestRule;
+import dev.flutter.plugins.e2e.FlutterRunner;
+import io.flutter.plugins.firebasecoreexample.MainActivity;
+import org.junit.Rule;
+import org.junit.runner.RunWith;
+
+@RunWith(FlutterRunner.class)
+public class MainActivityTest {
+  @Rule public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
+}
+```
+```
+package io.flutter.plugins.firebase.core;
+
+import androidx.test.rule.ActivityTestRule;
+import dev.flutter.plugins.e2e.FlutterRunner;
+import io.flutter.plugins.firebasecoreexample.EmbeddingV1Activity;
+import org.junit.Rule;
+import org.junit.runner.RunWith;
+
+@RunWith(FlutterRunner.class)
+public class EmbeddingV1ActivityTest {
+  @Rule
+  public ActivityTestRule<EmbeddingV1Activity> rule =
+      new ActivityTestRule<>(EmbeddingV1Activity.class);
+}
+```
+
+12. Add `e2e` and `flutter_driver` dev_dependencies to **<plugin_name>/pubspec.yaml** and **<plugin_name>/example/pubspec.yaml**.
+```
+e2e: ^0.2.1
+flutter_driver:
+  sdk: flutter
+```
+
+13. Update minimum version of environment in **<plugin_name>/pubspec.yaml**. Version `1.6.7` is the earliest that includes the v2 embedding code, however not all features were included in that version. You should verify manually that the plugin compiles with whatever version you specify as the minimum. e.g.
+```
+environment:
+  sdk: ">=2.0.0-dev.28.0 <3.0.0"
+  flutter: ">=1.6.7 <2.0.0"
+```
+
+14. Create a simple test in **<plugin_name>/test/<plugin_name>_e2e.dart.** For the purpose of testing the PR that adds the v2 embedding support, we're trying to test some very basic functionality of the plugin. This is a smoke test to ensure that the plugin properly registers with the new embedder. e.g.
+```
+import 'package:flutter_test/flutter_test.dart';
+import 'package:battery/battery.dart';
+import 'package:e2e/e2e.dart';
+
+void main() {
+  E2EWidgetsFlutterBinding.ensureInitialized();
+
+  testWidgets('Can get battery level', (WidgetTester tester) async {
+    final Battery battery = Battery();
+    final int batteryLevel = await battery.batteryLevel;
+    expect(batteryLevel, isNotNull);
+  });
+}
+```
+
+15. Test run the e2e tests locally. In a terminal:
+```
+cd <plugin_name>/example
+flutter build apk
+cd android
+./gradlew app:connectedAndroidTest -Ptarget=`pwd`/../../test/<plugin_name>_e2e.dart
+```
 
 # Basic Plugin
 
