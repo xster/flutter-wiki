@@ -45,19 +45,6 @@ if they are very important and deserve immediate attention.
 (Bugs marked "customer blocker" or "customer critical" must have the corresponding
 customer label as well, so that we know who is actually asking for the issue.)
 
-Some customers have their own separate bug systems, in which they track Flutter
-issues. We consider our GitHub issue list to be canonical. However, if there
-is a link from the issue in our bug system to the customer's issue in their bug
-system, and we have been granted access, we will follow that link and may
-communicate in that separate bug system when attempting to track down the issue.
-
-We also have two special customer labels. The "customer: crowd" label is used
-to represent bugs that are affecting large numbers of people; during initial
-[[Triage]], high-profile bugs get labeled in this way to bring them to the 
-attention of the engineering team. The "customer: product" label is used by
-the team to bring issues that product management and senior leads want resolved
-to the attention of the engineering team.
-
 Each week, we look at all the bugs marked with the "customer blocker" and "customer critical"
 labels, and see if we can address them ahead of other bugs (though there is no guarantee
 that we will; it mostly depends on how close a relationship we have with the relevant customer).
@@ -71,6 +58,37 @@ to know where to start.
 See also:
 
  * [Current customer blockers](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22)
+
+#### Coordinating between bug systems
+
+Some customers have their own separate bug systems, in which they track Flutter
+issues. We consider our GitHub issue list to be canonical. However, if there
+is a link from the issue in our bug system to the customer's issue in their bug
+system, and we have been granted access, we will follow that link and may
+communicate in that separate bug system when attempting to track down the issue.
+
+#### Special customer labels
+
+We have two special customer labels which are used exclusively with the "critical"
+and "blocker" labels.
+
+The "customer: product" label is used by the team to bring issues that product
+management and senior leads want resolved to the attention of the engineering team.
+
+The "customer: crowd" label is used to represent bugs that are affecting large
+numbers of people; during initial [[Triage]], high-profile bugs get labeled in
+this way to bring them to the attention of the engineering team. "Large numbers"
+is a judgement call. If dozens of people independently run into the same issue
+and file a bug and we end up realizing that they're all duplicates of each other,
+then that would be a good candidate. On the other hand, if there is an active
+campaign to get people to comment on a bug, then it's probably not legitimately
+a "customer: crowd" bug, because people generally report bugs without having to
+be convinced to do so.
+
+In general, a bug should only be marked "customer: crowd" "customer blocker" if it
+is so bad that it is literally causing large numbers of people to consider changing
+careers. Similarly, a bug should only be marked "customer: crowd" "customer critical"
+if people are threatening to never upgrade to the next release because of this bug.
 
 ### Thumbs-up reactions
 
