@@ -104,7 +104,7 @@ androidTestImplementation 'androidx.test:rules:1.2.0'
 androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 ```
 
-11. Add tests files for `MainActivity` and `EmbeddingV1Activity` in **<plugin_name>/android/app/src/androidTest/java/<plugin-path>/**. You will need to create these directories. e.g.
+11. Add tests files for `MainActivity` and `EmbeddingV1Activity` in **<plugin_name>/example/android/app/src/androidTest/java/<plugin-path>/**. You will need to create these directories. e.g.
 ```
 package io.flutter.plugins.firebase.core;
 
