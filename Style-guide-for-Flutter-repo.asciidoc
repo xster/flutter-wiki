@@ -1194,7 +1194,7 @@ Example:
 List<int> myList = [
   1,
   2,
-]
+];
 myList = <int>[3, 4];
 
 foo1(
