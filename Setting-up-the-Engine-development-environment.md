@@ -141,9 +141,9 @@ On Mac, you can simply use Xcode (e.g., `open out/host_debug_unopt/products.xcod
 
 ### VSCode with C/C++ Intellisense
 
-VSCode can also provide some IDE features using the [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). It will provide basic support with some missing header and incorrect jump to definitions on installation, without any configuration.
+VSCode can provide some IDE features using the [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). It will provide basic support on install without needing any additional configuration. There will probably be some issues, like header not found errors and incorrect jump to definitions.
 
-For better support, Intellisense also supports our `compile_commands.json`. Either symlink `src/out/compile_commands.json` to the project root at `src/flutter` OR provide an absolute path to it in the `c_cpp_properties.json` config file. See ["compile commands" in the c_cpp_properties.json reference](https://code.visualstudio.com/docs/cpp/c-cpp-properties-schema-reference).
+Intellisense can also use our `compile_commands.json` for more robust functionality. Either symlink `src/out/compile_commands.json` to the project root at `src/flutter` or provide an absolute path to it in the `c_cpp_properties.json` config file. See ["compile commands" in the c_cpp_properties.json reference](https://code.visualstudio.com/docs/cpp/c-cpp-properties-schema-reference). This will likely resolve the basic issues mentioned above.
 
 For adding IDE support to the Java code in the engine with VSCode, see ["Using VSCode as an IDE for the Android Embedding"](https://github.com/flutter/flutter/wiki/Setting-up-the-Engine-development-environment#using-vscode-as-an-ide-for-the-android-embedding).
 
