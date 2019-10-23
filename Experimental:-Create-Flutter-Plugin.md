@@ -68,9 +68,7 @@ public class EmbeddingV1Activity extends FlutterActivity {
 
 ```
 
-8. Migrate plugin and example app to androidx. See https://flutter.dev/docs/development/androidx-migration for details.
-
-9. To have the plugin support Flutter on branches master and stable, include this gradle script in **<plugin_name>/android/build.gradle**.
+8. To have the plugin support Flutter on branches master and stable, include this gradle script in **<plugin_name>/android/build.gradle**.
 ```
 // TODO(<github-username>): Remove this hack once androidx.lifecycle is included on stable. https://github.com/flutter/flutter/issues/42348
 afterEvaluate {
@@ -99,14 +97,14 @@ afterEvaluate {
 }
 ```
 
-10. Update **<plugin_name>/example/android/app/build.gradle** with androidX tests dependencies
+9. Update **<plugin_name>/example/android/app/build.gradle** with androidX tests dependencies
 ```
 androidTestImplementation 'androidx.test:runner:1.2.0'
 androidTestImplementation 'androidx.test:rules:1.2.0'
 androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 ```
 
-11. Add tests files for `MainActivity` and `EmbeddingV1Activity` in **<plugin_name>/example/android/app/src/androidTest/java/<plugin-path>/**. You will need to create these directories. e.g.
+10. Add tests files for `MainActivity` and `EmbeddingV1Activity` in **<plugin_name>/example/android/app/src/androidTest/java/<plugin-path>/**. You will need to create these directories. e.g.
 ```
 package io.flutter.plugins.firebase.core;
 
@@ -138,21 +136,21 @@ public class EmbeddingV1ActivityTest {
 }
 ```
 
-12. Add `e2e` and `flutter_driver` dev_dependencies to **<plugin_name>/pubspec.yaml** and **<plugin_name>/example/pubspec.yaml**.
+11. Add `e2e` and `flutter_driver` dev_dependencies to **<plugin_name>/pubspec.yaml** and **<plugin_name>/example/pubspec.yaml**.
 ```
 e2e: ^0.2.1
 flutter_driver:
   sdk: flutter
 ```
 
-13. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the the minimum version to `1.9.1+hotfix.4` which is the minimum version we can guarantee support for .e.g.
+12. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the the minimum version to `1.9.1+hotfix.4` which is the minimum version we can guarantee support for .e.g.
 ```
 environment:
   sdk: ">=2.0.0-dev.28.0 <3.0.0"
-  flutter: ">=1.9.1+hotfix.4 <2.0.0"
+  flutter: ">=1.9.1+hotfix.5 <2.0.0"
 ```
 
-14. Create a simple test in **<plugin_name>/test/<plugin_name>_e2e.dart.** For the purpose of testing the PR that adds the v2 embedding support, we're trying to test some very basic functionality of the plugin. This is a smoke test to ensure that the plugin properly registers with the new embedder. e.g.
+13. Create a simple test in **<plugin_name>/test/<plugin_name>_e2e.dart.** For the purpose of testing the PR that adds the v2 embedding support, we're trying to test some very basic functionality of the plugin. This is a smoke test to ensure that the plugin properly registers with the new embedder. e.g.
 ```
 import 'package:flutter_test/flutter_test.dart';
 import 'package:battery/battery.dart';
@@ -169,7 +167,7 @@ void main() {
 }
 ```
 
-15. Test run the e2e tests locally. In a terminal:
+14. Test run the e2e tests locally. In a terminal:
 ```
 cd <plugin_name>/example
 flutter build apk
