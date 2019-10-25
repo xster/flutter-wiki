@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#41415](https://github.com/flutter/flutter/pull/41415) Added `cacheWidth` and `cacheHeight` parameters to provide a custom decode size for images. This can be used to reduce memory usage of the ImageCache.
+
 * [#41814](https://github.com/flutter/flutter/pull/41814) Enables setting of semantics focused and focusable attributes within Focus widgets. Added `isFocusable` parameter to `matchesSemantics`.
 
 * [#41327](https://github.com/flutter/flutter/pull/41327) Incorporates link specific semantics.
