@@ -1,82 +1,68 @@
 _(This page is referenced by comments in the Flutter codebase.)_
 
-## Summary of rules for the golden repo
+_Use of [flutter/goldens](https://github.com/flutter/goldens) has been deprecated in favor of [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter)_
 
-* All tests
-  * Commit messages in [flutter/goldens](https://github.com/flutter/goldens) must reference the associated change in [flutter/flutter](https://github.com/flutter/flutter), in the form of `Goldens for https://github.com/flutter/flutter/issues/123456`
+## Flutter Gold
 
-* Updated Tests
-  * Don't update files, create new ones with an incremented version number.
+Golden file tests for `package:flutter` use [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) for baseline and version management of golden files. This allows for golden file testing on Linux, Windows, and MacOS. If you have questions about [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter), cc **@Piinks** on your pull request.
 
-  * Complete [Handling Breaking Changes](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes) when updating an existing golden file.
+---
 
-  * Delete obsolete files from [flutter/goldens](https://github.com/flutter/goldens) once your PR has landed.
-
-* Flutter Gold Triage
-  * Visit [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) to triage golden test results when post-submit testing has completed. The status of these tests can be seen on the [Flutter Dashboard](https://flutter-dashboard.appspot.com/build.html).
-
-
-
-## Adding a new golden file test
+### Creating a New Golden File Test
 
 Write your test as a normal test, using `testWidgets` and `await tester.pumpWidget` and so on.
 
-Put a `RepaintBoundary` widget around the part of the subtree that you want to verify. If you don't, the output will be a 2400x1800 image, since the tests by default use an 800x600 viewport with a device pixel ratio of 3.0.
+Put a `RepaintBoundary` widget around the part of the subtree that you want to verify. If you don't, the output will be a 2400x1800 image, since the tests by default use an 800x600 viewport with a device pixel ratio of 3.0. If you would like to further control the image size, put a `SizedBox` around your `RepaintBoundary` to set constraints.
 
 Add an expectation along the following lines:
 
 ```dart
   await expectLater(
     find.byType(RepaintBoundary),
-    matchesGoldenFile(
-      'test_name.subtest.subfile.png',
-      version: 0,
-    ),
+    matchesGoldenFile( 'test_name.subtest.subfile.png'),
   );
 ```
 
-The first argument is a finder that specifies the widget to screenshot.
+The argument to `matchesGoldenFile` is the filename for the screen shot. The part up to the first dot should exactly match the test filename (e.g. if your test is `widgets/foo_bar_test.dart`, use `foo_bar`). The `subtest` part should be unique to this `testWidgets` entry, and the part after that should be unique within the `testWidgets` entry. This allows each file to have multiple `testWidgets` tests each with their own namespace for the images, and then allows for disambiguation within each test in case there are multiple screen shots per test. 
 
-The arguments to `matchesGoldenFile` are the filename for the screen shot and a version number. For the filename, the part up to the first dot should exactly match the test filename (e.g. if your test is `widgets/foo_bar_test.dart`, use `foo_bar`). The `subtest` part should be unique to this `testWidgets` entry, and the part after that should be unique within the `testWidgets` entry. This allows each file to have multiple `testWidgets` tests each with their own namespace for the images, and then allows for disambiguation within each test in case there are multiple screen shots per test. The version number is used to differentiate historical golden files and is appended to the end of the filename. When we update a golden file, a new file is created rather than updating the old one, and the version number provides distinction between the old and the new, see [Updating a Golden File](https://github.com/flutter/flutter/wiki/Writing-a-golden-file-test-for-package%3Aflutter/_edit#updating-a-golden-file) below for more information.
+Golden tests may be executed locally on Linux, MacOS, and Windows platforms. All reference images can be found at [Flutter Gold baselines](https://flutter-gold.skia.org/list?fdiffmax=-1&fref=false&frgbamax=255&frgbamin=0&head=true&include=false&limit=50&master=false&match=name&metric=combined&neg=false&new_clstore=true&offset=0&pos=true&query=source_type%3Dflutter&sort=desc&unt=true). Some tests may have multiple golden masters for a given test, to account for rendering differences across platforms. The parameter set for each image is listed in each image digest to differentiate renderings. 
 
-We chose Linux as the host platform upon which we run golden file tests. All of the reference images found in [flutter/goldens](https://github.com/flutter/goldens) are generated on Linux. If you don't have a Linux box and need someone to generate the goldens for you, cc **@Hixie** on your PR. Otherwise, the golden file test will be skipped on local platforms that are not Linux. This is due to slight rendering differences across platforms, as we don't yet have the infrastructure in place to allow the developer to update their golden files on all three supported host platforms. 
+Once you have written your test, run `flutter test --update-goldens test/foo/bar_test.dart` in the `flutter` package directory (where the filename is the relative path to your new test). This will update the images in `bin/cache/pkg/skia_goldens/packages/flutter/test/`; the directories below that will match the hierarchy of the directories in the `test` directory of the `flutter` package. Verify that the images are what you expect; update your test and repeat this step until you are happy with the image.
 
-Once you have written your test, run `flutter test --update-goldens test/foo/bar_test.dart` in the `flutter` package directory (where the filename is the relative path to your new test). This will update the images in `bin/cache/pkg/goldens/packages/flutter/test/`; the directories below that will match the hierarchy of the directories in the `test` directory of the `flutter` package. Verify that the images are what you expect; update your test and repeat this step until you are happy.
+When running `flutter test` without the `--update-goldens` flag, your test will pass, as it does not yet have a baseline for comparison on the [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) dashboard. The test will be recognized as new, and provide output for validation.
 
-Run `flutter test` again, but without the `--update-goldens` flag, to verify that the goldens match. If they don't, check that you're using the right filenames, and that they're all unique. It's not uncommon to copy-paste the expectation lines and so accidentally have duplicate golden filenames.
+When you are happy with your image, you are ready to submit your PR for review. The reviewer should also verify your golden image(s), so make sure to include the golden(s) in your PR description. During pre-submit testing, the new golden file test is further recognized as a new test, and will pass.
 
-Commit the images to the goldens repo. You do this by going into the `bin/cache/pkg/goldens/` directory, which is actually a git checkout of our goldens repo, using `git add` for all your new files, using `git commit -a` to create a commit (in the commit message, link to the bug you are fixing, if possible, e.g. "Goldens for https://github.com/flutter/flutter/issues/17262"), and then pushing the files to the repo using `git push git@github.com:flutter/goldens.git master`.
+When your pull request is merged (:tada:), and post-submit testing has been completed (the status of which can be seen on the [Flutter Build Dashboard](https://flutter-dashboard.appspot.com/build.html)), your change will need to be triaged. Your change and the affected files will be compiled into a digest on the [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) dashboard for this purpose. 
 
-This updates the goldens repo but does not make the images actually available yet. To make them available, you then update the `bin/internal/goldens.version` file in your Flutter repo to the hash of the [commit you just pushed to the goldens repo](https://github.com/flutter/goldens/commits/master).
+Review the digest and the images that were generated, making sure they look as expected. Currently, we generate images for Linux, Mac and Windows platforms. It is common for there to be slight differences between them. Click the checkmark to approve the change, completing triage. 
 
-Now run `flutter test` again, without the `--update-goldens` flag, to verify that the goldens match the uploaded images.
-
-If they do, you are ready to submit your PR for review. The reviewer should also verify your golden files, so make sure to point to your goldens repo commit in your PR description. If you find the golden tests fail on some platforms, see the notes above about adding a skip line.
-
-
-## Updating a golden file test
-
-If renderings change, then rather than replacing the golden file in-situ, create new files with new names (incrementing the version number), and update the tests to point to those. Then, add the old file names [to the README file](https://github.com/flutter/goldens/edit/master/README.md).
-
-This allows multiple people to contribute simultaneously without conflicting with each other.
-
-Changes such as these constitute a breaking change, and should follow [Handling Breaking Changes](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes). This includes marking your PR with the `severe: API break` and `will affect goldens` labels, as well as updating the [Changelog](https://github.com/flutter/flutter/wiki/Changelog).
-
-Once your main PR has landed, please come back and delete the obsolete files listed in the README.
-
-## Flutter Gold
-
-Golden file tests for `package:flutter` are currently transitioning to use [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) for baseline and version management of golden files. When this transition is complete, the [flutter/goldens](https://github.com/flutter/goldens) repository will no longer be used for testing. If you have questions about Flutter Gold, cc **@Piinks** on your PR.
-
-### Post-Submit Triage
-
-You may notice the **FlutterGitHubBot** remind you to complete triage on Flutter Gold after merging a PR that includes a golden file test. 
-
-Once post-submit testing has completed on your change, the status of which can be seen on the [Flutter Dashboard](https://flutter-dashboard.appspot.com/build.html), you will see your change and the affected files compiled into a digest on the Flutter Gold dashboard. 
-
-Review the digest and the images that were generated, making sure they look as expected. Currently, we generate images for Linux, Mac and Windows platforms. It is common for there to be slight differences between them. The digest of each image will also include a visual diff and a closest match to images it has seen before.
-If you are pleased with your change, click the checkmark to approve the change and complete triage. 
+And that’s it! Your new golden file will be checked in as the baseline for your new test.
 
 *Triage permission is restricted to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
 
+---
 
+### Updating a Golden File Test
+
+If renderings change, then the golden baseline in [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) will need to be updated.
+
+When developing your change, local testing will produce a failure along with visual diff output. This visual diff will be generated using the golden baseline from [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) that matches the current paramset of your testing environment (currently based on platform). This allows for quick iterations and validation of your change. Locally, this test will not pass until the new baseline has been checked in.
+
+When you are happy with your golden change, you are ready to submit your PR for review. The reviewer should also verify your golden image(s), so make sure to include the golden changes you have made in your PR description. During pre-submit testing, the updated golden file test will only pass after activating an ignore for your change. 
+
+And ignore can be put in place for the affected test(s) and pull request through the [Flutter Gold dashboard ignores page](https://flutter-gold.skia.org/ignores). Click the `+` button to add a new ignore. You will need to specify:
+a `duration` of time it will be active for
+a link to your pull request that is making the change under `note`
+the tests affected by your change (you may select multiple tests for the `filter`)
+ Once the ignore has been activated, the specified tests for the specified pull request will pass, allowing you to land your change.
+
+Changes such as these constitute a breaking change, and should follow [Handling Breaking Changes](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes). This includes marking your PR with the `severe: API break` and `will affect goldens` labels, as well as updating the [Changelog](https://github.com/flutter/flutter/wiki/Changelog). You may notice the **FlutterGitHubBot** apply labels and remind you to complete triage on Flutter Gold after merging a PR that includes a golden file test. 
+
+When your pull request is merged (:tada:), and post-submit testing has been completed (the status of which can be seen on the [Flutter Build Dashboard](https://flutter-dashboard.appspot.com/build.html)), your change will need to be triaged. Your change and the affected files will be compiled into a digest on the [Flutter Gold dashboard ignores page](https://flutter-gold.skia.org/ignores) for this purpose.
+
+Revisit your ignore to review the digest and the images that were generated, making sure they look as expected. Currently, we generate images for Linux, Mac and Windows platforms. It is common for there to be slight differences between them. Click the checkmark to approve the change and complete triage. 
+
+And that’s it! The baseline for your golden file test(s) will be updated with your change.
+
+*Triage permission is restricted to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
