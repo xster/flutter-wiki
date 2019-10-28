@@ -52,10 +52,12 @@ When developing your change, local testing will produce a failure along with vis
 When you are happy with your golden change, you are ready to submit your PR for review. The reviewer should also verify your golden image(s), so make sure to include the golden changes you have made in your PR description. During pre-submit testing, the updated golden file test will only pass after activating an ignore for your change. 
 
 And ignore can be put in place for the affected test(s) and pull request through the [Flutter Gold dashboard ignores page](https://flutter-gold.skia.org/ignores). Click the `+` button to add a new ignore. You will need to specify:
-a `duration` of time it will be active for
-a link to your pull request that is making the change under `note`
-the tests affected by your change (you may select multiple tests for the `filter`)
- Once the ignore has been activated, the specified tests for the specified pull request will pass, allowing you to land your change.
+
+- a `duration` of time it will be active for
+- a link to your pull request that is making the change under `note`
+- the tests affected by your change (you may select multiple tests for the `filter`)
+
+Once the ignore has been activated, the specified tests for the specified pull request will pass, allowing you to land your change.
 
 Changes such as these constitute a breaking change, and should follow [Handling Breaking Changes](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes). This includes marking your PR with the `severe: API break` and `will affect goldens` labels, as well as updating the [Changelog](https://github.com/flutter/flutter/wiki/Changelog). You may notice the **FlutterGitHubBot** apply labels and remind you to complete triage on Flutter Gold after merging a PR that includes a golden file test. 
 
