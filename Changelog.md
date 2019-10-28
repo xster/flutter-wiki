@@ -7,6 +7,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#42479](https://github.com/flutter/flutter/pull/42479) Update `DropdownButton` `hint` and `disabledHint` behavior to have consistent alignment and constraints.
+
+* [#39857](https://github.com/flutter/flutter/pull/39857) Update `ToggleButton` default constraints to default to Material design specifications instead of `RawMaterialButton`'s.
+
 * [#41415](https://github.com/flutter/flutter/pull/41415) Added `cacheWidth` and `cacheHeight` parameters to provide a custom decode size for images. This can be used to reduce memory usage of the ImageCache.
 
 * [#41814](https://github.com/flutter/flutter/pull/41814) Enables setting of semantics focused and focusable attributes within Focus widgets. Added `isFocusable` parameter to `matchesSemantics`.
