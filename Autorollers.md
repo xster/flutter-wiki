@@ -10,7 +10,7 @@ Skia also uses an auto-roller for Fuchsia; see <https://autoroll-internal.skia.o
 
 ## Engine to Framework
 
-The engine is automatically rolled to the framework.
+The engine is automatically rolled to the framework. It is configured by <https://skia.googlesource.com/buildbot/+/refs/heads/master/autoroll/config/flutter-engine-flutter.json>.
 
 The bot updates <https://github.com/flutter/flutter/blob/master/bin/internal/engine.version> to point to the latest revision of the engine *whose artifacts built successfully*, as determined by looking at the [Engine Console](https://ci.chromium.org/p/flutter/g/engine/console).
 
