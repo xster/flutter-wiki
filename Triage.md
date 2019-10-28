@@ -114,6 +114,10 @@ For PRs, each PR should match one of the following categories:
 
 # Critical triage
 
+## News
+
+We also want to regularly check https://developer.apple.com/news/ for updates that might affect us.
+
 ## Issues
 
 When doing the critical issue triage (as opposed to the new issue triage as above), we check each bug in the following lists:
@@ -130,10 +134,6 @@ When doing the critical issue triage (as opposed to the new issue triage as abov
 
 In addition, a bot takes care of these:
 * [Bugs pending feedback](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22waiting+for+customer+response%22+sort%3Aupdated-desc): close bugs with outstanding requests after 4 weeks, remove the label for bugs with answers.
-
-## News
-
-We also want to regularly check https://developer.apple.com/news/ for updates that might affect us.
 
 ## PRs
 
