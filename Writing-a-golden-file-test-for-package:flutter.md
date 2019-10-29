@@ -54,6 +54,7 @@ When you are happy with your golden change, you are ready to submit your PR for 
 And ignore can be put in place for the affected test(s) and pull request through the [Flutter Gold dashboard ignores page](https://flutter-gold.skia.org/ignores). Click the `+` button to add a new ignore. You will need to specify:
 
 - a `duration` of time it will be active for
+  - be conservative in choosing a duration. All other pull requests will be unaffected by this ignore. Your ignore should be active long enough for post-submit checks to finish once it has landed, and triage to be completed.
 - a link to your pull request that is making the change under `note`
 - the tests affected by your change (you may select multiple tests for the `filter`)
 
