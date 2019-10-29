@@ -39,7 +39,7 @@ Review the digest and the images that were generated, making sure they look as e
 
 And that’s it! Your new golden file will be checked in as the baseline for your new test.
 
-*Triage permission is restricted to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
+*Triage permission is currently restricted to googlers, with plans to extend to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
 
 ---
 
@@ -68,4 +68,4 @@ Revisit your ignore to review the digest and the images that were generated, mak
 
 And that’s it! The baseline for your golden file test(s) will be updated with your change.
 
-*Triage permission is restricted to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
+*Triage permission is currently restricted to googlers, with plans to extend to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
