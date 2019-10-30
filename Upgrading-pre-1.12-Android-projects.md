@@ -18,7 +18,7 @@ _This guide assumes you haven't manually modified your Android host project for 
 
 If you opt to migrate your standard `flutter create`d project, follow the following steps:
 
-1. Open android/app/src/main/java/[your.package.name]/MainActivity.java
+1. Open android/app/src/main/java/[your.package.name]/MainActivity.java.
 1. Change the existing code 
 ```java
 package [your.package.name];
@@ -44,6 +44,14 @@ package [your.package.name];
 import io.flutter.embedding.android.FlutterActivity;
 
 public class MainActivity extends FlutterActivity { }
+```
+3. Open android/app/src/main/AndroidManifest.xml.
+4. Remove all `<meta-data>` tags with key `android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"`.
+5. Add a new `<meta-data>` tag under `<application>` with content
+```xml
+<meta-data
+    android:name="flutterEmbedding"
+    android:value="2" />
 ```
 
 Your app should still build as normal (such as via `flutter build apk`) but you're now using the new Android classes. 
