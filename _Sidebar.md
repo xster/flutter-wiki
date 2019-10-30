@@ -66,6 +66,7 @@ Flutter Wiki
 
 ## Experimental features
 - [[Add Flutter to existing apps]]
+  - [Upgrade pre-1.8.4 iOS projects](https://github.com/flutter/flutter/wiki/Upgrading-Flutter-added-to-existing-iOS-Xcode-project)
 - [Binding to native code using dart:ffi](https://flutter.dev/docs/development/platform-integration/c-interop)
 - [Building a web application with Flutter](https://flutter.dev/docs/get-started/web)
 - [[Code generation in Flutter]]
