@@ -2,8 +2,9 @@ Work is ongoing to extend Flutter to support desktop as a target environment, al
 
 ## Current Status
 
-A high-level overview of the status of each platform is provided below. For details, see
-[the source](https://github.com/flutter/engine/tree/master/shell/platform/).
+A high-level overview of the status of each platform is provided below. For details see
+[the list of desktop-related bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22a%3A+desktop%22),
+as well as [the embedding source](https://github.com/flutter/engine/tree/master/shell/platform/).
 
 **IMPORTANT:** The Flutter desktop APIs are still in early stages of development, and are **subject to change
 without warning**. No backwards compatibility, either API or ABI, will be provided. Expect
