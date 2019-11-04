@@ -2,10 +2,10 @@
 
 These instructions are for the ecosystem team as they implement parallel plugin support for v2 embedding and be testable on Firebase TestLab. See current version of the `battery` plugin for an example: https://github.com/flutter/plugins/tree/master/packages/battery
 
-1. Update the main plugin class (`*Plugin.java`) to implement `FlutterPlugin`. For more complex plugins, you can separate the `FlutterPlugin` and `MethodCallHandler` into two classes. See the next section, **Basic Plugin**, for more details on accessing app resources with the v2 embedding. 
-
-Also, note that the plugin should still contain the static `registerWith()` method to remain compatible with apps that don't use v2 embedding.
-
+1. Update the main plugin class (`*Plugin.java`) to implement `FlutterPlugin`[[source](https://github.com/flutter/engine/blob/master/shell/platform/android/io/flutter/embedding/engine/plugins/FlutterPlugin.java)]. For more complex plugins, you can separate the `FlutterPlugin` and `MethodCallHandler` into two classes. See the next section, **Basic Plugin**, for more details on accessing app resources with the v2 embedding.
+<br><br>
+Also, note that the plugin should still contain the static `registerWith()` method to remain compatible with apps that don't use v2 embedding. The easiest thing to do is move the logic from `registerWith()` into a private method that both `registerWith()` and `onAttachedToEngine()` can call if possible.  Either `registerWith()` or `onAttachToEngine()` will be called, not both.
+<br><br>
 In addition, you should document all non-overridden public members within the plugin. In an add-to-app scenario, these classes will be accessible to a developer and require documentation.
 
 2. **(Optional)** If your plugin needs an `Activity` reference, also implement `ActivityAware`.
