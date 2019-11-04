@@ -6,6 +6,8 @@ These instructions are for the ecosystem team as they implement parallel plugin 
 <br><br>
 Also, note that the plugin should still contain the static `registerWith()` method to remain compatible with apps that don't use v2 embedding. The easiest thing to do is move the logic from `registerWith()` into a private method that both `registerWith()` and `onAttachedToEngine()` can call if possible.  Either `registerWith()` or `onAttachToEngine()` will be called, not both.
 <br><br>
+If you are creating channels in your `onAttachToEngine()`, there is no need to cleanup those creations in `onDetachFromEngine()` and creating them again the second time `onAttachToEngine()` is called is fine.
+<br><br>
 In addition, you should document all non-overridden public members within the plugin. In an add-to-app scenario, these classes will be accessible to a developer and require documentation.
 
 2. **(Optional)** If your plugin needs an `Activity` reference, also implement `ActivityAware`.
