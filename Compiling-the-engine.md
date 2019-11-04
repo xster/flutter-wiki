@@ -21,6 +21,7 @@ Run the following steps, from the `src` directory created in [Setting up the Eng
 
 3. Prepare your build files
     * `./flutter/tools/gn --android --unoptimized` for device-side executables.
+    * `./flutter/tools/gn --android --unoptimized --android-cpu=arm64` for newer 64-bit Android devices.
     * `./flutter/tools/gn --android --android-cpu x86 --unoptimized` for x86 emulators.
     * `./flutter/tools/gn --android --android-cpu x64 --unoptimized` for x64 emulators.
     * `./flutter/tools/gn --unoptimized` for host-side executables, needed to compile the code.
