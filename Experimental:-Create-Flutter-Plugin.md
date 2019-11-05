@@ -98,11 +98,24 @@ afterEvaluate {
 }
 ```
 
-9. Update **<plugin_name>/example/android/app/build.gradle** with androidX tests dependencies
+9. Update **<plugin_name>/example/android/app/build.gradle** to replace references to `android.support.test` with `androidx.test`: 
+
 ```
+defaultConfig {
+   ...
+  testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  ...
+}
+```
+
+```
+dependencies {
+...
 androidTestImplementation 'androidx.test:runner:1.2.0'
 androidTestImplementation 'androidx.test:rules:1.2.0'
 androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+...
+}
 ```
 
 10. Add tests files for `MainActivity` and `EmbeddingV1Activity` in **<plugin_name>/example/android/app/src/androidTest/java/<plugin_path>/**. You will need to create these directories. e.g.
