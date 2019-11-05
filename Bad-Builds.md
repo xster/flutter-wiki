@@ -5,6 +5,9 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 ## all versions to _present_:
  * Android Add-to-App apps will crash if a view is presented, dismissed, presented again, and any user interaction occurs [#31139](https://github.com/flutter/flutter/issues/31139)
 
+## v1.10.15-pre.396 - _present_
+ * Android plugins using auto registration doesn't work [#44161](https://github.com/flutter/flutter/issues/44161)
+
 ## v1.9.2 - _present_
  * iOS Apps built with Bitcode will crash on launch [#42458](https://github.com/flutter/flutter/issues/42458)
 
