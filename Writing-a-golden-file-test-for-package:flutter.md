@@ -1,10 +1,8 @@
 _(This page is referenced by comments in the Flutter codebase.)_
 
-## Flutter Gold
-
 Golden file tests for `package:flutter` use [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) for baseline and version management of golden files. This allows for golden file testing on Linux, Windows, and MacOS. If you have questions about [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter), cc **@Piinks** on your pull request.
 
-### Creating a New Golden File Test
+## Creating a New Golden File Test
 
 Write your test as a normal test, using `testWidgets` and `await tester.pumpWidget` and so on.
 
@@ -37,7 +35,7 @@ And that’s it! Your new golden file will be checked in as the baseline for you
 
 *Triage permission is currently restricted to googlers, with plans to extend to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
 
-### Updating a Golden File Test
+## Updating a Golden File Test
 
 If renderings change, then the golden baseline in [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) will need to be updated.
 
