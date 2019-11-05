@@ -157,11 +157,11 @@ flutter_driver:
   sdk: flutter
 ```
 
-12. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the the minimum version to `1.9.1+hotfix.4` which is the minimum version we can guarantee support for .e.g.
+12. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the minimum version to `1.9.1+hotfix.4` which is the minimum version we can guarantee support for .e.g.
 ```
 environment:
   sdk: ">=2.0.0-dev.28.0 <3.0.0"
-  flutter: ">=1.9.1+hotfix.5 <2.0.0"
+  flutter: ">=1.9.1+hotfix.4 <2.0.0"
 ```
 
 13. Create a simple test in **<plugin_name>/test/<plugin_name>_e2e.dart.** For the purpose of testing the PR that adds the v2 embedding support, we're trying to test some very basic functionality of the plugin. This is a smoke test to ensure that the plugin properly registers with the new embedder. e.g.
