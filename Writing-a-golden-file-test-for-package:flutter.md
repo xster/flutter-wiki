@@ -1,12 +1,8 @@
 _(This page is referenced by comments in the Flutter codebase.)_
 
-_Use of [flutter/goldens](https://github.com/flutter/goldens) has been deprecated in favor of [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter)_
-
 ## Flutter Gold
 
 Golden file tests for `package:flutter` use [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) for baseline and version management of golden files. This allows for golden file testing on Linux, Windows, and MacOS. If you have questions about [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter), cc **@Piinks** on your pull request.
-
----
 
 ### Creating a New Golden File Test
 
@@ -41,8 +37,6 @@ And that’s it! Your new golden file will be checked in as the baseline for you
 
 *Triage permission is currently restricted to googlers, with plans to extend to members of flutter-hackers. For more information, see [Contributor Access](https://github.com/flutter/flutter/wiki/Contributor-access).* 
 
----
-
 ### Updating a Golden File Test
 
 If renderings change, then the golden baseline in [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) will need to be updated.
@@ -51,12 +45,11 @@ When developing your change, local testing will produce a failure along with vis
 
 When you are happy with your golden change, you are ready to submit your PR for review. The reviewer should also verify your golden image(s), so make sure to include the golden changes you have made in your PR description. During pre-submit testing, the updated golden file test will only pass after activating an ignore for your change. 
 
-And ignore can be put in place for the affected test(s) and pull request through the [Flutter Gold dashboard ignores page](https://flutter-gold.skia.org/ignores). Click the `+` button to add a new ignore. You will need to specify:
+An ignore can be put in place for the affected test(s) and pull request through the [Flutter Gold dashboard ignores page](https://flutter-gold.skia.org/ignores). Click the `+` button to add a new ignore. You will need to specify:
 
-- a `duration` of time it will be active for
-  - be conservative in choosing a duration. All other pull requests will be unaffected by this ignore. Your ignore should be active long enough for post-submit checks to finish once it has landed, and triage to be completed.
-- a link to your pull request that is making the change under `note`
-- the tests affected by your change (you may select multiple tests for the `filter`)
+- a `duration` of time it will be active for. Be conservative in choosing a duration (e.g. 2 months). Other pull requests will be unaffected by this ignore. Your ignore should be active long enough for post-submit checks to finish once it has landed, and triage to be completed.
+- a link to your pull request that is making the change under `note`.
+- the tests affected by your change (you may select multiple tests for the `filter`).
 
 Once the ignore has been activated, the specified tests for the specified pull request will pass, allowing you to land your change.
 
