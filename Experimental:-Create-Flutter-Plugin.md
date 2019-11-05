@@ -15,7 +15,7 @@ In addition, you should document all non-overridden public members within the pl
 3. **(Optional)** If your plugin is expected to be held in a background `Service` at any point in time, implement `ServiceAware`.
 
 4. Update example app `MainActivity.java` to use the v2 embedding `FlutterActivity`.  You may have to make a public constructor for you plugin class if one didn't exist already.  e.g.
-```
+```java
 package io.flutter.plugins.firebasecoreexample;
 
 import io.flutter.embedding.android.FlutterActivity;
@@ -32,7 +32,7 @@ public class MainActivity extends FlutterActivity {
 ```
 
 5. **(Optional)** Use `ShimPluginRegistry` to add plugins that don’t yet support the v2 embedding. e.g.
-```
+```java
 ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
 PathProviderPlugin.registerWith(
         shimPluginRegistry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
@@ -41,7 +41,7 @@ VideoPlayerPlugin.registerWith(
 ```
 
 6. Create an `EmbeddingV1Activity.java` that uses the v1 embedding in the same folder as `MainActivity`. e.g.
-```
+```java
 package io.flutter.plugins.firebasecoreexample;
 
 import android.os.Bundle;
@@ -58,7 +58,7 @@ public class EmbeddingV1Activity extends FlutterActivity {
 ```
 
 7. Add the `EmbeddingV1Activity` to the **<plugin_name>/example/android/app/src/main/AndroidManifest.xml**. e.g.
-```
+```xml
 <activity
     android:name=".EmbeddingV1Activity"
     android:theme="@style/LaunchTheme"
@@ -119,7 +119,7 @@ androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 ```
 
 10. Add tests files for `MainActivity` and `EmbeddingV1Activity` in **<plugin_name>/example/android/app/src/androidTest/java/<plugin_path>/**. You will need to create these directories. e.g.
-```
+```java
 package io.flutter.plugins.firebase.core;
 
 import androidx.test.rule.ActivityTestRule;
@@ -133,7 +133,7 @@ public class MainActivityTest {
   @Rule public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
 }
 ```
-```
+```java
 package io.flutter.plugins.firebase.core;
 
 import androidx.test.rule.ActivityTestRule;
@@ -151,7 +151,7 @@ public class EmbeddingV1ActivityTest {
 ```
 
 11. Add `e2e` and `flutter_driver` dev_dependencies to **<plugin_name>/pubspec.yaml** and **<plugin_name>/example/pubspec.yaml**.
-```
+```yaml
 e2e: ^0.2.1
 flutter_driver:
   sdk: flutter
@@ -159,7 +159,7 @@ flutter_driver:
 
 12. Manually register the E2E plugin in MainActivity.java alongside any other plugins used by the example app.
 
-```
+```java
 package io.flutter.plugins.packageinfoexample;
 
 import dev.flutter.plugins.e2e.E2EPlugin;
@@ -179,14 +179,14 @@ public class MainActivity extends FlutterActivity {
 ```
 
 13. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the minimum version to `1.9.1+hotfix.4` which is the minimum version we can guarantee support for .e.g.
-```
+```yaml
 environment:
   sdk: ">=2.0.0-dev.28.0 <3.0.0"
   flutter: ">=1.9.1+hotfix.4 <2.0.0"
 ```
 
 14. Create a simple test in **<plugin_name>/test/<plugin_name>_e2e.dart.** For the purpose of testing the PR that adds the v2 embedding support, we're trying to test some very basic functionality of the plugin. This is a smoke test to ensure that the plugin properly registers with the new embedder. e.g.
-```
+```java
 import 'package:flutter_test/flutter_test.dart';
 import 'package:battery/battery.dart';
 import 'package:e2e/e2e.dart';
@@ -203,7 +203,7 @@ void main() {
 ```
 
 15. Test run the e2e tests locally. In a terminal:
-```
+```bash
 cd <plugin_name>/example
 flutter build apk
 cd android
