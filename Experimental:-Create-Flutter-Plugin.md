@@ -14,8 +14,7 @@ In addition, you should document all non-overridden public members within the pl
 
 3. **(Optional)** If your plugin is expected to be held in a background `Service` at any point in time, implement `ServiceAware`.
 
-4. Update example app `MainActivity.java` to use the v2 embedding `FlutterActivity`. e.g.
-
+4. Update example app `MainActivity.java` to use the v2 embedding `FlutterActivity`.  You may have to make a public constructor for you plugin class if one didn't exist already.  e.g.
 ```
 package io.flutter.plugins.firebasecoreexample;
 
