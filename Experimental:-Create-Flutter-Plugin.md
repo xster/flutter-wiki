@@ -157,14 +157,35 @@ flutter_driver:
   sdk: flutter
 ```
 
-12. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the minimum version to `1.9.1+hotfix.4` which is the minimum version we can guarantee support for .e.g.
+12. Manually register the E2E plugin in MainActivity.java alongside any other plugins used by the example app.
+
+```
+package io.flutter.plugins.packageinfoexample;
+
+import dev.flutter.plugins.e2e.E2EPlugin;
+import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.embedding.engine.FlutterEngine;
+import io.flutter.plugins.packageinfo.PackageInfoPlugin;
+
+public class MainActivity extends FlutterActivity {
+  // TODO(jackson): Remove this once v2 of GeneratedPluginRegistrant rolls to stable.
+  // https://github.com/flutter/flutter/issues/42694
+  @Override
+  public void configureFlutterEngine(FlutterEngine flutterEngine) {
+    flutterEngine.getPlugins().add(new PackageInfoPlugin());
+    flutterEngine.getPlugins().add(new E2EPlugin());
+  }
+}
+```
+
+13. Update minimum Flutter version of environment in **<plugin_name>/pubspec.yaml**. All plugins moving forward will set the minimum version to `1.9.1+hotfix.4` which is the minimum version we can guarantee support for .e.g.
 ```
 environment:
   sdk: ">=2.0.0-dev.28.0 <3.0.0"
   flutter: ">=1.9.1+hotfix.4 <2.0.0"
 ```
 
-13. Create a simple test in **<plugin_name>/test/<plugin_name>_e2e.dart.** For the purpose of testing the PR that adds the v2 embedding support, we're trying to test some very basic functionality of the plugin. This is a smoke test to ensure that the plugin properly registers with the new embedder. e.g.
+14. Create a simple test in **<plugin_name>/test/<plugin_name>_e2e.dart.** For the purpose of testing the PR that adds the v2 embedding support, we're trying to test some very basic functionality of the plugin. This is a smoke test to ensure that the plugin properly registers with the new embedder. e.g.
 ```
 import 'package:flutter_test/flutter_test.dart';
 import 'package:battery/battery.dart';
@@ -181,7 +202,7 @@ void main() {
 }
 ```
 
-14. Test run the e2e tests locally. In a terminal:
+15. Test run the e2e tests locally. In a terminal:
 ```
 cd <plugin_name>/example
 flutter build apk
