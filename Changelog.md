@@ -7,6 +7,10 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#43848](https://github.com/flutter/flutter/pull/43848) Don't allow Disabled InkWells to be focusable.
+
+* [#42449](https://github.com/flutter/flutter/pull/42449) Increase TextField's minimum height from 40 to 48.
+
 * [#42479](https://github.com/flutter/flutter/pull/42479) Update `DropdownButton` `hint` and `disabledHint` behavior to have consistent alignment and constraints.
 
 * [#39857](https://github.com/flutter/flutter/pull/39857) Update `ToggleButton` default constraints to default to Material design specifications instead of `RawMaterialButton`'s.
