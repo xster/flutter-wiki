@@ -59,9 +59,9 @@ After clicking `Finish` on
 the last page you might consider taking a break. Android Studio is going to do a
 `flutter build aar` for you (which takes a couple minutes) then Gradle sync.
 Once all that is done you can start editing your Android app to use the Flutter
-module. 
+module (see the section [Use the Flutter module from your Java code](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#use-the-flutter-module-from-your-java-code)).
 
-You can skip the step "Make the host app depend on the Flutter module";
+You can skip the step [Make the host app depend on the Flutter module](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#make-the-host-app-depend-on-the-flutter-module);
 Android Studio has implemented both the source and library dependencies.
 
 
