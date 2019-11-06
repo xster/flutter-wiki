@@ -43,6 +43,22 @@ This creates a `some/path/my_flutter/` Flutter module project with some Dart
 code to get you started and a `.android/` hidden subfolder that wraps up the
 module project in an Android library.
 
+#### Using Android Studio to create a Flutter module
+If you create your new Flutter module using Android Studio you can skip some of the
+manual editing steps. To do this, open your Android app in Android Studio. Use
+the menu 'File > New > New Module...' to create your Flutter module. The New Module
+Wizard opens with a palette of options. Scroll down to find the ones for Flutter.
+Choose the one labeled `Flutter Module`. Clicking `Next` takes you to Flutter's
+new module wizard pages. Fill them out as you would for a Flutter module project.
+Note that there is no setting for where the module is locate; it will always (for
+not) be created as a child directory of the Android app. After clicking `Finish` on
+the last page you might consider taking a break. Android Studio is going to do a
+`flutter build aar` for you (which takes a couple minutes) then Gradle sync.
+Once all that is done you can start editing your Android app to use the Flutter
+module. You can skip the step "Make the host app depend on the Flutter module";
+Android Studio has implemented both the source and library dependencies.
+
+
 ### Host app requirements
 Before attempting to connect your Flutter module project to your host Android app, 
 please ensure that your host Android app declares the following source 
