@@ -1,8 +1,4 @@
-**_Everything in this doc and linked from this doc is experimental. These details WILL change. Do not use these instructions or APIs in production code because we will break you._**
-
 # Adding Flutter to Android
-
-This document (and linked documents) refers to a new and improved version of Flutter's Android embedding, which is still under heavy development. 
 
 ## Choose your adventure
 
