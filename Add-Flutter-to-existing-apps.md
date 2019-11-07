@@ -52,19 +52,14 @@ The New Module
 Wizard opens with a palette of options. Scroll down to find the ones for Flutter.
 Choose the one labeled `Flutter Module`. Clicking `Next` takes you to Flutter's
 new module wizard pages. Fill them out as you would for a Flutter module project.
-Note that there is no setting for where the module is locate; it will always (for
-not) be created as a child directory of the Android app. 
 
-After clicking `Finish` on
-the last page you might consider taking a break. Android Studio is going to do a
-`flutter build aar` for you (which takes a couple minutes) then Gradle sync.
-Once all that is done you can start editing your Android app to use the Flutter
+After the module is created you can start editing your Android app to use the Flutter
 module (see the section [Use the Flutter module from your Java code](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#use-the-flutter-module-from-your-java-code)).
 
 You may need to change your Project view to see the Flutter files. The Project Files option works well.
 
 You can skip the step [Make the host app depend on the Flutter module](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#make-the-host-app-depend-on-the-flutter-module);
-Android Studio has implemented both the source and library dependencies.
+Android Studio has added the source dependency for you.
 
 The are still a couple glitches in this support. Using Android Studio 3.5, each Gradle sync causes
 Dart support to be dropped for the Flutter module. Each Dart file edit has a button at the top to
