@@ -8,7 +8,7 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 ## v1.10.15-pre.396 - _present_
  * Android plugins using auto registration doesn't work [#44161](https://github.com/flutter/flutter/issues/44161)
 
-## v1.9.2 - _present_
+## v1.9.2 - v1.10.14
  * iOS Apps built with Bitcode will crash on launch [#42458](https://github.com/flutter/flutter/issues/42458)
 
 ## v1.10.8
