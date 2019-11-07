@@ -201,66 +201,6 @@ If you came here looking for information about Flutter's new Android embedding, 
 
 This guide refers to usage of classes under `io.flutter.facade.*`, e.g., `io.flutter.facade.FlutterFragment`. These classes are in the process of being deprecated. The deprecated `io.flutter.facade.FlutterFragment` will be replaced by the newer `io.flutter.embedding.android.FlutterFragment`. Since both version of `FlutterFragment` are in technical preview, and neither one of them is API stable, we recommend using [the new FlutterFragment](https://github.com/flutter/flutter/wiki/Experimental:-Add-Flutter-Fragment).
 
-#### Using Flutter's old facade classes
-
-Use the Flutter module's Java API to add Flutter views to your host app. This
-can be done by directly using `Flutter.createView`:
-```java
-// MyApp/app/src/main/java/some/package/MainActivity.java
-fab.setOnClickListener(new View.OnClickListener() {
-  @Override
-  public void onClick(View view) {
-    View flutterView = Flutter.createView(
-      MainActivity.this,
-      getLifecycle(),
-      "route1"
-    );
-    FrameLayout.LayoutParams layout = new FrameLayout.LayoutParams(600, 800);
-    layout.leftMargin = 100;
-    layout.topMargin = 200;
-    addContentView(flutterView, layout);
-  }
-});
-```
-It is also possible to create a `FlutterFragment` that takes care of lifecycle
-by itself:
-```java
-// MyApp/app/src/main/java/some/package/SomeActivity.java
-fab.setOnClickListener(new View.OnClickListener() {
-  @Override
-  public void onClick(View view) {
-    FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-    tx.replace(R.id.someContainer, Flutter.createFragment("route1"));
-    tx.commit();
-  }
-});
-```
-Above we use the string `"route1"` to tell the Dart code which widget to display
-in the Flutter view. The `lib/main.dart` file of the Flutter module project
-template should `switch` on (or otherwise interpret) the provided route string,
-available as `window.defaultRouteName`, to determine which widget to create and
-pass to `runApp`. Schematically,
-```dart
-import 'dart:ui';
-import 'package:flutter/material.dart';
-
-void main() => runApp(_widgetForRoute(window.defaultRouteName));
-
-Widget _widgetForRoute(String route) {
-  switch (route) {
-    case 'route1':
-      return SomeWidget(...);
-    case 'route2':
-      return SomeOtherWidget(...);
-    default:
-      return Center(
-        child: Text('Unknown route: $route', textDirection: TextDirection.ltr),
-      );
-  }
-}
-```
-It is entirely up to you which route strings you want and how to interpret them.
-
 ### Building and running your app
 You build and run `MyApp` in exactly the same way that you did before you added
 the Flutter module dependency, typically using Android Studio. The same goes for
