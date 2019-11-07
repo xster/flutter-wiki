@@ -1,5 +1,3 @@
-_**Everything in this doc and linked from this doc is experimental. These details WILL change. Do not use these instructions or APIs in production code because we will break you.**_
-
 # Add a Flutter Activity
 
 `FlutterActivity` can be used directly to launch a Flutter app, or `FlutterActivity` can be subclassed for desired customizations.
