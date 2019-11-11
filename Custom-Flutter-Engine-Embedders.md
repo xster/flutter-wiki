@@ -1,6 +1,6 @@
 The Flutter Engine is window toolkit agnostic. If you want to build Flutter embedders on one of the platforms not supported out of the box (i.e, iOS & Android), this page is for you.
 
-This is a very low level API and is not suitable for beginners. The [Flutter Desktop Embedding](https://github.com/google/flutter-desktop-embedding) project uses this API and provides a more full-featured embedder implementation for macOS, Linux & Windows.
+This is a very low level API and is not suitable for beginners.
 
 * The window toolkit agnostic component of the Flutter engine is available as a dynamic library in the `flutter_engine` GN target in [`//shell/platform/embedder:flutter_engine`](https://github.com/flutter/engine/blob/080fbcb1759e5916f0d6cdcdfd945c053320e6b3/shell/platform/embedder/BUILD.gn#L51).
 * That target must be built as part of the host GN build. Such build are already available for desktop Linux & Mac. If you want to target another platform, you will have to configure a GN toolchain for the same.
