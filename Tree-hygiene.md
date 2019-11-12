@@ -419,19 +419,23 @@ In those cases, to make a change that will require developers to change their co
     heading "Changes since 1.2.22".
 
 Where possible, even "breaking" changes should be made in a backwards-compatible way,
-for example by introducing a new class and marking the old class `@deprecated`. When
-doing this, include a description of how to transition in the deprecation notice, for
+for example by introducing a new class and marking the old class as deprecated. When
+doing this, include a description of how to transition in the deprecation notice, and
+specify what version was the last version to have this feature not deprecated. For
 example:
 
 ```dart
 // TODO(username): Remove this when it goes to stable, https://...link-to-issue.../...
-@Deprecated('FooInterface has been deprecated because ...; it is recommended that you transition to the new FooDelegate.')
+@Deprecated(
+  'FooInterface has been deprecated because ...; it is recommended that you transition to the new FooDelegate. '
+  'This feature was deprecated after v1.2.3.'
+)
 class FooInterface {
   /// ...
 }
 ```
 
-If you use `@deprecated`, make sure to remember to actually remove the feature a few
+If you deprecate an API, make sure to remember to actually remove the feature a few
 months later (after the next stable release), do not just leave it forever! To make sure
 that you don't forget, add it to the [[Pending Deprecations]] page.
 
