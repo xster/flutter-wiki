@@ -10,7 +10,7 @@ Those classes better support real world scenarios where the FlutterActivity isn'
 
 Your existing full-Flutter projects aren't immediately affected and will continue to work as before for the foreseeable future. 
 
-However, the new Android wrappers also introduces a new set of Android plugins development APIs. Plugins developed exclusively on the new plugins API will not work on older pre-1.12 Android projects. Building a pre-1.12 Android project that uses plugins created after 1.12 will yield a build-time error unless the plugin developer explicitly opted to create a second backward compatible implementation. 
+However, the new Android wrappers also introduce a new set of Android plugin development APIs. Plugins developed exclusively on the new plugins API will not work on older pre-1.12 Android projects. Building a pre-1.12 Android project that uses plugins created after 1.12 will yield a build-time error unless the plugin developer explicitly opted to create a second backward compatible implementation. 
 
 # Full-Flutter app migration
  
