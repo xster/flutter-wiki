@@ -72,8 +72,9 @@ New configuration:
 </activity>
 ```
 
-5. Remove all `<meta-data>` tags with key `android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"`.
-6. If a launch screen/splash screen is still desired, do the following:
+5. Update splash screen behavior (if splash behavior is desired).
+
+Remove all `<meta-data>` tags with key `android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"`.
 
 Add a launch theme to `styles.xml` that configures the desired launch screen as a background `Drawable`:
 ```xml
@@ -107,7 +108,7 @@ Configure `FlutterActivity` to start with your launch theme and then shift to yo
 ```
 
 
-7. Add a new `<meta-data>` tag under `<application>` with the following content:
+6. Add a new `<meta-data>` tag under `<application>`.
 ```xml
 <meta-data
     android:name="flutterEmbedding"
@@ -118,4 +119,80 @@ Your app should still build as normal (such as via `flutter build apk`) but you'
 
 # Add-to-app migration
 
-TODO
+This section details how to take add-to-app scenarios that were built using Flutter's experimental embedding, and transition that code to Flutter's new stable embedding.
+
+## Same steps as full-Flutter
+
+Some instructions from the "Full-Flutter app migration" section above still apply. Follow the above steps for:
+
+3. Remove the reference to `FlutterApplication` from the application tag.
+5. Update splash screen behavior (if splash behavior is desired).
+6. Add a new `<meta-data>` tag under `<application>`.
+
+## Changes specific to add-to-app
+
+If you invoke `FlutterMain.startInitialization(...)` or `FlutterMain.ensureInitializationComplete(...)` anywhere in your code, you should remove those calls. Flutter now initializes itself at the appropriate time.
+
+### Migrating FlutterActivity Uses
+
+Add-to-app scenarios often involve modifications to subclasses of `FlutterActivity`. For example, such a scenario might introduce new `MethodChannel`s, a custom `FlutterEngine` instance, custom splash screen behavior, or other behaviors that require overriding existing methods. Therefore, whereas full-Flutter apps can delete their `MainActivity` and replace it with a standard `FlutterActivity`, you will need to retain your subclass so that you can keep your behavior overrides.
+
+If your add-to-app use-cases do not modify behavior within `FlutterActivity`, you should delete your subclasses and replace them with standard `FlutterActivity`s as described in the previous section.
+
+If your add-to-app use-cases do require modifying behavior within `FlutterActivity`, you need to migrate your code from the old `io.flutter.app.FlutterActivity` to the new `io.flutter.embedding.android.FlutterActivity`.
+
+From:
+```java
+package [your.package.name];
+
+import android.os.Bundle;
+import io.flutter.app.FlutterActivity;
+import io.flutter.plugins.GeneratedPluginRegistrant;
+
+public class MainActivity extends FlutterActivity {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    GeneratedPluginRegistrant.registerWith(this);
+  }
+
+  // ...some amount of custom code for your app is here.
+}
+```
+
+To:
+```java
+package [your.package.name];
+
+import io.flutter.embedding.android.FlutterActivity;
+
+public class MainActivity extends FlutterActivity {
+  // You do not need to override onCreate() any more, nor do you
+  // need to invoke GeneratedPluginRegistrant. Flutter now does that
+  // on your behalf.
+
+  // ...retain whatever custom code you had from before.
+}
+```
+
+Your `FlutterActivity` subclass is now up to date with the new, stable Android embedding.
+
+### Migrating FlutterFragment uses
+
+The experimental embedding provides a class called `io.flutter.facade.FlutterFragment`, along with other classes in the `io.flutter.facade` package. The entire `io.flutter.facade` package is deprecated and you should not use any classes in that package.
+
+The experimental `io.flutter.facade.FlutterFragment` has been replaced by `io.flutter.embedding.android.FlutterFragment`, which is a dramatically more capable implementation of a Flutter experience within a `Fragment`.
+
+If you are instantiating a `io.flutter.facade.FlutterFragment` via `Flutter.createFragment(...)`, you should delete any such calls and instantiate the new `io.flutter.embedding.android.FlutterFragment` via one of the following factory methods:
+
+ * `FlutterFragment.createDefault()`
+ * `FlutterFragment.withNewEngine()`
+ * `FlutterFragment.withCachedEngine(...)`
+
+The use of these factory methods are discussed in depth in website guides at http://flutter.dev.
+
+### Migrating FlutterView uses
+
+The deprecated `io.flutter.facade.Flutter` class has a factory method called `createView(...)`. This method is deprecated, along with all other code in the `io.flutter.facade` package.
+
+Flutter does not currently provide convenient APIs for utilizing Flutter at the `View` level, so the use of a `FlutterView` should be avoided, if possible. However, it is technically feasible to display a `FlutterView`, if required. Be sure to use `io.flutter.embedding.android.FlutterView` instead of `io.flutter.view.FlutterView`. You can instantiate the new `FlutterView` just like any other Android `View`. Then, follow instructions in the associated Javadocs to display Flutter via a `FlutterView`.
