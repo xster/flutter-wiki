@@ -2,6 +2,20 @@ This page has some hints about debugging the engine.
 
 See also [[Crashes]] for advice on handling engine crashes (specifically around obtaining stack traces, and reporting crashes in AOT Dart code).
 
+## Running a Flutter app with a local engine
+
+Once the appropriate version of the engine is built, run your Flutter app with:
+
+`flutter run --local-engine=XXXX`
+
+to run an app with the local engine where `XXXX` should be replaced with the version you wish to use. For example, use `--local-engine=android_debug_unopt` to run a debug android engine or `--local-engine=ios_debug_sim_unopt` to run a debug iOS simulator engine.
+
+It is important to always have a `host_XXXX` version of the engine built when using a local engine since Flutter uses the host build's version of Dart.
+
+## Bisecting a roll failure
+
+If the engine roll is failing (see [Autorollers]), you can use `git bisect` on the engine repo to track down the offending commit, using the `--local-engine` command as described above to run the failing framework test with each version of the engine.
+
 ## Tracing OpenGL calls in Skia
 
 All OpenGL calls in Skia are guarded by either the `GR_GL_CALL_NOERRCHECK` or `GR_GL_CALL_RET_NOERRCHECK` macros. Trace events may be added in these macros to trace all GL calls made by Skia, for example [in a patch like this](https://gist.github.com/chinmaygarde/607eb86d5447615b9cf2804a4f8fb1ce).
