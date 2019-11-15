@@ -28,6 +28,8 @@ For example, to generate a description from hash deadbeef to beefdead:
 $ ./tools/engine_roll_pr_desc.sh deadbeef..beefdead
 ```
 
+_See also: [Debugging the engine], which includes instructions on bisecting a roll failure._
+
 ## Dart to Engine
 
 The Dart SDK is automatically rolled into the engine on a regular basis, following the steps laid out at the [Rolling Dart](https://github.com/flutter/flutter/wiki/Rolling-Dart) page. Since this process is a bit more involved, this autoroller does not use the Skia infrastructure and has a custom dashboard hosted at [go/dart-sdk-roller-dashboard](http://go/dart-sdk-roller-dashboard) (**note: this is likely only accessible from a machine on the Google network**). Using the dashboard, the autoroller can be paused, rolls can be triggered and cancelled, and rolls to a particular revision can be done.
