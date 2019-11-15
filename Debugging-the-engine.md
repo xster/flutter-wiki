@@ -4,7 +4,7 @@ See also [[Crashes]] for advice on handling engine crashes (specifically around 
 
 ## Running a Flutter app with a local engine
 
-Once the appropriate version of the engine is built, run your Flutter app with:
+Once the appropriate version of the engine is built (see [[Compiling the engine]]), run your Flutter app with:
 
 `flutter run --local-engine=XXXX`
 
@@ -14,7 +14,7 @@ It is important to always have a `host_XXXX` version of the engine built when us
 
 ## Bisecting a roll failure
 
-If the engine roll is failing (see [Autorollers]), you can use `git bisect` on the engine repo to track down the offending commit, using the `--local-engine` command as described above to run the failing framework test with each version of the engine.
+If the engine roll is failing (see [[Autorollers]]), you can use `git bisect` on the engine repo to track down the offending commit, using the `--local-engine` command as described above to run the failing framework test with each version of the engine.
 
 ## Tracing OpenGL calls in Skia
 
