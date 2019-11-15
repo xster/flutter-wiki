@@ -7,7 +7,6 @@ Depending on the platform you are making changes for, you may be interested in a
 * [Compiling for macOS or Linux](#compiling-for-macos-or-linux)
 * [Compiling for Windows](#compiling-for-windows)
 * [Compiling for the Web](#compiling-for-the-web)
-* [Running a Flutter app with a local engine](#running-a-flutter-app-with-a-local-engine)
 
 ## Compiling for Android (from macOS or Linux)
 
