@@ -151,12 +151,4 @@ flutter run --local-engine=host_debug_unopt -d chrome
 flutter test --local-engine=host_debug_unopt test/path/to/your_test.dart
 ```
 
-## Running a Flutter app with a local engine
-
-Once the appropriate version of the engine is built, run your Flutter app with:
-
-`flutter run --local-engine=XXXX`
-
-to run an app with the local engine where `XXXX` should be replaced with the version you wish to use. For example, use `--local-engine=android_debug_unopt` to run a debug android engine or `--local-engine=ios_debug_sim_unopt` to run a debug iOS simulator engine.
-
-It is important to always have a `host_XXXX` version of the engine built when using a local engine since Flutter uses the host build's version of Dart.
+_See also: [Debugging the engine], which includes instructions on running a Flutter app with a local engine._
