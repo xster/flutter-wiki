@@ -1445,6 +1445,20 @@ return foo.x == x
     && foo.z == z;
 ```
 
+### Prefer `+=` over `++`
+
+We generally slightly prefer `+=` over `++`.
+
+In some languages/compilers postfix `++` is an antipattern because of performance reasons, and so it's easier to just avoid it in general.
+
+Because of the former, some people will use the prefix `++`, but this leads to statements that lead with punctuation, which is aesthetically displeasing.
+
+In general, mutating variables as part of larger expressions leads to confusion about the order of operations, and complects the increment with another calculation.
+
+Using `++` does not make it obvious that the underlying variable is actually being mutated, whereas `+=` more clearly does (it's an assignment with an `=` sign).
+
+Finally, `+=` is more convenient when changing the increment to a number other than 1.
+
 Conventions
 -----------
 
