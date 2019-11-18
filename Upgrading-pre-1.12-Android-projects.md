@@ -18,7 +18,7 @@ _This guide assumes you haven't manually modified your Android host project for 
 
 If you opt to migrate your standard `flutter create`d project, follow the following steps:
 
-1. Delete `android/app/src/main/java/[your.package.name]/MainActivity.java`.
+1. Delete `android/app/src/main/java/[your/package/name]/MainActivity.java`. If no custom code has been added then you can delete the entire directory structure at `[your/package/name]` because it only contains `MainActivity.java`.
 2. Open `android/app/src/main/AndroidManifest.xml`.
 3. Remove the reference to `FlutterApplication` from the application tag.
 
@@ -84,6 +84,8 @@ Add a launch theme to `styles.xml` that configures the desired launch screen as 
 </style>
 ```
 
+If you created your Flutter project with `flutter create` then you likely already have a `LaunchTheme` defined, along with a drawable called `launch_background`. You can re-use that configuration and adjust it as desired.
+
 Add a normal theme that to `styles.xml` that should replace the launch screen when the Android process is fully initialized:
 ```xml
 <!-- You can name this style whatever you'd like -->
@@ -91,6 +93,8 @@ Add a normal theme that to `styles.xml` that should replace the launch screen wh
     <item name="android:windowBackground">@drawable/[your_normal_background_drawable]</item>
 </style>
 ```
+
+The "normal theme" draws the background behind your Flutter experience. That background is typically seen for a brief moment just before the first Flutter frame renders. The "normal theme" also controls Android's status bar and navigation bar visual properties for the duration of your Flutter experience.
 
 Configure `FlutterActivity` to start with your launch theme and then shift to your normal theme as follows:
 ```xml
@@ -167,13 +171,14 @@ package [your.package.name];
 import io.flutter.embedding.android.FlutterActivity;
 
 public class MainActivity extends FlutterActivity {
-  // You do not need to override onCreate() any more, nor do you
-  // need to invoke GeneratedPluginRegistrant. Flutter now does that
-  // on your behalf.
+  // You do not need to override onCreate() in order to invoke
+  // GeneratedPluginRegistrant. Flutter now does that on your behalf.
 
-  // ...retain whatever custom code you had from before.
+  // ...retain whatever custom code you had from before (if any).
 }
 ```
+
+Some apps may have required pre-warming a Flutter experience. It is now recommended that all add-to-app use-cases pre-warm Flutter experiences to achieve optimal visual performance when initially rendering a Flutter UI. Please refer to the [Flutter guide for pre-warming a FlutterEngine]() (TODO: mattcarroll) to update your code for pre-warming Flutter.
 
 Your `FlutterActivity` subclass is now up to date with the new, stable Android embedding.
 
@@ -181,7 +186,7 @@ Your `FlutterActivity` subclass is now up to date with the new, stable Android e
 
 The experimental embedding provides a class called `io.flutter.facade.FlutterFragment`, along with other classes in the `io.flutter.facade` package. The entire `io.flutter.facade` package is deprecated and you should not use any classes in that package.
 
-The experimental `io.flutter.facade.FlutterFragment` has been replaced by `io.flutter.embedding.android.FlutterFragment`, which is a dramatically more capable implementation of a Flutter experience within a `Fragment`.
+The experimental `io.flutter.facade.FlutterFragment` has been replaced by `io.flutter.embedding.android.FlutterFragment`, which was designed for a much broader set of use-cases than the original `FlutterFragment`.
 
 If you are instantiating a `io.flutter.facade.FlutterFragment` via `Flutter.createFragment(...)`, you should delete any such calls and instantiate the new `io.flutter.embedding.android.FlutterFragment` via one of the following factory methods:
 
