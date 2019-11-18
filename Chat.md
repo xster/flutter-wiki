@@ -13,6 +13,7 @@ We have different channels for different purposes:
 | #welcome | Welcome message. | Only admins can post.<br>Anyone can read.
 | #announcements | Flutter announcements (e.g. breaking changes). | Only team members can post (but not frequently).<br>Anyone can read.
 | #general | Chat about anything related to Flutter. | Anyone.
+| #flutteristas | General discussion channel for women and non-binary Flutter users. | Flutteristas (see below).
 | #help | People asking for our help. | Anyone.
 | #dart | Questions about the Dart language. | Anyone.
 | #tree-status | Announcements about whether the trees are open or closed. | Anyone, but discussion should happen elsewhere.
@@ -27,7 +28,7 @@ We have different channels for different purposes:
 
 Most channels have a rate limit applied which reduces the frequency with which people who are not yet "team members" (contributors) can post.
 
-The #hidden-chat channel is the only channel that is not publicly-readable; you have to be a member of the "team" role to see it.
+The #flutterista and #hidden-chat channels are not publicly-readable. For #flutterista you have to be a member of the Flutterista group to see it. For #hidden-chat you have to be a member of the "team" role to see it.
 
 ## New channels
 
