@@ -36,7 +36,9 @@ If you need a new channel, raise the topic in #server-support. Channels are chea
 
 If you find your team's channel is hard to follow due to having too many topics discussed at once, ask for a new channel.
 
-If you would like a channel for subcommunities, e.g. #women or #china, that should be fine. (Subcommunities that are already overrepresented in the main channels, e.g. #english-speakers, are less likely to be good candidates for dedicated channels.)
+If you would like a channel for subcommunities, e.g. #français or #china, that should be fine. (Subcommunities that are already overrepresented in the main channels, e.g. #english-speakers, are less likely to be good candidates for dedicated channels.)
+
+For practical reasons, we do not use Discord for chat groups limited to specific customers. For example, if your company wants a private discussion channel with the Flutter team, we would not use Discord.
 
 Each channel describes its topic in the channel description. Please read the channel description before posting in a channel, to make sure you're using the appropriate one.
 
