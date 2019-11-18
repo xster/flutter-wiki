@@ -205,6 +205,12 @@ review by marking it RSLGTM. If you mark a patch as RSLGTM, you are still
 sharing the responsibility for the patch with its author. Reviewing a
 patch as RSLGTM should be a rare event.
 
+If you are not a regular Flutter contributor (someone with commit access),
+we very much welcome your reviews on code contributions in the form of comments
+on the code, but please refrain from approving or LGTM'ing changes, as it
+confuses PR authors, who may think your approval is authoritative and merge
+the PR prematurely.
+
 
 ## Landing a patch
 
