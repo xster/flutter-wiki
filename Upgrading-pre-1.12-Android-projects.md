@@ -96,12 +96,19 @@ Add a normal theme that to `styles.xml` that should replace the launch screen wh
 
 The "normal theme" draws the background behind your Flutter experience. That background is typically seen for a brief moment just before the first Flutter frame renders. The "normal theme" also controls Android's status bar and navigation bar visual properties for the duration of your Flutter experience.
 
-Configure `FlutterActivity` to start with your launch theme and then shift to your normal theme as follows:
+Configure `FlutterActivity` to start with your launch theme and then shift to your normal theme. Also specify that you want your launch screen to continue being displayed until Flutter renders its first frame:
 ```xml
 <activity android:name="io.flutter.embedding.android.FlutterActivity"
   android:theme="@style/LaunchTheme"
   // some code omitted
   >
+  <!-- Specify that the launch screen should continue being displayed -->
+  <!-- until Flutter renders its first frame. -->
+  <meta-data
+    android:name="io.flutter.embedding.android.SplashScreenDrawable"
+    android:resource="@drawable/launch_background" />
+
+  <!-- Theme to apply as soon as Flutter begins rendering frames -->
   <meta-data
     android:name="io.flutter.embedding.android.NormalTheme"
     android:resource="@style/NormalTheme"
