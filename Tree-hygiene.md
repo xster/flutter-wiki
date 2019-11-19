@@ -50,7 +50,8 @@ The general process for submitting code to a Flutter repository is as follows:
 7. Make sure your PR passes all the pre-commit tests. Consider running some of the
    post-commit tests locally (see the
    [devicelab](https://github.com/flutter/flutter/blob/master/dev/devicelab/README.md)
-   directory).
+   directory). If any tests break, especially the `customer_testing` tests, please
+   see the breaking change policy section below for details on how to proceed.
 
    Wait for Cirrus to give the green light before merging a PR. Cirrus
    runs a bunch of pre-commit checks (e.g. see the tests for the
