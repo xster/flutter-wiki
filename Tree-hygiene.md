@@ -21,7 +21,7 @@ The general process for submitting code to a Flutter repository is as follows:
    discuss your design on the issue. You may find it useful to create a Google Doc to
    solicit feedback (use the template at [flutter.dev/go/template](https://flutter.dev/go/template)).
    You may wish to e-mail the mailing list, or discuss the topic
-   on the contributors Gitter channel. The more buy-in you get from the rest of the
+   on our [[Chat]] channels. The more buy-in you get from the rest of the
    team (especially the relevant leads), the easier the rest of the process will be.
    You can put the label "proposal" on your issue to indicate that you have a design
    up for discussion in the issue.
