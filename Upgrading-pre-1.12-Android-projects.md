@@ -57,7 +57,7 @@ Previous configuration:
 </activity>
 ```
 
-New configuration:
+New configuration (only the first 3 lines changed):
 ```xml
 <activity android:name="io.flutter.embedding.android.FlutterActivity"
   android:theme="@android:style/Theme.Black.NoTitleBar" 
