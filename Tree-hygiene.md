@@ -440,3 +440,5 @@ In other words:
 ```
 
 Using this standard form ensures that we can write a script to detect all deprecated APIs and remove them. We have a test that verifies that this syntax is followed.
+
+_This policy does not require that deprecated features be removed promptly, nor does it require that we limit the use of deprecations. While you are encouraged to please use moderation and judgement in deciding to deprecate something, there is no quota, and there is no time limit to how long a deprecated feature may remain supported before it is removed. We will, at a later time, introduce a policy for removing deprecated features, in a "first-in-first-out" fashion (this is why the syntax required here mentions a version number)._
