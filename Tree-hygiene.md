@@ -370,9 +370,11 @@ The process for making breaking changes is as follows:
 
 ### 1. Determine if your change is a breaking change
 
-The first step in making a breaking change is to implement the change you wish to see and run the existing tests against your new code (without having changed the tests first). Changes will fall into four categories:
+The first step in making a breaking change is to implement the change you wish to see and run the existing tests against your new code (without having changed the tests first). Changes will fall into the following categories:
 
 * Changes that break (i.e. require changes to) one or more of the contributed tests (such as those in the [`customer_testing`](https://github.com/flutter/tests) shard on `flutter/flutter` PRs). These are considered "breaking changes". (Some contributors have also provided additional test suites that we can run that are not public, notably Google allows us to run several tens of thousands of proprietary tests on each commit. If you have a significant test suite that you would like to have be considered part of the breaking change definition, please contact Hixie at ian@hixie.ch.)
+
+* Changes that break the widgets or devicelab tests. These are currently considered breaking changes. Eventually once we have lots of contributed tests they will stop being considered breaking changes.
 
 * Changes that are obviously egregiously breaking but do not actually break any contributed tests. For example, adding a required argument to a public API method that we suspect is widely used. By courtesy, we will treat these as breaking changes also. Whether something falls into this category is a judgement call.
 
