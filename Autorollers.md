@@ -14,9 +14,16 @@ The engine is automatically rolled to the framework. It is configured by <https:
 
 The bot updates <https://github.com/flutter/flutter/blob/master/bin/internal/engine.version> to point to the latest revision of the engine *whose artifacts built successfully*, as determined by looking at the [Engine Console](https://ci.chromium.org/p/flutter/g/engine/console).
 
-If you make a breaking change to the engine, you'll need to land the change to `engine.version` manually in
-the same PR to the framework as the one where you fix the framework to work with the new API. In general, it
-is very advisable to not make a breaking change to our APIs, and thus avoid this problem entirely.
+
+### Making a breaking change
+
+Our [breaking change policy](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes) disallows making changes to the engine that require changes to the framework. If you find the need to do this, you should instead make a soft-breaking change which you can land in multiple phases, as described in that process.
+
+If for some reason you need an exemption to this policy, contact @Hixie. 
+
+### Doing a manual roll
+
+To roll the engine manually in the case you have a breaking change exemption, you'll need to land the change to `engine.version` manually in the same PR to the framework as the one where you fix the framework to work with the new API.
 
 When you change the `engine.version` file locally, you should delete `$FLUTTER_ROOT/bin/cache` and then run `flutter precache` to ensure that all your local artifacts and snapshots are updated. You can then run tests and be sure that they are running against the latest version of the assets you need.
 
@@ -29,6 +36,7 @@ $ ./tools/engine_roll_pr_desc.sh deadbeef..beefdead
 ```
 
 _See also: [[Debugging the engine]], which includes instructions on bisecting a roll failure._
+
 
 ## Dart to Engine
 
