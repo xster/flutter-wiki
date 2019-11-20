@@ -357,101 +357,88 @@ to the original PR and to the revert PR so that people can follow the breadcrumb
 
 ## Handling breaking changes
 
-In general, we want to avoid making changes to Flutter, its dependencies,
-our plugins, or our packages, that force developers using Flutter to
-change their code in order to upgrade to new versions of flutter.
+_This is a new section that is not yet in operation._
+
+In general, we want to avoid making changes to Flutter, our plugins, or our packages, that force developers using Flutter to change their code in order to upgrade to new versions of Flutter. See [our compatibility policy](https://flutter.dev/resources/compatibility).
 
 Sometimes, however, doing this is necessary for the greater good. We want our APIs to be
 intuitive; if being backwards-compatible requires making an API into something that we would
 never have designed that way unless forced to by circumstances, then we should instead break
 the API and make it good.
 
-In those cases, to make a change that will require developers to change their code:
+The process for making breaking changes is as follows:
 
- 1. Put the `severe: API break` label on the relevant issue. You must have
-    an issue, see the overview section above!
+### 1. Determine if your change is a breaking change
 
-    - If your change affects an *existing golden file* test, also include the
-      `will affect goldens` label on your change, and check [Writing a golden
-      file test for package flutter](https://github.com/flutter/flutter/wiki/Writing-a-golden-file-test-for-package:flutter) for guidelines to update the golden properly.
+The first step in making a breaking change is to implement the change you wish to see and run the existing tests against your new code (without having changed the tests first). Changes will fall into four categories:
 
- 2. Send an e-mail to <mailto:flutter-announce@googlegroups.com> to socialize
-    your proposed change. The purpose of this e-mail is to see if you can
-    get consensus around your change. **You are not telling people that
-    the change will happen, you are asking them for permission.**
-    The e-mail should include the following:
+* Changes that break (i.e. require changes to) one or more of the contributed tests (such as those in the [`customer_testing`](https://github.com/flutter/tests) shard on `flutter/flutter` PRs). These are considered "breaking changes". (Some contributors have also provided additional test suites that we can run that are not public, notably Google allows us to run several tens of thousands of proprietary tests on each commit. If you have a significant test suite that you would like to have be considered part of the breaking change definition, please contact Hixie at ian@hixie.ch.)
 
-    - A subject line that clearly summarizes the proposed change and sounds like it
-      matters (so that people can spot these e-mails among the noise). Prefix
-      the subject line with `[Breaking Change]`.
+* Changes that are obviously egregiously breaking but do not actually break any contributed tests. For example, adding a required argument to a public API method that we suspect is widely used. By courtesy, we will treat these as breaking changes also. Whether something falls into this category is a judgement call.
 
-    - A summary of each change you propose.
+* Other changes that do not break any tests, but where we can imagine reasonable scenarios where developers would be affected negatively. By courtesy, engineers should announce these changes by sending an e-mail to flutter-announce and listing it on our [[Changelog]] wiki page (such that they will be included in our release notes), but we will not go through this breaking change process for these changes. The intent here is to reduce the cost of making breaking changes for most such changes unless someone has contributed a test that shows they are affected.
 
-    - A brief justification for the change.
+* Changes that don't break any tests and which, while technically breaking, are in our judgement unlikely to cause much trouble. We will pretend that such changes are not breaking changes and make them without any effort to prevent breakages.
 
-    - A link to the relevant issue, and any PRs you may have already posted relating to
-      this change. The issue you link to should be the one on which you put the
-      `severe: API break` label as discussed above.
+These definitions are binding. If you think you need an exemption to this policy, please contact Hixie on the #hackers [[Chat]] channel. If a breaking change lands without following this policy and without an explicit exemption from @Hixie, it must be reverted.
 
-    - Clear mechanical steps for porting the code from the old form to the new
-      form, if possible. If not possible, clear steps for figuring out how to
-      port the code.
+### 2. Evaluate the breaking change proposal
 
-    - A sincere offer to help port code, which includes the preferred venue for
-      contacting the person who made the change.
+If you discover that your change would be a breaking change as defined above, we must carefully evaluate it. Create a design document ([use this template](https://flutter.dev/go/template)). You want to describe the change in detail, and ask for feedback. Things you should include are:
 
-    - A request that people notify you if this change will be a problem,
-      perhaps by discussing the change in the issue tracker on the pull request.
+* What problem are you solving?
+* What does migrating code to your proposed new API look like? Show several before and after examples.
+* What other alternatives did you consider?
+* A request for feedback. Is the change valuable?
 
-    You may not have permission to post to this list yet. If you do not, please contact
-    [Ray](rischpater@google.com).
+Link to your design document from your issue. Ping @RedBrogdon on the #hackers-devrel channel in [[Chat]] and point him to your design document. Bring it up in the #general channel as well. Send an e-mail to the flutter-dev@ mailing list asking for feedback on your design doc. Allow for several (two or three) days of discussion. 
 
- 3. **If folks agree that the benefits of changing the API outweigh the stability
-    costs**, you can proceed with the normal code review process for making
-    changes. You should leave some time between steps 2 and 3 (at a bare minimum
-    24 hours during the work week so that people in all time zones have had a
-    chance to see it, but ideally a week or so).
+Consider if you really need to make this change. In general, merely renaming a class to make things slightly clearer is insufficient value to justify a breaking change. Such changes leave behind a legacy of old tutorials, YouTube videos, StackOverflow comments, etc, that reference the old name, and so any improvement to the developer experience can be easily offset by the added burden on our ecosystem as a whole. (We record such changes we wish we could make on https://github.com/flutter/flutter/issues/24722, feel free to add it there.)
 
- 4. If you landed a breaking change, add a bullet point to the top section of
-    the [Changelog page on the wiki](https://github.com/flutter/flutter/wiki/Changelog),
-    describing your change either and
-    linking to your e-mail in [the mailing list archives](https://groups.google.com/forum/#!forum/flutter-announce)
-    or including the same information, in particular what the change is, why we made
-    the change, and how to migrate code affected by the change. If you are unsure about whether or not your
-    breaking change is "notable" enough to include in the changelog, err on the side of caution and include it
-    in the changelog. 
 
-    To figure out the correct version heading for the changelog run
-    `git fetch upstream && flutter --version`. For example, if it says
-    "Flutter 1.2.23-pre.10" in the output your changelog entry should be under
-    heading "Changes since 1.2.22".
+### 3. Turn the change into a two-phase soft-breaking change
 
-Where possible, even "breaking" changes should be made in a backwards-compatible way,
-for example by introducing a new class and marking the old class as deprecated. When
-doing this, include a description of how to transition in the deprecation notice, and
-specify what version was the last version to have this feature not deprecated. For
-example:
+Rather than making a change that immediately breaks existing code, adjust your PR so that it introduces the new functionality, API, behavior change, etc, in an opt-in fashion.
+
+_For example, rather than replacing a widget with another, introduce the new widget and deprecate the old one. Rather than changing the order in which a certain argument is processed, provide a flag that selects which order the arguments will be processed in._
+
+Once that has landed, work with the people whose tests broke to update their code and tests.
+
+Finally, once you have migrated all the affected tests, create a second PR that removes the old functionality, API, or behavior. It should no longer be a breaking change at this point.
+
+When changing the semantics of an API with a temporary opt-in, a three-phase change is needed (adding the new API and opt-in, then removing the old API, then removing the opt-in.)
+
+If possible, avoid four-phase deprecations (adding a new API with a temporary name and deprecating an old API, removing the old API, changing the new API to the old name and deprecating the temporary name, and finally removing the temporary name), because they involve a lot of churn and will irritate our developers.
+
+#### Deprecation
+
+Old APIs can be marked as deprecated as part of this process. The syntax for doing so must match the following pattern:
 
 ```dart
-// TODO(username): Remove this when it goes to stable, https://...link-to-issue.../...
 @Deprecated(
-  'FooInterface has been deprecated because ...; it is recommended that you transition to the new FooDelegate. '
-  'This feature was deprecated after v1.2.3.'
+  'Call prepareFrame followed by owner.requestVisualUpdate() instead. '
+  'This feature was deprecated after v1.7.3.'
 )
-class FooInterface {
-  /// ...
-}
 ```
 
-If you deprecate an API, make sure to remember to actually remove the feature a few
-months later (after the next stable release), do not just leave it forever! To make sure
-that you don't forget, add it to the [[Pending Deprecations]] page.
+In other words:
 
-It is possible that a breaking change would only affect the master or dev branches. Even in these cases, it is still best to follow this procedure for the change. When it doubt, announce the changes.
+```dart
+@Deprecated(
+  '[description of how to migrate] '
+  'This feature was deprecated after [dev version at time of deprecation].'
+)
+```
+
+Using this standard form ensures that we can write a script to detect all deprecated APIs and remove them. We have a test that verifies that this syntax is followed.
+
+Also add any such deprecations to the [[Pending Deprecations]] page.
 
 
-### Google-only responsibilities
+### 4. Document the change, including clear documentation for migrating code, with samples, and clear rationales for each change
 
-If you work for Google, you have the added responsibility of updating Google's
-internal copy of Flutter and fixing any broken call-sites reasonably quickly
-after merging the upstream change.
+Use our [breaking change migration guide template](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md) (every part in square brackets should be changed) to create a document that describes the change.
+
+This document must be made available on the Web site (don't forget to update the index of that directory as well), e-mailed to flutter-announce, linked to from the PR submitting the change, and listed in the [[Changelog]] wiki page.
+
+When updating the [[Changelog]], to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
