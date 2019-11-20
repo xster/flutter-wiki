@@ -42,7 +42,6 @@ Flutter Wiki
 - [[The flutter run variants]]
 - [[Test coverage for package:flutter]]
 - [[Writing a golden-file test for package:flutter]]
-- [[Pending deprecations]]
 
 ## Engine repo
 - [[Setting up the Engine development environment]]
