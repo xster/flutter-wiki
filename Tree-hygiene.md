@@ -396,7 +396,16 @@ Link to your design document from your issue. Ping @RedBrogdon on the #hackers-d
 Consider if you really need to make this change. In general, merely renaming a class to make things slightly clearer is insufficient value to justify a breaking change. Such changes leave behind a legacy of old tutorials, YouTube videos, StackOverflow comments, etc, that reference the old name, and so any improvement to the developer experience can be easily offset by the added burden on our ecosystem as a whole. (We record such changes we wish we could make on https://github.com/flutter/flutter/issues/24722, feel free to add it there.)
 
 
-### 3. Turn the change into a two-phase soft-breaking change
+### 3. Document the change, including clear documentation for migrating code, with samples, and clear rationales for each change
+
+Use our [breaking change migration guide template](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md) (every part in square brackets should be changed) to create a document that describes the change.
+
+This document must be made available on the Web site (don't forget to update the index of that directory as well), e-mailed to flutter-announce, linked to from the PR submitting the change, and listed in the [[Changelog]] wiki page.
+
+When updating the [[Changelog]], to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
+
+
+### 4. Turn the change into a two-phase soft-breaking change
 
 Rather than making a change that immediately breaks existing code, adjust your PR so that it introduces the new functionality, API, behavior change, etc, in an opt-in fashion.
 
@@ -433,12 +442,3 @@ In other words:
 Using this standard form ensures that we can write a script to detect all deprecated APIs and remove them. We have a test that verifies that this syntax is followed.
 
 Also add any such deprecations to the [[Pending Deprecations]] page.
-
-
-### 4. Document the change, including clear documentation for migrating code, with samples, and clear rationales for each change
-
-Use our [breaking change migration guide template](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md) (every part in square brackets should be changed) to create a document that describes the change.
-
-This document must be made available on the Web site (don't forget to update the index of that directory as well), e-mailed to flutter-announce, linked to from the PR submitting the change, and listed in the [[Changelog]] wiki page.
-
-When updating the [[Changelog]], to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
