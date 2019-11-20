@@ -440,5 +440,3 @@ In other words:
 ```
 
 Using this standard form ensures that we can write a script to detect all deprecated APIs and remove them. We have a test that verifies that this syntax is followed.
-
-Also add any such deprecations to the [[Pending Deprecations]] page.
