@@ -7,6 +7,11 @@ We use three issue trackers: the [main one on flutter/flutter](https://github.co
 This page mostly talks about how we handle things for the flutter/flutter issue tracker.
 
 
+## Issue philosophy
+
+We assume that Flutter, like all non-trivial software, has an infinite number of bugs. The issue tracker contains the list of bugs that we are very lucky to have had reported by our generous community.
+
+
 ## Labels
 
 We use [many labels](https://github.com/flutter/flutter/labels).
