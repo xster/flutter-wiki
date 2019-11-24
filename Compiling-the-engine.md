@@ -27,6 +27,7 @@ Run the following steps, from the `src` directory created in [Setting up the Eng
 
 4. Build your executables
     * `ninja -C out/android_debug_unopt` for device-side executables.
+    * `ninja -C out/android_debug_unopt_arm64` for newer 64-bit Android devices.
     * `ninja -C out/android_debug_unopt_x86` for x86 emulators.
     * `ninja -C out/android_debug_unopt_x64` for x64 emulators.
     * `ninja -C out/host_debug_unopt` for host-side executables.
