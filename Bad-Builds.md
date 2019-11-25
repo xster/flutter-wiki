@@ -5,6 +5,9 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 ## all versions to _present_:
  * Android Add-to-App apps will crash if a view is presented, dismissed, presented again, and any user interaction occurs [#31139](https://github.com/flutter/flutter/issues/31139)
 
+## v1.12.7 - v1.12.12:
+ * An mdns lookup failure during tool attach will crash the tool instead of falling back on log scraping [#45468](https://github.com/flutter/flutter/issues/45468)
+
 ## v1.12.3 - v1.12.4:
  * iOS apps are rejected during App Store submission [skia#9657](https://bugs.chromium.org/p/skia/issues/detail?id=9657)
  * Images don't display on iOS [#45098](https://github.com/flutter/flutter/issues/45098)
