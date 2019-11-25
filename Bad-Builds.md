@@ -5,10 +5,10 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 ## all versions to _present_:
  * Android Add-to-App apps will crash if a view is presented, dismissed, presented again, and any user interaction occurs [#31139](https://github.com/flutter/flutter/issues/31139)
 
-## v1.12.4 - v1.12.12
+## v1.12.4 - v1.12.11
  * Flutter framework shows assertion error on launch and on exit [#45575](https://github.com/flutter/flutter/issues/45575)
 
-## v1.10.15 - v1.12.11
+## v1.10.15 - v1.12.10
  * ActivityPluginBinding.getLifecycle unwrapping doesn't work because transitive Android dependencies weren't brought in [#45188](https://github.com/flutter/flutter/issues/45188)
 
 ## v1.12.7 - v1.12.12:
