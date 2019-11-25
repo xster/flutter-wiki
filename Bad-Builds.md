@@ -3,7 +3,7 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
 ## all versions to _present_:
- * Android Add-to-App apps will crash if a view is presented, dismissed, presented again, and any user interaction occurs [#31139](https://github.com/flutter/flutter/issues/31139)
+ * Android and IOS Add-to-App apps will crash if a view is presented, dismissed, presented again, and any user interaction occurs [#31139](https://github.com/flutter/flutter/issues/31139)
 
 ## v1.12.4 - v1.12.11
  * Flutter framework shows assertion error on showing and dismissing a Flutter Activity or ViewController [#45575](https://github.com/flutter/flutter/issues/45575)
