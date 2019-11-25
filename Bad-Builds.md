@@ -14,6 +14,9 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 ## v1.12.7 - v1.12.12:
  * An mdns lookup failure during tool attach will crash the tool instead of falling back on log scraping [#45468](https://github.com/flutter/flutter/issues/45468)
 
+## - v1.12.4
+ * `flutter attach` doesn't work on Android without manually copy pasting the observatory URL from logcat [#32999](https://github.com/flutter/flutter/issues/32999)
+
 ## v1.12.3 - v1.12.4:
  * iOS apps are rejected during App Store submission [skia#9657](https://bugs.chromium.org/p/skia/issues/detail?id=9657)
  * Images don't display on iOS [#45098](https://github.com/flutter/flutter/issues/45098)
