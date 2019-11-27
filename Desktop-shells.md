@@ -73,52 +73,38 @@ applications are likely to require slight modifications to run.
 
 ### Target Platform Override
 
-Most applications will need to override the target platform for the application
+Most applications targeting Windows and/or Linux will need to override the target
+platform for the application
 to one of the supported values in order to avoid 'Unknown platform' exceptions,
-to work around the fact that [desktop platforms are not yet valid `TargetPlatform`
+to work around the fact that [those platforms are not yet valid `TargetPlatform`
 values](https://github.com/flutter/flutter/issues/31366).
-This should be done as early as possible.
-
-In the simplest case, where the code will only run on desktop and the behavior
-should be consistent on all platforms, you can hard-code a single target. E.g.,:
+This should be done as early as possible. For instance:
 
 ```dart
 import 'package:flutter/foundation.dart'
     show debugDefaultTargetPlatformOverride;
 [...]
 
+/// If the current platform is a desktop platform that isn't yet supported by
+/// TargetPlatform, override the default platform to one that is.
+/// Otherwise, do nothing.
+void _setTargetPlatformForDesktop() {
+  // No need to handle macOS, as it has now been added to TargetPlatform.
+  if (Platform.isLinux || Platform.isWindows) {
+    debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+  }
+}
+
 void main() {
-  debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+  _setTargetPlatformForDesktop();
   [...]
 }
 ```
 
-If the code needs to run on both mobile and desktop, or you want different
-behavior on different desktop platforms, you can conditionalize on `Platform`.
-For example, the line in `main()` above could be replaced with a call to:
-
-```dart
-/// If the current platform is desktop, override the default platform to
-/// a supported platform (iOS for macOS, Android for Linux and Windows).
-/// Otherwise, do nothing.
-void _setTargetPlatformForDesktop() {
-  TargetPlatform targetPlatform;
-  if (Platform.isMacOS) {
-    targetPlatform = TargetPlatform.iOS;
-  } else if (Platform.isLinux || Platform.isWindows) {
-    targetPlatform = TargetPlatform.android;
-  }
-  if (targetPlatform != null) {
-    debugDefaultTargetPlatformOverride = targetPlatform;
-  }
-}
-```
-
-Note that the choices of overrides in the examples above are arbitrary;
-you could use any supported target platforms in either version. The target
-platform you use will affect not only the behavior and appearance of the widgets,
-but also the expectations Flutter will have for what is available on the platform,
-such as fonts.
+Note that the choice of `fuchsia` here is arbitrary; you could use any supported
+platform. However, the target platform you use will affect the behavior
+and appearance of the widgets, as well expectations Flutter will have for what
+is available on the platform, such as fonts.
 
 ### Fonts
 
@@ -127,15 +113,14 @@ platform, but unavailable on desktop. For instance, if the target platform is
 `TargetPlatform.iOS` the Material library will default to San Francisco, which
 is available on macOS but not Linux or Windows.
 
-Most applications will need to set the font (e.g., via `ThemeData`) based
-on the host platform, or set a specific font that is bundled with the
-application. Other widgets that doesn't use `ThemeData` may not display
-without extra font specification (e.g., the `DEBUG` banner's text).
+Most applications using the override above will need to set the font
+(e.g., via `ThemeData`) based on the host platform, or set a specific font that
+is bundled with the application. Other widgets that doesn't use `ThemeData` may
+not display without extra font specification (e.g., the `DEBUG` banner's text).
 
 Symptoms of missing fonts include text failing to display and/or console logging
-about failure to load fonts, since font fallback is not yet robust on desktop
-platforms (see the [Windows](https://github.com/flutter/flutter/issues/39915),
-[macOS](https://github.com/flutter/flutter/issues/39914), and
+about failure to load fonts, since font fallback is not yet robust on all desktop
+platforms (see the [Windows](https://github.com/flutter/flutter/issues/39915) and
 [Linux](https://github.com/flutter/flutter/issues/30700) issues for status).
 
 ### Plugins
