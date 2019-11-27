@@ -879,6 +879,17 @@ when selecting a name for an identifier. In general, avoid one-character names u
 (for example, prefer `index` over `i`, but prefer `x` over `horizontalPosition`).
 
 
+### Avoid anonymous parameter names
+
+Provide full type information and names even for parameters that are otherwise unused. This makes it easier for
+people reading the code to tell what is actually going on (e.g. what is being ignored). For example:
+
+```
+  onTapDown: (TapDownDetails details) { print('hello!'); }, // GOOD
+  onTapUp: (_) { print('good bye'); }, // BAD
+```
+
+
 ### Naming rules for typedefs and function variables
 
 When naming callbacks, use `FooCallback` for the typedef, `onFoo` for
