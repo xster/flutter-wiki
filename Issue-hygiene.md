@@ -22,6 +22,8 @@ The `severe:` prefix indicates labels regarding a level of severity (e.g. regres
 
 The `TODAY` label indicates a high-priority issue such as a build break, regression or failure in existing features that would keep us from shipping the current build. We look at issues with the `TODAY` label frequently to ensure that each has an owner and is being worked on.
 
+The `RELEASE BLOCKER` label is similar. It indicates that the bug should be hot-fixed on any upcoming stable releases. Since the Open/Closed status of a bug relates to the master branch, not to the beta branch, it will be common for this label to be applied to closed bugs. The bug is removed as part of the [release process](https://github.com/flutter/flutter/wiki/Release-process) when the issue is hot-fixed.
+
 _See also: [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly._
 
 
