@@ -1018,6 +1018,15 @@ If the ignore directive is permanent, e.g. because one of our lints has some una
   // this because we need to twiddle the quux and the bar is zorgle.
 ```
 
+### Comment empty closures to `setState`
+
+Generally the closure passed to `setState` should include all the code that changes the state. Sometimes this is not possible because the state changed elsewhere and the `setState` is called in response. In those cases, include a comment in the `setState` closure that explains what the state is that changed.
+
+```
+  setState(() { /* The animation ticked. We use the animation's value in the build method. */ });
+```
+
+
 Formatting
 ----------
 
