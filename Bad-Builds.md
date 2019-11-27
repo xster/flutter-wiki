@@ -11,6 +11,9 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 ## v1.12.4 - v1.12.10
  * Flutter framework shows assertion error on showing and dismissing a Flutter Activity or ViewController [#45575](https://github.com/flutter/flutter/issues/45575)
 
+## v1.12.3 - v1.12.15
+ * PageView's last page can no longer be swiped to when viewportFraction is set to less than 1 [#45096](https://github.com/flutter/flutter/issues/45096)
+
 ## v1.10.15 - v1.12.10
  * ActivityPluginBinding.getLifecycle unwrapping doesn't work because transitive Android dependencies weren't brought in [#45188](https://github.com/flutter/flutter/issues/45188)
 
