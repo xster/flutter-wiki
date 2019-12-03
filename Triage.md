@@ -153,7 +153,11 @@ We should (but currently do not) regularly check that the following PRs are not 
 We intend for each area of the product to go through the following triage regularly:
 
 * Look at open PRs and review them.
-* Look at open bugs and determine what needs to be worked on, looking at TODAY bugs, customer blockers, customer critical bugs, regressions, crashers, popular bugs and feature requests (thumbs-up reactions), and old issues.
+* Look at open bugs and determine what needs to be worked on.
+
+It is recommended to do these in separate dedicated meetings. For teams with multiple areas of focus (e.g. design languages), it's recommended that each area of focus have its own meeting.
+
+Within each meeting, the links below provide the order in which issues should be looked at, to best align with the team's unique needs.
 
 Teams can use a variety of tools to prioritize bugs.
 
