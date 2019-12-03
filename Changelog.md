@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#43457](https://github.com/flutter/flutter/pull/43457) Adds TargetPlatform.macOS, which might break some switch statements.
+
 * [#44189](https://github.com/flutter/flutter/pull/44189) Make some BuildContext methods generics.
 
 * [#43848](https://github.com/flutter/flutter/pull/43848) Don't allow Disabled InkWells to be focusable.
