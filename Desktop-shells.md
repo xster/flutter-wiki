@@ -35,7 +35,7 @@ desktop support. As with the overall status above, the macOS plugin APIs and str
 
 ## Tooling
 
-Support for desktop in the `flutter` tool is a work in progress. To use any of the support, you must be on the `master` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels), and you must enable the feature for your platform:
+Support for desktop in the `flutter` tool is a work in progress. To use it, you must be on the `master` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) (or `dev` for macOS), and you must enable the feature for your platform:
 * `flutter config --enable-linux-desktop` to enable Linux.
 * `flutter config --enable-macos-desktop` to enable macOS.
 * `flutter config --enable-windows-desktop` to enable Windows.
