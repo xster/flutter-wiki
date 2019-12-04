@@ -44,7 +44,7 @@ Run `flutter config` to see your current settings, as well as the commands to di
 
 ### `create`
 
-Currently `flutter create` is only supported for macOS (to use it, run it with the `--macos` flag). For Windows and Linux, the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding) has simple runners for each desktop platform that work with the `flutter` tool's in-progress desktop support. See the READMEs there for details.
+Currently, macOS is the only desktop platform supported by `flutter create`. For Windows and Linux, the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding) has simple runners for each desktop platform that work with the `flutter` tool's in-progress desktop support. See the READMEs there for details.
 
 For any platform **be sure to read the 'Flutter Application Requirements' section below!**
 
@@ -59,7 +59,7 @@ Only debug mode is currently supported for Windows and Linux.
 #### macOS
 
 Plugin tooling is implemented for macOS:
-- To create a plugin, pass the `--macos` flag when you `flutter create` your plugin.
+- To create a plugin, just use `flutter create -t plugin` as normal. If you have followed the tooling instructions above to enable macOS support, the resulting plugin will include macOS.
 - To use a plugin with macOS support, add it to `pubspec.yaml`; `flutter` will automatically add the necessary native code to your project, as with iOS or Android.
 
 #### Windows and Linux
