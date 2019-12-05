@@ -24,6 +24,11 @@ Once you have the symbols unzipped, you can use ndk-stack from your Android NDK.
 .../ndk/prebuilt/linux-x86_64/bin/ndk-stack -sym .../path/to/downloaded/symbols < stack.txt
 ```
 
+Or on macOS:
+```bash
+.../ndk/prebuilt/darwin-x86_64/bin/ndk-stack -sym .../path/to/downloaded/symbols < stack.txt
+```
+
 #### Expanding Git Revisions
 
 Go to a commit page with the short commit as the last fragment of the URL:
