@@ -51,6 +51,23 @@ _The tool is now awaiting your input, so let's feed it a memory address_:
 ```
 This revealed address `0x00000000006a26ec` to correspond with `dart_api_impl.cc:1366`. 
 
+#### Making sure you got the right libflutter.so 
+
+The build system sets a build id for each `libflutter.so` file. In the tombstones, you would see the ID like so:
+
+```
+#00 pc 000000000062d6e0  /data/app/com.app-tARy3eLH2Y-QN8J0d0WFog==/lib/arm64/libflutter.so!libflutter.so (offset 0x270000) (BuildId: 34ad5bdf0830d77a)
+```
+
+This equals to a build id of **34ad5bdf0830d77a**. The `libflutter.so` debug files downloaded as shown above could be verified using the `file` command:
+
+```
+% file ~/Downloads/libflutter.so
+/Users/user/Downloads/libflutter.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[xxHash]=34ad5bdf0830d77a, with debug_info, not stripped
+```
+
+Ensure the build IDs match, else you will not be able to symbolicate.
+
 #### Expanding Git Revisions
 
 Go to a commit page with the short commit as the last fragment of the URL:
