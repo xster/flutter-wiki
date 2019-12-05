@@ -14,9 +14,14 @@
 
    To download the symbols for android-arm, download this URL _using your browser_ (replacing the hash again, and noting that this URL is on a different host, "storage", compared to the one above, which uses "console"): `https://storage.cloud.google.com/flutter_infra/flutter/cea5ed2b9be42a981eac762af3664e4a17d0a53f/android-arm/symbols.zip`.
 
+   Please be aware that the type of the symbol must match your Apps release type. In above example, this refers to a android-arm **debug** build. If you work with a **release** or **profile** build, the URLs would look like this:
+
+   * https://storage.cloud.google.com/flutter_infra/flutter/cea5ed2b9be42a981eac762af3664e4a17d0a53f/android-arm-release/symbols.zip
+   * https://storage.cloud.google.com/flutter_infra/flutter/cea5ed2b9be42a981eac762af3664e4a17d0a53f/android-arm-profile/symbols.zip
+
    You have to use your browser because it does authentication.
 
-#### Symbolicate
+#### Symbolicate with ndk-stack
 
 Once you have the symbols unzipped, you can use ndk-stack from your Android NDK. Suppose `stack.txt` contains the stack (including the leading `*** *** ***` line from the crash):
 
@@ -28,6 +33,23 @@ Or on macOS:
 ```bash
 .../ndk/prebuilt/darwin-x86_64/bin/ndk-stack -sym .../path/to/downloaded/symbols < stack.txt
 ```
+
+Some debugging tools, like _pidcat_ may not show the full tombstone logs. In that case, please use `adb logcat` directly and copy the full output.
+
+#### Symbolicate with addr2line
+
+A alternative way to symbolicate is by using the addr2line tool. It is bundled with the NDK.
+To use it, simply call it with a path to the .so file downloaded above and feed the stack addresses to it manually. For example, on macOS:
+
+```
+% $ANDROID_HOME/ndk/20.0.5594570/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android-addr2line -e ~/Downloads/libflutter.so
+```
+_The tool is now awaiting your input, so let's feed it a memory address_:
+```
+0x00000000006a26ec
+/b/s/w/ir/cache/builder/src/out/android_release_arm64/../../third_party/dart/runtime/vm/dart_api_impl.cc:1366
+```
+This revealed address `0x00000000006a26ec` to correspond with `dart_api_impl.cc:1366`. 
 
 #### Expanding Git Revisions
 
