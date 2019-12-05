@@ -7,6 +7,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here.
 
+* [#45986](https://github.com/flutter/flutter/pull/45986) Engine roll that included a fix for live regions on Android.  Live regions will now announce on every change, instead of only announcing if a change was made when the flag was added once.
+
 * [#44283](https://github.com/flutter/flutter/pull/44283) Deprecating SliverOverlapAbsorber & SliverOverlapInjector child property in favor of 'sliver'.
 
 * [#43457](https://github.com/flutter/flutter/pull/43457) Adds TargetPlatform.macOS, which might break some switch statements.
