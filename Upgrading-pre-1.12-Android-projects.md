@@ -12,6 +12,8 @@ Your existing full-Flutter projects aren't immediately affected and will continu
 
 However, the new Android wrappers also introduce a new set of Android plugin development APIs. Plugins developed exclusively on the new plugins API will not work on older pre-1.12 Android projects. Building a pre-1.12 Android project that uses plugins created after 1.12 will yield a build-time error unless the plugin developer explicitly opted to create a second backward compatible implementation. 
 
+Add-to-app was not officially supported on the old Android APIs. If you followed the experimental instructions in the wiki for add-to-app prior to 1.12, you should follow the migration steps under the [add-to-app section](#add-to-app-migration) below.
+
 # Full-Flutter app migration
  
 _This guide assumes you haven't manually modified your Android host project for your Flutter project. If you did, consult the add-to-app migration guide below._ 
