@@ -1,4 +1,4 @@
-The Flutter plugin for Visual Studio code has been updated to support [Visual Studio Code’s multi-target debugging](https://code.visualstudio.com/docs/editor/debugging#_multitarget-debugging).
+The Flutter plugin for Visual Studio code has been updated to provide _experimental_ support for [Visual Studio Code’s multi-target debugging](https://code.visualstudio.com/docs/editor/debugging#_multitarget-debugging).
 
 ## Requirements
 *   You must be on latest Flutter master channel for concurrent builds to not overwrite each other and cause build failures.
