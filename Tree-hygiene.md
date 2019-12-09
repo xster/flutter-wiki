@@ -374,11 +374,7 @@ The first step in making a breaking change is to implement the change you wish t
 
 * Changes that break the widgets or devicelab tests. These are currently considered breaking changes. Eventually once we have lots of contributed tests they will stop being considered breaking changes.
 
-* Changes that are obviously egregiously breaking but do not actually break any contributed tests. For example, adding a required argument to a public API method that we suspect is widely used. By courtesy, we will treat these as breaking changes also. Whether something falls into this category is a judgement call.
-
-* Other changes that do not break any tests, but where we can imagine reasonable scenarios where developers would be affected negatively. By courtesy, engineers should announce these changes by sending an e-mail to flutter-announce and listing it on our [[Changelog]] wiki page (such that they will be included in our release notes), but we will not go through this breaking change process for these changes. The intent here is to reduce the cost of making breaking changes for most such changes unless someone has contributed a test that shows they are affected.
-
-* Changes that don't break any tests and which, while technically breaking, are in our judgement unlikely to cause much trouble. We will pretend that such changes are not breaking changes and make them without any effort to prevent breakages.
+* Changes that do not break any tests. We will pretend that such changes are not breaking changes and make them without any effort to prevent breakages. In cases where we can imagine reasonable scenarios where developers would be affected negatively, by courtesy, once the change has landed, engineers are encouraged to announce the changes by sending an e-mail to flutter-announce and listing it on our [[Changelog]] wiki page (such that they will be included in our release notes). However, we do not consider these breaking changes.
 
 These definitions are binding. If you think you need an exemption to this policy, please contact Hixie on the #hackers [[Chat]] channel. If a breaking change lands without following this policy and without an explicit exemption from @Hixie, it must be reverted.
 
