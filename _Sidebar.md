@@ -79,9 +79,3 @@ Flutter Wiki
 - [Using Flutter in China](https://flutter.dev/community/china)
 - [JIT release builds](https://github.com/flutter/flutter/wiki/JIT-Release-Modes)
 - [Multi-device debugging in VS Code](https://github.com/flutter/flutter/wiki/Multi-device-debugging-in-VS-Code)
-
-## Release Notes
-- [1.9.1](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1)
-- [1.7.8](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8)
-- [1.5.4](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
-- [1.2.1](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
