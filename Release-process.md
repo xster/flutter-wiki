@@ -103,15 +103,15 @@ NB: The previous hotfix version procedure used a `-` instead of a `+` between th
 1. Let _VERSION_ be `$TAG+hotfix.1`, where `1` is the patch level (so if this is the second time that version is being hot fixed, first sorry, that sucks, and second, use `2`, and so forth). For example, `vX.Y.Z+hotfix.1`.
 1. Let _BRANCH_ be `$TAG-hotfixes` (e.g. if _VERSION_ is `vX.Y.Z+hotfix.2` then _BRANCH_ is `vX.Y.Z-hotfixes`).
 1. Let _CHANNEL_ be the channel you want to hotfix (e.g., `dev`, `beta`, `stable`).
-1. If it doesn't yet exist, locally create _BRANCH_ on the framework repo starting from the framework commit of the build that you are fixing (`git fetch; git checkout $TAG -b $BRANCH`). Otherwise, switch to that branch (`git fetch; git checkout $BRANCH`).
-1. Push this branch to GitHub. (`git push upstream $BRANCH`)
+1. If is doesn't exist yet, create _BRANCH_ on the framework repo by browsing to _COMMIT_ on GitHub (https://github.com/flutter/flutter/tree/$COMMIT), then using the "Tree" dropdown on that GitHub page, create the branch named _BRANCH_.
+1. Switch to _BRANCH_ in your local Git clone (`git fetch upstream; git checkout -b $BRANCH upstream/$BRANCH`).
 1. If this hot fix requires a change to the engine or its dependencies:
    1. Let _COMMIT_ be the engine commit of the build that you are fixing (as determined by `bin/internal/engine.version` on the Framework repo for _BRANCH_).
-   1. If $BRANCH already exists in flutter/engine (as seen in https://github.com/flutter/engine/branches/all), then locally check out that branch: `git checkout -b $BRANCH upstream/$BRANCH`. If no such branch exists (this is the first hot fix that required a commit to the engine), then locally create a branch on the engine repo starting from that commit: `git checkout $COMMIT -b $BRANCH`.
+   1. If is doesn't exist yet, create _BRANCH_ on the engine repo by browsing to _COMMIT_ on GitHub (https://github.com/flutter/engine/tree/$COMMIT), then using the "Tree" dropdown on that GitHub page, create the branch named _BRANCH_.
+   1. Switch to _BRANCH_ in your local engine Git clone (`git fetch upstream; git checkout -b $BRANCH upstream/$BRANCH`).
    1. Update the branch accordingly, ideally by doing a `git cherry-pick` of the commit you need. Keep fixes to a strict minimum. If the fix involves applying a fix from an upstream dependency (e.g. Dart), use a hot fix release applied to the same original commit that the engine previously depended on; do not merely roll the dependency normally.
    1. Push this branch to your own GitHub fork of the engine (`git push --set-upstream origin $BRANCH`).
-   1. Browse to _COMMIT_ on GitHub (`https://github.com/flutter/engine/tree/$COMMIT`), then using the "Tree" dropdown on that GitHub page, create the branch named _BRANCH_.
-   1. Create a PR from your recently pushed branch, using the newly created branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the branch.
+   1. Create a PR from your recently pushed branch, using _BRANCH_ as the base for the PR. As the PR description and commit message, enter information about why you're creating the branch.
    1. Once this is reviewed and the tests have run, land the PR _on the branch_. (Check that you're not landing it on master!)
    1. Force [LUCI](https://ci.chromium.org/p/flutter) (the Chromium continuous integration bots) to build the specific commit you just pushed. **Talk to @Hixie and @dnfield for any problem triggering the build.**
       1. Let _ENGINE_COMMIT_ be the commit you just landed on the branch.
@@ -121,9 +121,22 @@ NB: The previous hotfix version procedure used a `-` instead of a `+` between th
             ```sh
             bb add \
                 -commit "https://chromium.googlesource.com/external/github.com/flutter/engine/+/$ENGINE_COMMIT" \
-                -p no_bitcode=true \
-                -p no_maven=true \
                 "flutter/prod/$BUILDER_NAME"
+            ```
+         1. This can be scripted using the following code:
+            ```
+            #!/bin/bash
+
+            BUILDERS=$(curl 'https://ci.chromium.org/p/flutter/g/engine/builders' 2>/dev/null|sed -En 's:.*aria-label="builder buildbucket/luci\.flutter\.prod/([^/]+)".*:\1:p'|sort|uniq)
+
+            IFS=$'\n'
+            for BUILDER in $BUILDERS; do
+                echo $BUILDER
+                bb add \
+                   -commit "https://chromium.googlesource.com/external/github.com/flutter/engine/+/$ENGINE_COMMIT" \
+                   "flutter/prod/$BUILDER"
+                sleep 2
+            done
             ```
       1. Alternatively, if you prefer a web UI over the `bb` tool, then for each [builder](https://ci.chromium.org/p/flutter/g/engine/builders), open the [RPC explorer](https://cr-buildbucket.appspot.com/rpcexplorer/services/buildbucket.v2.Builds/ScheduleBuild?request=%7B%20%20%20%20%22builder%22:%20%7B%20%20%20%20%20%20%20%20%22project%22:%20%22flutter%22,%20%20%20%20%20%20%20%20%22bucket%22:%20%22prod%22,%20%20%20%20%20%20%20%20%22builder%22:%20%22Mac%20Host%20Engine%22%20%20%20%20%7D,%20%20%20%20%22gitilesCommit%22:%20%7B%20%20%20%20%20%20%20%20%22host%22:%20%22chromium.googlesource.com%22,%20%20%20%20%20%20%20%20%22project%22:%20%22external/github.com/flutter/engine%22,%20%20%20%20%20%20%20%20%22ref%22:%20%22refs/heads/v1.4.9-hotfix.1%22,%20%20%20%20%20%20%20%20%22id%22:%20%224737fc5cd89b8f0136e927b00f2e159444b95a73%22%20%20%20%20%7D,%20%20%20%20%22requestId%22:%20%22lh_haxadasdfsfasdf22222131%22%7D#) and make the following changes:
          - Update the value in `builder.builder` to the name of the builder.
@@ -132,12 +145,13 @@ NB: The previous hotfix version procedure used a `-` instead of a `+` between th
          - Update the value in `requestId` to be a unique random string.
          - Press Shift+Enter to schedule the build. You have to do this for every builder.
    1. Wait for the engine bots to have completed their work.
-   1. Lock down the _VERSION_ branch on GitHub.
+   1. Lock down _BRANCH_ on GitHub if it's not already locked down.
 1. Update your local branch accordingly (such as by `git cherry-pick -e`). If applicable, update the `engine.version` to point to the engine you just built.
 1. Test this build on all platforms. Run the devicelab locally. Test the codelabs.
 1. Push your local branch to your GitHub fork of the Flutter framework. (`git push origin $BRANCH`)
 1. Create a PR from your recently pushed branch, using the _BRANCH_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix. (A bot may change the base branch to master. Edit the PR to change it back to _BRANCH_).
-1. Once the code is reviewed, land the PR onto the _BRANCH_ branch.
+1. Once the code is reviewed, land the PR onto the _BRANCH_ branch via a "squash merge". Do not land the PR on master!
+1. Update your local Git clone so that you pick up the squashed merge commit and not your local cherry-pick commit: `git checkout master && git branch -D $BRANCH && git fetch upstream && git checkout -b $BRANCH upstream/$BRANCH`.
 1. Tag your commit on _BRANCH_ as _VERSION_. (`git tag $VERSION; git push upstream $VERSION`)
 1. Force push the commit to the branch for the channel _CHANNEL_ you're hotfixing (`git push upstream HEAD:$CHANNEL`). If you get an error saying that you're not authorized to push to the branch, you need to be added to the list of "people and teams with push access" to the beta branch on GitHub. Contact a repository administrator (e.g. Hixie) to request that they add you to that list using [the beta branch configuration page](https://github.com/orgs/flutter/teams/beta-pushers/members). If the last pushed version was a hotfix, this may require temporarily unprotecting the branch as well.
 1. If this is a beta release, wait for the Cirrus builds on the beta branch to go green (make sure there's a green checkmark next to the branch at https://github.com/flutter/flutter/branches, and check https://ci.chromium.org/p/flutter/builders/prod/Mac%20Flutter%20Packaging, 
