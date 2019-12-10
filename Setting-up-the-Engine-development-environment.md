@@ -135,7 +135,7 @@ Next steps:
 
 ## Editor autocomplete support
 
-### XCode
+### Xcode
 
 On Mac, you can simply use Xcode (e.g., `open out/host_debug_unopt/products.xcodeproj`).
 
