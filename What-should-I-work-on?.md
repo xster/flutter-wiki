@@ -11,9 +11,9 @@ This page attempts to be a one-stop shop for figuring out what the most importan
 1. [Customer-critical bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22severe%3A+customer+critical%22+).
 1. [Assigned bugs](https://github.com/issues/assigned). We want to avoid slipping milestones, so once a bug is assigned it should also be given a named month milestone and we should ensure it's resolved by that date. See [[Issue Hygiene]].
 1. The priorities described on our [[roadmap]], which may include:
-  * Bugs marked as [annoyances](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+annoyance%22+sort%3Areactions-%2B1-desc).
-  * Bugs labeled as issues of [quality](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22a%3A+quality%22+sort%3Areactions-%2B1-desc+).
-  * Bugs with the [crash](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22a%3A+crash%22+sort%3Areactions-%2B1-desc+) label.
+    * Bugs marked as [annoyances](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+annoyance%22+sort%3Areactions-%2B1-desc).
+    * Bugs labeled as issues of [quality](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22a%3A+quality%22+sort%3Areactions-%2B1-desc+).
+    * Bugs with the [crash](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22a%3A+crash%22+sort%3Areactions-%2B1-desc+) label.
 1. [Issues sorted by thumbs-up](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc).
 1. Everything else.
 
