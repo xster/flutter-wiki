@@ -335,6 +335,8 @@ If you come across a bug that is unrelated to desktop app development, remove th
 ## Infrastructure
 
 * [Infrastructure PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22team%3A+infra%22+sort%3Aupdated-asc)
+* [Cocoon PRs](https://github.com/flutter/cocoon/pulls)
+* [Infra config PRs](https://github.com/flutter/infra/pulls)
 * [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22TODAY%22)
 * [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
 * [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
