@@ -396,6 +396,8 @@ Consider if you really need to make this change. In general, merely renaming a c
 
 Use our [breaking change migration guide template](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md) (every part in square brackets should be changed) to create a document that describes the change.
 
+**You must ask @Hixie to review the migration guide before landing your PRs.** Until we have experience with writing these regularly, we need to make sure they're consistent in style.
+
 This document must be made available on [the flutter.dev Web site](https://flutter.dev/docs/release/breaking-changes) (don't forget to update the [index](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/index.html) of that directory as well), e-mailed to flutter-announce, linked to from the PR submitting the change, and listed in the [[Changelog]] wiki page.
 
 When updating the [[Changelog]], to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
