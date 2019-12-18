@@ -392,30 +392,36 @@ Link to your design document from your issue. Ping @RedBrogdon on the #hackers-d
 Consider if you really need to make this change. In general, merely renaming a class to make things slightly clearer is insufficient value to justify a breaking change. Such changes leave behind a legacy of old tutorials, YouTube videos, StackOverflow comments, etc, that reference the old name, and so any improvement to the developer experience can be easily offset by the added burden on our ecosystem as a whole. (We record such changes we wish we could make on https://github.com/flutter/flutter/issues/24722, feel free to add it there.)
 
 
-### 3. Document the change, including clear documentation for migrating code, with samples, and clear rationales for each change
+### 3. Prepare your change.
 
-Use our [breaking change migration guide template](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md) (every part in square brackets should be changed) to create a document that describes the change.
-
-**You must ask @Hixie to review the migration guide before landing your PRs.** Until we have experience with writing these regularly, we need to make sure they're consistent in style.
-
-This document must be made available on [the flutter.dev Web site](https://flutter.dev/docs/release/breaking-changes) (don't forget to update the [index](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/index.html) of that directory as well), e-mailed to flutter-announce, linked to from the PR submitting the change, and listed in the [[Changelog]] wiki page.
-
-When updating the [[Changelog]], to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
-
-
-### 4. Turn the change into a two-phase soft-breaking change
-
-Rather than making a change that immediately breaks existing code, adjust your PR so that it introduces the new functionality, API, behavior change, etc, in an opt-in fashion.
+Rather than deploying the proposed change as one PR that immediately breaks existing code, adjust your PR so that it introduces the new functionality, API, behavior change, etc, in an opt-in fashion.
 
 _For example, rather than replacing a widget with another, introduce the new widget and deprecate the old one. Rather than changing the order in which a certain argument is processed, provide a flag that selects which order the arguments will be processed in._
-
-Once that has landed, work with the people whose tests broke to update their code and tests.
-
-Finally, once you have migrated all the affected tests, create a second PR that removes the old functionality, API, or behavior. It should no longer be a breaking change at this point.
 
 When changing the semantics of an API with a temporary opt-in, a three-phase change is needed (adding the new API and opt-in, then removing the old API, then removing the opt-in.)
 
 If possible, avoid four-phase deprecations (adding a new API with a temporary name and deprecating an old API, removing the old API, changing the new API to the old name and deprecating the temporary name, and finally removing the temporary name), because they involve a lot of churn and will irritate our developers.
+
+Stage your change and the documentation for your change. Typically this will be two or more PRs, plus PRs to fix the tests that were broken (see step 1), as well as writing a migration guide as a PR to the Website repository.
+
+Use our [breaking change migration guide template](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md) (every part in square brackets should be changed) to create the migration guide that describes the change.
+
+**You must ask @Hixie to review the migration guide before landing your PRs.** Until we have experience with writing these regularly, we need to make sure they're consistent in style.
+
+
+### 4. Land your change.
+
+Once you are ready, have received feedback, iterated on your design and your migration guide, land your initial change and start migrating clients. Once all the clients are migrated, land your final change. (You may have several iterations here if you have a multiphase roll-out.)
+
+During this process, each individual PR does not break any tests, so it should not block any autorollers.
+
+
+### 5. Document the change, including clear documentation for migrating code, with samples, and clear rationales for each change
+
+Push your migration guide to [the flutter.dev Web site](https://flutter.dev/docs/release/breaking-changes) (don't forget to update the [index](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/index.html) of that directory as well), e-mail a copy to flutter-announce, and update the [[Changelog]] wiki page.
+
+When updating the [[Changelog]], to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
+
 
 #### Deprecation
 
