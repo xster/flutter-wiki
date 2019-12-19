@@ -8,6 +8,8 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here and insert headings as appropriate to identify which version is affected.
 
+* [#47243](https://github.com/flutter/flutter/pull/47243) `flutter test` can now be run with the `--test-randomize-ordering-seed` flag to shuffle the order tests are run in. If it is set to the string `random`, it will pick a random seed to use (and print it out so the order can be repeated).  If a positive integer is specified, it will use that as the seed for shuffling tests.
+
 ### v1.12.x 
 
 * [#45986](https://github.com/flutter/flutter/pull/45986) Engine roll that included a fix for live regions on Android.  Live regions will now announce on every change, instead of only announcing if a change was made when the flag was added once.
