@@ -78,9 +78,9 @@ _See also: [List of milestones](https://github.com/flutter/flutter/milestones?di
 
 Make a judgement call:
 
-- If the bug seems like a correctness issue, relates to polish and quality, might block fully shipping broad consumer-facing apps, or relates to something on our [Roadmap], add it to the "Goals" milestone.
+- If the bug seems like a correctness issue, relates to polish and quality, might block fully shipping broad consumer-facing apps, or relates to something on our [[Roadmap]], add it to the "Goals" milestone.
 
-- If the bug seems like a far fetched future request, add it to the "Future" milestone.
+- If the bug seems like a far-fetched future request, add it to the "Future" milestone.
 
 - Otherwise, add it to the "Stretch goals" milestone.
 
