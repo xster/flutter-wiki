@@ -1,3 +1,5 @@
+This document is published in our wiki on: https://github.com/flutter/flutter/wiki/Postmortem:-Widespread-Gradle-failures-on-Flutter-v1.12.13-hotfix.5
+
 # Flutter postmortem: Widespread Gradle failures on Flutter v1.12.13+hotfix.5
 
 Status: final<br>
@@ -111,16 +113,16 @@ Users of multiple popular Flutter plugins were not able to build their Android a
 
 {link to github issues for things that would have detected this failure before it became An Incident, such as better testing, monitoring, etc}
 
-All `dev/devicelab/bin/tasks/gradle_*` tests should run with the AAR workflow as well - https://github.com/flutter/flutter/issues/48089.
-All `dev/devicelab/bin/tasks/gradle_*` tests should run with and without the projects being opened (and built?) by Android Studio - https://github.com/flutter/flutter/issues/48088.
+ * All `dev/devicelab/bin/tasks/gradle_*` tests should run with the AAR workflow as well - https://github.com/flutter/flutter/issues/48089.
+ * All `dev/devicelab/bin/tasks/gradle_*` tests should run with and without the projects being opened (and built?) by Android Studio - https://github.com/flutter/flutter/issues/48088.
 
 
 ### Process
 
 {link to github issues for things that would have helped us resolve this failure faster, such as documented processes and protocols, etc}
-A better process for flagging erupting fires quickly:
-Alerts for issues that quickly gain thumb ups
-Increased issue monitoring following a Flutter release
+ * A better process for flagging erupting fires quickly:
+   * Alerts for issues that quickly gain thumb ups
+   * Increased issue monitoring following a Flutter release
 
 ### Fixes
 
