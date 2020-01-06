@@ -57,6 +57,10 @@ Currently, macOS is the only desktop platform supported by `flutter create`. For
 
 Only debug mode is currently supported for Windows and Linux.
 
+### IDEs ###
+
+If you have enabled desktop support and added a desktop runner to your project, as described above, your desktop should appear as an available device in Android Studio or VS Code for that project. The standard Flutter build and run workflows should then automatically work for desktop as well.
+
 ### Plugins
 
 Plugin tooling for Windows and Linux is not yet implemented. For now you must manually update your native build (`vcxproj`, `Makefile`) to build each plugin, include its header, register it, and link its shared library with the executable. See the [plugins section of the flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) for an example plugin to use as a starting point for building your own, and for details on using plugins built from that example.
