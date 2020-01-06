@@ -6,23 +6,23 @@ A high-level overview of the status of each platform is provided below. For deta
 [the list of desktop-related bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22a%3A+desktop%22),
 as well as [the embedding source](https://github.com/flutter/engine/tree/master/shell/platform/).
 
-**IMPORTANT:** The Flutter desktop APIs are still in early stages of development, and are **subject to change
-without warning**. No backwards compatibility, either API or ABI, will be provided. Expect
-any code using these libraries to need to be updated and recompiled after any Flutter update.
-
 ### macOS
 
-This is the most mature of the desktop platforms (for various reasons, including that it's quite close to iOS, which we already support). The Objective-C API layer is largely stable at this point, so breaking changes there should be rare.
+macOS is the most developed of the desktop platforms, and has entered alpha. For macOS, see the
+[flutter.dev documentation](https://flutter.dev/desktop), rather than this page, for instructions and
+information.
 
 ### Windows
 
-The Windows shell is in early stages. It is Win32-based, but we plan to explore UWP support in the future.
+The Windows shell is an early technical preview. It is Win32-based, but we plan to explore UWP support in
+the future.
 
-Expect the APIs for the final shell to be radically different from the current API surface.
+The APIs for the final embedding may be significantly different from the current API surface.
 
 ### Linux
 
-The current Linux shell is a GLFW placeholder, to allow early experimentation. We would like to create a library 
+The current Linux shell is a GLFW placeholder, to allow early experimentation, and will be replaced with
+a different implementation in the future. We would like to create a library 
 that lets you embed Flutter regardless of whether you're using GTK+, Qt, wxWidgets, Motif, or another arbitrary
 toolkit for other parts of your application, but have not yet determined a good way to do that. Our current plan is to support GTK+ out of the box, in a way where adding support for other toolkits is straightforward.
 
@@ -30,51 +30,45 @@ Expect the APIs for the final shell to be radically different from the current i
 
 ### Plugins
 
-Writing plugins is supported on all platforms, however there are currently very few plugins that actually have
-desktop support. As with the overall status above, the macOS plugin APIs and structure are relatively stable, while Windows and Linux will change significantly.
+Writing plugins is supported on all platforms, however there are currently few plugins that actually have
+desktop support. The [flutter-desktop-embedding project's plugins](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) are one source for Windows and Linux plugins.
+
+Since the plugin APIs and tooling for Windows and Linux are not yet stable, publishing
+Windows and/or Linux plugins to pub.dev is strongly discouraged, but they can be referenced manually. See
+below for details.
 
 ## Tooling
 
-Support for desktop in the `flutter` tool is a work in progress. To use it, you must be on the `master` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) (or `dev` for macOS), and you must enable the feature for your platform:
-* `flutter config --enable-linux-desktop` to enable Linux.
-* `flutter config --enable-macos-desktop` to enable macOS.
+Support for desktop in the `flutter` tool is a work in progress. To use it, you must be on the `master` [Flutter channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels), and you must enable the feature for your platform:
 * `flutter config --enable-windows-desktop` to enable Windows.
+* `flutter config --enable-linux-desktop` to enable Linux.
 
 Run `flutter config` to see your current settings, as well as the commands to disable the feature again.
 
 ### `create`
 
-Currently, macOS is the only desktop platform supported by `flutter create`. For Windows and Linux, the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding) has simple runners for each desktop platform that work with the `flutter` tool's in-progress desktop support. See the READMEs there for details.
+Currently, macOS is the only desktop platform supported by `flutter create`. For Windows and Linux, the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding) has simple runners for each desktop platform that work with the `flutter` tool's in-progress desktop support, which you can add to your own project. See the READMEs there for details.
 
-For any platform **be sure to read the 'Flutter Application Requirements' section below!**
+**Be sure to read the 'Flutter Application Requirements' section below!**
 
 ### `run` and `build`
 
-`flutter run` and `flutter build` are supported on all three platforms once you have added the necessary platform directory to your project (see `create` above). Breaking changes are still common on Windows and Linux however, so you should expect to need to get the latest runners from flutter-desktop-embedding after any Flutter update.
+`flutter run` and `flutter build` are supported on all desktop platforms once you have added the necessary platform directory to your project (see `create` above). Breaking changes are still common on Windows and Linux however, so you should expect to need to get the latest runners from flutter-desktop-embedding after any Flutter update.
 
 Only debug mode is currently supported for Windows and Linux.
 
 ### Plugins
 
-#### macOS
-
-Plugin tooling is implemented for macOS:
-- To create a plugin, just use `flutter create -t plugin` as normal. If you have followed the tooling instructions above to enable macOS support, the resulting plugin will include macOS.
-- To use a plugin with macOS support, add it to `pubspec.yaml`; `flutter` will automatically add the necessary native code to your project, as with iOS or Android.
-
-#### Windows and Linux
-
-Plugin tooling is not yet implemented. For now you must manually update your native build (`vcxproj`, `Makefile`) to build each plugin, include its header, register it, and link its shared library with the executable. See the [plugins section of the flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) for an example plugin to use as a starting point for building your own, and for details on using plugins built from that example.
+Plugin tooling for Windows and Linux is not yet implemented. For now you must manually update your native build (`vcxproj`, `Makefile`) to build each plugin, include its header, register it, and link its shared library with the executable. See the [plugins section of the flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) for an example plugin to use as a starting point for building your own, and for details on using plugins built from that example.
 
 ## Flutter Application Requirements
 
-Because desktop platforms are not yet fully supported by the Flutter framework, existing Flutter
+Because Windows and Linux are not yet fully supported by the Flutter framework, existing Flutter
 applications are likely to require slight modifications to run.
 
 ### Target Platform Override
 
-Most applications targeting Windows and/or Linux will need to override the target
-platform for the application
+Most applications will need to override the target platform for the application
 to one of the supported values in order to avoid 'Unknown platform' exceptions,
 to work around the fact that [those platforms are not yet valid `TargetPlatform`
 values](https://github.com/flutter/flutter/issues/31366).
@@ -125,8 +119,8 @@ platforms (see the [Windows](https://github.com/flutter/flutter/issues/39915) an
 
 ### Plugins
 
-If your project uses any plugins (unless they have desktop support), they won't
-work, as the native side will be missing. Depending on how the Dart side of the
+If your project uses any plugins they won't work (unless they have desktop support),
+as the native side will be missing. Depending on how the Dart side of the
 plugin is written, they may fail gracefully, or may throw errors.
 
 ## Add-to-App
