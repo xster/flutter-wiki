@@ -2,7 +2,7 @@
 
 In the interest of transparency, we want to share high-level details of our roadmap, so that others can see our priorities and make plans based off the work we are doing.
 
-_Our plans will evolve over time based on customer feedback and new market opportunities. The list here shouldn't be viewed either as exhaustive, nor a promise that we will complete all this work. If you have feedback about what you think we should be working on, we encourage you to get in touch (e.g. by [filing an issue](https://github.com/flutter/flutter/issues/new/choose) or [emailing the flutter-dev mailing list](https://groups.google.com/forum/#!forum/flutter-dev)). Flutter is an open source project, we invite contributions both towards the themes presented below and in other areas._
+_Our plans will evolve over time based on customer feedback and new market opportunities. We use our quarterly surveys and feedback on GitHub issues to prioritize work. The list here shouldn't be viewed either as exhaustive, nor a promise that we will complete all this work. If you have feedback about what you think we should be working on, we encourage you to get in touch (e.g. by [filing an issue](https://github.com/flutter/flutter/issues/new/choose)). Flutter is an open source project, we invite contributions both towards the themes presented below and in other areas._
 
 ## Areas of focus
 
