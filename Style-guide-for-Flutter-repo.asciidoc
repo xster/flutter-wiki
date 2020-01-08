@@ -818,10 +818,10 @@ we use the following style for these methods:
   bool operator ==(Object other) {
     if (other.runtimeType != runtimeType)
       return false;
-    final Foo typedOther = other;
-    return typedOther.bar == bar
-        && typedOther.baz == baz
-        && typedOther.quux == quux;
+    return other is Foo 
+        && other.bar == bar
+        && other.baz == baz
+        && other.quux == quux;
   }
 
   @override
