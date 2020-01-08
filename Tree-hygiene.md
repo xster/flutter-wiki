@@ -86,11 +86,14 @@ follow these steps to start working on a patch:
 
  * `git fetch upstream`
  * `git checkout upstream/master -b name_of_your_branch`
+ * `flutter update-packages`
  * Hack away.
  * `git commit -a -m "<your informative commit message>"`
  * `git push origin name_of_your_branch`
 
 GitHub provides you with a link for submitting the pull request in the message output by `git push`.
+
+Note that `git pull` will often miss tags that are used to define the release of the flutter tool so it is recommended to use `git fetch` typically to avoid version mismatches when running `flutter update-packages`.
 
 Please make sure all your patches have detailed commit messages explaining what the problem was and
 what the solution is.
