@@ -128,6 +128,8 @@ Configure `FlutterActivity` to start with your launch theme and then shift to yo
     android:value="2" />
 ```
 
+Once you make this declaration in your AndroidManifest and also use plugins, the new GeneratedPluginRegistrants created by the Flutter tools during build will now be able to also use plugins that uses the new Android embedding (which registers the plugins against a `FlutterEngine` instead of a `PluginRegistry.Registrar`). 
+
 Your app should still build as normal (such as via `flutter build apk`) but you're now using the new Android classes. 
 
 # Add-to-app migration
