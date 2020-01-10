@@ -280,6 +280,17 @@ If you come across a bug that is unrelated to the tool, remove the `tool` label 
 
 If you come across a bug that is unrelated to the Web backend, remove the `☸ platform-web` label and leave a comment explaining why. That will send it back to triage.
 
+## Add-to-App
+
+* [Add-to-app PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc)
+* [Issues missing component](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22a%3A+existing-apps%22+-project%3Aflutter%2Fflutter%2F74+-project%3Aflutter%2Fflutter%2F76+-project%3Aflutter%2Fflutter%2F77+-project%3Aflutter%2Fflutter%2F78+-project%3Aflutter%2Fflutter%2F79+-project%3Aflutter%2Fflutter%2F80+-project%3Aflutter%2Fflutter%2F81+-project%3Aflutter%2Fflutter%2F82+-project%3Aflutter%2Fflutter%2F83)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22TODAY%22)
+* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
+* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
+
+If you come across a bug that is unrelated to add-to-app, remove the `a: existing-apps` label and leave a comment explaining why. That will send it back to triage.
+
 ## Plugins, Packages, and Ecosystem
 
 ### Plugins
