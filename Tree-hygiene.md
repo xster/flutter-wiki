@@ -421,7 +421,7 @@ During this process, each individual PR does not break any tests, so it should n
 
 ### 5. Document the change, including clear documentation for migrating code, with samples, and clear rationales for each change
 
-Push your migration guide to [the flutter.dev Web site](https://flutter.dev/docs/release/breaking-changes) (don't forget to update the [index](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/index.html) of that directory as well), e-mail a copy to flutter-announce, and update the [[Changelog]] wiki page.
+Push your migration guide to [the flutter.dev Web site](https://flutter.dev/docs/release/breaking-changes) (don't forget to update the [index](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/index.md) of that directory as well), e-mail a copy to flutter-announce, and update the [[Changelog]] wiki page.
 
 When updating the [[Changelog]], to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
 
