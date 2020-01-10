@@ -5,10 +5,10 @@
 The process of triaging bugs is to first go through these bug lists and make sure they have all been processed as described below:
 
 <!--ALL-LABELS-->
-1. [recently filed bugs with none of the classification labels](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22will+need+additional+triage%22+-label%3A%22%E2%98%B8+platform-web%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3A%22waiting+for+customer+response%22+updated%3E%3D2019-09-10+sort%3Aupdated-desc).
+1. [recently filed bugs with none of the classification labels](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22will+need+additional+triage%22+-label%3A%22%E2%98%B8+platform-web%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3A%22a%3A+existing-apps%22+-label%3A%22waiting+for+customer+response%22+updated%3E%3D2019-09-10+sort%3Aupdated-desc).
 
 <!--ALL-LABELS-->
-2. [older bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22will+need+additional+triage%22+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
+2. [older bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22will+need+additional+triage%22+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+).
 
 3. [bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
 
@@ -95,7 +95,7 @@ If you have something to say regarding the bug, for example if you happen to not
 The process for triaging PRs is to look at this list:
 
 <!--ALL-LABELS-->
-1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3Atool+-label%3A"☸+platform-web"+sort%3Aupdated-asc+).
+1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3Atool+-label%3A"☸+platform-web"+-label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+).
 
 When triaging PRs, it's important that incoming PRs:
 
@@ -108,7 +108,7 @@ For PRs, each PR should match one of the following categories:
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
 <!--ALL-LABELS--><!-- but not all the labels are here, this is just the list of PR labels in flutter/flutter -->
-* It can have one of the following labels: `framework`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `team: infra`. (In addition to one of those, it may also have the `a: existing apps` label.)
+* It can have one of the following labels: `framework`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `team: infra`, `a: existing apps`.
 
 * It can have the `will need additional triage` label. Use this if it's not clear what label it should have.
 
