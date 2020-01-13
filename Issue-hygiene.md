@@ -216,6 +216,26 @@ File bugs for anything that you come across that needs doing. When you
 implement something but know it's not complete, file bugs for what you
 haven't done. That way, we can keep track of what still needs doing.
 
+### Exceptions
+
+Do _not_ file bugs that meet the following criteria:
+
+- Asking meta-questions like "why was bug #XYZ closed?" Instead, post
+  on the original issue or raise the actual problem that is still not
+  resolved.
+- Intentional duplicates like  "This is the same as bug #ABC but that 
+  one is not getting enough attention." Instead, upvote the original
+  issue or add a comment that provides new details that are not already
+  captured or (best of all) assign it to yourself and start working on it!
+
+## Do not add "me to" or "same" comments to bugs
+
+The Flutter team prioritizes issues in part based on the number of +1 (thumbs
+up) reactions on the top level comment of the bug.  Adding comments like "me
+too" or "same here" is generally distracting and makes it harder to find
+other more meaingful content in the bug. If you have no new details to add,
+consider just thumbs up-ing the issue.  If you wish to subscribe to the issue,
+click the "subscribe" button in the right hand column of the GitHub UI.
 
 ## When will my bug be fixed?
 
@@ -262,3 +282,27 @@ showing the bug). Attach such a file or files to the issue itself.
 
 For legal reasons, we cannot debug problems that require looking at proprietary
 code or, generally, code that is not publicly available.
+
+## Avoid posting screenshots of text
+
+If you want to show code, quote someone, or show a string of text that does
+not render properly with Flutter, please avoid sharing it via an image or
+screenshot. Text in images cannot be copied, and cannot be automatically
+translated via services like Google Translate. This makes it harder for team
+members who do not speak that language to participate in the issue.
+
+It is perfectly fine to share a screenshot of text rendering invalidly, but
+also include the actual string or character(s) that lead to it so that they
+can be copied and pasted into a test case.
+
+## Consider posting issues in English
+
+If you are able to read and write English clearly, consider posting your issue
+in English, even if it is about a langauge specific issue (like the way text
+renders in some non-English language).
+
+It is fine to post issues in languages other than English, but consider that
+many readers will rely on automatic translation services to read your issue.
+Please avoid using screenshots in languages other than English, as services like
+Google Translate will not translate the text in images, and the pool of people
+able to assist you will be reduced.
