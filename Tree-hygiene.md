@@ -360,7 +360,7 @@ to the original PR and to the revert PR so that people can follow the breadcrumb
 
 ## Handling breaking changes
 
-In general, we want to avoid making changes to Flutter, our plugins, or our packages, that force developers using Flutter to change their code in order to upgrade to new versions of Flutter. See [our compatibility policy](https://flutter.dev/resources/compatibility).
+In general, we want to avoid making changes to Flutter, our plugins, or our packages, that force developers using Flutter to change their code in order to upgrade to new versions of Flutter. See [our compatibility policy](https://flutter.dev/docs/resources/compatibility).
 
 Sometimes, however, doing this is necessary for the greater good. We want our APIs to be
 intuitive; if being backwards-compatible requires making an API into something that we would
