@@ -8,7 +8,7 @@ Golden file tests for `package:flutter` use [Flutter Gold](https://flutter-gold.
 )
 - [First Time Contributors](https://github.com/flutter/flutter/wiki/Writing-a-golden-file-test-for-package%3Aflutter#first-time-contributors
 )
-- [Golden File Changes from flutter/engine](https://github.com/flutter/flutter/wiki/Writing-a-golden-file-test-for-package%3Aflutter#golden-file-changes-from-flutter/engine
+- [Golden File Changes from flutter/engine](https://github.com/flutter/flutter/wiki/Writing-a-golden-file-test-for-package%3Aflutter#golden-file-changes-from-flutterengine)
 )
 
 ## Creating a New Golden File Test
