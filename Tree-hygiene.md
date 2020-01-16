@@ -75,6 +75,8 @@ The general process for submitting code to a Flutter repository is as follows:
    revert your patch. You will be racing everyone else on the team who will also be trying
    to revert your patch.
 
+10. Changes that break the [flutter/plugins CI](https://cirrus-ci.com/github/flutter/plugins/master) should as well be reverted while the problem is being studied.
+
 _See also: [[What should I work on?]]_
 
 ## Using git
@@ -255,7 +257,7 @@ aren't able to find anyone to review your patch, is it really an emergency?)
 
 ## Regressions in functionality
 
-If a check-in has caused a regression on master, revert (roll back) the
+If a check-in has caused a regression on master for any of the flutter repositories, revert (roll back) the
 check-in (even if it isn't yours). When master is broken, it slows down
 everyone else on the project, so we want to get the tree green again as soon
 as possible.
