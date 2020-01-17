@@ -289,6 +289,7 @@ If you come across a bug that is unrelated to the Web backend, remove the `☸ p
 * [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
 * [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
+* [Component triage progress](https://github.com/flutter/flutter/projects?query=is%3Aopen+add-to-app+review+sort%3Aname-asc)
 
 If you come across a bug that is unrelated to add-to-app, remove the `a: existing-apps` label and leave a comment explaining why. That will send it back to triage.
 
