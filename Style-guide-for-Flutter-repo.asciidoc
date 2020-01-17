@@ -850,10 +850,10 @@ For trivial classes, override `toString` as follows, to aid in debugging:
 
 ```dart
   @override
-  String toString() => '$runtimeType($bar, $baz, $quux)';
+  String toString() => '${objectRuntimeType(this, 'NameOfObject')}($bar, $baz, $quux)';
 ```
 
-...but even then, consider using Diagnosticable instead.
+...but even then, consider using Diagnosticable instead.  Avoid using `$runtimeType`, since it adds a non-trivial cost even in release and profile mode. The `objectRuntimeType` method handles this for you, falling back to a supplied constant string when asserts are disabled.
 
 
 Naming
