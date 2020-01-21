@@ -26,7 +26,14 @@ The general process for submitting code to a Flutter repository is as follows:
    You can put the label "proposal" on your issue to indicate that you have a design
    up for discussion in the issue.
 
-4. Create a branch on your GitHub fork of the repository, and implement your change.
+4.  If the work you are doing affects our privacy surface --- such as modifying how 
+    we collect analytics, crash logs, or the like, then please reach out to a Googler
+    to discuss your changes (you'll want to start a Google Doc to
+    solicit feedback (use the template at [flutter.dev/go/template](https://flutter.dev/go/template)),
+    who will be happy to loop in one of our engineers who explicitly focus on privacy issues
+    so that they're able to give feedback on the work you plan to do. 
+
+5. Create a branch on your GitHub fork of the repository, and implement your change.
    Make sure it is tested. Consider using the code coverage tools to check that all
    your new code is covered by tests (see [[Test coverage for package:flutter]]).
 
@@ -40,14 +47,14 @@ The general process for submitting code to a Flutter repository is as follows:
    `clang-format` before submission (use `buildtools/<OS>/clang/bin/clang-format
    --style=file -i`).
 
-5. Submit this branch as a PR to the relevant Flutter repository.
+6. Submit this branch as a PR to the relevant Flutter repository.
 
-6. Get your code reviewed (see below). You should probably reach out to the relevant
+7. Get your code reviewed (see below). You should probably reach out to the relevant
    expert(s) for the areas you touched and ask them to review your PR directly.
    GitHub sometimes recommends specific reviewers; if you're not sure who to ask,
    that's probably a good place to start.
 
-7. Make sure your PR passes all the pre-commit tests. Consider running some of the
+8. Make sure your PR passes all the pre-commit tests. Consider running some of the
    post-commit tests locally (see the
    [devicelab](https://github.com/flutter/flutter/blob/master/dev/devicelab/README.md)
    directory). If any tests break, especially the `customer_testing` tests, please
@@ -68,14 +75,14 @@ The general process for submitting code to a Flutter repository is as follows:
    **If the trees or dashboards are showing any regressions, only fixes
    that improve the situation are allowed to go in.**
 
-8. Once everything is green and you have an LGTM, land your patch.
+9. Once everything is green and you have an LGTM, land your patch.
 
-9. Watch the post-commit tests on the dashboard to make sure everything passes. If anything
+10. Watch the post-commit tests on the dashboard to make sure everything passes. If anything
    goes wrong, revert your patch and study the problem. You should aim to be the one to
    revert your patch. You will be racing everyone else on the team who will also be trying
    to revert your patch.
 
-10. Changes that break the [flutter/plugins CI](https://cirrus-ci.com/github/flutter/plugins/master) should as well be reverted while the problem is being studied.
+11. Changes that break the [flutter/plugins CI](https://cirrus-ci.com/github/flutter/plugins/master) should as well be reverted while the problem is being studied.
 
 _See also: [[What should I work on?]]_
 
