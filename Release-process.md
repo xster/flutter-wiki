@@ -76,6 +76,7 @@ https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). 
 
 This is the process for rolling the "stable" branch. We generally intend to roll the stable branch every quarter or so, probably with more fanfare than a regular beta roll. The steps below are the technical steps required for the roll; there will most likely be more coordination around the roll that are not discussed here.
 
+1. Before you begin, reach out to a Googler to ensure that you've looped in a Google privacy expert to review changes to the release that may affect user privacy.
 1. Pick a commit that has been rolled to the `beta` branch using the process above. Typically, this will be done in coordination with a public event (e.g. Flutter Live) and so much discussion will have happened regarding exactly which commit to use, so this process doesn't go into detail as to how to select the commit.
 1. Check to see if there are any [RELEASE BLOCKERS](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=label%3A%22RELEASE+BLOCKER%22+). If there are, follow the "emergency" steps below to hot-fix the candidate beta release. _Remove the label once you are done._ The Open/Closed status of a bug relates to the master branch, not to the beta branch, and thus it will be common for this label to be applied to closed bugs.
 1. Check the analytics for the selected commit on the beta branch to see if it has any spikes in crashes, lost users, etc. If you don't have access to the analytics contact kf6gpe or Hixie.
