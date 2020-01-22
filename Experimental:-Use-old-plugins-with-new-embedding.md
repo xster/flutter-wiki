@@ -1,22 +1,61 @@
-_**Everything in this doc and linked from this doc is experimental. These details WILL change. Do not use these instructions or APIs in production code because we will break you.**_
+Flutter's v2 Android embedding includes reflection code that should find and register all plugins listed in your `pubspec.yaml` file without any intervention on your part. If your desired plugins are not registered automatically, please file an issue.
 
-The new Android embedding introduces a new Java API for plugins. However, old plugins can still be used with the new Android embedding by using the provided shim.
+### Partial plugin registration
 
-The following example shows how to use the Android plugin shim to setup a standard `FlutterActivity`.
+To prevent Flutter from registering all plugins and instead register only specific plugins of your choosing, do the following.
+
+First, construct a `FlutterEngine` either as a [cached `FlutterEngine`](https://flutter.dev/docs/development/add-to-app/android/add-flutter-screen#step-3-optional-use-a-cached-flutterengine), or by overriding `provideFlutterEngine()` in [`FlutterActivity`](https://api.flutter.dev/javadoc/io/flutter/embedding/android/FlutterActivity.html#provideFlutterEngine-android.content.Context-) or [`FlutterFragment`](https://api.flutter.dev/javadoc/io/flutter/embedding/android/FlutterFragment.html#provideFlutterEngine-android.content.Context-) such that the `FlutterEngine` instance doesn't automatically register plugins.
 
 ```java
-public class FlutterShimPluginActivity extends FlutterActivity {
+FlutterEngine flutterEngine = new FlutterEngine(
+  context, 
+  FlutterLoader.getInstance(), 
+  new FlutterJNI(), 
+  dartVmArgs, // or an empty array of no args needed
+  true
+);
+```
 
-  @Override
-  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
-    // Create a ShimPluginRegistry and wrap the FlutterEngine with the shim.
-    ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(
-      flutterEngine, 
-      new PlatformViewsController()
-    );
+Second, register the plugins that you want. If you overrode `provideFlutterEngine()` in `FlutterActivity` or `FlutterFragment` then override `configureFlutterEngine()` to add plugins:
 
-    // Use the GeneratedPluginRegistrant to add every plugin that's in the pubspec.
-    GeneratedPluginRegistrant.registerWith(shimPluginRegistry);
-  }
+```java
+public void configureFlutterEngine(FlutterEngine engine) {
+  // The ShimPluginRegistry is how the v2 embedding works with v1 plugins.
+  ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(
+    flutterEngine, 
+    new PlatformViewsController()
+  );
+
+  // Add any v1 plugins to the shim
+  // TODO: example registration
+
+  // Add any v2 plugins that you want
+  // engine.getPlugins().add(new MyPlugin());
 }
+```
+
+If you went with the cached `FlutterEngine` approach instead of `FlutterActivity` and `FlutterFragment` method overrides, then you can add plugins whenever you'd like. You can even add them immediately after instantiating your `FlutterEngine`. However, be advised that some v1 plugins expect an `Activity` to be available immediately upon registration. This will not be the case unless you add plugins in `configureFlutterEngine()` as shown earlier.
+
+```java
+// Instantiate cached FlutterEngine.
+FlutterEngine flutterEngine = new FlutterEngine(
+  context, 
+  FlutterLoader.getInstance(), 
+  new FlutterJNI(), 
+  dartVmArgs, // or an empty array of no args needed
+  true
+);
+
+// Immediately add plugins to the cached FlutterEngine.
+// The ShimPluginRegistry is how the v2 embedding works with v1 plugins.
+ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(
+  flutterEngine, 
+  new PlatformViewsController()
+);
+
+// Add any v1 plugins to the shim
+// TODO: example registration
+
+// Add any v2 plugins that you want
+// engine.getPlugins().add(new MyPlugin());
 ```
