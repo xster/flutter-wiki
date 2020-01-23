@@ -20,9 +20,10 @@ _This guide assumes you haven't manually modified your Android host project for 
 
 If you opt to migrate your standard `flutter create`d project, follow the following steps:
 
-1. Replace the previous `onCreate` plugin registration code at `android/app/src/main/java/[your/package/name]/MainActivity.java` with the new `configureFlutterEngine` plugin registration code. You can run `flutter create` to verify the latest template, but the diff most likely will look this:
+1. Replace the previous `onCreate` plugin registration code at `android/app/src/main/java/[your/package/name]/MainActivity.java` with the new `configureFlutterEngine` plugin registration code. You can run `flutter create` to verify the latest template, but the diff will most likely look something like the below.
 
 ```diff
+// MainActivity.java
 -import android.os.Bundle;
 -import io.flutter.app.FlutterActivity;
 +import androidx.annotation.NonNull;
@@ -38,6 +39,26 @@ If you opt to migrate your standard `flutter create`d project, follow the follow
 +  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
 +    GeneratedPluginRegistrant.registerWith(flutterEngine);
    }
+ }
+```
+
+```diff
+// MainActivity.kt
+-import android.os.Bundle
+-import io.flutter.app.FlutterActivity
++import androidx.annotation.NonNull;
++import io.flutter.embedding.android.FlutterActivity
++import io.flutter.embedding.engine.FlutterEngine
+ import io.flutter.plugins.GeneratedPluginRegistrant
+ 
+ class MainActivity: FlutterActivity() {
+-  override fun onCreate(savedInstanceState: Bundle?) {
+-    super.onCreate(savedInstanceState)
+-    GeneratedPluginRegistrant.registerWith(this)
+-  }
++    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
++        GeneratedPluginRegistrant.registerWith(flutterEngine);
++    }
  }
 ```
 
