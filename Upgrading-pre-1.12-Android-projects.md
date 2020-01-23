@@ -20,14 +20,34 @@ _This guide assumes you haven't manually modified your Android host project for 
 
 If you opt to migrate your standard `flutter create`d project, follow the following steps:
 
-1. Delete `android/app/src/main/java/[your/package/name]/MainActivity.java`. If no custom code has been added then you can delete the entire directory structure at `[your/package/name]` because it only contains `MainActivity.java`.
+1. Replace the previous `onCreate` plugin registration code at `android/app/src/main/java/[your/package/name]/MainActivity.java` with the new `configureFlutterEngine` plugin registration code. You can run `flutter create` to verify the latest template, but the diff most likely will look this:
+
+```diff
+-import android.os.Bundle;
+-import io.flutter.app.FlutterActivity;
++import androidx.annotation.NonNull;
++import io.flutter.embedding.android.FlutterActivity;
++import io.flutter.embedding.engine.FlutterEngine;
+ import io.flutter.plugins.GeneratedPluginRegistrant;
+ 
+ public class MainActivity extends FlutterActivity {
+   @Override
+-  protected void onCreate(Bundle savedInstanceState) {
+-    super.onCreate(savedInstanceState);
+-    GeneratedPluginRegistrant.registerWith(this);
++  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
++    GeneratedPluginRegistrant.registerWith(flutterEngine);
+   }
+ }
+```
+
 2. Open `android/app/src/main/AndroidManifest.xml`.
 3. Remove the reference to `FlutterApplication` from the application tag.
 
 Previous configuration:
 ```xml
 <application
-  android:name="io.flutter.FlutterApplication"
+  name="io.flutter.FlutterApplication"
   >
   <!-- code omitted -->
 </application>
@@ -41,40 +61,7 @@ New configuration:
 </application>
 ```
 
-4. Change the `MainActivity` reference to `FlutterActivity`.
-
-Previous configuration:
-```xml
-<activity android:name=".MainActivity"
-  android:launchMode="singleTop"
-  android:theme="@android:style/Theme.Black.NoTitleBar"
- android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-  android:hardwareAccelerated="true"
-  android:windowSoftInputMode="adjustResize"
-  >
-  <intent-filter>
-    <action android:name="android.intent.action.MAIN"/>
-    <category android:name="android.intent.category.LAUNCHER"/>
-  </intent-filter>
-</activity>
-```
-
-New configuration (only the first 3 lines changed):
-```xml
-<activity android:name="io.flutter.embedding.android.FlutterActivity"
-  android:theme="@android:style/Theme.Black.NoTitleBar" 
- android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-  android:hardwareAccelerated="true"
-  android:windowSoftInputMode="adjustResize"
-  >
-  <intent-filter>
-    <action android:name="android.intent.action.MAIN"/>
-    <category android:name="android.intent.category.LAUNCHER"/>
-  </intent-filter>
-</activity>
-```
-
-5. Update splash screen behavior (if splash behavior is desired).
+4. Update splash screen behavior (if splash behavior is desired).
 
 Remove all `<meta-data>` tags with key `android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"`.
 
@@ -98,9 +85,9 @@ Add a normal theme that to `styles.xml` that should replace the launch screen wh
 
 The "normal theme" draws the background behind your Flutter experience. That background is typically seen for a brief moment just before the first Flutter frame renders. The "normal theme" also controls Android's status bar and navigation bar visual properties for the duration of your Flutter experience.
 
-Configure `FlutterActivity` to start with your launch theme and then shift to your normal theme. Also specify that you want your launch screen to continue being displayed until Flutter renders its first frame:
+Configure `MainActivity` to start with your launch theme and then shift to your normal theme. Also specify that you want your launch screen to continue being displayed until Flutter renders its first frame:
 ```xml
-<activity android:name="io.flutter.embedding.android.FlutterActivity"
+<activity android:name=".MainActivity"
   android:theme="@style/LaunchTheme"
   // some code omitted
   >
