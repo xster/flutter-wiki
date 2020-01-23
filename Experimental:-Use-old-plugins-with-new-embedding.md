@@ -27,7 +27,9 @@ public void configureFlutterEngine(FlutterEngine engine) {
   );
 
   // Add any v1 plugins to the shim
-  // TODO: example registration
+  // MyV1Plugin.registerWith(
+  //   shimPluginRegistry.registrarFor("com.my.package.MyV1Plugin")
+  // );
 
   // Add any v2 plugins that you want
   // engine.getPlugins().add(new MyPlugin());
@@ -54,7 +56,9 @@ ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(
 );
 
 // Add any v1 plugins to the shim
-// TODO: example registration
+// MyV1Plugin.registerWith(
+//   shimPluginRegistry.registrarFor("com.my.package.MyV1Plugin")
+// );
 
 // Add any v2 plugins that you want
 // engine.getPlugins().add(new MyPlugin());
