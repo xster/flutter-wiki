@@ -11,7 +11,7 @@ FlutterEngine flutterEngine = new FlutterEngine(
   context, 
   FlutterLoader.getInstance(), 
   new FlutterJNI(), 
-  dartVmArgs, // or an empty array of no args needed
+  dartVmArgs, // or an empty array if no args needed
   true
 );
 ```
@@ -42,7 +42,7 @@ FlutterEngine flutterEngine = new FlutterEngine(
   context, 
   FlutterLoader.getInstance(), 
   new FlutterJNI(), 
-  dartVmArgs, // or an empty array of no args needed
+  dartVmArgs, // or an empty array if no args needed
   true
 );
 
