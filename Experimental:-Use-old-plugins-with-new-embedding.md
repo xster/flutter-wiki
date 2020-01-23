@@ -12,7 +12,7 @@ FlutterEngine flutterEngine = new FlutterEngine(
   FlutterLoader.getInstance(), 
   new FlutterJNI(), 
   dartVmArgs, // or an empty array if no args needed
-  true
+  false // this arg instructs the FlutterEngine NOT to register plugins automatically
 );
 ```
 
@@ -43,7 +43,7 @@ FlutterEngine flutterEngine = new FlutterEngine(
   FlutterLoader.getInstance(), 
   new FlutterJNI(), 
   dartVmArgs, // or an empty array if no args needed
-  true
+  false // this arg instructs the FlutterEngine NOT to register plugins automatically
 );
 
 // Immediately add plugins to the cached FlutterEngine.
