@@ -416,23 +416,23 @@ If possible, avoid four-phase deprecations (adding a new API with a temporary na
 
 Stage your change and the documentation for your change. Typically this will be two or more PRs, plus PRs to fix the tests that were broken (see step 1), as well as writing a migration guide as a PR to the Website repository.
 
-Use our [breaking change migration guide template](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md) (every part in square brackets should be changed) to create the migration guide that describes the change.
+Use our [breaking change migration guide template](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md) (every part in square brackets should be changed) to create the migration guide that describes the change. Do not land the migration guide at this time. You will need to update it before you land it in the last step.
 
-**You must ask @Hixie to review the migration guide before landing your PRs.** Until we have experience with writing these regularly, we need to make sure they're consistent in style.
+**You must ask @Hixie on Discord to review the migration guide before landing your PRs.** Until we have experience with writing these regularly, we need to make sure they're consistent in style. (Don't bother asking on GitHub, Hixie gets too many GitHub notifications to read them. See [[Chat]] for how to use our Discord server.)
 
 
 ### 4. Land your change.
 
-Once you are ready, have received feedback, iterated on your design and your migration guide, land your initial change and start migrating clients. Once all the clients are migrated, land your final change. (You may have several iterations here if you have a multiphase roll-out.)
+Once you are ready, have received feedback, iterated on your design and your migration guide, land your initial change and start migrating clients. *Do not yet land the migration guide.* Once all the clients are migrated, land your final change. (You may have several iterations here if you have a multiphase roll-out.)
 
 During this process, each individual PR does not break any tests, so it should not block any autorollers.
 
 
 ### 5. Document the change, including clear documentation for migrating code, with samples, and clear rationales for each change
 
-Push your migration guide to [the flutter.dev Web site](https://flutter.dev/docs/release/breaking-changes) (don't forget to update the [index](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/index.md) of that directory as well), e-mail a copy to flutter-announce, and update the [[Changelog]] wiki page.
+Once everything has landed, update your migration guide based on your experience migrating everyone, update the timeline on the guide, and push it to [the flutter.dev Web site](https://flutter.dev/docs/release/breaking-changes) (don't forget to update the [index](https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/index.md) of that directory as well), e-mail a copy to flutter-announce, and update the [[Changelog]] wiki page.
 
-When updating the [[Changelog]], to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
+When updating the [[Changelog]] and the timeline section of the migration guide, to figure out the correct version heading for the changelog run `git fetch upstream && flutter --version`. For example, if it says "Flutter 1.2.23-pre.10" in the output your changelog entry should be under heading "Changes since 1.2.22".
 
 
 #### Deprecation
