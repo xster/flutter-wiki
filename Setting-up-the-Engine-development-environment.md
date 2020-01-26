@@ -145,8 +145,6 @@ VSCode can provide some IDE features using the [C/C++ extension](https://marketp
 
 Intellisense can also use our `compile_commands.json` for more robust functionality. Either symlink `src/out/compile_commands.json` to the project root at `src/flutter` or provide an absolute path to it in the `c_cpp_properties.json` config file. See ["compile commands" in the c_cpp_properties.json reference](https://code.visualstudio.com/docs/cpp/c-cpp-properties-schema-reference). This will likely resolve the basic issues mentioned above.
 
-The engine also has its own `clang` so specifying `"compilerPath": "<engine-path>/flutter/engine/src/buildtools/.../clang/bin/clang"` in `c_cpp_properties.json` may also resolve some Intellisense issues.
-
 For adding IDE support to the Java code in the engine with VSCode, see ["Using VSCode as an IDE for the Android Embedding"](https://github.com/flutter/flutter/wiki/Setting-up-the-Engine-development-environment#using-vscode-as-an-ide-for-the-android-embedding).
 
 ### CQuery (multiple editors)
