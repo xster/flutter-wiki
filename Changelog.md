@@ -7,7 +7,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ### v1.14.x
 
 * NEXT AUTHOR: Put your breaking change notification here and insert headings as appropriate to identify which version is affected.
-* [#48346](https://github.com/flutter/flutter/pull/48346) `TextHeightBehavior` may be used in `Text`, `RichText`, and `DefaultTextStyle` to specify how the `height` property affects the first line ascent and last line descent of the text.
+* [#48346](https://github.com/flutter/flutter/pull/48346) Adds `TextHeightBehavior` which may be used in `Text`, `RichText`, and `DefaultTextStyle` to specify how the `height` property affects the first line ascent and last line descent of the text.
 
 ### v1.13.x
 
