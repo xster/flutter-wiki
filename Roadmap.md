@@ -10,7 +10,7 @@ _Our plans will evolve over time based on customer feedback and new market oppor
 
 At our Flutter Interact event in December 2019, we announced that our support for Web had progressed to beta-level quality. We intend to continue this work with the goal of having Web be supported as an equal peer to Android and iOS. We hope to similarly continue our work in making Flutter the best way to create macOS desktop applications.
 
-Our goal for this year is that you should be able to run `flutter create; flutter run` and have your application run on Web browsers, macOS, Windows, Android, Fuchsia, and iOS, with support for hot reload, plugins, testing, and release mode builds. We intend to ensure that our Material Design widget library works well on all these platforms.
+Our goal for this year is that you should be able to run `flutter create; flutter run` and have your application run on Web browsers, macOS, Android, Fuchsia, and iOS, with support for hot reload, plugins, testing, and release mode builds. We intend to ensure that our Material Design widget library works well on all these platforms.
 
 _We don't intend to provide desktop-equivalents of the Cupertino widget library in 2020._
 
