@@ -8,7 +8,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 * NEXT AUTHOR: Put your breaking change notification here and insert headings as appropriate to identify which version is affected.
 * [#49389](https://github.com/flutter/flutter/pull/49389) Adds `containsKey` to `ImageCache`, and marks `resolve`
-  as `@nonVirtual` on `ImageProvider.
+  as `@nonVirtual` on `ImageProvider`.
 * [#49527](https://github.com/flutter/flutter/pull/49527) Makes `didChangeDependencies` called _only_ if the 
   widget will build, _always_ in a build scope, and _only_ once per build.
 * [#48346](https://github.com/flutter/flutter/pull/48346) Adds `TextHeightBehavior` which may be used in `Text`, `RichText`, and `DefaultTextStyle` to specify how the `height` property affects the first line ascent and last line descent of the text.
