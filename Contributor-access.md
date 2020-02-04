@@ -22,7 +22,7 @@ Our code of conduct is much, much stricter than most. We do not wait until someo
 
 When you see something that might be described as unwelcoming or is in some other way a violation of our code of conduct, promptly contact the offender and ask them to read the code of conduct and consider how they might more effectively espouse its philosophy. Most people react very positively to this.
 
-If they react negatively, or if they continue to make the environment unpleasant, they should be removed from the environment. On Discord, this would be kicking them from the channel. Repeat offenders should be banned. On GitHub, they can be blocked from our organisation (you may need to ask ianh@ or another admin of our GitHub org to do this). Please let the #server-support [[chat]] channel know when you do anything like this, so that we can keep an eye on how common it is.
+If they react negatively, or if they continue to make the environment unpleasant, they should be removed from the environment. On Discord, this would be kicking them from the channel. Repeat offenders should be banned. On GitHub, they can be blocked from our organisation (you may need to ask @Hixie or another admin of our GitHub org to do this). Please let the #server-support [[chat]] channel know when you do anything like this, so that we can keep an eye on how common it is.
 
 
 ### Privileges
