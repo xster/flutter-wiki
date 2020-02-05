@@ -116,7 +116,7 @@ NB: The previous hotfix version procedure used a `-` instead of a `+` between th
    1. Once this is reviewed and the tests have run, land the PR _on the branch_. (Check that you're not landing it on master!)
    1. Force [LUCI](https://ci.chromium.org/p/flutter) (the Chromium continuous integration bots) to build the specific commit you just pushed. **Talk to @Hixie and @dnfield for any problem triggering the build.**
       1. Let _ENGINE_COMMIT_ be the commit you just landed on the branch.
-      1. For each builder in the list of [builders](https://ci.chromium.org/p/flutter/g/engine/builders):
+      1. For each builder in the list of [hotfix-engine builders](https://ci.chromium.org/p/flutter/g/hotfix-engine/builders):
          1. Let _BUILDER_NAME_ be the name of the builder, fitting the pattern `buildbucket/luci.flutter.prod/{BUILDER_NAME}`
          1. Run the following command in a terminal:
             ```sh
@@ -128,7 +128,7 @@ NB: The previous hotfix version procedure used a `-` instead of a `+` between th
             ```
             #!/bin/bash
 
-            BUILDERS=$(curl 'https://ci.chromium.org/p/flutter/g/engine/builders' 2>/dev/null|sed -En 's:.*aria-label="builder buildbucket/luci\.flutter\.prod/([^/]+)".*:\1:p'|sort|uniq)
+            BUILDERS=$(curl 'https://ci.chromium.org/p/flutter/g/hotfix-engine/builders' 2>/dev/null|sed -En 's:.*aria-label="builder buildbucket/luci\.flutter\.prod/([^/]+)".*:\1:p'|sort|uniq)
 
             IFS=$'\n'
             for BUILDER in $BUILDERS; do
