@@ -145,7 +145,7 @@ NB: The previous hotfix version procedure used a `-` instead of a `+` between th
          - Update the value in `gitilesCommit.id` to `$ENGINE_COMMIT`.
          - Update the value in `requestId` to be a unique random string.
          - Press Shift+Enter to schedule the build. You have to do this for every builder.
-      1. Ask @christopherfujino to sign the newly built engine artifacts. Wait until they're signed before you proceed.
+      1. Sign the newly built engine artifacts following go/flutter-manual-codesign. Contact @fujino if you have problems.
    1. Wait for the engine bots to have completed their work.
    1. Lock down _BRANCH_ on GitHub if it's not already locked down.
 1. Update your local branch accordingly (such as by `git cherry-pick -e`). If applicable, update the `engine.version` to point to the engine you just built.
