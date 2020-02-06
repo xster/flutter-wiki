@@ -67,7 +67,7 @@ https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). 
    - Unpack and check to see that a new project can be created with `flutter create --offline foo`
    - Check that it doesn't build a new snapshot the first time flutter runs.
    - Check that we have the right channel and version set.
-1. Update the [[Changelog]] page so that the current set of changes is now labeled as being changes between the last two beta versions, and the top section is a new blank "Changes since..." section.
+1. Update the [[Changelog]] page to add a new section for the next beta release (i.e. if you just rolled v1.14.x, add a new section for 1.15.x). Move the "NEXT AUTHOR:" entry from the rolled beta section to the new section so that future changes will be flagged for the next release.
 1. Inform the person currently doing the dev roll that they should increment the Y number instead of the Z number (`--increment=y`).
 1. Send an e-mail to flutter-announce that includes the latest section of the [[Changelog]] page.
 1. Done!
