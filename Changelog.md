@@ -6,6 +6,7 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 
 ### v1.15.x
 * NEXT AUTHOR: Put your breaking change notification here and insert headings as appropriate to identify which version is affected.
+* [#48346](https://github.com/flutter/flutter/pull/48917) Adds `selectionHeightStyle` and `selectionWidthStyle` to `TextField` and `CupertinoTextField` which allows customization of how the selection highlighting looks.
 
 ### v1.14.x
 
