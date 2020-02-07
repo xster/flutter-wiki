@@ -175,7 +175,7 @@ Teams can use a variety of tools to prioritize bugs.
 
 ### Issue triage
 
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22TODAY%22)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3Aengine)
 * [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
 * [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
