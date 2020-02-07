@@ -228,7 +228,7 @@ Do _not_ file bugs that meet the following criteria:
   issue or add a comment that provides new details that are not already
   captured or (best of all) assign it to yourself and start working on it!
 
-## Do not add "me tot" or "same" comments to bugs
+## Do not add "me to" or "same" comments to bugs
 
 The Flutter team prioritizes issues in part based on the number of +1 (thumbs
 up) reactions on the top level comment of the bug.  Adding comments like "me
