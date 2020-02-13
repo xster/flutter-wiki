@@ -130,6 +130,7 @@ cases:
 
 - The implementation of this depends on `TaskInternal.execute()`, a Gradle API
   that's been removed with no replacement in Gradle 5.
+- This style of build is extremely slow compared to regular builds.
 - The plugins currently in the Flutter ecosystem were written under the previous
   build system and in many cases depend on the transitive dependency bleed to
   work. For example, many plugins built this way will fail to compile
