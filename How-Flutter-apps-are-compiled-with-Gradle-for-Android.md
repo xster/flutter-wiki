@@ -136,9 +136,9 @@ cases:
   individually because they're missing an explicit dependency on
   `androidx.annotation`. There are also other plugins that deliberately expose
   their own transitive `jar` dependencies in a way where they're automatically
-  included in the app at build time by the subproject system, but when built as
-  AARs will fail with "Class not found errors" unless users manually go back and
-  include the transitive plugin dependencies into their apps as well.
+  included in the app at build time by the subproject system, but apps including them as
+  AARs will fail with "Class not found errors" unless the transitive plugin dependencies
+  from the plugin are manually added into the apps' Gradle dependencies as well.
 
 ### When this is still used
 
