@@ -163,7 +163,7 @@ Compiling the web engine might take a few extra steps on Windows. Use cmd.exe an
    * Tip: if you get a python error try to use Python 2 instead of 3
 3. `git pull upstream master` in `src/flutter` to update the Flutter Engine repo.
 4. `gclient sync` to update your dependencies. 
-   * Tip: If you get a git authentication on this step try Git Bash instead
+   * Tip: If you get a git authentication errors on this step try Git Bash instead
 5. `python .\flutter\tools\gn --unoptimized --full-dart-sdk` to prepare your build files.
 6. `ninja -C .\out\<dir created by previous step>` to build.
 
