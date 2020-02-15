@@ -151,4 +151,34 @@ flutter run --local-engine=host_debug_unopt -d chrome
 flutter test --local-engine=host_debug_unopt test/path/to/your_test.dart
 ```
 
+## Compiling for the Web on Windows
+
+Compiling the web engine might take a few extra steps on Windows. Use cmd.exe and "run as administrator".
+
+1. Make sure you have Visual Studio installed. Set the following environment variables. For Visual Studio use the path of the version you installed.
+   * `GYP_MSVS_OVERRIDE_PATH = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community"`
+   * `GYP_MSVS_VERSION = 2017`
+2. Make sure, depot_tools, ninja and python are installed and added to the path. Also set the following environment variable for depot tools:
+   * `DEPOT_TOOLS_WIN_TOOLCHAIN = 0`
+   * Tip: if you get a python error try to use Python 2 instead of 3
+3. `git pull upstream master` in `src/flutter` to update the Flutter Engine repo.
+4. `gclient sync` to update your dependencies. 
+   * Tip: If you get a git authentication on this step try Git Bash instead
+5. `python .\flutter\tools\gn --unoptimized --full-dart-sdk` to prepare your build files.
+6. `ninja -C .\out\<dir created by previous step>` to build.
+
+To test Flutter with a local build of the Web engine, add `--local-engine=host_debug_unopt` to your `flutter` command, e.g.:
+
+```
+flutter run --local-engine=host_debug_unopt -d chrome
+flutter test --local-engine=host_debug_unopt test/path/to/your_test.dart
+```
+
+For testing the engine again use [felt](https://github.com/flutter/engine/blob/master/lib/web_ui/dev/README.md) tool 
+this time with felt_windows.bat.
+
+```
+felt_windows.bat test
+```
+
 _See also: [[Debugging the engine]], which includes instructions on running a Flutter app with a local engine._
