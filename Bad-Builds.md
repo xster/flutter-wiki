@@ -2,6 +2,10 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
+## v1.14.4 - v1.15.3:
+
+ * FontWeight ignored on iOS 13.3: [#49492](https://github.com/flutter/flutter/issues/49492)
+
 ## v1.14.5:
  * Calling `compute` without specifying a `debugLabel` in release mode crashes [#49601](https://github.com/flutter/flutter/issues/49601)
 
