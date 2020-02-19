@@ -408,7 +408,7 @@ Consider if you really need to make this change. In general, merely renaming a c
 
 Rather than deploying the proposed change as one PR that immediately breaks existing code, adjust your PR so that it introduces the new functionality, API, behavior change, etc, in an opt-in fashion.
 
-_For example, rather than replacing a widget with another, introduce the new widget and deprecate the old one. Rather than changing the order in which a certain argument is processed, provide a flag that selects which order the arguments will be processed in._
+_For example, rather than replacing a widget with another, introduce the new widget and discourage use of the old one. Rather than changing the order in which a certain argument is processed, provide a flag that selects which order the arguments will be processed in._
 
 When changing the semantics of an API with a temporary opt-in, a three-phase change is needed (adding the new API and opt-in, then removing the old API, then removing the opt-in.)
 
