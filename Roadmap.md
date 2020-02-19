@@ -20,7 +20,7 @@ Our other main goal is to improve Flutter's quality, fixing bugs and addressing 
 
 We intend to deliver on long-anticipated features such as our router refactor, instance state saving and restoring, and an improved internationalization workflow.
 
-In general in 2020 we hope to primarily focus on fixing bugs rather than adding new features.
+In general in 2020 we intend to primarily focus on fixing bugs rather than adding new features.
 
 _We mainly use the "Thumbs-Up" emoji reactions on the first comment of an issue to determine it's importance. See the [Issue hygiene](https://github.com/flutter/flutter/wiki/Issue-hygiene) wiki page for more details on our prioritization strategy._
 
