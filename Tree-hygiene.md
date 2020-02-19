@@ -437,7 +437,9 @@ When updating the [[Changelog]] and the timeline section of the migration guide,
 
 #### Deprecation
 
-Old APIs can be marked as deprecated as part of this process. The syntax for doing so must match the following pattern:
+Old APIs can be marked as deprecated as part of this process. Deprecation is not a way to avoid making a breaking change; you should consider deprecating an API to be equivalent to removing it, as some of our customers (and we ourselves) consider using a deprecated API to be anathema (triggering a build failure).
+
+The syntax for deprecations must match the following pattern:
 
 ```dart
 @Deprecated(
