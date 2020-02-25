@@ -272,6 +272,37 @@ or to mark the issue with a thumbs-up reaction. We regularly look through
 all issues sorted by the number of thumbs-up reactions to determine the
 relative priority of upcoming work, so that is one way to change our mind.
 
+## Locking an issue
+
+Issues should not regularly be locked. The most common reasons
+for locking an issue are:
+
+1. The issue is well understood by the engineers working on it,
+   is believed to be appropriately prioritized, has has a clear 
+   path to being fixed, and is otherwise attracting
+   a lot of off-topic or distracting comments like "me too" or
+   "when will this be fixed" or "I have a similar issue that might
+   or might not be the same as this one".
+2. The issue has been closed as fixed, and is attracting a lot of
+   off-topic comments that should either be filed as independent issues
+   or posted on a site like StackOverflow.com as a question.
+
+In these states, the issue is generally considered to be well
+understood, no longer in need of reproduction test cases, and
+either actively being worked on or already fixed on master.
+
+If you are concerned that such an issue is not receiving its due
+attention, see Escalating an Issue, described above. If you are
+not already a contributor but would like to work on that issue,
+consider reaching out on an appropriate [chat](https://github.com/flutter/flutter/wiki/Chat).
+
+If you have a similar issue and are not sure if it is the same,
+it is fine to file a new issue and linking it to the other issue.
+Please avoid intentionally filing duplicates.
+
+Very rarely, an issue gets locked because discussion has become 
+unproductive and has repeatedly violated the [Code of Conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md).
+
 ## Provide reduced test cases
 
 To debug a problem, we will need to be able to reproduce it. The best way
