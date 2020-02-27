@@ -213,7 +213,7 @@ If you come across a bug that is unrelated to material design, remove the `f: ma
 ### Cupertino
 
 * [Cupertino PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22TODAY%22)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
 * [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
 * [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
 * [Top issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+cupertino%22+sort%3Areactions-%2B1-desc) (look at the first page)
