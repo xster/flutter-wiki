@@ -33,13 +33,13 @@ Run the following steps to set up your environment:
    a new machine, make sure you've updated your fork so that you don't use stale
    configuration options from long ago. Do not clone this repo locally, scripts
    will take care of that for you.
-2. If you haven't configured your machine with an SSH key that's known to github then
+1. If you haven't configured your machine with an SSH key that's known to github then
    follow the directions here: https://help.github.com/articles/generating-ssh-keys/.
-3. Create an empty directory for your copy of the repository. For best
+1. Create an empty directory for your copy of the repository. For best
    results, call it `engine`: some of the tools assume this name when
    working across repositories. (They can be configured to use other
    names too; this isn't a strict requirement. It just makes things easier.)
-4. Create a `.gclient` file in the `engine` directory with the
+1. Create a `.gclient` file in the `engine` directory with the
    following contents, replacing `<your_name_here>` with your GitHub
    account name:
    ```python
@@ -54,26 +54,30 @@ Run the following steps to set up your environment:
      },
    ]
    ```
-5. `cd engine` (Change to the directory in which you put the
+1. `cd engine` (Change to the directory in which you put the
    `.gclient` file.)
-6. `gclient sync` This will fetch all the source code that Flutter
+1. `gclient sync` This will fetch all the source code that Flutter
    depends on. Avoid interrupting this script, it can leave your
    repository in an inconsistent state that is tedious to clean up.
    (This step automatically runs `git clone`, among other things.)
-7. `cd src/flutter` (Change to the `flutter` directory of the `src`
+1. `cd src/flutter` (Change to the `flutter` directory of the `src`
    directory that `gclient sync` created in your `engine` directory.)
-8. `git remote add upstream git@github.com:flutter/engine.git` (So
+1. `git remote add upstream git@github.com:flutter/engine.git` (So
    that you fetch from the master `flutter/engine` repository, not
    your clone, when running `git fetch` et al.)
-9. `cd ..` (Return to the `src` directory that `gclient sync` created
+1. `cd ..` (Return to the `src` directory that `gclient sync` created
     in your `engine` directory.)
-10. If you're on Linux, run: `sudo ./build/install-build-deps-android.sh`
-11. If you're on Linux, run: `sudo ./build/install-build-deps.sh`
-12. If you're on Linux, run: `sudo ./flutter/build/install-build-deps-linux-desktop.sh`
-13. If you're on Mac, install Oracle's Java JDK, version 1.8 or later.
-14. If you're on Mac, install `ant`: `brew install ant`
-15. If you're on Windows, install Visual Studio (non-Google developers only).
-16. If you're planning on working on the
+1. If you're on Linux, run the following. **Note:** These scripts are
+    distro- and version-specific, so are not guaranteed to work on
+    every configuration. If they fail, you may need to find comparable
+    packages to the ones that weren't found.
+    - `sudo ./build/install-build-deps-android.sh`
+    - `sudo ./build/install-build-deps.sh`
+    - `sudo ./flutter/build/install-build-deps-linux-desktop.sh`
+1. If you're on Mac:
+    - install Oracle's Java JDK, version 1.8 or later
+    - install `ant`: `brew install ant`
+1. If you're planning on working on the
     [buildroot](https://github.com/flutter/buildroot) repository as
     well, and have a local checkout of that repository, run the
     following commands in the `src` directory to update your git
@@ -82,7 +86,7 @@ Run the following steps to set up your environment:
     git remote rename origin upstream
     git remote add origin git@github.com:<your_name_here>/buildroot.git
     ```
-17. Additionally if you've modified dart sources in `flutter/engine`, you'll
+1. Additionally if you've modified dart sources in `flutter/engine`, you'll
     need to add a `dependency_overrides` section to point to your modified
     `package:sky_engine` and `package:sky_services` to the `pubspec.yaml`
     for the flutter app you're using the custom engine with.  A typical
