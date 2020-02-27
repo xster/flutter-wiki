@@ -268,7 +268,7 @@ If you come across a bug that is unrelated to the tool, remove the `tool` label 
 ## Web
 
 * [Web PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A"☸+platform-web"+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22TODAY%22)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%98%B8+platform-web%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
 * [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
 * [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
