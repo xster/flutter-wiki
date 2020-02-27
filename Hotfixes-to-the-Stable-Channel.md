@@ -15,5 +15,5 @@ This includes the following fixes:
 - https://github.com/flutter/flutter/issues/47804 - Flutter engine crashes on some Android devices due to "Failed to setup Skia Gr context"
 - https://github.com/flutter/flutter/issues/46172 - reportFullyDrawn causes crash on Android KitKat
 
-### Hotfix.6 (December 11, 2019)
+### Hotfix.5 (December 11, 2019)
 Initial stable release.
