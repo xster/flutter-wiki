@@ -35,7 +35,7 @@ desktop support. The [flutter-desktop-embedding project's plugins](https://githu
 
 Since the plugin APIs and tooling for Windows and Linux are not yet stable, publishing
 Windows and/or Linux plugins to pub.dev is strongly discouraged, but they can be referenced manually. See
-below for details.
+the link above for an example.
 
 ## Tooling
 
@@ -49,8 +49,6 @@ Run `flutter config` to see your current settings, as well as the commands to di
 
 Currently, macOS is the only desktop platform supported by `flutter create`. For Windows and Linux, the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding) has simple runners for each desktop platform that work with the `flutter` tool's in-progress desktop support, which you can add to your own project. See the READMEs there for details.
 
-**Be sure to read the 'Flutter Application Requirements' section below!**
-
 ### `run` and `build`
 
 `flutter run` and `flutter build` are supported on all desktop platforms once you have added the necessary platform directory to your project (see `create` above). Breaking changes are still common on Windows and Linux however, so you should expect to need to get the latest runners from flutter-desktop-embedding after any Flutter update.
@@ -60,68 +58,6 @@ Only debug mode is currently supported for Windows and Linux.
 ### IDEs ###
 
 If you have enabled desktop support and added a desktop runner to your project, as described above, your desktop should appear as an available device in Android Studio or VS Code for that project. The standard Flutter build and run workflows should then automatically work for desktop as well.
-
-## Flutter Application Requirements
-
-Because Windows and Linux are not yet fully supported by the Flutter framework, existing Flutter
-applications are likely to require slight modifications to run.
-
-### Target Platform Override
-
-Most applications will need to override the target platform for the application
-to one of the supported values in order to avoid 'Unknown platform' exceptions,
-to work around the fact that [those platforms are not yet valid `TargetPlatform`
-values](https://github.com/flutter/flutter/issues/31366).
-This should be done as early as possible. For instance:
-
-```dart
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
-[...]
-
-/// If the current platform is a desktop platform that isn't yet supported by
-/// TargetPlatform, override the default platform to one that is.
-/// Otherwise, do nothing.
-void _setTargetPlatformForDesktop() {
-  if (!kIsWeb && (Platform.isLinux || Platform.isWindows)) {
-    debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
-  }
-}
-
-void main() {
-  _setTargetPlatformForDesktop();
-  [...]
-}
-```
-
-Note that the choice of `fuchsia` here is arbitrary; you could use any supported
-platform. However, the target platform you use will affect the behavior
-and appearance of the widgets, as well expectations Flutter will have for what
-is available on the platform, such as fonts.
-
-### Fonts
-
-Flutter applications may default to fonts that are standard for the target
-platform, but unavailable on desktop. For instance, if the target platform is
-`TargetPlatform.iOS` the Material library will default to San Francisco, which
-is available on macOS but not Linux or Windows.
-
-Most applications using the override above will need to set the font
-(e.g., via `ThemeData`) based on the host platform, or set a specific font that
-is bundled with the application. Other widgets that doesn't use `ThemeData` may
-not display without extra font specification (e.g., the `DEBUG` banner's text).
-
-Symptoms of missing fonts include text failing to display and/or console logging
-about failure to load fonts, since font fallback is not yet robust on all desktop
-platforms (see the [Windows](https://github.com/flutter/flutter/issues/39915) and
-[Linux](https://github.com/flutter/flutter/issues/30700) issues for status).
-
-### Plugins
-
-If your project uses any plugins they won't work (unless they have desktop support),
-as the native side will be missing. Depending on how the Dart side of the
-plugin is written, they may fail gracefully, or may throw errors.
 
 ## Add-to-App
 
