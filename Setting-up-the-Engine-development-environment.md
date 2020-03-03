@@ -35,10 +35,9 @@ Run the following steps to set up your environment:
    will take care of that for you.
 1. If you haven't configured your machine with an SSH key that's known to github then
    follow the directions here: https://help.github.com/articles/generating-ssh-keys/.
-1. Create an empty directory for your copy of the repository. For best
-   results, call it `engine`: some of the tools assume this name when
-   working across repositories. (They can be configured to use other
-   names too; this isn't a strict requirement. It just makes things easier.)
+1. Create an empty directory called `engine` for your copy of the repository and
+   `cd` into it. (It is possible to use a different name, but some tools assume this
+   name unless configured otherwise, so calling it `engine` will make thing easier.)
 1. Create a `.gclient` file in the `engine` directory with the
    following contents, replacing `<your_name_here>` with your GitHub
    account name:
@@ -54,19 +53,19 @@ Run the following steps to set up your environment:
      },
    ]
    ```
-1. `cd engine` (Change to the directory in which you put the
-   `.gclient` file.)
-1. `gclient sync` This will fetch all the source code that Flutter
-   depends on. Avoid interrupting this script, it can leave your
+1. `gclient sync` in that directory. This will fetch all the source code
+   that Flutter depends on. Avoid interrupting this script, as doing so
+   can leave your
    repository in an inconsistent state that is tedious to clean up.
    (This step automatically runs `git clone`, among other things.)
-1. `cd src/flutter` (Change to the `flutter` directory of the `src`
-   directory that `gclient sync` created in your `engine` directory.)
-1. `git remote add upstream git@github.com:flutter/engine.git` (So
+1. Add a remote for the upstream repository:
+   - `cd src/flutter` (This was created in your `engine` directory
+   by `gclient sync`.)
+   - `git remote add upstream git@github.com:flutter/engine.git` (So
    that you fetch from the master `flutter/engine` repository, not
    your clone, when running `git fetch` et al.)
-1. `cd ..` (Return to the `src` directory that `gclient sync` created
-    in your `engine` directory.)
+   - `cd ..` (Return to the `src` directory that `gclient sync` created
+   in your `engine` directory.)
 1. If you're on Linux, run the following. **Note:** These scripts are
     distro- and version-specific, so are not guaranteed to work on
     every configuration. If they fail, you may need to find comparable
@@ -86,20 +85,6 @@ Run the following steps to set up your environment:
     git remote rename origin upstream
     git remote add origin git@github.com:<your_name_here>/buildroot.git
     ```
-1. Additionally if you've modified dart sources in `flutter/engine`, you'll
-    need to add a `dependency_overrides` section to point to your modified
-    `package:sky_engine` and `package:sky_services` to the `pubspec.yaml`
-    for the flutter app you're using the custom engine with.  A typical
-    example would be:
-    ```	
-    dependency_overrides:	
-      sky_engine:	
-        path: /path/to/flutter/engine/src/out/host_debug/gen/dart-pkg/sky_engine	
-      sky_services:	
-        path: /path/to/flutter/engine/src/out/host_debug/gen/dart-pkg/sky_services	
-    ```	
-    Depending on the platform you choose below, you will need to replace `host_debug` with the appropriate 
-    directory.
 
 Next steps:
 
