@@ -20,7 +20,7 @@ If the engine roll is failing (see [[Autorollers]]), you can use `git bisect` on
 
 All OpenGL calls in Skia are guarded by either the `GR_GL_CALL_NOERRCHECK` or `GR_GL_CALL_RET_NOERRCHECK` macros. Trace events may be added in these macros to trace all GL calls made by Skia, for example [in a patch like this](https://gist.github.com/chinmaygarde/607eb86d5447615b9cf2804a4f8fb1ce).
 
-Due to the number of events traced to the timeline, the trace buffer may be filled up very quickly. Unless you want to see only the traces for the past few frames, use an endless trace buffer (`flutter --trace-startup` turns on an endless trace buffer).
+Due to the number of events traced to the timeline, the trace buffer may be filled up very quickly. Unless you want to see only the traces for the past few frames, use an endless trace buffer (`flutter run --endless-trace-buffer` turns on an endless trace buffer).
 
 Also, make sure to run your application with the `--trace-skia` flag.
 
