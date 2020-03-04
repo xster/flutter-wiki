@@ -31,7 +31,7 @@ Expect the APIs for the final shell to be radically different from the current i
 ### Plugins
 
 Writing plugins is supported on all platforms, however there are currently few plugins that actually have
-desktop support. The [flutter-desktop-embedding project's plugins](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) are one source for Windows and Linux plugins.
+desktop support. The [flutter-desktop-embedding project's plugins](https://github.com/google/flutter-desktop-embedding/tree/master/plugins) are one source for desktop plugins.
 
 Since the plugin APIs and tooling for Windows and Linux are not yet stable, publishing
 Windows and/or Linux plugins to pub.dev is strongly discouraged, but they can be referenced manually. See
@@ -47,11 +47,14 @@ Run `flutter config` to see your current settings, as well as the commands to di
 
 ### `create`
 
-Currently, macOS is the only desktop platform supported by `flutter create`. For Windows and Linux, the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding) has simple runners for each desktop platform that work with the `flutter` tool's in-progress desktop support, which you can add to your own project. See the READMEs there for details.
+Support for `create` currently varies by platform:
+- macOS: Fully supported.
+- Windows: Not yet implemented. For now, you can get a Windows runner from the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/blob/master/example/README.md#adapting-for-another-project).
+- Linux: Working, but not yet stabilized. After Flutter updates, you may need to delete and re-create the `linux` directory.
 
 ### `run` and `build`
 
-`flutter run` and `flutter build` are supported on all desktop platforms once you have added the necessary platform directory to your project (see `create` above). Breaking changes are still common on Windows and Linux however, so you should expect to need to get the latest runners from flutter-desktop-embedding after any Flutter update.
+`flutter run` and `flutter build` are supported on all desktop platforms once you have added the necessary platform directory to your project (see `create` above). Breaking changes are still common on Windows and Linux however, so as noted above you should expect to need to re-create after any Flutter update to avoid build failures.
 
 Only debug mode is currently supported for Windows and Linux.
 
