@@ -53,7 +53,7 @@ Once you've enabled desktop support, running `flutter doctor` will check for the
 
 Support for `create` (`app` and `plugin` templates only) currently varies by platform:
 - macOS: Fully supported.
-- Windows: Not yet implemented. For now, you can get a Windows runner from the [flutter-desktop-embedding project](https://github.com/google/flutter-desktop-embedding/blob/master/example/README.md#adapting-for-another-project).
+- Windows: Not yet implemented. For now, you can get a Windows [runner application](https://github.com/google/flutter-desktop-embedding/blob/master/example/README.md#adapting-for-another-project) or [starter plugin](https://github.com/google/flutter-desktop-embedding/blob/master/plugins/sample/README.md) from the flutter-desktop-embedding project.
 - Linux: Working, but not yet stabilized. After Flutter updates, you may need to delete and re-create the `linux` directory.
 
 **Note**: Windows and Linux plugin APIs and tooling are not yet stable, so any plugin written now will need frequent updates for breaking changes. Because of this, publishing Windows and/or Linux plugins to pub.dev at this stage is **strongly discouraged**.
