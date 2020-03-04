@@ -45,6 +45,10 @@ Support for desktop in the `flutter` tool is a work in progress. To use it, you 
 
 Run `flutter config` to see your current settings, as well as the commands to disable the feature again.
 
+### `doctor`
+
+Once you've enabled desktop support, running `flutter doctor` will check for the necessary tools to build for your desktop platform. Ensure that it reports no issues in that section before trying to `build` or `run`.
+
 ### `create`
 
 Support for `create` currently varies by platform:
