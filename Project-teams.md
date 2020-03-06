@@ -14,6 +14,8 @@ The Flutter project has many teams:
 
 * The Engine ([flutter/engine](https://github.com/flutter/engine) and [flutter/buildroot](https://github.com/flutter/buildroot/), ["engine"](https://github.com/flutter/flutter/labels/engine))
 
+* The Mobile Platforms team, a cross-functional team monitoring issues for the Engine, the Framework, tools, and the mobile platforms ["▣ platform-android"](https://github.com/flutter/flutter/labels/%E2%96%A3%20platform-android) and ["⌺‬ platform-ios"](https://github.com/flutter/flutter/labels/%E2%8C%BA%E2%80%AC%20platform-ios).
+
 * Web (some code in flutter/flutter and flutter/engine, ["☸ platform-web"](https://github.com/flutter/flutter/labels/☸%20platform-web))
 * Desktop (some code in flutter/flutter and flutter/engine, ["a: desktop"](https://github.com/flutter/flutter/labels/a%3A%20desktop))
 * Developer experience (e.g. [the devtools package](https://github.com/flutter/devtools/))
