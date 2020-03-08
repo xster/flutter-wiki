@@ -16,7 +16,7 @@ Make sure you have the following dependencies available:
  * Chromium's
    [depot_tools](http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up)
    (make sure it's in your path). We use the `gclient` tool from depot_tools.
- * Python (used by many of our tools, including 'gclient').
+ * Python (used by many of our tools, including `gclient`).
  * On macOS and Linux: curl and unzip (used by `gclient sync`).
  * On Windows: Visual Studio 2017+ (required for non-Googlers only).
  * On macOS: the latest Xcode.
