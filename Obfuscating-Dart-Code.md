@@ -1,6 +1,7 @@
-Code obfuscation hides function and class names in your compiled Dart code, making it difficult for an attacker to reverse engineer your proprietary app.
+Code obfuscation hides function and class names in your compiled Dart code, making it difficult for an attacker to reverse engineer your proprietary app. This can be enabled with the `--obfuscate` option, which is required to be paired with  `--split-debug-info` to generate a symbol map.
 
-Note that Dart obfuscation has not yet been thoroughly tested. Please [file a bug](https://github.com/flutter/flutter/issues) if you experience any issues. For more information, see [this issue on Stack Overflow](https://stackoverflow.com/questions/50542764/how-to-obfuscate-flutter-apps).
+
+<i>  As of flutter 1.15.18, the information below is out of date. Only use this if you're on an earlier version of Flutter </i>
 
 ## Android
 
