@@ -20,25 +20,21 @@ _This guide assumes you haven't manually modified your Android host project for 
 
 If you opt to migrate your standard `flutter create`d project, follow the following steps:
 
-1. Replace the previous `onCreate` plugin registration code at `android/app/src/main/java/[your/package/name]/MainActivity.java` with the new `configureFlutterEngine` plugin registration code. You can run `flutter create` to verify the latest template, but the diff will most likely look something like the below.
+1. Remove the body of your `android/app/src/main/java/[your/package/name]/MainActivity.java` and change the `FlutterActivity` import. The new `FlutterActivity` no longer requires manually registering your plugins. It will now perform the registration automatically when the underlaying `FlutterEngine` is created. 
 
 ```diff
 // MainActivity.java
 -import android.os.Bundle;
 -import io.flutter.app.FlutterActivity;
-+import androidx.annotation.NonNull;
 +import io.flutter.embedding.android.FlutterActivity;
-+import io.flutter.embedding.engine.FlutterEngine;
- import io.flutter.plugins.GeneratedPluginRegistrant;
+-import io.flutter.plugins.GeneratedPluginRegistrant;
  
  public class MainActivity extends FlutterActivity {
-   @Override
+-  @Override
 -  protected void onCreate(Bundle savedInstanceState) {
 -    super.onCreate(savedInstanceState);
 -    GeneratedPluginRegistrant.registerWith(this);
-+  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
-+    GeneratedPluginRegistrant.registerWith(flutterEngine);
-   }
+-  }
  }
 ```
 
@@ -46,21 +42,18 @@ If you opt to migrate your standard `flutter create`d project, follow the follow
 // MainActivity.kt
 -import android.os.Bundle
 -import io.flutter.app.FlutterActivity
-+import androidx.annotation.NonNull;
 +import io.flutter.embedding.android.FlutterActivity
-+import io.flutter.embedding.engine.FlutterEngine
- import io.flutter.plugins.GeneratedPluginRegistrant
+-import io.flutter.plugins.GeneratedPluginRegistrant
  
  class MainActivity: FlutterActivity() {
 -  override fun onCreate(savedInstanceState: Bundle?) {
 -    super.onCreate(savedInstanceState)
 -    GeneratedPluginRegistrant.registerWith(this)
 -  }
-+    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
-+        GeneratedPluginRegistrant.registerWith(flutterEngine);
-+    }
  }
 ```
+
+Since the body of the `MainActivity` is now empty, you can also optionally delete the `MainActivity.java/kt` file if you'd like. If you do, you need to change your `AndroidManifest.xml`'s reference to `.MainActivity` to `io.flutter.embedding.android.FlutterActivity`.
 
 2. Open `android/app/src/main/AndroidManifest.xml`.
 3. Remove the reference to `FlutterApplication` from the application tag.
