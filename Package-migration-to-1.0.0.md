@@ -6,7 +6,7 @@ This is what the [Semantic Versioning Specification](https://semver.org/#spec-it
 
 > Major version zero (0.y.z) is for initial development. Anything MAY change at any time. The public API SHOULD NOT be considered stable.
 
-The Dart community’s convention on the other hand is to treat pre 1.0.0 versions semantically, shifting the numbers by one position ([Semantic versioning in pub’s package versioning guide](https://dart.dev/tools/pub/versioning#semantic-versions)).
+Pub on the other hand treats pre 1.0.0 versions semantically (see [pub_semver corner cases](https://pub.dev/packages/pub_semver)), shifting the numbers by one position.
 
 Often, at the time a package author is ready to announce API stability their package is versioned 0.x.y+z. Bumping a package version from 0.x.y+z to 1.0.0 is a major version bump in the Dart ecosystem (**). Migrations across a major version bump are slower, and may result in some period of ecosystem fragmentation (when some dependent packages are only willing to take ^0.x.y+z and some require ^1.0.0).
 
