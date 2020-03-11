@@ -22,21 +22,21 @@ If you opt to migrate your standard `flutter create`d project, follow the follow
 
 1. Remove the body of your `android/app/src/main/java/[your/package/name]/MainActivity.java` and change the `FlutterActivity` import. The new `FlutterActivity` no longer requires manually registering your plugins. It will now perform the registration automatically when the underlaying `FlutterEngine` is created. 
 
-```diff
-// MainActivity.java
--import android.os.Bundle;
--import io.flutter.app.FlutterActivity;
-+import io.flutter.embedding.android.FlutterActivity;
--import io.flutter.plugins.GeneratedPluginRegistrant;
+  ```diff
+  // MainActivity.java
+  -import android.os.Bundle;
+  -import io.flutter.app.FlutterActivity;
+  +import io.flutter.embedding.android.FlutterActivity;
+  -import io.flutter.plugins.GeneratedPluginRegistrant;
  
- public class MainActivity extends FlutterActivity {
--  @Override
--  protected void onCreate(Bundle savedInstanceState) {
--    super.onCreate(savedInstanceState);
--    GeneratedPluginRegistrant.registerWith(this);
--  }
- }
-```
+  public class MainActivity extends FlutterActivity {
+  -  @Override
+  -  protected void onCreate(Bundle savedInstanceState) {
+  -    super.onCreate(savedInstanceState);
+  -    GeneratedPluginRegistrant.registerWith(this);
+  -  }
+   }
+  ```
 
 ```diff
 // MainActivity.kt
