@@ -68,7 +68,7 @@ If you opt to migrate your standard `flutter create`d project, follow the follow
 Previous configuration:
 ```xml
 <application
-  name="io.flutter.FlutterApplication"
+  android:name="io.flutter.app.FlutterApplication"
   >
   <!-- code omitted -->
 </application>
