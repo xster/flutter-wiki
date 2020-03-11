@@ -38,22 +38,22 @@ If you opt to migrate your standard `flutter create`d project, follow the follow
    }
   ```
 
-```diff
-// MainActivity.kt
--import android.os.Bundle
--import io.flutter.app.FlutterActivity
-+import io.flutter.embedding.android.FlutterActivity
--import io.flutter.plugins.GeneratedPluginRegistrant
+  ```diff
+  // MainActivity.kt
+  -import android.os.Bundle
+  -import io.flutter.app.FlutterActivity
+  +import io.flutter.embedding.android.FlutterActivity
+  -import io.flutter.plugins.GeneratedPluginRegistrant
  
- class MainActivity: FlutterActivity() {
--  override fun onCreate(savedInstanceState: Bundle?) {
--    super.onCreate(savedInstanceState)
--    GeneratedPluginRegistrant.registerWith(this)
--  }
- }
-```
+  class MainActivity: FlutterActivity() {
+  -  override fun onCreate(savedInstanceState: Bundle?) {
+  -    super.onCreate(savedInstanceState)
+  -    GeneratedPluginRegistrant.registerWith(this)
+  -  }
+  }
+  ```
 
-Since the body of the `MainActivity` is now empty, you can also optionally delete the `MainActivity.java/kt` file if you'd like. If you do, you need to change your `AndroidManifest.xml`'s reference to `.MainActivity` to `io.flutter.embedding.android.FlutterActivity`.
+  Since the body of the `MainActivity` is now empty, you can also optionally delete the `MainActivity.java/kt` file if you'd like. If you do, you need to change your `AndroidManifest.xml`'s reference to `.MainActivity` to `io.flutter.embedding.android.FlutterActivity`.
 
 2. Open `android/app/src/main/AndroidManifest.xml`.
 3. Remove the reference to `FlutterApplication` from the application tag.
