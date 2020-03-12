@@ -270,28 +270,19 @@ If you come across a bug that is unrelated to the Web backend, remove the `☸ p
 * [Android overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
 * [Android next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
 
+
 * [iOS TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22)
 * [iOS customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+label%3A%22severe%3A+customer+blocker%22)
 * [iOS customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
 * [iOS overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
 * [iOS next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+llabel%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
 
-* [Add-to-app TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A"a%3A+existing-apps")
-* [Add-to-app customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+label%3A%22severe%3A+customer+blocker%22)
-* [Add-to-app customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
-* [Add-to-app overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
-* [Add-to-app next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
 
-* [Flutter PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc)
-* [Engine PRs](https://github.com/flutter/engine/pulls?q=is%3Aopen+is%3Apr+label%3A%22affects%3A+add-to-app%22+sort%3Aupdated-asc)
-* [Issues missing component](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22a%3A+existing-apps%22+-project%3Aflutter%2Fflutter%2F74+-project%3Aflutter%2Fflutter%2F76+-project%3Aflutter%2Fflutter%2F77+-project%3Aflutter%2Fflutter%2F78+-project%3Aflutter%2Fflutter%2F79+-project%3Aflutter%2Fflutter%2F80+-project%3Aflutter%2Fflutter%2F81+-project%3Aflutter%2Fflutter%2F82+-project%3Aflutter%2Fflutter%2F83)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
-* [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
-* [Component triage progress](https://github.com/flutter/flutter/projects?query=is%3Aopen+add-to-app+review+sort%3Aname-asc)
-
-If you come across a bug that is unrelated to add-to-app, remove the `a: existing-apps` label and leave a comment explaining why. That will send it back to triage.
+* [Cupertino TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A"f%3A+cupertino")
+* [Cupertino customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+label%3A%22severe%3A+customer+blocker%22)
+* [Cupertino customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
+* [Cupertino overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
+* [Cupertino next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
 
 ## Plugins, Packages, and Ecosystem
 
