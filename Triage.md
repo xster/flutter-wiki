@@ -282,7 +282,13 @@ If you come across a bug that is unrelated to the tool, remove the `tool` label 
 
 If you come across a bug that is unrelated to the Web backend, remove the `☸ platform-web` label and leave a comment explaining why. That will send it back to triage.
 
-## Add-to-App
+## Mobile Platforms
+* [Android TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+label%3A%22%E2%9A%A0+TODAY%22)
+* [Android customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+label%3A%22severe%3A+customer+blocker%22)
+* [Android customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
+* [Android overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
+* [Android next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
+
 * [Flutter PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc)
 * [Engine PRs](https://github.com/flutter/engine/pulls?q=is%3Aopen+is%3Apr+label%3A%22affects%3A+add-to-app%22+sort%3Aupdated-asc)
 * [Issues missing component](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22a%3A+existing-apps%22+-project%3Aflutter%2Fflutter%2F74+-project%3Aflutter%2Fflutter%2F76+-project%3Aflutter%2Fflutter%2F77+-project%3Aflutter%2Fflutter%2F78+-project%3Aflutter%2Fflutter%2F79+-project%3Aflutter%2Fflutter%2F80+-project%3Aflutter%2Fflutter%2F81+-project%3Aflutter%2Fflutter%2F82+-project%3Aflutter%2Fflutter%2F83)
