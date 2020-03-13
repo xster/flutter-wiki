@@ -2,8 +2,8 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
-## v1.15.18 - present:
- * `OSError`s no longer caught by tool [#52272](https://github.com/flutter/flutter/issues/52272).
+## v1.15.18 - v1.15.19:
+ * Unhidden errors following avoid_catches_without_on_clauses lint [#52272](https://github.com/flutter/flutter/issues/52272).
 
 ## v1.14.4 - v1.15.3:
 
