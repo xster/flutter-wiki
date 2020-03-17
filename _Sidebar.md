@@ -63,6 +63,9 @@ Flutter Wiki
 - [Flutter's Build Infrastructure](https://github.com/flutter/flutter/blob/master/dev/bots/README.md)
 - [[Flutter Installation Bundles]]
 
+## Release Information
+- [Hotfixes to the stable channel](https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel)
+
 ## Experimental features
 - [[Add Flutter to existing apps]]
   - [Upgrade pre-1.8.4 iOS projects](https://github.com/flutter/flutter/wiki/Upgrading-Flutter-added-to-existing-iOS-Xcode-project)
