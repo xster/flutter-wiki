@@ -58,6 +58,8 @@ Support for `create` (`app` and `plugin` templates only) currently varies by pla
 
 **Note**: Windows and Linux plugin APIs and tooling are not yet stable, so any plugin written now will need frequent updates for breaking changes. Because of this, publishing Windows and/or Linux plugins to pub.dev at this stage is **strongly discouraged**.
 
+When using `flutter create .` in an existing plugin to add desktop support, be sure to update [the `platforms` map in `pubspec.yaml`](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms).
+
 ### `run` and `build`
 
 `flutter run` and `flutter build` are supported on all desktop platforms once you have added the necessary platform directory to your project (see `create` above). Breaking changes are still common on Windows and Linux however, so as noted above you should expect to need to re-create after any Flutter update to avoid build failures.
