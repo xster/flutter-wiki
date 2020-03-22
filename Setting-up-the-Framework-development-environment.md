@@ -47,7 +47,7 @@ Run the following steps to set up your environment:
    `flutter` command in this directory more easily.
 
 8. Run `flutter update-packages` This will fetch all the Dart packages that
-   Flutter depends on. (You can replicate most of what this script does by running
+   Flutter depends on. If version solving failed, try `git fetch upstream` to update Flutter versions before `flutter update-packages`. (You can replicate most of what this script does by running
    `pub get` in each directory that contains a `pubspec.yaml` file, which is rather
    tedious, hence the script.)
 
