@@ -8,6 +8,9 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 ## v1.15.18 - v1.15.19:
  * Unhidden errors following avoid_catches_without_on_clauses lint [#52272](https://github.com/flutter/flutter/issues/52272).
 
+## v1.15.17 - v1.15.19:
+ * Git tags fetched too frequently for ordinary Flutter commands where it should not be necessary. [#52121](https://github.com/flutter/flutter/issues/52121)
+
 ## v1.14.4 - v1.15.3:
 
  * FontWeight ignored on iOS 13.3: [#49492](https://github.com/flutter/flutter/issues/49492)
