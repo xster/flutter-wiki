@@ -2,6 +2,8 @@ In general, our philosophy is to update the `stable` channel on a quarterly basi
 
 We intend to announce hotfixes to the [flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce) group, and we recommend that you subscribe to that list if you publish an application using Flutter. 
 
+Note that we only hotfix the latest version --- if you see bugs on older versions of the `stable` channel, please consider moving to the latest `stable` channel version. 
+
 ## Flutter 1.12 Changes
 ### [Hotfix.8](https://github.com/flutter/flutter/pull/50591) (February 11, 2020)
 This fixes the following issues:
