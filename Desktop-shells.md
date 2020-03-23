@@ -56,6 +56,8 @@ Support for `create` (`app` and `plugin` templates only) currently varies by pla
 - Windows: Working, but not yet stabilized. After Flutter updates, you may need to delete and re-create the `windows` directory.
 - Linux: Working, but not yet stabilized. After Flutter updates, you may need to delete and re-create the `linux` directory.
 
+You can add desktop support to an existing app or plugin by running `flutter create .` in the project. (You may want to revert changes to the `ios` and `android` directories after re-running `create`)
+
 **Note**: Windows and Linux plugin APIs and tooling are not yet stable, so any plugin written now will need frequent updates for breaking changes. Because of this, publishing Windows and/or Linux plugins to pub.dev at this stage is **strongly discouraged**.
 
 When using `flutter create .` in an existing plugin to add desktop support, be sure to update [the `platforms` map in `pubspec.yaml`](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms).
