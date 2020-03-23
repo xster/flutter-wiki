@@ -24,6 +24,9 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 ## v1.13.9, 1.14.0 - v1.14.1:
  * App might crash on startup in release mode [#49008](https://github.com/flutter/flutter/issues/49008)
 
+## v1.13.0 - :
+ * `flutter attach` doesn't work on Android if the Flutter engine is already running [#52975](https://github.com/flutter/flutter/issues/52975)
+
 ## v1.12.7 - v1.12.12:
  * An mdns lookup failure during tool attach will crash the tool instead of falling back on log scraping [#45468](https://github.com/flutter/flutter/issues/45468)
 
