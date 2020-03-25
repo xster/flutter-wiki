@@ -158,3 +158,26 @@ Response:
   "fps": 60.0
 }
 ```
+
+## Get Skia SkSL shader artifacts: `_flutter.getSkSLs`
+
+Get Skia SkSL shader artifacts from an actual device that runs the Flutter view. Such artifacts can be used to warm up shader compilations and avoid jank. One has to first tell Flutter to prepare SkSL shaders by `flutter run --cache-sksl` or `flutter drive --cache-sksl`, and trigger some shader compilations by going through some animations/transitions. Otherwise, this service protocol extension may return an empty set of SkSLs.
+
+The key of the returned `SkSLs` map will be Base32 encoded. It should be used directly as the filename of the shader artifact. The value in that map is the Base64 encoded SkSL shader. Once decoded, it should be the content of the shader artifact file.
+
+One argument:
+
+```
+viewId = _flutterView/0x15bf057f8
+```
+
+Response:
+
+```json
+{
+  "type": "GetSkSLs",
+  "SkSLs": {
+    "CAZAAAACAAAAAAAAAAABGAABAAOAAFAADQAAGAAQABSQAAAAAAAAAAAAAABAAAAAEAAGGAA": "eQ=="
+  }
+}
+```
