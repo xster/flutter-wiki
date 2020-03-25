@@ -36,9 +36,9 @@ When running `flutter test` locally without the `--update-goldens` flag, your te
 
 When you are happy with your image, you are ready to submit your PR for review. The reviewer should also verify your golden image(s), so make sure to include the golden(s) in your PR description. 
 
-New tests will initially fail pre-submit checks, the results of which will be compiled into a tryjob on the Flutter Gold dashboard, under [ChangeLists](https://flutter-gold.skia.org/changelists). There you will see your pull request and the associated golden files that were generated. 
+New test results will be compiled into a tryjob on the Flutter Gold dashboard, under [ChangeLists](https://flutter-gold.skia.org/changelists). There you will see your pull request and the associated golden files that were generated. 
 
-New tests can be triaged from these tryjobs, which will allow for pre-submit tests to pass. Review the tryjob and the images that were generated, making sure they look as expected. Currently, we generate images for Linux, Mac and Windows platforms. It is common for there to be slight differences between them. Click the checkmark to approve the change, completing triage.
+New tests can be triaged from these tryjobs, which will cause the pending `flutter-gold` check to pass. Review the tryjob and the images that were generated, making sure they look as expected. Currently, we generate images for Linux, Mac, Windows, and Web platforms. It is common for there to be slight differences between them. Click the checkmark to approve the change, completing triage.
 
 And that’s it! Your new golden file(s) will be checked in as the baseline(s) for your new test(s), and your PR will be ready to merge. :tada:
 
@@ -50,11 +50,11 @@ If renderings change, then the golden baseline in [Flutter Gold](https://flutter
 
 When developing your change, local testing will produce a failure along with visual diff output. This visual diff will be generated using the golden baseline from [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) that matches the current paramset of your testing environment (currently based on platform). This allows for quick iterations and validation of your change. Locally, this test will not pass until the new baseline has been checked in.
 
-When you are happy with your golden change, you are ready to submit your PR for review. The reviewer should also verify your golden image(s), so make sure to include the golden changes you have made in your PR description. Changes to tests will initially fail pre-submit checks, the results of which will be compiled into a tryjob on the Flutter Gold dashboard, under [ChangeLists](https://flutter-gold.skia.org/changelists). There you will see your pull request and the associated golden files that were generated, as well as the visual differences between the pre-existing baselines. 
+When you are happy with your golden change, you are ready to submit your PR for review. The reviewer should also verify your golden image(s), so make sure to include the golden changes you have made in your PR description. Changes to tests will be compiled into a tryjob on the Flutter Gold dashboard, under [ChangeLists](https://flutter-gold.skia.org/changelists). There you will see your pull request and the associated golden files that were generated, as well as the visual differences between the pre-existing baselines. 
 
-The updated tests can be triaged from these tryjobs, which will allow for pre-submit tests to pass. Review the tryjob and the images that were generated, making sure they look as expected. Currently, we generate images for Linux, Mac and Windows platforms. It is common for there to be slight differences between them. Click the checkmark to approve the change, completing triage.
+The updated tests can be triaged from these tryjobs, which will cause the pending `flutter-gold` check to pass. Review the tryjob and the images that were generated, making sure they look as expected. Currently, we generate images for Linux, Mac, Windows and Web platforms. It is common for there to be slight differences between them. Click the checkmark to approve the change, completing triage.
 
-Changes such as these constitute a **breaking change**, and should follow [Handling Breaking Changes](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes). This includes marking your PR with the `severe: API break` and `will affect goldens` labels, as well as updating the [Changelog](https://github.com/flutter/flutter/wiki/Changelog).
+Changes such as these constitute a **breaking change**, and should follow [Handling Breaking Changes](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes). This includes marking your PR with the `severe: API break` and `will affect goldens` labels, as well as updating the [Changelog](https://github.com/flutter/flutter/wiki/Changelog). Exceptions to this include new golden file tests and upstream changes, e.g. from a skia dependency.
 
 And that’s it! Your new golden file(s) will be checked in as the baseline(s) for your new test(s), and your PR will be ready to merge. :tada:
 
@@ -67,11 +67,3 @@ If you are a first-time contributor making a golden file change, first of all we
 By following the preceding guide to golden file testing, you may have found that pre-submit testing does not generate a tryjob on the [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) dashboard. In order for Gold to authenticate during pre-submit testing, contributor permissions are also authenticated. As a first-time contributor, the necessary permissions will not be granted until you land your first change.
 
 You can still make changes to golden files though! In this special case, cc @Piinks on your pull request for assistance. An _ignore_ can be put in place on the [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) dashboard that is associated with the affected test(s) and pull request, making it possible to land your change. Currently, checking in golden files this way requires the assistance of a Googler, who will also need to triage the image after it lands.
-
-## Golden File Changes from flutter/engine
-
-Currently, changes from flutter/engine require a manual roll to land so that the current engine sheriff can address the golden file changes. The changes can be viewed under [ChangeLists](https://flutter-gold.skia.org/changelists) on the [Flutter Gold](https://flutter-gold.skia.org/?query=source_type%3Dflutter) dashboard. 
-
-If the changes generated by the engine are not desirable, the related change that caused them will need to be reverted for the engine roll to proceed. You may mark the undesirable image results negative to prevent regressions in the future. If the changes are ok, you can mark the images positive and proceed with the roll.
-
-The need for a manual engine roll is temporary, with resolution being tracked in this bug: https://github.com/flutter/flutter/issues/48744 
