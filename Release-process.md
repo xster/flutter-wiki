@@ -149,7 +149,7 @@ https://ci.chromium.org/p/flutter/builders/prod/Windows%20Flutter%20Packaging). 
    - Unpack and check to see that a new project can be created with `flutter create --offline foo`
    - Check that it doesn't build a new snapshot the first time flutter runs.
    - Check that we have the right channel and version set.
-1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie or kf6gpe, to do this).
+1. Mark _BRANCH_ as a protected branch on GitHub (you may need to ask a repo administrator, e.g. Hixie or kf6gpe, to do this). Once the _BRANCH_ is protected, further pushes will also require elevated permissions. Contact a repo administrator for assistance with that.
 1. Send an e-mail to flutter-dev and flutter-announce regarding this update.
 
 Note that after applying a hotfix to _CHANNEL_, you will need to manually force-push the subsequent release to that channel when it's ready. To do this:
