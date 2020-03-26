@@ -49,7 +49,7 @@ If it's a very serious bug that should block releases, consider adding the `TODA
 
 If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the `customer: crowd` label (which means it affects many people) and then either the `severe: customer blocker` label (if it's blocking people) or the `severe: customer critical` label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document). For more details on the "crowd" designation, see [[Issue Hygiene]].
 
-If it's an issue that is repeatedly frustrating developers when using non-experimental Flutter features (e.g. performing mobile app builds, dealing with text input, using supported IDEs), add `a: annoyance`. If unsure, consult with DevRel (filiph@).
+If it's an issue that is repeatedly frustrating developers when using non-experimental Flutter features (e.g. performing mobile app builds, dealing with text input, using supported IDEs), and is widespread, add `a: annoyance`. If unsure, consult with DevRel (filiph@).
 
 If it's something that looks trivial to fix, add the `easy fix` label.
 
