@@ -2,7 +2,7 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
-## v1.15.4 - <not yet fixed>
+## v1.15.4 - &lt;not yet fixed&gt;
   * Text disappear while typing on Samsung keyboard [#53086](https://github.com/flutter/flutter/issues/53086)
 
 ## v1.15.21 - v1.15.22:
