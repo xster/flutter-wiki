@@ -86,8 +86,6 @@ adb logcat | ~/dev/engine/src/third_party/android_tools/ndk/prebuilt/linux-x86_6
 
 ### iOS
 
-The dSYM file for `App.framework` (which contains the app-specific code) can be located in the directory of your app under `build/dSYMs.noindex/App.framework.dSYM` for release and profile builds created with `flutter build ios`. 
-
 The dSYM file for `Flutter.framework` (which is the Flutter Engine) for ios-release builds can be downloaded from Google Cloud Storage. Follow the steps from the Android section in this guide, but in the last step use a download url following this schema: `https://storage.cloud.google.com/flutter_infra/flutter/38a646e14cc25f5a56a989c6a5787bf74e0ea386/ios-release/Flutter.dSYM.zip` (replace the engine hash with your hash).
 
 #### Symbolicating local builds
