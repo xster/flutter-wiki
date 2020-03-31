@@ -135,7 +135,7 @@ NB: The previous hotfix version procedure used a `-` instead of a `+` between th
    1. Wait for the engine bots to have completed their work.
    1. Lock down _BRANCH_ on GitHub if it's not already locked down.
 1. Update your local branch accordingly (such as by `git cherry-pick -e`). If applicable, update the `engine.version` to point to the engine you just built.
-1. Test this build on all platforms. Run the devicelab locally. Test the codelabs.
+1. Test this build on all platforms. Run the [devicelab locally](https://github.com/flutter/flutter/blob/master/dev/devicelab/README.md#running-tests-locally). Test the codelabs.
 1. Push your local branch to your GitHub fork of the Flutter framework. (`git push origin $BRANCH`)
 1. Create a PR from your recently pushed branch, using the _BRANCH_ branch as the base for the PR. As the PR description and commit message, enter information about why you're creating the hot fix. (A bot may change the base branch to master. Edit the PR to change it back to _BRANCH_).
 1. Once the code is reviewed, land the PR onto the _BRANCH_ branch via a "squash merge". Do not land the PR on master!
