@@ -5,10 +5,10 @@
 The process of triaging bugs is to first go through these bug lists and make sure they have all been processed as described below:
 
 <!--ALL-LABELS-->
-1. [recently filed bugs with none of the classification labels](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22will+need+additional+triage%22+-label%3A%22%E2%98%B8+platform-web%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3A%22a%3A+existing-apps%22+-label%3A%22waiting+for+customer+response%22+updated%3E%3D2019-09-10+sort%3Aupdated-desc).
+1. [recently filed bugs with none of the classification labels](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22will+need+additional+triage%22+-label%3Aplatform-web+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3A%22a%3A+existing-apps%22+-label%3A%22waiting+for+customer+response%22+updated%3E%3D2019-09-10+sort%3Aupdated-desc).
 
 <!--ALL-LABELS-->
-2. [older bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22will+need+additional+triage%22+-label%3A"☸+platform-web"+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+-label%3A"⌺%E2%80%AC+platform-ios"+-label%3A"▣%20platform-android").
+2. [older bugs with none of the classification labels](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Aframework+-label%3Aengine+-label%3Atool+-label%3Aplugin+-label%3Apackage+-label%3A%22will+need+additional+triage%22+-label%3A"platform-web"+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+-label%3A%22waiting+for+customer+response%22+-label%3A"platform-ios"+-label%3A"platform-android").
 
 3. [bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
 
@@ -65,7 +65,7 @@ Finally, label the issue based on what area of the project the bug relates to:
 - If it's a bug with packages, add `package` and optionally one of the labels with the "p:" prefix.
 - If it's a bug with the "flutter" tool, add `tool` and optionally one of the labels with the "t:" prefix.
 - If it's specific to writing desktop Windows, macOS, Linux, or Web apps with Flutter, add the `a: desktop` label.
-- If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the `☸ platform-web` label.
+- If it's related to a specific platform, add one of the "platform" labels. In particular, issues involving the Web backend should have the `platform-web` label.
 - If it's related to our testing infrastructure (LUCI, Cocoon, devicelab, Cirrus, etc), add the `team: infra` label.
 
 Bugs relating to the website should be moved to the `flutter/website` repo.
@@ -95,7 +95,7 @@ If you have something to say regarding the bug, for example if you happen to not
 The process for triaging PRs is to look at this list:
 
 <!--ALL-LABELS-->
-1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3Atool+-label%3A"☸+platform-web"+-label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+).
+1. [the PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3Atool+-label%3A"platform-web"+-label%3A%22a%3A+existing-apps%22+sort%3Aupdated-asc+).
 
 When triaging PRs, it's important that incoming PRs:
 
@@ -108,7 +108,7 @@ For PRs, each PR should match one of the following categories:
 * It can be in a specific repository (e.g. the website or engine repository) that has a narrow scope. These do not need labels. (Only the "flutter" repository is considered to not have a narrow scope currently.)
 
 <!--ALL-LABELS--><!-- but not all the labels are here, this is just the list of PR labels in flutter/flutter -->
-* It can have one of the following labels: `framework`, `f: material design`, `f: cupertino`, `tool`, `☸ platform-web`, `a: desktop`, `team: infra`, `a: existing apps`.
+* It can have one of the following labels: `framework`, `f: material design`, `f: cupertino`, `tool`, `platform-web`, `a: desktop`, `team: infra`, `a: existing apps`.
 
 * It can have the `will need additional triage` label. Use this if it's not clear what label it should have.
 
@@ -142,7 +142,7 @@ In addition, a bot takes care of these:
 We should (but currently do not) regularly check that the following PRs are not being neglected, and have appropriate labels:
 
 <!--ALL-LABELS-->
-* [The flutter/flutter PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3Atool+-label%3A"☸+platform-web"+sort%3Aupdated-asc)
+* [The flutter/flutter PRs with none of the classification labels](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3Aframework+-label%3A%22f%3A+cupertino%22+-label%3A%22f%3A+material+design%22+-label%3A%22a%3A+desktop%22+-label%3A%22team%3A+infra%22+-label%3Atool+-label%3A"platform-web"+sort%3Aupdated-asc)
 
 * [PRs in our esoteric repos](https://github.com/pulls?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+archived%3Afalse+user%3Aflutter+sort%3Aupdated-asc+-repo%3Aflutter%2Fflutter+-repo%3Aflutter%2Fengine+-repo%3Aflutter%2Fplugin-repo%3Aflutter%2Fpackage+-repo%3Aflutter%2Fwebsite+-repo%3Aflutter%2Fflutter-intellij)
 
@@ -247,35 +247,35 @@ If you come across a bug that is unrelated to the tool, remove the `tool` label 
 
 ## Web
 
-* [Web PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A"☸+platform-web"+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%98%B8+platform-web%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
-* [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
-* [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
-* [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
-* Glance at the [Recent issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Acreated-desc) (to see if any unexpected trends show up)
-* Consider issues with the [annoyance](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+label%3A%22a%3A+annoyance%22+sort%3Aupdated-asc) and [quality](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+label%3A%22a%3A+quality%22+sort%3Aupdated-asc) labels
-* [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22) (look at the top 10ish)
-* [Popular feature requests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22) (look at the top 10ish)
-* If you get this far, triage [all the other Web issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"☸+platform-web"+sort%3Aupdated-asc)
+* [Web PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A"platform-web"+sort%3Aupdated-asc)
+* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-web%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
+* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
+* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
+* [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
+* [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
+* Glance at the [Recent issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Acreated-desc) (to see if any unexpected trends show up)
+* Consider issues with the [annoyance](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+label%3A%22a%3A+annoyance%22+sort%3Aupdated-asc) and [quality](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+label%3A%22a%3A+quality%22+sort%3Aupdated-asc) labels
+* [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22) (look at the top 10ish)
+* [Popular feature requests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Areactions-%2B1-desc+label%3A%22severe%3A+new+feature%22) (look at the top 10ish)
+* If you get this far, triage [all the other Web issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc)
 
-If you come across a bug that is unrelated to the Web backend, remove the `☸ platform-web` label and leave a comment explaining why. That will send it back to triage.
+If you come across a bug that is unrelated to the Web backend, remove the `platform-web` label and leave a comment explaining why. That will send it back to triage.
 
 ## Mobile Platforms
 
-* [Android TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+label%3A%22%E2%9A%A0+TODAY%22)
-* [Android customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+label%3A%22severe%3A+customer+blocker%22)
-* [Android customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
-* [Android overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
-* [Android next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
+* [Android TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22%E2%9A%A0+TODAY%22)
+* [Android customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22severe%3A+customer+blocker%22)
+* [Android customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
+* [Android overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
+* [Android next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
 
 
-* [iOS TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22)
-* [iOS customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+label%3A%22severe%3A+customer+blocker%22)
-* [iOS customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
-* [iOS overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
-* [iOS next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+llabel%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
+* [iOS TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A%22platform-ios%22)
+* [iOS customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-ios%22+label%3A%22severe%3A+customer+blocker%22)
+* [iOS customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-ios%22+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
+* [iOS overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
+* [iOS next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+llabel%3A%22platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22March+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22)
 
 * [Add-to-app TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A"a%3A+existing-apps")
 * [Add-to-app customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+label%3A%22severe%3A+customer+blocker%22)
