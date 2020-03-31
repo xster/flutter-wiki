@@ -2,7 +2,11 @@ This is a list of all the [dev branch commits](https://github.com/flutter/flutte
 
 **If you add a build to this list and master has not yet been fixed, please file a TODAY bug and link to it from here as well.**
 
-## v1.15.4 - &lt;not yet fixed&gt;
+## 1.17.0-dev.0.0
+  * Version format not detected by Flutter tool [#53688](https://github.com/flutter/flutter/issues/53688)
+  * MacOS artifacts not signed
+
+## v1.15.4 - 1.16.3
   * Text disappear while typing on Samsung keyboard [#53086](https://github.com/flutter/flutter/issues/53086)
 
 ## v1.15.21 - v1.15.22:
