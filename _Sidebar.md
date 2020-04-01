@@ -57,6 +57,7 @@ Flutter Wiki
 - [[Engine-specific Service Protocol extensions]]
 - [[Crashes]]
 - [[Supporting legacy platforms]]
+- [[Metal on iOS FAQ]]
 
 ## Infrastructure
 - [[Autorollers]]
