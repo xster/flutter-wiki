@@ -5,6 +5,12 @@ We intend to announce hotfixes to the [flutter-announce](https://groups.google.c
 Note that we only hotfix the latest version --- if you see bugs on older versions of the `stable` channel, please consider moving to the latest `stable` channel version. 
 
 ## Flutter 1.12 Changes
+### Hotfix.9 (April 01, 2020)
+This fixes the following issues:
+ - https://github.com/flutter/flutter/issues/47819 - Crashes on ARMv8 Android devices
+ - https://github.com/flutter/flutter/issues/49185 - Issues using Flutter 1.12 with Linux 5.5
+ - https://github.com/flutter/flutter/issues/51712 - fixes for licensing from Android sdkmanager tool not being found
+
 ### [Hotfix.8](https://github.com/flutter/flutter/pull/50591) (February 11, 2020)
 This fixes the following issues:
  - https://github.com/flutter/flutter/issues/50066 - binaries unsigned in last hotfix
