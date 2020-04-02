@@ -274,8 +274,13 @@ relative priority of upcoming work, so that is one way to change our mind.
 
 ## Locking an issue
 
-Issues should not regularly be locked. The most common reasons
-for locking an issue are:
+Closed issues that haven't received any activity in a [few weeks](https://github.com/flutter/flutter/blob/master/.github/lock.yml#L4)
+are automatically locked by a [bot](https://github.com/apps/lock). This is
+done to encourage developers to file new bugs, instead of piling comments
+on old ones.
+
+Under normal circumstances, issues should not regularly be locked. The most
+common reasons for manually locking an issue are:
 
 1. The issue is well understood by the engineers working on it,
    is believed to be appropriately prioritized, has has a clear 
