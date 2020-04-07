@@ -7,6 +7,9 @@ See also [[Bad Builds]], which lists dev releases that are known to have major b
 ### v1.18.X
 * NEXT AUTHOR: Put your breaking change notification here and insert headings as appropriate to identify which version is affected.
 
+### v1.17.X
+* [#50180](https://github.com/flutter/flutter/pull/50180) Renames `CupertinoFullscreenDialogTransition`'s `animation` to `primaryRouteAnimation`.
+
 ### v1.15.x
 
 * [#48346](https://github.com/flutter/flutter/pull/48917) Adds `selectionHeightStyle` and `selectionWidthStyle` to `TextField` and `CupertinoTextField` which allows customization of how the selection highlighting looks.
