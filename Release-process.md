@@ -1,3 +1,5 @@
+TO BE UPDATED (pcsosinski): pending changes for new release process for 1.17 / April 2020
+
 For an overview of the various Flutter release channels, see [[Flutter build release channels]].
 
 ## Rolling the dev channel
