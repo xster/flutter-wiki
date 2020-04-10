@@ -73,6 +73,7 @@ When a device lab test fails, it is important to be able to run the test locally
 
 1. Navigate in your terminal to the `dev/devicelab` directory.
 1. Ensure that a physical device, simulator, or emulator is connected.
+1. Ensure that the current locale is en_US by executing the command: `export LANG=en_US.UTF-8`.
 1. Execute the command: `../../bin/cache/dart-sdk/bin/dart bin/run.dart -t [name_of_test]` where `[name_of_test]` is replaced by the name of the test you want to run as defined within `dev/devicelab/manifest.yaml`.
 
 ### Device lab tests with a local engine
