@@ -65,3 +65,5 @@ We have a template you can use, at [flutter.dev/go/template](https://flutter.dev
 We recommend you use that template so that people can immediately recognize that this is a Flutter design document and that it is shared publicly.
 
 When you implement a design, document it in the source code in detail. The API documentation is the usual place where we document our designs. It's perfectly reasonable for API docs to be multiple pages long with subheadings (e.g. see the docs for [RenderBox](https://master-api.flutter.dev/flutter/rendering/RenderBox-class.html)!). Do not assume that anyone will ever read your design doc after the discussion has finished. Similarly, do not assume that anyone will look at closed GitHub issues or PR discussions.
+
+For future archeologists, a list of design documents can be found at <https://flutter.dev/docs/resources/design-docs>.
