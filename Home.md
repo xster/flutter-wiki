@@ -10,6 +10,7 @@ If you intend to contribute to Flutter, welcome! You are encouraged to start wit
 
 * [Breaking changes](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes)
 * [Debugging a broken engine autoroll](https://github.com/flutter/flutter/wiki/Debugging-the-engine#bisecting-a-roll-failure)
+* [Design documents](https://github.com/flutter/flutter/wiki/Chat#design-documents)
 * [Engineering Philosophy](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#philosophy)
 * [Issue prioritization](https://github.com/flutter/flutter/wiki/Issue-hygiene#prioritization)
 * [Milestones](https://github.com/flutter/flutter/wiki/Issue-hygiene#milestones)
