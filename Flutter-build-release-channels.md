@@ -30,9 +30,9 @@ Versioning example:
 
 following from the dev example above, let's say we branch for beta at the 15th dev release point for 1.18
 ```
-1.18.0-15.0-pre <- initial beta RC, same release as went to dev.
-1.18.0-15.1-pre <- subsequent build on the (now) beta branch with some cherrypicks.
-1.18.0-15.2-pre <- second subsequent build.
+1.18.0-15.0.pre <- initial beta RC, same release as went to dev.
+1.18.0-15.1.pre <- subsequent build on the (now) beta branch with some cherrypicks.
+1.18.0-15.2.pre <- second subsequent build.
 ```
 ### stable
 
@@ -43,8 +43,8 @@ Versioning example:
 
 the first stable release will always be X.Y.0.  following on the example above:
 ```
-1.18.0-15.4-pre <- last beta build on branch
-1.18.0 <- stable release
+1.18.0-15.4.pre <- last beta build on branch
+1.18.0 <- stable release, same bits as 1.18.0-15.4.pre
 1.18.1 <- potential hotfix of 1.18.0
 ```
 ## How to change channels
