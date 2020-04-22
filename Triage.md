@@ -72,6 +72,10 @@ Bugs relating to the website should be moved to the `flutter/website` repo.
 
 Bugs relating to the IDEs should be moved to the `flutter/flutter-intellij` repo.
 
+### Issues requiring domain expertise
+
+Sometimes it's not clear what the appropriate labels are for an issue, or you suspect it may be a duplicate but you lack enough domain knowledge to know for sure. If you know someone who has the expertise to triage the issue, you can assign the issue to them and add the label [assigned for triage](https://github.com/flutter/flutter/labels/assigned%20for%20triage), so the person knows that they are not expected to fix it, but to triage it.
+
 ### Milestone
 
 _See also: [List of milestones](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open)_
