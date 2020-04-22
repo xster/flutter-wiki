@@ -79,7 +79,7 @@ We have two special customer labels which are used exclusively with the "critica
 and "blocker" labels.
 
 The "customer: product" label is used by the team to bring issues that product
-management and senior leads want resolved to the attention of the engineering team.
+management and senior leads want to bring to the attention of the engineering team.
 
 The "customer: crowd" label is used to represent bugs that are affecting large
 numbers of people; during initial [[Triage]], high-profile bugs get labeled in
