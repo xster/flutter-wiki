@@ -84,4 +84,4 @@ Flutter Wiki
 - [Using Flutter in China](https://flutter.dev/community/china)
 - [JIT release builds](https://github.com/flutter/flutter/wiki/JIT-Release-Modes)
 - [Multi-device debugging in VS Code](https://github.com/flutter/flutter/wiki/Multi-device-debugging-in-VS-Code)
-- [Using-Flutter-Drive-with-Web](https://github.com/flutter/flutter/wiki/Using-Flutter-Drive-with-Web)
+- [Running Flutter Driver tests with Web](https://github.com/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web)
