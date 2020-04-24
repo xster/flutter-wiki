@@ -1,10 +1,10 @@
-In the last months Flutter Drive has been enabled for most browsers. 
+In the last months Flutter Driver tests has been enabled for most browsers. 
 
 This document explains the steps that should be followed before running the tests, how to run the tests, example usages and handy tools that can be used.
 
 ## Preparing the driver
 
-The first step of using Flutter Drive for Flutter Web testing is to install(prepare) the driver for the target browser.
+The first step of using Flutter Driver tests for Flutter Web testing is to install(prepare) the driver for the target browser.
 
 ### Using Chrome
 
@@ -48,7 +48,7 @@ More information can be found on Edge Drivers on [developer site](https://develo
 
 Note that this section is experimental, at this point we don't have automated tests running on Edge.
 
-## Running Flutter Drive
+## Running Flutter Driver tests
 
 The command for running the driver tests:
 
