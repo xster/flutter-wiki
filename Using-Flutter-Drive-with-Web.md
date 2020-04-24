@@ -1,4 +1,4 @@
-In the last months Flutter Drive is enabled for most browsers. 
+In the last months Flutter Drive has been enabled for most browsers. 
 
 This document explains the steps that should be followed before running the tests, how to run the tests, example usages and handy tools that can be used.
 
@@ -23,7 +23,7 @@ Chrome on Android browser tests can be run both on device and on the emulator.
 * For the web port you are planning to use for Flutter driver tests, let's say 8080 for example:
    * Test the browser has access to a server running on localhost:8080
    * One can utilize adb for this purpose. For more [details](https://developer.android.com/studio/command-line/adb).
-   * Another alternative is using Chrome Remote devices from browser page `chrome://inspect/devices#devices`. For more details on useful links: [remote debugging webviews](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews), [remote debugging andoid devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)
+   * Another alternative is using Chrome Remote devices from browser page `chrome://inspect/devices#devices`. For more details on useful links: [remote debugging webviews](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews), [remote debugging android devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)
 * Start the Chrome driver on port 4444. `chromedriver --port=4444`
 
 ### Using Safari
@@ -32,7 +32,7 @@ Like Safari browser Safari driver also comes installed on the macOS devices. For
 * Use the [instructions](https://developer.apple.com/documentation/webkit/testing_with_webdriver_in_safari) to enable safari driver.
 * start safari driver on port 4444 `./usr/bin/safaridriver  --port=4444`
 
-IOS Safari can be run on simulator. Simulators are part of Xcode, more [details](https://developer.apple.com/documentation/xcode). After making sure your macOS have simulators, follow the steps above to start the Safari driver. Unlike Andorid the Desktop Safari version and simulator version is the same.
+IOS Safari can be run on a simulator. Simulators are part of Xcode, more [details](https://developer.apple.com/documentation/xcode). After making sure your macOS have simulators, follow the steps above to start the Safari driver. Unlike Android the Desktop Safari version and simulator version is the same.
 
 ### Using Firefox
 
@@ -58,14 +58,14 @@ flutter drive --target=test_driver/[driver_test].dart -d web-server --release --
 
 Let's go over the different arguments that can be used:
 * Use one of the six browsers for `--browser-name` parameter: chrome, safari, ios-safari, android-chrome, firefox, edge.
-* Use `--local-engine=host_debug_unopt` for running test with local engine. 
+* Use `--local-engine=host_debug_unopt` for running tests with a local engine. 
 * Use `--release` or `--profile` mode for running the tests. Debug mode will be supported soon.
-* Changed the webport as needed, don't forget to change remote debugging settings for Android Chrome.
+* Change the `--webport` as needed, don't forget to change remote debugging settings for Android Chrome.
 * Use `--no-android-emulator` for using Android in with real devices.
 
 ## Web Installers Repo
 
-Web installers is a new Flutter project [repository](https://github.com/flutter/web_installers) where we are planning to adds utilities for launching, downloading browsers/drivers.
+Web installers is a new Flutter project [repository](https://github.com/flutter/web_installers) where we are planning to add utilities for launching, downloading browsers/drivers.
 
 Currently it can be used for downloading/running Chrome Driver:
 ```
