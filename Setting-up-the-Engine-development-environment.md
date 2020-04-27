@@ -129,7 +129,13 @@ To set up:
 
 1. Refresh the view and find the "flutter_*" project. There should be a "_/shell/platform/android" source folder there. 
 
-1. In the "Referenced Libraries" sibling node, click the + button, navigate to `engine/src/third_party/android_embedding_dependencies` and add the entire folder.
+1. In the "Referenced Libraries" sibling node, click the + button, navigate to `engine/src/third_party/android_embedding_dependencies` and add the entire folder. This is the equivalent of adding 
+    ```
+    "java.project.referencedLibraries": [
+      "{path to engine}/src/third_party/android_embedding_dependencies/lib/**/*.jar"
+    ]
+    ```
+    to your settings.json for your user or for your workspace.
 
 1. If you previously had a `shell/platform/android/.classpath`, delete it. 
 
