@@ -61,7 +61,7 @@ Let's go over the different arguments that can be used:
 * Use `--local-engine=host_debug_unopt` for running tests with a local engine. 
 * Use `--release` or `--profile` mode for running the tests. Debug mode will be supported soon.
 * Change the `--webport` as needed, don't forget to change remote debugging settings for Android Chrome.
-* Use `--no-android-emulator` for using Android in with real devices.
+* Use `--no-android-emulator` for using Android with real devices.
 
 ## Web Installers Repo
 
@@ -81,7 +81,7 @@ For more details use the [documentation](https://github.com/flutter/web_installe
 
 ## Examples From Flutter Project
 
-We already use Flutter Drive in many different places in Flutter Project. We have a smoke test running as a [Cirrus CI task](https://github.com/flutter/flutter/blob/master/.cirrus.yml#L291) in Flutter repo, which is also a great example for showing web_installers + flutter drive usage.
+We already use Flutter Driver in many different places in Flutter Project. We have a smoke test running as a [Cirrus CI task](https://github.com/flutter/flutter/blob/master/.cirrus.yml#L291) in Flutter repo, which is also a great example for showing web_installers + flutter drive usage.
 
 ```
 script:
