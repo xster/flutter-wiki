@@ -119,12 +119,6 @@ To set up:
 
 ![](https://media.giphy.com/media/xjIrToRDVvMPvjkBcl/giphy.gif)
 
-## VSCode Additional Useful Configuration
-
-1. Create [snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) for header files with [this configuration](https://github.com/chromium/chromium/blob/master/tools/vscode/settings.json5). This will let you use `hdr` keyboard macro to create the boiler plate header code. Also consider some of [these settings](https://github.com/chromium/chromium/blob/master/tools/vscode/settings.json5) and [more tips](https://chromium.googlesource.com/chromium/src/+show/lkgr/docs/vscode.md).
-
-2. To format GN files on save, [consider using this extension](https://marketplace.visualstudio.com/items?itemName=persidskiy.vscode-gnformat).
-
 ### Using VSCode as an IDE for the Android Embedding [Java]
 
 1. Install the extensions vscjava.vscode-java-pack and vscjava.vscode-java-dependency. 
@@ -138,3 +132,9 @@ To set up:
 1. In the "Referenced Libraries" sibling node, click the + button, navigate to `engine/src/third_party/android_embedding_dependencies` and add the entire folder.
 
 1. If you previously had a `shell/platform/android/.classpath`, delete it. 
+
+## VSCode Additional Useful Configuration
+
+1. Create [snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) for header files with [this configuration](https://github.com/chromium/chromium/blob/master/tools/vscode/settings.json5). This will let you use `hdr` keyboard macro to create the boiler plate header code. Also consider some of [these settings](https://github.com/chromium/chromium/blob/master/tools/vscode/settings.json5) and [more tips](https://chromium.googlesource.com/chromium/src/+show/lkgr/docs/vscode.md).
+
+2. To format GN files on save, [consider using this extension](https://marketplace.visualstudio.com/items?itemName=persidskiy.vscode-gnformat).
