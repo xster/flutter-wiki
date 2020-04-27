@@ -135,7 +135,7 @@ To set up:
       "{path to engine}/src/third_party/android_embedding_dependencies/lib/**/*.jar"
     ]
     ```
-    to your settings.json for your user or for your workspace.
+    to your VSCode's settings.json for your user or for your workspace.
 
 1. If you previously had a `shell/platform/android/.classpath`, delete it. 
 
