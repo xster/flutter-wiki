@@ -8,10 +8,7 @@ Make sure you have the following dependencies available:
      * macOS supports cross-compiling artifacts for Android and iOS.
      * Windows doesn't support cross-compiling artifacts for either Android or iOS.
  * git (used for source version control).
- * An IDE. [Android Studio with the Flutter plugin](https://flutter.io/using-ide/) is
-   our flagship IDE. You can use whatever IDE you feel most comfortable with. See also
-   the section at the bottom of this page for advice on setting up autocomplete with
-   a tool called `cquery`.
+ * An IDE. See also the section at the bottom of this page for advice on setting up syntax highlighting while editing the engine.
  * An ssh client (used to authenticate with GitHub).
  * Chromium's
    [depot_tools](http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up)
@@ -93,11 +90,11 @@ Next steps:
 
 ## Editor autocomplete support
 
-### Xcode
+### Xcode [Objective-C++]
 
 On Mac, you can simply use Xcode (e.g., `open out/host_debug_unopt/products.xcodeproj`).
 
-### VSCode with C/C++ Intellisense
+### VSCode with C/C++ Intellisense [C/C++]
 
 VSCode can provide some IDE features using the [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). It will provide basic support on install without needing any additional configuration. There will probably be some issues, like header not found errors and incorrect jump to definitions.
 
@@ -105,19 +102,19 @@ Intellisense can also use our `compile_commands.json` for more robust functional
 
 For adding IDE support to the Java code in the engine with VSCode, see ["Using VSCode as an IDE for the Android Embedding"](https://github.com/flutter/flutter/wiki/Setting-up-the-Engine-development-environment#using-vscode-as-an-ide-for-the-android-embedding).
 
-### CQuery (multiple editors)
+### cquery/ccls (multiple editors) [C/C++/Objective-C++]
 
-Alternatively, [cquery](https://github.com/cquery-project/cquery) is a highly scalable C/C++/Objective-C language server that supports IDE features like go-to-definition, call hierarchy, autocomplete, find reference etc that works reasonably well with our engine repo. 
+Alternatively, [cquery](https://github.com/cquery-project/cquery) and a derivative [ccls](https://github.com/MaskRay/ccls) are highly scalable C/C++/Objective-C language server that supports IDE features like go-to-definition, call hierarchy, autocomplete, find reference etc that works reasonably well with our engine repo. 
 
-It [supports](https://github.com/cquery-project/cquery/wiki/Editor-configuration) editors like VSCode, emacs, vim etc. 
+They(https://github.com/cquery-project/cquery/wiki/Editor-configuration) [supports](https://github.com/MaskRay/ccls/wiki/Editor-Configuration) editors like VSCode, emacs, vim etc. 
 
 To set up:
 1. Install cquery
-    1. `brew install --HEAD cquery` on osx or
+    1. `brew install cquery` or `brew install ccls` on osx; or
     1. [Build from source](https://github.com/cquery-project/cquery/wiki/Getting-started)
 1. Generate compile_commands.json which our GN tool already does such as via `src/flutter/tools/gn --ios --unoptimized` 
-1. Install an editor extension such as [VSCode-cquery](https://marketplace.visualstudio.com/items?itemName=cquery-project.cquery)
-    1. VSCode-query requires the compile_commands.json to be at the project root. Copy or symlink `src/out/compile_commands.json` to `src/` or `src/flutter`.
+1. Install an editor extension such as [VSCode-cquery](https://marketplace.visualstudio.com/items?itemName=cquery-project.cquery) or [vscode-ccls](https://marketplace.visualstudio.com/items?itemName=ccls-project.ccls)
+    1. VSCode-query and vscode-ccls requires the compile_commands.json to be at the project root. Copy or symlink `src/out/compile_commands.json` to `src/` or `src/flutter` depending on which folder you want to open.
     1. Follow [Setting up the extension](https://github.com/cquery-project/cquery/wiki/Visual-Studio-Code#setting-up-the-extension) to configure VSCode-query.
 
 ![](https://media.giphy.com/media/xjIrToRDVvMPvjkBcl/giphy.gif)
@@ -128,9 +125,16 @@ To set up:
 
 2. To format GN files on save, [consider using this extension](https://marketplace.visualstudio.com/items?itemName=persidskiy.vscode-gnformat).
 
-### Using VSCode as an IDE for the Android Embedding
+### Using VSCode as an IDE for the Android Embedding [Java]
 
-Create a `.classpath` file in `engine/src/flutter/shell/platform/android` so that the IDE can understand the project structure. [Here's an example file](https://gist.github.com/mklim/b0d0c9c5084d5abb9e012c051a2cb5ff) that worked as of the time of this writing.
+1. Install the extensions vscjava.vscode-java-pack and vscjava.vscode-java-dependency. 
 
-* It should contain links to all of the engine's JAR dependencies in `third_party`, including the Android SDK.
-* It should also list the `test/` subdirectory as a `src` directory to fix incorrect package errors on the unit test files.
+1. Right click on the `shell/platform/android` folder in the engine source and click on `Add Folder to Java Source Path`. This creates an anonymous workspace and turns those files from ["syntax mode"](https://code.visualstudio.com/docs/java/java-project#_syntax-mode) to "compile mode". At this point, you should see a lot of errors since none of the external imports are found. 
+
+1. Find the "Java Dependencies" pane in your Explorer view. Use the "Explorer: Focus on Java Dependencies View" command if hidden. 
+
+1. Refresh the view and find the "flutter_*" project. There should be a "_/shell/platform/android" source folder there. 
+
+1. In the "Referenced Libraries" sibling node, click the + button, navigate to `engine/src/third_party/android_embedding_dependencies` and add the entire folder.
+
+1. If you previously had a `shell/platform/android/.classpath`, delete it. 
