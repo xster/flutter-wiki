@@ -546,9 +546,13 @@ class ListView {
 
 Our UI research has shown that developers prefer to see examples that are in the context of an entire app. So, whenever it makes sense, provide an example that can be presented as part of an entire application instead of just a simple sample like the one above.
 
-This can be done using the `{@tool snippet --template=<template>}` ... `{@end-tool}` dartdoc indicators, where `<template>` is the name of a template that the given blocks of dart code can be inserted into. See https://github.com/flutter/flutter/blob/master/dev/snippets/README.md[here] for more details about writing these kinds of examples, and https://github.com/flutter/flutter/blob/master/dev/snippets/config/templates/README.md[here] for a list and description of the available templates.
+This can be done using the `{@tool dartpad --template=<template>}` ... `{@end-tool}` or `{@tool sample --template=<template>}` ... `{@end-tool}` dartdoc indicators, where `<template>` is the name of a template that the given blocks of dart code can be inserted into. See https://github.com/flutter/flutter/blob/master/dev/snippets/README.md[here] for more details about writing these kinds of examples, and https://github.com/flutter/flutter/blob/master/dev/snippets/config/templates/README.md[here] for a list and description of the available templates.
 
-Application examples will be presented on the API documentation website along with information about how to instantiate the example as an application that can be run. IDEs viewing the Flutter source code may also offer the option of creating a new project with the example.
+Dartpad examples (using the dartdoc `dartpad` indicator) will be presented on the API documentation website as an in-page executable and editable example. This allows developers to interact with the example right there on the page, and is the preferred form of example.
+
+For examples that don't make sense in a web page (for example, code that interacts with a particular platform feature), application examples (the dartdoc `sample` indicator) are preferred, and will be presented on the API documentation website along with information about how to instantiate the example as an application that can be run.
+
+IDEs viewing the Flutter source code using the Flutter plugin also offer the option of creating a new project with either kind of example.
 
 ### Provide illustrations, diagrams or screenshots
 
