@@ -525,7 +525,7 @@ For example, below is the sample code for building an infinite list of children 
 /// 
 /// ...
 /// 
-/// {@tool sample}
+/// {@tool snippet}
 /// An infinite list of children:
 ///
 /// ```dart
