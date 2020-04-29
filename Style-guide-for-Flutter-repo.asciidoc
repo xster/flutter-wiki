@@ -516,7 +516,7 @@ Typedef dartdocs should usually start with the phrase "Signature for...".
 
 Sample code helps developers learn your API quickly. Writing sample code also helps you think through how your API is going to be used by app developers.
 
-Sample code should go in a section of the documentation that begins with `{@tool sample}`, and ends with `{@end-tool}`. This will then be checked by automated tools, and extracted and formatted for display on the API documentation web site https://docs.flutter.io[docs.flutter.io].
+Sample code should go in a section of the documentation that begins with `{@tool snippet}`, and ends with `{@end-tool}`. This will then be checked by automated tools, and extracted and formatted for display on the API documentation web site https://docs.flutter.io[docs.flutter.io].
 
 For example, below is the sample code for building an infinite list of children with the ListView widget, as it would appear in the Flutter source code for the ListView widget:
 
