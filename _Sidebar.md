@@ -85,3 +85,4 @@ Flutter Wiki
 - [JIT release builds](https://github.com/flutter/flutter/wiki/JIT-Release-Modes)
 - [Multi-device debugging in VS Code](https://github.com/flutter/flutter/wiki/Multi-device-debugging-in-VS-Code)
 - [Running Flutter Driver tests with Web](https://github.com/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web)
+- [Fast Start](https://github.com/flutter/flutter/wiki/Fast-Start)
