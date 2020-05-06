@@ -183,4 +183,20 @@ this time with felt_windows.bat.
 felt_windows.bat test
 ```
 
+## Troubleshooting Compile Errors
+
+### Version Solving Failed
+
+From time to time, as the Dart versions increase, you might see dependency errors such as:
+
+```
+The current Dart SDK version is 2.7.0-dev.0.0.flutter-1ef444139c.
+
+Because ui depends on <a pub package> 1.0.0 which requires SDK version >=2.7.0 <3.0.0, version solving failed.
+```
+
+Running `gclient sync` does not update the tags, there are two solutions:
+1. under `engine/src/third_party/dart` run `git fetch --tags origin`
+2. or run gclient sync with with tags parameter: `gclient sync --with_tags`
+
 _See also: [[Debugging the engine]], which includes instructions on running a Flutter app with a local engine._
