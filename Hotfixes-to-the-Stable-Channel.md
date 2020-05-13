@@ -5,7 +5,7 @@ We intend to announce hotfixes to the [flutter-announce](https://groups.google.c
 Note that we only hotfix the latest version --- if you see bugs on older versions of the `stable` channel, please consider moving to the latest `stable` channel version. 
 
 ## Flutter 1.17 Changes
-## [1.17.1] (https://github.com/flutter/flutter/pull/57052) (May 13, 2020)
+## [1.17.1](https://github.com/flutter/flutter/pull/57052) (May 13, 2020)
 This fixes the following issues:
  - https://github.com/flutter/flutter/issues/26345 - Updating AndroidView layer tree causes crash on Xiaomi and Moto devices
  - https://github.com/flutter/flutter/issues/56567 - Migrated legacy build settings cause build failures on iOS
