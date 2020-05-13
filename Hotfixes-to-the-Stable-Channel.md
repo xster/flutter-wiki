@@ -7,10 +7,10 @@ Note that we only hotfix the latest version --- if you see bugs on older version
 ## Flutter 1.17 Changes
 ### [1.17.1](https://github.com/flutter/flutter/pull/57052) (May 13, 2020)
 This fixes the following issues:
- - https://github.com/flutter/flutter/issues/26345 - Updating AndroidView layer tree causes crash on Xiaomi and Moto devices
+ - https://github.com/flutter/flutter/issues/26345 - Updating `AndroidView` layer tree causes crash on Xiaomi and Moto devices
  - https://github.com/flutter/flutter/issues/56567 - Migrated legacy build settings cause build failures on iOS
- - https://github.com/flutter/flutter/issues/56473 - Build --tree-shake-icons build option crashes computer
- - https://github.com/flutter/flutter/issues/56688 - Regression in Navigator.pushAndRemoveUntil
+ - https://github.com/flutter/flutter/issues/56473 - Build `--tree-shake-icons` build option crashes computer
+ - https://github.com/flutter/flutter/issues/56688 - Regression in `Navigator.pushAndRemoveUntil`
  - https://github.com/flutter/flutter/issues/56479 - Crash while getting static type context for signature shaking
 
 ### 1.17.0 (May 5, 2020)
