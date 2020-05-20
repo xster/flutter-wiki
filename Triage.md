@@ -244,6 +244,7 @@ If you come across a bug that is unrelated to the framework, remove the `framewo
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
+* [Crowd issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22customer%3A+crowd%22+label%3Atool)
 * Consider issues with the [annoyance](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+label%3A%22a%3A+annoyance%22+sort%3Aupdated-asc) and [quality](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+label%3A%22a%3A+quality%22+sort%3Aupdated-asc) labels
 * Glance at the [Recent issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Acreated-desc) (to see if any unexpected trends show up)
 * [Popular issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22) (look at the top 10ish)
