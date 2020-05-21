@@ -15,7 +15,10 @@ Make sure you have the following dependencies available:
    (make sure it's in your path). We use the `gclient` tool from depot_tools.
  * Python (used by many of our tools, including `gclient`).
  * On macOS and Linux: curl and unzip (used by `gclient sync`).
- * On Windows: Visual Studio 2017+ (required for non-Googlers only).
+ * On Windows:
+   - Visual Studio 2017 or later (required for non-Googlers only).
+   - Windows 10 SDK (required for non-Googlers only).
+     - Be sure to install the "Debugging Tools for Windows" feature.
  * On macOS: the latest Xcode.
  * Recommended for Googlers: Goma for distributed builds.
 
