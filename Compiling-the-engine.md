@@ -131,14 +131,22 @@ You can only build selected binaries on Windows (mainly `gen_snapshot` and the d
 
 2. `git pull upstream master` in `src/flutter` to update the Flutter Engine repo.
 
-3. `gclient sync` to update your dependencies.
+3. If you are not a Google employee, you must set the following environment variables to point the depot tools at Visual Studio:
+```
+DEPOT_TOOLS_WIN_TOOLCHAIN=0
+GYP_MSVS_OVERRIDE_PATH="C:\Program Files (x86)/Microsoft Visual Studio/2019/Community" (or your location for Visual Studio)
+WINDOWSSDKDIR="C:\Program Files (x86)\Windows Kits\10" (or your location for Windows Kits)
+```
+Also, be sure that Python27 is before any other python in your Path.
 
-4. switch to `src/` directory.
+4. `gclient sync` to update your dependencies.
 
-5. `python .\flutter\tools\gn --unoptimized` to prepare your build files.
+5. switch to `src/` directory.
+
+6. `python .\flutter\tools\gn --unoptimized` to prepare your build files.
    * If you are only building `gen_snapshot`: `python .\flutter\tools\gn [--unoptimized] --runtime-mode=[debug|profile|release] [--android]`.
 
-6. `ninja -C .\out\<dir created by previous step>` to build.
+7. `ninja -C .\out\<dir created by previous step>` to build.
    * If you used a non-debug configuration, use `ninja -C .\out\<dir created by previous step> gen_snapshot`.
      Release and profile are not yet supported for the desktop shell.
 
