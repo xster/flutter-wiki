@@ -105,3 +105,7 @@ The following is an example of what running the local engine command might look 
 ```
 
 The above command would use the local Flutter engine located at `/Users/myname/flutter/engine` to execute the `external_ui_integration_test` test on an Android emulator, which is why the `android_debug_unopt_x86` version of the engine is used.
+
+For the engine
+--------------
+See the [[Testing the engine]] wiki.
