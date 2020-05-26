@@ -4,6 +4,13 @@ We intend to announce hotfixes to the [flutter-announce](https://groups.google.c
 
 Note that we only hotfix the latest version --- if you see bugs on older versions of the `stable` channel, please consider moving to the latest `stable` channel version. 
 
+To ensure that you have the latest stable version with the hotfixes listed below, use the flutter tool at the command line as follows:
+
+```
+$ flutter channel stable
+$ flutter upgrade
+```
+
 ## Flutter 1.17 Changes
 ### [1.17.1](https://github.com/flutter/flutter/pull/57052) (May 13, 2020)
 This fixes the following issues:
