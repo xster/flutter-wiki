@@ -1,7 +1,7 @@
 # Goal
 With branching and branch testability now being supported for Flutter & Dart releases, cherrypicking fixes will now be the preferred method to address issues for released software (beta and stable channels.)  Stability of the release will be the overarching goal, so only high impactful and critical cherrypicks will be allowed across Dart and Flutter.  This document outlines the process for requesting and approval of cherrypicks. 
 
-**Note: This process applies to bugs and regressions.  Feature work is not considered for cherrypicking and will need to wait for the next release.**
+**Note: This process applies to bugs, specifically regressions from the previous release or serious bugs introduced by the current release.  Feature work is not considered for cherrypicking and will need to wait for the next release.**
 
 # The Cherrypick Reviewers
 **The Cherrypick reviewers** will initially be composed of leads from product, engineering and program managers across Dart and Flutter.   They will meet/discuss asynchronously on an as-needed basis assuming there are requests to review or prioritize.  Longer term, we may include contributors as well.  The individual (Dart, Flutter) groups will meet to review cherrypick requests from their repos as needed, organized by their TPMs.  The full group will meet when cherrypicks are approved by the individual groups and consideration for a hotfix release is required.
