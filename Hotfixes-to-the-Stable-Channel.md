@@ -12,6 +12,15 @@ $ flutter upgrade
 ```
 
 ## Flutter 1.17 Changes
+### [1.17.2](https://github.com/flutter/flutter/pull/58050) (May 28, 2020)
+
+This fixes the following issues:
+ - https://github.com/flutter/flutter/issues/57326  - CupertinoSegmentedControl does not always respond to selections
+ - https://github.com/flutter/flutter/issues/56898 - DropdownButtonFormField is not re-rendered after value is changed programmatically
+ - https://github.com/flutter/flutter/issues/56853 - `flutter upgrade` gives wrong error with detached head: "Unable to upgrade Flutter: no origin repository configured"
+ - https://github.com/flutter/flutter/issues/55552 - Hot reload may fail after a hot restart
+ - https://github.com/flutter/flutter/issues/56507 - iOS builds may fail with “The path does not exist” error message
+
 ### [1.17.1](https://github.com/flutter/flutter/pull/57052) (May 13, 2020)
 This fixes the following issues:
  - https://github.com/flutter/flutter/issues/26345 - Updating `AndroidView` layer tree causes crash on Xiaomi and Moto devices
