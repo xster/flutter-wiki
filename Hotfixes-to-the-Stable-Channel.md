@@ -17,7 +17,7 @@ $ flutter upgrade
 This fixes the following issues:
  - https://github.com/flutter/flutter/issues/57326  - CupertinoSegmentedControl does not always respond to selections
  - https://github.com/flutter/flutter/issues/56898 - DropdownButtonFormField is not re-rendered after value is changed programmatically
- - https://github.com/flutter/flutter/issues/56853 - `flutter upgrade` gives wrong error with detached head: "Unable to upgrade Flutter: no origin repository configured"
+ - https://github.com/flutter/flutter/issues/56853 - Incorrect git error may be presented when flutter upgrade fails
  - https://github.com/flutter/flutter/issues/55552 - Hot reload may fail after a hot restart
  - https://github.com/flutter/flutter/issues/56507 - iOS builds may fail with “The path does not exist” error message
 
