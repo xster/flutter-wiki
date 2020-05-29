@@ -63,7 +63,7 @@ if they are very important and deserve immediate attention.
 (Bugs marked `P1` or `P2` must have the corresponding
 customer label as well, so that we know who is actually asking for the issue.)
 
-Each week, we look at all the bugs marked with the "P1" and "P2"
+Each week, we look at all the bugs marked with the `P1` and `P2`
 labels, and see if we can address them ahead of other bugs (though there is no guarantee
 that we will; it mostly depends on how close a relationship we have with the relevant customer).
 This process is described in the "critical triage" section of the page on [[Triage]].
@@ -157,13 +157,6 @@ milestone. This is for tracking burndowns in [ZenHub](https://www.zenhub.com/); 
 are using burndown charts against specific completion milestones and need their own milestone
 for tracking. Other rules for release milestones still apply.
 
-### Near-term Goals
-
-This special milestone is sometimes used as a stepping stone from Goals to a specific month. A subteam
-will triage bugs in the Goals milestone, determine that they should work a specific subset of
-issues, and put them in Near-term Goals. Then, later, when they are scheduling work, they will
-move bugs from Near-term Goals to a specific month, and assign a specific engineer.
-
 ### Other milestones
 
 The "Unassigned customer work" milestone indicates issues that we are intending to fix
@@ -174,11 +167,11 @@ this means not for 6+ months).
 Each week, we check any bug with the `P0`, `P1`, and `P2` labels.
 If we can find an owner for such a bug right away, it will be assigned a bucket milestone
 and given an explicit assignee. If we cannot, then it will be put into either the
+
 "Unassigned customer work" milestone or the "Declined customer request" milestone.
 
 If you are a customer and your bug is placed in the "Declined customer request"
 milestone, please escalate with your team contact.
-
 
 ## Assigning Issues
 
