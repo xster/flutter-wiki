@@ -848,7 +848,7 @@ you should use `@immutable` on the class hierarchy in question.
 
 ### Override `toString`
 
-Use `Diagnosticable` (rather than directly overriding `toString`) on all but the most trivial classes. That allows us to inspect the object from https://pub.dartlang.org/packages/devtools[devtools] and IDEs.
+Use `https://api.flutter.dev/flutter/foundation/Diagnosticable-mixin.html[Diagnosticable]` (rather than directly overriding `toString`) on all but the most trivial classes. That allows us to inspect the object from https://pub.dartlang.org/packages/devtools[devtools] and IDEs.
 
 For trivial classes, override `toString` as follows, to aid in debugging:
 
@@ -857,7 +857,7 @@ For trivial classes, override `toString` as follows, to aid in debugging:
   String toString() => '${objectRuntimeType(this, 'NameOfObject')}($bar, $baz, $quux)';
 ```
 
-...but even then, consider using Diagnosticable instead.  Avoid using `$runtimeType`, since it adds a non-trivial cost even in release and profile mode. The `objectRuntimeType` method handles this for you, falling back to a supplied constant string when asserts are disabled.
+...but even then, consider using `Diagnosticable` instead.  Avoid using `$runtimeType`, since it adds a non-trivial cost even in release and profile mode. The `objectRuntimeType` method handles this for you, falling back to a supplied constant string when asserts are disabled.
 
 
 Naming
