@@ -20,9 +20,20 @@ We use [many labels](https://github.com/flutter/flutter/labels).
 
 The `severe:` prefix indicates labels regarding a level of severity (e.g. regressions, new features, crashes). Severity in and of itself does not say how fast we will fix the bug; rather it provides clues as to the nature of the defect, just as other labels do. A bug may have the `severe: crash` label, but e.g. if it relates to the `flutter` tool crashing when run with the system date set to 1998, we are not likely to consider it a high priority.
 
-The `TODAY` label indicates a high-priority issue such as a build break, regression or failure in existing features that would keep us from shipping the current build. We look at issues with the `TODAY` label frequently to ensure that each has an owner and is being worked on.
+The `P0` label indicates a high-priority issue such as a build break, regression, or failure in existing features that keeps us from shipping the current build. We look at issues with this label frequently. If you find yourself assigning a `P0` label to an issue, please be sure that there's a positive handoff between filing and a prospective owner for the issue.
 
-The `RELEASE BLOCKER` label is similar. It indicates that the bug should be hot-fixed on any upcoming stable releases. Since the Open/Closed status of a bug relates to the master branch, not to the beta branch, it will be common for this label to be applied to closed bugs. The bug is removed as part of the [release process](https://github.com/flutter/flutter/wiki/Release-process) when the issue is hot-fixed.
+The `P1` label indicates that the issue is blocking a top-tier customer.
+
+The `P2` label indicates that the issue is a high-priority issue from a top-tier customer.
+
+The `P3` label indicates an issue not driven by an immediate top-tier customer request, nor targeted to a specific release. Most issues will bear this label.
+
+The `P4` label indicates issues that we agree are important to work on, but not at the top of the work list. This is the default level for bugs.
+
+The `P5` label indicates issues we think are valid but not important. This is the default level for new feature requests.
+
+The `P6` label indicates valid issues that are unlikely to ever be worked on.
+
 
 _See also: [[Triage]], which describes how we go through bugs and make sure they are sorted accordingly._
 
@@ -49,21 +60,21 @@ encourage them to mark bugs as "customer blocker" (for the most serious bugs)
 or "customer critical" (for still important but not quite as serious bugs)
 if they are very important and deserve immediate attention.
 
-(Bugs marked "customer blocker" or "customer critical" must have the corresponding
+(Bugs marked "P1" or "P2" must have the corresponding
 customer label as well, so that we know who is actually asking for the issue.)
 
-Each week, we look at all the bugs marked with the "customer blocker" and "customer critical"
+Each week, we look at all the bugs marked with the "P1" and "P2"
 labels, and see if we can address them ahead of other bugs (though there is no guarantee
 that we will; it mostly depends on how close a relationship we have with the relevant customer).
 This process is described in the "critical triage" section of the page on [[Triage]].
 
-Be wary in marking bugs as "customer blocker". We have finite resources,
+Be wary in marking bugs as "P1". We have finite resources,
 and several customers. If you have one "blocker" bug, then we have a clear
 sign of what to look at. If you have twenty, it will be difficult for us
 to know where to start.
 
-_See also: [Current customer blockers](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+blocker%22),
-[Current customer critical issues](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3A%22severe%3A+customer+critical%22)._
+_See also: [Current P1 issues](https://github.com/flutter/flutter/labels/P1),
+[Current P2 issues](https://github.com/flutter/flutter/labels/P2)._
 
 #### Coordinating between bug systems
 
@@ -121,17 +132,6 @@ We use [several milestones](https://github.com/flutter/flutter/milestones).
 
 We mostly use milestones to handle broad categorization and to indicate specific intentions.
 This is separate from bug prioritization, which is described next.
-
-### Goals, Stretch Goals, Future
-
-The first set of milestones help us categorize unassigned work. In general, team
-members look to fix bugs in the "Goals" milestone. Bugs in "Stretch Goals" are
-things that we're unlikely to work on in the coming year, and bugs in "Future"
-are things that we're unlikely to work on at all. However, we accept contributions
-regardless of the milestone, so if you care about an issue marked "Future", do
-not hesitate to contribute a PR to address it! (See our
-[contribution guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
-for advice on how to do that successfully.)
 
 ### Months (aka release milestones)
 
@@ -240,23 +240,14 @@ click the "subscribe" button in the right hand column of the GitHub UI.
 
 ## When will my bug be fixed?
 
-To determine when a bug will be fixed, look at the milestone.
+To determine when a bug will be fixed, look at the priority and milestone.
 
-If it has no milestone, it may not yet have been triaged.
+If it has no milestone and no priority, it may not yet have been triaged.
 
-If the milestone is "Stretch Goals", "Future", or "Declined customer
-request", we are not planning on working on the bug. We apologize. We
-are but a small team with an infinite amount of work, so we have to
-set boundaries. Consider escalating the issue, as described below.
+If it has no priority, it may not yet have been triaged."
+If the priority is labeled as a `P3`, we are likely to address in the near term; we just need to find time.
 
-If the milestone is "Goals", then we are not planning on working on it
-any time soon, but we agree that it's something we should work on in
-the coming years. Consider escalating the issue, as described below, to
-raise its priority further.
-
-If the milestone is "Unassigned customer work" or "Near-term goals",
-then we are likely to address the issue in the near term, we just
-need to find time. Please hold on.
+If the issue is labeled as a `P4`, we are not planning to work on it anytime soon, but we agree it's something we should work on in the coming years. Consider escalating the issue to raise its priority further.
 
 Otherwise, the milestone should be a precise description of when we expect
 the work to be done by. It may not be accurate; we often end up slipping
