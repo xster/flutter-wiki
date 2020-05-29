@@ -2,7 +2,7 @@ This page attempts to be a one-stop shop for figuring out what the most importan
 
 1. Build breakage. Check the [dashboard](https://flutter-dashboard.appspot.com/build.html).
 1. [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22).
-1. [P0 bugs](https://github.com/flutter/flutter/labels/P0)
+1. [P0 issues](https://github.com/flutter/flutter/labels/P0)
 1. [P1 issues](https://github.com/flutter/flutter/labels/P1)
 1. Mentoring promising new contributors.
 1. [Fixing flaky tests](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+flakes%22+sort%3Acomments-desc).
