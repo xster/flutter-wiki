@@ -24,7 +24,7 @@ which provides flutter-specific extensions on top of the [Dart `test` package](h
 To automatically find all files named `*_test.dart` inside a package's `test/` subdirectory, and
 run them inside the headless flutter shell as a test, use the `flutter test` command, e.g:
 
- * `cd examples/flutter_gallery`
+ * `cd examples/hello_world`
  * `flutter test`
 
 Individual tests can also be run directly, e.g.: `flutter test lib/my_app_test.dart`
