@@ -53,3 +53,4 @@ The actual process (as followed by Flutter repo admins) is as follows:
 1. Click the "Add a member" button on [the flutter-hackers team page](https://github.com/orgs/flutter/teams/flutter-hackers/members) on GitHub.
 1. Type their name in the text field, select them, then click the "Invite" button.
 1. If they are on Discord, add them to the "team" group there too. Be sure to verify that you are promoting the right person; multiple people can have the same nickname on Discord!
+1. *For new Googlers joining the team*, you need to ask someone in the team to add you to get added. It's not an automatic process after you join the flutter Google group.
