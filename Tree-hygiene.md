@@ -312,7 +312,7 @@ investigate.
 * If the regression is not expected, and is not severe, and is definitely not
 a problem in your PR (e.g. you changed a comment and the analyzer performance
 got worse, or you deleted a README and the rasterizer slowed down), then file
-a bug, labeled with the "regression", "performance", "TODAY" labels, and either
+a bug, labeled with the "regression", "performance", `P0` labels, and either
 investigate or delegate to someone to investigate. The investigation should be
 considered a high priority. It is your responsibility to make sure that the
 cause is understood within a few days.
@@ -347,9 +347,9 @@ in the paused period.
 
 Therefore, reverting a roller commit or pausing the auto-roller is 
 *NOT* the default action if it causes a performance regression.
-The default action should be to file an issue with labels "performance", "regression", and "TODAY"
+The default action should be to file an issue with labels "performance", "regression", and `P0`
 immediately, and start investigating which leaf-commit caused the regression. Once the leaf-commit
-is identified, check if it's an expected trade-off. If so, remove the "TODAY" label and try to see
+is identified, check if it's an expected trade-off. If so, remove the `P0` label and try to see
 if there's any way to mitigate the regression. If not, revert the leaf commit in the source repo
 and let the auto-roller apply that revert. Once the revert is rolled into Flutter, close the issue.
 
