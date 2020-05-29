@@ -55,9 +55,9 @@ If any of the labels prefixed with "a:" apply to the issue, add those labels. If
 
 Add any of the applicable "severe: *" labels; typically only one will apply but sometimes `severe: regression` will apply in conjunction with one of the others.
 
-If it's a very serious bug that should block releases, consider adding the `TODAY` label as well. This label is reserved for build breaks, regressions in metrics, issues causing data loss for end users, etc. that would effectively block us from shipping tip of tree to users.
+If it's a very serious bug that should block releases, consider adding the `P0` label as well. This label is reserved for build breaks, regressions in metrics, issues causing data loss for end users, etc. that would effectively block us from shipping tip of tree to users.
 
-If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the `customer: crowd` label (which means it affects many people) and then either the `severe: customer blocker` label (if it's blocking people) or the `severe: customer critical` label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document). For more details on the "crowd" designation, see [[Issue Hygiene]].
+If it seems to affect a lot of people but doesn't quite rise to the level of a release blocker, add the `customer: crowd` label (which means it affects many people) and then either the `P1` label (if it's blocking people) or the `P2` label (if it's not blocking people but is nonetheless serious). This will flag the bug for consideration during weekly triage (see the second section of this document). For more details on the "crowd" designation, see [[Issue Hygiene]].
 
 If it's an issue that is repeatedly frustrating developers when using non-experimental Flutter features (e.g. performing mobile app builds, dealing with text input, using supported IDEs), and is widespread, add `a: annoyance`. If unsure, consult with DevRel (filiph@).
 
@@ -139,7 +139,7 @@ Occasionally, when time allows, the following are worth taking a look at also:
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"team%3A+flakes"+sort%3Aupdated-asc): Check a few of the oldest flakes: are they still a problem (or is the test enabled and working now?). Is anyone looking at them?
 * Upcoming [milestones](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open): all bugs should be assigned to engineers who have acknowledged that this is what they'll be working on.
 * [Most requested features](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+sort%3Areactions-%2B1-desc): none of the top 20ish bugs are new, and they've all been considered before and have appropriate milestones.
-* [Most requested bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22+): nothing surprising in the list; consider adding `customer: crowd` `customer critical` labels.
+* [Most requested bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+sort%3Areactions-%2B1-desc+-label%3A%22severe%3A+new+feature%22+): nothing surprising in the list; consider adding `customer: crowd` `P2` labels.
 * [Oldest bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+sort%3Aupdated-asc+); see if they can be closed or updated.
 
 ## PRs
@@ -199,9 +199,9 @@ If you come across a bug that is unrelated to the engine, remove the `engine` la
 ### Material Design
 
 * [Material Design PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [P0 bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22P0%22)
+* [P1 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22P1%22)
+* [P2 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22P2%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22f%3A+material+design%22+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
@@ -218,9 +218,9 @@ If you come across a bug that is unrelated to material design, remove the `f: ma
 ## Framework (excluding Material Design and Cupertino)
 
 * [Framework PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [P0 bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22P0%22)
+* [P1 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22P1%22)
+* [P2 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22P2%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aframework+-label%3A%22f%3A+material+design%22+-label%3A%22f%3A+cupertino%22+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
@@ -235,9 +235,9 @@ If you come across a bug that is unrelated to the framework, remove the `framewo
 ## Tool
 
 * [Tool PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3Atool+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [P0 bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+label%3A%22P0%22)
+* [P1 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22P1%22)
+* [P2 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22P2%22)
 * [Issues missing component](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+in%3Atitle+label%3Atool+-project%3Aflutter%2Fflutter%2F84+-project%3Aflutter%2Fflutter%2F85+-project%3Aflutter%2Fflutter%2F86+-project%3Aflutter%2Fflutter%2F87+-project%3Aflutter%2Fflutter%2F88+-project%3Aflutter%2Fflutter%2F89+-project%3Aflutter%2Fflutter%2F90+-project%3Aflutter%2Fflutter%2F91+-project%3Aflutter%2Fflutter%2F92+-project%3Aflutter%2Fflutter%2F93+-project%3Aflutter%2Fflutter%2F94+-project%3Aflutter%2Fflutter%2F95+-project%3Aflutter%2Fflutter%2F96+-project%3Aflutter%2Fflutter%2F97+-project%3Aflutter%2Fflutter%2F98+-project%3Aflutter%2Fflutter%2F99+-project%3Aflutter%2Fflutter%2F100+-project%3Aflutter%2Fflutter%2F101++-project%3Aflutter%2Fflutter%2F102+-project%3Aflutter%2Fflutter%2F103+-project%3Aflutter%2Fflutter%2F104+-project%3Aflutter%2Fflutter%2F105+-project%3Aflutter%2Fflutter%2F106+-project%3Aflutter%2Fflutter%2F107+-project%3Aflutter%2Fflutter%2F108+-project%3Aflutter%2Fflutter%2F109)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Atool+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
@@ -254,9 +254,9 @@ If you come across a bug that is unrelated to the tool, remove the `tool` label 
 ## Web
 
 * [Web PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A"platform-web"+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-web%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [P0 bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-web%22+sort%3Aupdated-asc+label%3A%22P0%22)
+* [P1 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22P1%22)
+* [P2 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22P2%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"platform-web"+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
@@ -270,28 +270,28 @@ If you come across a bug that is unrelated to the Web backend, remove the `platf
 
 ## Mobile Platforms
 
-* [Android TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22%E2%9A%A0+TODAY%22)
-* [Android customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22severe%3A+customer+blocker%22)
-* [Android customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
+* [Android P0](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22P0%22)
+* [Android P1](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22P1%22)
+* [Android P2](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+label%3A%22P2%22+-label%3A%22a%3A+platform-views%22+)
 * [Android overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
 * [Android next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%96%A3+platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-android%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22May+2020%22)
 
 
-* [iOS TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A%22platform-ios%22)
-* [iOS customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-ios%22+label%3A%22severe%3A+customer+blocker%22)
-* [iOS customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-ios%22+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
+* [iOS P0](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22P0%22+label%3A%22platform-ios%22)
+* [iOS P1s](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-ios%22+label%3A%22P1%22)
+* [iOS P2](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-ios%22+label%3A%22P2%22+-label%3A%22a%3A+platform-views%22+)
 * [iOS overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
 * [iOS next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+llabel%3A%22platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%8C%BA%E2%80%AC+platform-ios%22+-label%3A%22a%3A+platform-views%22+milestone%3A%22May+2020%22)
 
-* [Add-to-app TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A"a%3A+existing-apps")
-* [Add-to-app customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+label%3A%22severe%3A+customer+blocker%22)
-* [Add-to-app customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
+* [Add-to-app P0](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22P0%22+label%3A"a%3A+existing-apps")
+* [Add-to-app P1s](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+label%3A%22P1%22)
+* [Add-to-app P2](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+label%3A%22P2%22+-label%3A%22a%3A+platform-views%22+)
 * [Add-to-app overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
 * [Add-to-app next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"a%3A+existing-apps"+-label%3A%22a%3A+platform-views%22+milestone%3A%22May+2020%22)
 
-* [Cupertino TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3A"f%3A+cupertino")
-* [Cupertino customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+label%3A%22severe%3A+customer+blocker%22)
-* [Cupertino customer critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+label%3A%22severe%3A+customer+critical%22+-label%3A%22a%3A+platform-views%22+)
+* [Cupertino P0](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22P0%22+label%3A"f%3A+cupertino")
+* [Cupertino P1s](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+label%3A%22P1%22)
+* [Cupertino P2](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+label%3A%22P2%22+-label%3A%22a%3A+platform-views%22+)
 * [Cupertino overdue](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+-label%3A%22a%3A+platform-views%22+milestone%3AOverdue)
 * [Cupertino next](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+-label%3A%22a%3A+platform-views%22+milestone%3A%22April+2020%22) [milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A"f%3A+cupertino"+-label%3A%22a%3A+platform-views%22+milestone%3A%22May+2020%22)
 
@@ -300,9 +300,9 @@ If you come across a bug that is unrelated to the Web backend, remove the `platf
 ### Plugins
 
 * [Plugins PRs](https://github.com/flutter/plugins/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [P0 bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22P0%22)
+* [P1 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22P1%22)
+* [P2 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22P2%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
@@ -315,9 +315,9 @@ If you come across a bug that is unrelated to the Web backend, remove the `platf
 ### Packages
 
 * [Packages PRs](https://github.com/flutter/packages/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [P0 bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22P0%22)
+* [P1 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22P1%22)
+* [P2 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22P2%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Apackage+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
@@ -333,9 +333,9 @@ If you come across a bug that is unrelated to our plugins or packages, remove th
 
 * [Desktop PRs on the engine](https://github.com/flutter/engine/pulls?q=is%3Aopen+is%3Apr+label%3A%22affects%3A+desktop%22+sort%3Aupdated-asc)
 * [Desktop PRs on the framework](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [P0 bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22P0%22)
+* [P1 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22P1%22)
+* [P2 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22P2%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+desktop%22+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
@@ -352,9 +352,9 @@ If you come across a bug that is unrelated to desktop app development, remove th
 * [Infrastructure PRs](https://github.com/flutter/flutter/pulls?q=is%3Aopen+is%3Apr+label%3A%22team%3A+infra%22+sort%3Aupdated-asc)
 * [Cocoon PRs](https://github.com/flutter/cocoon/pulls)
 * [Infra config PRs](https://github.com/flutter/infra/pulls)
-* [TODAY bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+-label%3A%22passed+secondary+triage%22+label%3A%22%E2%9A%A0+TODAY%22)
-* [Customer blockers](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22+-label%3A%22passed+secondary+triage%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22+-label%3A%22passed+secondary+triage%22)
+* [P0 bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+-label%3A%22passed+secondary+triage%22+label%3A%22P0%22)
+* [P1 issues](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22P1%22+-label%3A%22passed+secondary+triage%22)
+* [P2 issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22P2%22+-label%3A%22passed+secondary+triage%22)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22+-label%3A%22passed+secondary+triage%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22+-label%3A%22passed+secondary+triage%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22team%3A+infra%22+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22+-label%3A%22passed+secondary+triage%22)
