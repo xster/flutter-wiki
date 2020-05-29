@@ -12,6 +12,16 @@ The process of triaging bugs is to first go through these bug lists and make sur
 
 3. [bugs with no milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone).
 
+Provide an initial priority for the issue. In general, the priorities you should consider are:
+  * `P4` for bona fide bugs in current functionality (including regressions)
+  * `P5` for feature requests.
+  * `P6` for feature requests we're unlikely to work on in the immediate future, according to our [Roadmap](https://github.com/flutter/flutter/wiki/Roadmap).
+
+If it looks like it's critical --- as in something that stops further builds or is otherwise a major regression in functionality, consider the `P0` label. If you assign the P0 label to a bug, you _must_ reach out to a prospective owner to pass the baton for investigation. Try the `hackers` channel on the Discord if you don't know someone who can help, or reach out to @kf6gpe, @pcsosinski, or @hixie. 
+
+We reserve `P1` and `P2` labels for things that affect specific customers. In general, `P1` issues are bugs blocking top-tier customers from shipping immediately, and `P2` issues are bugs that block top-tier customers from shipping soon. `P3` issues are issues that have been triaged up from `P4` by team triage.
+
+
 Finally, one should look at [the least recently updated bugs of any kind](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-asc) and see if they are still relevant, applying new labels, updating the subject line if necessary, providing an update if necessary, etc.
 
 ## General
@@ -75,18 +85,6 @@ Bugs relating to the IDEs should be moved to the `flutter/flutter-intellij` repo
 ### Issues requiring domain expertise
 
 Sometimes it's not clear what the appropriate labels are for an issue, or you suspect it may be a duplicate but you lack enough domain knowledge to know for sure. If you know someone who has the expertise to triage the issue, you can assign the issue to them and add the label [assigned for triage](https://github.com/flutter/flutter/labels/assigned%20for%20triage), so the person knows that they are not expected to fix it, but to triage it.
-
-### Milestone
-
-_See also: [List of milestones](https://github.com/flutter/flutter/milestones?direction=asc&sort=due_date&state=open)_
-
-Make a judgement call:
-
-- If the bug seems like a correctness issue, relates to polish and quality, might block fully shipping broad consumer-facing apps, or relates to something else on our [[Roadmap]], add it to the "Goals" milestone.
-
-- If the bug seems like a far-fetched future request, add it to the "Future" milestone.
-
-- Otherwise, add it to the "Stretch goals" milestone.
 
 
 ### Additional comments
@@ -182,9 +180,9 @@ Teams can use a variety of tools to prioritize bugs.
 
 ### Issue triage
 
-* [TODAY bugs](https://github.com/flutter/flutter/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22+label%3Aengine)
-* [Customer blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22severe%3A+customer+blocker%22)
-* [Customer critical issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22severe%3A+customer+critical%22)
+* [P0 bugs](https://github.com/flutter/flutter/labels/P0)
+* [P1 issues](https://github.com/flutter/flutter/labels/P1)
+* [P2 issues](https://github.com/flutter/flutter/labels/P2)
 * [Flakes](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22team%3A+flakes%22)
 * [Regressions](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22severe%3A+regression%22)
 * [Crash bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3Aengine+sort%3Aupdated-asc+label%3A%22severe%3A+crash%22)
