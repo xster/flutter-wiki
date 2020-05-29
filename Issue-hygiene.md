@@ -56,11 +56,11 @@ with us on a product demo for an upcoming event). This is usually a fairly
 short-term arrangement for a specific business purpose.
 
 We provide such customers with a label in our GitHub issue tracker, and
-encourage them to mark bugs as "customer blocker" (for the most serious bugs)
-or "customer critical" (for still important but not quite as serious bugs)
+encourage them to mark bugs as `P1` (for the most serious bugs)
+or `P2` (for still important but not quite as serious bugs)
 if they are very important and deserve immediate attention.
 
-(Bugs marked "P1" or "P2" must have the corresponding
+(Bugs marked `P1` or `P2` must have the corresponding
 customer label as well, so that we know who is actually asking for the issue.)
 
 Each week, we look at all the bugs marked with the "P1" and "P2"
@@ -68,8 +68,8 @@ labels, and see if we can address them ahead of other bugs (though there is no g
 that we will; it mostly depends on how close a relationship we have with the relevant customer).
 This process is described in the "critical triage" section of the page on [[Triage]].
 
-Be wary in marking bugs as "P1". We have finite resources,
-and several customers. If you have one "blocker" bug, then we have a clear
+Be wary in marking bugs as `P1`. We have finite resources,
+and several customers. If you have one `P1` bug, then we have a clear
 sign of what to look at. If you have twenty, it will be difficult for us
 to know where to start.
 
@@ -86,26 +86,26 @@ communicate in that separate bug system when attempting to track down the issue.
 
 #### Special customer labels
 
-We have two special customer labels which are used exclusively with the "critical"
-and "blocker" labels.
+We have two special customer labels which are used exclusively with the `P1`
+and `P2` labels.
 
-The "customer: product" label is used to bring issues that product management
+The `customer: product` label is used to bring issues that product management
 and senior leads want resolved to the attention of the appropriate engineering
 team.
 
-The "customer: crowd" label is used to represent bugs that are affecting large
+The `customer: crowd` label is used to represent bugs that are affecting large
 numbers of people; during initial [[Triage]], high-profile bugs get labeled in
 this way to bring them to the attention of the engineering team. "Large numbers"
 is a judgement call. If dozens of people independently run into the same issue
 and file a bug and we end up realizing that they're all duplicates of each other,
 then that would be a good candidate. On the other hand, if there is an active
 campaign to get people to comment on a bug, then it's probably not legitimately
-a "customer: crowd" bug, because people generally report bugs without having to
+a `customer: crowd` bug, because people generally report bugs without having to
 be convinced to do so.
 
-In general, a bug should only be marked "customer: crowd" "customer blocker" if it
+In general, a bug should only be marked `customer: crowd` `P1` if it
 is so bad that it is literally causing large numbers of people to consider changing
-careers. Similarly, a bug should only be marked "customer: crowd" "customer critical"
+careers. Similarly, a bug should only be marked `customer: crowd` `P2`
 if people are threatening to never upgrade to the next release because of this bug.
 
 ### Thumbs-up reactions
@@ -171,7 +171,7 @@ soon but for which we don't yet have an owner. The "Declined customer request" m
 indicates an issue that we do not intend to address on the timescale requested (typically
 this means not for 6+ months).
 
-Each week, we check any bug with the "customer: blocker" or "customer: critical" labels.
+Each week, we check any bug with the `P0`, `P1`, and `P2` labels.
 If we can find an owner for such a bug right away, it will be assigned a bucket milestone
 and given an explicit assignee. If we cannot, then it will be put into either the
 "Unassigned customer work" milestone or the "Declined customer request" milestone.
