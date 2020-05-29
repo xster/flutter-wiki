@@ -125,9 +125,9 @@ We also want to regularly check https://developer.apple.com/news/ for updates th
 
 When doing the critical issue triage (as opposed to the new issue triage as above), we check each bug in the following lists:
 
-* [TODAY](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22%E2%9A%A0+TODAY%22): all bugs should be assigned and progress should be being made on all of them.
-* [Blockers](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22severe%3A+customer+blocker%22+sort%3Aupdated-asc): all bugs should have an appropriate milestone (typically the current milestone, or for issues that we cannot do immediately, "Unassigned customer work"); bugs we are working on should be assigned; if there hasn't been an update in the last two weeks, an update should be posted.
-* [Critical](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22severe%3A+customer+critical%22+sort%3Aupdated-asc): all bugs should have an appropriate milestone.
+* [P0](https://github.com/flutter/flutter/labels/P0): all bugs should be assigned and progress should be being made on all of them.
+* [P1](https://github.com/flutter/flutter/labels/P1): all bugs should have an appropriate milestone (typically the current milestone, or for issues that we cannot do immediately, "Unassigned customer work"); bugs we are working on should be assigned; if there hasn't been an update in the last two weeks, an update should be posted.
+* [P2](https://github.com/flutter/flutter/labels/P2): all bugs should have an appropriate milestone.
 * [Bugs](https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22will+need+additional+triage%22+sort%3Aupdated-asc) and [PRs](https://github.com/flutter/flutter/pulls?utf8=%E2%9C%93&q=is%3Aopen+label%3A%22will+need+additional+triage%22+sort%3Aupdated-asc+) flagged for additional triage: figure out what should be done with the bug, then remove the `will need additional triage` label.
 * First triage of the month: check if the current [milestone](https://github.com/flutter/flutter/milestones) needs to be closed.
 * [Overdue milestone](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+milestone%3AOverdue+sort%3Acreated-asc): all bugs should have their milestone and assignee updated. If the issue isn't being worked on, it should be unassigned and moved to a long-term milestone; do not merely keep pushing every issue to the next milestone.
