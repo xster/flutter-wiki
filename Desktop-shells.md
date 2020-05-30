@@ -70,6 +70,29 @@ When using `flutter create .` in an existing plugin to add desktop support, be s
 
 If you have enabled desktop support in the tool and added desktop support to your project as described above, your machine should appear as an available device in Android Studio or VS Code for that project. The standard Flutter build and run workflows should then automatically work for desktop as well.
 
+## Distributing
+
+Keep in mind that the Windows and Linux embeddings are in early stages, and are missing critical functionality such as OS accessibility feature integration, so we **strongly recommend against distributing applications to end users** at this stage.
+
+There are not yet full instructions, or tooling support, for making distributable applications. However, below is some information about how to use the current build output on other machines for testing purposes.
+
+### Windows
+
+The executable will be in `build\windows\x64\<build mode>\Runner\`. In addition to that executable, you will need:
+- From the `Runner` directory, installed next to the executable:
+  - all the `.dll` files in that directory
+  - the `data` directory
+- The [Visual C++ redistributables](https://docs.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files?view=vs-2019). You can use any of the methods shown in the [example walkthroughs here](https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019). If you use the application-local option, you will need to copy:
+  - `msvcp140.dll`
+  - `vcruntime140.dll`
+  - `vcruntime140_1.dll`
+
+### Linux
+
+The `build/linux/<build mode>/bundle` directory must be copied in its entirety.
+
+Depending on the system you deploy on, and what plugins (if any) you use, you may need to install system-level libraries that are not already present.
+
 ## Add-to-App
 
 Currently there is no support for Add-to-App for any desktop platform (either via `flutter create -t module` or by flutter-desktop-embedding example). If you are familiar with doing native development on your platform(s), it is possible to integrate the desktop Flutter libraries in your own app. There is not currently much guidance, so you will be well off the beaten path, but the information below will help get you started.
