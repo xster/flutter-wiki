@@ -45,7 +45,6 @@ $ git show $RECIPE_FRAMEWORK_REVISION:./flutter.py > "./flutter_$VERSION.py"
 ```
 led get-builder 'luci.flutter.prod:Linux' | led edit -pa git_ref="$RELEASE_FRAMEWORK_REF" | led edit -pa git_url='https://github.com/flutter/flutter' | led edit -pa recipe_name='flutter_v1_17_0.py' | led edit-recipe-bundle | led launch
 ```
-LED will log out a URL to the LUCI run (if you get a 404 error at the URL, it's because the job hasn't started yet, wait a few seconds and refresh).
 8. If the LED run fails, possible reasons include:
   a. Something changed in the builder config, see flutter/infra repo. (e.g. Xcode version in builder changed, requiring a recipe cherry pick from upstream version)
   b. The recipe depends on other files in the repo, which haven't been forked. Repeat steps 4-6 for these additional dependencies.
