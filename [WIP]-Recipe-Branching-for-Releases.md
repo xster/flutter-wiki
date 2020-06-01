@@ -7,3 +7,21 @@ When a dev release is promoted to beta, copies will be made of the engine and fr
 The LUCI builder config now has separate builders for stable, beta, and dev channels, with stable and beta having their own recipes. With each new beta release, builder config should be updated to reflect the new version to look up the recipe by and which refs to trigger builds by.
 
 When promoting a beta release to stable, we can delete any recipe copies older than the new stable. We then update constants in the builder config relating to stable version.
+
+## Prerequisites
+
+You must have read/write access to and local clones of the following repositories:
+
+* [Flutter Framework](https://github.com/flutter/flutter)
+* [Flutter Engine](https://github.com/flutter/engine)
+* [Flutter Infra](https://github.com/flutter/infra)
+* [Flutter Recipes](https://flutter.googlesource.com/recipes)
+
+## Beta Release Procedure
+
+1. Find the Flutter framework **master commit** that your release has branched off of, and set it as `$FRAMEWORK_REVISION`.
+1. Identify the name of the stable version that this is a release candidate for, normalize dots with underscores, set as `$VERSION`:
+```
+# for 1.18.0-12.0.pre
+VERSION='1_18_0'
+```
