@@ -53,3 +53,19 @@ led get-builder 'luci.flutter.prod:Linux' | led edit -pa git_ref="$RELEASE_FRAME
 ```
 led get-builder 'luci.flutter.prod:Linux Host Engine' | led edit -pa git_ref="$RELEASE_ENGINE_REF" | led edit -pa git_url='https://github.com/flutter/engine' | led edit -pa recipe_name=engine_v1_17_0.py | led edit-recipe-bundle | led launch
 ```
+11. Update tests:
+```
+cd $RECIPES_REPO
+./recipes.py test train
+```
+12. Commit the two new recipes and all updated test expectations to git. Create a new CL with `git cl upload` and get a reviewer from `build/scripts/slave/recipes/flutter/OWNERS`.
+13. In flutter/infra, update relevant top level constants in `main.star`:
+  a. `STABLE_REFS`, a regex to the branch name of the current stable
+  b. `STABLE_VERSION`, the version element of the recipe filename, e.g. `v1_17_0`
+  c. `BETA_REFS`, a regex to the branch name of the current beta candidate
+  d. `BETA_VERSION`
+  e. `DEV_REFS`, a regex to the branch names of dev releases after incrementing y
+14. Search the file for any TODOs related to the release you are doing.
+15. Execute the main.star file to generate the rest of the config files (and validate your changes for mistakes): `$ ./main.star`
+16. Commit your changes, push to github and get it reviewed. This PR should be landed after any LUCI recipe changes.
+17. After your PR has landed, wait for it to be mirrored to [the chromium tree](https://chromium.googlesource.com/external/github.com/flutter/infra/). LUCI post-submit builds should now work for your candidate branch.
