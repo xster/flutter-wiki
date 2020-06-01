@@ -44,8 +44,13 @@ $ git show $RECIPE_FRAMEWORK_REVISION:./flutter.py > "./flutter_$VERSION.py"
 7. Set `RELEASE_FRAMEWORK_REF` (e.g. "refs/heads/flutter-1.17-candidate.3") for what you want to test and trigger a test run of the recipe fork with LED:
 ```
 led get-builder 'luci.flutter.prod:Linux' | led edit -pa git_ref="$RELEASE_FRAMEWORK_REF" | led edit -pa git_url='https://github.com/flutter/flutter' | led edit -pa recipe_name='flutter_v1_17_0.py' | led edit-recipe-bundle | led launch
-LED will log out a URL to the LUCI run (if you get a 404 error at the URL, it's because the job hasn't started yet, wait a few seconds and refresh).
 ```
+LED will log out a URL to the LUCI run (if you get a 404 error at the URL, it's because the job hasn't started yet, wait a few seconds and refresh).
 8. If the LED run fails, possible reasons include:
   a. Something changed in the builder config, see flutter/infra repo. (e.g. Xcode version in builder changed, requiring a recipe cherry pick from upstream version)
   b. The recipe depends on other files in the repo, which haven't been forked. Repeat steps 4-6 for these additional dependencies.
+9. Get the engine repo revision from your framework revision. In the framework repo, the engine revision is checked in as [//bin/internal/engine.version](https://github.com/flutter/flutter/blob/master/bin/internal/engine.version).
+10. Repeat steps 2 to 7 for the engine recipe. As of release 1.17.0, `engine_builder.py` and `engine_builder.proto` also had to be forked. The LED command for testing engine should be:
+```
+led get-builder 'luci.flutter.prod:Linux Host Engine' | led edit -pa git_ref="$RELEASE_ENGINE_REF" | led edit -pa git_url='https://github.com/flutter/engine' | led edit -pa recipe_name=engine_v1_17_0.py | led edit-recipe-bundle | led launch
+```
