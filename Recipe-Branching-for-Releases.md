@@ -59,7 +59,7 @@ led get-builder 'luci.flutter.prod:Linux Host Engine' | led edit -pa git_ref="$R
 cd $RECIPES_REPO
 ./recipes.py test train
 ```
-12. Commit the two new recipes and all updated test expectations to git. Create a new CL with `git cl upload` and get a reviewer from `build/scripts/slave/recipes/flutter/OWNERS`.
+12. Commit the two new recipes and all updated test expectations to git. Create a new CL with `git cl upload` and get a reviewer from `build/scripts/slave/recipes/flutter/OWNERS`. Upon approval, merge the CL.
 13. In flutter/infra, update relevant top level constants in `main.star`:
    - `STABLE_REFS`, a regex to the branch name of the current stable
    - `STABLE_VERSION`, the version element of the recipe filename, e.g. `v1_17_0`
@@ -73,3 +73,17 @@ cd $RECIPES_REPO
 
 ## Stable Release Procedure
 
+Updating recipes for a stable release is much simpler than that for a beta release, as the requisite recipe should have already been forked when the release was promoted to beta.
+
+1. In flutter/infra, update relevant top level constants in `main.star`:
+   - `STABLE_REFS`, a regex to the branch name of the current stable
+   - `STABLE_VERSION`, the version element of the recipe filename, e.g. `v1_17_0`
+2. Execute the main.star file to generate the rest of the config files (and validate your changes for mistakes): `$ ./main.star`
+3. Commit your changes, push to github and get it reviewed. Merge it. Note, this updated configuration won't take effect until it has propagated to LUCI infra. The current version of the config can be seen [here](https://luci-config.appspot.com/#/projects/flutter).
+4. In the recipes repo, any recipe forks older than the current stable can be safely deleted. `git rm /path/to/recipe` will both delete the file and stage the change with git.
+5. Update tests:
+```
+cd $RECIPES_REPO
+./recipes.py test train
+```
+6. Commit the file deletions and updated test expectations to git. Create a new CL with `git cl upload` and get a reviewer from `build/scripts/slave/recipes/flutter/OWNERS`. Upon approval, merge the CL.
