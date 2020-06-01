@@ -28,18 +28,18 @@ VERSION='1_18_0'
 ```
 3. Get the date/time this commit landed in the tree (since we use GitHub squash and merge, this will presumably be the commit date). The following command will retrieve the commit date of a given revision:
 ```
-$ cd $FRAMEWORK_REPO
-$ FRAMEWORK_DATE=$(git show -s --format=%ci $FRAMEWORK_REVISION)
+cd $FRAMEWORK_REPO
+FRAMEWORK_DATE=$(git show -s --format=%ci $FRAMEWORK_REVISION)
 ```
 4. Get the last LUCI recipe commit before the framework date:
 ```
-$ cd $RECIPES_REPO
-$ RECIPE_FRAMEWORK_REVISION=$(git log --before="$FRAMEWORK_DATE" -n 1 --format=%H)
+cd $RECIPES_REPO
+RECIPE_FRAMEWORK_REVISION=$(git log --before="$FRAMEWORK_DATE" -n 1 --format=%H)
 ```
 5. Copy the framework recipe at the time of `$FRAMEWORK_DATE` as `flutter_beta.py` (for the engine, `engine_$VERSION.py`):
 ```
-$ cd $RECIPES_REPO/recipes
-$ git show $RECIPE_FRAMEWORK_REVISION:./flutter.py > "./flutter_$VERSION.py"
+cd $RECIPES_REPO/recipes
+git show $RECIPE_FRAMEWORK_REVISION:./flutter.py > "./flutter_$VERSION.py"
 ```
 6. Edit `flutter_beta.py` with comments describing the release version this recipe is for, `$FRAMEWORK_REVISION`, `$FRAMEWORK_DATE`, and `$LUCI_FRAMEWORK_REVISION`.
 7. Set `RELEASE_FRAMEWORK_REF` (e.g. "refs/heads/flutter-1.17-candidate.3") for what you want to test and trigger a test run of the recipe fork with LED:
