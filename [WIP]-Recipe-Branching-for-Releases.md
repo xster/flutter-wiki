@@ -16,7 +16,7 @@ You must have read/write access to and local clones of the following repositorie
 * [Flutter Engine](https://github.com/flutter/engine)
 * [Flutter Infra](https://github.com/flutter/infra)
 * [Flutter Recipes](https://flutter.googlesource.com/recipes)
-* You should have Chromium's depot_tools [installed](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up)
+* You should have Chromium's depot_tools [installed](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up) (necessary for making LUCI updates)
 
 ## Beta Release Procedure
 
